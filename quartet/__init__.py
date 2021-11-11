@@ -1,6 +1,6 @@
 from .library import(
     end_row,
-    canon,
+    rhythm_canon,
 )
 
 __all__ = [
