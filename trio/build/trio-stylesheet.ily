@@ -3,10 +3,10 @@
 #(set-default-paper-size "11x17landscape")
 #(set-global-staff-size 16)
 
-\include "/Users/trintonprater/scores/hexennacht/hexennacht/library.ily"
+\include "/Users/trintonprater/scores/trio/trio/library.ily"
 
 \header {
-    title = \markup \override #'(font-name . "Bodoni72") \fontsize #5.4 \center-column {"PIANO QUARTET" \fontsize #7 \with-color #white "."}
+    title = \markup \override #'(font-name . "Bodoni72") \fontsize #5.4 \center-column {"PIANO TRIO" \fontsize #7 \with-color #white "."}
     subtitle = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"to Kate Ragan, Cori Trenczer, and Zoe Markle" \fontsize #3.4 \with-color #white "."}
     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #3 {"Trinton (*2000)"}
 }
