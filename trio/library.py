@@ -5,6 +5,15 @@ import quartet
 from abjadext import rmakers
 from abjadext import microtones
 
+score = trinton.make_score_template(
+    [abjad.Piano(),
+    abjad.Piano(),
+    abjad.Cello(),
+    abjad.Contrabass(),
+    ],
+    [2, 1, 1,]
+)
+
 # pitch
 
 end_row = [0, 10, 5, 8, 3, 11, 6, 1, 9, 4, 7, 2,]
