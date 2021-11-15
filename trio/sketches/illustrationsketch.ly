@@ -15,22 +15,22 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
-            \time 6/8
-            s1 * 3/4
-            \time 6/8
-            s1 * 3/4
-            \time 6/8
-            s1 * 3/4
-            \time 6/8
-            s1 * 3/4
-            \time 6/8
-            s1 * 3/4
-            \time 6/8
-            s1 * 3/4
-            \time 6/8
-            s1 * 3/4
-            \time 6/8
-            s1 * 3/4
+            \time 3/8
+            s1 * 3/8
+            \time 3/8
+            s1 * 3/8
+            \time 3/8
+            s1 * 3/8
+            \time 3/8
+            s1 * 3/8
+            \time 3/8
+            s1 * 3/8
+            \time 3/8
+            s1 * 3/8
+            \time 3/8
+            s1 * 3/8
+            \time 3/8
+            s1 * 3/8
         }
         \context ChoirStaff = "Staff Group"
         <<
@@ -38,342 +38,215 @@
             {
                 \context Voice = "piano voice"
                 {
+                    \ottava -1
+                    \clef "bass"
+                    \override Staff.Stem.stemlet-length = 0.75
+                    b,,,64
+                    [
+                    cs,,64
+                    b,,,64
                     a,,,64
-                    af,,64
+                    b,,,64
                     a,,,64
-                    af,,64
+                    b,,,64
                     a,,,64
-                    af,,64
-                    bf,,,64
-                    af,,64
-                    bf,,,64
-                    g,,64
                     b,,,64
-                    fs,,64
-                    c,,64
-                    fs,,64
-                    c,,64
-                    f,,64
-                    c,,64
-                    fs,,64
+                    a,,,64
                     b,,,64
-                    fs,,64
+                    cs,,64
                     b,,,64
-                    fs,,64
-                    b,,,64
-                    fs,,64
-                    c,,64
-                    f,,64
                     cs,,64
-                    f,,64
-                    cs,,64
-                    f,,64
-                    c,,64
-                    f,,64
-                    c,,64
-                    f,,64
-                    cs,,64
-                    e,,64
-                    cs,,64
-                    e,,64
-                    d,,64
-                    e,,64
-                    d,,64
                     ef,,64
-                    d,,64
-                    e,,64
-                    d,,64
-                    e,,64
                     cs,,64
+                    ef,,64
                     f,,64
-                    a,64
-                    bf,,64
-                    a,64
-                    bf,,64
-                    a,64
-                    b,,64
-                    a,64
-                    bf,,64
-                    a,64
-                    b,,64
-                    a,64
-                    b,,64
-                    a,64
-                    b,,64
-                    af,64
-                    b,,64
-                    af,64
-                    b,,64
-                    a,64
-                    b,,64
-                    af,64
-                    b,,64
-                    a,64
-                    b,,64
-                    af,64
-                    c,64
-                    g,64
+                    g,,64
+                    a,,64
+                    g,,64
+                    a,,64
+                    bf,,,64
+                    \revert Staff.Stem.stemlet-length
+                    c,,64
+                    ]
+                    \ottava 0
+                    \override Staff.Stem.stemlet-length = 0.75
                     cs,64
-                    fs,64
-                    d,64
-                    f,64
+                    [
+                    b,,64
+                    cs,64
+                    b,,64
+                    cs,64
                     ef,64
-                    e,64
+                    cs,64
+                    b,,64
+                    cs,64
                     ef,64
-                    f,64
-                    d,64
-                    f,64
+                    cs,64
                     ef,64
-                    e,64
-                    ef,64
-                    e,64
-                    ef,64
-                    e,64
-                    ef,64
-                    e,64
+                    cs,64
                     ef,64
                     f,64
                     ef,64
-                    bf,64
-                    a64
-                    bf,64
-                    bf64
-                    bf,64
-                    a64
-                    b,64
-                    a64
-                    b,64
-                    af64
-                    c64
-                    af64
-                    b,64
-                    a64
-                    b,64
-                    af64
-                    c64
-                    g64
-                    c64
-                    af64
-                    b,64
-                    a64
-                    bf,64
-                    bf64
-                    bf,64
-                    bf64
-                    bf,64
-                    a64
-                    bf,64
-                    bf64
-                    bf,64
-                    a64
-                    bf,64
-                    bf64
-                    bf,64
-                    bf64
-                    bf,64
-                    a64
-                    b,64
-                    af64
-                    c64
-                    g64
-                    c64
-                    g64
+                    f,64
+                    ef,64
+                    cs,64
+                    ef,64
+                    f,64
+                    ef,64
+                    cs,64
+                    \revert Staff.Stem.stemlet-length
+                    ef,64
+                    ]
+                    \override Staff.Stem.stemlet-length = 0.75
                     cs64
-                    g64
+                    [
+                    ef64
                     cs64
-                    fs64
-                    c'64
-                    b64
-                    c'64
-                    b64
-                    c'64
-                    b64
-                    c'64
-                    b64
-                    c'64
-                    a'64
-                    c'64
-                    a'64
-                    c'64
-                    a'64
-                    c'64
-                    a'64
-                    c'64
-                    b64
-                    c'64
-                    a'64
+                    b,64
+                    cs64
+                    ef64
+                    f64
+                    ef64
+                    f64
+                    g64
+                    a64
+                    g64
+                    f64
+                    ef64
+                    f64
+                    g64
+                    a64
+                    bf,64
+                    a64
+                    g64
+                    f64
+                    ef64
+                    cs64
+                    \revert Staff.Stem.stemlet-length
+                    b,64
+                    ]
+                    \clef "treble"
+                    \override Staff.Stem.stemlet-length = 0.75
                     cs'64
-                    a'64
+                    [
+                    b64
                     cs'64
-                    af'64
+                    b64
                     cs'64
-                    a'64
+                    b64
                     cs'64
-                    a'64
+                    b64
                     cs'64
-                    af'64
-                    d'64
-                    g'64
-                    d'64
-                    g'64
-                    d'64
-                    g'64
                     ef'64
-                    g'64
-                    d'64
-                    af'64
-                    d'64
-                    af'64
-                    d'64
-                    af'64
-                    d'64
-                    af'64
                     cs'64
-                    af'64
-                    bf'64
-                    a''64
-                    b'64
-                    af''64
-                    c''64
-                    g''64
-                    c''64
-                    af''64
-                    b'64
-                    af''64
-                    b'64
-                    af''64
-                    c''64
-                    g''64
+                    ef'64
+                    cs'64
+                    ef'64
+                    cs'64
+                    ef'64
+                    cs'64
+                    b64
+                    cs'64
+                    ef'64
+                    f'64
+                    ef'64
+                    f'64
+                    \revert Staff.Stem.stemlet-length
+                    g'64
+                    ]
+                    \override Staff.Stem.stemlet-length = 0.75
                     cs''64
+                    [
+                    ef''64
+                    f''64
                     g''64
+                    a''64
+                    bf'64
+                    a''64
+                    g''64
+                    f''64
+                    g''64
+                    f''64
+                    g''64
+                    a''64
+                    bf'64
                     c''64
-                    af''64
-                    b'64
-                    af''64
-                    c''64
-                    af''64
-                    b'64
-                    a''64
                     bf'64
                     a''64
-                    bf'64
-                    bf''64
-                    bf'64
-                    bf''64
-                    bf'64
+                    g''64
+                    f''64
+                    g''64
                     a''64
-                    bf'64
-                    bf''64
-                    bf'64
-                    bf''64
-                    bf'64
-                    a''64
-                    b'64
-                    af''64
-                    c''64
-                    af''64
-                    c''64
-                    af''64
-                    b'64
-                    a''64
-                    b'64
-                    a''64
-                    c'''64
+                    g''64
+                    f''64
+                    \revert Staff.Stem.stemlet-length
+                    ef''64
+                    ]
+                    \ottava 1
+                    \override Staff.Stem.stemlet-length = 0.75
                     cs'''64
-                    af'''64
-                    d'''64
-                    g'''64
+                    [
                     ef'''64
-                    g'''64
-                    d'''64
-                    g'''64
-                    ef'''64
-                    fs'''64
-                    ef'''64
-                    g'''64
-                    d'''64
-                    g'''64
-                    ef'''64
-                    g'''64
-                    d'''64
-                    af'''64
-                    d'''64
-                    g'''64
-                    d'''64
-                    g'''64
-                    d'''64
-                    g'''64
-                    d'''64
-                    af'''64
-                    d'''64
-                    af'''64
-                    cs'''64
-                    af'''64
-                    d'''64
-                    af'''64
-                    d'''64
-                    g'''64
-                    ef'''64
-                    g'''64
-                    ef'''64
-                    fs'''64
-                    e'''64
                     f'''64
-                    e'''64
-                    fs'''64
-                    ef'''64
                     g'''64
+                    c'''64
                     d'''64
-                    af'''64
+                    c'''64
+                    g'''64
+                    c'''64
                     d'''64
-                    a'''64
-                    af''''64
-                    a'''64
-                    a''''64
-                    a'''64
-                    a''''64
-                    a'''64
-                    a''''64
-                    a'''64
-                    a''''64
-                    a'''64
-                    a''''64
-                    a'''64
-                    a''''64
-                    a'''64
-                    af''''64
-                    a'''64
-                    af''''64
-                    bf'''64
-                    af''''64
-                    bf'''64
-                    g''''64
+                    e'''64
+                    d'''64
+                    c'''64
+                    g'''64
+                    c'''64
+                    d'''64
+                    c'''64
+                    g'''64
+                    f'''64
+                    g'''64
+                    c'''64
+                    g'''64
+                    c'''64
+                    \revert Staff.Stem.stemlet-length
+                    g'''64
+                    ]
+                    \override Staff.Stem.stemlet-length = 0.75
                     b'''64
-                    g''''64
-                    bf'''64
-                    g''''64
+                    [
+                    cs''''64
                     b'''64
-                    g''''64
-                    bf'''64
-                    af''''64
-                    bf'''64
-                    af''''64
-                    bf'''64
-                    g''''64
-                    bf'''64
-                    g''''64
-                    bf'''64
-                    g''''64
+                    a'''64
                     b'''64
-                    fs''''64
-                    c''''64
-                    f''''64
+                    a'''64
+                    b'''64
+                    a'''64
+                    b'''64
+                    a'''64
+                    b'''64
+                    a'''64
+                    b'''64
+                    a'''64
+                    b'''64
                     cs''''64
-                    e''''64
+                    b'''64
                     cs''''64
-                    f''''64
+                    ef''''64
                     cs''''64
+                    ef''''64
                     f''''64
+                    g''''64
+                    \revert Staff.Stem.stemlet-length
+                    f''''64
+                    ]
+                    \ottava 0
+                    \ottava 2
+                    \override Staff.Stem.stemlet-length = 0.75
+                    bf''''64
+                    [
+                    c'''''64
+                    bf''''64
+                    c'''''64
                     bf''''64
                     c'''''64
                     bf''''64
@@ -381,37 +254,9 @@
                     bf''''64
                     b''''64
                     bf''''64
-                    b''''64
-                    bf''''64
-                    b''''64
-                    bf''''64
                     c'''''64
                     bf''''64
                     c'''''64
-                    bf''''64
-                    b''''64
-                    bf''''64
-                    c'''''64
-                    bf''''64
-                    c'''''64
-                    bf''''64
-                    b''''64
-                    bf''''64
-                    b''''64
-                    bf''''64
-                    b''''64
-                    bf''''64
-                    b''''64
-                    bf''''64
-                    b''''64
-                    bf''''64
-                    b''''64
-                    bf''''64
-                    c'''''64
-                    bf''''64
-                    b''''64
-                    bf''''64
-                    b''''64
                     bf''''64
                     b''''64
                     bf''''64
@@ -421,7 +266,10 @@
                     bf''''64
                     c'''''64
                     bf''''64
+                    \revert Staff.Stem.stemlet-length
                     c'''''64
+                    ]
+                    \ottava 0
                 }
             }
         >>

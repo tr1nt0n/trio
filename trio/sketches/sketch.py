@@ -15,156 +15,152 @@ score = trinton.make_score_template(
 
 trinton.write_time_signatures(
     [
-    (6, 8),
-    (6, 8),
-    (6, 8),
-    (6, 8),
-    (6, 8),
-    (6, 8),
-    (6, 8),
-    (6, 8),
+    (3, 8),
+    (3, 8),
+    (3, 8),
+    (3, 8),
+    (3, 8),
+    (3, 8),
+    (3, 8),
+    (3, 8),
     ],
     score["Global Context"],
 )
 
 # test
 
-def tocatta(score, voice, durations, division, index, seed):
-    stack = rmakers.stack(
-        rmakers.even_division([division]),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
-        rmakers.beam(abjad.select().tuplets()),
-    )
+def toccata(score, voice, durations, division, index, seed, duration_bracket_notation):
+    if duration_bracket_notation == True:
+        stack = rmakers.stack(
+            rmakers.even_division([division]),
+            rmakers.duration_bracket(),
+        )
 
-    rhythms = trinton.make_rhythm_selections(
-        stack=stack,
-        durations=durations
-    )
+        rhythms = trinton.make_rhythm_selections(
+            stack=stack,
+            durations=durations
+        )
 
-    container = abjad.Container(rhythms)
+        container = abjad.Container(rhythms)
 
-    seq = list(range(-39, 49))
+        seq = list(range(-39, 49))
 
-    groups = evans.Sequence(seq).grouper([13, 12, 13, 11, 13, 10, 13, 3,])
+        groups = evans.Sequence(seq).grouper([13, 12, 13, 11, 13, 10, 13, 3,])
 
-    new_groups = []
-    for group in groups:
-        if len(group) == 13:
-            sequence = abjad.Sequence(group).permute([12, 0, 11, 1, 10, 2, 9, 3, 8, 4, 7, 5, 6,])
-            new_sequence = evans.Sequence(sequence[:]).mirror(sequential_duplicates=False)
-            for l in new_sequence:
-                new_groups.append(l)
-        elif len(group) == 12:
-            sequence = abjad.Sequence(group).permute([0, 11, 1, 10, 2, 9, 3, 8, 4, 7, 5, 6,])
-            new_sequence = evans.Sequence(sequence[:]).mirror(sequential_duplicates=False)
-            for l in new_sequence:
-                new_groups.append(l)
-        elif len(group) == 11:
-            sequence = abjad.Sequence(group).permute([0, 1, 10, 2, 9, 3, 8, 4, 7, 5, 6,])
-            new_sequence = evans.Sequence(sequence[:]).mirror(sequential_duplicates=False)
-            for l in new_sequence:
-                new_groups.append(l)
-        elif len(group) == 10:
-            sequence = abjad.Sequence(group).permute([0, 1, 2, 9, 3, 8, 4, 7, 5, 6,])
-            new_sequence = evans.Sequence(sequence[:]).mirror(sequential_duplicates=False)
-            for l in new_sequence:
-                new_groups.append(l)
-        elif len(group) == 3:
-            sequence = abjad.Sequence(group).permute([2, 0, 1])
+        new_groups = []
+        for group in groups:
+            sequence = trinton.primes_odds_evens(group)
             new_sequence = evans.Sequence(sequence[:]).mirror(sequential_duplicates=False)
             for l in new_sequence:
                 new_groups.append(l)
 
-    new_seq = evans.Sequence(new_groups).grouper([24, 22, 24, 20, 24, 18, 24, 4,])
+        new_seq = evans.Sequence(new_groups).grouper([24, 22, 24, 20, 24, 18, 24, 4,])
 
-    pitches = trinton.random_walk(chord=new_seq[index], seed=seed)
+        pitches = trinton.random_walk(chord=new_seq[index], seed=seed)
 
-    handler = evans.PitchHandler(
-        pitch_list=pitches,
-        forget=False
-    )
-    handler(container)
+        handler = evans.PitchHandler(
+            pitch_list=pitches,
+            forget=False
+        )
+        handler(container)
 
-    trinton.append_rhythm_selections(
+        for tuplet in container:
+            for leaf in tuplet:
+                abjad.tweak(leaf.note_head).Stem.transparent=True
+                abjad.tweak(leaf.note_head).Beam.transparent=True
+                abjad.tweak(leaf.note_head).Flag.transparent=True
+
+        trinton.append_rhythm_selections(
+            score=score,
+            voice=voice,
+            selections=container[:],
+        )
+
+    else:
+        stack = rmakers.stack(
+            rmakers.even_division([division]),
+            rmakers.extract_trivial(abjad.select().tuplets()),
+            rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+            rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.beam(abjad.select().tuplets()),
+        )
+
+        rhythms = trinton.make_rhythm_selections(
+            stack=stack,
+            durations=durations
+        )
+
+        container = abjad.Container(rhythms)
+
+        seq = list(range(-39, 49))
+
+        groups = evans.Sequence(seq).grouper([13, 12, 13, 11, 13, 10, 13, 3,])
+
+        new_groups = []
+        for group in groups:
+            sequence = trinton.primes_odds_evens(group)
+            new_sequence = evans.Sequence(sequence[:]).mirror(sequential_duplicates=False)
+            for l in new_sequence:
+                new_groups.append(l)
+
+        new_seq = evans.Sequence(new_groups).grouper([24, 22, 24, 20, 24, 18, 24, 4,])
+
+        pitches = trinton.random_walk(chord=new_seq[index], seed=seed)
+
+        handler = evans.PitchHandler(
+            pitch_list=pitches,
+            forget=False
+        )
+        handler(container)
+
+        trinton.append_rhythm_selections(
+            score=score,
+            voice=voice,
+            selections=container[:],
+        )
+
+for number in [0, 1, 2, 3, 4, 5, 6, 7]:
+    toccata(
         score=score,
-        voice=voice,
-        selections=container[:],
+        voice="piano voice",
+        durations=[(3, 8)],
+        division=64,
+        index=number,
+        seed=number,
+        duration_bracket_notation=False
     )
 
+trinton.rewrite_meter_without_splitting(score)
+trinton.beam_score_without_splitting(score)
+# trinton.annotate_leaves(score)
 
-tocatta(
-    score=score,
-    voice="piano voice",
-    durations=[(6, 8)],
-    division=64,
-    index=0,
-    seed=7
+trinton.attach(
+    voice=score["piano voice"],
+    leaves=[0],
+    attachment=abjad.Clef("bass")
 )
 
-tocatta(
-    score=score,
-    voice="piano voice",
-    durations=[(6, 8)],
-    division=64,
-    index=1,
-    seed=1
+trinton.attach(
+    voice=score["piano voice"],
+    leaves=[72],
+    attachment=abjad.Clef("treble")
 )
 
-tocatta(
-    score=score,
-    voice="piano voice",
-    durations=[(6, 8)],
-    division=64,
-    index=2,
-    seed=2
-)
+sel = list(range(120, 168))
 
-tocatta(
-    score=score,
-    voice="piano voice",
-    durations=[(6, 8)],
-    division=64,
-    index=3,
-    seed=3
-)
+selection = trinton.make_leaf_selection(score=score, voice="piano voice", leaves=sel)
 
-tocatta(
-    score=score,
-    voice="piano voice",
-    durations=[(6, 8)],
-    division=64,
-    index=4,
-    seed=4
-)
+abjad.ottava(selection)
 
-tocatta(
-    score=score,
-    voice="piano voice",
-    durations=[(6, 8)],
-    division=64,
-    index=5,
-    seed=5
-)
+ottava = abjad.Ottava(n=-1)
+abjad.attach(ottava, abjad.select(score["piano voice"]).leaf(0))
+ottava = abjad.Ottava(n=0, format_slot="after")
+abjad.attach(ottava, abjad.select(score["piano voice"]).leaf(23))
 
-tocatta(
-    score=score,
-    voice="piano voice",
-    durations=[(6, 8)],
-    division=64,
-    index=6,
-    seed=6
-)
-
-tocatta(
-    score=score,
-    voice="piano voice",
-    durations=[(6, 8)],
-    division=64,
-    index=7,
-    seed=8
-)
+ottava = abjad.Ottava(n=2)
+abjad.attach(ottava, abjad.select(score["piano voice"]).leaf(168))
+ottava = abjad.Ottava(n=0, format_slot="after")
+abjad.attach(ottava, abjad.select(score["piano voice"]).leaf(191))
 
 # show file
 
