@@ -2,7 +2,8 @@ from .library import(
     end_row,
     rhythm_canon,
     score,
-    toccata
+    toccata,
+    harmonic_glissandi
 )
 
 __all__ = [
@@ -10,4 +11,5 @@ __all__ = [
     "rhythm_canon",
     "score",
     "toccata",
+    "harmonic_glissandi"
 ]

@@ -102,7 +102,7 @@
     evenHeaderMarkup = \markup ""
     oddFooterMarkup = \markup
         \fill-line {
-            "Piano Quartet - Trinton"
+            "Piano Trio - Trinton"
         \concat {
             \fontsize #3
                 \fromproperty #'page:page-number-string
@@ -115,6 +115,6 @@
                     \fontsize #3
                         \fromproperty #'page:page-number-string
                 }
-                "Piano Quartet - Trinton"
+                "Piano Trio - Trinton"
             }
 }
