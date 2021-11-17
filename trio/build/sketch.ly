@@ -332,23 +332,29 @@
                         \repeat tremolo 4 {
                             \staff-line-count 4
                             \clef "percussion"
+                            \tweak Accidental.transparent ##t
                             d'32
                             - \accent
                             \(
+                            \tweak Accidental.transparent ##t
                             f'32
                             \)
                         }
                         \repeat tremolo 4 {
+                            \tweak Accidental.transparent ##t
                             d'64
                             - \accent
                             \(
+                            \tweak Accidental.transparent ##t
                             f'64
                             \)
                         }
                         \repeat tremolo 4 {
+                            \tweak Accidental.transparent ##t
                             d'32.
                             - \accent
                             \(
+                            \tweak Accidental.transparent ##t
                             f'32.
                             \)
                         }

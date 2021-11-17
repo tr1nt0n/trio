@@ -469,11 +469,11 @@ def harmonic_glissandi(score, voices, durations, division, index, duration_brack
                     forget=False,
                 )
 
-                handler(container[:])
-
                 for tremolo in container[:]:
                     for leaf in tremolo:
                         abjad.tweak(leaf.note_head).Accidental.transparent=True
+
+                handler(container[:])
 
                 trinton.append_rhythm_selections(
                     score=score,

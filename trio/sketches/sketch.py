@@ -113,17 +113,16 @@ def harmonic_glissandi(score, voices, durations, division, index, duration_brack
 
                 handler(container[:])
 
+                for tremolo in container[:]:
+                    for leaf in tremolo:
+                        abjad.tweak(leaf.note_head).Accidental.transparent=True
+
                 trinton.append_rhythm_selections(
                     score=score,
                     voice=voice,
                     selections=container[:]
                 )
 
-                for tremolo in container[:]:
-                    for leaf in tremolo:
-                        abjad.tweak(leaf.note_head).Stem.transparent=True
-                        abjad.tweak(leaf.note_head).Beam.transparent=True
-                        abjad.tweak(leaf.note_head).Flag.transparent=True
     else:
         stack1 = rmakers.stack(
             rmakers.even_division([division], extra_counts=[0, 0, 1, 0, 1,]),
