@@ -1,6 +1,7 @@
 import abjad
 import evans
 import trinton
+import trio
 from abjadext import rmakers
 from abjadext import microtones
 
@@ -243,13 +244,15 @@ harmonic_glissandi(
 
 # trinton.annotate_leaves(score)
 
-trinton.beam_runs_by_selection(
-    score=score,
-    voice="contrabass 1 voice",
-    start_beam=[0],
-    stop_beam=[12],
-    beam_rests=True
-)
+# trinton.beam_runs_by_selection(
+#     score=score,
+#     voice="contrabass 1 voice",
+#     start_beam=[0],
+#     stop_beam=[12],
+#     beam_rests=True
+# )
+
+trio.rewrite_meter(score)
 
 for voice in ["cello 1 voice", "contrabass 1 voice"]:
 

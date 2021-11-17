@@ -480,3 +480,49 @@ def harmonic_glissandi(score, voices, durations, division, index, duration_brack
                     voice=voice,
                     selections=container[:]
                 )
+
+
+# special meter rewriting
+
+def rewrite_meter(target):
+    print("Rewriting meter ...")
+    global_skips = [_ for _ in abjad.select(target["Global Context"]).leaves()]
+    sigs = []
+    for skip in global_skips:
+        for indicator in abjad.get.indicators(skip):
+            if isinstance(indicator, abjad.TimeSignature):
+                sigs.append(indicator)
+    for voice in abjad.select(target["Staff Group"]).components(abjad.Voice):
+        if voice.name == "cello 2 voice":
+            pass
+        elif voice.name == "contrabass 2 voice":
+            pass
+        else:
+            voice_dur = abjad.get.duration(voice)
+            time_signatures = sigs#[:-1]
+            durations = [_.duration for _ in time_signatures]
+            sig_dur = sum(durations)
+            assert voice_dur == sig_dur, (voice_dur, sig_dur)
+            shards = abjad.mutate.split(voice[:], durations)
+            for i, shard in enumerate(shards):
+                time_signature = sigs[i]
+                inventories = [
+                    x
+                    for x in enumerate(
+                        abjad.Meter(time_signature.pair).depthwise_offset_inventory
+                    )
+                ]
+                if time_signature.denominator == 4:
+                    abjad.Meter.rewrite_meter(
+                        shard,
+                        time_signature,
+                        boundary_depth=inventories[-1][0],
+                        rewrite_tuplets=False,
+                    )
+                else:
+                    abjad.Meter.rewrite_meter(
+                        shard,
+                        time_signature,
+                        boundary_depth=inventories[-2][0],
+                        rewrite_tuplets=False,
+                    )

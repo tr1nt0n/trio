@@ -21,8 +21,8 @@ if __name__ == "__main__":
         author_email="trinton.k.prater@gmail.com",
         install_requires=install_requires,
         keywords=", ".join(keywords),
-        name="quartet",
-        packages=["quartet"],
+        name="trio",
+        packages=["trio"],
         platforms="Any",
-        url="https://github.com/trintonprater/quartet.git",
+        url="https://github.com/trintonprater/trio.git",
     )

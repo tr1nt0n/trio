@@ -3,7 +3,8 @@ from .library import(
     rhythm_canon,
     score,
     toccata,
-    harmonic_glissandi
+    harmonic_glissandi,
+    rewrite_meter,
 )
 
 __all__ = [
@@ -11,5 +12,6 @@ __all__ = [
     "rhythm_canon",
     "score",
     "toccata",
-    "harmonic_glissandi"
+    "harmonic_glissandi",
+    "rewrite_meter",
 ]
