@@ -52,6 +52,7 @@
                         \times 4/4
                         {
                             \clef "bass"
+                            \override Staff.Stem.stemlet-length = 0.75
                             <
                                 \tweak Beam.transparent ##t
                                 \tweak Flag.transparent ##t
@@ -65,6 +66,7 @@
                                 bf
                             >16
                             - \accent
+                            [
                             \glissando
                             \(
                             \clef "treble"
@@ -96,6 +98,7 @@
                             >16
                             \glissando
                             \clef "treble"
+                            \revert Staff.Stem.stemlet-length
                             <
                                 \tweak Beam.transparent ##t
                                 \tweak Flag.transparent ##t
@@ -109,6 +112,7 @@
                                 a'''
                             >16
                             \)
+                            ]
                             \glissando
                         }
                         \revert TupletNumber.text
@@ -151,6 +155,7 @@
                         \times 2/2
                         {
                             \clef "bass"
+                            \override Staff.Stem.stemlet-length = 0.75
                             <
                                 \tweak Beam.transparent ##t
                                 \tweak Flag.transparent ##t
@@ -164,9 +169,11 @@
                                 bf
                             >16
                             - \accent
+                            [
                             \glissando
                             \(
                             \clef "treble"
+                            \revert Staff.Stem.stemlet-length
                             <
                                 \tweak Beam.transparent ##t
                                 \tweak Flag.transparent ##t
@@ -180,6 +187,7 @@
                                 a'''
                             >16
                             \)
+                            ]
                             \glissando
                         }
                         \revert TupletNumber.text
@@ -222,6 +230,7 @@
                         \times 6/7
                         {
                             \clef "bass"
+                            \override Staff.Stem.stemlet-length = 0.75
                             <
                                 \tweak Beam.transparent ##t
                                 \tweak Flag.transparent ##t
@@ -235,6 +244,7 @@
                                 bf
                             >16
                             - \accent
+                            [
                             \glissando
                             \(
                             \clef "treble"
@@ -308,6 +318,7 @@
                             >16
                             \glissando
                             \clef "bass"
+                            \revert Staff.Stem.stemlet-length
                             <
                                 \tweak Beam.transparent ##t
                                 \tweak Flag.transparent ##t
@@ -321,6 +332,7 @@
                                 bf
                             >16
                             \)
+                            ]
                         }
                         \revert TupletNumber.text
                     }
@@ -332,22 +344,28 @@
                         \repeat tremolo 4 {
                             \staff-line-count 4
                             \clef "percussion"
+                            \override Staff.Stem.stemlet-length = 0.75
                             \tweak Accidental.transparent ##t
                             d'32
                             - \accent
                             \(
+                            \revert Staff.Stem.stemlet-length
                             \tweak Accidental.transparent ##t
                             f'32
                             \)
+                            ]
                         }
                         \repeat tremolo 4 {
+                            \override Staff.Stem.stemlet-length = 0.75
                             \tweak Accidental.transparent ##t
                             d'64
                             - \accent
                             \(
+                            \revert Staff.Stem.stemlet-length
                             \tweak Accidental.transparent ##t
                             f'64
                             \)
+                            ]
                         }
                         \repeat tremolo 4 {
                             \tweak Accidental.transparent ##t
@@ -368,6 +386,7 @@
                     \context Voice = "contrabass 1 voice"
                     {
                         \clef "bass"
+                        \override Staff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'harmonic-mixed
                             f,
@@ -398,20 +417,24 @@
                         \glissando
                         \(
                         \clef "treble"
+                        \revert Staff.Stem.stemlet-length
                         <
                             \tweak style #'harmonic-mixed
                             e''
                             \tweak style #'harmonic-mixed
                             a''
                         >16
+                        ]
                         \glissando
                         \clef "bass"
+                        \override Staff.Stem.stemlet-length = 0.75
                         <
                             \tweak style #'harmonic-mixed
                             f,
                             \tweak style #'harmonic-mixed
                             bf,
                         >16
+                        [
                         \glissando
                         \clef "treble"
                         <
@@ -430,6 +453,7 @@
                         >16
                         \glissando
                         \clef "treble"
+                        \revert Staff.Stem.stemlet-length
                         <
                             \tweak style #'harmonic-mixed
                             e''
@@ -437,10 +461,12 @@
                             a''
                         >16
                         \)
+                        ]
                         \glissando
                         \times 4/5
                         {
                             \clef "bass"
+                            \override Staff.Stem.stemlet-length = 0.75
                             <
                                 \tweak style #'harmonic-mixed
                                 f,
@@ -476,6 +502,7 @@
                             >16
                             \glissando
                             \clef "bass"
+                            \revert Staff.Stem.stemlet-length
                             <
                                 \tweak style #'harmonic-mixed
                                 f,
@@ -494,13 +521,16 @@
                         \repeat tremolo 4 {
                             \staff-line-count 4
                             \clef "percussion"
+                            \override Staff.Stem.stemlet-length = 0.75
                             \tweak Accidental.transparent ##t
                             g64
                             - \accent
                             \(
+                            \revert Staff.Stem.stemlet-length
                             \tweak Accidental.transparent ##t
                             b64
                             \)
+                            ]
                         }
                         \repeat tremolo 4 {
                             \tweak Accidental.transparent ##t
@@ -512,13 +542,16 @@
                             \)
                         }
                         \repeat tremolo 4 {
+                            \override Staff.Stem.stemlet-length = 0.75
                             \tweak Accidental.transparent ##t
                             g32
                             - \accent
                             \(
+                            \revert Staff.Stem.stemlet-length
                             \tweak Accidental.transparent ##t
                             b32
                             \)
+                            ]
                         }
                     }
                 }

@@ -388,7 +388,6 @@
                             bf,
                         >16
                         - \accent
-                        [
                         \glissando
                         \(
                         \clef "treble"

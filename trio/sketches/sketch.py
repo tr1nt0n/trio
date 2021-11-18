@@ -254,6 +254,8 @@ harmonic_glissandi(
 
 trio.rewrite_meter(score)
 
+trinton.beam_score(score)
+
 for voice in ["cello 1 voice", "contrabass 1 voice"]:
 
     trinton.attach(
