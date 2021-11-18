@@ -24,5 +24,5 @@ if __name__ == "__main__":
         name="trio",
         packages=["trio"],
         platforms="Any",
-        url="https://github.com/trintonprater/trio.git",
+        url="https://github.com/tr1nt0n/trio.git",
     )

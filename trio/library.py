@@ -1,7 +1,7 @@
 import abjad
 import trinton
 import evans
-import quartet
+import trio
 from abjadext import rmakers
 from abjadext import microtones
 
