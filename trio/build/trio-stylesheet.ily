@@ -52,8 +52,10 @@
         \override MetronomeMark.padding = 6
         \override MetronomeMark.font-size = 4
         \override MetronomeMark.extra-offset = #'(0.3 . 0)
-        tupletFullLength = ##t
+        \override Clef.whiteout-style = #'outline
+        \override Clef.whiteout = 1
         \override Beam.breakable = ##t
+        tupletFullLength = ##t
         \override TupletBracket.full-length-to-extent = ##f
         \override TupletBracket.padding = 2
         \override TupletNumber.font-size = 1
@@ -72,6 +74,7 @@
 }
 %
 \paper {
+    system-separator-markup = \markup { \slashSeparator }
     system-system-spacing = #'((basic-distance . 16) (minimum-distance . 16) (padding . 2))
     indent = 20\mm
     short-indent = 15\mm
