@@ -243,7 +243,6 @@ def toccata(score, voice, durations, division, index, seed, duration_bracket_not
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
-            rmakers.beam(abjad.select().tuplets()),
         )
 
         rhythms = trinton.make_rhythm_selections(
@@ -390,7 +389,6 @@ def harmonic_glissandi(score, voices, durations, division, index, duration_brack
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
             rmakers.rewrite_dots(),
-            rmakers.beam(abjad.select().tuplets()),
         )
 
         stack2 = rmakers.stack(
@@ -481,6 +479,83 @@ def harmonic_glissandi(score, voices, durations, division, index, duration_brack
                     selections=container[:]
                 )
 
+def cello_gliss(score, voice, durations, seed, index, duration_bracket_notation):
+    if duration_bracket_notation == True:
+        tuplets = trinton.random_walk(chord=[(1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1), (1, 1, 1, 1), (1, 1, 1), (1, 1)], seed=seed)
+
+        rhythms = trinton.rotated_sequence(
+            tuplets,
+            index,
+        )
+
+        stack = rmakers.stack(
+            rmakers.tuplet(rhythms),
+            rmakers.rewrite_dots(),
+            rmakers.duration_bracket(),
+        )
+
+        selections = trinton.make_rhythm_selections(
+            stack=stack,
+            durations=durations,
+        )
+
+        container = abjad.Container(selections)
+
+        handler = evans.PitchHandler(
+            pitch_list=[17, 19, 17.5, 21, 19.5, 21.5,],
+            forget=False,
+        )
+
+        handler(container[:])
+
+        for tuplet in container:
+            for leaf in tuplet:
+                abjad.tweak(leaf.note_head).Stem.transparent=True
+                abjad.tweak(leaf.note_head).Beam.transparent=True
+                abjad.tweak(leaf.note_head).Flag.transparent=True
+
+        trinton.append_rhythm_selections(
+            score=score,
+            voice=voice,
+            selections=container[:]
+        )
+
+    else:
+        tuplets = trinton.random_walk(chord=[(1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1), (1, 1, 1, 1), (1, 1, 1), (1, 1)], seed=seed)
+
+        rhythms = trinton.rotated_sequence(
+            tuplets,
+            index,
+        )
+
+        stack = rmakers.stack(
+            rmakers.tuplet(rhythms),
+            rmakers.trivialize(abjad.select().tuplets()),
+            rmakers.extract_trivial(abjad.select().tuplets()),
+            rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+            rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.rewrite_dots()
+        )
+
+        selections = trinton.make_rhythm_selections(
+            stack=stack,
+            durations=durations,
+        )
+
+        container = abjad.Container(selections)
+
+        handler = evans.PitchHandler(
+            pitch_list=[17, 19, 17.5, 21, 19.5, 21.5,],
+            forget=False,
+        )
+
+        handler(container[:])
+
+        trinton.append_rhythm_selections(
+            score=score,
+            voice=voice,
+            selections=container[:]
+        )
 
 # special meter rewriting
 

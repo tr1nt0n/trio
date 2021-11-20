@@ -5,6 +5,7 @@ from .library import(
     toccata,
     harmonic_glissandi,
     rewrite_meter,
+    cello_gliss,
 )
 
 __all__ = [
@@ -14,4 +15,5 @@ __all__ = [
     "toccata",
     "harmonic_glissandi",
     "rewrite_meter",
+    "cello_gliss",
 ]

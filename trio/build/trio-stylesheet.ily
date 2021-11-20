@@ -61,6 +61,7 @@
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
         \override Stem.stemlet-length = 0.75
+        \override Glissando.thickness = #3
     }
     \context {
         \name DynamicContext
