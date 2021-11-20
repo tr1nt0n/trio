@@ -2,8 +2,14 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
-            \time 9/4
-            s1 * 9/4
+            \time 9/8
+            s1 * 9/8
+            \break
+            \time 9/8
+            s1 * 9/8
+            \once \override TimeSignature.transparent = ##t
+            \time 1/16
+            s1 * 1/16
         }
         \context ChoirStaff = "Staff Group"
         <<
@@ -268,9 +274,7 @@
                         \tweak Flag.transparent ##t
                         \tweak Stem.transparent ##t
                         fqs''16
-                        - \accent
                         \)
-                        \(
                         \glissando
                     }
                     \revert TupletNumber.text
@@ -317,6 +321,8 @@
                         \tweak Flag.transparent ##t
                         \tweak Stem.transparent ##t
                         a''64
+                        - \accent
+                        \(
                         \glissando
                         \tweak Beam.transparent ##t
                         \tweak Flag.transparent ##t
@@ -351,6 +357,10 @@
                         \set suggestAccidentals = ##f
                     }
                     \revert TupletNumber.text
+                    \staff-line-count 0
+                    \once \override Rest.transparent = ##t
+                    r16
+                    - \fermata
                 }
             }
         >>

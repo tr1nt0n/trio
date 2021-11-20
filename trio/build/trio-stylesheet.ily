@@ -52,40 +52,21 @@
         \override MetronomeMark.padding = 6
         \override MetronomeMark.font-size = 4
         \override MetronomeMark.extra-offset = #'(0.3 . 0)
-%         \override TupletBracket.breakable = ##t
-        % \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
         tupletFullLength = ##t
+        \override Beam.breakable = ##t
         \override TupletBracket.full-length-to-extent = ##f
         \override TupletBracket.padding = 2
         \override TupletNumber.font-size = 1
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
         \override Stem.stemlet-length = 0.75
-        \override Glissando.thickness = #3
-    }
-    \context {
-        \name DynamicContext
-        \type Engraver_group
-        \consists Axis_group_engraver
-        \consists Dynamic_engraver
-        \consists Dynamic_align_engraver
-        \override Rest.transparent = ##t
-        \override NoteHead.transparent = ##t
-        \override Stem.transparent = ##t
-        \override Flag.transparent = ##t
-        \override Beam.transparent = ##t
-        \override Dots.transparent = ##t
-        \override TupletBracket.transparent = ##t
-        \override TupletNumber.transparent = ##t
-        \override Accidental.transparent = ##t
-        \override DynamicText.font-size = #-2
-        \override DynamicLineSpanner.staff-padding = 6
+        \override Glissando.thickness = #2
+        \override Glissando.breakable = ##t
     }
     \context {
         \Staff
         fontSize = #-1
         \remove Time_signature_engraver
-        \accepts DynamicContext
         \RemoveAllEmptyStaves
     }
 }

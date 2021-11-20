@@ -16,7 +16,9 @@ score = trinton.make_score_template(
 
 trinton.write_time_signatures(
     [
-    (9, 4),
+    (9, 8),
+    (9, 8),
+    (1, 16),
     ],
     score["Global Context"],
 )
@@ -119,6 +121,12 @@ cello_gliss(
     duration_bracket_notation=True,
 )
 
+trinton.append_rests(
+    score=score,
+    voice="cello voice",
+    rests=[abjad.Rest("r16")]
+)
+
 # trinton.annotate_leaves(score)
 
 trinton.beam_runs_by_selection(
@@ -131,16 +139,16 @@ trinton.beam_runs_by_selection(
 
 trinton.write_slur(
     voice=score["cello voice"],
-    start_slur=[0, 7, 13, 17, 25, 31, 35, 41, 48,],
+    start_slur=[0, 7, 13, 17, 25, 31, 35, 41, 49,],
     stop_slur=[6, 12, 16, 24, 30, 34, 40, 48, 55,],
 )
 
 trinton.attach(
     voice=score["cello voice"],
-    leaves=[0, 7, 13, 17, 25, 31, 35, 41, 48,],
+    leaves=[0, 7, 13, 17, 25, 31, 35, 41, 49,],
     attachment=abjad.Articulation(">")
 )
-
+#
 trinton.attach(
     voice=score["cello voice"],
     leaves=list(range(0, 55)),
@@ -161,6 +169,28 @@ trinton.ficta(
     start_ficta=[0, 13, 49,],
     stop_ficta=[5, 40, 55]
 )
+
+trinton.attach(
+    voice=score["Global Context"],
+    leaves=[1],
+    attachment=abjad.LilyPondLiteral(r"\break", format_slot="before"),
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="cello voice",
+    leaves=[56],
+    attachments=[
+        abjad.LilyPondLiteral(
+            r"\staff-line-count 0", format_slot="absolute_before",
+        ),
+        abjad.Articulation("fermata"),
+    ]
+)
+
+abjad.override(abjad.select(score["cello voice"]).leaf(56)).Rest.transparent=True
+
+abjad.override(abjad.select(score["Global Context"]).leaf(2)).TimeSignature.transparent=True
 
 #\set glissandoMap = #'((2 . 0) (1 . 0) (0 . 1))
 
