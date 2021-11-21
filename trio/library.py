@@ -9,9 +9,11 @@ score = trinton.make_score_template(
     [abjad.Piano(),
     abjad.Piano(),
     abjad.Cello(),
+    abjad.Cello(),
+    abjad.Contrabass(),
     abjad.Contrabass(),
     ],
-    [2, 1, 1,]
+    [2, 2, 2,]
 )
 
 # pitch
@@ -190,7 +192,7 @@ def rhythm_canon(score, voice, durations, talea, index,):
             selections=container[:]
         )
 
-def toccata(score, voice, durations, division, index, seed, duration_bracket_notation):
+def toccata(score, voice, durations, division, octave, index, seed, duration_bracket_notation):
     if duration_bracket_notation == True:
         stack = rmakers.stack(
             rmakers.even_division([division]),
@@ -217,7 +219,10 @@ def toccata(score, voice, durations, division, index, seed, duration_bracket_not
 
         new_seq = evans.Sequence(new_groups).grouper([24, 22, 24, 20, 24, 18, 24, 4,])
 
-        pitches = trinton.random_walk(chord=new_seq[index], seed=seed)
+        pitches = trinton.rotated_sequence(
+            trinton.random_walk(chord=new_seq[octave], seed=seed),
+            index,
+        )
 
         handler = evans.PitchHandler(
             pitch_list=pitches,
@@ -265,7 +270,10 @@ def toccata(score, voice, durations, division, index, seed, duration_bracket_not
 
         new_seq = evans.Sequence(new_groups).grouper([24, 22, 24, 20, 24, 18, 24, 4,])
 
-        pitches = trinton.random_walk(chord=new_seq[index], seed=seed)
+        pitches = trinton.rotated_sequence(
+            trinton.random_walk(chord=new_seq[octave], seed=seed),
+            index,
+        )
 
         handler = evans.PitchHandler(
             pitch_list=pitches,
