@@ -9,6 +9,7 @@ from .library import(
     change_staff,
     small_knee,
     toccata_finger_pressure,
+    piano_climax_chords,
 )
 
 __all__ = [
@@ -22,4 +23,5 @@ __all__ = [
     "change_staff",
     "small_knee",
     "toccata_finger_pressure",
+    "piano_climax_chords",
 ]

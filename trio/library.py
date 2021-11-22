@@ -565,6 +565,37 @@ def cello_gliss(score, voice, durations, seed, index, duration_bracket_notation)
             selections=container[:]
         )
 
+def piano_climax_chords(score, voice, leaves, octave, index):
+    seq = list(range(-39, 49))
+
+    groups = evans.Sequence(seq).grouper([13, 12, 13, 11, 13, 10, 13, 3,])
+
+    new_groups = []
+    for group in groups:
+        sequence = trinton.primes_odds_evens(group)
+        for l in sequence:
+            new_groups.append(l)
+
+    new_new_groups = evans.Sequence(new_groups).grouper([13, 12, 13, 11, 13, 10, 13, 3,])
+
+    chords = []
+    for group in new_new_groups:
+        chord = evans.Sequence(group).grouper([5, 3, 5])
+        chords.append(chord)
+
+    handler = evans.PitchHandler(
+        pitch_list=trinton.rotated_sequence(chords[octave], index),
+        forget=False
+    )
+
+    handler(
+        trinton.make_leaf_selection(
+            score=score,
+            voice=voice,
+            leaves=leaves
+        )
+    )
+
 # special meter rewriting
 
 def rewrite_meter(target):
