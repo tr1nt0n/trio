@@ -6,6 +6,9 @@ from .library import(
     harmonic_glissandi,
     rewrite_meter,
     cello_gliss,
+    change_staff,
+    small_knee,
+    toccata_finger_pressure,
 )
 
 __all__ = [
@@ -16,4 +19,7 @@ __all__ = [
     "harmonic_glissandi",
     "rewrite_meter",
     "cello_gliss",
+    "change_staff",
+    "small_knee",
+    "toccata_finger_pressure",
 ]

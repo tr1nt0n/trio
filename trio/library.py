@@ -609,3 +609,49 @@ def rewrite_meter(target):
                         boundary_depth=inventories[-2][0],
                         rewrite_tuplets=False,
                     )
+
+# piano tools
+
+def change_staff(lh, rh):
+    for a, b in zip(lh, rh):
+        trinton.attach(
+            voice=score["piano 1 voice"],
+            leaves=[a],
+            attachment=abjad.LilyPondLiteral(r'\change Staff = "piano 2 staff"', format_slot="absolute_before")
+        )
+
+        trinton.attach(
+            voice=score["piano 1 voice"],
+            leaves=[b],
+            attachment=abjad.LilyPondLiteral(r'\change Staff = "piano 1 staff"', format_slot="absolute_before")
+        )
+
+def small_knee(start, stop):
+    trinton.attach(
+        voice=score["piano 1 voice"],
+        leaves=[start],
+        attachment=abjad.LilyPondLiteral(r'\override Beam.auto-knee-gap = #0', format_slot="before")
+    )
+
+    trinton.attach(
+        voice=score["piano 1 voice"],
+        leaves=[stop],
+        attachment=abjad.LilyPondLiteral(r'\override Beam.auto-knee-gap = #15', format_slot="before")
+    )
+
+# strings tools
+
+def toccata_finger_pressure(score, voice, half, harm):
+    for leaf in half:
+        trinton.change_notehead(
+            voice=score[voice],
+            leaves=[leaf],
+            notehead=r"#'triangle"
+        )
+
+    for leaf in harm:
+        trinton.change_notehead(
+            voice=score[voice],
+            leaves=[leaf],
+            notehead=r"#'harmonic-mixed"
+        )

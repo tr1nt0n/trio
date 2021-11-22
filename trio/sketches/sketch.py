@@ -176,8 +176,6 @@ trinton.ottava(
     octave=2
 )
 
-# put this in the library later
-
 trinton.attach(
     voice=score["piano 1 voice"],
     leaves=[6, 14, 16, 18, 25, 33, 35, 37, 72, 78, 80, 82, 83, 85, 87, 90, 92, 94,],
@@ -189,8 +187,6 @@ trinton.attach(
     leaves=[13, 15, 17, 19, 32, 34, 36, 48, 77, 79, 81, 84, 86, 88, 91, 93, 95,],
     attachment=abjad.LilyPondLiteral(r'\change Staff = "piano 1 staff"', format_slot="absolute_before")
 )
-
-# put this in the library later ^^^
 
 trinton.attach(
     voice=score["piano 1 voice"],
