@@ -27,14 +27,9 @@
 		\consists Text_spanner_engraver
         \override BarNumber.font-size = 3
         \override MetronomeMark.stencil = ##f
-		% \override BarNumber.padding = 1
 		\override BarNumber.font-name = "Bodoni72"
-		% \override TextScript.font-size = 6
-        % \override TextSpanner.font-size = 6
-        %
 		\override TimeSignature.X-extent = #'(0 . 0)
         \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 6) (minimum-distance . 6) (padding . 6) (stretchability . 0))
-        % \override TimeSignature.break-align-symbol = #'left-edge
         \override TimeSignature.break-visibility = #end-of-line-invisible
         \override TimeSignature.font-size = 5
 		\override TimeSignature.font-name = "Bodoni72"
@@ -42,11 +37,12 @@
     \context {
         \Score
         \numericTimeSignature
-        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 11) (minimum distance . 11) (padding . 2))
-        autoBeaming = ##f
-        proportionalNotationDuration = #(ly:make-moment 1 30)
         \remove Bar_number_engraver
         \accepts TimeSignatureContext
+        proportionalNotationDuration = #(ly:make-moment 1 30)
+        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 15) (minimum distance . 15) (padding . 7))
+        autoBeaming = ##f
+        \override Beam.breakable = ##t
         \override DynamicText.font-size = #-2
         \override DynamicLineSpanner.staff-padding = 4
         \override MetronomeMark.padding = 6
@@ -54,7 +50,6 @@
         \override MetronomeMark.extra-offset = #'(0.3 . 0)
         \override Clef.whiteout-style = #'outline
         \override Clef.whiteout = 1
-        \override Beam.breakable = ##t
         tupletFullLength = ##t
         \override TupletBracket.full-length-to-extent = ##f
         \override TupletBracket.padding = 2

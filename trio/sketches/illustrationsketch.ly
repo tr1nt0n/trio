@@ -15,365 +15,573 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
-            \time 9/8
-            s1 * 9/8
-            \break
-            \time 9/8
-            s1 * 9/8
-            \once \override TimeSignature.transparent = ##t
-            \time 1/16
-            s1 * 1/16
+            \time 3/8
+            s1 * 3/8
+            \time 3/8
+            s1 * 3/8
+            \time 3/8
+            s1 * 3/8
+            \time 3/8
+            s1 * 3/8
+            \time 3/8
+            s1 * 3/8
         }
         \context ChoirStaff = "Staff Group"
         <<
+            \context PianoStaff = "sub group 1"
+            <<
+                \context Staff = "piano 1 staff"
+                {
+                    \context Voice = "piano 1 voice"
+                    {
+                        \override Beam.auto-knee-gap = #0
+                        ef''64
+                        ^ \ff
+                        [
+                        \(
+                        f''64
+                        ef''64
+                        f''64
+                        g''64
+                        a''64
+                        \)
+                        \change Staff = "piano 2 staff"
+                        bf'64
+                        \(
+                        c''64
+                        bf'64
+                        c''64
+                        d''64
+                        c''64
+                        bf'64
+                        \)
+                        \change Staff = "piano 1 staff"
+                        a''64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        bf'64
+                        \change Staff = "piano 1 staff"
+                        a''64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        bf'64
+                        \change Staff = "piano 1 staff"
+                        a''64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        bf'64
+                        \change Staff = "piano 1 staff"
+                        c''64
+                        d''64
+                        e''64
+                        d''64
+                        e''64
+                        a'64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        c'64
+                        \(
+                        d'64
+                        c'64
+                        d'64
+                        e'64
+                        d'64
+                        c'64
+                        \)
+                        \change Staff = "piano 1 staff"
+                        a'64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        c'64
+                        \change Staff = "piano 1 staff"
+                        a'64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        c'64
+                        \change Staff = "piano 1 staff"
+                        a'64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        c'64
+                        \(
+                        d'64
+                        e'64
+                        fs'64
+                        e'64
+                        fs'64
+                        e'64
+                        d'64
+                        e'64
+                        d'64
+                        e'64
+                        \)
+                        \change Staff = "piano 1 staff"
+                        \ottava 2
+                        fs'''64
+                        \(
+                        e'''64
+                        d'''64
+                        c'''64
+                        d'''64
+                        c'''64
+                        d'''64
+                        c'''64
+                        d'''64
+                        e'''64
+                        fs'''64
+                        af'''64
+                        fs'''64
+                        af'''64
+                        fs'''64
+                        e'''64
+                        fs'''64
+                        e'''64
+                        fs'''64
+                        af'''64
+                        fs'''64
+                        af'''64
+                        fs'''64
+                        e'''64
+                        \)
+                        \change Staff = "piano 2 staff"
+                        bf''''64
+                        \(
+                        c'''''64
+                        bf''''64
+                        c'''''64
+                        bf''''64
+                        \)
+                        \change Staff = "piano 1 staff"
+                        b''''64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        bf''''64
+                        \change Staff = "piano 1 staff"
+                        b''''64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        bf''''64
+                        \change Staff = "piano 1 staff"
+                        b''''64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        bf''''64
+                        \change Staff = "piano 2 staff"
+                        b''''64
+                        \change Staff = "piano 1 staff"
+                        bf''''64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        b''''64
+                        \change Staff = "piano 1 staff"
+                        bf''''64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        c'''''64
+                        \change Staff = "piano 1 staff"
+                        bf''''64
+                        - \marcato
+                        c'''''64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        bf''''64
+                        \change Staff = "piano 1 staff"
+                        c'''''64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        bf''''64
+                        \change Staff = "piano 1 staff"
+                        b''''64
+                        - \marcato
+                        \change Staff = "piano 2 staff"
+                        bf''''64
+                        \change Staff = "piano 1 staff"
+                        c'''''64
+                        - \marcato
+                        c''''64
+                        \(
+                        d''''64
+                        c''''64
+                        d''''64
+                        c''''64
+                        bf'''64
+                        c''''64
+                        bf'''64
+                        c''''64
+                        d''''64
+                        e''''64
+                        d''''64
+                        e''''64
+                        fs''''64
+                        e''''64
+                        fs''''64
+                        af''''64
+                        fs''''64
+                        e''''64
+                        fs''''64
+                        e''''64
+                        d''''64
+                        c''''64
+                        bf'''64
+                        \)
+                        ]
+                        \ottava 0
+                    }
+                }
+                \context Staff = "piano 2 staff"
+                {
+                    \context Voice = "piano 2 voice"
+                    {
+                        s4.
+                        s4.
+                        r4.
+                        \ottava 2
+                        s4.
+                        \ottava 0
+                        r4.
+                    }
+                }
+            >>
             \context Staff = "cello staff"
             {
                 \context Voice = "cello voice"
                 {
-                    \times 2/3
+                    \tweak text #tuplet-number::calc-fraction-text
+                    \times 11/10
                     {
-                        \set suggestAccidentals = ##t
-                        f''16
+                        \clef "tenor"
+                        \tweak style #'harmonic-mixed
+                        cs'32
+                        \pp
                         - \accent
+                        \<
                         [
                         \(
-                        \glissando
-                        \boxed-markup "Sempre sul C, Portamento" 3
-                        g''16
-                        \glissando
-                        fqs''16
-                        \glissando
-                        a''16
-                        \glissando
-                        gqs''16
-                        \glissando
-                        aqs''16
-                        ]
-                        \glissando
-                        \set suggestAccidentals = ##f
-                    }
-                    \times 4/7
-                    {
-                        f''8
-                        \)
-                        [
-                        \glissando
-                        g''8
-                        - \accent
-                        \(
-                        \glissando
-                        fqs''8
-                        \glissando
-                        a''8
-                        \glissando
-                        gqs''8
-                        \glissando
-                        aqs''8
-                        \glissando
-                        f''8
-                        \)
-                        ]
-                        \glissando
-                    }
-                    \times 2/3
-                    {
-                        \set suggestAccidentals = ##t
-                        g''64
-                        - \accent
-                        [
-                        \(
-                        \glissando
-                        fqs''64
-                        \glissando
-                        a''64
-                        \glissando
-                        gqs''64
-                        \)
-                        \glissando
-                        aqs''64
-                        - \accent
-                        \(
-                        \glissando
-                        f''64
-                        \glissando
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { XFB \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { XSB }
+                        - \tweak padding 7.5
+                        \startTextSpan
+                        \tweak style #'harmonic-mixed
+                        ef'32
+                        \tweak style #'harmonic-mixed
+                        cs'32
+                        \tweak style #'harmonic-mixed
+                        b32
+                        \tweak style #'harmonic-mixed
+                        cs'32
                     }
                     \tweak text #tuplet-number::calc-fraction-text
-                    \times 6/5
+                    \times 13/12
                     {
-                        g''32
-                        \glissando
-                        fqs''32
-                        \glissando
-                        a''32
-                        \glissando
-                        gqs''32
-                        \glissando
-                        aqs''32
-                        ]
-                        \glissando
+                        \tweak style #'harmonic-mixed
+                        ef'32
+                        \tweak style #'harmonic-mixed
+                        f'32
+                        \)
+                        \tweak style #'harmonic-mixed
+                        ef'32
+                        - \accent
+                        \(
+                        \tweak style #'harmonic-mixed
+                        f'32
+                        \tweak style #'harmonic-mixed
+                        g'32
+                        \tweak style #'harmonic-mixed
+                        f'32
                     }
-                    f''64
+                    \tweak style #'harmonic-mixed
+                    ef'32
+                    \tweak style #'harmonic-mixed
+                    f'32
+                    \tweak style #'harmonic-mixed
+                    ef'32
+                    \tweak style #'harmonic-mixed
+                    f'32
                     \)
+                    \tweak style #'harmonic-mixed
+                    g'32
+                    - \accent
+                    \(
+                    \tweak style #'harmonic-mixed
+                    a'32
+                    \tweak style #'triangle
+                    c'32
+                    \tweak style #'triangle
+                    a'32
+                    \tweak style #'triangle
+                    c'32
+                    \tweak style #'triangle
+                    a'32
+                    \tweak style #'triangle
+                    c'32
+                    \tweak style #'triangle
+                    d'32
+                    \)
+                    \tweak style #'triangle
+                    c'64
+                    \fff
+                    - \accent
+                    \stopTextSpan
+                    \(
+                    \tweak text #tuplet-number::calc-fraction-text
+                    \times 23/22
+                    {
+                        \tweak style #'triangle
+                        a'32
+                        \tweak style #'triangle
+                        g'32
+                        \tweak style #'triangle
+                        a'32
+                        \tweak style #'triangle
+                        g'32
+                        \tweak style #'triangle
+                        a'32
+                        \tweak style #'triangle
+                        g'32
+                        \tweak style #'triangle
+                        a'32
+                        \)
+                        \tweak style #'triangle
+                        g'32
+                        - \accent
+                        \(
+                        \tweak style #'triangle
+                        f'32
+                        \tweak style #'triangle
+                        g'32
+                        \tweak style #'triangle
+                        a'32
+                    }
+                    \tweak style #'triangle
+                    c'32
+                    \tweak style #'triangle
+                    d'32
+                    e'32
+                    fs'32
+                    \)
+                    af'32
+                    - \accent
+                    \>
+                    \(
+                    - \abjad-dashed-line-with-arrow
+                    - \tweak bound-details.left.text \markup \concat { XSB \hspace #0.5 }
+                    - \tweak bound-details.right.text \markup { XFB }
+                    - \tweak padding 7.5
+                    \startTextSpan
+                    fs'32
+                    af'32
+                    fs'32
+                    e'32
+                    d'32
+                    c'32
+                    cs'32
+                    \)
+                    \tweak text #tuplet-number::calc-fraction-text
+                    \times 19/18
+                    {
+                        b32
+                        - \accent
+                        \(
+                        cs'32
+                        \tweak style #'harmonic-mixed
+                        b32
+                        \pp
+                        \tweak style #'harmonic-mixed
+                        cs'32
+                        \tweak style #'harmonic-mixed
+                        b32
+                        \tweak style #'harmonic-mixed
+                        cs'32
+                        \tweak style #'harmonic-mixed
+                        b32
+                        \tweak style #'harmonic-mixed
+                        cs'32
+                        \tweak style #'harmonic-mixed
+                        ef'32
+                    }
+                    \tweak text #tuplet-number::calc-fraction-text
+                    \times 5/4
+                    {
+                        \tweak style #'harmonic-mixed
+                        cs'32
+                        \tweak style #'harmonic-mixed
+                        ef'32
+                        \)
+                        \stopTextSpan
+                        ]
+                    }
+                }
+            }
+            \context Staff = "contrabass staff"
+            {
+                \context Voice = "contrabass voice"
+                {
+                    \clef "bass"
+                    \tweak style #'harmonic-mixed
+                    cs32
+                    \pp
+                    - \accent
+                    \<
                     [
-                    \glissando
-                    g''64
-                    - \accent
                     \(
-                    \glissando
-                    fqs''64
-                    \glissando
-                    a''64
-                    \glissando
-                    \times 4/5
-                    {
-                        gqs''64
-                        \glissando
-                        aqs''64
-                        \glissando
-                        f''64
-                        \)
-                        \glissando
-                        g''64
-                        - \accent
-                        \(
-                        \glissando
-                        fqs''64
-                        \glissando
-                    }
-                    a''64
-                    \glissando
-                    gqs''64
+                    - \abjad-dashed-line-with-arrow
+                    - \tweak bound-details.left.text \markup \concat { XFB \hspace #0.5 }
+                    - \tweak bound-details.right.text \markup { XSB }
+                    - \tweak padding 7.5
+                    \startTextSpan
+                    \tweak style #'harmonic-mixed
+                    ef32
+                    \tweak style #'harmonic-mixed
+                    cs32
+                    \tweak style #'harmonic-mixed
+                    b,32
+                    \tweak style #'harmonic-mixed
+                    cs32
+                    \tweak style #'harmonic-mixed
+                    ef32
+                    \tweak style #'harmonic-mixed
+                    f32
                     \)
-                    \glissando
-                    aqs''64
+                    \tweak style #'harmonic-mixed
+                    ef32
                     - \accent
                     \(
-                    \glissando
-                    f''64
-                    \glissando
-                    \times 2/3
+                    \tweak style #'harmonic-mixed
+                    f32
+                    \tweak style #'harmonic-mixed
+                    g32
+                    \tweak style #'harmonic-mixed
+                    f32
+                    \tweak style #'harmonic-mixed
+                    ef32
+                    \tweak text #tuplet-number::calc-fraction-text
+                    \times 13/12
                     {
-                        g''32
-                        \glissando
-                        fqs''32
-                        \glissando
-                        a''32
-                        ]
-                        \glissando
-                    }
-                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                        {
-                            \new Score
-                            \with
-                            {
-                                \override SpacingSpanner.spacing-increment = 0.5
-                                proportionalNotationDuration = ##f
-                            }
-                            <<
-                                \new RhythmicStaff
-                                \with
-                                {
-                                    \remove Time_signature_engraver
-                                    \remove Staff_symbol_engraver
-                                    \override Stem.direction = #up
-                                    \override Stem.length = 5
-                                    \override TupletBracket.bracket-visibility = ##t
-                                    \override TupletBracket.direction = #up
-                                    \override TupletBracket.minimum-length = 4
-                                    \override TupletBracket.padding = 1.25
-                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                    \override TupletNumber.font-size = 0
-                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                    tupletFullLength = ##t
-                                }
-                                {
-                                    c'2.
-                                }
-                            >>
-                            \layout
-                            {
-                                indent = 0
-                                ragged-right = ##t
-                            }
-                        }
-                    \times 6/7
-                    {
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        f''8
+                        \tweak style #'harmonic-mixed
+                        f32
+                        \tweak style #'harmonic-mixed
+                        ef32
+                        \tweak style #'harmonic-mixed
+                        f32
                         \)
-                        \glissando
-                        \set suggestAccidentals = ##f
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        g''8
+                        \tweak style #'harmonic-mixed
+                        g32
                         - \accent
                         \(
-                        \glissando
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        fqs''8
-                        \glissando
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        a''8
-                        \glissando
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        gqs''8
-                        \glissando
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        aqs''8
-                        \glissando
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        f''8
-                        \glissando
+                        \tweak style #'harmonic-mixed
+                        a32
+                        \tweak style #'triangle
+                        bf,32
                     }
-                    \revert TupletNumber.text
-                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                        {
-                            \new Score
-                            \with
-                            {
-                                \override SpacingSpanner.spacing-increment = 0.5
-                                proportionalNotationDuration = ##f
-                            }
-                            <<
-                                \new RhythmicStaff
-                                \with
-                                {
-                                    \remove Time_signature_engraver
-                                    \remove Staff_symbol_engraver
-                                    \override Stem.direction = #up
-                                    \override Stem.length = 5
-                                    \override TupletBracket.bracket-visibility = ##t
-                                    \override TupletBracket.direction = #up
-                                    \override TupletBracket.minimum-length = 4
-                                    \override TupletBracket.padding = 1.25
-                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                    \override TupletNumber.font-size = 0
-                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                    tupletFullLength = ##t
-                                }
-                                {
-                                    c'8.
-                                }
-                            >>
-                            \layout
-                            {
-                                indent = 0
-                                ragged-right = ##t
-                            }
-                        }
-                    \times 3/2
+                    \tweak text #tuplet-number::calc-fraction-text
+                    \times 11/10
                     {
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        g''16
-                        \glissando
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        fqs''16
+                        \tweak style #'triangle
+                        a32
+                        \tweak style #'triangle
+                        bf,32
+                        \tweak style #'triangle
+                        a32
+                        \tweak style #'triangle
+                        bf,32
+                        \tweak style #'triangle
+                        c32
                         \)
-                        \glissando
                     }
-                    \revert TupletNumber.text
-                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                        {
-                            \new Score
-                            \with
-                            {
-                                \override SpacingSpanner.spacing-increment = 0.5
-                                proportionalNotationDuration = ##f
-                            }
-                            <<
-                                \new RhythmicStaff
-                                \with
-                                {
-                                    \remove Time_signature_engraver
-                                    \remove Staff_symbol_engraver
-                                    \override Stem.direction = #up
-                                    \override Stem.length = 5
-                                    \override TupletBracket.bracket-visibility = ##t
-                                    \override TupletBracket.direction = #up
-                                    \override TupletBracket.minimum-length = 4
-                                    \override TupletBracket.padding = 1.25
-                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                    \override TupletNumber.font-size = 0
-                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                    tupletFullLength = ##t
-                                }
-                                {
-                                    c'16
-                                }
-                            >>
-                            \layout
-                            {
-                                indent = 0
-                                ragged-right = ##t
-                            }
-                        }
-                    \times 4/7
+                    \tweak text #tuplet-number::calc-fraction-text
+                    \times 5/4
                     {
-                        \set suggestAccidentals = ##t
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        a''64
+                        \tweak style #'triangle
+                        bf,32
+                        \fff
+                        - \accent
+                        \stopTextSpan
+                        \(
+                        \tweak style #'triangle
+                        a32
+                    }
+                    \tweak text #tuplet-number::calc-fraction-text
+                    \times 19/18
+                    {
+                        \tweak style #'triangle
+                        g32
+                        \tweak style #'triangle
+                        a32
+                        \tweak style #'triangle
+                        g32
+                        \tweak style #'triangle
+                        a32
+                        \tweak style #'triangle
+                        g32
+                        \tweak style #'triangle
+                        a32
+                        \)
+                        \tweak style #'triangle
+                        g32
                         - \accent
                         \(
-                        \glissando
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        gqs''64
-                        \glissando
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        aqs''64
-                        \glissando
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        f''64
-                        \glissando
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        g''64
-                        \glissando
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        fqs''64
-                        \glissando
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        a''64
-                        \)
-                        \set suggestAccidentals = ##f
+                        \tweak style #'triangle
+                        f32
+                        \tweak style #'triangle
+                        g32
                     }
-                    \revert TupletNumber.text
-                    \staff-line-count 0
-                    \once \override Rest.transparent = ##t
-                    r16
-                    - \fermata
+                    \tweak text #tuplet-number::calc-fraction-text
+                    \times 23/22
+                    {
+                        \tweak style #'triangle
+                        a32
+                        \tweak style #'triangle
+                        bf,32
+                        \tweak style #'triangle
+                        c32
+                        d32
+                        e32
+                        \)
+                        fs32
+                        - \accent
+                        \>
+                        \(
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { XSB \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { XFB }
+                        - \tweak padding 7.5
+                        \startTextSpan
+                        af32
+                        fs32
+                        af32
+                        bf32
+                        af32
+                    }
+                    fs64
+                    cs32
+                    \)
+                    b,32
+                    - \accent
+                    \(
+                    cs32
+                    \tweak style #'harmonic-mixed
+                    b,32
+                    \pp
+                    \tweak style #'harmonic-mixed
+                    cs32
+                    \tweak style #'harmonic-mixed
+                    b,32
+                    \tweak style #'harmonic-mixed
+                    cs32
+                    \tweak style #'harmonic-mixed
+                    b,32
+                    \tweak style #'harmonic-mixed
+                    cs32
+                    \tweak style #'harmonic-mixed
+                    ef32
+                    \tweak style #'harmonic-mixed
+                    cs32
+                    \tweak style #'harmonic-mixed
+                    ef32
+                    \)
+                    \stopTextSpan
+                    ]
                 }
             }
         >>
