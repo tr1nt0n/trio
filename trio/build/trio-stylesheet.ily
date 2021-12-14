@@ -66,6 +66,11 @@
         \remove Time_signature_engraver
         \RemoveAllEmptyStaves
     }
+    \context {
+        \Voice
+        \remove Forbid_line_break_engraver
+        \override Accidental.font-size = 1
+    }
 }
 %
 \paper {

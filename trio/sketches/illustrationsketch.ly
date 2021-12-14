@@ -26,6 +26,7 @@
             {
                 \context Voice = "cello voice"
                 {
+                    \set suggestAccidentals = ##t
                     c''16
                     e''16
                     cqs''16
@@ -47,6 +48,7 @@
                     cqs''16
                     d''16
                     bqs'16
+                    \set suggestAccidentals = ##f
                     \tweak text #tuplet-number::calc-fraction-text
                     \times 6/7
                     {

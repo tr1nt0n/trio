@@ -46,6 +46,13 @@ trio.cello_gliss(
     duration_bracket_notation=True
 )
 
+trinton.ficta(
+    score=score,
+    voice="cello voice",
+    start_ficta=[0],
+    stop_ficta=[16]
+)
+
 #\set glissandoMap = #'((2 . 0) (1 . 0) (0 . 1))
 
 # show file
