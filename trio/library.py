@@ -287,11 +287,11 @@ def toccata(score, voice, durations, division, octave, index, seed, duration_bra
             selections=container[:],
         )
 
-def harmonic_glissandi(score, voices, durations, division, index, duration_bracket_notation):
+def harmonic_glissandi_rhythms(score, voices, durations, tuplets, duration_bracket_notation):
     if duration_bracket_notation == True:
         stack1 = rmakers.stack(
-            rmakers.even_division([division], extra_counts=[0, 0, 1, 0, 1,]),
-            rmakers.duration_bracket()
+            rmakers.tuplet(tuplets),
+            rmakers.duration_bracket(),
         )
 
         stack2 = rmakers.stack(
@@ -300,30 +300,13 @@ def harmonic_glissandi(score, voices, durations, division, index, duration_brack
         )
 
         for voice in voices:
-            if voice == "cello 1 voice":
+            if voice == "cello 2 voice":
                 rhythms = trinton.make_rhythm_selections(
-                    stack=stack1,
+                    stack=stack2,
                     durations=durations
                 )
 
                 container = abjad.Container(rhythms)
-
-                pitches = [[[-23, -16,], [12, 19,]], [[-16, -9,], [19, 26,]], [[-9, -2,], [26, 33,]]]
-                handler = evans.PitchHandler(
-                    pitch_list=pitches[index],
-                    forget=False,
-                )
-
-                handler(container[:])
-
-                for leaf in container[:]:
-                    for chord in abjad.select(leaf).chords():
-                        heads = chord.note_heads
-                        for head in heads:
-                            abjad.tweak(head).style = "#'harmonic-mixed"
-                            abjad.tweak(head).Stem.transparent=True
-                            abjad.tweak(head).Beam.transparent=True
-                            abjad.tweak(head).Flag.transparent=True
 
                 trinton.append_rhythm_selections(
                     score=score,
@@ -331,30 +314,13 @@ def harmonic_glissandi(score, voices, durations, division, index, duration_brack
                     selections=container[:]
                 )
 
-            elif voice == "contrabass 1 voice":
+            elif voice == "contrabass 2 voice":
                 rhythms = trinton.make_rhythm_selections(
-                    stack=stack1,
+                    stack=stack2,
                     durations=durations
                 )
 
                 container = abjad.Container(rhythms)
-
-                pitches = [[[-19, -14,], [16, 21,]], [[-14, -9,], [21, 26,]], [[-9, -4,], [26, 31,]]]
-                handler = evans.PitchHandler(
-                    pitch_list=pitches[index],
-                    forget=False,
-                )
-
-                handler(container[:])
-
-                for leaf in container[:]:
-                    for chord in abjad.select(leaf).chords():
-                        heads = chord.note_heads
-                        for head in heads:
-                            abjad.tweak(head).style = "#'harmonic-mixed"
-                            abjad.tweak(head).Stem.transparent=True
-                            abjad.tweak(head).Beam.transparent=True
-                            abjad.tweak(head).Flag.transparent=True
 
                 trinton.append_rhythm_selections(
                     score=score,
@@ -364,19 +330,18 @@ def harmonic_glissandi(score, voices, durations, division, index, duration_brack
 
             else:
                 rhythms = trinton.make_rhythm_selections(
-                    stack=stack2,
+                    stack=stack1,
                     durations=durations
                 )
 
                 container = abjad.Container(rhythms)
 
-                pitches = [[-5, -1], [-1, 2], [2, 5]]
-                handler = evans.PitchHandler(
-                    pitch_list=pitches[index],
-                    forget=False,
-                )
-
-                handler(container[:])
+                for tuplet in container[:]:
+                    for leaf in tuplet:
+                        abjad.tweak(leaf.note_head).style = "#'harmonic-mixed"
+                        abjad.tweak(leaf.note_head).Stem.transparent=True
+                        abjad.tweak(leaf.note_head).Beam.transparent=True
+                        abjad.tweak(leaf.note_head).Flag.transparent=True
 
                 trinton.append_rhythm_selections(
                     score=score,
@@ -384,48 +349,29 @@ def harmonic_glissandi(score, voices, durations, division, index, duration_brack
                     selections=container[:]
                 )
 
-                for tremolo in container[:]:
-                    for leaf in tremolo:
-                        abjad.tweak(leaf.note_head).Stem.transparent=True
-                        abjad.tweak(leaf.note_head).Beam.transparent=True
-                        abjad.tweak(leaf.note_head).Flag.transparent=True
     else:
         stack1 = rmakers.stack(
-            rmakers.even_division([division], extra_counts=[0, 0, 1, 0, 1,]),
-            rmakers.force_diminution(),
+            rmakers.tuplet(tuplets),
+            rmakers.trivialize(abjad.select().tuplets()),
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
-            rmakers.rewrite_dots(),
+            rmakers.rewrite_dots()
         )
 
         stack2 = rmakers.stack(
             rmakers.NoteRhythmMaker(),
-            rmakers.tremolo_container(4)
+            rmakers.tremolo_container(4),
         )
 
         for voice in voices:
-            if voice == "cello 1 voice":
+            if voice == "cello 2 voice":
                 rhythms = trinton.make_rhythm_selections(
-                    stack=stack1,
+                    stack=stack2,
                     durations=durations
                 )
 
                 container = abjad.Container(rhythms)
-
-                pitches = [[[-23, -16,], [12, 19,]], [[-16, -9,], [19, 26,]], [[-9, -2,], [26, 33,]]]
-                handler = evans.PitchHandler(
-                    pitch_list=pitches[index],
-                    forget=False,
-                )
-
-                handler(container[:])
-
-                for leaf in container[:]:
-                    for chord in abjad.select(leaf).chords():
-                        heads = chord.note_heads
-                        for head in heads:
-                            abjad.tweak(head).style = "#'harmonic-mixed"
 
                 trinton.append_rhythm_selections(
                     score=score,
@@ -433,27 +379,13 @@ def harmonic_glissandi(score, voices, durations, division, index, duration_brack
                     selections=container[:]
                 )
 
-            elif voice == "contrabass 1 voice":
+            elif voice == "contrabass 2 voice":
                 rhythms = trinton.make_rhythm_selections(
-                    stack=stack1,
+                    stack=stack2,
                     durations=durations
                 )
 
                 container = abjad.Container(rhythms)
-
-                pitches = [[[-19, -14,], [16, 21,]], [[-14, -9,], [21, 26,]], [[-9, -4,], [26, 31,]]]
-                handler = evans.PitchHandler(
-                    pitch_list=pitches[index],
-                    forget=False,
-                )
-
-                handler(container[:])
-
-                for leaf in container[:]:
-                    for chord in abjad.select(leaf).chords():
-                        heads = chord.note_heads
-                        for head in heads:
-                            abjad.tweak(head).style = "#'harmonic-mixed"
 
                 trinton.append_rhythm_selections(
                     score=score,
@@ -463,23 +395,15 @@ def harmonic_glissandi(score, voices, durations, division, index, duration_brack
 
             else:
                 rhythms = trinton.make_rhythm_selections(
-                    stack=stack2,
+                    stack=stack1,
                     durations=durations
                 )
 
                 container = abjad.Container(rhythms)
 
-                pitches = [[-5, -1], [-1, 2], [2, 5]]
-                handler = evans.PitchHandler(
-                    pitch_list=pitches[index],
-                    forget=False,
-                )
-
-                for tremolo in container[:]:
-                    for leaf in tremolo:
-                        abjad.tweak(leaf.note_head).Accidental.transparent=True
-
-                handler(container[:])
+                for tuplet in container[:]:
+                    for leaf in tuplet:
+                        abjad.tweak(leaf.note_head).style = "#'harmonic-mixed"
 
                 trinton.append_rhythm_selections(
                     score=score,
@@ -487,7 +411,7 @@ def harmonic_glissandi(score, voices, durations, division, index, duration_brack
                     selections=container[:]
                 )
 
-def cello_gliss(score, voice, durations, seed, index, duration_bracket_notation):
+def cello_gliss(score, voice, durations, seed, index, string, duration_bracket_notation):
     if duration_bracket_notation == True:
         tuplets = trinton.random_walk(chord=[(1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1), (1, 1, 1, 1), (1, 1, 1), (1, 1)], seed=seed)
 
@@ -509,12 +433,37 @@ def cello_gliss(score, voice, durations, seed, index, duration_bracket_notation)
 
         container = abjad.Container(selections)
 
-        handler = evans.PitchHandler(
-            pitch_list=[17, 19, 17.5, 21, 19.5, 21.5,],
-            forget=False,
-        )
+        if string == "IV":
+            handler = evans.PitchHandler(
+                pitch_list=[12, 16, 12.5, 14, 11.5, 16.5,],
+                forget=False,
+            )
 
-        handler(container[:])
+            handler(container[:])
+
+        elif string == "III":
+            handler = evans.PitchHandler(
+                pitch_list=[19, 23, 19.5, 21, 18.5, 23.5,],
+                forget=False,
+            )
+
+            handler(container[:])
+
+        elif string == "II":
+            handler = evans.PitchHandler(
+                pitch_list=[26, 30, 26.5, 28, 25.5, 30.5,],
+                forget=False,
+            )
+
+            handler(container[:])
+
+        elif string == "I":
+            handler = evans.PitchHandler(
+                pitch_list=[33, 37, 33.5, 35, 32.5, 37.5,],
+                forget=False,
+            )
+
+            handler(container[:])
 
         for tuplet in container:
             for leaf in tuplet:
@@ -552,10 +501,37 @@ def cello_gliss(score, voice, durations, seed, index, duration_bracket_notation)
 
         container = abjad.Container(selections)
 
-        handler = evans.PitchHandler(
-            pitch_list=[17, 19, 17.5, 21, 19.5, 21.5,],
-            forget=False,
-        )
+        if string == "IV":
+            handler = evans.PitchHandler(
+                pitch_list=[12, 16, 12.5, 14, 11.5, 16.5,],
+                forget=False,
+            )
+
+            handler(container[:])
+
+        elif string == "III":
+            handler = evans.PitchHandler(
+                pitch_list=[19, 23, 19.5, 21, 18.5, 23.5,],
+                forget=False,
+            )
+
+            handler(container[:])
+
+        elif string == "II":
+            handler = evans.PitchHandler(
+                pitch_list=[26, 30, 26.5, 28, 25.5, 30.5,],
+                forget=False,
+            )
+
+            handler(container[:])
+
+        elif string == "I":
+            handler = evans.PitchHandler(
+                pitch_list=[33, 37, 33.5, 35, 32.5, 37.5,],
+                forget=False,
+            )
+
+            handler(container[:])
 
         handler(container[:])
 

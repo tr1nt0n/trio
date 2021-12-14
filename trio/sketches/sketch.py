@@ -9,7 +9,7 @@ from abjadext import microtones
 
 score = trinton.make_score_template(
     instruments=[
-        abjad.Piano(),
+        abjad.Cello(),
     ],
     groups=[1,]
 )
@@ -26,79 +26,24 @@ trinton.write_time_signatures(
 
 # test
 
-def piano_climax_chords(score, voice, leaves, octave, index):
-    seq = list(range(-39, 49))
-
-    groups = evans.Sequence(seq).grouper([13, 12, 13, 11, 13, 10, 13, 3,])
-
-    new_groups = []
-    for group in groups:
-        sequence = trinton.primes_odds_evens(group)
-        for l in sequence:
-            new_groups.append(l)
-
-    new_new_groups = evans.Sequence(new_groups).grouper([13, 12, 13, 11, 13, 10, 13, 3,])
-
-    chords = []
-    for group in new_new_groups:
-        chord = evans.Sequence(group).grouper([5, 3, 5])
-        chords.append(chord)
-
-    handler = evans.PitchHandler(
-        pitch_list=trinton.rotated_sequence(chords[octave], index),
-        forget=False
-    )
-
-    handler(
-        trinton.make_leaf_selection(
-            score=score,
-            voice=voice,
-            leaves=leaves
-        )
-    )
-
-trinton.handwrite(
+trio.cello_gliss(
     score=score,
-    voice="piano voice",
-    durations=[(1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8),],
-    pitch_list=None
+    voice="cello voice",
+    durations=[(3, 8), (3, 8), (3, 8), (3, 8),],
+    seed=1,
+    index=34,
+    string="IV",
+    duration_bracket_notation=False
 )
 
-for octave, leaf, index in zip([0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7,], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,], [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, ]):
-    piano_climax_chords(
-        score=score,
-        voice="piano voice",
-        leaves=[leaf],
-        octave=octave,
-        index=index
-    )
-
-trinton.attach(
-    voice=score["piano voice"],
-    leaves=[0],
-    attachment=abjad.Clef("bass")
-)
-
-trinton.attach(
-    voice=score["piano voice"],
-    leaves=[9],
-    attachment=abjad.Clef("treble")
-)
-
-trinton.ottava(
+trio.cello_gliss(
     score=score,
-    voice="piano voice",
-    start_ottava=[0],
-    stop_ottava=[5,],
-    octave=-1
-)
-
-trinton.ottava(
-    score=score,
-    voice="piano voice",
-    start_ottava=[18],
-    stop_ottava=[-1],
-    octave=2
+    voice="cello voice",
+    durations=[(6, 8), (6, 8),],
+    seed=1,
+    index=38,
+    string="II",
+    duration_bracket_notation=True
 )
 
 #\set glissandoMap = #'((2 . 0) (1 . 0) (0 . 1))
