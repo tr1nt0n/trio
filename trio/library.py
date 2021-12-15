@@ -20,6 +20,14 @@ score = trinton.make_score_template(
 
 end_row = [0, 10, 5, 8, 3, 11, 6, 1, 9, 4, 7, 2,]
 
+# rhythm
+
+collapsing_rhythm_1 = [(4, 1), (1, 1, 4), (1, 1, 1, 4), (1, 1, 1), (6, 1)]
+
+collapsing_rhythm_2 = [(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 3, 1), (1, 3, 1, 2)]
+
+collapsing_rhythm_3 = [(1, 7), (1, 6), (1, 5), (1, 4), (1, 1, 3), (3, 1, 1, 1, 2, 2, 2, 2), (6, 1, 1)]
+
 # material functions
 
 def rhythm_canon(score, voice, durations, talea, index,):
@@ -291,6 +299,7 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, duration_brack
     if duration_bracket_notation == True:
         stack1 = rmakers.stack(
             rmakers.tuplet(tuplets),
+            rmakers.rewrite_dots(),
             rmakers.duration_bracket(),
         )
 
@@ -336,12 +345,13 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, duration_brack
 
                 container = abjad.Container(rhythms)
 
-                for tuplet in container[:]:
-                    for leaf in tuplet:
-                        abjad.tweak(leaf.note_head).style = "#'harmonic-mixed"
-                        abjad.tweak(leaf.note_head).Stem.transparent=True
-                        abjad.tweak(leaf.note_head).Beam.transparent=True
-                        abjad.tweak(leaf.note_head).Flag.transparent=True
+                sel = abjad.select(container[:]).leaves(pitched=True)
+
+                for leaf in sel:
+                    abjad.tweak(leaf.note_head).style = "#'harmonic-mixed"
+                    abjad.tweak(leaf.note_head).Stem.transparent=True
+                    abjad.tweak(leaf.note_head).Beam.transparent=True
+                    abjad.tweak(leaf.note_head).Flag.transparent=True
 
                 trinton.append_rhythm_selections(
                     score=score,
@@ -401,9 +411,10 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, duration_brack
 
                 container = abjad.Container(rhythms)
 
-                for tuplet in container[:]:
-                    for leaf in tuplet:
-                        abjad.tweak(leaf.note_head).style = "#'harmonic-mixed"
+                sel = abjad.select(container[:]).leaves(pitched=True)
+
+                for leaf in sel:
+                    abjad.tweak(leaf.note_head).style = "#'harmonic-mixed"
 
                 trinton.append_rhythm_selections(
                     score=score,
@@ -465,8 +476,9 @@ def cello_gliss(score, voice, durations, seed, index, string, duration_bracket_n
 
             handler(container[:])
 
-        for tuplet in container:
-            for leaf in tuplet:
+            sel = abjad.select(container[:]).leaves(pitched=True)
+
+            for leaf in sel:
                 abjad.tweak(leaf.note_head).Stem.transparent=True
                 abjad.tweak(leaf.note_head).Beam.transparent=True
                 abjad.tweak(leaf.note_head).Flag.transparent=True

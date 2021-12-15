@@ -15,10 +15,20 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
-            \time 12/8
+            \time 7/32
+            s1 * 7/32
+            \time 6/16
+            s1 * 3/8
+            \time 5/8
+            s1 * 5/8
+            \time 4/4
+            s1 * 1
+            \time 3/2
             s1 * 3/2
-            \time 12/8
-            s1 * 3/2
+            \time 4/4
+            s1 * 1
+            \time 5/8
+            s1 * 5/8
         }
         \context ChoirStaff = "Staff Group"
         <<
@@ -26,156 +36,76 @@
             {
                 \context Voice = "cello voice"
                 {
-                    \set suggestAccidentals = ##t
-                    c''16
-                    e''16
-                    cqs''16
-                    d''16
-                    bqs'16
-                    eqs''16
                     \tweak text #tuplet-number::calc-fraction-text
-                    \times 6/5
+                    \times 7/8
                     {
-                        c''16
-                        e''16
-                        cqs''16
-                        d''16
-                        bqs'16
+                        \tweak style #'harmonic-mixed
+                        c'32
+                        \tweak style #'harmonic-mixed
+                        c'8..
                     }
-                    eqs''16
-                    c''16
-                    e''16
-                    cqs''16
-                    d''16
-                    bqs'16
-                    \set suggestAccidentals = ##f
                     \tweak text #tuplet-number::calc-fraction-text
                     \times 6/7
                     {
-                        eqs''16
-                        c''16
-                        e''16
-                        cqs''16
-                        d''16
-                        bqs'16
-                        eqs''16
+                        \tweak style #'harmonic-mixed
+                        c'16
+                        \tweak style #'harmonic-mixed
+                        c'4.
                     }
-                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                        {
-                            \new Score
-                            \with
-                            {
-                                \override SpacingSpanner.spacing-increment = 0.5
-                                proportionalNotationDuration = ##f
-                            }
-                            <<
-                                \new RhythmicStaff
-                                \with
-                                {
-                                    \remove Time_signature_engraver
-                                    \remove Staff_symbol_engraver
-                                    \override Stem.direction = #up
-                                    \override Stem.length = 5
-                                    \override TupletBracket.bracket-visibility = ##t
-                                    \override TupletBracket.direction = #up
-                                    \override TupletBracket.minimum-length = 4
-                                    \override TupletBracket.padding = 1.25
-                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                    \override TupletNumber.font-size = 0
-                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                    tupletFullLength = ##t
-                                }
-                                {
-                                    c'2.
-                                }
-                            >>
-                            \layout
-                            {
-                                indent = 0
-                                ragged-right = ##t
-                            }
-                        }
-                    \times 3/2
+                    \tweak text #tuplet-number::calc-fraction-text
+                    \times 5/9
                     {
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        d'''4
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        fs'''4
+                        \tweak style #'harmonic-mixed
+                        c'8.
+                        \tweak style #'harmonic-mixed
+                        c'2...
                     }
-                    \revert TupletNumber.text
-                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                        {
-                            \new Score
-                            \with
-                            {
-                                \override SpacingSpanner.spacing-increment = 0.5
-                                proportionalNotationDuration = ##f
-                            }
-                            <<
-                                \new RhythmicStaff
-                                \with
-                                {
-                                    \remove Time_signature_engraver
-                                    \remove Staff_symbol_engraver
-                                    \override Stem.direction = #up
-                                    \override Stem.length = 5
-                                    \override TupletBracket.bracket-visibility = ##t
-                                    \override TupletBracket.direction = #up
-                                    \override TupletBracket.minimum-length = 4
-                                    \override TupletBracket.padding = 1.25
-                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                    \override TupletNumber.font-size = 0
-                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                    tupletFullLength = ##t
-                                }
-                                {
-                                    c'2.
-                                }
-                            >>
-                            \layout
-                            {
-                                indent = 0
-                                ragged-right = ##t
-                            }
-                        }
-                    \times 6/7
+                    \times 4/5
                     {
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        dqs'''8
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        e'''8
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        dqf'''8
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        gqf'''8
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        d'''8
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        fs'''8
-                        \tweak Beam.transparent ##t
-                        \tweak Flag.transparent ##t
-                        \tweak Stem.transparent ##t
-                        dqs'''8
+                        \tweak style #'harmonic-mixed
+                        c'4
+                        \tweak style #'harmonic-mixed
+                        c'1
                     }
-                    \revert TupletNumber.text
+                    \tweak text #tuplet-number::calc-fraction-text
+                    \times 3/5
+                    {
+                        \tweak style #'harmonic-mixed
+                        c'2
+                        \tweak style #'harmonic-mixed
+                        c'2
+                        \tweak style #'harmonic-mixed
+                        c'1.
+                    }
+                    \times 4/7
+                    {
+                        \tweak style #'harmonic-mixed
+                        c'4.
+                        \tweak style #'harmonic-mixed
+                        c'8
+                        \tweak style #'harmonic-mixed
+                        c'8
+                        \tweak style #'harmonic-mixed
+                        c'8
+                        \tweak style #'harmonic-mixed
+                        c'4
+                        \tweak style #'harmonic-mixed
+                        c'4
+                        \tweak style #'harmonic-mixed
+                        c'4
+                        \tweak style #'harmonic-mixed
+                        c'4
+                    }
+                    \tweak text #tuplet-number::calc-fraction-text
+                    \times 5/8
+                    {
+                        \tweak style #'harmonic-mixed
+                        c'2.
+                        \tweak style #'harmonic-mixed
+                        c'8
+                        \tweak style #'harmonic-mixed
+                        c'8
+                    }
                 }
             }
         >>

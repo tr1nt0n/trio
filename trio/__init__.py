@@ -10,6 +10,9 @@ from .library import(
     small_knee,
     toccata_finger_pressure,
     piano_climax_chords,
+    collapsing_rhythm_1,
+    collapsing_rhythm_2,
+    collapsing_rhythm_3,
 )
 
 __all__ = [
@@ -24,4 +27,7 @@ __all__ = [
     "small_knee",
     "toccata_finger_pressure",
     "piano_climax_chords",
+    "collapsing_rhythm_1",
+    "collapsing_rhythm_2",
+    "collapsing_rhythm_3",
 ]

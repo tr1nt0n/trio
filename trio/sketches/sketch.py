@@ -18,39 +18,25 @@ score = trinton.make_score_template(
 
 trinton.write_time_signatures(
     [
-        (12, 8),
-        (12, 8),
+        (7, 32),
+        (6, 16),
+        (5, 8),
+        (4, 4),
+        (3, 2),
+        (4, 4),
+        (5, 8),
     ],
     score["Global Context"],
 )
 
 # test
 
-trio.cello_gliss(
+trio.harmonic_glissandi_rhythms(
     score=score,
-    voice="cello voice",
-    durations=[(3, 8), (3, 8), (3, 8), (3, 8),],
-    seed=1,
-    index=34,
-    string="IV",
+    voices=["cello voice"],
+    durations=[(7, 32), (6, 16), (5, 8), (4, 4), (3, 2), (4, 4), (5, 8),],
+    tuplets=[(1, 7), (1, 6), (1, 5), (1, 4), (1, 1, 3), (3, 1, 1, 1, 2, 2, 2, 2), (6, 1, 1)],
     duration_bracket_notation=False
-)
-
-trio.cello_gliss(
-    score=score,
-    voice="cello voice",
-    durations=[(6, 8), (6, 8),],
-    seed=1,
-    index=38,
-    string="II",
-    duration_bracket_notation=True
-)
-
-trinton.ficta(
-    score=score,
-    voice="cello voice",
-    start_ficta=[0],
-    stop_ficta=[16]
 )
 
 #\set glissandoMap = #'((2 . 0) (1 . 0) (0 . 1))
