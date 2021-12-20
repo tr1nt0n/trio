@@ -47,6 +47,7 @@ def rhythm_canon(score, voice, durations, talea, index,):
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.beam(abjad.select().tuplets()),
     )
 
     sel = trinton.make_rhythm_selections(
@@ -256,6 +257,7 @@ def toccata(score, voice, durations, division, octave, index, seed, duration_bra
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.beam(abjad.select().tuplets()),
         )
 
         rhythms = trinton.make_rhythm_selections(
@@ -301,6 +303,7 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, duration_brack
             rmakers.tuplet(tuplets),
             rmakers.rewrite_dots(),
             rmakers.duration_bracket(),
+            rmakers.beam(abjad.select().tuplets()),
         )
 
         stack2 = rmakers.stack(
@@ -348,7 +351,6 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, duration_brack
                 sel = abjad.select(container[:]).leaves(pitched=True)
 
                 for leaf in sel:
-                    abjad.tweak(leaf.note_head).style = "#'harmonic-mixed"
                     abjad.tweak(leaf.note_head).Stem.transparent=True
                     abjad.tweak(leaf.note_head).Beam.transparent=True
                     abjad.tweak(leaf.note_head).Flag.transparent=True
@@ -366,7 +368,8 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, duration_brack
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
-            rmakers.rewrite_dots()
+            rmakers.rewrite_dots(),
+            rmakers.beam(abjad.select().tuplets()),
         )
 
         stack2 = rmakers.stack(
@@ -412,9 +415,6 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, duration_brack
                 container = abjad.Container(rhythms)
 
                 sel = abjad.select(container[:]).leaves(pitched=True)
-
-                for leaf in sel:
-                    abjad.tweak(leaf.note_head).style = "#'harmonic-mixed"
 
                 trinton.append_rhythm_selections(
                     score=score,
@@ -503,7 +503,8 @@ def cello_gliss(score, voice, durations, seed, index, string, duration_bracket_n
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
-            rmakers.rewrite_dots()
+            rmakers.rewrite_dots(),
+            rmakers.beam(abjad.select().tuplets()),
         )
 
         selections = trinton.make_rhythm_selections(
@@ -673,4 +674,39 @@ def toccata_finger_pressure(score, voice, half, harm):
             voice=score[voice],
             leaves=[leaf],
             notehead=r"#'harmonic-mixed"
+        )
+
+def write_bow_angle_span(score, voice, markups, leaves):
+    bow_angle_handler = evans.BowAngleHandler(markups)
+
+    bow_angle_handler(
+        trinton.make_leaf_selection(
+            score=score,
+            voice=voice,
+            leaves=leaves,
+        )
+    )
+
+def write_bow_contact_points(score, voice, contact_points_1, contact_points_2, start_leaves, stop_leaves, padding):
+    for one, two, start_leaf, stop_leaf, in zip(contact_points_1, contact_points_2, start_leaves, stop_leaves):
+        indicator1 = abjad.BowContactPoint(one)
+
+        indicator2 = abjad.BowContactPoint(two)
+
+        start_text_span = abjad.StartTextSpan(
+            left_text=indicator1.markup,
+            right_text=indicator2.markup,
+            style="dashed-line-with-arrow",
+        )
+
+        abjad.tweak(start_text_span).padding = padding
+        trinton.attach(
+            voice=score[voice],
+            leaves=[start_leaf],
+            attachment=start_text_span
+        )
+        trinton.attach(
+            voice=score[voice],
+            leaves=[stop_leaf],
+            attachment=abjad.StopTextSpan()
         )

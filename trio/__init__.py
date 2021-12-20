@@ -13,6 +13,8 @@ from .library import(
     collapsing_rhythm_1,
     collapsing_rhythm_2,
     collapsing_rhythm_3,
+    write_bow_angle_span,
+    write_bow_contact_points,
 )
 
 __all__ = [
@@ -30,4 +32,6 @@ __all__ = [
     "collapsing_rhythm_1",
     "collapsing_rhythm_2",
     "collapsing_rhythm_3",
+    "write_bow_angle_span",
+    "write_bow_contact_points",
 ]

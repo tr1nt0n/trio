@@ -4,6 +4,8 @@
 #(set-global-staff-size 16)
 
 \include "/Users/trintonprater/scores/trio/trio/library.ily"
+\include "/Users/trintonprater/evans/lilypond/evans-markups.ily"
+\include "/Users/trintonprater/evans/lilypond/evans-spanners.ily"
 
 \header {
     title = \markup \override #'(font-name . "Bodoni72") \fontsize #5.4 \center-column {"PIANO TRIO" \fontsize #7 \with-color #white "."}

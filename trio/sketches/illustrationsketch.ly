@@ -15,20 +15,8 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
-            \time 7/32
-            s1 * 7/32
-            \time 6/16
-            s1 * 3/8
-            \time 5/8
-            s1 * 5/8
-            \time 4/4
-            s1 * 1
-            \time 3/2
-            s1 * 3/2
-            \time 4/4
-            s1 * 1
-            \time 5/8
-            s1 * 5/8
+            \time 9/4
+            s1 * 9/4
         }
         \context ChoirStaff = "Staff Group"
         <<
@@ -37,74 +25,116 @@
                 \context Voice = "cello voice"
                 {
                     \tweak text #tuplet-number::calc-fraction-text
-                    \times 7/8
+                    \times 6/5
                     {
+                        \clef "bass"
                         \tweak style #'harmonic-mixed
-                        c'32
+                        af,2
+                        \pp
+                        \<
+                        \glissando
+                        - \abjad-solid-line-with-arrow
+                        - \evans-clockwise-BAD-spanner-left-text #-45
+                        - \tweak bound-details.right.padding 1.4
+                        - \tweak staff-padding #2
+                        \evansStartTextSpanBAD
+                        \clef "treble"
                         \tweak style #'harmonic-mixed
-                        c'8..
+                        g'8
+                        \ff
+                        \>
+                        \glissando
+                        \evansStopTextSpanBAD
+                        - \abjad-solid-line-with-arrow
+                        - \evans-counterclockwise-BAD-spanner-left-text #45
+                        - \tweak bound-details.right.padding 1.4
+                        - \tweak staff-padding #2
+                        \evansStartTextSpanBAD
                     }
-                    \tweak text #tuplet-number::calc-fraction-text
-                    \times 6/7
+                    \times 2/3
                     {
+                        \clef "bass"
                         \tweak style #'harmonic-mixed
-                        c'16
+                        af,4
+                        \pp
+                        \<
+                        \glissando
+                        \evansStopTextSpanBAD
+                        - \abjad-solid-line-with-arrow
+                        - \evans-counterclockwise-BAD-spanner-left-text #0
+                        - \tweak bound-details.right.padding 1.4
+                        - \tweak staff-padding #2
+                        \evansStartTextSpanBAD
                         \tweak style #'harmonic-mixed
-                        c'4.
-                    }
-                    \tweak text #tuplet-number::calc-fraction-text
-                    \times 5/9
-                    {
+                        c4
+                        \ff
+                        \>
+                        \glissando
+                        \evansStopTextSpanBAD
+                        - \abjad-solid-line-with-arrow
+                        - \evans-clockwise-BAD-spanner-left-text #-45
+                        - \tweak bound-details.right.padding 1.4
+                        - \tweak staff-padding #2
+                        \evansStartTextSpanBAD
                         \tweak style #'harmonic-mixed
-                        c'8.
-                        \tweak style #'harmonic-mixed
-                        c'2...
-                    }
-                    \times 4/5
-                    {
-                        \tweak style #'harmonic-mixed
-                        c'4
-                        \tweak style #'harmonic-mixed
-                        c'1
-                    }
-                    \tweak text #tuplet-number::calc-fraction-text
-                    \times 3/5
-                    {
-                        \tweak style #'harmonic-mixed
-                        c'2
-                        \tweak style #'harmonic-mixed
-                        c'2
-                        \tweak style #'harmonic-mixed
-                        c'1.
+                        af,1
+                        \pp
+                        \<
+                        \glissando
+                        \evansStopTextSpanBAD
+                        - \abjad-solid-line-with-arrow
+                        - \evans-counterclockwise-BAD-spanner-left-text #45
+                        - \tweak bound-details.right.padding 1.4
+                        - \tweak staff-padding #2
+                        \evansStartTextSpanBAD
                     }
                     \times 4/7
                     {
+                        \clef "treble"
                         \tweak style #'harmonic-mixed
-                        c'4.
+                        d''8
+                        \ff
+                        \>
+                        [
+                        \glissando
+                        \evansStopTextSpanBAD
+                        - \abjad-solid-line-with-arrow
+                        - \evans-counterclockwise-BAD-spanner-left-text #0
+                        - \tweak bound-details.right.padding 1.4
+                        - \tweak staff-padding #2
+                        \evansStartTextSpanBAD
+                        \clef "bass"
                         \tweak style #'harmonic-mixed
-                        c'8
+                        af,8
+                        \pp
+                        \<
+                        \glissando
+                        \evansStopTextSpanBAD
+                        - \abjad-solid-line-with-arrow
+                        - \evans-clockwise-BAD-spanner-left-text #-45
+                        - \tweak bound-details.right.padding 1.4
+                        - \tweak staff-padding #2
+                        \evansStartTextSpanBAD
+                        \clef "treble"
                         \tweak style #'harmonic-mixed
-                        c'8
+                        g'8
+                        \ff
+                        \>
+                        ]
+                        \glissando
+                        \evansStopTextSpanBAD
+                        - \abjad-solid-line-with-arrow
+                        - \evans-counterclockwise-BAD-spanner-left-text #45
+                        - \evans-BAD-spanner-right-text #0
+                        - \tweak bound-details.right.padding 1.4
+                        - \tweak staff-padding #2
+                        \evansStartTextSpanBAD
+                        \clef "bass"
                         \tweak style #'harmonic-mixed
-                        c'8
-                        \tweak style #'harmonic-mixed
-                        c'4
-                        \tweak style #'harmonic-mixed
-                        c'4
-                        \tweak style #'harmonic-mixed
-                        c'4
-                        \tweak style #'harmonic-mixed
-                        c'4
-                    }
-                    \tweak text #tuplet-number::calc-fraction-text
-                    \times 5/8
-                    {
-                        \tweak style #'harmonic-mixed
-                        c'2.
-                        \tweak style #'harmonic-mixed
-                        c'8
-                        \tweak style #'harmonic-mixed
-                        c'8
+                        af,2
+                        \pp
+                        \glissando
+                        \evansStopTextSpanBAD
                     }
                 }
             }
