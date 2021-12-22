@@ -661,7 +661,7 @@ def small_knee(start, stop):
 
 # strings tools
 
-def toccata_finger_pressure(score, voice, half, harm):
+def finger_pressure(score, voice, half, harm):
     for leaf in half:
         trinton.change_notehead(
             voice=score[voice],
@@ -675,17 +675,6 @@ def toccata_finger_pressure(score, voice, half, harm):
             leaves=[leaf],
             notehead=r"#'harmonic-mixed"
         )
-
-def write_bow_angle_span(score, voice, markups, leaves):
-    bow_angle_handler = evans.BowAngleHandler(markups)
-
-    bow_angle_handler(
-        trinton.make_leaf_selection(
-            score=score,
-            voice=voice,
-            leaves=leaves,
-        )
-    )
 
 def write_bow_contact_points(score, voice, contact_points_1, contact_points_2, start_leaves, stop_leaves, padding):
     for one, two, start_leaf, stop_leaf, in zip(contact_points_1, contact_points_2, start_leaves, stop_leaves):

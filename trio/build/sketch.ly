@@ -20,23 +20,12 @@
                         \pp
                         \<
                         \glissando
-                        - \abjad-solid-line-with-arrow
-                        - \evans-clockwise-BAD-spanner-left-text #-45
-                        - \tweak bound-details.right.padding 1.4
-                        - \tweak staff-padding #2
-                        \evansStartTextSpanBAD
                         \clef "treble"
                         \tweak style #'harmonic-mixed
                         g'8
                         \ff
                         \>
                         \glissando
-                        \evansStopTextSpanBAD
-                        - \abjad-solid-line-with-arrow
-                        - \evans-counterclockwise-BAD-spanner-left-text #45
-                        - \tweak bound-details.right.padding 1.4
-                        - \tweak staff-padding #2
-                        \evansStartTextSpanBAD
                     }
                     \times 2/3
                     {
@@ -46,34 +35,16 @@
                         \pp
                         \<
                         \glissando
-                        \evansStopTextSpanBAD
-                        - \abjad-solid-line-with-arrow
-                        - \evans-counterclockwise-BAD-spanner-left-text #0
-                        - \tweak bound-details.right.padding 1.4
-                        - \tweak staff-padding #2
-                        \evansStartTextSpanBAD
                         \tweak style #'harmonic-mixed
                         c4
                         \ff
                         \>
                         \glissando
-                        \evansStopTextSpanBAD
-                        - \abjad-solid-line-with-arrow
-                        - \evans-clockwise-BAD-spanner-left-text #-45
-                        - \tweak bound-details.right.padding 1.4
-                        - \tweak staff-padding #2
-                        \evansStartTextSpanBAD
                         \tweak style #'harmonic-mixed
                         af,1
                         \pp
                         \<
                         \glissando
-                        \evansStopTextSpanBAD
-                        - \abjad-solid-line-with-arrow
-                        - \evans-counterclockwise-BAD-spanner-left-text #45
-                        - \tweak bound-details.right.padding 1.4
-                        - \tweak staff-padding #2
-                        \evansStartTextSpanBAD
                     }
                     \times 4/7
                     {
@@ -84,12 +55,6 @@
                         \>
                         [
                         \glissando
-                        \evansStopTextSpanBAD
-                        - \abjad-solid-line-with-arrow
-                        - \evans-counterclockwise-BAD-spanner-left-text #0
-                        - \tweak bound-details.right.padding 1.4
-                        - \tweak staff-padding #2
-                        \evansStartTextSpanBAD
                         \clef "bass"
                         \tweak style #'harmonic-mixed
                         af,8
@@ -97,11 +62,6 @@
                         \<
                         \glissando
                         \evansStopTextSpanBAD
-                        - \abjad-solid-line-with-arrow
-                        - \evans-clockwise-BAD-spanner-left-text #-45
-                        - \tweak bound-details.right.padding 1.4
-                        - \tweak staff-padding #2
-                        \evansStartTextSpanBAD
                         \clef "treble"
                         \tweak style #'harmonic-mixed
                         g'8
@@ -109,19 +69,11 @@
                         \>
                         ]
                         \glissando
-                        \evansStopTextSpanBAD
-                        - \abjad-solid-line-with-arrow
-                        - \evans-counterclockwise-BAD-spanner-left-text #45
-                        - \evans-BAD-spanner-right-text #0
-                        - \tweak bound-details.right.padding 1.4
-                        - \tweak staff-padding #2
-                        \evansStartTextSpanBAD
                         \clef "bass"
                         \tweak style #'harmonic-mixed
                         af,2
                         \pp
                         \glissando
-                        \evansStopTextSpanBAD
                     }
                 }
             }

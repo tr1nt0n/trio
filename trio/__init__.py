@@ -8,12 +8,11 @@ from .library import(
     cello_gliss,
     change_staff,
     small_knee,
-    toccata_finger_pressure,
+    finger_pressure,
     piano_climax_chords,
     collapsing_rhythm_1,
     collapsing_rhythm_2,
     collapsing_rhythm_3,
-    write_bow_angle_span,
     write_bow_contact_points,
 )
 
@@ -27,11 +26,10 @@ __all__ = [
     "cello_gliss",
     "change_staff",
     "small_knee",
-    "toccata_finger_pressure",
+    "finger_pressure",
     "piano_climax_chords",
     "collapsing_rhythm_1",
     "collapsing_rhythm_2",
     "collapsing_rhythm_3",
-    "write_bow_angle_span",
     "write_bow_contact_points",
 ]

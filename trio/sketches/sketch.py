@@ -82,12 +82,155 @@ trinton.attach(
     leaves=[0, 2, 4, 6]
 )
 
-trio.write_bow_angle_span(
+# trinton.attach(
+#     voice=score["cello voice"],
+#     leaves=[0],
+#     attachment=abjad.LilyPondLiteral(
+#                 [
+#                     r"- \abjad-dashed-line-with-arrow",
+#                     rf"- \evans-counterclockwise-BAD-spanner-left-text #0",
+#                     r"- \tweak bound-details.right.padding 1.4",
+#                     r"- \tweak staff-padding #4.5",
+#                     r"\evansStartTextSpanBAD",
+#                 ],
+#                 format_slot="absolute_after",
+#             ),
+# )
+#
+# trinton.attach(
+#     voice=score["cello voice"],
+#     leaves=[4],
+#     attachment=abjad.LilyPondLiteral(
+#                 [
+#                     r"\evansStopTextSpanBAD",
+#                     r"- \abjad-dashed-line-with-arrow",
+#                     rf"- \evans-counterclockwise-BAD-spanner-left-text #-45",
+#                     rf"- \evans-BAD-spanner-right-text #0",
+#                     r"- \tweak bound-details.right.padding 1.4",
+#                     r"- \tweak staff-padding #4.5",
+#                     r"\evansStartTextSpanBAD",
+#                 ],
+#                 format_slot="absolute_after",
+#             ),
+# )
+#
+# trinton.attach(
+#     voice=score["cello voice"],
+#     leaves=[5],
+#     attachment=abjad.LilyPondLiteral(
+#                 [
+#                     r"\evansStopTextSpanBAD",
+#                 ],
+#                 format_slot="absolute_after",
+#             ),
+# )
+
+def make_angle_spanner(score, voice, leaves, direction, left_text, position):
+    if position == "start":
+        literal = abjad.LilyPondLiteral(
+            [
+                r"- \abjad-dashed-line-with-arrow",
+                rf"- \evans-{direction}-BAD-spanner-left-text #{left_text}",
+                r"- \tweak bound-details.right.padding 1.4",
+                r"- \tweak staff-padding #4.5",
+                r"\evansStartTextSpanBAD",
+            ],
+            format_slot="absolute_after",
+        ),
+
+        trinton.attach(
+            voice=score[voice],
+            leaves=leaves,
+            attachment=literal
+        )
+
+    elif position == "center":
+        literal = abjad.LilyPondLiteral(
+            [
+                r"\evansStopTextSpanBAD",
+                r"- \abjad-dashed-line-with-arrow",
+                rf"- \evans-{direction}-BAD-spanner-left-text #{left_text}",
+                r"- \tweak bound-details.right.padding 1.4",
+                r"- \tweak staff-padding #4.5",
+                r"\evansStartTextSpanBAD",
+            ],
+            format_slot="absolute_after",
+        ),
+
+        trinton.attach(
+            voice=score[voice],
+            leaves=leaves,
+            attachment=literal
+        )
+
+    elif position == "termination":
+        literal = abjad.LilyPondLiteral(
+            [
+                r"\evansStopTextSpanBAD",
+                r"- \abjad-dashed-line-with-arrow",
+                rf"- \evans-{direction}-BAD-spanner-left-text #{left_text}",
+                rf"- \evans-BAD-spanner-right-text #0",
+                r"- \tweak bound-details.right.padding 1.4",
+                r"- \tweak staff-padding #5",
+                r"\evansStartTextSpanBAD",
+            ],
+            format_slot="absolute_after",
+        ),
+
+        trinton.attach(
+            voice=score[voice],
+            leaves=leaves,
+            attachment=literal
+        )
+
+    else:
+        pass
+
+def stop_angle_spanner(score, voice, leaves):
+    trinton.attach(
+        voice=score[voice],
+        leaves=leaves,
+        attachment=abjad.LilyPondLiteral(
+                    [
+                        r"\evansStopTextSpanBAD",
+                    ],
+                    format_slot="absolute_after",
+                ),
+    )
+
+make_angle_spanner(
     score=score,
     voice="cello voice",
-    markups=[-45, 45, 0],
-    leaves=[0, 1, 2, 3, 4, 5, 6, 7],
+    leaves=[0],
+    direction="counterclockwise",
+    left_text=0,
+    position="start"
 )
+
+make_angle_spanner(
+    score=score,
+    voice="cello voice",
+    leaves=[4],
+    direction="counterclockwise",
+    left_text=-45,
+    position="center"
+)
+
+make_angle_spanner(
+    score=score,
+    voice="cello voice",
+    leaves=[5],
+    direction="clockwise",
+    left_text=45,
+    position="termination"
+)
+
+stop_angle_spanner(
+    score=score,
+    voice="cello voice",
+    leaves=[6]
+)
+
 
 #\set glissandoMap = #'((2 . 0) (1 . 0) (0 . 1))
 
