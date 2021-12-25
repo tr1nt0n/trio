@@ -7,76 +7,143 @@
         }
         \context ChoirStaff = "Staff Group"
         <<
-            \context Staff = "cello staff"
-            {
-                \context Voice = "cello voice"
+            \context PianoStaff = "sub group 1"
+            <<
+                \context Staff = "cello 1 staff"
                 {
-                    \tweak text #tuplet-number::calc-fraction-text
-                    \times 6/5
+                    \context Voice = "cello 1 voice"
                     {
-                        \clef "bass"
-                        \tweak style #'harmonic-mixed
-                        af,2
-                        \pp
-                        \<
-                        \glissando
-                        \clef "treble"
-                        \tweak style #'harmonic-mixed
-                        g'8
-                        \ff
-                        \>
-                        \glissando
-                    }
-                    \times 2/3
-                    {
-                        \clef "bass"
-                        \tweak style #'harmonic-mixed
-                        af,4
-                        \pp
-                        \<
-                        \glissando
-                        \tweak style #'harmonic-mixed
-                        c4
-                        \ff
-                        \>
-                        \glissando
-                        \tweak style #'harmonic-mixed
-                        af,1
-                        \pp
-                        \<
-                        \glissando
-                    }
-                    \times 4/7
-                    {
-                        \clef "treble"
-                        \tweak style #'harmonic-mixed
-                        d''8
-                        \ff
-                        \>
-                        [
-                        \glissando
-                        \clef "bass"
-                        \tweak style #'harmonic-mixed
-                        af,8
-                        \pp
-                        \<
-                        \glissando
-                        \evansStopTextSpanBAD
-                        \clef "treble"
-                        \tweak style #'harmonic-mixed
-                        g'8
-                        \ff
-                        \>
-                        ]
-                        \glissando
-                        \clef "bass"
-                        \tweak style #'harmonic-mixed
-                        af,2
-                        \pp
-                        \glissando
                     }
                 }
-            }
+                \context Staff = "cello 2 staff"
+                {
+                    \context Voice = "cello 2 voice"
+                    {
+                    }
+                }
+            >>
+            \context PianoStaff = "sub group 2"
+            <<
+                \context Staff = "contrabass 1 staff"
+                {
+                    \context Voice = "contrabass 1 voice"
+                    {
+                    }
+                }
+                \context Staff = "contrabass 2 staff"
+                {
+                    \context Voice = "contrabass 2 voice"
+                    {
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 6/5
+                        {
+                            \clef "bass"
+                            <
+                                \tweak style #'harmonic-mixed
+                                f,
+                                \tweak style #'harmonic-mixed
+                                bf,
+                            >2
+                            \pp
+                            \<
+                            \glissando
+                            - \abjad-dashed-line-with-arrow
+                            - \evans-counterclockwise-BAD-spanner-left-text #0
+                            - \tweak bound-details.right.padding 1.4
+                            - \tweak staff-padding #5.5
+                            \evansStartTextSpanBAD
+                            <
+                                \tweak style #'harmonic-mixed
+                                e''
+                                \tweak style #'harmonic-mixed
+                                a''
+                            >8
+                            \ff
+                            \>
+                            \glissando
+                        }
+                        \times 2/3
+                        {
+                            <
+                                \tweak style #'harmonic-mixed
+                                af,
+                                \tweak style #'harmonic-mixed
+                                cs
+                            >4
+                            \pp
+                            \<
+                            \glissando
+                            <
+                                \tweak style #'harmonic-mixed
+                                e''
+                                \tweak style #'harmonic-mixed
+                                a''
+                            >4
+                            \ff
+                            \>
+                            \glissando
+                            <
+                                \tweak style #'harmonic-mixed
+                                e
+                                \tweak style #'harmonic-mixed
+                                a
+                            >1
+                            \pp
+                            \<
+                            \glissando
+                            \evansStopTextSpanBAD
+                            - \abjad-dashed-line-with-arrow
+                            - \evans-counterclockwise-BAD-spanner-left-text #-45
+                            - \tweak bound-details.right.padding 1.4
+                            - \tweak staff-padding #5.5
+                            \evansStartTextSpanBAD
+                        }
+                        \times 4/7
+                        {
+                            <
+                                \tweak style #'harmonic-mixed
+                                e''
+                                \tweak style #'harmonic-mixed
+                                a''
+                            >8
+                            \ff
+                            \>
+                            [
+                            \glissando
+                            \evansStopTextSpanBAD
+                            - \abjad-dashed-line-with-arrow
+                            - \evans-clockwise-BAD-spanner-left-text #45
+                            - \evans-BAD-spanner-right-text #0
+                            - \tweak bound-details.right.padding 1.4
+                            - \tweak staff-padding #5.5
+                            \evansStartTextSpanBAD
+                            <
+                                \tweak style #'harmonic-mixed
+                                f,
+                                \tweak style #'harmonic-mixed
+                                bf,
+                            >8
+                            \pp
+                            \<
+                            \glissando
+                            \evansStopTextSpanBAD
+                            <
+                                \tweak style #'harmonic-mixed
+                                a,
+                                \tweak style #'harmonic-mixed
+                                d
+                            >8
+                            \ff
+                            \>
+                            ]
+                            \glissando
+                            c'2
+                            \pp
+                            \glissando
+                        }
+                    }
+                }
+            >>
         >>
     >>
 %! abjad.LilyPondFile._get_formatted_blocks()

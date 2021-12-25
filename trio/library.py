@@ -16,11 +16,11 @@ score = trinton.make_score_template(
     [2, 2, 2,]
 )
 
-# pitch
+# saved pitches
 
 end_row = [0, 10, 5, 8, 3, 11, 6, 1, 9, 4, 7, 2,]
 
-# rhythm
+# saved rhythms
 
 collapsing_rhythm_1 = [(4, 1), (1, 1, 4), (1, 1, 1, 4), (1, 1, 1), (6, 1)]
 
@@ -28,7 +28,7 @@ collapsing_rhythm_2 = [(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 3, 1), (1
 
 collapsing_rhythm_3 = [(1, 7), (1, 6), (1, 5), (1, 4), (1, 1, 3), (3, 1, 1, 1, 2, 2, 2, 2), (6, 1, 1)]
 
-# material functions
+# pitched rhythms
 
 def rhythm_canon(score, voice, durations, talea, index,):
     pitches = trinton.rotated_sequence(
@@ -297,131 +297,6 @@ def toccata(score, voice, durations, division, octave, index, seed, duration_bra
             selections=container[:],
         )
 
-def harmonic_glissandi_rhythms(score, voices, durations, tuplets, duration_bracket_notation):
-    if duration_bracket_notation == True:
-        stack1 = rmakers.stack(
-            rmakers.tuplet(tuplets),
-            rmakers.rewrite_dots(),
-            rmakers.duration_bracket(),
-            rmakers.beam(abjad.select().tuplets()),
-        )
-
-        stack2 = rmakers.stack(
-            rmakers.NoteRhythmMaker(),
-            rmakers.tremolo_container(4),
-        )
-
-        for voice in voices:
-            if voice == "cello 2 voice":
-                rhythms = trinton.make_rhythm_selections(
-                    stack=stack2,
-                    durations=durations
-                )
-
-                container = abjad.Container(rhythms)
-
-                trinton.append_rhythm_selections(
-                    score=score,
-                    voice=voice,
-                    selections=container[:]
-                )
-
-            elif voice == "contrabass 2 voice":
-                rhythms = trinton.make_rhythm_selections(
-                    stack=stack2,
-                    durations=durations
-                )
-
-                container = abjad.Container(rhythms)
-
-                trinton.append_rhythm_selections(
-                    score=score,
-                    voice=voice,
-                    selections=container[:]
-                )
-
-            else:
-                rhythms = trinton.make_rhythm_selections(
-                    stack=stack1,
-                    durations=durations
-                )
-
-                container = abjad.Container(rhythms)
-
-                sel = abjad.select(container[:]).leaves(pitched=True)
-
-                for leaf in sel:
-                    abjad.tweak(leaf.note_head).Stem.transparent=True
-                    abjad.tweak(leaf.note_head).Beam.transparent=True
-                    abjad.tweak(leaf.note_head).Flag.transparent=True
-
-                trinton.append_rhythm_selections(
-                    score=score,
-                    voice=voice,
-                    selections=container[:]
-                )
-
-    else:
-        stack1 = rmakers.stack(
-            rmakers.tuplet(tuplets),
-            rmakers.trivialize(abjad.select().tuplets()),
-            rmakers.extract_trivial(abjad.select().tuplets()),
-            rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-            rmakers.rewrite_sustained(abjad.select().tuplets()),
-            rmakers.rewrite_dots(),
-            rmakers.beam(abjad.select().tuplets()),
-        )
-
-        stack2 = rmakers.stack(
-            rmakers.NoteRhythmMaker(),
-            rmakers.tremolo_container(4),
-        )
-
-        for voice in voices:
-            if voice == "cello 2 voice":
-                rhythms = trinton.make_rhythm_selections(
-                    stack=stack2,
-                    durations=durations
-                )
-
-                container = abjad.Container(rhythms)
-
-                trinton.append_rhythm_selections(
-                    score=score,
-                    voice=voice,
-                    selections=container[:]
-                )
-
-            elif voice == "contrabass 2 voice":
-                rhythms = trinton.make_rhythm_selections(
-                    stack=stack2,
-                    durations=durations
-                )
-
-                container = abjad.Container(rhythms)
-
-                trinton.append_rhythm_selections(
-                    score=score,
-                    voice=voice,
-                    selections=container[:]
-                )
-
-            else:
-                rhythms = trinton.make_rhythm_selections(
-                    stack=stack1,
-                    durations=durations
-                )
-
-                container = abjad.Container(rhythms)
-
-                sel = abjad.select(container[:]).leaves(pitched=True)
-
-                trinton.append_rhythm_selections(
-                    score=score,
-                    voice=voice,
-                    selections=container[:]
-                )
-
 def cello_gliss(score, voice, durations, seed, index, string, duration_bracket_notation):
     if duration_bracket_notation == True:
         tuplets = trinton.random_walk(chord=[(1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1), (1, 1, 1, 1), (1, 1, 1), (1, 1)], seed=seed)
@@ -554,6 +429,90 @@ def cello_gliss(score, voice, durations, seed, index, string, duration_bracket_n
             selections=container[:]
         )
 
+# rhythm tools
+
+def harmonic_glissandi_rhythms(score, voices, durations, tuplets, duration_bracket_notation):
+    if duration_bracket_notation == True:
+        stack1 = rmakers.stack(
+            rmakers.tuplet(tuplets),
+            rmakers.rewrite_dots(),
+            rmakers.duration_bracket(),
+            rmakers.beam(abjad.select().tuplets()),
+        )
+
+        stack2 = rmakers.stack(
+            rmakers.NoteRhythmMaker(),
+            rmakers.tremolo_container(4),
+        )
+
+        for voice in voices:
+            if voice == "cello 1 voice":
+                trinton.make_and_append_rhythm_selections(
+                    score=score,
+                    voice_name=voice,
+                    stack=stack2,
+                    durations=durations
+                )
+
+            elif voice == "contrabass 1 voice":
+                trinton.make_and_append_rhythm_selections(
+                    score=score,
+                    voice_name=voice,
+                    stack=stack2,
+                    durations=durations
+                )
+
+            else:
+                trinton.make_and_append_rhythm_selections(
+                    score=score,
+                    voice_name=voice,
+                    stack=stack1,
+                    durations=durations
+                )
+
+    else:
+        stack1 = rmakers.stack(
+            rmakers.tuplet(tuplets),
+            rmakers.trivialize(abjad.select().tuplets()),
+            rmakers.extract_trivial(abjad.select().tuplets()),
+            rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+            rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.rewrite_dots(),
+            rmakers.beam(abjad.select().tuplets()),
+        )
+
+        stack2 = rmakers.stack(
+            rmakers.NoteRhythmMaker(),
+            rmakers.tremolo_container(4),
+        )
+
+        for voice in voices:
+            if voice == "cello 1 voice":
+                trinton.make_and_append_rhythm_selections(
+                    score=score,
+                    voice_name=voice,
+                    stack=stack2,
+                    durations=durations
+                )
+
+            elif voice == "contrabass 1 voice":
+                trinton.make_and_append_rhythm_selections(
+                    score=score,
+                    voice_name=voice,
+                    stack=stack2,
+                    durations=durations
+                )
+
+            else:
+                trinton.make_and_append_rhythm_selections(
+                    score=score,
+                    voice_name=voice,
+                    stack=stack1,
+                    durations=durations
+                )
+
+# pitch tools
+
 def piano_climax_chords(score, voice, leaves, octave, index):
     seq = list(range(-39, 49))
 
@@ -585,7 +544,128 @@ def piano_climax_chords(score, voice, leaves, octave, index):
         )
     )
 
-# special meter rewriting
+def pitch_harmonic_glissandi(score, voice, leaves, strings, index):
+    cello_pitches = trinton.rotated_sequence(
+        pitch_list=[[-9, -2], [26, 33], [-6, 1], [26, 33], [2, 9], [26, 33], [-9, -2], [-5, 2], [26, 33], [-9, -2], [-3, 4,], [-9, -2],],
+        start_index=index,
+    )
+
+    bass_pitches = trinton.rotated_sequence(
+        pitch_list=[[-9, -4], [26, 31], [-6, -1], [26, 31], [2, 7], [26, 31], [-9, -4], [-5, 0], [26, 31], [-9, -4], [-3, 2,], [-9, -4],],
+        start_index=index,
+    )
+
+    sel = trinton.make_leaf_selection(
+        score=score,
+        voice=voice,
+        leaves=leaves
+    )
+
+    if voice == "cello 2 voice":
+        if strings == "I and II":
+            handler = evans.PitchHandler(
+                pitch_list=cello_pitches,
+                forget=False,
+            )
+
+            handler(sel)
+
+            for chord in abjad.select(score[voice]).chords():
+                for head in chord.note_heads:
+                    abjad.tweak(head).style = r"#'harmonic-mixed"
+
+        elif strings == "II and III":
+            transposed = []
+            for chord in cello_pitches:
+                new_chord = trinton.transpose(l=chord[:], m=-7)
+                transposed.append(new_chord)
+
+            handler = evans.PitchHandler(
+                pitch_list=transposed,
+                forget=False,
+            )
+
+            handler(sel)
+
+            for chord in abjad.select(score[voice]).chords():
+                for head in chord.note_heads:
+                    abjad.tweak(head).style = r"#'harmonic-mixed"
+
+        elif strings == "III and IV":
+            transposed = []
+            for chord in cello_pitches:
+                new_chord = trinton.transpose(l=chord, m=-14)
+                transposed.append(new_chord)
+
+            handler = evans.PitchHandler(
+                pitch_list=transposed,
+                forget=False,
+            )
+
+            handler(sel)
+
+            for chord in abjad.select(score[voice]).chords():
+                for head in chord.note_heads:
+                    abjad.tweak(head).style = r"#'harmonic-mixed"
+
+        else:
+            pass
+
+    elif voice == "contrabass 2 voice":
+        if strings == "I and II":
+            handler = evans.PitchHandler(
+                pitch_list=bass_pitches,
+                forget=False,
+            )
+
+            handler(sel)
+
+            for chord in abjad.select(score[voice]).chords():
+                for head in chord.note_heads:
+                    abjad.tweak(head).style = r"#'harmonic-mixed"
+
+        elif strings == "II and III":
+            transposed = []
+            for chord in bass_pitches:
+                new_chord = trinton.transpose(l=chord[:], m=-5)
+                transposed.append(new_chord)
+
+            handler = evans.PitchHandler(
+                pitch_list=transposed,
+                forget=False,
+            )
+
+            handler(sel)
+
+            for chord in abjad.select(score[voice]).chords():
+                for head in chord.note_heads:
+                    abjad.tweak(head).style = r"#'harmonic-mixed"
+
+        elif strings == "III and IV":
+            transposed = []
+            for chord in bass_pitches:
+                new_chord = trinton.transpose(l=chord, m=-10)
+                transposed.append(new_chord)
+
+            handler = evans.PitchHandler(
+                pitch_list=transposed,
+                forget=False,
+            )
+
+            handler(sel)
+
+            for chord in abjad.select(score[voice]).chords():
+                for head in chord.note_heads:
+                    abjad.tweak(head).style = r"#'harmonic-mixed"
+
+        else:
+            pass
+
+    else:
+        pass
+
+
+# spelling tools
 
 def rewrite_meter(target):
     print("Rewriting meter ...")
@@ -629,6 +709,12 @@ def rewrite_meter(target):
                         boundary_depth=inventories[-2][0],
                         rewrite_tuplets=False,
                     )
+
+def noteheads_only(selections):
+    for leaf in selections:
+        abjad.tweak(leaf.note_head).Stem.transparent=True
+        abjad.tweak(leaf.note_head).Beam.transparent=True
+        abjad.tweak(leaf.note_head).Flag.transparent=True
 
 # piano tools
 
@@ -689,13 +775,83 @@ def write_bow_contact_points(score, voice, contact_points_1, contact_points_2, s
         )
 
         abjad.tweak(start_text_span).padding = padding
+
         trinton.attach(
             voice=score[voice],
             leaves=[start_leaf],
             attachment=start_text_span
         )
+
         trinton.attach(
             voice=score[voice],
             leaves=[stop_leaf],
             attachment=abjad.StopTextSpan()
         )
+
+def make_angle_spanner(score, voice, leaves, direction, left_text, position):
+    if position == "start":
+        trinton.attach(
+            voice=score[voice],
+            leaves=leaves,
+            attachment=abjad.LilyPondLiteral(
+                [
+                    r"- \abjad-dashed-line-with-arrow",
+                    rf"- \evans-{direction}-BAD-spanner-left-text #{left_text}",
+                    r"- \tweak bound-details.right.padding 1.4",
+                    r"- \tweak staff-padding #5.5",
+                    r"\evansStartTextSpanBAD",
+                ],
+                format_slot="absolute_after",
+            ),
+        )
+
+
+    elif position == "center":
+        trinton.attach(
+            voice=score[voice],
+            leaves=leaves,
+            attachment=abjad.LilyPondLiteral(
+                [
+                    r"\evansStopTextSpanBAD",
+                    r"- \abjad-dashed-line-with-arrow",
+                    rf"- \evans-{direction}-BAD-spanner-left-text #{left_text}",
+                    r"- \tweak bound-details.right.padding 1.4",
+                    r"- \tweak staff-padding #5.5",
+                    r"\evansStartTextSpanBAD",
+                ],
+                format_slot="absolute_after",
+            ),
+        )
+
+    elif position == "termination":
+        trinton.attach(
+            voice=score[voice],
+            leaves=leaves,
+            attachment=abjad.LilyPondLiteral(
+                [
+                    r"\evansStopTextSpanBAD",
+                    r"- \abjad-dashed-line-with-arrow",
+                    rf"- \evans-{direction}-BAD-spanner-left-text #{left_text}",
+                    rf"- \evans-BAD-spanner-right-text #0",
+                    r"- \tweak bound-details.right.padding 1.4",
+                    r"- \tweak staff-padding #5.5",
+                    r"\evansStartTextSpanBAD",
+                ],
+                format_slot="absolute_after",
+            ),
+        )
+
+    else:
+        pass
+
+def stop_angle_spanner(score, voice, leaves):
+    trinton.attach(
+        voice=score[voice],
+        leaves=leaves,
+        attachment=abjad.LilyPondLiteral(
+                    [
+                        r"\evansStopTextSpanBAD",
+                    ],
+                    format_slot="absolute_after",
+                ),
+    )
