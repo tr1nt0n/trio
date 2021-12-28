@@ -2,6 +2,8 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+            \time 4/4
+            s1 * 1
             \time 9/4
             s1 * 9/4
         }
@@ -9,31 +11,40 @@
         <<
             \context PianoStaff = "sub group 1"
             <<
-                \context Staff = "cello 1 staff"
-                {
-                    \context Voice = "cello 1 voice"
-                    {
-                    }
-                }
-                \context Staff = "cello 2 staff"
-                {
-                    \context Voice = "cello 2 voice"
-                    {
-                    }
-                }
-            >>
-            \context PianoStaff = "sub group 2"
-            <<
                 \context Staff = "contrabass 1 staff"
                 {
                     \context Voice = "contrabass 1 voice"
                     {
+                        %! applying invisibility
+                        \once \override Rest.transparent = ##t
+                        %! applying cutaway
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                        r1 * 1/2
+                        R1 * 1/2
+                        %! applying cutaway
+                        \stopStaff \startStaff
+                        %! applying invisibility
+                        \once \override Rest.transparent = ##t
+                        %! applying cutaway
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                        r1 * 9/8
+                        R1 * 9/8
+                        %! applying cutaway
+                        \stopStaff \startStaff
                     }
                 }
                 \context Staff = "contrabass 2 staff"
                 {
                     \context Voice = "contrabass 2 voice"
                     {
+                        %! applying invisibility
+                        \once \override Rest.transparent = ##t
+                        %! applying cutaway
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                        r1 * 1/2
+                        R1 * 1/2
+                        %! applying cutaway
+                        \stopStaff \startStaff
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 6/5
                         {
