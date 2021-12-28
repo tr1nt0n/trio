@@ -14,7 +14,10 @@ score = trinton.make_score_template(
         abjad.Contrabass(),
         abjad.Contrabass(),
     ],
-    groups=[2, 2,]
+    groups=[
+        2,
+        2,
+    ],
 )
 
 # time signatures
@@ -33,7 +36,7 @@ trio.harmonic_glissandi_rhythms(
     voices=["contrabass 2 voice"],
     durations=[(3, 4), (4, 4), (1, 2)],
     tuplets=trio.collapsing_rhythm_1,
-    duration_bracket_notation=False
+    duration_bracket_notation=False,
 )
 
 # trinton.annotate_leaves(score)
@@ -43,38 +46,42 @@ trio.pitch_harmonic_glissandi(
     voice="contrabass 2 voice",
     leaves=[0, 1, 2, 3, 4, 5, 6, 7],
     strings="III and IV",
-    index=0
+    index=0,
 )
 
 trinton.attach(
-    voice=score["contrabass 2 voice"],
-    attachment=abjad.Clef("bass"),
-    leaves=[0]
+    voice=score["contrabass 2 voice"], attachment=abjad.Clef("bass"), leaves=[0]
 )
 
 trinton.attach(
-    voice=score["contrabass 2 voice"],
-    attachment=abjad.Glissando(),
-    leaves=all
+    voice=score["contrabass 2 voice"], attachment=abjad.Glissando(), leaves=all
 )
 
 trinton.attach_multiple(
     score=score,
     voice="contrabass 2 voice",
-    attachments=[abjad.Dynamic("ff"), abjad.StartHairpin(">"),],
-    leaves=[1, 3, 5, 7,],
+    attachments=[
+        abjad.Dynamic("ff"),
+        abjad.StartHairpin(">"),
+    ],
+    leaves=[
+        1,
+        3,
+        5,
+        7,
+    ],
 )
 
 trinton.attach(
     voice=score["contrabass 2 voice"],
     attachment=abjad.Dynamic("pp"),
-    leaves=[0, 2, 4, 6, 8]
+    leaves=[0, 2, 4, 6, 8],
 )
 
 trinton.attach(
     voice=score["contrabass 2 voice"],
     attachment=abjad.StartHairpin("<"),
-    leaves=[0, 2, 4, 6]
+    leaves=[0, 2, 4, 6],
 )
 
 trio.make_angle_spanner(
@@ -83,7 +90,7 @@ trio.make_angle_spanner(
     leaves=[0],
     direction="counterclockwise",
     left_text=0,
-    position="start"
+    position="start",
 )
 
 trio.make_angle_spanner(
@@ -92,7 +99,7 @@ trio.make_angle_spanner(
     leaves=[4],
     direction="counterclockwise",
     left_text=-45,
-    position="center"
+    position="center",
 )
 
 trio.make_angle_spanner(
@@ -101,16 +108,12 @@ trio.make_angle_spanner(
     leaves=[5],
     direction="clockwise",
     left_text=45,
-    position="termination"
+    position="termination",
 )
 
-trio.stop_angle_spanner(
-    score=score,
-    voice="contrabass 2 voice",
-    leaves=[6]
-)
+trio.stop_angle_spanner(score=score, voice="contrabass 2 voice", leaves=[6])
 
-#\set glissandoMap = #'((2 . 0) (1 . 0) (0 . 1))
+# \set glissandoMap = #'((2 . 0) (1 . 0) (0 . 1))
 
 # show file
 
@@ -122,5 +125,5 @@ trinton.render_file(
     includes=[
         "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily",
         "/Users/trintonprater/abjad/docs/source/_stylesheets/abjad.ily",
-    ]
+    ],
 )

@@ -1,4 +1,4 @@
-from .library import(
+from .library import (
     end_row,
     rhythm_canon,
     score,
@@ -17,7 +17,7 @@ from .library import(
     make_angle_spanner,
     stop_angle_spanner,
     noteheads_only,
-    pitch_harmonic_glissandi
+    pitch_harmonic_glissandi,
 )
 
 __all__ = [
