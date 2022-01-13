@@ -29,99 +29,13 @@ trinton.write_time_signatures(
 
 # test
 
-trinton.append_rests(score=score, voice="contrabass 2 voice", rests=[abjad.Rest("r1")])
-
-trinton.append_rests(
-    score=score,
-    voice="contrabass 1 voice",
-    rests=[abjad.Rest("r1"), abjad.Rest("r1."), abjad.Rest("r2.")],
-)
-
-trio.harmonic_glissandi_rhythms(
-    score=score,
-    voices=["contrabass 2 voice"],
-    durations=[(3, 4), (4, 4), (1, 2)],
-    tuplets=trio.collapsing_rhythm_1,
-    duration_bracket_notation=False,
-)
-
-# trinton.annotate_leaves(score)
-
-trio.pitch_harmonic_glissandi(
+trio.rhythm_canon(
     score=score,
     voice="contrabass 2 voice",
-    leaves=[1, 2, 3, 4, 5, 6, 7, 8],
-    strings="III and IV",
-    index=0,
+    durations=[(4, 4), (9, 4)],
+    talea=16,
+    index=2,
 )
-
-trinton.attach(
-    voice=score["contrabass 2 voice"], attachment=abjad.Clef("bass"), leaves=[1]
-)
-
-trinton.attach(
-    voice=score["contrabass 2 voice"], attachment=abjad.Glissando(), leaves=all
-)
-
-trinton.attach_multiple(
-    score=score,
-    voice="contrabass 2 voice",
-    attachments=[
-        abjad.Dynamic("ff"),
-        abjad.StartHairpin(">"),
-    ],
-    leaves=[
-        2,
-        4,
-        6,
-        8,
-    ],
-)
-
-trinton.attach(
-    voice=score["contrabass 2 voice"],
-    attachment=abjad.Dynamic("pp"),
-    leaves=[1, 3, 5, 7, 9],
-)
-
-trinton.attach(
-    voice=score["contrabass 2 voice"],
-    attachment=abjad.StartHairpin("<"),
-    leaves=[1, 3, 5, 7],
-)
-
-trio.make_angle_spanner(
-    score=score,
-    voice="contrabass 2 voice",
-    leaves=[1],
-    direction="counterclockwise",
-    left_text=0,
-    position="start",
-)
-
-trio.make_angle_spanner(
-    score=score,
-    voice="contrabass 2 voice",
-    leaves=[5],
-    direction="counterclockwise",
-    left_text=-45,
-    position="center",
-)
-
-trio.make_angle_spanner(
-    score=score,
-    voice="contrabass 2 voice",
-    leaves=[6],
-    direction="clockwise",
-    left_text=45,
-    position="termination",
-)
-
-trio.stop_angle_spanner(score=score, voice="contrabass 2 voice", leaves=[7])
-
-trinton.whiteout_empty_staves(score=score, voice="contrabass 1 voice", cutaway=True)
-
-trinton.whiteout_empty_staves(score=score, voice="contrabass 2 voice", cutaway=True)
 
 # \set glissandoMap = #'((2 . 0) (1 . 0) (0 . 1))
 

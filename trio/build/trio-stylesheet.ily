@@ -9,7 +9,7 @@
 
 \header {
     title = \markup \override #'(font-name . "Bodoni72") \fontsize #5.4 \center-column {"PIANO TRIO" \fontsize #7 \with-color #white "."}
-    subtitle = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"to Kate Ragan, Cori Trenczer, and Zoe Markle" \fontsize #3.4 \with-color #white "."}
+    subtitle = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"for Kate Ragan, Cori Trenczer, and Zoe Markle" \fontsize #3.4 \with-color #white "."}
     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #3 {"Trinton (*2000)"}
 }
 
@@ -36,6 +36,7 @@
         \override TimeSignature.font-size = 5
 		\override TimeSignature.font-name = "Bodoni72"
     }
+
     \context {
         \Score
         \numericTimeSignature
@@ -43,31 +44,58 @@
         \accepts TimeSignatureContext
         proportionalNotationDuration = #(ly:make-moment 1 30)
         \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 15) (minimum distance . 15) (padding . 7))
+
         autoBeaming = ##f
         \override Beam.breakable = ##t
+
         \override DynamicText.font-size = #-2
         \override DynamicLineSpanner.staff-padding = 4
+
         \override MetronomeMark.padding = 6
         \override MetronomeMark.font-size = 4
         \override MetronomeMark.extra-offset = #'(0.3 . 0)
+
         \override Clef.whiteout-style = #'outline
         \override Clef.whiteout = 1
+
         tupletFullLength = ##t
         \override TupletBracket.full-length-to-extent = ##f
         \override TupletBracket.padding = 2
         \override TupletNumber.font-size = 1
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
+
         \override Stem.stemlet-length = 0.75
+
         \override Glissando.thickness = #2
         \override Glissando.breakable = ##t
+
+        \override StemTremolo.beam-width = 1.5
+        \override StemTremolo.beam-width = 1.5
+        \override StemTremolo.flag-count = 4
+        \override StemTremolo.slope = 0.5
+
+        \override Tie.stencil = #flare-tie
+        \override Tie.height-limit = 6
+        \override Tie.thickness = 1.5
+
+        % \override BarLine.transparent = ##t
+        % \override BarLine.X-extent = #'(0 . 0)
+        \override BarLine.bar-extent = #'(-2 . 2)
+        \override BarLine.hair-thickness = 0.5
+        \override BarLine.X-extent = #'(0 . 0)
+        \override BarLine.thick-thickness = #8
+
+        \override Hairpin.to-barline = ##f
     }
+
     \context {
         \Staff
         fontSize = #-1
         \remove Time_signature_engraver
         \RemoveAllEmptyStaves
     }
+
     \context {
         \Voice
         \remove Forbid_line_break_engraver

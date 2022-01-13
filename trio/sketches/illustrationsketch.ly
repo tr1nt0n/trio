@@ -1,15 +1,8 @@
-%! abjad.LilyPondFile._get_format_pieces()
 \version "2.20.0"
-%! abjad.LilyPondFile._get_format_pieces()
 \language "english"
-%! abjad.LilyPondFile._get_formatted_includes()
 \include "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily"
-%! abjad.LilyPondFile._get_formatted_includes()
 \include "/Users/trintonprater/abjad/docs/source/_stylesheets/abjad.ily"
-
-%! abjad.LilyPondFile._get_formatted_blocks()
 \score
-%! abjad.LilyPondFile._get_formatted_blocks()
 {
     \context Score = "Score"
     <<
@@ -28,147 +21,46 @@
                 {
                     \context Voice = "contrabass 1 voice"
                     {
-                        %! applying invisibility
-                        \once \override Rest.transparent = ##t
-                        %! applying cutaway
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                        r1 * 1/2
-                        R1 * 1/2
-                        %! applying cutaway
-                        \stopStaff \startStaff
-                        %! applying invisibility
-                        \once \override Rest.transparent = ##t
-                        %! applying cutaway
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                        r1 * 9/8
-                        R1 * 9/8
-                        %! applying cutaway
-                        \stopStaff \startStaff
                     }
                 }
                 \context Staff = "contrabass 2 staff"
                 {
                     \context Voice = "contrabass 2 voice"
                     {
-                        %! applying invisibility
-                        \once \override Rest.transparent = ##t
-                        %! applying cutaway
-                        \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                        r1 * 1/2
-                        R1 * 1/2
-                        %! applying cutaway
-                        \stopStaff \startStaff
-                        \tweak text #tuplet-number::calc-fraction-text
-                        \times 6/5
-                        {
-                            \clef "bass"
-                            <
-                                \tweak style #'harmonic-mixed
-                                f,
-                                \tweak style #'harmonic-mixed
-                                bf,
-                            >2
-                            \pp
-                            \<
-                            \glissando
-                            - \abjad-dashed-line-with-arrow
-                            - \evans-counterclockwise-BAD-spanner-left-text #0
-                            - \tweak bound-details.right.padding 1.4
-                            - \tweak staff-padding #5.5
-                            \evansStartTextSpanBAD
-                            <
-                                \tweak style #'harmonic-mixed
-                                e''
-                                \tweak style #'harmonic-mixed
-                                a''
-                            >8
-                            \ff
-                            \>
-                            \glissando
-                        }
-                        \times 2/3
-                        {
-                            <
-                                \tweak style #'harmonic-mixed
-                                af,
-                                \tweak style #'harmonic-mixed
-                                cs
-                            >4
-                            \pp
-                            \<
-                            \glissando
-                            <
-                                \tweak style #'harmonic-mixed
-                                e''
-                                \tweak style #'harmonic-mixed
-                                a''
-                            >4
-                            \ff
-                            \>
-                            \glissando
-                            <
-                                \tweak style #'harmonic-mixed
-                                e
-                                \tweak style #'harmonic-mixed
-                                a
-                            >1
-                            \pp
-                            \<
-                            \glissando
-                            \evansStopTextSpanBAD
-                            - \abjad-dashed-line-with-arrow
-                            - \evans-counterclockwise-BAD-spanner-left-text #-45
-                            - \tweak bound-details.right.padding 1.4
-                            - \tweak staff-padding #5.5
-                            \evansStartTextSpanBAD
-                        }
-                        \times 4/7
-                        {
-                            <
-                                \tweak style #'harmonic-mixed
-                                e''
-                                \tweak style #'harmonic-mixed
-                                a''
-                            >8
-                            \ff
-                            \>
-                            [
-                            \glissando
-                            \evansStopTextSpanBAD
-                            - \abjad-dashed-line-with-arrow
-                            - \evans-clockwise-BAD-spanner-left-text #45
-                            - \evans-BAD-spanner-right-text #0
-                            - \tweak bound-details.right.padding 1.4
-                            - \tweak staff-padding #5.5
-                            \evansStartTextSpanBAD
-                            <
-                                \tweak style #'harmonic-mixed
-                                f,
-                                \tweak style #'harmonic-mixed
-                                bf,
-                            >8
-                            \pp
-                            \<
-                            \glissando
-                            \evansStopTextSpanBAD
-                            <
-                                \tweak style #'harmonic-mixed
-                                a,
-                                \tweak style #'harmonic-mixed
-                                d
-                            >8
-                            \ff
-                            \>
-                            ]
-                            \glissando
-                            c'2
-                            \pp
-                            \glissando
-                        }
+                        c'16
+                        ef'16
+                        bf16
+                        fs'16
+                        cs'16
+                        af16
+                        c'4
+                        ~
+                        c'16
+                        d4
+                        ~
+                        d16
+                        ~
+                        d8
+                        d'8.
+                        f4..
+                        e'16
+                        b16
+                        d'16
+                        a16
+                        g16
+                        f'16
+                        c'16
+                        ef'4
+                        ~
+                        ef'16
+                        bf4
+                        ~
+                        bf16
+                        f'8.
+                        c'4
                     }
                 }
             >>
         >>
     >>
-%! abjad.LilyPondFile._get_formatted_blocks()
 }
