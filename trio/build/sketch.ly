@@ -4,8 +4,6 @@
         {
             \time 4/4
             s1 * 1
-            \time 9/4
-            s1 * 9/4
         }
         \context ChoirStaff = "Staff Group"
         <<
@@ -21,37 +19,14 @@
                 {
                     \context Voice = "contrabass 2 voice"
                     {
-                        c'16
-                        ef'16
-                        bf16
-                        fs'16
-                        cs'16
-                        af16
-                        c'4
-                        ~
-                        c'16
-                        d4
-                        ~
-                        d16
-                        ~
-                        d8
-                        d'8.
-                        f4..
-                        e'16
-                        b16
-                        d'16
-                        a16
-                        g16
-                        f'16
-                        c'16
-                        ef'4
-                        ~
-                        ef'16
-                        bf4
-                        ~
-                        bf16
-                        f'8.
-                        c'4
+                        <d'' e'' af'' a'' bf''>8
+                        <c'' fs'' g''>8
+                        <bf' b' cs'' ef'' f''>8
+                        <d'' e'' af'' a'' bf''>8
+                        <c'' fs'' g''>8
+                        <bf' b' cs'' ef'' f''>8
+                        <d'' e'' af'' a'' bf''>8
+                        <c'' fs'' g''>8
                     }
                 }
             >>

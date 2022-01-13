@@ -22,20 +22,17 @@ score = trinton.make_score_template(
 trinton.write_time_signatures(
     [
         (4, 4),
-        (9, 4),
     ],
     score["Global Context"],
 )
 
 # test
 
-trio.rhythm_canon(
-    score=score,
-    voice="contrabass 2 voice",
-    durations=[(4, 4), (9, 4)],
-    talea=16,
-    index=2,
-)
+trinton.handwrite(score=score, voice="contrabass 2 voice", durations=[(1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8),], pitch_list=None)
+
+trio.piano_climax_chords(score=score, voice="contrabass 2 voice", leaves=list(range(0, 8)), octave=4, index=0, seed=3)
+
+trinton.rewrite_meter_by_voice(score=score, voices=[abjad.select(score["contrabass 2 voice"])])
 
 # \set glissandoMap = #'((2 . 0) (1 . 0) (0 . 1))
 
