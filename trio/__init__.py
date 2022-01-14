@@ -17,6 +17,7 @@ from .library import (
     stop_angle_spanner,
     noteheads_only,
     pitch_harmonic_glissandi,
+    toccata_rhythms,
 )
 
 __all__ = [
@@ -38,4 +39,5 @@ __all__ = [
     "stop_angle_spanner",
     "noteheads_only",
     "pitch_harmonic_glissandi",
+    "toccata_rhythms",
 ]

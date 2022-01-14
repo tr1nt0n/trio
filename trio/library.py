@@ -24,7 +24,8 @@ score = trinton.make_score_template(
 
 # saved pitches
 
-end_row = eval("""[
+end_row = eval(
+    """[
     0,
     10,
     5,
@@ -37,19 +38,23 @@ end_row = eval("""[
     4,
     7,
     2,
-]""")
+]"""
+)
 
 # saved rhythms
 
 collapsing_tuplets_1 = eval("""[(4, 1), (1, 1, 4), (1, 1, 1, 4), (1, 1, 1), (6, 1)]""")
 
-collapsing_tuplets_2 = eval("""[
+collapsing_tuplets_2 = eval(
+    """[
     (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
     (1, 1, 3, 1),
     (1, 3, 1, 2),
-]""")
+]"""
+)
 
-collapsing_tuplets_3 = eval("""[
+collapsing_tuplets_3 = eval(
+    """[
     (1, 7),
     (1, 6),
     (1, 5),
@@ -57,9 +62,11 @@ collapsing_tuplets_3 = eval("""[
     (1, 1, 3),
     (3, 1, 1, 1, 2, 2, 2, 2),
     (6, 1, 1),
-]""")
+]"""
+)
 
 # pitched rhythms
+
 
 def rhythm_canon(
     score,
@@ -217,9 +224,8 @@ def rhythm_canon(
         forget=False,
     )
 
-    trinton.append_rhythm_selections(
-        score=score, voice=voice, selections=container[:]
-    )
+    trinton.append_rhythm_selections(score=score, voice=voice, selections=container[:])
+
 
 _string_to_pitch = {
     "IV": [
@@ -256,8 +262,15 @@ _string_to_pitch = {
     ],
 }
 
+
 def cello_gliss(
-    score, voice, durations, seed, index, string, notation,
+    score,
+    voice,
+    durations,
+    seed,
+    index,
+    string,
+    notation,
 ):
     tuplets = trinton.random_walk(
         chord=[
@@ -309,13 +322,33 @@ def cello_gliss(
 
     handler(container[:])
 
-    trinton.append_rhythm_selections(
-        voice=voice,
-        score=score,
-        selections=container[:]
-    )
+    trinton.append_rhythm_selections(voice=voice, score=score, selections=container[:])
+
 
 # rhythm tools
+
+
+def toccata_rhythms(score, voice, durations, division, extra_count, notation):
+    _stacks = {
+        "duration_bracket": rmakers.stack(
+            rmakers.even_division([division], extra_counts=[extra_count]),
+            rmakers.duration_bracket(),
+        ),
+        "tuplet": rmakers.stack(
+            rmakers.even_division([division], extra_counts=[extra_count]),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_dots(),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        ),
+    }
+
+    trinton.make_and_append_rhythm_selections(
+        score=score, voice_name=voice, stack=_stacks[notation], durations=durations
+    )
+
 
 def harmonic_glissandi_rhythms(
     score, voices, durations, tuplets, duration_bracket_notation
@@ -384,8 +417,15 @@ def harmonic_glissandi_rhythms(
 
 # pitch tools
 
+
 def pitch_toccata(
-    score, voice, leaves, octave, seed, index, random_walk,
+    score,
+    voice,
+    leaves,
+    octave,
+    seed,
+    index,
+    random_walk,
 ):
     random.seed(seed)
 
@@ -407,9 +447,7 @@ def pitch_toccata(
     new_groups = []
     for group in groups:
         sequence = random.sample(group, k=len(group))
-        new_sequence = evans.Sequence(sequence[:]).mirror(
-            sequential_duplicates=False
-        )
+        new_sequence = evans.Sequence(sequence[:]).mirror(sequential_duplicates=False)
         for l in new_sequence:
             new_groups.append(l)
 
@@ -638,6 +676,7 @@ def pitch_harmonic_glissandi(score, voice, leaves, strings, index):
 
 # spelling tools
 
+
 def noteheads_only(selections):
     for leaf in selections:
         abjad.tweak(leaf.note_head).Stem.transparent = True
@@ -646,6 +685,7 @@ def noteheads_only(selections):
 
 
 # piano tools
+
 
 def change_staff(lh, rh):
     for a, b in zip(lh, rh):
@@ -685,6 +725,7 @@ def small_knee(start, stop):
 
 
 # strings tools
+
 
 def finger_pressure(score, voice, half, harm):
     for leaf in half:
@@ -726,6 +767,7 @@ def write_bow_contact_points(
         trinton.attach(
             voice=score[voice], leaves=[stop_leaf], attachment=abjad.StopTextSpan()
         )
+
 
 def make_angle_spanner(score, voice, leaves, direction, left_text, position):
     _positions_to_literals = {
@@ -769,6 +811,7 @@ def make_angle_spanner(score, voice, leaves, direction, left_text, position):
         leaves=leaves,
         attachment=_positions_to_literals[position],
     )
+
 
 def stop_angle_spanner(score, voice, leaves):
     trinton.attach(
