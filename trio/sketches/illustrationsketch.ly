@@ -8,58 +8,74 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
-            \time 3/8
-            s1 * 3/8
+            \time 4/4
+            s1 * 1
         }
         \context ChoirStaff = "Staff Group"
         <<
             \context PianoStaff = "sub group 1"
             <<
+                \context Staff = "piano 1 staff"
+                {
+                    \context Voice = "piano 1 voice"
+                    {
+                    }
+                }
+                \context Staff = "piano 2 staff"
+                {
+                    \context Voice = "piano 2 voice"
+                    {
+                    }
+                }
+            >>
+            \context PianoStaff = "sub group 2"
+            <<
                 \context Staff = "cello 1 staff"
                 {
                     \context Voice = "cello 1 voice"
                     {
-                        \repeat tremolo 4 {
-                            c'32.
-                            c'32.
-                        }
                     }
                 }
                 \context Staff = "cello 2 staff"
                 {
                     \context Voice = "cello 2 voice"
                     {
-                        \tweak text #tuplet-number::calc-fraction-text
-                        \times 6/5
-                        {
-                            c'4
-                            c'16
-                        }
                     }
                 }
             >>
-            \context PianoStaff = "sub group 2"
+            \context PianoStaff = "sub group 3"
             <<
                 \context Staff = "contrabass 1 staff"
                 {
                     \context Voice = "contrabass 1 voice"
                     {
-                        \repeat tremolo 4 {
-                            c'32.
-                            c'32.
-                        }
                     }
                 }
                 \context Staff = "contrabass 2 staff"
                 {
                     \context Voice = "contrabass 2 voice"
                     {
-                        \tweak text #tuplet-number::calc-fraction-text
-                        \times 6/5
-                        {
-                            c'4
-                            c'16
-                        }
+                        <<
+                            \context Voice = "contrabass 2 voice"
+                            {
+                                \times 2/3
+                                {
+                                    \voiceOne
+                                    c'4
+                                    c'4
+                                    c'4
+                                    c'4
+                                    c'4
+                                    c'4
+                                }
+                            }
+                            \context Voice = "intermittent_voice"
+                            {
+                                \voiceTwo
+                                c'1
+                            }
+                        >>
+                        \oneVoice
                     }
                 }
             >>

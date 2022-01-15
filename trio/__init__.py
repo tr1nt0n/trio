@@ -18,6 +18,10 @@ from .library import (
     noteheads_only,
     pitch_harmonic_glissandi,
     toccata_rhythms,
+    pitch_cello_gliss_piano,
+    all_startmarkups,
+    pitch_contrabass_glissandi,
+    contrabass_beating_rhythms,
 )
 
 __all__ = [
@@ -40,4 +44,8 @@ __all__ = [
     "noteheads_only",
     "pitch_harmonic_glissandi",
     "toccata_rhythms",
+    "pitch_cello_gliss_piano",
+    "all_startmarkups",
+    "pitch_contrabass_glissandi",
+    "contrabass_beating_rhythms",
 ]

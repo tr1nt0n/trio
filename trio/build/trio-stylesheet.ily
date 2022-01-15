@@ -8,7 +8,7 @@
 \include "/Users/trintonprater/evans/lilypond/evans-spanners.ily"
 
 \header {
-    title = \markup \override #'(font-name . "Bodoni72") \fontsize #5.4 \center-column {"PIANO TRIO" \fontsize #7 \with-color #white "."}
+    title = \markup \override #'(font-name . "Bodoni72") \fontsize #8 \center-column {"PIANO TRIO" \fontsize #0.5 \with-color #white "."}
     subtitle = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"for Kate Ragan, Cori Trenczer, and Zoe Markle" \fontsize #3.4 \with-color #white "."}
     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #3 {"Trinton (*2000)"}
 }
@@ -33,7 +33,7 @@
 		\override TimeSignature.X-extent = #'(0 . 0)
         \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 6) (minimum-distance . 6) (padding . 6) (stretchability . 0))
         \override TimeSignature.break-visibility = #end-of-line-invisible
-        \override TimeSignature.font-size = 5
+        \override TimeSignature.font-size = 7
 		\override TimeSignature.font-name = "Bodoni72"
     }
 
@@ -47,6 +47,7 @@
 
         autoBeaming = ##f
         \override Beam.breakable = ##t
+        \override Beam.damping = 99
 
         \override DynamicText.font-size = #-2
         \override DynamicLineSpanner.staff-padding = 4
@@ -64,8 +65,12 @@
         \override TupletNumber.font-size = 1
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
+        \override TupletBracket.direction = #up
+        % \override TupletBracket.staff-padding = #3
 
         \override Stem.stemlet-length = 0.75
+
+        \override Staff.thickness = #0.5
 
         \override Glissando.thickness = #2
         \override Glissando.breakable = ##t
@@ -79,10 +84,9 @@
         \override Tie.height-limit = 6
         \override Tie.thickness = 1.5
 
-        % \override BarLine.transparent = ##t
-        % \override BarLine.X-extent = #'(0 . 0)
         \override BarLine.bar-extent = #'(-2 . 2)
         \override BarLine.hair-thickness = 0.5
+        % \override BarLine.transparent = ##t
         \override BarLine.X-extent = #'(0 . 0)
         \override BarLine.thick-thickness = #8
 
@@ -93,7 +97,7 @@
         \Staff
         fontSize = #-1
         \remove Time_signature_engraver
-        \RemoveAllEmptyStaves
+        \RemoveEmptyStaves
     }
 
     \context {
