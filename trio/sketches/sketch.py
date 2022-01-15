@@ -89,15 +89,16 @@ trio.contrabass_beating_rhythms(
     score=score,
     voice="contrabass 2 voice",
     durations=[
-        (1, 4),
-        (1, 4),
-        (1, 4),
-        (1, 4),
+        (3, 8),
+        (4, 8),
+        (1, 8),
     ],
     seed=1,
     index=0,
     notation="tuplet_bracket",
 )
+
+trinton.annotate_leaves(score)
 
 
 # \set glissandoMap = #'((2 . 0) (1 . 0) (0 . 1))

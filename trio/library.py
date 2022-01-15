@@ -378,14 +378,18 @@ def contrabass_beating_rhythms(
         ),
     }
 
+    denominators = []
+    for _ in durations:
+        denominators.append(_[1])
+
     _stacks2 = {
         "duration_bracket": rmakers.stack(
-            rmakers.NoteRhythmMaker(),
+            rmakers.talea([_[0] for _ in durations], denominators[0]),
             rmakers.rewrite_dots(),
             rmakers.duration_bracket(),
         ),
         "tuplet_bracket": rmakers.stack(
-            rmakers.NoteRhythmMaker(),
+            rmakers.talea([_[0] for _ in durations], denominators[0]),
             rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
             rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
             rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
@@ -395,24 +399,16 @@ def contrabass_beating_rhythms(
         ),
     }
 
-    stack1 = _stacks1[notation]
-    stack2 = _stacks2[notation]
-
     trinton.make_and_append_rhythm_selections(
         score=score,
         voice_name=voice,
-        stack=stack1,
+        stack=_stacks1[notation],
         durations=durations,
     )
 
-    ivh = evans.IntermittentVoiceHandler(stack2, direction=abjad.Down)
+    ivh = evans.IntermittentVoiceHandler(_stacks2[notation], direction=abjad.Down)
 
-    for tuplet in list(range(0, len(durations))):
-        sel = abjad.select(score[voice]).tuplet(tuplet)
-
-        ivh(sel)
-
-    # ivh([abjad.select(score[voice]).tuplet(_) for _ in list(range(0, len(durations)))])
+    ivh(abjad.select(score[voice]))
 
 
 # rhythm tools
