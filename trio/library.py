@@ -328,14 +328,14 @@ def cello_gliss(
 # rhythm tools
 
 
-def toccata_rhythms(score, voice, durations, division, extra_count, notation):
+def toccata_rhythms(score, voice, durations, division, extra_counts, notation):
     _stacks = {
         "duration_bracket": rmakers.stack(
-            rmakers.even_division([division], extra_counts=[extra_count]),
+            rmakers.even_division([division], extra_counts=extra_counts),
             rmakers.duration_bracket(),
         ),
         "tuplet": rmakers.stack(
-            rmakers.even_division([division], extra_counts=[extra_count]),
+            rmakers.even_division([division], extra_counts=extra_counts),
             rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
             rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
             rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
@@ -350,69 +350,46 @@ def toccata_rhythms(score, voice, durations, division, extra_count, notation):
     )
 
 
-def harmonic_glissandi_rhythms(
-    score, voices, durations, tuplets, duration_bracket_notation
-):
-    if duration_bracket_notation == True:
-        stack1 = rmakers.stack(
-            rmakers.tuplet(tuplets),
-            rmakers.rewrite_dots(),
-            rmakers.duration_bracket(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+def harmonic_glissandi_rhythms(score, voices, durations, tuplets, notation):
+
+    stack1 = rmakers.stack(
+        rmakers.tuplet(tuplets),
+        rmakers.rewrite_dots(),
+        rmakers.duration_bracket(),
+        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+    )
+
+    stack2 = rmakers.stack(
+        rmakers.tuplet(tuplets),
+        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_dots(),
+        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+    )
+
+    stack3 = rmakers.stack(
+        rmakers.NoteRhythmMaker(),
+        rmakers.tremolo_container(4),
+    )
+
+    _stacks = {"duration_bracket": stack1, "tuplet_bracket": stack2}
+
+    _voice_to_stack = {
+        "cello 1 voice": stack3,
+        "cello 2 voice": _stacks[notation],
+        "contrabass 1 voice": stack3,
+        "contrabass 2 voice": _stacks[notation],
+    }
+
+    for voice in voices:
+        trinton.make_and_append_rhythm_selections(
+            score=score,
+            voice_name=voice,
+            stack=_voice_to_stack[voice],
+            durations=durations,
         )
-
-        stack2 = rmakers.stack(
-            rmakers.NoteRhythmMaker(),
-            rmakers.tremolo_container(4),
-        )
-
-        for voice in voices:
-            if voice == "cello 2 voice":
-                trinton.make_and_append_rhythm_selections(
-                    score=score, voice_name=voice, stack=stack2, durations=durations
-                )
-
-            elif voice == "contrabass 2 voice":
-                trinton.make_and_append_rhythm_selections(
-                    score=score, voice_name=voice, stack=stack2, durations=durations
-                )
-
-            else:
-                trinton.make_and_append_rhythm_selections(
-                    score=score, voice_name=voice, stack=stack1, durations=durations
-                )
-
-    else:
-        stack1 = rmakers.stack(
-            rmakers.tuplet(tuplets),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
-        )
-
-        stack2 = rmakers.stack(
-            rmakers.NoteRhythmMaker(),
-            rmakers.tremolo_container(4),
-        )
-
-        for voice in voices:
-            if voice == "cello 1 voice":
-                trinton.make_and_append_rhythm_selections(
-                    score=score, voice_name=voice, stack=stack2, durations=durations
-                )
-
-            elif voice == "contrabass 1 voice":
-                trinton.make_and_append_rhythm_selections(
-                    score=score, voice_name=voice, stack=stack2, durations=durations
-                )
-
-            else:
-                trinton.make_and_append_rhythm_selections(
-                    score=score, voice_name=voice, stack=stack1, durations=durations
-                )
 
 
 # pitch tools
