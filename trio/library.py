@@ -41,13 +41,15 @@ end_row = eval(
 ]"""
 )
 
-contrabass_glissandi_pitches = eval("""[
+contrabass_glissandi_pitches = eval(
+    """[
     [-5, -5,],
     [-5, -5.5,],
     [-5, -4,],
     [-5, -4.5,],
     [-5, -6,],
-]""",)
+]""",
+)
 
 # saved rhythms
 
@@ -332,6 +334,7 @@ def cello_gliss(
 
     trinton.append_rhythm_selections(voice=voice, score=score, selections=container[:])
 
+
 def contrabass_beating_rhythms(
     score,
     voice,
@@ -339,7 +342,7 @@ def contrabass_beating_rhythms(
     seed,
     index,
     notation,
-    ):
+):
 
     tuplets = trinton.random_walk(
         chord=[
@@ -410,8 +413,6 @@ def contrabass_beating_rhythms(
         ivh(sel)
 
     # ivh([abjad.select(score[voice]).tuplet(_) for _ in list(range(0, len(durations)))])
-
-
 
 
 # rhythm tools
@@ -590,6 +591,7 @@ def piano_climax_chords(score, voice, leaves, octave, index, seed):
 
     handler(trinton.make_leaf_selection(score=score, voice=voice, leaves=leaves))
 
+
 _cello_string_to_piano_pitch = {
     "IV": [
         14,
@@ -605,15 +607,16 @@ _cello_string_to_piano_pitch = {
     ],
 }
 
+
 def pitch_cello_gliss_piano(score, voice, leaves, string):
     sel = trinton.make_leaf_selection(score=score, voice=voice, leaves=leaves)
 
     handler = evans.PitchHandler(
-        pitch_list=_cello_string_to_piano_pitch[string],
-        forget=False
+        pitch_list=_cello_string_to_piano_pitch[string], forget=False
     )
 
     handler(sel)
+
 
 def pitch_harmonic_glissandi(score, voice, leaves, strings, index):
 
@@ -662,10 +665,13 @@ def pitch_harmonic_glissandi(score, voice, leaves, strings, index):
 
     _string_to_pitches = {
         "III and IV": _voice_to_pitches[voice],
-        "II and III": [trinton.transpose(l=chord, m=-7) for chord in _voice_to_pitches[voice]],
-        "I and II": [trinton.transpose(l=chord, m=-14) for chord in _voice_to_pitches[voice]],
+        "II and III": [
+            trinton.transpose(l=chord, m=-7) for chord in _voice_to_pitches[voice]
+        ],
+        "I and II": [
+            trinton.transpose(l=chord, m=-14) for chord in _voice_to_pitches[voice]
+        ],
     }
-
 
     sel = trinton.make_leaf_selection(score=score, voice=voice, leaves=leaves)
 
@@ -676,11 +682,17 @@ def pitch_harmonic_glissandi(score, voice, leaves, strings, index):
 
     handler(sel)
 
+
 _contrabass_glissandi_strings_to_pitches = {
     "III and IV": contrabass_glissandi_pitches,
-    "II and III": [trinton.transpose(l=chord, m=-5) for chord in contrabass_glissandi_pitches],
-    "I and II": [trinton.transpose(l=chord, m=-10) for chord in contrabass_glissandi_pitches],
+    "II and III": [
+        trinton.transpose(l=chord, m=-5) for chord in contrabass_glissandi_pitches
+    ],
+    "I and II": [
+        trinton.transpose(l=chord, m=-10) for chord in contrabass_glissandi_pitches
+    ],
 }
+
 
 def pitch_contrabass_glissandi(score, voice, leaves, strings):
 
@@ -692,6 +704,7 @@ def pitch_contrabass_glissandi(score, voice, leaves, strings):
     )
 
     handler(sel)
+
 
 # spelling tools
 
@@ -844,9 +857,11 @@ def stop_angle_spanner(score, voice, leaves):
         ),
     )
 
+
 # markups
 
-all_startmarkups = eval("""[
+all_startmarkups = eval(
+    """[
     abjad.Markup(r"\markup \italic { mano destra }"),
     abjad.Markup(r"\markup { PIANO }"),
     abjad.Markup(r"\markup \italic { mano sinistra }"),
@@ -856,9 +871,11 @@ all_startmarkups = eval("""[
     abjad.Markup(r"\markup \italic { mano destra }"),
     abjad.Markup(r"\markup { CONTRABASS }"),
     abjad.Markup(r"\markup \italic { mano sinistra }"),
-]""")
+]"""
+)
 
-all_marginmarkups = eval("""[
+all_marginmarkups = eval(
+    """[
     abjad.Markup(r"\markup \italic { m. d. }"),
     abjad.Markup(r"\markup { PNO }"),
     abjad.Markup(r"\markup \italic { m. s. }"),
@@ -868,4 +885,5 @@ all_marginmarkups = eval("""[
     abjad.Markup(r"\markup \italic { m. d. }"),
     abjad.Markup(r"\markup { CB }"),
     abjad.Markup(r"\markup \italic { m. s. }"),
-]""")
+]"""
+)
