@@ -878,6 +878,18 @@ all_voices = eval(
     ]"""
 )
 
+all_voices_include_ts_context = eval(
+    """[
+        "Global Context",
+        "piano 1 voice",
+        "piano 2 voice",
+        "cello 1 voice",
+        "cello 2 voice",
+        "contrabass 1 voice",
+        "contrabass 2 voice",
+    ]"""
+)
+
 all_staves = eval(
     """[
         "piano 1 staff",

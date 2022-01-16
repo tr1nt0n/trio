@@ -262,8 +262,6 @@ trinton.attach(
     voice=score["Global Context"], leaves=[0], attachment=trio.rehearsal_mark3
 )
 
-# FERMATA
-
 for voice in trio.all_voices:
     trinton.append_rests(score=score, voice=voice, rests=[abjad.Rest("r4")])
 
@@ -273,25 +271,13 @@ trinton.beam_score(score)
 for voice in trio.all_voices:
     trinton.whiteout_empty_staves(score=score, voice=voice, cutaway=True)
 
-for voice in trio.all_voices:
 
-    measures = abjad.Selection(score[voice]).leaves().group_by_measure()
-
-    trinton.make_fermata_measure(measures[-1])
-
-measures = abjad.Selection(score["Global Context"]).leaves().group_by_measure()
-
-trinton.make_fermata_measure(measures[-1])
-
-
-for voice, leaf in zip(trio.all_voices, [26, 1, 2, 10, 2, 7]):
-    trinton.attach(
-        voice=score[voice],
-        leaves=[leaf],
-        attachment=abjad.Markup(r'\markup \huge { \musicglyph "scripts.ufermata" }'),
-    )
-
-# FERMATA
+trinton.populate_fermata_measures(
+    score=score,
+    voices=trio.all_voices_include_ts_context,
+    leaves=[1, 26, 1, 2, 10, 2, 7],
+    fermata_measures=None,
+)
 
 # show file
 
