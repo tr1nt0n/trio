@@ -27,7 +27,9 @@ for voice in ["contrabass 1 voice", "cello 1 voice"]:
     trinton.append_rests(
         score=score,
         voice=voice,
-        rests=[abjad.Rest("r1."),]
+        rests=[
+            abjad.Rest("r1."),
+        ],
     )
 
 for voice in ["piano 1 voice", "piano 2 voice", "cello 2 voice", "contrabass 2 voice"]:
@@ -51,19 +53,10 @@ for voice in ["piano 1 voice", "piano 2 voice"]:
     )
 
 for voice in ["cello 2 voice", "contrabass 2 voice"]:
-    trio.matter_broken_rhythms(
-        score=score,
-        voice=voice,
-        stack=1,
-        durations=[(1, 2)]
-    )
+    trio.matter_broken_rhythms(score=score, voice=voice, stack=1, durations=[(1, 2)])
 
 for voice in trio.all_voices:
-    trinton.append_rests(
-        score=score,
-        voice=voice,
-        rests=[abjad.Rest("r4")]
-    )
+    trinton.append_rests(score=score, voice=voice, rests=[abjad.Rest("r4")])
 
 trio.standard_cleffing(score=score)
 
@@ -78,11 +71,7 @@ trinton.beam_score(score)
 # whiteout empty staves
 
 for voice in trio.all_voices:
-    trinton.whiteout_empty_staves(
-        score=score,
-        voice=voice,
-        cutaway=True
-    )
+    trinton.whiteout_empty_staves(score=score, voice=voice, cutaway=True)
 
 # fermate
 
@@ -90,12 +79,28 @@ trinton.populate_fermata_measures(
     score=score,
     voices=trio.all_voices_include_ts_context,
     leaves=[1, 3, 3, 2, 9, 2, 9],
-    fermata_measures=None
+    fermata_measures=None,
 )
 
 # pitching
 
-for chord, partials, leaf in zip([1, 3, 5], [[7, 5, 4,], [6, 5, 4, 3], [5, 4, 3,]], [0, 1, 2]):
+for chord, partials, leaf in zip(
+    [1, 3, 5],
+    [
+        [
+            7,
+            5,
+            4,
+        ],
+        [6, 5, 4, 3],
+        [
+            5,
+            4,
+            3,
+        ],
+    ],
+    [0, 1, 2],
+):
 
     trio.pitch_matter(
         score=score,
@@ -107,7 +112,18 @@ for chord, partials, leaf in zip([1, 3, 5], [[7, 5, 4,], [6, 5, 4, 3], [5, 4, 3,
         markup=False,
     )
 
-for chord, partials, leaf in zip([1, 3, 5], [[2, 3], [1, 2], [1, 2,]], [0, 1, 2]):
+for chord, partials, leaf in zip(
+    [1, 3, 5],
+    [
+        [2, 3],
+        [1, 2],
+        [
+            1,
+            2,
+        ],
+    ],
+    [0, 1, 2],
+):
 
     trio.pitch_matter(
         score=score,
@@ -122,17 +138,40 @@ for chord, partials, leaf in zip([1, 3, 5], [[2, 3], [1, 2], [1, 2,]], [0, 1, 2]
 for voice in ["cello 2 voice", "contrabass 2 voice"]:
     trinton.attach(
         voice=score[voice],
-        leaves=[1,],
-        attachment=abjad.Tie()
+        leaves=[
+            1,
+        ],
+        attachment=abjad.Tie(),
     )
 
-trinton.attach(
-    voice=score["cello 2 voice"],
-    leaves=[1],
-    attachment=abjad.Clef("tenor")
-)
+trinton.attach(voice=score["cello 2 voice"], leaves=[1], attachment=abjad.Clef("tenor"))
 
-for chord, partials, leaf in zip([1, 3, 5, 5, 5, 5,], [[2, 3], [3, 4], [3, 4], [3, 4], [3, 4], [3, 4],], [0, 1, 3, 5, 7, 8,]):
+for chord, partials, leaf in zip(
+    [
+        1,
+        3,
+        5,
+        5,
+        5,
+        5,
+    ],
+    [
+        [2, 3],
+        [3, 4],
+        [3, 4],
+        [3, 4],
+        [3, 4],
+        [3, 4],
+    ],
+    [
+        0,
+        1,
+        3,
+        5,
+        7,
+        8,
+    ],
+):
     trio.pitch_matter(
         score=score,
         voice="cello 2 voice",
@@ -143,7 +182,32 @@ for chord, partials, leaf in zip([1, 3, 5, 5, 5, 5,], [[2, 3], [3, 4], [3, 4], [
         markup=True,
     )
 
-for chord, partials, leaf in zip([1, 3, 5, 5, 5, 5,], [[1], [1], [1], [1], [1], [1],], [0, 1, 3, 5, 7, 8,]):
+for chord, partials, leaf in zip(
+    [
+        1,
+        3,
+        5,
+        5,
+        5,
+        5,
+    ],
+    [
+        [1],
+        [1],
+        [1],
+        [1],
+        [1],
+        [1],
+    ],
+    [
+        0,
+        1,
+        3,
+        5,
+        7,
+        8,
+    ],
+):
     trio.pitch_matter(
         score=score,
         voice="contrabass 2 voice",
@@ -168,17 +232,17 @@ for voice in ["piano 1 voice", "piano 2 voice"]:
 for voice in ["piano 1 voice", "piano 2 voice"]:
     trinton.attach(
         voice=score[voice],
-        leaves=[0, 1,],
-        attachment=abjad.Arpeggio()
+        leaves=[
+            0,
+            1,
+        ],
+        attachment=abjad.Arpeggio(),
     )
 
 for leaf, attachments in zip(
     [0, 1, 2],
     [
-        [
-            abjad.Dynamic("ff"),
-            abjad.StartHairpin("|>")
-        ],
+        [abjad.Dynamic("ff"), abjad.StartHairpin("|>")],
         [
             abjad.Dynamic("p"),
             abjad.StartHairpin("<"),
@@ -190,22 +254,22 @@ for leaf, attachments in zip(
     ],
 ):
     trinton.attach_multiple(
-        score=score,
-        voice="piano 1 voice",
-        leaves=[leaf],
-        attachments=attachments
+        score=score, voice="piano 1 voice", leaves=[leaf], attachments=attachments
     )
 
 trinton.attach(
-    voice=score["piano 2 voice"],
-    leaves=[2],
-    attachment=abjad.Articulation("tenuto")
+    voice=score["piano 2 voice"], leaves=[2], attachment=abjad.Articulation("tenuto")
 )
 
 for voice in ["cello 2 voice", "contrabass 2 voice"]:
 
     for leaf, attachments in zip(
-        [0, 1, 3, 8,],
+        [
+            0,
+            1,
+            3,
+            8,
+        ],
         [
             [
                 abjad.Dynamic("ff"),
@@ -225,18 +289,13 @@ for voice in ["cello 2 voice", "contrabass 2 voice"]:
         ],
     ):
         trinton.attach_multiple(
-            score=score,
-            voice=voice,
-            leaves=[leaf],
-            attachments=attachments
+            score=score, voice=voice, leaves=[leaf], attachments=attachments
         )
 
 # global attachments
 
 trinton.attach(
-    voice=score["Global Context"],
-    leaves=[0],
-    attachment=trio.rehearsal_mark2
+    voice=score["Global Context"], leaves=[0], attachment=trio.rehearsal_mark2
 )
 
 # show file

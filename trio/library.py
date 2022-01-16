@@ -213,7 +213,6 @@ collapsing_tuplets_3 = eval(
 )
 
 
-
 # pitched rhythms
 
 
@@ -620,6 +619,7 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, notation):
             durations=durations,
         )
 
+
 def select_periodic_ties_2_4_7_8_of_10(argument):
     return abjad.Selection(argument).logical_ties().get([2, 4, 7, 8], 10)
 
@@ -627,13 +627,16 @@ def select_periodic_ties_2_4_7_8_of_10(argument):
 def select_periodic_ties_2_4_of_8(argument):
     return abjad.Selection(argument).logical_ties().get([2, 4], 8)
 
+
 _matter_stacks = {
     1: rmakers.stack(
         rmakers.accelerando(
             [(1, 20), (1, 8), (1, 32)],
         ),
         rmakers.force_rest(select_periodic_ties_2_4_7_8_of_10),
-        rmakers.feather_beam(beam_rests=True,),
+        rmakers.feather_beam(
+            beam_rests=True,
+        ),
         rmakers.duration_bracket(),
     ),
     2: rmakers.stack(
@@ -641,10 +644,13 @@ _matter_stacks = {
             [(1, 20), (1, 8), (1, 32)],
         ),
         rmakers.force_rest(select_periodic_ties_2_4_of_8),
-        rmakers.feather_beam(beam_rests=True,),
+        rmakers.feather_beam(
+            beam_rests=True,
+        ),
         rmakers.duration_bracket(),
-    )
+    ),
 }
+
 
 def matter_broken_rhythms(score, voice, stack, durations):
     trinton.make_and_append_rhythm_selections(
@@ -653,6 +659,7 @@ def matter_broken_rhythms(score, voice, stack, durations):
         stack=_matter_stacks[stack],
         durations=durations,
     )
+
 
 # pitch tools
 
@@ -933,37 +940,27 @@ def noteheads_only(selections):
         abjad.tweak(leaf.note_head).Beam.transparent = True
         abjad.tweak(leaf.note_head).Flag.transparent = True
 
+
 def standard_cleffing(score):
 
     for voice in ["cello 1 voice", "contrabass 1 voice"]:
         trinton.attach(
-            voice=score[voice],
-            leaves=[0],
-            attachment=abjad.Clef("percussion")
+            voice=score[voice], leaves=[0], attachment=abjad.Clef("percussion")
         )
 
     for voice in ["cello 2 voice", "contrabass 2 voice"]:
-        trinton.attach(
-            voice=score[voice],
-            leaves=[0],
-            attachment=abjad.Clef("bass")
-        )
+        trinton.attach(voice=score[voice], leaves=[0], attachment=abjad.Clef("bass"))
+
 
 def write_startmarkups(score):
     for staff, markup in zip(trio.all_staves, trio.all_startmarkups):
-        trinton.attach(
-            voice=score[staff],
-            leaves=[0],
-            attachment=markup
-        )
+        trinton.attach(voice=score[staff], leaves=[0], attachment=markup)
+
 
 def write_marginmarkups(score):
     for staff, markup in zip(trio.all_staves, trio.all_marginmarkups):
-        trinton.attach(
-            voice=score[staff],
-            leaves=[0],
-            attachment=markup
-        )
+        trinton.attach(voice=score[staff], leaves=[0], attachment=markup)
+
 
 # piano tools
 
