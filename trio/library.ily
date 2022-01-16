@@ -19,7 +19,6 @@ boxed-markup = #(
     \override #'(box-padding . 0.5)
     \whiteout
     \box
-    \italic
     #string
     #}
     )

@@ -43,11 +43,10 @@ end_row = eval(
 
 contrabass_glissandi_pitches = eval(
     """[
-    [-5, -5,],
+    [-5, -3,],
     [-5, -5.5,],
+    [-5, -1.5,],
     [-5, -4,],
-    [-5, -4.5,],
-    [-5, -6,],
 ]""",
 )
 
@@ -305,7 +304,7 @@ def cello_gliss(
             rmakers.rewrite_dots(),
             rmakers.duration_bracket(),
         ),
-        "tuplet_bracket": rmakers.stack(
+        "tuplet": rmakers.stack(
             rmakers.tuplet(rhythms),
             rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
             rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
@@ -335,80 +334,84 @@ def cello_gliss(
     trinton.append_rhythm_selections(voice=voice, score=score, selections=container[:])
 
 
-def contrabass_beating_rhythms(
-    score,
-    voice,
-    durations,
-    seed,
-    index,
-    notation,
-):
-
-    tuplets = trinton.random_walk(
-        chord=[
-            (1, 1, 1, 1, 1, 1, 1),
-            (1, 1, 1, 1, 1, 1),
-            (1, 1, 1, 1, 1),
-            (1, 1, 1, 1),
-            (1, 1, 1),
-            (1, 1),
-        ],
-        seed=seed,
-    )
-
-    rhythms = trinton.rotated_sequence(
-        tuplets,
-        index,
-    )
-
-    _stacks1 = {
-        "duration_bracket": rmakers.stack(
-            rmakers.tuplet(rhythms),
-            rmakers.rewrite_dots(),
-            rmakers.duration_bracket(),
-        ),
-        "tuplet_bracket": rmakers.stack(
-            rmakers.tuplet(rhythms),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
-        ),
-    }
-
-    denominators = []
-    for _ in durations:
-        denominators.append(_[1])
-
-    _stacks2 = {
-        "duration_bracket": rmakers.stack(
-            rmakers.talea([_[0] for _ in durations], denominators[0]),
-            rmakers.rewrite_dots(),
-            rmakers.duration_bracket(),
-        ),
-        "tuplet_bracket": rmakers.stack(
-            rmakers.talea([_[0] for _ in durations], denominators[0]),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
-        ),
-    }
-
-    trinton.make_and_append_rhythm_selections(
-        score=score,
-        voice_name=voice,
-        stack=_stacks1[notation],
-        durations=durations,
-    )
-
-    ivh = evans.IntermittentVoiceHandler(_stacks2[notation], direction=abjad.Down)
-
-    ivh(abjad.select(score[voice]))
+# def contrabass_beating_rhythms(
+#     score,
+#     voice,
+#     durations,
+#     seed,
+#     index,
+#     notation,
+# ):
+#
+#     tuplets = trinton.random_walk(
+#         chord=[
+#             (1, 1, 1, 1, 1, 1, 1),
+#             (1, 1, 1, 1, 1, 1),
+#             (1, 1, 1, 1, 1),
+#             (1, 1, 1, 1),
+#             (1, 1, 1),
+#             (1, 1),
+#         ],
+#         seed=seed,
+#     )
+#
+#     rhythms = trinton.rotated_sequence(
+#         tuplets,
+#         index,
+#     )
+#
+#     _stacks1 = {
+#         "duration_bracket": rmakers.stack(
+#             rmakers.tuplet(rhythms),
+#             rmakers.rewrite_dots(),
+#             rmakers.duration_bracket(),
+#         ),
+#         "tuplet": rmakers.stack(
+#             rmakers.tuplet(rhythms),
+#             rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+#             rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+#             rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+#             rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+#             rmakers.rewrite_dots(),
+#             rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+#         ),
+#     }
+#
+#     # denominators = []
+#     # for _ in durations:
+#     #     denominators.append(_[1])
+#
+#     _stacks2 = {
+#         "duration_bracket": rmakers.stack(
+#             # rmakers.talea([_[0] for _ in durations], denominators[0]),
+#             rmakers.note(),
+#             rmakers.rewrite_dots(),
+#             rmakers.duration_bracket(),
+#         ),
+#         "tuplet": rmakers.stack(
+#             # rmakers.talea([_[0] for _ in durations], denominators[0]),
+#             rmakers.note(),
+#             rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+#             rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+#             rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+#             rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+#             rmakers.rewrite_dots(),
+#             rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+#         ),
+#     }
+#
+#     trinton.make_and_append_rhythm_selections(
+#         score=score,
+#         voice_name=voice,
+#         stack=_stacks2[notation],
+#         durations=durations,
+#     )
+#
+#     ivh = evans.IntermittentVoiceHandler(_stacks1[notation], direction=abjad.Up)
+#
+#     for leaf in abjad.select(score[voice]).leaves():
+#
+#         ivh(leaf)
 
 
 # rhythm tools
@@ -460,7 +463,7 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, notation):
         rmakers.tremolo_container(4),
     )
 
-    _stacks = {"duration_bracket": stack1, "tuplet_bracket": stack2}
+    _stacks = {"duration_bracket": stack1, "tuplet": stack2}
 
     _voice_to_stack = {
         "cello 1 voice": stack3,
@@ -858,28 +861,111 @@ def stop_angle_spanner(score, voice, leaves):
 
 all_startmarkups = eval(
     """[
-    abjad.Markup(r"\markup \italic { mano destra }"),
-    abjad.Markup(r"\markup { PIANO }"),
-    abjad.Markup(r"\markup \italic { mano sinistra }"),
-    abjad.Markup(r"\markup \italic { mano destra }"),
-    abjad.Markup(r"\markup { VIOLONCELLO }"),
-    abjad.Markup(r"\markup \italic { mano sinistra }"),
-    abjad.Markup(r"\markup \italic { mano destra }"),
-    abjad.Markup(r"\markup { CONTRABASS }"),
-    abjad.Markup(r"\markup \italic { mano sinistra }"),
+    abjad.StartMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { Piano }")),
+    abjad.StartMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { Violoncello }")),
+    abjad.StartMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { Contrabass }")),
 ]"""
+)
+
+all_voices = eval(
+    """[
+        "piano 1 voice",
+        "piano 2 voice",
+        "cello 1 voice",
+        "cello 2 voice",
+        "contrabass 1 voice",
+        "contrabass 2 voice",
+    ]"""
+)
+
+all_staves = eval(
+    """[
+        "piano 1 staff",
+        "cello 1 staff",
+        "contrabass 1 staff",
+    ]"""
 )
 
 all_marginmarkups = eval(
     """[
-    abjad.Markup(r"\markup \italic { m. d. }"),
-    abjad.Markup(r"\markup { PNO }"),
-    abjad.Markup(r"\markup \italic { m. s. }"),
-    abjad.Markup(r"\markup \italic { m. d. }"),
-    abjad.Markup(r"\markup { VC }"),
-    abjad.Markup(r"\markup \italic { m. s. }"),
-    abjad.Markup(r"\markup \italic { m. d. }"),
-    abjad.Markup(r"\markup { CB }"),
-    abjad.Markup(r"\markup \italic { m. s. }"),
+    abjad.MarginMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { pno. }")),
+    abjad.MarginMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { vc. }")),
+    abjad.MarginMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { cb. }")),
 ]"""
+)
+
+_string_to_markup = {
+    "I": abjad.LilyPondLiteral(r'\boxed-markup "I" 1', format_slot="after"),
+    "II": abjad.LilyPondLiteral(r'\boxed-markup "II" 1', format_slot="after"),
+    "III": abjad.LilyPondLiteral(r'\boxed-markup "III" 1', format_slot="after"),
+    "IV": abjad.LilyPondLiteral(r'\boxed-markup "IV" 1', format_slot="after"),
+}
+
+
+def attach_string_markup(score, voice, leaves, string):
+    for leaf in leaves:
+        trinton.attach(
+            voice=score[voice],
+            leaves=leaves,
+            attachment=_string_to_markup[string],
+        )
+
+
+rehearsal_mark1 = abjad.LilyPondLiteral(
+    r'\boxed-markup "Smothering waves . . . thick-veined hand (i)" 0.5',
+    format_slot="after",
+)
+
+rehearsal_mark2 = abjad.LilyPondLiteral(
+    r'\boxed-markup "Matter, to Self-Organize" 0.5', format_slot="after"
+)
+
+rehearsal_mark3 = abjad.LilyPondLiteral(
+    r'\boxed-markup "Skyward, {diagonal moves} (i)" 0.5', format_slot="after"
+)
+
+rehearsal_mark4 = abjad.LilyPondLiteral(
+    r'\boxed-markup "Toccata" 0.5', format_slot="after"
+)
+
+rehearsal_mark5 = abjad.LilyPondLiteral(
+    r'\boxed-markup "in th posession of nymphs and naiads" 0.5', format_slot="after"
+)
+
+rehearsal_mark6 = abjad.LilyPondLiteral(
+    r'\boxed-markup "Skyward, {diagonal moves} (ii)" 0.5', format_slot="after"
+)
+
+rehearsal_mark7 = abjad.LilyPondLiteral(
+    r'\boxed-markup "Are We Still Married? (ii)" 0.5', format_slot="after"
+)
+
+rehearsal_mark8 = abjad.LilyPondLiteral(
+    r'\boxed-markup "Inscribed in Water" 0.5', format_slot="after"
+)
+
+rehearsal_mark9 = abjad.LilyPondLiteral(
+    r'\boxed-markup "Skyward, {diagonal moves} (iii)" 0.5', format_slot="after"
+)
+
+rehearsal_mark10 = abjad.LilyPondLiteral(
+    r'\boxed-markup "Smothering waves . . . thick-veined hand (ii)" 0.5',
+    format_slot="after",
+)
+
+rehearsal_mark11 = abjad.LilyPondLiteral(
+    r'\boxed-markup "One of These Days {dry land}" 0.5', format_slot="after"
+)
+
+rehearsal_mark12 = abjad.LilyPondLiteral(
+    r'\boxed-markup "Smothering waves by your strong and thick-veined hands (ii)" 0.5',
+    format_slot="after",
+)
+
+rehearsal_mark13 = abjad.LilyPondLiteral(
+    r'\boxed-markup "She has something to tell you" 0.5', format_slot="after"
+)
+
+rehearsal_mark14 = abjad.LilyPondLiteral(
+    r'\boxed-markup "Back." 0.5', format_slot="after"
 )

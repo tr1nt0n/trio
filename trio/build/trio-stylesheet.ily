@@ -15,6 +15,8 @@
 
 \layout {
     \accidentalStyle dodecaphonic
+    ragged-bottom = ##t
+    ragged-last = ##t
     ragged-right = ##t
     \context {
         \name TimeSignatureContext
@@ -30,11 +32,14 @@
         \override BarNumber.font-size = 3
         \override MetronomeMark.stencil = ##f
 		\override BarNumber.font-name = "Bodoni72"
-		\override TimeSignature.X-extent = #'(0 . 0)
-        \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 6) (minimum-distance . 6) (padding . 6) (stretchability . 0))
+		\override TimeSignature.X-extent = #'(0 . -25)
+        \override TimeSignature.Y-extent = #'(25 . 0)
+        \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 12) (minimum-distance . 12) (padding . 6) (stretchability . 0))
         \override TimeSignature.break-visibility = #end-of-line-invisible
         \override TimeSignature.font-size = 7
 		\override TimeSignature.font-name = "Bodoni72"
+        \override TimeSignature.X-offset = -2.5
+        \override TimeSignature.Y-offset = 3
     }
 
     \context {
@@ -61,7 +66,7 @@
 
         tupletFullLength = ##t
         \override TupletBracket.full-length-to-extent = ##f
-        \override TupletBracket.padding = 2
+        \override TupletBracket.padding = 3
         \override TupletNumber.font-size = 1
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
@@ -72,7 +77,7 @@
 
         \override Staff.thickness = #0.5
 
-        \override Glissando.thickness = #2
+        \override Glissando.thickness = #3
         \override Glissando.breakable = ##t
 
         \override StemTremolo.beam-width = 1.5
@@ -97,6 +102,7 @@
         \Staff
         fontSize = #-1
         \remove Time_signature_engraver
+        \override InstrumentName.self-alignment-X = #CENTER
         \RemoveEmptyStaves
     }
 
