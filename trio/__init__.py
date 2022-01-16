@@ -38,7 +38,11 @@ from .library import (
     rehearsal_mark11,
     rehearsal_mark12,
     rehearsal_mark13,
-    rehearsal_mark14,
+    pitch_matter,
+    matter_broken_rhythms,
+    standard_cleffing,
+    write_startmarkups,
+    write_marginmarkups,
 )
 
 __all__ = [
@@ -81,5 +85,9 @@ __all__ = [
     "rehearsal_mark11",
     "rehearsal_mark12",
     "rehearsal_mark13",
-    "rehearsal_mark14",
+    "pitch_matter",
+    "matter_broken_rhythms",
+    "standard_cleffing",
+    "write_startmarkups",
+    "write_marginmarkups",
 ]

@@ -38,7 +38,7 @@
         \override TimeSignature.break-visibility = #end-of-line-invisible
         \override TimeSignature.font-size = 7
 		\override TimeSignature.font-name = "Bodoni72"
-        \override TimeSignature.X-offset = -2.5
+        \override TimeSignature.X-offset = -1.5
         \override TimeSignature.Y-offset = 3
     }
 
@@ -71,7 +71,6 @@
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
         \override TupletBracket.direction = #up
-        % \override TupletBracket.staff-padding = #3
 
         \override Stem.stemlet-length = 0.75
 

@@ -2,9 +2,9 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
-            \time 8/8
-            s1 * 1
-            \boxed-markup "Skyward, {diagonal moves} (i)" 0.5
+            \time 3/2
+            s1 * 3/2
+            \boxed-markup "Matter, to Self-Organize" 0.5
             \once \override Score.TimeSignature.transparent = ##t
             \once \override MultiMeasureRest.transparent = ##t
             \time 1/4
@@ -20,126 +20,23 @@
                 {
                     \context Voice = "piano 1 voice"
                     {
-                        \times 2/3
-                        {
-                            \change Staff = "piano 2 staff"
-                            \set PianoStaff.instrumentName =
-                            \markup { Piano }
-                            \override Beam.auto-knee-gap = #0
-                            \override Staff.Stem.stemlet-length = 0.75
-                            e'''16
-                            \fp
-                            - \accent
-                            [
-                            \change Staff = "piano 1 staff"
-                            e'''16
-                            \fp
-                            - \accent
-                            \change Staff = "piano 2 staff"
-                            \revert Staff.Stem.stemlet-length
-                            e'''16
-                            ]
-                        }
-                        \change Staff = "piano 1 staff"
-                        \override Staff.Stem.stemlet-length = 0.75
-                        e'''32
-                        \fp
-                        - \accent
-                        [
-                        \change Staff = "piano 2 staff"
-                        e'''32
-                        \change Staff = "piano 1 staff"
-                        e'''32
-                        \fp
-                        - \accent
-                        \change Staff = "piano 2 staff"
-                        \revert Staff.Stem.stemlet-length
-                        e'''32
-                        ]
-                        \times 2/3
-                        {
-                            \change Staff = "piano 1 staff"
-                            \override Staff.Stem.stemlet-length = 0.75
-                            e'''16
-                            \fp
-                            - \accent
-                            [
-                            \change Staff = "piano 2 staff"
-                            e'''16
-                            \change Staff = "piano 1 staff"
-                            \revert Staff.Stem.stemlet-length
-                            e'''16
-                            ]
-                        }
-                        \change Staff = "piano 2 staff"
-                        \override Staff.Stem.stemlet-length = 0.75
-                        e'''16
-                        [
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Stem.stemlet-length
-                        e'''16
-                        \fp
-                        - \accent
-                        ]
-                        \times 2/3
-                        {
-                            \change Staff = "piano 2 staff"
-                            \override Staff.Stem.stemlet-length = 0.75
-                            e'''16
-                            [
-                            \change Staff = "piano 1 staff"
-                            e'''16
-                            \fp
-                            - \accent
-                            \change Staff = "piano 2 staff"
-                            \revert Staff.Stem.stemlet-length
-                            e'''16
-                            ]
-                        }
-                        \change Staff = "piano 1 staff"
-                        \override Staff.Stem.stemlet-length = 0.75
-                        e'''16
-                        [
-                        \change Staff = "piano 2 staff"
-                        \revert Staff.Stem.stemlet-length
-                        e'''16
-                        ]
-                        \times 4/7
-                        {
-                            \change Staff = "piano 1 staff"
-                            \override Staff.Stem.stemlet-length = 0.75
-                            e'''32
-                            \fp
-                            - \accent
-                            [
-                            \change Staff = "piano 2 staff"
-                            e'''32
-                            \change Staff = "piano 1 staff"
-                            e'''32
-                            \fp
-                            - \accent
-                            \change Staff = "piano 2 staff"
-                            e'''32
-                            \change Staff = "piano 1 staff"
-                            e'''32
-                            \change Staff = "piano 2 staff"
-                            e'''32
-                            \change Staff = "piano 1 staff"
-                            \revert Staff.Stem.stemlet-length
-                            e'''32
-                            \fp
-                            - \accent
-                            ]
-                        }
-                        \change Staff = "piano 2 staff"
-                        \override Staff.Stem.stemlet-length = 0.75
-                        e'''16
-                        [
-                        \change Staff = "piano 1 staff"
-                        \override Beam.auto-knee-gap = #15
-                        \revert Staff.Stem.stemlet-length
-                        e'''16
-                        ]
+                        \set PianoStaff.instrumentName =
+                        \markup { Piano }
+                        <bf'' b'' fs'''>2
+                        :32
+                        \ff
+                        \arpeggio
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        <f'' a'' cs''' fs'''>2
+                        :32
+                        \p
+                        \arpeggio
+                        \<
+                        <a'' cs''' af'''>2
+                        :32
+                        \mf
+                        - \tenuto
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override MultiMeasureRest.transparent = ##t
                         R1 * 1/4
@@ -151,7 +48,15 @@
                 {
                     \context Voice = "piano 2 voice"
                     {
-                        s1
+                        <c'' ef''>2
+                        :32
+                        \arpeggio
+                        <b b'>2
+                        :32
+                        \arpeggio
+                        <cs' d''>2
+                        :32
+                        - \tenuto
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override MultiMeasureRest.transparent = ##t
                         R1 * 1/4
@@ -166,14 +71,13 @@
                 {
                     \context Voice = "cello 1 voice"
                     {
-                        \staff-line-count 1
                         \set PianoStaff.instrumentName =
                         \markup { Violoncello }
                         \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                         \clef "percussion"
-                        r1 * 1/2
-                        R1 * 1/2
+                        r1 * 3/4
+                        R1 * 3/4
                         \stopStaff \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override MultiMeasureRest.transparent = ##t
@@ -186,58 +90,82 @@
                 {
                     \context Voice = "cello 2 voice"
                     {
-                        \override Staff.Stem.stemlet-length = 0.75
-                        d'''8
-                        \f
-                        - \accent
-                        - \tweak circled-tip ##t
+                        \clef "bass"
+                        <c' ef'>2
+                        \ff
+                        ^ \markup -14
+                        ^ \markup +0
+                        - \tweak stencil #abjad-flared-hairpin
                         \>
-                        \glissando
-                        \(
-                        [
-                        \boxed-markup "II" 1
-                        \revert Staff.Stem.stemlet-length
-                        fs'''8
-                        \glissando
-                        ]
-                        \override Staff.Stem.stemlet-length = 0.75
-                        dqs'''8
-                        \)
-                        \glissando
-                        [
-                        \set suggestAccidentals = ##t
-                        e'''32
-                        \f
-                        - \accent
-                        - \tweak circled-tip ##t
-                        \>
-                        \glissando
-                        \(
-                        dqf'''32
-                        \glissando
-                        gqf'''32
-                        \glissando
-                        \revert Staff.Stem.stemlet-length
-                        d'''32
-                        \glissando
-                        ]
-                        \times 2/3
+                        \clef "tenor"
+                        <f' a'>2
+                        \p
+                        ^ \markup +4
+                        ^ \markup +14
+                        - \tweak stencil #abjad-flared-hairpin
+                        \<
+                        ~
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
                         {
-                            fs'''4
-                            \)
-                            \glissando
-                            \set suggestAccidentals = ##f
-                            dqs'''4
+                            <f' a'>32 * 3/2
+                            [
+                            <a' cs''>32 * 25/16
                             \f
-                            - \accent
+                            ^ \markup +16
+                            ^ \markup -20
                             - \tweak circled-tip ##t
                             \>
-                            \glissando
-                            \(
-                            e'''4
+                            r32 * 7/4
+                            <a' cs''>32 * 65/32
+                            ^ \markup +16
+                            ^ \markup -20
+                            r32 * 79/32
+                            <a' cs''>32 * 49/16
+                            ^ \markup +16
+                            ^ \markup -20
+                            <a' cs''>32 * 29/8
                             \!
-                            \)
+                            ^ \markup +16
+                            ^ \markup -20
+                            ]
                         }
+                        \revert TupletNumber.text
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override MultiMeasureRest.transparent = ##t
                         R1 * 1/4
@@ -252,14 +180,13 @@
                 {
                     \context Voice = "contrabass 1 voice"
                     {
-                        \staff-line-count 1
                         \set PianoStaff.instrumentName =
                         \markup { Contrabass }
                         \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                         \clef "percussion"
-                        r1 * 1/2
-                        R1 * 1/2
+                        r1 * 3/4
+                        R1 * 3/4
                         \stopStaff \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override MultiMeasureRest.transparent = ##t
@@ -273,38 +200,74 @@
                     \context Voice = "contrabass 2 voice"
                     {
                         \clef "bass"
-                        <d e>4
-                        \f
-                        - \accent
-                        - \tweak circled-tip ##t
+                        <bf,>2
+                        \ff
+                        ^ \markup -3
+                        - \tweak stencil #abjad-flared-hairpin
                         \>
-                        \glissando
-                        \(
-                        <dqf d>4
-                        \glissando
-                        <d fqs>4
-                        \glissando
-                        \set suggestAccidentals = ##t
-                        \override Staff.Stem.stemlet-length = 0.75
-                        <d ef>16
-                        \)
-                        \glissando
-                        [
-                        <d e>16
-                        \f
-                        - \accent
-                        - \tweak circled-tip ##t
-                        \>
-                        \glissando
-                        \(
-                        <dqf d>16
-                        \glissando
-                        \revert Staff.Stem.stemlet-length
-                        <d fqs>16
-                        \!
-                        \)
-                        ]
-                        \set suggestAccidentals = ##f
+                        <b,>2
+                        \p
+                        ^ \markup +0
+                        - \tweak stencil #abjad-flared-hairpin
+                        \<
+                        ~
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        c'2
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \times 1/1
+                        {
+                            <b,>32 * 3/2
+                            [
+                            <cs>32 * 25/16
+                            \f
+                            ^ \markup +3
+                            - \tweak circled-tip ##t
+                            \>
+                            r32 * 7/4
+                            <cs>32 * 65/32
+                            ^ \markup +3
+                            r32 * 79/32
+                            <cs>32 * 49/16
+                            ^ \markup +3
+                            <cs>32 * 29/8
+                            \!
+                            ^ \markup +3
+                            ]
+                        }
+                        \revert TupletNumber.text
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override MultiMeasureRest.transparent = ##t
                         R1 * 1/4

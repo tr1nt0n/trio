@@ -50,6 +50,144 @@ contrabass_glissandi_pitches = eval(
 ]""",
 )
 
+_matter_harmonies = {
+    1: eval(
+        """[
+            -2,
+            12,
+            15,
+            22,
+            23,
+            30,
+            30,
+        ]"""
+    ),
+    2: eval(
+        """[
+            2,
+            13,
+            21,
+            31,
+            33,
+            31,
+            32,
+        ]"""
+    ),
+    3: eval(
+        """[
+            -1,
+            11,
+            17,
+            21,
+            25,
+            30,
+            33,
+        ]"""
+    ),
+    4: eval(
+        """[
+            2,
+            12,
+            21,
+            28,
+            30,
+            33,
+            36,
+        ]"""
+    ),
+    5: eval(
+        """[
+            1,
+            14,
+            21,
+            25,
+            32,
+            34,
+            37,
+        ]"""
+    ),
+    6: eval(
+        """[
+            -13,
+            8,
+            23,
+            26,
+            28,
+            32,
+            36,
+        ]"""
+    ),
+}
+
+_matter_cent_markups = {
+    1: eval(
+        """[
+            "-3",
+            "-14",
+            "+0",
+            "-5",
+            "+7",
+            "+8",
+            "+7",
+        ]"""
+    ),
+    2: eval(
+        """[
+            "-5",
+            "-5",
+            "+12",
+            "-25",
+            "-24",
+            "+4",
+            "-28",
+        ]"""
+    ),
+    3: eval(
+        """[
+            "+0",
+            "+3",
+            "+4",
+            "+14",
+            "+20",
+            "+17",
+            "-43",
+        ]"""
+    ),
+    4: eval(
+        """[
+            "-2",
+            "+3",
+            "+19",
+            "+18",
+            "+3",
+            "+26",
+            "-6",
+        ]"""
+    ),
+    5: eval(
+        """[
+            "+3",
+            "-16",
+            "+16",
+            "-20",
+            "-13",
+            "-51",
+            "+27",
+        ]"""
+    ),
+    6: eval(
+        """[
+            "-2",
+            "-11",
+            "+17",
+            "+23",
+            "+15",
+            "+32",
+            "+8",
+        ]"""
+    ),
+}
+
 # saved rhythms
 
 collapsing_tuplets_1 = eval("""[(4, 1), (1, 1, 4), (1, 1, 1, 4), (1, 1, 1), (6, 1)]""")
@@ -73,6 +211,8 @@ collapsing_tuplets_3 = eval(
     (6, 1, 1),
 ]"""
 )
+
+
 
 # pitched rhythms
 
@@ -480,6 +620,39 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, notation):
             durations=durations,
         )
 
+def select_periodic_ties_2_4_7_8_of_10(argument):
+    return abjad.Selection(argument).logical_ties().get([2, 4, 7, 8], 10)
+
+
+def select_periodic_ties_2_4_of_8(argument):
+    return abjad.Selection(argument).logical_ties().get([2, 4], 8)
+
+_matter_stacks = {
+    1: rmakers.stack(
+        rmakers.accelerando(
+            [(1, 20), (1, 8), (1, 32)],
+        ),
+        rmakers.force_rest(select_periodic_ties_2_4_7_8_of_10),
+        rmakers.feather_beam(beam_rests=True,),
+        rmakers.duration_bracket(),
+    ),
+    2: rmakers.stack(
+        rmakers.accelerando(
+            [(1, 20), (1, 8), (1, 32)],
+        ),
+        rmakers.force_rest(select_periodic_ties_2_4_of_8),
+        rmakers.feather_beam(beam_rests=True,),
+        rmakers.duration_bracket(),
+    )
+}
+
+def matter_broken_rhythms(score, voice, stack, durations):
+    trinton.make_and_append_rhythm_selections(
+        score=score,
+        voice_name=voice,
+        stack=_matter_stacks[stack],
+        durations=durations,
+    )
 
 # pitch tools
 
@@ -705,6 +878,52 @@ def pitch_contrabass_glissandi(score, voice, leaves, strings):
     handler(sel)
 
 
+def pitch_matter(
+    score,
+    voice,
+    leaves,
+    chord,
+    partials,
+    transpose,
+    markup,
+):
+    collection = trinton.transpose(l=_matter_harmonies[chord], m=transpose)
+    collected_partials = []
+
+    for partial in partials:
+        collected_partials.append(collection[partial - 1])
+
+    handler = evans.PitchHandler(pitch_list=[collected_partials], forget=False)
+
+    for leaf in leaves:
+        handler(abjad.select(score[voice]).leaf(leaf))
+
+    if markup is True:
+        markup_collection = _matter_cent_markups[chord]
+
+        for partial, leaf in zip(partials, leaves):
+
+            cent_markups = eval(
+                """[
+                    abjad.Markup(string=rf"\markup {markup_collection[partial-1]}", direction=abjad.Up),
+                    abjad.Markup(string=rf"\markup {markup_collection[partial]}", direction = abjad.Up),
+                ]"""
+            )
+
+            if len(abjad.select(score[voice]).leaf(leaf).note_heads) == 2:
+                trinton.attach_multiple(
+                    score=score,
+                    voice=voice,
+                    leaves=[leaf],
+                    attachments=[cent_markups[0], cent_markups[1]],
+                )
+
+            else:
+                trinton.attach(
+                    voice=score[voice], leaves=[leaf], attachment=cent_markups[0]
+                )
+
+
 # spelling tools
 
 
@@ -714,6 +933,37 @@ def noteheads_only(selections):
         abjad.tweak(leaf.note_head).Beam.transparent = True
         abjad.tweak(leaf.note_head).Flag.transparent = True
 
+def standard_cleffing(score):
+
+    for voice in ["cello 1 voice", "contrabass 1 voice"]:
+        trinton.attach(
+            voice=score[voice],
+            leaves=[0],
+            attachment=abjad.Clef("percussion")
+        )
+
+    for voice in ["cello 2 voice", "contrabass 2 voice"]:
+        trinton.attach(
+            voice=score[voice],
+            leaves=[0],
+            attachment=abjad.Clef("bass")
+        )
+
+def write_startmarkups(score):
+    for staff, markup in zip(trio.all_staves, trio.all_startmarkups):
+        trinton.attach(
+            voice=score[staff],
+            leaves=[0],
+            attachment=markup
+        )
+
+def write_marginmarkups(score):
+    for staff, markup in zip(trio.all_staves, trio.all_marginmarkups):
+        trinton.attach(
+            voice=score[staff],
+            leaves=[0],
+            attachment=markup
+        )
 
 # piano tools
 
@@ -859,14 +1109,6 @@ def stop_angle_spanner(score, voice, leaves):
 
 # markups
 
-all_startmarkups = eval(
-    """[
-    abjad.StartMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { Piano }")),
-    abjad.StartMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { Violoncello }")),
-    abjad.StartMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { Contrabass }")),
-]"""
-)
-
 all_voices = eval(
     """[
         "piano 1 voice",
@@ -896,6 +1138,14 @@ all_staves = eval(
         "cello 1 staff",
         "contrabass 1 staff",
     ]"""
+)
+
+all_startmarkups = eval(
+    """[
+    abjad.StartMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { Piano }")),
+    abjad.StartMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { Violoncello }")),
+    abjad.StartMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { Contrabass }")),
+]"""
 )
 
 all_marginmarkups = eval(
@@ -970,14 +1220,9 @@ rehearsal_mark11 = abjad.LilyPondLiteral(
 )
 
 rehearsal_mark12 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Smothering waves by your strong and thick-veined hands (ii)" 0.5',
-    format_slot="after",
-)
-
-rehearsal_mark13 = abjad.LilyPondLiteral(
     r'\boxed-markup "She has something to tell you" 0.5', format_slot="after"
 )
 
-rehearsal_mark14 = abjad.LilyPondLiteral(
+rehearsal_mark13 = abjad.LilyPondLiteral(
     r'\boxed-markup "Back." 0.5', format_slot="after"
 )
