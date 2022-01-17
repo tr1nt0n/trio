@@ -1,5 +1,6 @@
 import abjad
 import evans
+import baca
 import trinton
 import trio
 from abjadext import rmakers
@@ -225,7 +226,7 @@ for voice in ["piano 1 voice", "piano 2 voice"]:
         trinton.make_leaf_selection(
             score=score,
             voice=voice,
-            leaves=[0, 1, 2],
+            leaves=[0, 1],
         )
     )
 
@@ -268,6 +269,7 @@ for voice in ["cello 2 voice", "contrabass 2 voice"]:
             0,
             1,
             3,
+            7,
             8,
         ],
         [
@@ -283,14 +285,15 @@ for voice in ["cello 2 voice", "contrabass 2 voice"]:
                 abjad.Dynamic("f"),
                 abjad.StartHairpin(">o"),
             ],
-            [
-                abjad.StopHairpin(),
-            ],
+            [abjad.Articulation("staccato")],
+            [abjad.StopHairpin(), abjad.Articulation("staccato")],
         ],
     ):
         trinton.attach_multiple(
             score=score, voice=voice, leaves=[leaf], attachments=attachments
         )
+
+    trio.ritardando_beams(score=score, voice=voice, leaves=[2])
 
 # global attachments
 

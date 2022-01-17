@@ -1,7 +1,7 @@
 \version "2.20.0"
 \language english
 #(set-default-paper-size "11x17landscape")
-#(set-global-staff-size 16)
+#(set-global-staff-size 12.5)
 
 \include "/Users/trintonprater/scores/trio/trio/library.ily"
 \include "/Users/trintonprater/evans/lilypond/evans-markups.ily"
@@ -48,7 +48,7 @@
         \remove Bar_number_engraver
         \accepts TimeSignatureContext
         proportionalNotationDuration = #(ly:make-moment 1 30)
-        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 15) (minimum distance . 15) (padding . 7))
+        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 15) (minimum distance . 15) (padding . 5))
 
         autoBeaming = ##f
         \override Beam.breakable = ##t

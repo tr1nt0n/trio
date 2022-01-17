@@ -34,7 +34,6 @@
                         \arpeggio
                         \<
                         <a'' cs''' af'''>2
-                        :32
                         \mf
                         - \tenuto
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -55,7 +54,6 @@
                         :32
                         \arpeggio
                         <cs' d''>2
-                        :32
                         - \tenuto
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override MultiMeasureRest.transparent = ##t
@@ -143,6 +141,7 @@
                             }
                         \times 1/1
                         {
+                            \once \override Beam.grow-direction = #left
                             <f' a'>32 * 3/2
                             [
                             <a' cs''>32 * 25/16
@@ -157,10 +156,12 @@
                             ^ \markup -20
                             r32 * 79/32
                             <a' cs''>32 * 49/16
+                            - \staccato
                             ^ \markup +16
                             ^ \markup -20
                             <a' cs''>32 * 29/8
                             \!
+                            - \staccato
                             ^ \markup +16
                             ^ \markup -20
                             ]
@@ -249,6 +250,7 @@
                             }
                         \times 1/1
                         {
+                            \once \override Beam.grow-direction = #left
                             <b,>32 * 3/2
                             [
                             <cs>32 * 25/16
@@ -261,9 +263,11 @@
                             ^ \markup +3
                             r32 * 79/32
                             <cs>32 * 49/16
+                            - \staccato
                             ^ \markup +3
                             <cs>32 * 29/8
                             \!
+                            - \staccato
                             ^ \markup +3
                             ]
                         }

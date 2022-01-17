@@ -634,7 +634,7 @@ _matter_stacks = {
             [(1, 20), (1, 8), (1, 32)],
         ),
         rmakers.force_rest(select_periodic_ties_2_4_7_8_of_10),
-        rmakers.feather_beam(
+        rmakers.beam(
             beam_rests=True,
         ),
         rmakers.duration_bracket(),
@@ -644,7 +644,7 @@ _matter_stacks = {
             [(1, 20), (1, 8), (1, 32)],
         ),
         rmakers.force_rest(select_periodic_ties_2_4_of_8),
-        rmakers.feather_beam(
+        rmakers.beam(
             beam_rests=True,
         ),
         rmakers.duration_bracket(),
@@ -960,6 +960,13 @@ def write_startmarkups(score):
 def write_marginmarkups(score):
     for staff, markup in zip(trio.all_staves, trio.all_marginmarkups):
         trinton.attach(voice=score[staff], leaves=[0], attachment=markup)
+
+
+def ritardando_beams(score, voice, leaves):
+    for leaf in leaves:
+        abjad.override(
+            abjad.select(score[voice]).leaf(leaf)
+        ).Beam.grow_direction = abjad.Left
 
 
 # piano tools

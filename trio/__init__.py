@@ -43,6 +43,7 @@ from .library import (
     standard_cleffing,
     write_startmarkups,
     write_marginmarkups,
+    ritardando_beams,
 )
 
 __all__ = [
@@ -90,4 +91,5 @@ __all__ = [
     "standard_cleffing",
     "write_startmarkups",
     "write_marginmarkups",
+    "ritardanod_beams",
 ]
