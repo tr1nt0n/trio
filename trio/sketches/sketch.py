@@ -1,6 +1,5 @@
 import abjad
 import evans
-import baca
 import trinton
 import trio
 from abjadext import rmakers

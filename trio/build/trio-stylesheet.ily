@@ -6,6 +6,7 @@
 \include "/Users/trintonprater/scores/trio/trio/library.ily"
 \include "/Users/trintonprater/evans/lilypond/evans-markups.ily"
 \include "/Users/trintonprater/evans/lilypond/evans-spanners.ily"
+\include "/Users/trintonprater/baca/lilypond/baca-circle-bow-markups.ily"
 
 \header {
     title = \markup \override #'(font-name . "Bodoni72") \fontsize #8 \center-column {"PIANO TRIO" \fontsize #0.5 \with-color #white "."}
@@ -59,7 +60,7 @@
 
         \override MetronomeMark.padding = 6
         \override MetronomeMark.font-size = 4
-        \override MetronomeMark.extra-offset = #'(0.3 . 0)
+        \override MetronomeMark.extra-offset = #'(1.5 . 0)
 
         \override Clef.whiteout-style = #'outline
         \override Clef.whiteout = 1
