@@ -738,6 +738,10 @@ trinton.transparent_accidentals(score=score, voice="contrabass 1 voice", leaves=
 for voice in trio.all_voices:
     trinton.whiteout_empty_staves(score=score, voice=voice, cutaway=True)
 
+# extract parts
+
+trinton.extract_parts(score=score)
+
 # render file
 
 trinton.render_file(

@@ -283,6 +283,10 @@ for voice in ["cello 1 voice", "contrabass 1 voice"]:
         leaves=all,
     )
 
+# extract parts
+
+trinton.extract_parts(score=score)
+
 # render file
 
 trinton.render_file(
