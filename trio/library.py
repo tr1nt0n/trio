@@ -188,6 +188,136 @@ _matter_cent_markups = {
     ),
 }
 
+_piano_harmonic_glissandi_pitches_lh = {
+    "I": eval(
+        """[
+            -24,
+            -12,
+            -12,
+            -5,
+            -5,
+            -12,
+            -12,
+            -24,
+        ]"""
+    ),
+    "II": eval(
+        """trinton.transpose(
+            l=[
+            -24,
+            -12,
+            -12,
+            -5,
+            -5,
+            -12,
+            -12,
+            -24,
+            ],
+            m=7,
+        )"""
+    ),
+    "III": eval(
+        """trinton.transpose(
+            l=[
+            -24,
+            -12,
+            -12,
+            -5,
+            -5,
+            -12,
+            -12,
+            -24,
+            ],
+            m=14,
+        )"""
+    ),
+    "IV": eval(
+        """trinton.transpose(
+            l=[
+            -24,
+            -12,
+            -12,
+            -5,
+            -5,
+            -12,
+            -12,
+            -24,
+            ],
+            m=21,
+        )"""
+    ),
+}
+
+_piano_harmonic_glissandi_pitches_rh = {
+    "I": eval(
+        """[
+            48,
+            47,
+            47,
+            46,
+            46,
+            44,
+            44,
+            43,
+            43,
+            48,
+        ]"""
+    ),
+    "II": eval(
+        """trinton.transpose(
+            l=[
+            48,
+            47,
+            47,
+            46,
+            46,
+            44,
+            44,
+            43,
+            43,
+            48,
+            ],
+            m=-5,
+        )"""
+    ),
+    "III": eval(
+        """trinton.transpose(
+            l=[
+            48,
+            47,
+            47,
+            46,
+            46,
+            44,
+            44,
+            43,
+            43,
+            48,
+            ],
+            m=-10,
+        )"""
+    ),
+    "IV": eval(
+        """trinton.transpose(
+            l=[
+            48,
+            47,
+            47,
+            46,
+            46,
+            44,
+            44,
+            43,
+            43,
+            48,
+            ],
+            m=-15,
+        )"""
+    ),
+}
+
+_open_strings_to_pitches = {"I": -5, "II": -2, "III": 2, "IV": 5}
+
 # saved rhythms
 
 collapsing_tuplets_1 = eval("""[(4, 1), (1, 1, 4), (1, 1, 1, 4), (1, 1, 1), (6, 1)]""")
@@ -605,6 +735,8 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, notation):
     _stacks = {"duration_bracket": stack1, "tuplet": stack2}
 
     _voice_to_stack = {
+        "piano 1 voice": _stacks[notation],
+        "piano2 voice": _stacks[notation],
         "cello 1 voice": stack3,
         "cello 2 voice": _stacks[notation],
         "contrabass 1 voice": stack3,
@@ -969,6 +1101,29 @@ def ritardando_beams(score, voice, leaves):
         ).Beam.grow_direction = abjad.Left
 
 
+# transposition tools
+
+
+def octave_up(sel):
+    for pitch in sel:
+        abjad.mutate.transpose(pitch, 12)
+
+
+def octave_down(sel):
+    for pitch in sel:
+        abjad.mutate.transpose(pitch, -12)
+
+
+def double_octave_up(sel):
+    for pitch in sel:
+        abjad.mutate.transpose(pitch, 24)
+
+
+def double_octave_down(sel):
+    for pitch in sel:
+        abjad.mutate.transpose(pitch, -24)
+
+
 # piano tools
 
 
@@ -1178,7 +1333,7 @@ def attach_string_markup(score, voice, leaves, string):
 
 
 rehearsal_mark1 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Smothering waves . . . thick-veined hand (i)" 0.5',
+    r'\boxed-markup ". . . thick-veined hand (i)" 0.5',
     format_slot="after",
 )
 
@@ -1215,7 +1370,7 @@ rehearsal_mark9 = abjad.LilyPondLiteral(
 )
 
 rehearsal_mark10 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Smothering waves . . . thick-veined hand (ii)" 0.5',
+    r'\boxed-markup ". . . thick-veined hand (ii)" 0.5',
     format_slot="after",
 )
 

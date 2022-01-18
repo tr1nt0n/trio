@@ -45,6 +45,13 @@ from .library import (
     write_startmarkups,
     write_marginmarkups,
     ritardando_beams,
+    _piano_harmonic_glissandi_pitches_lh,
+    _piano_harmonic_glissandi_pitches_rh,
+    octave_up,
+    octave_down,
+    double_octave_up,
+    double_octave_down,
+    _open_strings_to_pitches,
 )
 
 __all__ = [
@@ -94,4 +101,11 @@ __all__ = [
     "write_startmarkups",
     "write_marginmarkups",
     "ritardanod_beams",
+    "_piano_harmonic_glissandi_pitches_lh",
+    "_piano_harmonic_glissandi_pitches_rh",
+    "octave_up",
+    "octave_down",
+    "double_octave_up",
+    "double_octave_down",
+    "_open_strings_to_pitches",
 ]
