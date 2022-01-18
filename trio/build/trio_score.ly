@@ -8,5 +8,5 @@
     {
         \include "01.ly"
     }
-\midi{}
+% \midi{}
 }

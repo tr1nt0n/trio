@@ -1,7 +1,7 @@
 \version "2.20.0"
 \language english
-#(set-default-paper-size "11x17landscape")
-#(set-global-staff-size 12.5)
+#(set-paper-size "arch a")
+#(set-global-staff-size 8)
 
 \include "/Users/trintonprater/scores/trio/trio/library.ily"
 \include "/Users/trintonprater/evans/lilypond/evans-markups.ily"
@@ -77,7 +77,7 @@
 
         \override Staff.thickness = #0.5
 
-        \override Glissando.thickness = #3
+        \override Glissando.thickness = #2
         \override Glissando.breakable = ##t
 
         \override StemTremolo.beam-width = 1.5
