@@ -7,6 +7,7 @@
 \score {
     {
         \include "01.ly"
+        \include "02.ly"
     }
 % \midi{}
 }
