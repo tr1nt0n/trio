@@ -155,7 +155,7 @@ trinton.handwrite(
         (1, 6),
         (1, 6),
     ],
-    pitch_list=[trio._open_strings_to_pitches["II"]],
+    pitch_list=[trio._open_strings_to_pitches["III"]],
 )
 
 trinton.append_rests(score=score, voice="contrabass 1 voice", rests=[abjad.Rest("r4")])
@@ -179,6 +179,10 @@ trinton.attach_multiple(
     voice="Global Context",
     leaves=[0],
     attachments=[abjad.MetronomeMark((1, 4), 60), trio.rehearsal_mark1],
+)
+
+trinton.attach(
+    voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
 )
 
 # piano pitching/attachments

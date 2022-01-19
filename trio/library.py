@@ -316,7 +316,7 @@ _piano_harmonic_glissandi_pitches_rh = {
     ),
 }
 
-_open_strings_to_pitches = {"I": -5, "II": -2, "III": 2, "IV": 5}
+_open_strings_to_pitches = {"I": 5, "II": 2, "III": -2, "IV": -5}
 
 # saved rhythms
 
@@ -948,7 +948,6 @@ def pitch_harmonic_glissandi(score, voice, leaves, strings, index):
                     -3,
                     4,
                 ],
-                [-9, -2],
             ],
             start_index=index,
         ),
@@ -968,18 +967,17 @@ def pitch_harmonic_glissandi(score, voice, leaves, strings, index):
                     -3,
                     2,
                 ],
-                [-9, -4],
             ],
             start_index=index,
         ),
     }
 
     _string_to_pitches = {
-        "III and IV": _voice_to_pitches[voice],
+        "I and II": _voice_to_pitches[voice],
         "II and III": [
             trinton.transpose(l=chord, m=-7) for chord in _voice_to_pitches[voice]
         ],
-        "I and II": [
+        "III and IV": [
             trinton.transpose(l=chord, m=-14) for chord in _voice_to_pitches[voice]
         ],
     }
@@ -1042,14 +1040,15 @@ def pitch_matter(
 
         for partial, leaf in zip(partials, leaves):
 
-            cent_markups = eval(
-                """[
-                    abjad.Markup(string=rf"\markup {markup_collection[partial-1]}", direction=abjad.Up),
-                    abjad.Markup(string=rf"\markup {markup_collection[partial]}", direction = abjad.Up),
-                ]"""
-            )
-
             if len(abjad.select(score[voice]).leaf(leaf).note_heads) == 2:
+
+                cent_markups = eval(
+                    """[
+                        abjad.Markup(string=rf"\markup {markup_collection[partial-1]}", direction=abjad.Up),
+                        abjad.Markup(string=rf"\markup {markup_collection[partial]}", direction=abjad.Up),
+                    ]"""
+                )
+
                 trinton.attach_multiple(
                     score=score,
                     voice=voice,
@@ -1058,6 +1057,12 @@ def pitch_matter(
                 )
 
             else:
+
+                cent_markups = eval(
+                    """[
+                        abjad.Markup(string=rf"\markup {markup_collection[partial-1]}", direction=abjad.Up),
+                    ]"""
+                )
                 trinton.attach(
                     voice=score[voice], leaves=[leaf], attachment=cent_markups[0]
                 )
@@ -1334,53 +1339,53 @@ def attach_string_markup(score, voice, leaves, string):
 
 
 rehearsal_mark1 = abjad.LilyPondLiteral(
-    r'\boxed-markup ". . . thick-veined hand (i)" 0.5',
+    r'\boxed-markup ". . . thick-veined hand (i)" 1.5',
     format_slot="after",
 )
 
 rehearsal_mark2 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Matter, to Self-Organize" 0.5', format_slot="after"
+    r'\boxed-markup "Matter, to Self-Organize" 1.5', format_slot="after"
 )
 
 rehearsal_mark3 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Skyward, {diagonal moves} (i)" 0.5', format_slot="after"
+    r'\boxed-markup "Skyward, {diagonal moves} (i)" 1.5', format_slot="after"
 )
 
 rehearsal_mark4 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Toccata" 0.5', format_slot="after"
+    r'\boxed-markup "Toccata" 1.5', format_slot="after"
 )
 
 rehearsal_mark5 = abjad.LilyPondLiteral(
-    r'\boxed-markup "in th posession of nymphs and naiads" 0.5', format_slot="after"
+    r'\boxed-markup "in th posession of nymphs and naiads" 1.5', format_slot="after"
 )
 
 rehearsal_mark6 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Skyward, {diagonal moves} (ii)" 0.5', format_slot="after"
+    r'\boxed-markup "Skyward, {diagonal moves} (ii)" 1.5', format_slot="after"
 )
 
 rehearsal_mark7 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Are We Still Married? (ii)" 0.5', format_slot="after"
+    r'\boxed-markup "Are We Still Married? (ii)" 1.5', format_slot="after"
 )
 
 rehearsal_mark8 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Inscribed in Water" 0.5', format_slot="after"
+    r'\boxed-markup "Inscribed in Water" 1.5', format_slot="after"
 )
 
 rehearsal_mark9 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Skyward, {diagonal moves} (iii)" 0.5', format_slot="after"
+    r'\boxed-markup "Skyward, {diagonal moves} (iii)" 1.5', format_slot="after"
 )
 
 rehearsal_mark10 = abjad.LilyPondLiteral(
-    r'\boxed-markup ". . . thick-veined hand (ii)" 0.5',
+    r'\boxed-markup ". . . thick-veined hand (ii)" 1.5',
     format_slot="after",
 )
 
 rehearsal_mark11 = abjad.LilyPondLiteral(
-    r'\boxed-markup "One of These Days {dry land}" 0.5', format_slot="after"
+    r'\boxed-markup "One of These Days {dry land}" 1.5', format_slot="after"
 )
 
 rehearsal_mark12 = abjad.LilyPondLiteral(
-    r'\boxed-markup "She has something to tell you" 0.5', format_slot="after"
+    r'\boxed-markup "She has something to tell you" 1.5', format_slot="after"
 )
 
 rehearsal_mark13 = abjad.LilyPondLiteral(

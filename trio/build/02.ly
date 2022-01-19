@@ -5,7 +5,7 @@
             \tempo 4=47
             \time 9/4
             s1 * 9/4
-            \boxed-markup "Matter, to Self-Organize" 0.5
+            \boxed-markup "Matter, to Self-Organize" 1.5
             \time 1/4
             s1 * 1/4
             \time 1/4
@@ -67,6 +67,7 @@
             \tempo 4=60
             \time 5/4
             s1 * 5/4
+            \bar "||"
         }
         \context ChoirStaff = "Staff Group"
         <<
@@ -86,6 +87,7 @@
                         \clef "bass"
                         <g,, b,, ef,>4
                         :32
+                        \mp
                         \arpeggio
                         ^ \markup 2
                         \ottava 0
@@ -93,6 +95,7 @@
                         ^ \markup 3
                         <af, bf, cs>8
                         :64
+                        \mp
                         \arpeggio
                         ^ \markup 4
                         ~
@@ -105,8 +108,10 @@
                         \clef "treble"
                         <cs''' af''' bf''' cs''''>8
                         :64
+                        \mp
                         \arpeggio
                         ^ \markup 7
+                        \>
                         \ottava 0
                         \ottava -1
                         <e fs a c'>4.
@@ -116,8 +121,11 @@
                         \ottava 0
                         <a' g'' af'' a''>2..
                         :32
+                        \ppp
                         \arpeggio
                         ^ \markup 9
+                        - \tweak stencil #constante-hairpin
+                        \<
                         ~
                         <a' g'' af'' a''>4
                         :32
@@ -166,6 +174,7 @@
                             \tweak Flag.transparent ##t
                             \tweak Stem.transparent ##t
                             cs''''32
+                            \p
                             ^ \markup 11
                             \(
                             \tweak Beam.transparent ##t
@@ -225,8 +234,11 @@
                         \clef "bass"
                         <a, c>8
                         :64
+                        \p
                         \arpeggio
                         ^ \markup 21
+                        - \tweak stencil #constante-hairpin
+                        \<
                         \clef "treble"
                         <b'' fs'''>4.
                         :32
@@ -276,6 +288,7 @@
                             \tweak Flag.transparent ##t
                             \tweak Stem.transparent ##t
                             ef'''32
+                            \f
                             ^ \markup 23
                             \(
                             \tweak Beam.transparent ##t
@@ -359,24 +372,33 @@
                         \ottava 1
                         <d''' e''' af''' c''''>2.
                         :32
+                        \p
                         \arpeggio
                         ^ \markup 37
+                        - \tweak stencil #abjad-flared-hairpin
+                        \<
                         ~
                         <d''' e''' af''' c''''>4.
                         :32
+                        \f
                         ^ \markup 38
                         \ottava 0
                         <af' fs'' g'' af''>2..
                         :32
                         \arpeggio
                         ^ \markup 39
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
                         r4
+                        \!
                         ^ \markup 40
                         r8
                         ^ \markup 41
                         \ottava 1
                         <a'' e''' fs''' a''' c''''>4.
                         :32
+                        \pp
                         \arpeggio
                         ^ \markup 42
                         \(
@@ -392,8 +414,10 @@
                         \clef "bass"
                         <af,, bf,, cs,>2.
                         :32
+                        \fp
                         \arpeggio
                         ^ \markup 45
+                        \<
                         ~
                         <af,, bf,, cs,>2
                         :32
@@ -501,8 +525,10 @@
                         }
                         <f'' a'' cs''' fs''' a'''>1.
                         :32
+                        \fp
                         \arpeggio
                         ^ \markup 89
+                        \<
                         ~
                         <f'' a'' cs''' fs''' a'''>2.
                         :32
@@ -533,6 +559,7 @@
                         \ottava -1
                         \clef "bass"
                         <af,, bf,, cs,>4
+                        \fff
                         - \marcato
                         ^ \markup 95
                         \ottava 0
@@ -546,8 +573,11 @@
                         \clef "bass"
                         <bf,, f,>2.
                         :32
+                        \p
                         \arpeggio
                         ^ \markup 97
+                        - \tweak stencil #abjad-flared-hairpin
+                        \<
                         ~
                         <bf,, f,>2
                         :32
@@ -596,8 +626,11 @@
                         \ottava 0
                         <d cs'>2..
                         :32
+                        \ppp
                         \arpeggio
                         ^ \markup 9
+                        - \tweak stencil #constante-hairpin
+                        \<
                         ~
                         <d cs'>4
                         :32
@@ -605,6 +638,7 @@
                         ~
                         <d cs'>4
                         :32
+                        \!
                         ^ \markup 11
                         r4
                         ^ \markup 12
@@ -620,8 +654,11 @@
                         \clef "bass"
                         <ef,, f,, af,,>2..
                         :32
+                        \p
                         \arpeggio
                         ^ \markup 15
+                        - \tweak stencil #constante-hairpin
+                        \<
                         ~
                         <ef,, f,, af,,>4
                         :32
@@ -629,6 +666,7 @@
                         ~
                         <ef,, f,, af,,>4
                         :32
+                        \!
                         ^ \markup 17
                         \ottava 0
                         \clef "treble"
@@ -789,16 +827,24 @@
                         r8
                         ^ \markup 14
                         \repeat tremolo 4 {
-                            c'32.
+                            \tweak Accidental.transparent ##t
+                            d'32.
                             ^ \markup 15
-                            c'32.
+                            \(
+                            \tweak Accidental.transparent ##t
+                            bf32.
                             ^ \markup 16
+                            \)
                         }
                         \repeat tremolo 4 {
-                            c'32.
+                            \tweak Accidental.transparent ##t
+                            f'32.
                             ^ \markup 17
-                            c'32.
+                            \(
+                            \tweak Accidental.transparent ##t
+                            d'32.
                             ^ \markup 18
+                            \)
                         }
                         r1 * 1/4
                         ^ \markup 19
@@ -813,10 +859,15 @@
                         r4
                         ^ \markup 24
                         \repeat tremolo 4 {
-                            c'32
+                            \tweak Accidental.transparent ##t
+                            g32
+                            \mf
                             ^ \markup 25
-                            c'32
+                            \(
+                            \tweak Accidental.transparent ##t
+                            bf32
                             ^ \markup 26
+                            \)
                         }
                         r1 * 3/4
                         ^ \markup 27
@@ -844,13 +895,19 @@
                 {
                     \context Voice = "cello 2 voice"
                     {
-                        c'2.
+                        \clef "bass"
+                        <c' ef'>2.
+                        \fp
+                        - \upbow
                         ^ \markup 0
+                        ^ \markup -14
+                        ^ \markup +0
+                        \<
                         ~
-                        c'4
+                        <c' ef'>4
                         ^ \markup 1
                         ~
-                        c'8
+                        <c' ef'>8
                         ^ \markup 2
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                             {
@@ -892,41 +949,77 @@
                             }
                         \times 1/1
                         {
-                            c'32 * 49/32
+                            \once \override Beam.grow-direction = #left
+                            <c' ef'>32 * 49/32
+                            \ff
+                            - \staccato
+                            - \downbow
                             ^ \markup 3
+                            ^ \markup -14
+                            ^ \markup +0
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
                             [
-                            c'32 * 25/16
+                            \(
+                            <c' ef'>32 * 25/16
+                            - \staccato
                             ^ \markup 4
+                            ^ \markup -14
+                            ^ \markup +0
                             r32 * 51/32
                             ^ \markup 5
-                            c'32 * 53/32
+                            <c' ef'>32 * 53/32
+                            - \staccato
                             ^ \markup 6
+                            ^ \markup -14
+                            ^ \markup +0
                             r32 * 55/32
                             ^ \markup 7
-                            c'32 * 59/32
+                            <c' ef'>32 * 59/32
+                            - \staccato
                             ^ \markup 8
-                            c'32 * 63/32
+                            ^ \markup -14
+                            ^ \markup +0
+                            <c' ef'>32 * 63/32
+                            - \staccato
                             ^ \markup 9
+                            ^ \markup -14
+                            ^ \markup +0
                             r32 * 69/32
                             ^ \markup 10
                             r32 * 19/8
                             ^ \markup 11
-                            c'32 * 83/32
+                            <c' ef'>32 * 83/32
+                            - \staccato
                             ^ \markup 12
-                            c'32 * 23/8
+                            ^ \markup -14
+                            ^ \markup +0
+                            <c' ef'>32 * 23/8
+                            - \staccato
                             ^ \markup 13
-                            c'32 * 101/32
+                            ^ \markup -14
+                            ^ \markup +0
+                            <c' ef'>32 * 101/32
+                            - \staccato
                             ^ \markup 14
+                            ^ \markup -14
+                            ^ \markup +0
                             r32 * 55/16
                             ^ \markup 15
-                            c'32 * 59/16
+                            <c' ef'>32 * 59/16
+                            - \staccato
                             ^ \markup 16
+                            ^ \markup -14
+                            ^ \markup +0
+                            \)
                             r32 * 123/32
                             ^ \markup 17
                             ]
                         }
                         \revert TupletNumber.text
                         r4
+                        \!
                         ^ \markup 18
                         r4
                         ^ \markup 19
@@ -984,18 +1077,58 @@
                             }
                         \times 2/3
                         {
+                            \set suggestAccidentals = ##t
+                            \clef "treble"
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             a'''32
+                            - \accent
                             ^ \markup 28
+                            - \tweak circled-tip ##t
+                            \<
+                            \glissando
+                            \(
+                            \boxed-markup "I" 1
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             cs''''32
                             ^ \markup 29
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             aqs'''32
                             ^ \markup 30
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             b'''32
                             ^ \markup 31
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             aqf'''32
                             ^ \markup 32
+                            \)
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             dqf''''32
+                            - \accent
                             ^ \markup 33
+                            \glissando
+                            \(
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -1036,16 +1169,44 @@
                             }
                         \times 4/5
                         {
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             a'''32
                             ^ \markup 34
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             cs''''32
                             ^ \markup 35
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             aqs'''32
                             ^ \markup 36
+                            \)
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             b'''32
+                            - \accent
                             ^ \markup 37
+                            \glissando
+                            \(
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             aqf'''32
                             ^ \markup 38
+                            \glissando
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -1086,18 +1247,51 @@
                             }
                         \times 2/3
                         {
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             dqf''''32
                             ^ \markup 39
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             a'''32
                             ^ \markup 40
+                            \)
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             cs''''32
+                            - \accent
                             ^ \markup 41
+                            \glissando
+                            \(
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             aqs'''32
                             ^ \markup 42
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             b'''32
                             ^ \markup 43
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             aqf'''32
                             ^ \markup 44
+                            \glissando
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -1138,16 +1332,44 @@
                             }
                         \times 4/5
                         {
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             dqf''''32
                             ^ \markup 45
+                            \)
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             a'''32
+                            - \accent
                             ^ \markup 46
+                            \glissando
+                            \(
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             cs''''32
                             ^ \markup 47
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             aqs'''32
                             ^ \markup 48
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             b'''32
                             ^ \markup 49
+                            \glissando
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -1188,28 +1410,71 @@
                             }
                         \times 2/3
                         {
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             aqf'''32
                             ^ \markup 50
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             dqf''''32
                             ^ \markup 51
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             a'''32
                             ^ \markup 52
+                            \)
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             cs''''32
+                            - \accent
                             ^ \markup 53
+                            \glissando
+                            \(
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             aqs'''32
                             ^ \markup 54
+                            \glissando
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             b'''32
+                            \p
                             ^ \markup 55
+                            \)
+                            \set suggestAccidentals = ##f
                         }
                         \revert TupletNumber.text
                         r4
                         ^ \markup 56
-                        c'8
+                        \clef "bass"
+                        <b, b>8
                         ^ \markup 57
-                        c'4.
+                        ^ \markup +0
+                        ^ \markup +3
+                        \boxed-markup "I-IV" 1
+                        <bf>4.
+                        \p
                         ^ \markup 58
+                        ^ \markup -3
+                        \<
                         ~
-                        c'8
+                        <bf>8
+                        \f
                         ^ \markup 59
                         r4
                         ^ \markup 60
@@ -1259,34 +1524,230 @@
                             }
                         \times 12/13
                         {
-                            c'32
+                            \set suggestAccidentals = ##t
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                af,
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                ef
+                            >32
                             ^ \markup 65
+                            - \tweak circled-tip ##t
+                            ^ \<
                             [
-                            c'32
+                            \glissando
+                            \(
+                            \clef "treble"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                g''
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                d'''
+                            >32
                             ^ \markup 66
-                            c'32
+                            \glissando
+                            \clef "bass"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                b,
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                fs
+                            >32
                             ^ \markup 67
-                            c'32
+                            \glissando
+                            \clef "treble"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                g''
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                d'''
+                            >32
                             ^ \markup 68
-                            c'32
+                            \glissando
+                            \clef "bass"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                g
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                d'
+                            >32
                             ^ \markup 69
-                            c'32
+                            \glissando
+                            \clef "treble"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                g''
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                d'''
+                            >32
                             ^ \markup 70
-                            c'32
+                            \glissando
+                            \clef "bass"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                af,
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                ef
+                            >32
                             ^ \markup 71
-                            c'32
+                            \glissando
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                c
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                g
+                            >32
                             ^ \markup 72
-                            c'32
+                            \glissando
+                            \clef "treble"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                g''
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                d'''
+                            >32
                             ^ \markup 73
-                            c'32
+                            \glissando
+                            \clef "bass"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                af,
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                ef
+                            >32
                             ^ \markup 74
-                            c'32
+                            \glissando
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                d
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                a
+                            >32
                             ^ \markup 75
-                            c'32
+                            \glissando
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                af,
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                ef
+                            >32
                             ^ \markup 76
-                            c'32
+                            \glissando
+                            \clef "treble"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                g''
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                d'''
+                            >32
                             ^ \markup 77
+                            \)
                             ]
+                            \set suggestAccidentals = ##f
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -1327,22 +1788,89 @@
                             }
                         \times 1/1
                         {
-                            c'16
+                            \clef "bass"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                ef
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                bf
+                            >16
                             ^ \markup 78
                             [
-                            c'16
+                            \glissando
+                            \(
+                            \clef "treble"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                d'''
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                a'''
+                            >16
                             ^ \markup 79
-                            c'8.
+                            \glissando
+                            \clef "bass"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                fs
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                cs'
+                            >8.
                             ^ \markup 80
-                            c'16
+                            \glissando
+                            \clef "treble"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                d'''
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                a'''
+                            >16
+                            ^ \f
                             ^ \markup 81
+                            \)
                             ]
                         }
                         \revert TupletNumber.text
                         r4
                         ^ \markup 82
-                        c'8
+                        \clef "bass"
+                        <a, c>8
+                        \fff
+                        - \marcato
                         ^ \markup 83
+                        ^ \markup +26
+                        ^ \markup -6
                         r4.
                         ^ \markup 84
                         r4
@@ -1389,15 +1917,75 @@
                             }
                         \times 4/7
                         {
-                            c'16
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                cs,
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                af,
+                            >16
                             ^ \markup 88
                             [
-                            c'8.
+                            \glissando
+                            \(
+                            \clef "treble"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                c''
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                g''
+                            >8.
                             ^ \markup 89
-                            c'16
+                            \glissando
+                            \clef "bass"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                e,
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                b,
+                            >16
                             ^ \markup 90
-                            c'8
+                            \glissando
+                            \clef "treble"
+                            <
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                c''
+                                \tweak Beam.transparent ##t
+                                \tweak Dots.transparent ##t
+                                \tweak Flag.transparent ##t
+                                \tweak Stem.transparent ##t
+                                \tweak style #'harmonic-mixed
+                                g''
+                            >8
                             ^ \markup 91
+                            \)
                             ]
                         }
                         \revert TupletNumber.text
@@ -1445,51 +2033,104 @@
                             }
                         \times 1/1
                         {
-                            c'32 * 49/32
+                            \once \override Beam.grow-direction = #left
+                            \clef "bass"
+                            <b d'>32 * 49/32
+                            \f
+                            - \staccato
                             ^ \markup 95
+                            ^ \markup +17
+                            ^ \markup +23
+                            - \tweak circled-tip ##t
+                            \>
                             [
-                            c'32 * 49/32
+                            \(
+                            <b d'>32 * 49/32
+                            - \staccato
                             ^ \markup 96
+                            ^ \markup +17
+                            ^ \markup +23
                             r32 * 25/16
                             ^ \markup 97
-                            c'32 * 51/32
+                            <b d'>32 * 51/32
+                            - \staccato
                             ^ \markup 98
+                            ^ \markup +17
+                            ^ \markup +23
                             r32 * 13/8
                             ^ \markup 99
-                            c'32 * 27/16
+                            <b d'>32 * 27/16
+                            - \staccato
                             ^ \markup 100
-                            c'32 * 7/4
+                            ^ \markup +17
+                            ^ \markup +23
+                            <b d'>32 * 7/4
+                            - \staccato
                             ^ \markup 101
-                            c'32 * 59/32
+                            ^ \markup +17
+                            ^ \markup +23
+                            <b d'>32 * 59/32
+                            - \staccato
                             ^ \markup 102
-                            c'32 * 63/32
+                            ^ \markup +17
+                            ^ \markup +23
+                            <b d'>32 * 63/32
+                            - \staccato
                             ^ \markup 103
-                            c'32 * 67/32
+                            ^ \markup +17
+                            ^ \markup +23
+                            <b d'>32 * 67/32
+                            - \staccato
                             ^ \markup 104
+                            ^ \markup +17
+                            ^ \markup +23
                             r32 * 71/32
                             ^ \markup 105
-                            c'32 * 77/32
+                            <b d'>32 * 77/32
+                            - \staccato
                             ^ \markup 106
+                            ^ \markup +17
+                            ^ \markup +23
                             r32 * 83/32
                             ^ \markup 107
-                            c'32 * 89/32
+                            <b d'>32 * 89/32
+                            - \staccato
                             ^ \markup 108
-                            c'32 * 3
+                            ^ \markup +17
+                            ^ \markup +23
+                            <b d'>32 * 3
+                            - \staccato
                             ^ \markup 109
-                            c'32 * 103/32
+                            ^ \markup +17
+                            ^ \markup +23
+                            <b d'>32 * 103/32
+                            - \staccato
                             ^ \markup 110
-                            c'32 * 55/16
+                            ^ \markup +17
+                            ^ \markup +23
+                            <b d'>32 * 55/16
+                            - \staccato
                             ^ \markup 111
-                            c'32 * 115/32
+                            ^ \markup +17
+                            ^ \markup +23
+                            <b d'>32 * 115/32
+                            - \staccato
                             ^ \markup 112
+                            ^ \markup +17
+                            ^ \markup +23
                             r32 * 15/4
                             ^ \markup 113
-                            c'32 * 61/16
+                            <b d'>32 * 61/16
+                            - \staccato
                             ^ \markup 114
+                            ^ \markup +17
+                            ^ \markup +23
+                            \)
                             ]
                         }
                         \revert TupletNumber.text
                         r8
+                        \!
                         ^ \markup 115
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                             {
@@ -1531,91 +2172,186 @@
                             }
                         \times 1/1
                         {
-                            c'32 * 51/32
+                            \once \override Beam.grow-direction = #left
+                            <af, c>32 * 51/32
+                            - \staccato
                             ^ \markup 116
+                            ^ \markup +32
+                            ^ \markup +8
+                            - \tweak circled-tip ##t
+                            \<
                             [
-                            c'32 * 51/32
+                            \(
+                            <af, c>32 * 51/32
+                            - \staccato
                             ^ \markup 117
+                            ^ \markup +32
+                            ^ \markup +8
                             r32 * 51/32
                             ^ \markup 118
-                            c'32 * 13/8
+                            <af, c>32 * 13/8
+                            - \staccato
                             ^ \markup 119
+                            ^ \markup +32
+                            ^ \markup +8
                             r32 * 13/8
                             ^ \markup 120
-                            c'32 * 53/32
+                            <af, c>32 * 53/32
+                            - \staccato
                             ^ \markup 121
-                            c'32 * 27/16
+                            ^ \markup +32
+                            ^ \markup +8
+                            <af, c>32 * 27/16
+                            - \staccato
                             ^ \markup 122
-                            c'32 * 7/4
+                            ^ \markup +32
+                            ^ \markup +8
+                            <af, c>32 * 7/4
+                            - \staccato
                             ^ \markup 123
-                            c'32 * 57/32
+                            ^ \markup +32
+                            ^ \markup +8
+                            <af, c>32 * 57/32
+                            - \staccato
                             ^ \markup 124
-                            c'32 * 59/32
+                            ^ \markup +32
+                            ^ \markup +8
+                            <af, c>32 * 59/32
+                            - \staccato
                             ^ \markup 125
+                            ^ \markup +32
+                            ^ \markup +8
                             r32 * 61/32
                             ^ \markup 126
-                            c'32 * 63/32
+                            <af, c>32 * 63/32
+                            - \staccato
                             ^ \markup 127
+                            ^ \markup +32
+                            ^ \markup +8
                             r32 * 33/16
                             ^ \markup 128
-                            c'32 * 17/8
+                            <af, c>32 * 17/8
+                            - \staccato
                             ^ \markup 129
-                            c'32 * 71/32
+                            ^ \markup +32
+                            ^ \markup +8
+                            <af, c>32 * 71/32
+                            - \staccato
                             ^ \markup 130
-                            c'32 * 75/32
+                            ^ \markup +32
+                            ^ \markup +8
+                            <af, c>32 * 75/32
+                            - \staccato
                             ^ \markup 131
-                            c'32 * 79/32
+                            ^ \markup +32
+                            ^ \markup +8
+                            <af, c>32 * 79/32
+                            - \staccato
                             ^ \markup 132
-                            c'32 * 83/32
+                            ^ \markup +32
+                            ^ \markup +8
+                            <af, c>32 * 83/32
+                            - \staccato
                             ^ \markup 133
+                            ^ \markup +32
+                            ^ \markup +8
                             r32 * 87/32
                             ^ \markup 134
-                            c'32 * 91/32
+                            <af, c>32 * 91/32
+                            - \staccato
                             ^ \markup 135
+                            ^ \markup +32
+                            ^ \markup +8
                             r32 * 3
                             ^ \markup 136
-                            c'32 * 101/32
+                            <af, c>32 * 101/32
+                            - \staccato
                             ^ \markup 137
-                            c'32 * 53/16
+                            ^ \markup +32
+                            ^ \markup +8
+                            <af, c>32 * 53/16
+                            - \staccato
                             ^ \markup 138
-                            c'32 * 111/32
+                            ^ \markup +32
+                            ^ \markup +8
+                            <af, c>32 * 111/32
+                            - \staccato
                             ^ \markup 139
-                            c'32 * 115/32
+                            ^ \markup +32
+                            ^ \markup +8
+                            <af, c>32 * 115/32
+                            - \staccato
                             ^ \markup 140
-                            c'32 * 119/32
+                            ^ \markup +32
+                            ^ \markup +8
+                            <af, c>32 * 119/32
+                            - \staccato
                             ^ \markup 141
+                            ^ \markup +32
+                            ^ \markup +8
                             r32 * 123/32
                             ^ \markup 142
-                            c'32 * 125/32
+                            <af, c>32 * 125/32
+                            - \staccato
                             ^ \markup 143
+                            ^ \markup +32
+                            ^ \markup +8
+                            \)
                             r32 * 4
                             ^ \markup 144
                             ]
                         }
                         \revert TupletNumber.text
-                        c'1.
+                        \clef "treble"
+                        <b' f''>1.
+                        \fp
                         ^ \markup 145
+                        ^ \markup +3
+                        ^ \markup +4
+                        \<
                         ~
-                        c'2.
+                        <b' f''>2.
                         ^ \markup 146
                         ~
-                        c'1..
+                        <b' f''>1..
                         ^ \markup 147
-                        c'1.
+                        \clef "bass"
+                        <fs,>1.
                         ^ \markup 148
-                        c'2.
+                        ^ \markup +7
+                        \clef "treble"
+                        <d'' a''>2.
                         ^ \markup 149
+                        ^ \markup -16
+                        ^ \markup +16
                         ~
-                        c'2
+                        <d'' a''>2
                         ^ \markup 150
-                        c'4
+                        \clef "bass"
+                        <d, a,>4
+                        \fff
+                        - \marcato
                         ^ \markup 151
-                        c'4
+                        ^ \markup -16
+                        ^ \markup +16
+                        \clef "treble"
+                        <b' f''>4
+                        - \marcato
                         ^ \markup 152
-                        c'2.
+                        ^ \markup +3
+                        ^ \markup +4
+                        \clef "bass"
+                        <bf, b,>2.
+                        \p
                         ^ \markup 153
+                        ^ \markup -5
+                        ^ \markup +7
+                        - \tweak stencil #abjad-flared-hairpin
+                        \<
                         ~
-                        c'2
+                        <bf, b,>2
+                        :32
+                        :32
                         ^ \markup 154
                     }
                 }
@@ -1692,8 +2428,12 @@
                 {
                     \context Voice = "contrabass 2 voice"
                     {
+                        \clef "bass"
                         c'2.
+                        \fp
+                        - \upbow
                         ^ \markup 0
+                        \<
                         ~
                         c'4
                         ^ \markup 1
@@ -1741,7 +2481,12 @@
                         \times 1/1
                         {
                             c'32 * 49/32
+                            \ff
+                            - \downbow
                             ^ \markup 3
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
                             [
                             c'32 * 25/16
                             ^ \markup 4
@@ -1775,6 +2520,7 @@
                         }
                         \revert TupletNumber.text
                         r4
+                        \!
                         ^ \markup 18
                         r4
                         ^ \markup 19
@@ -2232,6 +2978,8 @@
                         ^ \markup 137
                         ~
                         c'2
+                        :32
+                        :32
                         ^ \markup 138
                     }
                 }

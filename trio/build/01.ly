@@ -5,12 +5,13 @@
             \tempo 4=60
             \time 2/4
             s1 * 1/2
-            \boxed-markup ". . . thick-veined hand (i)" 0.5
+            \boxed-markup ". . . thick-veined hand (i)" 1.5
             #(ly:expect-warning "strange time signature found")
             \time 2/6
             s1 * 1/3
             \time 1/4
             s1 * 1/4
+            \bar "||"
         }
         \tag #'group1
         {
