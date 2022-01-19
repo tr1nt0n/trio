@@ -263,13 +263,13 @@
                         ^ \markup 43
                         r8
                         ^ \markup 44
-                        \clef "treble"
+                        \clef "bass"
                         <af,, bf,, cs,>2.
                         ^ \markup 45
                         ~
                         <af,, bf,, cs,>2
                         ^ \markup 46
-                        \clef "bass"
+                        \clef "treble"
                         <a'' e''' fs''' a''' c''''>1.
                         ^ \markup 47
                         ~
