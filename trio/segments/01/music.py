@@ -155,7 +155,7 @@ trinton.handwrite(
         (1, 6),
         (1, 6),
     ],
-    pitch_list=[trio._open_strings_to_pitches["IV"]],
+    pitch_list=[trio._open_strings_to_pitches["II"]],
 )
 
 trinton.append_rests(score=score, voice="contrabass 1 voice", rests=[abjad.Rest("r4")])
@@ -280,22 +280,36 @@ handler(
 
 trio.double_octave_up(
     trinton.make_leaf_selection(
-        score=score, voice="piano 1 voice", leaves=list(range(6, 12))
+        score=score, voice="piano 1 voice", leaves=list(range(6, 13))
+    )
+)
+
+trio.double_octave_down(
+    trinton.make_leaf_selection(
+        score=score, voice="piano 1 voice", leaves=list(range(13, 19))
     )
 )
 
 trio.octave_down(
     trinton.make_leaf_selection(
-        score=score, voice="piano 1 voice", leaves=list(range(14, 17))
+        score=score, voice="piano 1 voice", leaves=list(range(13, 19))
     )
 )
 
-trio.double_octave_down(
-    trinton.make_leaf_selection(score=score, voice="piano 1 voice", leaves=[17, 18])
+trio.octave_down(
+    trinton.make_leaf_selection(
+        score=score,
+        voice="piano 1 voice",
+        leaves=[
+            14,
+            15,
+            17,
+        ],
+    )
 )
 
 
-for leaf, attachment in zip([1, 2], [abjad.Clef("bass"), abjad.Clef("treble")]):
+for leaf, attachment in zip([1, 3], [abjad.Clef("bass"), abjad.Clef("treble")]):
     trinton.attach(voice=score["piano 2 voice"], leaves=[leaf], attachment=attachment)
 
 for leaf, attachment in zip([5, 6], [abjad.Clef("bass"), abjad.Clef("treble")]):
@@ -307,8 +321,7 @@ trio.change_staff(
     lh=[
         1,
         3,
-        10,
-        15,
+        13,
         20,
         22,
     ],
@@ -316,23 +329,40 @@ trio.change_staff(
         2,
         4,
         5,
-        12,
         19,
         21,
     ],
 )
 
-for voice, leaf in zip(["piano 1 voice", "piano 2 voice"], [5, 1]):
+for voice, leaf in zip(
+    ["piano 1 voice", "piano 2 voice"],
+    [
+        5,
+        1,
+    ],
+):
     trinton.ottava(
         score=score, voice=voice, start_ottava=[leaf], stop_ottava=[leaf], octave=-1
     )
+
+trinton.ottava(
+    score=score,
+    voice="piano 1 voice",
+    start_ottava=[
+        6,
+    ],
+    stop_ottava=[
+        12,
+    ],
+    octave=2,
+)
 
 trinton.attach_multiple(
     score=score,
     voice="piano 1 voice",
     leaves=[
         6,
-        12,
+        13,
     ],
     attachments=[abjad.Dynamic("ffff"), abjad.Articulation("marcato")],
 )
@@ -368,16 +398,18 @@ trinton.unmeasured_stem_tremolo(
 )
 
 trinton.attach(
-    voice=score["piano 1 voice"], leaves=[8, 14], attachment=abjad.Dynamic("ff")
+    voice=score["piano 1 voice"], leaves=[8, 15], attachment=abjad.Dynamic("ff")
 )
 
 trinton.write_slur(
     voice=score["piano 1 voice"],
     start_slur=[
         6,
+        13,
     ],
     stop_slur=[
-        19,
+        12,
+        18,
     ],
 )
 

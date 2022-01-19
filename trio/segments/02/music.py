@@ -615,7 +615,7 @@ trinton.rewrite_meter_by_voice(
         5,
     ],
 )
-trinton.beam_score(score)
+# trinton.beam_score(score)
 trinton.annotate_leaves(score)
 
 # margin markups and standard cleffing
@@ -654,7 +654,6 @@ trinton.attach(
     voice=score["piano 1 voice"],
     leaves=[
         7,
-        9,
         22,
         47,
         93,
@@ -668,7 +667,6 @@ trinton.attach(
     voice=score["piano 1 voice"],
     leaves=[
         2,
-        8,
         21,
         45,
         92,
@@ -688,7 +686,7 @@ trinton.attach(
         28,
         32,
         36,
-        40,
+        39,
     ],
     attachment=abjad.Clef("treble"),
 )
@@ -704,6 +702,7 @@ trinton.attach(
         30,
         35,
         38,
+        40,
     ],
     attachment=abjad.Clef("bass"),
 )
@@ -1341,7 +1340,7 @@ trio.pitch_matter(
         6,
         7,
     ],
-    transpose=-50,
+    transpose=-49,
     markup=False,
 )
 
@@ -1359,6 +1358,278 @@ trio.pitch_matter(
     transpose=-49,
     markup=False,
 )
+
+for voice in ["piano 1 voice", "piano 2 voice"]:
+
+    trinton.ottava(
+        score=score,
+        voice=voice,
+        start_ottava=[
+            2,
+            8,
+        ],
+        stop_ottava=[
+            2,
+            8,
+        ],
+        octave=-1,
+    )
+
+trinton.ottava(
+    score=score,
+    voice="piano 1 voice",
+    start_ottava=[
+        45,
+        92,
+        95,
+        97,
+    ],
+    stop_ottava=[
+        46,
+        92,
+        95,
+        98,
+    ],
+    octave=-1,
+)
+
+trinton.ottava(
+    score=score,
+    voice="piano 1 voice",
+    start_ottava=[
+        7,
+        11,
+        23,
+        37,
+        42,
+        47,
+        49,
+        93,
+        96,
+    ],
+    stop_ottava=[
+        7,
+        19,
+        35,
+        38,
+        43,
+        48,
+        91,
+        94,
+        96,
+    ],
+    octave=1,
+)
+
+trinton.ottava(
+    score=score,
+    voice="piano 2 voice",
+    start_ottava=[
+        15,
+        26,
+        30,
+        35,
+        38,
+        40,
+    ],
+    stop_ottava=[
+        17,
+        27,
+        31,
+        35,
+        38,
+        41,
+    ],
+    octave=-1,
+)
+
+trinton.ottava(
+    score=score,
+    voice="piano 2 voice",
+    start_ottava=[
+        36,
+        39,
+    ],
+    stop_ottava=[
+        37,
+        39,
+    ],
+    octave=1,
+)
+
+for voice, leaves in zip(
+    ["piano 1 voice", "piano 2 voice"],
+    [
+        [
+            2,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            21,
+            22,
+            37,
+            38,
+            39,
+            42,
+            43,
+            45,
+            46,
+            47,
+            48,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            97,
+            98,
+        ],
+        [
+            2,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            23,
+            24,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            40,
+            41,
+        ],
+    ],
+):
+    trinton.unmeasured_stem_tremolo(
+        trinton.make_leaf_selection(score=score, voice=voice, leaves=leaves)
+    )
+
+
+for voice, leaves in zip(
+    [
+        "piano 1 voice",
+        "piano 2 voice",
+    ],
+    [
+        [
+            2,
+            4,
+            7,
+            8,
+            9,
+            21,
+            22,
+            37,
+            39,
+            42,
+            43,
+            45,
+            47,
+            89,
+            92,
+            93,
+            97,
+        ],
+        [
+            2,
+            4,
+            7,
+            8,
+            9,
+            13,
+            15,
+            18,
+            20,
+            23,
+            24,
+            26,
+            28,
+            30,
+            32,
+            35,
+            36,
+            40,
+        ],
+    ],
+):
+    trinton.attach(
+        voice=score[voice],
+        leaves=leaves,
+        attachment=abjad.Arpeggio(),
+    )
+
+for l in [list(range(11, 20)), list(range(23, 36))]:
+
+    trio.noteheads_only(
+        trinton.make_leaf_selection(score=score, voice="piano 1 voice", leaves=l)
+    )
+
+trinton.write_slur(
+    voice=score["piano 1 voice"],
+    start_slur=[
+        11,
+        23,
+        42,
+        49,
+    ],
+    stop_slur=[
+        19,
+        35,
+        43,
+        88,
+    ],
+)
+
+trinton.write_slur(
+    voice=score["piano 2 voice"],
+    start_slur=[
+        23,
+    ],
+    stop_slur=[
+        24,
+    ],
+)
+
+for voice, leaves in zip(
+    ["piano 1 voice", "piano 2 voice"],
+    [
+        [
+            95,
+            96,
+        ],
+        [
+            38,
+            39,
+        ],
+    ],
+):
+    trinton.attach(
+        voice=score[voice], leaves=leaves, attachment=abjad.Articulation("marcato")
+    )
 
 # cello pitching/attachments
 

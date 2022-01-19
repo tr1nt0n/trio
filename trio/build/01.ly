@@ -63,6 +63,7 @@
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 32/39
                                     {
+                                        \ottava 2
                                         \clef "treble"
                                         f''''32
                                         \ffff
@@ -73,21 +74,23 @@
                                         ef''''32
                                         \ff
                                         cs''''32
-                                        \change Staff = "piano 2 staff"
                                         b''''32
                                         fs''''32
-                                        \change Staff = "piano 1 staff"
-                                        a''32
+                                        a''''32
+                                        \)
+                                        \ottava 0
+                                        \change Staff = "piano 2 staff"
+                                        e,32
                                         \ffff
                                         - \marcato
-                                        e''32
-                                        c''32
+                                        \(
+                                        c,32
+                                        g,,32
                                         \ff
-                                        \change Staff = "piano 2 staff"
-                                        g'32
-                                        d'32
-                                        bf32
-                                        f32
+                                        d,32
+                                        bf,,32
+                                        f,32
+                                        \)
                                         ]
                                     }
                                     \change Staff = "piano 1 staff"
@@ -95,7 +98,6 @@
                                     af''16
                                     \fp
                                     - \marcato
-                                    \)
                                     [
                                     \change Staff = "piano 2 staff"
                                     af''16
@@ -122,8 +124,8 @@
                                     - \marcato
                                     \arpeggio
                                     \ottava 0
-                                    \clef "treble"
                                     s1 * 1/3
+                                    \clef "treble"
                                     s4
                                 }
                             }
@@ -292,7 +294,7 @@
                                     \times 4/6
                                     {
                                         \tweak Accidental.transparent ##t
-                                        f'4
+                                        bf4
                                         \ffff
                                         - \marcato
                                         - \tweak circled-tip ##t
@@ -303,7 +305,7 @@
                                     \times 4/6
                                     {
                                         \tweak Accidental.transparent ##t
-                                        f'4
+                                        bf4
                                         \ffff
                                         - \marcato
                                         - \tweak circled-tip ##t

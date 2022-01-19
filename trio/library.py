@@ -1071,6 +1071,7 @@ def noteheads_only(selections):
         abjad.tweak(leaf.note_head).Stem.transparent = True
         abjad.tweak(leaf.note_head).Beam.transparent = True
         abjad.tweak(leaf.note_head).Flag.transparent = True
+        abjad.tweak(leaf.note_head).Dots.transparent = True
 
 
 def standard_cleffing(score):

@@ -88,29 +88,45 @@
                         ^ \markup 0
                         r2.
                         ^ \markup 1
+                        \ottava -1
                         \clef "bass"
                         <g,, b,, ef,>4
+                        :32
+                        \arpeggio
                         ^ \markup 2
+                        \ottava 0
                         r4
                         ^ \markup 3
                         <af, bf, cs>8
+                        :64
+                        \arpeggio
                         ^ \markup 4
                         ~
                         <af, bf, cs>4.
+                        :32
                         ^ \markup 5
                         r4
                         ^ \markup 6
+                        \ottava 1
                         \clef "treble"
                         <cs''' af''' bf''' cs''''>8
+                        :64
+                        \arpeggio
                         ^ \markup 7
-                        \clef "bass"
+                        \ottava 0
+                        \ottava -1
                         <e fs a c'>4.
+                        :32
+                        \arpeggio
                         ^ \markup 8
-                        \clef "treble"
+                        \ottava 0
                         <a' g'' af'' a''>2..
+                        :32
+                        \arpeggio
                         ^ \markup 9
                         ~
                         <a' g'' af'' a''>4
+                        :32
                         ^ \markup 10
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                             {
@@ -150,33 +166,77 @@
                             }
                         \times 8/9
                         {
+                            \ottava 1
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             cs''''32
                             ^ \markup 11
+                            \(
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             bf'''32
                             ^ \markup 12
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             af''''32
                             ^ \markup 13
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             e''''32
                             ^ \markup 14
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             fs''''32
                             ^ \markup 15
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             g''''32
                             ^ \markup 16
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             b'''32
                             ^ \markup 17
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             a'''32
                             ^ \markup 18
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             c''''32
                             ^ \markup 19
+                            \)
+                            \ottava 0
                         }
                         \revert TupletNumber.text
                         r4
                         ^ \markup 20
                         \clef "bass"
                         <a, c>8
+                        :64
+                        \arpeggio
                         ^ \markup 21
                         \clef "treble"
                         <b'' fs'''>4.
+                        :32
+                        \arpeggio
                         ^ \markup 22
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                             {
@@ -216,71 +276,154 @@
                             }
                         \times 12/13
                         {
+                            \ottava 1
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             ef'''32
                             ^ \markup 23
+                            \(
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             e'''32
                             ^ \markup 24
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             af'''32
                             ^ \markup 25
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             d'''32
                             ^ \markup 26
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             g'''32
                             ^ \markup 27
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             cs'''32
                             ^ \markup 28
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             c'''32
                             ^ \markup 29
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             f'''32
                             ^ \markup 30
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             fs'''32
                             ^ \markup 31
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             b''32
                             ^ \markup 32
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             fs'''32
                             ^ \markup 33
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             f'''32
                             ^ \markup 34
+                            \tweak Beam.transparent ##t
+                            \tweak Dots.transparent ##t
+                            \tweak Flag.transparent ##t
+                            \tweak Stem.transparent ##t
                             c'''32
                             ^ \markup 35
+                            \)
+                            \ottava 0
                         }
                         \revert TupletNumber.text
                         r1
                         ^ \markup 36
+                        \ottava 1
                         <d''' e''' af''' c''''>2.
+                        :32
+                        \arpeggio
                         ^ \markup 37
                         ~
                         <d''' e''' af''' c''''>4.
+                        :32
                         ^ \markup 38
+                        \ottava 0
                         <af' fs'' g'' af''>2..
+                        :32
+                        \arpeggio
                         ^ \markup 39
                         r4
                         ^ \markup 40
                         r8
                         ^ \markup 41
+                        \ottava 1
                         <a'' e''' fs''' a''' c''''>4.
+                        :32
+                        \arpeggio
                         ^ \markup 42
+                        \(
                         <a'' g''' af''' a'''>4
+                        :32
+                        \arpeggio
                         ^ \markup 43
+                        \)
+                        \ottava 0
                         r8
                         ^ \markup 44
+                        \ottava -1
                         \clef "bass"
                         <af,, bf,, cs,>2.
+                        :32
+                        \arpeggio
                         ^ \markup 45
                         ~
                         <af,, bf,, cs,>2
+                        :32
                         ^ \markup 46
+                        \ottava 0
+                        \ottava 1
                         \clef "treble"
                         <a'' e''' fs''' a''' c''''>1.
+                        :32
+                        \arpeggio
                         ^ \markup 47
                         ~
                         <a'' e''' fs''' a''' c''''>1..
+                        :32
                         ^ \markup 48
+                        \ottava 0
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 36/40
                         {
+                            \ottava 1
                             ef'''16
                             ^ \markup 49
                             [
+                            \(
                             e'''16
                             ^ \markup 50
                             af'''16
@@ -359,37 +502,63 @@
                             ^ \markup 87
                             g''16
                             ^ \markup 88
+                            \)
                             ]
                         }
                         <f'' a'' cs''' fs''' a'''>1.
+                        :32
+                        \arpeggio
                         ^ \markup 89
                         ~
                         <f'' a'' cs''' fs''' a'''>2.
+                        :32
                         ^ \markup 90
                         ~
                         <f'' a'' cs''' fs''' a'''>1..
+                        :32
                         ^ \markup 91
+                        \ottava 0
+                        \ottava -1
                         \clef "bass"
                         <b,, fs,>1.
+                        :32
+                        \arpeggio
                         ^ \markup 92
+                        \ottava 0
+                        \ottava 1
                         \clef "treble"
                         <af''' bf''' cs''''>2.
+                        :32
+                        \arpeggio
                         ^ \markup 93
                         ~
                         <af''' bf''' cs''''>2
+                        :32
                         ^ \markup 94
+                        \ottava 0
+                        \ottava -1
                         \clef "bass"
                         <af,, bf,, cs,>4
+                        - \marcato
                         ^ \markup 95
+                        \ottava 0
+                        \ottava 1
                         \clef "treble"
                         <af''' cs'''' e''''>4
+                        - \marcato
                         ^ \markup 96
+                        \ottava 0
+                        \ottava -1
                         \clef "bass"
-                        <a,, e,>2.
+                        <bf,, f,>2.
+                        :32
+                        \arpeggio
                         ^ \markup 97
                         ~
-                        <a,, e,>2
+                        <bf,, f,>2
+                        :32
                         ^ \markup 98
+                        \ottava 0
                     }
                 }
                 \context Staff = "piano 2 staff"
@@ -400,56 +569,87 @@
                         ^ \markup 0
                         r2.
                         ^ \markup 1
+                        \ottava -1
                         \clef "bass"
                         <a,,, f,,>4
+                        :32
+                        \arpeggio
                         ^ \markup 2
+                        \ottava 0
                         r4
                         ^ \markup 3
                         <a,, cs,>8
+                        :64
+                        \arpeggio
                         ^ \markup 4
                         ~
                         <a,, cs,>4.
+                        :32
                         ^ \markup 5
                         r4
                         ^ \markup 6
                         \clef "treble"
                         <cs' d'' a''>8
+                        :64
+                        \arpeggio
                         ^ \markup 7
+                        \ottava -1
                         \clef "bass"
                         <d,, c, a,>4.
+                        :32
+                        \arpeggio
                         ^ \markup 8
+                        \ottava 0
                         <d cs'>2..
+                        :32
+                        \arpeggio
                         ^ \markup 9
                         ~
                         <d cs'>4
+                        :32
                         ^ \markup 10
                         ~
                         <d cs'>4
+                        :32
                         ^ \markup 11
                         r4
                         ^ \markup 12
                         <fs, af,>8
+                        :64
+                        \arpeggio
                         ^ \markup 13
                         \clef "treble"
                         <bf'>4.
+                        :32
                         ^ \markup 14
+                        \ottava -1
                         \clef "bass"
                         <ef,, f,, af,,>2..
+                        :32
+                        \arpeggio
                         ^ \markup 15
                         ~
                         <ef,, f,, af,,>4
+                        :32
                         ^ \markup 16
                         ~
                         <ef,, f,, af,,>4
+                        :32
                         ^ \markup 17
+                        \ottava 0
                         \clef "treble"
                         <af' b''>2.
+                        :32
+                        \arpeggio
                         ^ \markup 18
                         ~
                         <af' b''>4.
+                        :32
                         ^ \markup 19
                         \clef "bass"
                         <cs a>2..
+                        :32
+                        \arpeggio
                         ^ \markup 20
                         r4
                         ^ \markup 21
@@ -457,58 +657,102 @@
                         ^ \markup 22
                         \clef "treble"
                         <d' c''>4.
+                        :32
+                        \arpeggio
                         ^ \markup 23
+                        \(
                         <d' cs''>4
+                        :32
+                        \arpeggio
                         ^ \markup 24
+                        \)
                         r8
                         ^ \markup 25
+                        \ottava -1
                         \clef "bass"
                         <c,, e,,>2.
+                        :32
+                        \arpeggio
                         ^ \markup 26
                         ~
                         <c,, e,,>2
+                        :32
                         ^ \markup 27
+                        \ottava 0
                         \clef "treble"
                         <d' c''>1.
+                        :32
+                        \arpeggio
                         ^ \markup 28
                         ~
                         <d' c''>1..
+                        :32
                         ^ \markup 29
+                        \ottava -1
                         \clef "bass"
                         <b,,, cs,, f,, a,,>1.
+                        :32
+                        \arpeggio
                         ^ \markup 30
                         ~
                         <b,,, cs,, f,, a,,>2.
+                        :32
                         ^ \markup 31
+                        \ottava 0
                         \clef "treble"
                         <b b'>1.
+                        :32
+                        \arpeggio
                         ^ \markup 32
                         ~
                         <b b'>2.
+                        :32
                         ^ \markup 33
                         ~
                         <b b'>1..
+                        :32
                         ^ \markup 34
+                        \ottava -1
                         \clef "bass"
                         <ef,, bf,,>1.
+                        :32
+                        \arpeggio
                         ^ \markup 35
+                        \ottava 0
+                        \ottava 1
                         \clef "treble"
                         <a'' cs'''>2.
+                        :32
+                        \arpeggio
                         ^ \markup 36
                         ~
                         <a'' cs'''>2
+                        :32
                         ^ \markup 37
+                        \ottava 0
+                        \ottava -1
                         \clef "bass"
                         <a,,, cs,,>4
+                        - \marcato
                         ^ \markup 38
-                        <g'' b''>4
-                        ^ \markup 39
+                        \ottava 0
+                        \ottava 1
                         \clef "treble"
+                        <g'' b''>4
+                        - \marcato
+                        ^ \markup 39
+                        \ottava 0
+                        \ottava -1
+                        \clef "bass"
                         <d,, a,,>2.
+                        :32
+                        \arpeggio
                         ^ \markup 40
                         ~
                         <d,, a,,>2
+                        :32
                         ^ \markup 41
+                        \ottava 0
                     }
                 }
             >>
@@ -575,13 +819,10 @@
                         r4
                         ^ \markup 24
                         \repeat tremolo 4 {
-                            \override Staff.Stem.stemlet-length = 0.75
                             c'32
                             ^ \markup 25
-                            \revert Staff.Stem.stemlet-length
                             c'32
                             ^ \markup 26
-                            ]
                         }
                         r1 * 3/4
                         ^ \markup 27
@@ -749,10 +990,8 @@
                             }
                         \times 2/3
                         {
-                            \override Staff.Stem.stemlet-length = 0.75
                             a'''32
                             ^ \markup 28
-                            [
                             cs''''32
                             ^ \markup 29
                             aqs'''32
@@ -761,10 +1000,8 @@
                             ^ \markup 31
                             aqf'''32
                             ^ \markup 32
-                            \revert Staff.Stem.stemlet-length
                             dqf''''32
                             ^ \markup 33
-                            ]
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -805,20 +1042,16 @@
                             }
                         \times 4/5
                         {
-                            \override Staff.Stem.stemlet-length = 0.75
                             a'''32
                             ^ \markup 34
-                            [
                             cs''''32
                             ^ \markup 35
                             aqs'''32
                             ^ \markup 36
                             b'''32
                             ^ \markup 37
-                            \revert Staff.Stem.stemlet-length
                             aqf'''32
                             ^ \markup 38
-                            ]
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -859,10 +1092,8 @@
                             }
                         \times 2/3
                         {
-                            \override Staff.Stem.stemlet-length = 0.75
                             dqf''''32
                             ^ \markup 39
-                            [
                             a'''32
                             ^ \markup 40
                             cs''''32
@@ -871,10 +1102,8 @@
                             ^ \markup 42
                             b'''32
                             ^ \markup 43
-                            \revert Staff.Stem.stemlet-length
                             aqf'''32
                             ^ \markup 44
-                            ]
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -915,20 +1144,16 @@
                             }
                         \times 4/5
                         {
-                            \override Staff.Stem.stemlet-length = 0.75
                             dqf''''32
                             ^ \markup 45
-                            [
                             a'''32
                             ^ \markup 46
                             cs''''32
                             ^ \markup 47
                             aqs'''32
                             ^ \markup 48
-                            \revert Staff.Stem.stemlet-length
                             b'''32
                             ^ \markup 49
-                            ]
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -969,10 +1194,8 @@
                             }
                         \times 2/3
                         {
-                            \override Staff.Stem.stemlet-length = 0.75
                             aqf'''32
                             ^ \markup 50
-                            [
                             dqf''''32
                             ^ \markup 51
                             a'''32
@@ -981,10 +1204,8 @@
                             ^ \markup 53
                             aqs'''32
                             ^ \markup 54
-                            \revert Staff.Stem.stemlet-length
                             b'''32
                             ^ \markup 55
-                            ]
                         }
                         \revert TupletNumber.text
                         r4
@@ -1719,20 +1940,16 @@
                             ^ \markup 55
                             r32 * 27/16
                             ^ \markup 56
-                            \override Staff.Stem.stemlet-length = 0.75
                             c'32 * 29/16
                             ^ \markup 57
-                            [
                             c'32 * 65/32
                             ^ \markup 58
                             c'32 * 73/32
                             ^ \markup 59
                             c'32 * 21/8
                             ^ \markup 60
-                            \revert Staff.Stem.stemlet-length
                             c'32 * 97/32
                             ^ \markup 61
-                            ]
                             r32 * 111/32
                             ^ \markup 62
                             c'32 * 31/8
