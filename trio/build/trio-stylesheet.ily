@@ -1,7 +1,7 @@
 \version "2.20.0"
 \language english
 #(set-paper-size "arch a")
-#(set-global-staff-size 8)
+#(set-global-staff-size 9)
 
 \include "/Users/trintonprater/scores/trio/trio/library.ily"
 \include "/Users/trintonprater/evans/lilypond/evans-markups.ily"
