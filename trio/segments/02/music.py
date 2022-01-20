@@ -2578,7 +2578,7 @@ for voice in ["cello 2 voice", "contrabass 2 voice"]:
     trinton.attach(
         voice=score[voice],
         leaves=[
-            18,
+            17,
         ],
         attachment=abjad.StopHairpin(),
     )

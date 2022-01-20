@@ -999,13 +999,13 @@
                             ^ \markup +0
                             \)
                             r32 * 123/32
+                            \!
                             ]
                         }
                         \revert TupletNumber.text
                         \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                         r1 * 1/8
-                        \!
                         R1 * 1/8
                         \stopStaff \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -2505,13 +2505,13 @@
                             ^ \markup -2
                             \)
                             r32 * 123/32
+                            \!
                             ]
                         }
                         \revert TupletNumber.text
                         \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                         r1 * 1/8
-                        \!
                         R1 * 1/8
                         \stopStaff \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
