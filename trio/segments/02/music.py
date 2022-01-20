@@ -615,8 +615,7 @@ trinton.rewrite_meter_by_voice(
         5,
     ],
 )
-# trinton.beam_score(score)
-trinton.annotate_leaves(score)
+# trinton.annotate_leaves(score)
 
 # margin markups and standard cleffing
 #
@@ -1714,7 +1713,7 @@ trinton.attach_multiple(
 )
 
 trinton.attach(
-    voice=score["piano 1 voice"], leaves=[39], attachment=abjad.StartHairpin("|>o")
+    voice=score["piano 1 voice"], leaves=[39], attachment=abjad.Dynamic("fp")
 )
 
 trinton.attach(
@@ -2302,6 +2301,361 @@ trinton.attach_multiple(
 
 # contrabass pitching/attachments
 
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        37,
+        44,
+        129,
+        133,
+        136,
+    ],
+    attachment=abjad.Clef("treble"),
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        39,
+        64,
+        132,
+        135,
+        137,
+    ],
+    attachment=abjad.Clef("bass"),
+)
+
+for leaf in [
+    0,
+    3,
+    4,
+    6,
+    8,
+    9,
+    12,
+    13,
+    14,
+    16,
+]:
+    trio.pitch_matter(
+        score=score,
+        voice="contrabass 2 voice",
+        leaves=[
+            leaf,
+        ],
+        chord=6,
+        partials=[
+            1,
+        ],
+        transpose=0,
+        markup=True,
+    )
+
+trio.pitch_matter(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        35,
+    ],
+    chord=6,
+    partials=[
+        1,
+    ],
+    transpose=12,
+    markup=True,
+)
+
+trio.pitch_matter(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        37,
+    ],
+    chord=2,
+    partials=[
+        2,
+    ],
+    transpose=0,
+    markup=True,
+)
+
+trio.pitch_matter(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        39,
+    ],
+    chord=2,
+    partials=[
+        4,
+    ],
+    transpose=-36,
+    markup=True,
+)
+
+for leaf in [
+    44,
+    45,
+    47,
+    49,
+    50,
+    51,
+    52,
+    53,
+    55,
+    57,
+    58,
+    59,
+    60,
+    61,
+    63,
+]:
+
+    trio.pitch_matter(
+        score=score,
+        voice="contrabass 2 voice",
+        leaves=[
+            leaf,
+        ],
+        chord=6,
+        partials=[
+            5,
+            6,
+        ],
+        transpose=-24,
+        markup=True,
+    )
+
+trio.pitch_toccata(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=list(range(64, 81)),
+    octave=2,
+    seed=2,
+    index=34,
+    random_walk=True,
+)
+
+for leaf in [
+    82,
+    83,
+    85,
+    87,
+    88,
+    91,
+    92,
+    93,
+    95,
+    97,
+    98,
+]:
+
+    trio.pitch_matter(
+        score=score,
+        voice="contrabass 2 voice",
+        leaves=[
+            leaf,
+        ],
+        chord=1,
+        partials=[
+            5,
+            6,
+        ],
+        transpose=-24,
+        markup=True,
+    )
+
+for leaf in [
+    100,
+    101,
+    103,
+    105,
+    106,
+    109,
+    110,
+    111,
+    113,
+    115,
+    116,
+    119,
+    120,
+    121,
+    123,
+    125,
+    126,
+]:
+
+    trio.pitch_matter(
+        score=score,
+        voice="contrabass 2 voice",
+        leaves=[
+            leaf,
+        ],
+        chord=6,
+        partials=[
+            4,
+        ],
+        transpose=-24,
+        markup=True,
+    )
+
+trio.pitch_matter(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        129,
+    ],
+    chord=3,
+    partials=[
+        1,
+    ],
+    transpose=12,
+    markup=True,
+)
+
+trio.pitch_matter(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        132,
+    ],
+    chord=1,
+    partials=[
+        6,
+    ],
+    transpose=-36,
+    markup=True,
+)
+
+trio.pitch_matter(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        133,
+    ],
+    chord=1,
+    partials=[
+        1,
+    ],
+    transpose=12,
+    markup=True,
+)
+
+trio.pitch_matter(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        135,
+    ],
+    chord=2,
+    partials=[
+        4,
+    ],
+    transpose=-36,
+    markup=True,
+)
+
+trio.pitch_matter(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        136,
+    ],
+    chord=3,
+    partials=[
+        1,
+    ],
+    transpose=12,
+    markup=True,
+)
+
+trio.pitch_matter(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        137,
+    ],
+    chord=3,
+    partials=[
+        3,
+        4,
+    ],
+    transpose=-36,
+    markup=True,
+)
+
+trio.ritardando_beams(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        3,
+        44,
+        54,
+        82,
+        100,
+    ],
+)
+
+trio.noteheads_only(
+    trinton.make_leaf_selection(
+        score=score, voice="contrabass 2 voice", leaves=list(range(64, 81))
+    )
+)
+
+trio.finger_pressure(
+    score=score,
+    voice="contrabass 2 voice",
+    half=list(range(70, 77)),
+    harm=list(range(64, 70)),
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        3,
+        4,
+        6,
+        8,
+        9,
+        12,
+        13,
+        14,
+        16,
+        44,
+        45,
+        47,
+        49,
+        50,
+        51,
+        52,
+        53,
+        55,
+        57,
+        58,
+        59,
+        60,
+        61,
+        63,
+        100,
+        101,
+        103,
+        105,
+        106,
+        109,
+        110,
+        111,
+        113,
+        115,
+        116,
+        119,
+        120,
+        121,
+        123,
+        125,
+        126,
+    ],
+    attachment=abjad.Articulation("staccato"),
+)
 
 for voice, leaf in zip(["cello 2 voice", "contrabass 2 voice"], [154, 138]):
 
@@ -2357,11 +2711,181 @@ for voice in ["cello 1 voice", "contrabass 1 voice"]:
         leaves=all,
     )
 
+trinton.write_slur(
+    voice=score["contrabass 2 voice"],
+    start_slur=[
+        3,
+        44,
+        55,
+        64,
+        82,
+        100,
+    ],
+    stop_slur=[
+        16,
+        53,
+        63,
+        80,
+        98,
+        126,
+    ],
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[0],
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "NB" 1', format_slot="after"),
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        39,
+        135,
+        136,
+    ],
+    attachment=abjad.Articulation("marcato"),
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"], leaves=[35], attachment=abjad.StartHairpin("o<|")
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        44,
+    ],
+    attachments=[abjad.StartHairpin("|>o"), abjad.Dynamic("f")],
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"], leaves=[37], attachment=abjad.Dynamic("fp")
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        38,
+        99,
+    ],
+    attachment=abjad.StopHairpin(),
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        39,
+        135,
+    ],
+    attachment=abjad.Dynamic("fff"),
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        64,
+    ],
+    attachment=abjad.Dynamic("f"),
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        82,
+    ],
+    attachments=[abjad.StartHairpin(">o"), abjad.Dynamic("f")],
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        100,
+    ],
+    attachment=abjad.StartHairpin("o<"),
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        129,
+    ],
+    attachments=[abjad.StartHairpin("<"), abjad.Dynamic("fp")],
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        137,
+    ],
+    attachments=[abjad.Dynamic("p"), abjad.StartHairpin("<|")],
+)
+
+# fermate
+
+trinton.populate_fermata_measures(
+    score=score,
+    voices=trio.all_voices_include_ts_context,
+    leaves=[
+        [
+            2,
+            5,
+            9,
+            15,
+        ],
+        [
+            3,
+            6,
+            20,
+            40,
+        ],
+        [
+            3,
+            6,
+            12,
+            21,
+        ],
+        [
+            2,
+            5,
+            9,
+            19,
+        ],
+        [
+            19,
+            22,
+            56,
+            82,
+        ],
+        [
+            2,
+            5,
+            9,
+            15,
+        ],
+        [
+            19,
+            22,
+            28,
+            38,
+        ],
+    ],
+    fermata_measures=[
+        2,
+        5,
+        9,
+        15,
+    ],
+)
 
 # whiteout empty staves
 
-# for voice in trio.all_voices:
-#     trinton.whiteout_empty_staves(score=score, voice=voice, cutaway=True)
+for voice in trio.all_voices:
+    trinton.whiteout_empty_staves(score=score, voice=voice, cutaway=True)
 
 # extract parts
 

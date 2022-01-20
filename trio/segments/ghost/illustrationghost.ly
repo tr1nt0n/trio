@@ -11,10 +11,10 @@
             \tempo 4=35
             \time 2/4
             s1 * 1/2
-            \boxed-markup "Are We Still Married? (ii)" 0.5
+            \boxed-markup "Are We Still Married? (ii)" 1.5
             \time 3/4
             s1 * 3/4
-            \boxed-markup "Inscribed in Water" 0.5
+            \boxed-markup "Inscribed in Water" 1.5
         }
         \tag #'group1
         {
