@@ -2704,7 +2704,7 @@ for voice in trio.all_voices:
 
 # extract parts
 
-# trinton.extract_parts(score=score)
+trinton.extract_parts(score=score)
 
 # render file
 
