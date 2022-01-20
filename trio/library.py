@@ -993,11 +993,11 @@ def pitch_harmonic_glissandi(score, voice, leaves, strings, index):
 
 
 _contrabass_glissandi_strings_to_pitches = {
-    "III and IV": contrabass_glissandi_pitches,
+    "I and II": contrabass_glissandi_pitches,
     "II and III": [
         trinton.transpose(l=chord, m=-5) for chord in contrabass_glissandi_pitches
     ],
-    "I and II": [
+    "III and IV": [
         trinton.transpose(l=chord, m=-10) for chord in contrabass_glissandi_pitches
     ],
 }
