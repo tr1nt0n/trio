@@ -224,10 +224,10 @@ trio.toccata_rhythms(
 )
 
 trinton.append_rests(
-    score=score, voice="cello 2 voice", rests=[abjad.Rest("r4"), abjad.Rest("r2")]
+    score=score, voice="cello 2 voice", rests=[abjad.Rest("r4"), abjad.Rest("r4")]
 )
 
-trinton.append_rests(score=score, voice="cello 1 voice", rests=[abjad.Rest("r2")])
+trinton.append_rests(score=score, voice="cello 1 voice", rests=[abjad.Rest("r4")])
 
 # bass
 
@@ -285,10 +285,10 @@ trio.cello_gliss(
 )
 
 trinton.append_rests(
-    score=score, voice="contrabass 2 voice", rests=[abjad.Rest("r4"), abjad.Rest("r2")]
+    score=score, voice="contrabass 2 voice", rests=[abjad.Rest("r4"), abjad.Rest("r4")]
 )
 
-trinton.append_rests(score=score, voice="contrabass 1 voice", rests=[abjad.Rest("r2")])
+trinton.append_rests(score=score, voice="contrabass 1 voice", rests=[abjad.Rest("r4")])
 
 for voices, tuplet in zip(
     [["cello 1 voice", "cello 2 voice"], ["contrabass 1 voice", "contrabass 2 voice"]],
@@ -300,7 +300,7 @@ for voices, tuplet in zip(
     trio.harmonic_glissandi_rhythms(
         score=score,
         voices=voices,
-        durations=[(1, 4)],
+        durations=[(1, 2)],
         tuplets=[tuplet],
         notation="tuplet",
     )
@@ -351,14 +351,16 @@ trio.write_marginmarkups(score=score)
 
 for tempo, leaf in zip(
     [
+        abjad.MetronomeMark((1, 8), 130),
         abjad.MetronomeMark((1, 8), 69),
         abjad.MetronomeMark((1, 8), 105),
         abjad.MetronomeMark((1, 8), 60),
-        abjad.MetronomeMark((1, 8), 47),
-        abjad.MetronomeMark((1, 4), 105),
+        abjad.MetronomeMark((1, 8), 69),
+        abjad.MetronomeMark((1, 4), 130),
     ],
     [
         0,
+        1,
         6,
         7,
         8,
@@ -497,6 +499,175 @@ for voice, leaf, partials in zip(
         transpose=0,
         markup=False,
     )
+
+for leaves, seed in zip(
+    [
+        [
+            list(range(61, 65)),
+            list(range(67, 82)),
+            list(range(85, 96)),
+            list(range(101, 117)),
+            list(range(119, 132)),
+            list(range(139, 153)),
+        ],
+        [
+            list(range(156, 180)),
+            list(range(204, 212)),
+            list(range(217, 230)),
+        ],
+        [
+            list(range(237, 249)),
+            list(range(258, 269)),
+            list(range(280, 290)),
+            list(range(303, 312)),
+            list(range(329, 337)),
+        ],
+    ],
+    [
+        7,
+        13,
+        17,
+    ],
+):
+
+    high_leaves = []
+
+    for l in leaves:
+        for leaf in l:
+            high_leaves.append(leaf)
+
+    trio.pitch_toccata(
+        score=score,
+        voice="piano 1 voice",
+        leaves=high_leaves,
+        octave=6,
+        seed=seed,
+        index=0,
+        random_walk=True,
+    )
+
+for leaves, seed, octave, index in zip(
+    [
+        list(range(65, 67)),
+        list(range(82, 85)),
+        list(range(96, 101)),
+        list(
+            range(
+                117,
+                119,
+            )
+        ),
+        list(range(132, 139)),
+        list(range(153, 156)),
+        list(range(180, 204)),
+        list(range(212, 217)),
+        list(range(230, 237)),
+        list(range(249, 258)),
+        list(range(269, 280)),
+        list(range(290, 303)),
+        list(range(312, 329)),
+        list(range(337, 350)),
+    ],
+    list(range(1, 16)),
+    [
+        1,
+        1,
+        1,
+        5,
+        4,
+        3,
+        2,
+        4,
+        4,
+        4,
+        3,
+        3,
+        2,
+        1,
+    ],
+    list(range(0, 14)),
+):
+
+    trio.pitch_toccata(
+        score=score,
+        voice="piano 1 voice",
+        leaves=leaves,
+        octave=octave,
+        seed=seed,
+        index=index,
+        random_walk=False,
+    )
+
+for leaves, seed in zip(
+    [
+        [
+            351,
+            352,
+            353,
+        ],
+        [
+            354,
+            355,
+            356,
+        ],
+        [357, 358, 359],
+        [360, 361, 362],
+    ],
+    [
+        1,
+        7,
+        13,
+        23,
+    ],
+):
+
+    trio.pitch_toccata(
+        score=score,
+        voice="piano 1 voice",
+        leaves=leaves,
+        octave=7,
+        seed=seed,
+        index=0,
+        random_walk=False,
+    )
+
+trio.change_staff(
+    score=score,
+    voice="piano 1 voice",
+    lh=[
+        65,
+        82,
+        96,
+        117,
+        132,
+        153,
+        180,
+        212,
+        230,
+        249,
+        269,
+        290,
+        312,
+        337,
+    ],
+    rh=[
+        61,
+        67,
+        85,
+        101,
+        119,
+        139,
+        156,
+        204,
+        217,
+        237,
+        258,
+        280,
+        303,
+        329,
+        351,
+    ],
+)
 
 # cello pitching/attachments
 
