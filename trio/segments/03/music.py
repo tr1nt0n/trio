@@ -194,7 +194,7 @@ for voice in trio.all_voices:
 trinton.rewrite_meter(score)
 trinton.beam_score(score)
 
-trinton.annotate_leaves(score)
+# trinton.annotate_leaves(score)
 
 # margin markups and standard cleffing
 
@@ -217,7 +217,7 @@ for voice in ["piano 1 voice", "piano 2 voice", "cello 2 voice"]:
     trinton.attach(voice=score[voice], leaves=[0], attachment=abjad.Clef("treble"))
 
 for voice in [
-    "piano 1 voice",
+    "piano 2 voice",
     "cello 2 voice",
     "contrabass 2 voice",
 ]:
@@ -227,24 +227,14 @@ for voice in [
         leaves=[0],
         attachments=[
             abjad.Dynamic("fff"),
-            abjad.Articulation(">"),
             abjad.StartHairpin(">o"),
         ],
     )
 
-for voice, leaf in zip(
-    [
-        "piano 1 voice",
-        "cello 2 voice",
-        "contrabass 2 voice",
-    ],
-    [
-        61,
-        98,
-        42,
-    ],
-):
-    trinton.attach(voice=score[voice], leaves=[leaf], attachment=abjad.StopHairpin())
+trinton.attach(
+    voice=score["piano 2 voice"], leaves=[5], attachment=abjad.Dynamic("ppp")
+)
+
 
 for leaves, string in zip(
     [list(range(0, 40)), list(range(40, 56)), list(range(56, 62))],
@@ -254,7 +244,323 @@ for leaves, string in zip(
         score=score, voice="piano 1 voice", leaves=leaves, string=string
     )
 
-# cello pitching/attachments
+trio.change_staff(
+    score=score,
+    voice="piano 1 voice",
+    lh=[
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        32,
+        33,
+        35,
+        37,
+        39,
+        41,
+        43,
+        45,
+        46,
+        47,
+        49,
+        51,
+        53,
+        57,
+        59,
+    ],
+    rh=[
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        40,
+        42,
+        44,
+        46,
+        48,
+        50,
+        52,
+        54,
+        58,
+        61,
+    ],
+)
+
+trinton.attach(
+    voice=score["piano 1 voice"],
+    leaves=[
+        0,
+        3,
+        8,
+        14,
+        18,
+        22,
+        30,
+        34,
+        38,
+        45,
+        46,
+        50,
+        53,
+        55,
+        59,
+    ],
+    attachment=abjad.Articulation(">"),
+)
+
+# cello attachments
+
+for voice, leaf in zip(
+    [
+        "cello 2 voice",
+        "contrabass 2 voice",
+    ],
+    [
+        98,
+        42,
+    ],
+):
+    trinton.attach(voice=score[voice], leaves=[leaf], attachment=abjad.StopHairpin())
+
+trinton.ottava(
+    score=score,
+    voice="cello 2 voice",
+    start_ottava=[
+        0,
+        60,
+    ],
+    stop_ottava=[
+        34,
+        85,
+    ],
+    octave=1,
+)
+
+trinton.glissando(
+    score=score,
+    voice="cello 2 voice",
+    start_gliss=[
+        25,
+        81,
+        83,
+    ],
+    stop_gliss=[
+        27,
+        83,
+        85,
+    ],
+)
+
+for l in [
+    list(range(0, 25)),
+    list(range(27, 34)),
+    list(range(35, 59)),
+    list(range(60, 81)),
+    list(range(86, 98)),
+]:
+
+    trinton.attach(voice=score["cello 2 voice"], leaves=l, attachment=abjad.Glissando())
+
+trinton.ficta(
+    score=score,
+    voice="cello 2 voice",
+    start_ficta=[
+        0,
+    ],
+    stop_ficta=[
+        98,
+    ],
+)
+
+trinton.attach(
+    voice=score["cello 2 voice"],
+    leaves=[
+        0,
+        5,
+        11,
+        15,
+        17,
+        20,
+        27,
+        30,
+        38,
+        46,
+        49,
+        55,
+        58,
+        62,
+        69,
+        72,
+        77,
+        85,
+        90,
+    ],
+    attachment=abjad.Articulation(">"),
+)
+
+trinton.write_slur(
+    voice=score["cello 2 voice"],
+    start_slur=[
+        0,
+        5,
+        11,
+        15,
+        17,
+        20,
+        27,
+        30,
+        38,
+        46,
+        49,
+        55,
+        58,
+        62,
+        69,
+        72,
+        77,
+        85,
+        90,
+    ],
+    stop_slur=[
+        4,
+        10,
+        14,
+        16,
+        19,
+        26,
+        29,
+        37,
+        45,
+        48,
+        54,
+        57,
+        61,
+        68,
+        71,
+        76,
+        84,
+        89,
+        98,
+    ],
+)
+
+for leaf, string in zip(
+    [
+        0,
+        35,
+        60,
+        86,
+    ],
+    ["I", "III", "II", "IV"],
+):
+    trio.attach_string_markup(
+        score=score, voice="cello 2 voice", leaves=[leaf], string=string
+    )
+
+trinton.write_text_span(
+    voice=score["cello 2 voice"],
+    begin_text=r"\markup \italic { MSP }",
+    end_text=r"\markup \italic { ST }",
+    start_leaf=[
+        0,
+    ],
+    stop_leaf=[
+        58,
+    ],
+    padding=18,
+)
+
+trinton.write_text_span(
+    voice=score["cello 2 voice"],
+    begin_text=r"\markup \italic { ST }",
+    end_text=r"\markup \italic { MSP }",
+    start_leaf=[
+        72,
+    ],
+    stop_leaf=[
+        85,
+    ],
+    padding=12,
+)
+
+trinton.write_text_span(
+    voice=score["cello 2 voice"],
+    begin_text=r"\markup \italic { MSP }",
+    end_text=r"\markup \italic { MST }",
+    start_leaf=[
+        87,
+    ],
+    stop_leaf=[
+        98,
+    ],
+    padding=10,
+)
+
+trio.finger_pressure(
+    score=score,
+    voice="cello 2 voice",
+    half=[
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        15,
+        16,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        58,
+        59,
+        60,
+        61,
+        69,
+        70,
+        71,
+        90,
+        91,
+        92,
+        93,
+    ],
+    harm=[
+        94,
+        95,
+        96,
+        97,
+        98,
+    ],
+)
 
 
 # contrabass pitching/attachments
@@ -271,6 +577,93 @@ for leaves, string in zip(
         score=score, voice="contrabass 2 voice", leaves=leaves, strings=string
     )
 
+trinton.ficta(score=score, voice="contrabass 2 voice", start_ficta=[0], stop_ficta=[41])
+
+trinton.glissando(
+    score=score,
+    voice="contrabass 2 voice",
+    start_gliss=[
+        19,
+        21,
+        37,
+        39,
+    ],
+    stop_gliss=[
+        21,
+        23,
+        39,
+        41,
+    ],
+)
+
+for l in [
+    list(
+        range(
+            0,
+            14,
+        )
+    ),
+    list(range(15, 19)),
+    list(range(23, 35)),
+    list(
+        range(
+            36,
+            37,
+        )
+    ),
+]:
+    trinton.attach(
+        voice=score["contrabass 2 voice"], leaves=l, attachment=abjad.Glissando()
+    )
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        0,
+        15,
+        24,
+        36,
+    ],
+    attachment=abjad.Articulation(">"),
+)
+
+trinton.write_slur(
+    voice=score["contrabass 2 voice"],
+    start_slur=[
+        0,
+        15,
+        24,
+        36,
+    ],
+    stop_slur=[
+        14,
+        23,
+        35,
+        41,
+    ],
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[0],
+    attachment=abjad.LilyPondLiteral(
+        r'\boxed-markup "low string portamento" 1', format_slot="after"
+    ),
+)
+
+trinton.write_text_span(
+    voice=score["contrabass 2 voice"],
+    begin_text=r"\markup \italic { MSP }",
+    end_text=r"\markup \italic { MST }",
+    start_leaf=[
+        0,
+    ],
+    stop_leaf=[
+        41,
+    ],
+    padding=18,
+)
+
 # fermate
 
 trinton.populate_fermata_measures(
@@ -280,7 +673,9 @@ trinton.populate_fermata_measures(
         [
             9,
         ],
-        [65],
+        [
+            65,
+        ],
         [
             9,
         ],
@@ -302,12 +697,12 @@ trinton.populate_fermata_measures(
 
 # whiteout empty staves
 
-# for voice in trio.all_voices:
-#     trinton.whiteout_empty_staves(score=score, voice=voice, cutaway=True)
+for voice in trio.all_voices:
+    trinton.whiteout_empty_staves(score=score, voice=voice, cutaway=True)
 
 # extract parts
 
-# trinton.extract_parts(score=score)
+trinton.extract_parts(score=score)
 
 # render file
 

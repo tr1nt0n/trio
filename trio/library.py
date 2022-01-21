@@ -1134,22 +1134,21 @@ def double_octave_down(sel):
 
 
 def change_staff(score, voice, lh, rh):
-    for a, b in zip(lh, rh):
-        trinton.attach(
-            voice=score[voice],
-            leaves=[a],
-            attachment=abjad.LilyPondLiteral(
-                r'\change Staff = "piano 2 staff"', format_slot="absolute_before"
-            ),
-        )
+    trinton.attach(
+        voice=score[voice],
+        leaves=lh,
+        attachment=abjad.LilyPondLiteral(
+            r'\change Staff = "piano 2 staff"', format_slot="absolute_before"
+        ),
+    )
 
-        trinton.attach(
-            voice=score[voice],
-            leaves=[b],
-            attachment=abjad.LilyPondLiteral(
-                r'\change Staff = "piano 1 staff"', format_slot="absolute_before"
-            ),
-        )
+    trinton.attach(
+        voice=score[voice],
+        leaves=rh,
+        attachment=abjad.LilyPondLiteral(
+            r'\change Staff = "piano 1 staff"', format_slot="absolute_before"
+        ),
+    )
 
 
 def small_knee(score, voice, start, stop):
