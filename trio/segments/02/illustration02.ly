@@ -524,7 +524,6 @@
                                     <af''' cs'''' e''''>4
                                     - \marcato
                                     \ottava 0
-                                    \ottava -1
                                     \clef "bass"
                                     <bf,, f,>2.
                                     :32
@@ -535,7 +534,6 @@
                                     ~
                                     <bf,, f,>2
                                     :32
-                                    \ottava 0
                                 }
                             }
                         }

@@ -1385,13 +1385,11 @@ trinton.ottava(
         45,
         92,
         95,
-        97,
     ],
     stop_ottava=[
         46,
         92,
         95,
-        98,
     ],
     octave=-1,
 )
