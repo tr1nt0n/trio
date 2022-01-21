@@ -47,6 +47,7 @@
                                     \clef "treble"
                                     \override Staff.Stem.stemlet-length = 0.75
                                     b'''32
+                                    \fff
                                     - \accent
                                     [
                                     \change Staff = "piano 2 staff"
