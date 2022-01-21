@@ -23,6 +23,23 @@ boxed-markup = #(
     #}
     )
 
+left-aligned-boxed-markup = #(
+    define-music-function
+    (string font-size)
+    (string? number?)
+    #{
+    - \tweak font-size #font-size
+    ^ \markup
+    \halign #-1.5
+    \italic
+    \override #'(style . "box")
+    \override #'(box-padding . 0.5)
+    \whiteout
+    \box
+    #string
+    #}
+    )
+
 #(define ((flared-tie coords) grob)
 
   (define (pair-to-list pair)

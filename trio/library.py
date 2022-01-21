@@ -701,6 +701,11 @@ def toccata_rhythms(score, voice, durations, division, extra_counts, notation):
             rmakers.rewrite_dots(),
             rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
         ),
+        "absolute_bracket": rmakers.stack(
+            rmakers.even_division([division], extra_counts=extra_counts),
+            rmakers.rewrite_dots(),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        ),
     }
 
     trinton.make_and_append_rhythm_selections(
@@ -1351,7 +1356,7 @@ rehearsal_mark3 = abjad.LilyPondLiteral(
 )
 
 rehearsal_mark4 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Toccata" 1.5', format_slot="after"
+    r'\left-aligned-boxed-markup "Toccata" 1.5', format_slot="after"
 )
 
 rehearsal_mark5 = abjad.LilyPondLiteral(

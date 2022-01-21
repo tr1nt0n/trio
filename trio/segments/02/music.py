@@ -651,6 +651,8 @@ trinton.attach(
     voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
 )
 
+trinton.reduce_tuplets(score=score, voice="piano 1 voice", tuplets=[2])
+
 # piano pitching/attachments
 
 trinton.attach(
