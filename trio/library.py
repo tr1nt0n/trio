@@ -1159,7 +1159,7 @@ def change_staff(score, voice, lh, rh):
 def small_knee(score, voice, start, stop):
     trinton.attach(
         voice=score[voice],
-        leaves=[start],
+        leaves=start,
         attachment=abjad.LilyPondLiteral(
             r"\override Beam.auto-knee-gap = #0", format_slot="before"
         ),
@@ -1167,7 +1167,7 @@ def small_knee(score, voice, start, stop):
 
     trinton.attach(
         voice=score["piano 1 voice"],
-        leaves=[stop],
+        leaves=stop,
         attachment=abjad.LilyPondLiteral(
             r"\override Beam.auto-knee-gap = #15", format_slot="before"
         ),
@@ -1219,14 +1219,14 @@ def write_bow_contact_points(
         )
 
 
-def make_angle_spanner(score, voice, leaves, direction, left_text, position):
+def make_angle_spanner(score, voice, leaves, direction, left_text, position, padding):
     _positions_to_literals = {
         "start": abjad.LilyPondLiteral(
             [
                 r"- \abjad-dashed-line-with-arrow",
                 rf"- \evans-{direction}-BAD-spanner-left-text #{left_text}",
                 r"- \tweak bound-details.right.padding 1.4",
-                r"- \tweak staff-padding #5.5",
+                rf"- \tweak padding #{padding}",
                 r"\evansStartTextSpanBAD",
             ],
             format_slot="absolute_after",
@@ -1237,7 +1237,7 @@ def make_angle_spanner(score, voice, leaves, direction, left_text, position):
                 r"- \abjad-dashed-line-with-arrow",
                 rf"- \evans-{direction}-BAD-spanner-left-text #{left_text}",
                 r"- \tweak bound-details.right.padding 1.4",
-                r"- \tweak staff-padding #5.5",
+                rf"- \tweak padding #{padding}",
                 r"\evansStartTextSpanBAD",
             ],
             format_slot="absolute_after",
@@ -1249,7 +1249,7 @@ def make_angle_spanner(score, voice, leaves, direction, left_text, position):
                 rf"- \evans-{direction}-BAD-spanner-left-text #{left_text}",
                 rf"- \evans-BAD-spanner-right-text #0",
                 r"- \tweak bound-details.right.padding 1.4",
-                r"- \tweak staff-padding #5.5",
+                rf"- \tweak staff-padding #{padding}",
                 r"\evansStartTextSpanBAD",
             ],
             format_slot="absolute_after",

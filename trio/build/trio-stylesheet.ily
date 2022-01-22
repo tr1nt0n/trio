@@ -49,6 +49,7 @@
         \remove Bar_number_engraver
         \accepts TimeSignatureContext
         proportionalNotationDuration = #(ly:make-moment 1 30)
+        \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 15) (minimum-distance . 15) (padding . 5))
         \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 15) (minimum distance . 15) (padding . 5))
 
         autoBeaming = ##f
