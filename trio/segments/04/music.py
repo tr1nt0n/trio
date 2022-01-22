@@ -316,7 +316,7 @@ trinton.rewrite_meter_by_voice(
     ],
 )
 
-trinton.annotate_leaves(score)
+# trinton.annotate_leaves(score)
 
 trinton.beam_runs_by_selection(
     score=score,
@@ -1133,9 +1133,6 @@ handler = evans.PitchHandler(
 
 handler(abjad.Selection(score["cello 1 voice"]).leaves(pitched=True))
 
-for voice in ["cello 1 voice", "contrabass 1 voice"]:
-    trinton.transparent_accidentals(score=score, voice=voice, leaves=all)
-
 trinton.write_slur(
     voice=score["cello 2 voice"],
     start_slur=[
@@ -1269,15 +1266,17 @@ trinton.ficta(
     ],
 )
 
-trinton.attach(
-    voice=score["cello 2 voice"],
-    leaves=[
-        2,
-    ],
-    attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "Ord., FB" 1', format_slot="after"
-    ),
-)
+for voice in ["cello 2 voice", "contrabass 2 voice"]:
+
+    trinton.attach(
+        voice=score[voice],
+        leaves=[
+            2,
+        ],
+        attachment=abjad.LilyPondLiteral(
+            r'\boxed-markup "Ord., FB" 1', format_slot="after"
+        ),
+    )
 
 trinton.attach(
     voice=score["cello 1 voice"],
@@ -1492,7 +1491,7 @@ trio.make_angle_spanner(
     direction="clockwise",
     left_text="-45",
     position="termination",
-    padding=1.5,
+    padding=5.5,
 )
 
 
@@ -1510,6 +1509,9 @@ trinton.attach(
     voice=score["contrabass 2 voice"],
     leaves=[
         2,
+        136,
+        173,
+        175,
     ],
     attachment=abjad.Clef("treble"),
 )
@@ -1517,20 +1519,303 @@ trinton.attach(
 trinton.attach(
     voice=score["contrabass 2 voice"],
     leaves=[
-        136,
+        55,
+        164,
+        174,
     ],
     attachment=abjad.Clef("bass"),
 )
 
+for leaves, seed in zip(
+    [
+        list(range(55, 68)),
+        list(range(68, 81)),
+        list(range(81, 94)),
+        list(range(94, 107)),
+        list(range(107, 120)),
+        list(range(120, 135)),
+    ],
+    [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+    ],
+):
+    trio.pitch_toccata(
+        score=score,
+        voice="contrabass 2 voice",
+        leaves=leaves,
+        octave=2,
+        seed=seed,
+        index=0,
+        random_walk=True,
+    )
+
+trio.pitch_toccata(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=list(range(136, 156)),
+    octave=3,
+    seed=46,
+    index=0,
+    random_walk=True,
+)
+
+trio.pitch_contrabass_glissandi(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=list(range(164, 170)),
+    strings="III and IV",
+)
+
+trio.pitch_harmonic_glissandi(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        172,
+        173,
+        174,
+        175,
+    ],
+    strings="I and II",
+    index=0,
+)
+
+handler = evans.PitchHandler(
+    pitch_list=[
+        trio._open_strings_to_pitches["I"],
+        trio._open_strings_to_pitches["II"],
+    ],
+    forget=False,
+)
+
+handler(abjad.Selection(score["contrabass 1 voice"]).leaves(pitched=True))
+
+for voice in ["cello 1 voice", "contrabass 1 voice"]:
+    trinton.transparent_accidentals(score=score, voice=voice, leaves=all)
+
+trinton.write_slur(
+    voice=score["contrabass 2 voice"],
+    start_slur=[
+        2,
+        55,
+        136,
+        164,
+        166,
+        172,
+    ],
+    stop_slur=[
+        53,
+        134,
+        155,
+        165,
+        168,
+        175,
+    ],
+)
+
+trinton.write_slur(
+    voice=score["contrabass 1 voice"],
+    start_slur=[
+        15,
+    ],
+    stop_slur=[
+        16,
+    ],
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        164,
+        165,
+        166,
+        167,
+        168,
+        172,
+        173,
+        174,
+    ],
+    attachment=abjad.Glissando(),
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        164,
+        166,
+        169,
+    ],
+    attachment=abjad.Articulation(">"),
+)
+
+trinton.ficta(
+    score=score,
+    voice="contrabass 2 voice",
+    start_ficta=[
+        172,
+    ],
+    stop_ficta=[
+        175,
+    ],
+)
+
+harm = []
+
+for l in [
+    list(range(2, 54)),
+    list(range(55, 80)),
+    list(range(152, 155)),
+]:
+    for leaf in l:
+        harm.append(leaf)
+
+half = []
+
+for l in [
+    list(range(80, 112)),
+    list(range(144, 152)),
+]:
+    for leaf in l:
+        half.append(leaf)
+
+trio.finger_pressure(
+    score=score,
+    voice="contrabass 2 voice",
+    half=half,
+    harm=harm,
+)
+
+for leaf in trinton.make_leaf_selection(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        172,
+        173,
+        174,
+        175,
+    ],
+):
+    for head in leaf.note_heads:
+        abjad.tweak(head).style = r"#'harmonic-mixed"
+
+trinton.write_text_span(
+    voice=score["contrabass 2 voice"],
+    begin_text=r"\markup \italic { XFB }",
+    end_text=r"\markup \italic { XSB }",
+    start_leaf=[
+        55,
+        136,
+    ],
+    stop_leaf=[
+        86,
+        144,
+    ],
+    padding=9,
+)
+
+trinton.write_text_span(
+    voice=score["contrabass 2 voice"],
+    begin_text=r"\markup \italic { XSB }",
+    end_text=r"\markup \italic { XFB }",
+    start_leaf=[
+        105,
+        149,
+    ],
+    stop_leaf=[
+        134,
+        155,
+    ],
+    padding=9,
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        164,
+    ],
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "NB" 1', format_slot="after"),
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        55,
+        136,
+        164,
+    ],
+    attachment=abjad.StartHairpin("o<"),
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        95,
+    ],
+    attachments=[abjad.Dynamic("f"), abjad.StartHairpin(">o")],
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        146,
+    ],
+    attachments=[abjad.Dynamic("mf"), abjad.StartHairpin(">o")],
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        134,
+        155,
+    ],
+    attachment=abjad.StopHairpin(),
+)
+
+for leaf, dynamic in zip(
+    [
+        2,
+        169,
+        172,
+    ],
+    [abjad.Dynamic("mp"), abjad.Dynamic("ff"), abjad.Dynamic("p", direction=abjad.Up)],
+):
+    trinton.attach(voice=score["contrabass 2 voice"], leaves=[leaf], attachment=dynamic)
+
+trio.make_angle_spanner(
+    score=score,
+    voice="contrabass 1 voice",
+    leaves=[
+        15,
+    ],
+    direction="counterclockwise",
+    left_text="+45",
+    position="termination",
+    padding=2.5,
+)
+
+
+trio.stop_angle_spanner(
+    score=score,
+    voice="contrabass 1 voice",
+    leaves=[
+        16,
+    ],
+)
 
 # whiteout empty staves
 
-# for voice in trio.all_voices:
-#     trinton.whiteout_empty_staves(score=score, voice=voice, cutaway=True)
+for voice in trio.all_voices:
+    trinton.whiteout_empty_staves(score=score, voice=voice, cutaway=True)
 
 # extract parts
 
-# trinton.extract_parts(score=score)
+trinton.extract_parts(score=score)
 
 # render file
 
