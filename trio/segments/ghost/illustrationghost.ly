@@ -14,7 +14,7 @@
             \boxed-markup "Are We Still Married? (ii)" 1.5
             \time 3/4
             s1 * 3/4
-            \boxed-markup "Inscribed in Water" 1.5
+            \boxed-markup "Engraved in Water" 1.5
         }
         \tag #'group1
         {

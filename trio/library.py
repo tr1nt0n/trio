@@ -1372,7 +1372,7 @@ rehearsal_mark7 = abjad.LilyPondLiteral(
 )
 
 rehearsal_mark8 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Inscribed in Water" 1.5', format_slot="after"
+    r'\boxed-markup "Engraved in Water" 1.5', format_slot="after"
 )
 
 rehearsal_mark9 = abjad.LilyPondLiteral(
