@@ -2332,7 +2332,7 @@
                                     {
                                         \clef "treble"
                                         af'16
-                                        - \tweak circled-tip ##t
+                                        \fp
                                         \<
                                         [
                                         \(

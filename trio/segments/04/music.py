@@ -1756,7 +1756,6 @@ trinton.attach(
     voice=score["contrabass 2 voice"],
     leaves=[
         55,
-        136,
         164,
     ],
     attachment=abjad.StartHairpin("o<"),
@@ -1769,6 +1768,15 @@ trinton.attach_multiple(
         95,
     ],
     attachments=[abjad.Dynamic("f"), abjad.StartHairpin(">o")],
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        136,
+    ],
+    attachments=[abjad.Dynamic("fp"), abjad.StartHairpin("<")],
 )
 
 trinton.attach_multiple(
