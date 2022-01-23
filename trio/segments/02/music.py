@@ -2139,14 +2139,12 @@ trinton.attach(
     attachment=abjad.Articulation("marcato"),
 )
 
-trio.attach_string_markup(score=score, voice="cello 2 voice", leaves=[28], string="I")
-
-trinton.attach(
+trinton.write_hooked_spanner(
     voice=score["cello 2 voice"],
-    leaves=[
-        57,
-    ],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "I-IV" 1', format_slot="after"),
+    string=r"\markup { I }",
+    start_leaf=[28],
+    stop_leaf=[55],
+    padding=16.5,
 )
 
 trinton.attach(

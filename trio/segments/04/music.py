@@ -377,15 +377,23 @@ trinton.attach(
     voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
 )
 
-for leaf, markup in zip(
-    [9, 11],
-    [
-        abjad.Markup(r"\markup \italic \abs-fontsize #8.5 { Accel. poco a poco }"),
-        abjad.Markup(r"\markup \italic \abs-fontsize #8.5 { a tempo }"),
-    ],
-):
+trinton.write_hooked_spanner(
+    voice=score["Global Context"],
+    string=r"\markup \italic \halign #-1.5 \abs-fontsize #8.5 { Accel. poco a poco (to approx. 135 BPM) }",
+    start_leaf=[9],
+    stop_leaf=[11],
+    padding=3,
+)
 
-    trinton.attach(voice=score["Global Context"], leaves=[leaf], attachment=markup)
+trinton.attach(
+    score["Global Context"],
+    [
+        11,
+    ],
+    abjad.Markup(
+        r"\markup \italic \abs-fontsize #8.5 { a tempo }",
+    ),
+)
 
 for voice in trio.all_voices:
     trinton.reduce_tuplets(score=score, voice=voice, tuplets="all")
@@ -1291,15 +1299,19 @@ trinton.attach(
     leaves=[
         59,
     ],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "IV, NB" 1', format_slot="after"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "NB" 1', format_slot="after"),
 )
 
-trinton.attach(
+trinton.write_hooked_spanner(
     voice=score["cello 2 voice"],
-    leaves=[
-        75,
+    string=r"\markup { IV }",
+    start_leaf=[
+        59,
     ],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "I-IV" 1', format_slot="after"),
+    stop_leaf=[
+        73,
+    ],
+    padding=14,
 )
 
 trinton.write_text_span(

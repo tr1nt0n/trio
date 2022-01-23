@@ -1102,7 +1102,10 @@
                                         \<
                                         \glissando
                                         \(
-                                        \boxed-markup "I" 1
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { { I } \hspace #0.5 }
+                                        - \tweak padding 16.5
+                                        \startTextSpan
                                         \tweak Beam.transparent ##t
                                         \tweak Dots.transparent ##t
                                         \tweak Flag.transparent ##t
@@ -1441,6 +1444,7 @@
                                         b'''32
                                         \p
                                         \)
+                                        \stopTextSpan
                                         \set suggestAccidentals = ##f
                                     }
                                     \revert TupletNumber.text
@@ -1453,7 +1457,6 @@
                                     <b, b>8
                                     ^ \markup +0
                                     ^ \markup +3
-                                    \boxed-markup "I-IV" 1
                                     <bf>4.
                                     \p
                                     ^ \markup -3

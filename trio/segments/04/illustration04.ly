@@ -34,12 +34,16 @@
             s1 * 3/2
             \time 11/8
             s1 * 11/8
-            - \markup \italic \abs-fontsize #8.5 { Accel. poco a poco }
+            - \abjad-dashed-line-with-hook
+            - \tweak bound-details.left.text \markup \concat { \italic \halign #-1.5 \abs-fontsize #8.5 { Accel. poco a poco (to approx. 135 BPM) } \hspace #0.5 }
+            - \tweak padding 3
+            \startTextSpan
             \time 9/8
             s1 * 9/8
             \time 8/8
             s1 * 1
             - \markup \italic \abs-fontsize #8.5 { a tempo }
+            \stopTextSpan
             \time 7/8
             s1 * 7/8
             \time 2/8
@@ -1153,7 +1157,11 @@
                                     [
                                     \(
                                     \glissando
-                                    \boxed-markup "IV, NB" 1
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { IV } \hspace #0.5 }
+                                    - \tweak padding 14
+                                    \startTextSpan
+                                    \boxed-markup "NB" 1
                                     e''16
                                     ]
                                     \glissando
@@ -1205,6 +1213,7 @@
                                         cqs''32
                                         \!
                                         \)
+                                        \stopTextSpan
                                         ]
                                         \set suggestAccidentals = ##f
                                     }
@@ -1226,7 +1235,6 @@
                                     - \tweak bound-details.right.text \markup \italic { XSB }
                                     - \tweak padding 9
                                     \startTextSpan
-                                    \boxed-markup "I-IV" 1
                                     \tweak style #'harmonic-mixed
                                     c''32
                                     \tweak style #'harmonic-mixed
