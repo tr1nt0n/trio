@@ -2607,53 +2607,13 @@ trio.finger_pressure(
     harm=list(range(64, 70)),
 )
 
-trinton.attach(
-    voice=score["contrabass 2 voice"],
-    leaves=[
-        3,
-        4,
-        6,
-        8,
-        9,
-        12,
-        13,
-        14,
-        16,
-        44,
-        45,
-        47,
-        49,
-        50,
-        51,
-        52,
-        53,
-        55,
-        57,
-        58,
-        59,
-        60,
-        61,
-        63,
-        100,
-        101,
-        103,
-        105,
-        106,
-        109,
-        110,
-        111,
-        113,
-        115,
-        116,
-        119,
-        120,
-        121,
-        123,
-        125,
-        126,
-    ],
-    attachment=abjad.Articulation("staccato"),
-)
+
+for tuplet in abjad.select(score["contrabass 2 voice"]).tuplets():
+    if abjad.get.annotation(tuplet, "accelerando") is True:
+        pleaves = abjad.select(tuplet).leaves(pitched=True)
+        for pleaf in pleaves:
+            abjad.attach(abjad.Articulation("staccato"), pleaf)
+
 
 for voice, leaf in zip(["cello 2 voice", "contrabass 2 voice"], [154, 138]):
 
@@ -2709,25 +2669,10 @@ for voice in ["cello 1 voice", "contrabass 1 voice"]:
         leaves=all,
     )
 
-trinton.write_slur(
-    voice=score["contrabass 2 voice"],
-    start_slur=[
-        3,
-        44,
-        55,
-        64,
-        82,
-        100,
-    ],
-    stop_slur=[
-        16,
-        53,
-        63,
-        80,
-        98,
-        126,
-    ],
-)
+for tuplet in abjad.select(score["contrabass 2 voice"]).tuplets():
+    pleaves = abjad.select(tuplet).leaves(pitched=True)
+    abjad.attach(abjad.StartPhrasingSlur(), pleaves[0])
+    abjad.attach(abjad.StopPhrasingSlur(), pleaves[-1])
 
 trinton.attach(
     voice=score["contrabass 2 voice"],

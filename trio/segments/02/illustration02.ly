@@ -2977,6 +2977,7 @@
                                         \once \override Beam.grow-direction = #left
                                         <b fs'>32 * 3/2
                                         \f
+                                        - \staccato
                                         ^ \markup +7
                                         ^ \markup +8
                                         - \tweak circled-tip ##t
@@ -2984,39 +2985,49 @@
                                         [
                                         \(
                                         <b fs'>32 * 3/2
+                                        - \staccato
                                         ^ \markup +7
                                         ^ \markup +8
                                         r32 * 49/32
                                         <b fs'>32 * 25/16
+                                        - \staccato
                                         ^ \markup +7
                                         ^ \markup +8
                                         r32 * 13/8
                                         <b fs'>32 * 55/32
+                                        - \staccato
                                         ^ \markup +7
                                         ^ \markup +8
                                         <b fs'>32 * 29/16
+                                        - \staccato
                                         ^ \markup +7
                                         ^ \markup +8
                                         r32 * 63/32
                                         r32 * 17/8
                                         <b fs'>32 * 37/16
+                                        - \staccato
                                         ^ \markup +7
                                         ^ \markup +8
                                         <b fs'>32 * 5/2
+                                        - \staccato
                                         ^ \markup +7
                                         ^ \markup +8
                                         <b fs'>32 * 11/4
+                                        - \staccato
                                         ^ \markup +7
                                         ^ \markup +8
                                         r32 * 3
                                         <b fs'>32 * 13/4
+                                        - \staccato
                                         ^ \markup +7
                                         ^ \markup +8
                                         r32 * 111/32
                                         <b fs'>32 * 117/32
+                                        - \staccato
                                         ^ \markup +7
                                         ^ \markup +8
                                         <b fs'>32 * 119/32
+                                        - \staccato
                                         ^ \markup +7
                                         ^ \markup +8
                                         \)

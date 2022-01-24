@@ -790,12 +790,15 @@ _matter_stacks = {
 
 
 def matter_broken_rhythms(score, voice, stack, durations):
-    trinton.make_and_append_rhythm_selections(
+    tuplets = trinton.make_and_append_rhythm_selections(
         score=score,
         voice_name=voice,
         stack=_matter_stacks[stack],
         durations=durations,
     )
+
+    for tuplet in tuplets:
+        abjad.annotate(tuplet, "accelerando", True)
 
 
 # pitch tools
