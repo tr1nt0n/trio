@@ -49,55 +49,8 @@ trinton.write_time_signatures(
 # piano
 
 for voice in ["piano 1 voice", "piano 2 voice"]:
-
-    trinton.append_rests(
-        score=score,
-        voice=voice,
-        rests=[
-            abjad.Rest("r2."),
-            abjad.Rest("r2."),
-            abjad.Rest("r2."),
-        ],
-    )
-
-    trinton.handwrite(
-        score=score,
-        voice=voice,
-        durations=[
-            (1, 4),
-        ],
-        pitch_list=None,
-    )
-
-    trinton.append_rests(
-        score=score,
-        voice=voice,
-        rests=[
-            abjad.Rest("r4"),
-        ],
-    )
-
-    trinton.handwrite(
-        score=score,
-        voice=voice,
-        durations=[(4, 8)],
-        pitch_list=None,
-    )
-
-    trinton.append_rests(
-        score=score,
-        voice=voice,
-        rests=[
-            abjad.Rest("r4"),
-        ],
-    )
-
-    trinton.handwrite(
-        score=score,
-        voice=voice,
-        durations=[(1, 8), (3, 8)],
-        pitch_list=None,
-    )
+    string = "r2. r2. r2. c4 r4 c2 r4 c8 c4."
+    score[voice].extend(string)
 
 trinton.handwrite(
     score=score,
@@ -711,6 +664,10 @@ trinton.attach(
     ],
     attachment=abjad.Clef("bass"),
 )
+
+piano_1_voice = score["piano 1 voice"]
+
+piano_2_voice = score["piano 2 voice"]
 
 trio.pitch_matter(
     score=score,
