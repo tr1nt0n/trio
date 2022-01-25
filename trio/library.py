@@ -6,6 +6,18 @@ import random
 from abjadext import rmakers
 from abjadext import microtones
 
+# rhythm annotations
+
+accelerando = "accelerando"
+
+harmonic_gliss = "harmonic gliss"
+
+toccata = "toccata"
+
+vib = "vib"
+
+# score and voice variables
+
 score = trinton.make_score_template(
     [
         abjad.Piano(),
@@ -21,6 +33,18 @@ score = trinton.make_score_template(
         2,
     ],
 )
+
+piano_1_voice = score["piano 1 voice"]
+
+piano_2_voice = score["piano 2 voice"]
+
+cello_1_voice = score["cello 1 voice"]
+
+cello_2_voice = score["cello 2 voice"]
+
+contrabass_1_voice = score["contrabass 1 voice"]
+
+contrabass_2_voice = score["contrabass 2 voice"]
 
 # saved pitches
 
@@ -600,6 +624,9 @@ def cello_gliss(
 
     handler(container[:])
 
+    for sel in selections:
+        abjad.annotate(sel, vib, True)
+
     trinton.append_rhythm_selections(voice=voice, score=score, selections=container[:])
 
 
@@ -708,9 +735,12 @@ def toccata_rhythms(score, voice, durations, division, extra_counts, notation):
         ),
     }
 
-    trinton.make_and_append_rhythm_selections(
+    selections = trinton.make_and_append_rhythm_selections(
         score=score, voice_name=voice, stack=_stacks[notation], durations=durations
     )
+
+    for sel in selections:
+        abjad.annotate(sel, toccata, True)
 
 
 def harmonic_glissandi_rhythms(score, voices, durations, tuplets, notation):
@@ -749,12 +779,15 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, notation):
     }
 
     for voice in voices:
-        trinton.make_and_append_rhythm_selections(
+        selections = trinton.make_and_append_rhythm_selections(
             score=score,
             voice_name=voice,
             stack=_voice_to_stack[voice],
             durations=durations,
         )
+
+        for sel in selections:
+            abjad.annotate(sel, harmonic_gliss, True)
 
 
 def select_periodic_ties_2_4_7_8_of_10(argument):
@@ -798,7 +831,7 @@ def matter_broken_rhythms(score, voice, stack, durations):
     )
 
     for tuplet in tuplets:
-        abjad.annotate(tuplet, "accelerando", True)
+        abjad.annotate(tuplet, accelerando, True)
 
 
 # pitch tools

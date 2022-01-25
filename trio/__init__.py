@@ -52,6 +52,16 @@ from .library import (
     double_octave_up,
     double_octave_down,
     _open_strings_to_pitches,
+    accelerando,
+    harmonic_gliss,
+    toccata,
+    vib,
+    piano_1_voice,
+    piano_2_voice,
+    cello_1_voice,
+    cello_2_voice,
+    contrabass_1_voice,
+    contrabass_2_voice,
 )
 
 __all__ = [
@@ -108,4 +118,14 @@ __all__ = [
     "double_octave_up",
     "double_octave_down",
     "_open_strings_to_pitches",
+    "accelerando",
+    "harmonic_gliss",
+    "toccata",
+    "vib",
+    "piano_1_voice",
+    "piano_2_voice",
+    "cello_1_voice",
+    "cello_2_voice",
+    "contrabass_1_voice",
+    "contrabass_2_voice",
 ]
