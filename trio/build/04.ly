@@ -682,13 +682,13 @@
                                         - \marcato
                                         \change Staff = "piano 1 staff"
                                         e''''64
+                                        \pp
                                         \(
                                         af''''64
                                         e''''64
                                         f''''64
                                         bf'''64
                                         f''''64
-                                        \pp
                                         e''''64
                                         af''''64
                                         e''''64

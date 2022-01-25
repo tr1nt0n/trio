@@ -889,7 +889,7 @@ trinton.attach(
 )
 
 trinton.attach(
-    voice=score["piano 1 voice"], leaves=[280, 308], attachment=abjad.Dynamic("pp")
+    voice=score["piano 1 voice"], leaves=[280, 303], attachment=abjad.Dynamic("pp")
 )
 
 trinton.attach(
