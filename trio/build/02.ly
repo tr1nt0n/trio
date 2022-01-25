@@ -125,7 +125,6 @@
                                     ~
                                     <af, bf, cs>4.
                                     :32
-                                    \arpeggio
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4
@@ -153,7 +152,6 @@
                                     ~
                                     <a' g'' af'' a''>4
                                     :32
-                                    \arpeggio
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
                                             \context Score = "Score"
@@ -382,7 +380,6 @@
                                     <d''' e''' af''' c''''>4.
                                     :32
                                     \f
-                                    \arpeggio
                                     \ottava 0
                                     <af' fs'' g'' af''>2..
                                     :32
@@ -424,7 +421,6 @@
                                     ~
                                     <af,, bf,, cs,>2
                                     :32
-                                    \arpeggio
                                     \ottava 0
                                     \ottava 1
                                     \clef "treble"
@@ -434,7 +430,6 @@
                                     ~
                                     <a'' e''' fs''' a''' c''''>1..
                                     :32
-                                    \arpeggio
                                     \ottava 0
                                     \override TupletNumber.text = \markup \italic 10:9
                                     \times 36/40
@@ -494,11 +489,9 @@
                                     ~
                                     <f'' a'' cs''' fs''' a'''>2.
                                     :32
-                                    \arpeggio
                                     ~
                                     <f'' a'' cs''' fs''' a'''>1..
                                     :32
-                                    \arpeggio
                                     \ottava 0
                                     \ottava -1
                                     \clef "bass"
@@ -514,7 +507,6 @@
                                     ~
                                     <af''' bf''' cs''''>2
                                     :32
-                                    \arpeggio
                                     \ottava 0
                                     \ottava -1
                                     \clef "bass"
@@ -541,7 +533,6 @@
                                     ~
                                     <bf,, f,>2
                                     :32
-                                    \arpeggio
                                 }
                             }
                         }
@@ -573,7 +564,6 @@
                                     ~
                                     <a,, cs,>4.
                                     :32
-                                    \arpeggio
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4
@@ -598,12 +588,10 @@
                                     ~
                                     <d cs'>4
                                     :32
-                                    \arpeggio
                                     ~
                                     <d cs'>4
                                     :32
                                     \!
-                                    \arpeggio
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4
@@ -627,12 +615,10 @@
                                     ~
                                     <ef,, f,, af,,>4
                                     :32
-                                    \arpeggio
                                     ~
                                     <ef,, f,, af,,>4
                                     :32
                                     \!
-                                    \arpeggio
                                     \ottava 0
                                     \clef "treble"
                                     <af' b''>2.
@@ -641,7 +627,6 @@
                                     ~
                                     <af' b''>4.
                                     :32
-                                    \arpeggio
                                     \clef "bass"
                                     <cs a>2..
                                     :32
@@ -678,7 +663,6 @@
                                     ~
                                     <c,, e,,>2
                                     :32
-                                    \arpeggio
                                     \ottava 0
                                     \clef "treble"
                                     <d' c''>1.
@@ -687,7 +671,6 @@
                                     ~
                                     <d' c''>1..
                                     :32
-                                    \arpeggio
                                     \ottava -1
                                     \clef "bass"
                                     <b,,, cs,, f,, a,,>1.
@@ -696,7 +679,6 @@
                                     ~
                                     <b,,, cs,, f,, a,,>2.
                                     :32
-                                    \arpeggio
                                     \ottava 0
                                     \clef "treble"
                                     <b b'>1.
@@ -705,11 +687,9 @@
                                     ~
                                     <b b'>2.
                                     :32
-                                    \arpeggio
                                     ~
                                     <b b'>1..
                                     :32
-                                    \arpeggio
                                     \ottava -1
                                     \clef "bass"
                                     <ef,, bf,,>1.
@@ -724,7 +704,6 @@
                                     ~
                                     <a'' cs'''>2
                                     :32
-                                    \arpeggio
                                     \ottava 0
                                     \ottava -1
                                     \clef "bass"
@@ -748,7 +727,6 @@
                                     ~
                                     <d,, a,,>2
                                     :32
-                                    \arpeggio
                                     \ottava 0
                                 }
                             }

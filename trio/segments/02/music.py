@@ -1384,8 +1384,9 @@ trinton.ottava(
 for voice in ["piano 1 voice", "piano 2 voice"]:
     chords = abjad.select(score[voice]).chords()
     trinton.unmeasured_stem_tremolo(chords)
-    for chord in chords:
-        abjad.attach(abjad.Arpeggio(), chord)
+    chord_ties = chords.logical_ties()
+    for tie in chord_ties:
+        abjad.attach(abjad.Arpeggio(), tie[0])
 
 for number in [0, 1]:
     tuplet = abjad.select(score["piano 1 voice"]).tuplet(number)
