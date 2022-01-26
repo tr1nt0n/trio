@@ -515,19 +515,12 @@ for voice, half, harm in zip(
         harm=harm,
     )
 
-trinton.write_slur(
-    voice=score["cello 2 voice"],
-    start_slur=[
-        0,
-        2,
-        13,
-    ],
-    stop_slur=[
-        1,
-        10,
-        17,
-    ],
-)
+for tuplet in abjad.select(score["cello 2 voice"]).tuplets():
+    abjad.attach(abjad.Articulation("marcato"), tuplet[0])
+
+for tuplet in [abjad.select(score["cello 2 voice"]).tuplet(_) for _ in [0, 1, 4]]:
+    abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
+    abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
 
 trinton.attach(
     voice=score["cello 2 voice"],
@@ -575,7 +568,9 @@ trinton.attach_multiple(
         12,
         13,
     ],
-    attachments=[abjad.Dynamic("fff"), abjad.Articulation("marcato")],
+    attachments=[
+        abjad.Dynamic("fff"),
+    ],
 )
 
 trinton.attach(
@@ -677,19 +672,9 @@ for voice, half, harm in zip(
         harm=harm,
     )
 
-trinton.write_slur(
-    voice=score["contrabass 2 voice"],
-    start_slur=[
-        1,
-        8,
-        11,
-    ],
-    stop_slur=[
-        7,
-        10,
-        20,
-    ],
-)
+for tuplet in abjad.select(score["contrabass 2 voice"]).tuplets():
+    abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
+    abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
 
 trinton.attach(
     voice=score["contrabass 2 voice"],

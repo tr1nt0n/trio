@@ -1,4 +1,5 @@
 import abjad
+import baca
 import evans
 import trinton
 import trio
@@ -327,64 +328,38 @@ trinton.attach(
     attachment=abjad.Clef("bass"),
 )
 
-I_and_II = []
-
-for l in [
-    list(range(12, 23)),
-    list(range(28, 30)),
-    list(
-        range(
-            52,
-            59,
-        )
-    ),
-]:
-    for leaf in l:
-        I_and_II.append(leaf)
-
-trio.pitch_harmonic_glissandi(
-    score=score,
-    voice="cello 2 voice",
-    leaves=I_and_II,
+trio.pitch_harmonic_glissandi_by_measure(
+    voice=score["cello 2 voice"],
+    measures=[
+        2,
+        4,
+        7,
+    ],
+    selector=baca.selectors.pleaves(),
     strings="I and II",
     index=0,
 )
 
-II_and_III = []
-
-for l in [
-    list(range(0, 12)),
-    list(range(35, 52)),
-    list(range(93, 101)),
-]:
-    for leaf in l:
-        II_and_III.append(leaf)
-
-trio.pitch_harmonic_glissandi(
-    score=score,
-    voice="cello 2 voice",
-    leaves=II_and_III,
+trio.pitch_harmonic_glissandi_by_measure(
+    voice=score["cello 2 voice"],
+    measures=[1, 6, 9],
+    selector=baca.selectors.pleaves(),
     strings="II and III",
     index=0,
 )
 
-III_and_IV = []
-
-for l in [
-    list(range(23, 28)),
-    list(range(30, 35)),
-    list(range(59, 93)),
-]:
-    for leaf in l:
-        III_and_IV.append(leaf)
-
-trio.pitch_harmonic_glissandi(
-    score=score,
-    voice="cello 2 voice",
-    leaves=III_and_IV,
+trio.pitch_harmonic_glissandi_by_measure(
+    voice=score["cello 2 voice"],
+    measures=[
+        3,
+        5,
+        8,
+    ],
+    selector=baca.selectors.pleaves(),
     strings="III and IV",
     index=0,
 )
+
 
 glissandi = []
 
@@ -456,66 +431,37 @@ handler_II = evans.PitchHandler(
 
 handler_III = evans.PitchHandler(
     pitch_list=[
-        trio._open_strings_to_pitches["II"],
         trio._open_strings_to_pitches["III"],
+        trio._open_strings_to_pitches["IV"],
     ],
     forget=False,
 )
 
-I_and_II = []
+cello_1_measures = abjad.Selection(score["cello 1 voice"]).leaves().group_by_measure()
 
-for l in [
-    list(range(10, 18)),
-    list(range(22, 24)),
-    list(range(38, 44)),
-]:
-    for leaf in l:
-        I_and_II.append(leaf)
+I_measures = [
+    cello_1_measures[1],
+    cello_1_measures[3],
+    cello_1_measures[6],
+]
 
+II_measures = [
+    cello_1_measures[0],
+    cello_1_measures[5],
+    cello_1_measures[8],
+]
 
-II_and_III = []
+III_measures = [
+    cello_1_measures[2],
+    cello_1_measures[4],
+    cello_1_measures[7],
+]
 
-for l in [
-    list(range(0, 10)),
-    list(range(28, 38)),
-    list(range(54, 58)),
-]:
-    for leaf in l:
-        II_and_III.append(leaf)
+handler_I(I_measures[:])
 
-III_and_IV = []
+handler_II(II_measures[:])
 
-for l in [
-    list(range(18, 22)),
-    list(range(24, 28)),
-    list(range(44, 54)),
-]:
-    for leaf in l:
-        III_and_IV.append(leaf)
-
-handler_I(
-    trinton.make_leaf_selection(
-        score=score,
-        voice="cello 1 voice",
-        leaves=I_and_II,
-    )
-)
-
-handler_II(
-    trinton.make_leaf_selection(
-        score=score,
-        voice="cello 1 voice",
-        leaves=II_and_III,
-    )
-)
-
-handler_III(
-    trinton.make_leaf_selection(
-        score=score,
-        voice="cello 1 voice",
-        leaves=III_and_IV,
-    )
-)
+handler_III(III_measures[:])
 
 # contrabass pitching/attachments
 

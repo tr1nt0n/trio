@@ -890,6 +890,102 @@ def pitch_cello_gliss_piano(score, voice, leaves, string):
     handler(sel)
 
 
+def pitch_harmonic_glissandi_by_measure(voice, measures, selector, strings, index):
+
+    _voice_to_pitches = {
+        score["cello 2 voice"]: trinton.rotated_sequence(
+            pitch_list=[
+                [-9, -2],
+                [26, 33],
+                [-6, 1],
+                [26, 33],
+                [2, 9],
+                [26, 33],
+                [-9, -2],
+                [-5, 2],
+                [26, 33],
+                [-9, -2],
+                [
+                    -3,
+                    4,
+                ],
+            ],
+            start_index=index,
+        ),
+        score["contrabass 2 voice"]: trinton.rotated_sequence(
+            pitch_list=[
+                [-9, -4],
+                [26, 31],
+                [-6, -1],
+                [26, 31],
+                [2, 7],
+                [26, 31],
+                [-9, -4],
+                [-5, 0],
+                [26, 31],
+                [-9, -4],
+                [
+                    -3,
+                    2,
+                ],
+            ],
+            start_index=index,
+        ),
+    }
+
+    _string_to_pitches = {
+        "I and II": _voice_to_pitches[voice],
+        "II and III": [
+            trinton.transpose(l=chord, m=-7) for chord in _voice_to_pitches[voice]
+        ],
+        "III and IV": [
+            trinton.transpose(l=chord, m=-14) for chord in _voice_to_pitches[voice]
+        ],
+    }
+
+    grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+
+    selection = []
+
+    for measure in measures:
+
+        current_measure = grouped_measures[measure - 1]
+
+        sel = selector(current_measure)
+
+        selection.append(sel)
+
+    handler = evans.PitchHandler(
+        pitch_list=_string_to_pitches[strings],
+        forget=False,
+    )
+
+    handler(selection[:])
+
+
+_contrabass_glissandi_strings_to_pitches = {
+    "I and II": contrabass_glissandi_pitches,
+    "II and III": [
+        trinton.transpose(l=chord, m=-5) for chord in contrabass_glissandi_pitches
+    ],
+    "III and IV": [
+        trinton.transpose(l=chord, m=-10) for chord in contrabass_glissandi_pitches
+    ],
+}
+
+
+def pitch_contrabass_glissandi(score, voice, leaves, strings):
+
+    sel = trinton.make_leaf_selection(score=score, voice=voice, leaves=leaves)
+
+    handler = evans.PitchHandler(
+        pitch_list=_contrabass_glissandi_strings_to_pitches[strings],
+        forget=False,
+    )
+
+    handler(sel)
+
+
 def pitch_harmonic_glissandi(score, voice, leaves, strings, index):
 
     _voice_to_pitches = {
@@ -974,6 +1070,33 @@ def pitch_contrabass_glissandi(score, voice, leaves, strings):
     )
 
     handler(sel)
+
+
+def pitch_matter_with_selector(
+    voice,
+    measures,
+    selector,
+    chord,
+    partials,
+    transpose,
+    markup=False,
+):
+    collection = trinton.transpose(l=_matter_harmonies[chord], m=transpose)
+    collected_partials = []
+
+    for partial in partials:
+        collected_partials.append(collection[partial - 1])
+
+    handler = evans.PitchHandler(pitch_list=[collected_partials], forget=False)
+
+    for measure in measures:
+        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+
+        current_measure = grouped_measures[measure - 1]
+
+        selections = selector(current_measure)
+
+        handler(selections)
 
 
 def pitch_matter(

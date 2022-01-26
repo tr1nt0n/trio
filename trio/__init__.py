@@ -62,6 +62,8 @@ from .library import (
     cello_2_voice,
     contrabass_1_voice,
     contrabass_2_voice,
+    pitch_matter_with_selector,
+    pitch_harmonic_glissandi_by_measure,
 )
 
 __all__ = [
@@ -128,4 +130,6 @@ __all__ = [
     "cello_2_voice",
     "contrabass_1_voice",
     "contrabass_2_voice",
+    "pitch_matter_with_selector",
+    "pitch_harmonic_glissandi_by_measure",
 ]

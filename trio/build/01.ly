@@ -27,7 +27,6 @@
                             {
                                 \context Voice = "piano 1 voice"
                                 {
-                                    \override TupletNumber.text = \markup \italic 5:4
                                     \times 4/5
                                     {
                                         \set PianoStaff.instrumentName =
@@ -50,7 +49,6 @@
                                         cs''16
                                         ]
                                     }
-                                    \revert TupletNumber.text
                                     \change Staff = "piano 1 staff"
                                     \ottava -1
                                     \clef "bass"
@@ -63,7 +61,6 @@
                                     - \tweak stencil #abjad-flared-hairpin
                                     \>
                                     \ottava 0
-                                    \override TupletNumber.text = \markup \italic 39:32
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 32/39
                                     {
@@ -97,7 +94,6 @@
                                         \)
                                         ]
                                     }
-                                    \revert TupletNumber.text
                                     \change Staff = "piano 1 staff"
                                     \override Staff.Stem.stemlet-length = 0.75
                                     af''16
@@ -177,7 +173,6 @@
                             {
                                 \context Voice = "cello 2 voice"
                                 {
-                                    \override TupletNumber.text = \markup \italic 5:4
                                     \times 4/5
                                     {
                                         \clef "bass"
@@ -194,8 +189,6 @@
                                         cs,16
                                         \)
                                     }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \italic 9:8
                                     \times 8/9
                                     {
                                         a,32
@@ -224,8 +217,6 @@
                                         \)
                                         ]
                                     }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \italic 6:4
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 4/6
                                     {
@@ -237,8 +228,6 @@
                                         \>
                                         \boxed-markup "NB" 1
                                     }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \italic 6:4
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 4/6
                                     {
@@ -249,8 +238,6 @@
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
                                     }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \italic 5:4
                                     \times 4/5
                                     {
                                         \clef "treble"
@@ -278,7 +265,6 @@
                                         \)
                                         ]
                                     }
-                                    \revert TupletNumber.text
                                 }
                             }
                         }
@@ -305,7 +291,6 @@
                                     r1 * 1/4
                                     R1 * 1/4
                                     \stopStaff \startStaff
-                                    \override TupletNumber.text = \markup \italic 6:4
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 4/6
                                     {
@@ -317,8 +302,6 @@
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
                                     }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \italic 6:4
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 4/6
                                     {
@@ -330,7 +313,6 @@
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
                                     }
-                                    \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/8
@@ -353,7 +335,6 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \>
-                                    \override TupletNumber.text = \markup \italic 7:4
                                     \times 4/7
                                     {
                                         \set suggestAccidentals = ##t
@@ -391,8 +372,6 @@
                                         ]
                                         \set suggestAccidentals = ##f
                                     }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \italic 15:8
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 8/15
                                     {
@@ -409,8 +388,6 @@
                                         af4.
                                         \)
                                     }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \italic 5:4
                                     \times 8/10
                                     {
                                         ef32
@@ -443,7 +420,6 @@
                                         \)
                                         ]
                                     }
-                                    \revert TupletNumber.text
                                 }
                             }
                         }

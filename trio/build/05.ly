@@ -161,18 +161,18 @@
                         }
                         \repeat tremolo 4 {
                             \tweak Accidental.transparent ##t
-                            d'64
+                            bf64
                             ^ \markup 18
                             \tweak Accidental.transparent ##t
-                            bf64
+                            g64
                             ^ \markup 19
                         }
                         \repeat tremolo 4 {
                             \tweak Accidental.transparent ##t
-                            d'64
+                            bf64
                             ^ \markup 20
                             \tweak Accidental.transparent ##t
-                            bf64
+                            g64
                             ^ \markup 21
                         }
                         \repeat tremolo 4 {
@@ -185,18 +185,18 @@
                         }
                         \repeat tremolo 4 {
                             \tweak Accidental.transparent ##t
-                            d'8
+                            bf8
                             ^ \markup 24
                             \tweak Accidental.transparent ##t
-                            bf8
+                            g8
                             ^ \markup 25
                         }
                         \repeat tremolo 4 {
                             \tweak Accidental.transparent ##t
-                            d'32.
+                            bf32.
                             ^ \markup 26
                             \tweak Accidental.transparent ##t
-                            bf32.
+                            g32.
                             ^ \markup 27
                         }
                         \repeat tremolo 4 {
@@ -265,42 +265,42 @@
                         }
                         \repeat tremolo 4 {
                             \tweak Accidental.transparent ##t
-                            d'16
+                            bf16
                             ^ \markup 44
                             \tweak Accidental.transparent ##t
-                            bf16
+                            g16
                             ^ \markup 45
                         }
                         \repeat tremolo 4 {
                             \tweak Accidental.transparent ##t
-                            d'16
+                            bf16
                             ^ \markup 46
                             \tweak Accidental.transparent ##t
-                            bf16
+                            g16
                             ^ \markup 47
                         }
                         \repeat tremolo 4 {
                             \tweak Accidental.transparent ##t
-                            d'64
+                            bf64
                             ^ \markup 48
                             \tweak Accidental.transparent ##t
-                            bf64
+                            g64
                             ^ \markup 49
                         }
                         \repeat tremolo 4 {
                             \tweak Accidental.transparent ##t
-                            d'32
+                            bf32
                             ^ \markup 50
                             \tweak Accidental.transparent ##t
-                            bf32
+                            g32
                             ^ \markup 51
                         }
                         \repeat tremolo 4 {
                             \tweak Accidental.transparent ##t
-                            d'32
+                            bf32
                             ^ \markup 52
                             \tweak Accidental.transparent ##t
-                            bf32
+                            g32
                             ^ \markup 53
                         }
                         \repeat tremolo 4 {

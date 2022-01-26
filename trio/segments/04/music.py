@@ -1612,22 +1612,20 @@ for voice in ["cello 1 voice", "contrabass 1 voice"]:
 trinton.write_slur(
     voice=score["contrabass 2 voice"],
     start_slur=[
-        2,
-        55,
-        136,
         164,
         166,
-        172,
     ],
     stop_slur=[
-        53,
-        134,
-        155,
         165,
         168,
-        175,
     ],
 )
+
+for tuplet in [
+    abjad.select(score["contrabass 2 voice"]).tuplet(_) for _ in [0, 1, 2, 4]
+]:
+    abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
+    abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
 
 trinton.write_slur(
     voice=score["contrabass 1 voice"],
