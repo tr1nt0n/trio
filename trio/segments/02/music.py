@@ -1893,6 +1893,10 @@ trinton.write_slur(
     ],
 )
 
+trinton.ottava(
+    score=score, voice="cello 2 voice", start_ottava=[28], stop_ottava=[55], octave=1
+)
+
 trinton.attach(
     voice=score["cello 2 voice"],
     leaves=[
@@ -1921,7 +1925,7 @@ trinton.write_hooked_spanner(
     string=r"\markup { I }",
     start_leaf=[28],
     stop_leaf=[55],
-    padding=16.5,
+    padding=12.5,
 )
 
 trinton.attach(

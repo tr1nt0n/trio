@@ -933,13 +933,17 @@ def pitch_harmonic_glissandi_by_measure(voice, measures, selector, strings, inde
         ),
     }
 
+    _trans = {score["cello 2 voice"]: [-7, -14], score["contrabass 2 voice"]: [-5, -10]}
+
     _string_to_pitches = {
         "I and II": _voice_to_pitches[voice],
         "II and III": [
-            trinton.transpose(l=chord, m=-7) for chord in _voice_to_pitches[voice]
+            trinton.transpose(l=chord, m=_trans[voice][0])
+            for chord in _voice_to_pitches[voice]
         ],
         "III and IV": [
-            trinton.transpose(l=chord, m=-14) for chord in _voice_to_pitches[voice]
+            trinton.transpose(l=chord, m=_trans[voice][1])
+            for chord in _voice_to_pitches[voice]
         ],
     }
 
@@ -1029,13 +1033,17 @@ def pitch_harmonic_glissandi(score, voice, leaves, strings, index):
         ),
     }
 
+    _trans = {"cello 2 voice": [-7, -14], "contrabass 2 voice": [-5, -10]}
+
     _string_to_pitches = {
         "I and II": _voice_to_pitches[voice],
         "II and III": [
-            trinton.transpose(l=chord, m=-7) for chord in _voice_to_pitches[voice]
+            trinton.transpose(l=chord, m=_trans[voice][0])
+            for chord in _voice_to_pitches[voice]
         ],
         "III and IV": [
-            trinton.transpose(l=chord, m=-14) for chord in _voice_to_pitches[voice]
+            trinton.transpose(l=chord, m=_trans[voice][1])
+            for chord in _voice_to_pitches[voice]
         ],
     }
 

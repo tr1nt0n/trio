@@ -1106,6 +1106,7 @@
                                     \times 2/3
                                     {
                                         \set suggestAccidentals = ##t
+                                        \ottava 1
                                         \clef "treble"
                                         \tweak Beam.transparent ##t
                                         \tweak Dots.transparent ##t
@@ -1119,7 +1120,7 @@
                                         \(
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { { I } \hspace #0.5 }
-                                        - \tweak padding 16.5
+                                        - \tweak padding 12.5
                                         \startTextSpan
                                         \tweak Beam.transparent ##t
                                         \tweak Dots.transparent ##t
@@ -1460,6 +1461,7 @@
                                         \p
                                         \)
                                         \stopTextSpan
+                                        \ottava 0
                                         \set suggestAccidentals = ##f
                                     }
                                     \revert TupletNumber.text

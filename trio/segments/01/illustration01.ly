@@ -33,6 +33,7 @@
                             {
                                 \context Voice = "piano 1 voice"
                                 {
+                                    \tweak direction #up
                                     \times 4/5
                                     {
                                         \set PianoStaff.instrumentName =
@@ -68,6 +69,7 @@
                                     \>
                                     \ottava 0
                                     \tweak edge-height #'(0.7 . 0)
+                                    \tweak direction #up
                                     \times 32/39
                                     {
                                         \ottava 2

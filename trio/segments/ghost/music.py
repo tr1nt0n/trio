@@ -199,7 +199,12 @@ trinton.ottava(
     score=score, voice="piano 2 voice", start_ottava=[2], stop_ottava=[3], octave=-2
 )
 
-for voice_name in ["piano 1 voice", "piano 2 voice", "cello 2 voice", "contrabass 2 voice"]:
+for voice_name in [
+    "piano 1 voice",
+    "piano 2 voice",
+    "cello 2 voice",
+    "contrabass 2 voice",
+]:
     measures = abjad.Selection(score[voice_name]).leaves().group_by_measure()
     measure_2_leaves = measures[1].leaves()
     abjad.attach(abjad.StartPhrasingSlur(), measure_2_leaves[0])

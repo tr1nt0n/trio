@@ -339,6 +339,9 @@ trinton.attach(
     attachment=abjad.Articulation(">"),
 )
 
+for tuplet in [abjad.select(score["piano 1 voice"]).tuplet(_) for _ in [0, 2, 3, 5, 8]]:
+    abjad.tweak(tuplet).direction = abjad.Up
+
 # cello attachments
 
 for voice, leaf in zip(
@@ -498,7 +501,7 @@ trinton.write_text_span(
     stop_leaf=[
         58,
     ],
-    padding=18,
+    padding=15.5,
 )
 
 trinton.write_text_span(
@@ -511,7 +514,7 @@ trinton.write_text_span(
     stop_leaf=[
         85,
     ],
-    padding=12,
+    padding=10,
 )
 
 trinton.write_text_span(
@@ -524,7 +527,7 @@ trinton.write_text_span(
     stop_leaf=[
         98,
     ],
-    padding=10,
+    padding=8,
 )
 
 trio.finger_pressure(
@@ -665,7 +668,7 @@ trinton.write_text_span(
     stop_leaf=[
         41,
     ],
-    padding=18,
+    padding=15.5,
 )
 
 # fermate

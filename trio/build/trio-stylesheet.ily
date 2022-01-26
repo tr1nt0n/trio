@@ -72,7 +72,7 @@
         \override TupletNumber.font-size = 1.5
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
-        \override TupletBracket.direction = #up
+        % \override TupletBracket.direction = #up
 
         \override Stem.stemlet-length = 0.75
 

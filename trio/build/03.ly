@@ -53,6 +53,7 @@
                                     b'''32
                                     - \accent
                                     ]
+                                    \tweak direction #up
                                     \times 4/5
                                     {
                                         \change Staff = "piano 1 staff"
@@ -101,6 +102,7 @@
                                         b'''32
                                         ]
                                     }
+                                    \tweak direction #up
                                     \times 2/3
                                     {
                                         \change Staff = "piano 1 staff"
@@ -122,6 +124,7 @@
                                         b'''16
                                         ]
                                     }
+                                    \tweak direction #up
                                     \times 4/5
                                     {
                                         \change Staff = "piano 1 staff"
@@ -193,6 +196,7 @@
                                     \revert Staff.Stem.stemlet-length
                                     a''32
                                     ]
+                                    \tweak direction #up
                                     \times 2/3
                                     {
                                         \change Staff = "piano 1 staff"
@@ -245,6 +249,7 @@
                                         - \accent
                                     }
                                     \revert TupletNumber.text
+                                    \tweak direction #up
                                     \times 2/3
                                     {
                                         \override Staff.Stem.stemlet-length = 0.75
@@ -404,7 +409,7 @@
                                     - \abjad-dashed-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \italic { MSP } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { ST }
-                                    - \tweak padding 18
+                                    - \tweak padding 15.5
                                     \startTextSpan
                                     \boxed-markup "I" 1
                                     cs''''32
@@ -721,7 +726,7 @@
                                     - \abjad-dashed-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \italic { ST } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { MSP }
-                                    - \tweak padding 12
+                                    - \tweak padding 10
                                     \startTextSpan
                                     fs'''32
                                     \glissando
@@ -802,7 +807,7 @@
                                         - \abjad-dashed-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \italic { MSP } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \italic { MST }
-                                        - \tweak padding 10
+                                        - \tweak padding 8
                                         \startTextSpan
                                         cqs''8
                                         \glissando
@@ -933,7 +938,7 @@
                                         - \abjad-dashed-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \italic { MSP } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \italic { MST }
-                                        - \tweak padding 18
+                                        - \tweak padding 15.5
                                         \startTextSpan
                                         \boxed-markup "low string portamento" 1
                                         <gqf g>32

@@ -1501,7 +1501,7 @@ trio.make_angle_spanner(
         15,
     ],
     direction="clockwise",
-    left_text="-45",
+    left_text="45",
     position="termination",
     padding=5.5,
 )
@@ -1812,7 +1812,7 @@ trio.make_angle_spanner(
         15,
     ],
     direction="counterclockwise",
-    left_text="+45",
+    left_text="-45",
     position="termination",
     padding=2.5,
 )

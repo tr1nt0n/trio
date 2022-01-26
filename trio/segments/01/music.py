@@ -417,6 +417,9 @@ trinton.write_slur(
     ],
 )
 
+for tuplet in abjad.select(score["piano 1 voice"]).tuplets():
+    abjad.tweak(tuplet).direction = abjad.Up
+
 # cello pitching/attachments
 
 for voice in ["cello 1 voice", "contrabass 1 voice"]:
