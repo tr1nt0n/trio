@@ -36,7 +36,6 @@
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    \(
                                     \stopStaff \startStaff
                                     \times 2/3
                                     {
@@ -47,6 +46,7 @@
                                         - \tweak stencil #constante-hairpin
                                         \<
                                         [
+                                        \(
                                         cs''''16
                                         e''''16
                                         a''''16
@@ -98,11 +98,11 @@
                                     \clef "bass"
                                     r1 * 1/4
                                     R1 * 1/4
-                                    \(
                                     \stopStaff \startStaff
                                     \ottava -2
                                     <a,,, bf,,, b,,, c,, cs,,>2
                                     \ppp
+                                    \(
                                     d,,4
                                     \pp
                                     - \tenuto

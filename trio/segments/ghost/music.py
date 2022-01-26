@@ -199,17 +199,11 @@ trinton.ottava(
     score=score, voice="piano 2 voice", start_ottava=[2], stop_ottava=[3], octave=-2
 )
 
-for voice, start_slur, stop_slur in zip(
-    ["piano 1 voice", "piano 2 voice"],
-    [
-        1,
-        1,
-    ],
-    [19, 3],
-):
-    trinton.write_slur(
-        voice=score[voice], start_slur=[start_slur], stop_slur=[stop_slur]
-    )
+for voice_name in ["piano 1 voice", "piano 2 voice", "cello 2 voice", "contrabass 2 voice"]:
+    measures = abjad.Selection(score[voice_name]).leaves().group_by_measure()
+    measure_2_leaves = measures[1].leaves()
+    abjad.attach(abjad.StartPhrasingSlur(), measure_2_leaves[0])
+    abjad.attach(abjad.StopPhrasingSlur(), measure_2_leaves[-1])
 
 for attachments, leaf in zip(
     [
@@ -254,15 +248,6 @@ trinton.attach(
     leaves=[2],
     attachment=abjad.LilyPondLiteral(r'\boxed-markup "Crine" 1', format_slot="after"),
 )
-
-for voice, start_slur, stop_slur in zip(
-    ["cello 2 voice", "contrabass 2 voice"], [12, 2], [15, 3]
-):
-    trinton.write_slur(
-        voice=score[voice],
-        start_slur=[start_slur],
-        stop_slur=[stop_slur],
-    )
 
 for voice in ["cello 1 voice", "contrabass 1 voice"]:
     trinton.unmeasured_stem_tremolo(abjad.select(score[voice]).leaves(pitched=True))
