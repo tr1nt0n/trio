@@ -1311,7 +1311,7 @@ trinton.write_hooked_spanner(
     stop_leaf=[
         73,
     ],
-    padding=14,
+    padding=11.5,
 )
 
 trinton.write_text_span(

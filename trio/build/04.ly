@@ -981,7 +981,7 @@
                                         \boxed-markup "NB" 1
                                         \evansStopTextSpanBAD
                                         - \abjad-dashed-line-with-arrow
-                                        - \evans-clockwise-BAD-spanner-left-text #-45
+                                        - \evans-clockwise-BAD-spanner-left-text #45
                                         - \evans-BAD-spanner-right-text #0
                                         - \tweak bound-details.right.padding 1.4
                                         - \tweak staff-padding #5.5
@@ -1153,7 +1153,7 @@
                                     \glissando
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { { IV } \hspace #0.5 }
-                                    - \tweak padding 14
+                                    - \tweak padding 11.5
                                     \startTextSpan
                                     \boxed-markup "NB" 1
                                     e''16
@@ -2001,7 +2001,7 @@
                                         \(
                                         \evansStopTextSpanBAD
                                         - \abjad-dashed-line-with-arrow
-                                        - \evans-counterclockwise-BAD-spanner-left-text #+45
+                                        - \evans-counterclockwise-BAD-spanner-left-text #-45
                                         - \evans-BAD-spanner-right-text #0
                                         - \tweak bound-details.right.padding 1.4
                                         - \tweak staff-padding #2.5
