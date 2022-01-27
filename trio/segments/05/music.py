@@ -861,7 +861,7 @@ glissandi = []
 
 for l in [
     list(range(34, 36)),
-    list(range(38, 60)),
+    list(range(38, 59)),
     list(range(73, 76)),
     list(range(79, 84)),
 ]:
