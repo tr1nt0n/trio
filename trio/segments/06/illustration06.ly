@@ -65,21 +65,51 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 2/3
                         {
                             \set PianoStaff.shortInstrumentName =
                             \markup { pno. }
-                            a'''16
-                            ^ \markup 0
-                            cs''''16
-                            ^ \markup 1
-                            aqs'''16
-                            ^ \markup 2
+                            \ottava 1
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
                             b'''16
+                            - \accent
+                            ^ \markup 0
+                            - \tweak circled-tip ##t
+                            \<
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            ^ \markup 1
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            ^ \markup 2
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 3
-                            aqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 4
-                            dqf''''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 5
                         }
                         \revert TupletNumber.text
@@ -119,21 +149,51 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 4/7
                         {
-                            a'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 6
-                            cs''''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 7
-                            aqs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 8
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
                             b'''16
                             ^ \markup 9
-                            aqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 10
-                            dqf''''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 11
-                            a'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 12
                         }
                         \revert TupletNumber.text
@@ -173,19 +233,46 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 2/3
                         {
-                            cs''''16
-                            ^ \markup 13
-                            aqs'''16
-                            ^ \markup 14
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
                             b'''16
+                            ^ \markup 13
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            ^ \markup 14
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 15
-                            aqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 16
-                            dqf''''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 17
-                            a'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 18
                         }
                         \revert TupletNumber.text
@@ -225,21 +312,51 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 4/7
                         {
-                            cs''''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 19
-                            aqs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 20
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
                             b'''16
                             ^ \markup 21
-                            aqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 22
-                            dqf''''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 23
-                            a'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 24
-                            cs''''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 25
                         }
                         \revert TupletNumber.text
@@ -279,19 +396,48 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 2/3
                         {
-                            aqs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            \f
                             ^ \markup 26
+                            - \tweak circled-tip ##t
+                            \>
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
                             b'''16
                             ^ \markup 27
-                            aqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 28
-                            dqf''''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 29
-                            a'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 30
-                            cs''''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 31
                         }
                         \revert TupletNumber.text
@@ -331,17 +477,39 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 4/5
                         {
-                            aqs'''16
-                            ^ \markup 32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
                             b'''16
+                            ^ \markup 32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 33
-                            aqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 34
-                            dqf''''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 35
-                            a'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 36
                         }
                         \revert TupletNumber.text
@@ -381,23 +549,50 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 1/1
                         {
-                            cs''''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 37
-                            aqs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            \clef "treble"
+                            b'''16
+                            - \accent
                             ^ \markup 38
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
                             b'''16
                             ^ \markup 39
-                            aqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 40
                         }
                         \revert TupletNumber.text
-                        c'4
+                        <b'' d''' e''' af''' c''''>4
+                        :32
+                        \arpeggio
                         ^ \markup 41
+                        - \tweak circled-tip ##t
+                        \<
                         ~
-                        c'1.
+                        <b'' d''' e''' af''' c''''>1.
+                        :32
+                        \f
                         ^ \markup 42
+                        - \tweak circled-tip ##t
+                        \>
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                             {
                                 \context Score = "Score"
@@ -436,32 +631,87 @@
                             }
                         \times 14/13
                         {
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            a'''32
                             ^ \markup 43
+                            - \tweak circled-tip ##t
+                            \<
                             [
-                            c'32
+                            \(
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            af'''32
                             ^ \markup 44
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            af'''32
                             ^ \markup 45
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g'''32
                             ^ \markup 46
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g'''32
                             ^ \markup 47
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            f'''32
                             ^ \markup 48
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            f'''32
                             ^ \markup 49
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            e'''32
                             ^ \markup 50
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            e'''32
                             ^ \markup 51
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            a'''32
                             ^ \markup 52
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            a'''32
                             ^ \markup 53
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            af'''32
                             ^ \markup 54
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            af'''32
                             ^ \markup 55
                             ]
                         }
@@ -504,14 +754,30 @@
                             }
                         \times 7/6
                         {
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            e'''16
                             ^ \markup 56
                             [
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            e'''16
                             ^ \markup 57
-                            c'8.
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            a'''8.
                             ^ \markup 58
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            a'''16
                             ^ \markup 59
                             ]
                         }
@@ -554,14 +820,33 @@
                             }
                         \times 1/1
                         {
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            af'''16
                             ^ \markup 60
                             [
-                            c'8.
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            af'''8.
+                            \f
                             ^ \markup 61
-                            c'16
+                            - \tweak circled-tip ##t
+                            \>
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g'''16
                             ^ \markup 62
-                            c'8
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g'''8
                             ^ \markup 63
                             ]
                         }
@@ -604,34 +889,88 @@
                             }
                         \times 14/13
                         {
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            f'''32
                             ^ \markup 64
                             [
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            f'''32
                             ^ \markup 65
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            e'''32
                             ^ \markup 66
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            e'''32
                             ^ \markup 67
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            a'''32
                             ^ \markup 68
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            a'''32
                             ^ \markup 69
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            af'''32
                             ^ \markup 70
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            af'''32
                             ^ \markup 71
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g'''32
                             ^ \markup 72
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g'''32
                             ^ \markup 73
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            f'''32
                             ^ \markup 74
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            f'''32
                             ^ \markup 75
-                            c'32
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            e'''32
                             ^ \markup 76
+                            \)
                             ]
+                            \ottava 0
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -670,72 +1009,243 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 28/32
                         {
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            bf''16
                             ^ \markup 77
-                            c'16
+                            - \tweak circled-tip ##t
+                            \<
+                            \ottava -1
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            \clef "bass"
+                            cs,,16
+                            - \marcato
                             ^ \markup 78
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            fs,,16
+                            - \marcato
                             ^ \markup 79
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            d,,16
+                            - \marcato
                             ^ \markup 80
-                            c'16
+                            \ottava 0
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            \clef "treble"
+                            bf'16
                             ^ \markup 81
-                            c'16
+                            \(
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'16
                             ^ \markup 82
-                            c'16
+                            \)
+                            \ottava -1
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            \clef "bass"
+                            g,,16
+                            - \marcato
                             ^ \markup 83
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            af,,16
+                            - \marcato
                             ^ \markup 84
-                            c'16
+                            \ottava 0
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            \clef "treble"
+                            a''16
                             ^ \markup 85
-                            c'16
+                            \(
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            ef''16
                             ^ \markup 86
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            f''16
                             ^ \markup 87
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c''16
                             ^ \markup 88
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            e''16
                             ^ \markup 89
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c''16
                             ^ \markup 90
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            f''16
                             ^ \markup 91
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            ef''16
                             ^ \markup 92
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            a''16
                             ^ \markup 93
-                            c'16
+                            \)
+                            \ottava -1
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            \clef "bass"
+                            af,,16
+                            - \marcato
                             ^ \markup 94
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g,,16
+                            - \marcato
                             ^ \markup 95
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b,,,16
+                            - \marcato
                             ^ \markup 96
-                            c'16
+                            \ottava 0
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            \clef "treble"
+                            bf'16
+                            \f
                             ^ \markup 97
-                            c'16
+                            - \tweak circled-tip ##t
+                            \>
+                            \(
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            d''16
                             ^ \markup 98
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            fs''16
                             ^ \markup 99
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            cs''16
                             ^ \markup 100
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            bf''16
                             ^ \markup 101
-                            c'16
+                            \)
+                            \ottava -1
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            \clef "bass"
+                            cs,,16
+                            - \marcato
                             ^ \markup 102
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            fs,,16
+                            - \marcato
                             ^ \markup 103
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            d,,16
+                            - \marcato
                             ^ \markup 104
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            bf,,,16
+                            - \marcato
                             ^ \markup 105
-                            c'16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b,,,16
+                            - \marcato
                             ^ \markup 106
-                            c'16
+                            \ottava 0
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            \clef "treble"
+                            g''16
                             ^ \markup 107
-                            c'16
+                            \(
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            af''16
                             ^ \markup 108
+                            \)
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -774,19 +1284,48 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 2/3
                         {
-                            d'''16
+                            \ottava 1
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 109
-                            fs'''16
+                            - \tweak circled-tip ##t
+                            \<
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 110
-                            dqs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 111
-                            e'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 112
-                            dqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 113
-                            gqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 114
                         }
                         \revert TupletNumber.text
@@ -826,21 +1365,52 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 4/7
                         {
-                            d'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 115
-                            fs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 116
-                            dqs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 117
-                            e'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 118
-                            dqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 119
-                            gqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 120
-                            d'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 121
                         }
                         \revert TupletNumber.text
@@ -880,19 +1450,44 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 2/3
                         {
-                            fs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 122
-                            dqs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 123
-                            e'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 124
-                            dqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 125
-                            gqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 126
-                            d'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 127
                         }
                         \revert TupletNumber.text
@@ -932,22 +1527,56 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 4/7
                         {
-                            fs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 128
-                            dqs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 129
-                            e'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 130
-                            dqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 131
-                            gqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 132
-                            d'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 133
-                            fs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            \f
                             ^ \markup 134
+                            - \tweak circled-tip ##t
+                            \>
                         }
                         \revert TupletNumber.text
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -986,19 +1615,45 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 2/3
                         {
-                            dqs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 135
-                            e'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 136
-                            dqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 137
-                            gqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 138
-                            d'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 139
-                            fs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 140
                         }
                         \revert TupletNumber.text
@@ -1038,17 +1693,39 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 4/5
                         {
-                            dqs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 141
-                            e'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 142
-                            dqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 143
-                            gqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 144
-                            d'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 145
                         }
                         \revert TupletNumber.text
@@ -1088,32 +1765,62 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #up
                         \times 1/1
                         {
-                            fs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            - \accent
                             ^ \markup 146
-                            dqs'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 147
-                            e'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
                             ^ \markup 148
-                            dqf'''16
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            b'''16
+                            \!
                             ^ \markup 149
                         }
                         \revert TupletNumber.text
-                        c'2.
+                        <a'' cs''' af''' bf''' cs''''>2.
+                        :32
+                        \p
+                        \arpeggio
                         ^ \markup 150
+                        \ottava 0
                     }
                 }
                 \context Staff = "piano 2 staff"
                 {
                     \context Voice = "piano 2 voice"
                     {
+                        \staff-line-count 1
                         s1..
                         ^ \markup 0
-                        c'4
+                        \staff-line-count 5
+                        \clef "bass"
+                        <b, af'>4
+                        :32
+                        \arpeggio
                         ^ \markup 1
                         ~
-                        c'1.
+                        \staff-line-count 5
+                        <b, af'>1.
+                        :32
                         ^ \markup 2
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                             {
@@ -1151,34 +1858,101 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #down
                         \times 14/13
                         {
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c,32
                             ^ \markup 3
                             [
-                            c'32
+                            \(
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c32
                             ^ \markup 4
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c32
                             ^ \markup 5
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g32
                             ^ \markup 6
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g32
                             ^ \markup 7
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c32
                             ^ \markup 8
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c32
                             ^ \markup 9
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c,32
                             ^ \markup 10
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c,32
                             ^ \markup 11
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c32
                             ^ \markup 12
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c32
                             ^ \markup 13
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g32
                             ^ \markup 14
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g32
                             ^ \markup 15
                             ]
                         }
@@ -1219,16 +1993,37 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #down
                         \times 7/6
                         {
-                            c'16
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c16
                             ^ \markup 16
                             [
-                            c'16
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c16
                             ^ \markup 17
-                            c'8.
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g8.
                             ^ \markup 18
-                            c'16
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g16
                             ^ \markup 19
                             ]
                         }
@@ -1269,16 +2064,37 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #down
                         \times 1/1
                         {
-                            c'16
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c16
                             ^ \markup 20
                             [
-                            c'8.
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c8.
                             ^ \markup 21
-                            c'16
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c,16
                             ^ \markup 22
-                            c'8
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c,8
                             ^ \markup 23
                             ]
                         }
@@ -1319,43 +2135,115 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak direction #down
                         \times 14/13
                         {
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c32
                             ^ \markup 24
                             [
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c32
                             ^ \markup 25
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g32
                             ^ \markup 26
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g32
                             ^ \markup 27
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c32
                             ^ \markup 28
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c32
                             ^ \markup 29
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c,32
                             ^ \markup 30
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c,32
                             ^ \markup 31
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c32
                             ^ \markup 32
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c32
                             ^ \markup 33
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g32
                             ^ \markup 34
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            g32
                             ^ \markup 35
-                            c'32
+                            \staff-line-count 5
+                            \once \override Beam.transparent = ##t
+                            \once \override Dots.transparent = ##t
+                            \once \override Flag.transparent = ##t
+                            \once \override Stem.transparent = ##t
+                            c32
                             ^ \markup 36
+                            \)
                             ]
                         }
                         \revert TupletNumber.text
+                        \staff-line-count 1
                         s1..
                         ^ \markup 37
+                        \staff-line-count 1
                         s1..
                         ^ \markup 38
-                        c'2.
+                        \staff-line-count 5
+                        <cs' d''>2.
+                        :32
+                        \arpeggio
                         ^ \markup 39
                     }
                 }

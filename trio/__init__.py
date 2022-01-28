@@ -67,6 +67,8 @@ from .library import (
     pitch_toccata_by_measure,
     pitch_contrabass_glissandi_by_measure,
     select_tuplets_by_annotation,
+    pitch_cello_gliss_piano_by_measure,
+    pitch_harmonic_gliss_piano,
 )
 
 __all__ = [
@@ -138,4 +140,6 @@ __all__ = [
     "pitch_toccata_by_measure",
     "pitch_contrabass_glissandi_by_measure",
     "select_tuplets_by_annotation",
+    "pitch_cello_gliss_piano_by_measure",
+    "pitch_harmonic_gliss_piano",
 ]

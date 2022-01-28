@@ -213,7 +213,7 @@ _matter_cent_markups = {
 }
 
 _piano_harmonic_glissandi_pitches_lh = {
-    "I": eval(
+    "IV": eval(
         """[
             -24,
             -12,
@@ -225,7 +225,7 @@ _piano_harmonic_glissandi_pitches_lh = {
             -24,
         ]"""
     ),
-    "II": eval(
+    "III": eval(
         """trinton.transpose(
             l=[
             -24,
@@ -240,7 +240,7 @@ _piano_harmonic_glissandi_pitches_lh = {
             m=7,
         )"""
     ),
-    "III": eval(
+    "II": eval(
         """trinton.transpose(
             l=[
             -24,
@@ -255,7 +255,7 @@ _piano_harmonic_glissandi_pitches_lh = {
             m=14,
         )"""
     ),
-    "IV": eval(
+    "I": eval(
         """trinton.transpose(
             l=[
             -24,
@@ -813,6 +813,7 @@ def pitch_toccata_by_measure(
         handler = evans.PitchHandler(pitch_list=pitches, forget=False)
 
         for measure in measures:
+
             grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
 
             current_measure = grouped_measures[measure - 1]
@@ -825,6 +826,7 @@ def pitch_toccata_by_measure(
         handler = evans.PitchHandler(pitch_list=new_seq[octave], forget=False)
 
         for measure in measures:
+
             grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
 
             current_measure = grouped_measures[measure - 1]
@@ -939,6 +941,7 @@ def piano_climax_chords(voice, measures, selector, octave, index, seed):
     )
 
     for measure in measures:
+
         grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
 
         current_measure = grouped_measures[measure - 1]
@@ -964,12 +967,16 @@ _cello_string_to_piano_pitch = {
 }
 
 
-def pitch_cello_gliss_piano(voice, measures, selector, string):
-    handler = evans.PitchHandler(
-        pitch_list=_cello_string_to_piano_pitch[string], forget=False
-    )
+def pitch_harmonic_gliss_piano(voice, measures, selector, string):
+    _pitches = {
+        score["piano 1 voice"]: _piano_harmonic_glissandi_pitches_rh,
+        score["piano 2 voice"]: _piano_harmonic_glissandi_pitches_lh,
+    }
+
+    handler = evans.PitchHandler(pitch_list=_pitches[voice][string], forget=False)
 
     for measure in measures:
+
         grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
 
         current_measure = grouped_measures[measure - 1]
@@ -977,6 +984,30 @@ def pitch_cello_gliss_piano(voice, measures, selector, string):
         selections = selector(current_measure)
 
         handler(selections)
+
+
+def pitch_cello_gliss_piano_by_measure(voice, measures, selector, string):
+    handler = evans.PitchHandler(
+        pitch_list=_cello_string_to_piano_pitch[string], forget=False
+    )
+
+    for measure in measures:
+
+        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+
+        current_measure = grouped_measures[measure - 1]
+
+        selections = selector(current_measure)
+
+        handler(selections)
+
+
+def pitch_cello_gliss_piano(score, voice, leaves, string):
+    handler = evans.PitchHandler(
+        pitch_list=_cello_string_to_piano_pitch[string], forget=False
+    )
+
+    handler(trinton.make_leaf_selection(score=score, voice=voice, leaves=leaves))
 
 
 def pitch_harmonic_glissandi_by_measure(voice, measures, selector, strings, index):
@@ -1042,6 +1073,7 @@ def pitch_harmonic_glissandi_by_measure(voice, measures, selector, strings, inde
     )
 
     for measure in measures:
+
         grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
 
         current_measure = grouped_measures[measure - 1]
@@ -1136,6 +1168,7 @@ def pitch_contrabass_glissandi_by_measure(voice, measures, selector, strings):
     )
 
     for measure in measures:
+
         grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
 
         current_measure = grouped_measures[measure - 1]
@@ -1175,6 +1208,7 @@ def pitch_matter_with_selector(
     handler = evans.PitchHandler(pitch_list=[collected_partials], forget=False)
 
     for measure in measures:
+
         grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
 
         current_measure = grouped_measures[measure - 1]
@@ -1242,13 +1276,13 @@ def pitch_matter(
 
 def select_tuplets_by_annotation(annotation):
     def selector(argument):
-        tuplets = abjad.Selection(argument).tuplets()
+        top_level_components = trinton.get_top_level_components_from_leaves(argument)
+        tuplets = abjad.Selection(top_level_components).tuplets()
 
         out = []
 
         for tuplet in tuplets:
             if abjad.get.annotation(tuplet, annotation) is True:
-                print("True")
                 out.append(tuplet)
 
         return abjad.Selection(out[:]).leaves()
@@ -1261,10 +1295,10 @@ def select_tuplets_by_annotation(annotation):
 
 def noteheads_only(selections):
     for leaf in selections:
-        abjad.tweak(leaf.note_head).Stem.transparent = True
-        abjad.tweak(leaf.note_head).Beam.transparent = True
-        abjad.tweak(leaf.note_head).Flag.transparent = True
-        abjad.tweak(leaf.note_head).Dots.transparent = True
+        abjad.override(leaf).Stem.transparent = True
+        abjad.override(leaf).Beam.transparent = True
+        abjad.override(leaf).Flag.transparent = True
+        abjad.override(leaf).Dots.transparent = True
 
 
 def standard_cleffing(score):
