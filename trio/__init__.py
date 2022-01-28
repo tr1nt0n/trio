@@ -64,6 +64,9 @@ from .library import (
     contrabass_2_voice,
     pitch_matter_with_selector,
     pitch_harmonic_glissandi_by_measure,
+    pitch_toccata_by_measure,
+    pitch_contrabass_glissandi_by_measure,
+    select_by_annotation,
 )
 
 __all__ = [
@@ -132,4 +135,7 @@ __all__ = [
     "contrabass_2_voice",
     "pitch_matter_with_selector",
     "pitch_harmonic_glissandi_by_measure",
+    "pitch_toccata_by_measure",
+    "pitch_contrabass_glissandi_by_measure",
+    "select_by_annotation",
 ]

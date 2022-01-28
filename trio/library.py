@@ -757,6 +757,81 @@ def matter_broken_rhythms(score, voice, stack, durations):
 # pitch tools
 
 
+def pitch_toccata_by_measure(
+    voice,
+    measures,
+    selector,
+    octave,
+    seed,
+    index,
+    random_walk,
+):
+    random.seed(seed)
+
+    seq = list(range(-39, 49))
+
+    groups = evans.Sequence(seq).grouper(
+        [
+            13,
+            12,
+            13,
+            11,
+            13,
+            10,
+            13,
+            3,
+        ]
+    )
+
+    new_groups = []
+    for group in groups:
+        sequence = random.sample(group, k=len(group))
+        new_sequence = evans.Sequence(sequence[:]).mirror(sequential_duplicates=False)
+        for l in new_sequence:
+            new_groups.append(l)
+
+    new_seq = evans.Sequence(new_groups).grouper(
+        [
+            24,
+            22,
+            24,
+            20,
+            24,
+            18,
+            24,
+            4,
+        ]
+    )
+    if random_walk is True:
+        pitches = trinton.rotated_sequence(
+            trinton.random_walk(chord=new_seq[octave], seed=seed),
+            index,
+        )
+
+        handler = evans.PitchHandler(pitch_list=pitches, forget=False)
+
+        for measure in measures:
+            grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+
+            current_measure = grouped_measures[measure - 1]
+
+            selections = selector(current_measure)
+
+            handler(selections)
+
+    else:
+        handler = evans.PitchHandler(pitch_list=new_seq[octave], forget=False)
+
+        for measure in measures:
+            grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+
+            current_measure = grouped_measures[measure - 1]
+
+            selections = selector(current_measure)
+
+            handler(selections)
+
+
 def pitch_toccata(
     score,
     voice,
@@ -816,7 +891,7 @@ def pitch_toccata(
         handler(trinton.make_leaf_selection(score=score, voice=voice, leaves=leaves))
 
 
-def piano_climax_chords(score, voice, leaves, octave, index, seed):
+def piano_climax_chords(voice, measures, selector, octave, index, seed):
     random.seed(seed)
     seq = list(range(-39, 49))
 
@@ -861,7 +936,14 @@ def piano_climax_chords(score, voice, leaves, octave, index, seed):
         pitch_list=trinton.rotated_sequence(chords[octave], index), forget=False
     )
 
-    handler(trinton.make_leaf_selection(score=score, voice=voice, leaves=leaves))
+    for measure in measures:
+        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+
+        current_measure = grouped_measures[measure - 1]
+
+        selections = selector(current_measure)
+
+        handler(selections)
 
 
 _cello_string_to_piano_pitch = {
@@ -880,14 +962,19 @@ _cello_string_to_piano_pitch = {
 }
 
 
-def pitch_cello_gliss_piano(score, voice, leaves, string):
-    sel = trinton.make_leaf_selection(score=score, voice=voice, leaves=leaves)
-
+def pitch_cello_gliss_piano(voice, measures, selector, string):
     handler = evans.PitchHandler(
         pitch_list=_cello_string_to_piano_pitch[string], forget=False
     )
 
-    handler(sel)
+    for measure in measures:
+        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+
+        current_measure = grouped_measures[measure - 1]
+
+        selections = selector(current_measure)
+
+        handler(selections)
 
 
 def pitch_harmonic_glissandi_by_measure(voice, measures, selector, strings, index):
@@ -947,47 +1034,19 @@ def pitch_harmonic_glissandi_by_measure(voice, measures, selector, strings, inde
         ],
     }
 
-    grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
-
-    selection = []
-
-    for measure in measures:
-
-        current_measure = grouped_measures[measure - 1]
-
-        sel = selector(current_measure)
-
-        selection.append(sel)
-
     handler = evans.PitchHandler(
         pitch_list=_string_to_pitches[strings],
         forget=False,
     )
 
-    handler(selection[:])
+    for measure in measures:
+        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
 
+        current_measure = grouped_measures[measure - 1]
 
-_contrabass_glissandi_strings_to_pitches = {
-    "I and II": contrabass_glissandi_pitches,
-    "II and III": [
-        trinton.transpose(l=chord, m=-5) for chord in contrabass_glissandi_pitches
-    ],
-    "III and IV": [
-        trinton.transpose(l=chord, m=-10) for chord in contrabass_glissandi_pitches
-    ],
-}
+        selections = selector(current_measure)
 
-
-def pitch_contrabass_glissandi(score, voice, leaves, strings):
-
-    sel = trinton.make_leaf_selection(score=score, voice=voice, leaves=leaves)
-
-    handler = evans.PitchHandler(
-        pitch_list=_contrabass_glissandi_strings_to_pitches[strings],
-        forget=False,
-    )
-
-    handler(sel)
+        handler(selections)
 
 
 def pitch_harmonic_glissandi(score, voice, leaves, strings, index):
@@ -1066,6 +1125,22 @@ _contrabass_glissandi_strings_to_pitches = {
         trinton.transpose(l=chord, m=-10) for chord in contrabass_glissandi_pitches
     ],
 }
+
+
+def pitch_contrabass_glissandi_by_measure(voice, measures, selector, strings):
+    handler = evans.PitchHandler(
+        pitch_list=_contrabass_glissandi_strings_to_pitches[strings],
+        forget=False,
+    )
+
+    for measure in measures:
+        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+
+        current_measure = grouped_measures[measure - 1]
+
+        selections = selector(current_measure)
+
+        handler(selections)
 
 
 def pitch_contrabass_glissandi(score, voice, leaves, strings):
@@ -1158,6 +1233,24 @@ def pitch_matter(
                 trinton.attach(
                     voice=score[voice], leaves=[leaf], attachment=cent_markups[0]
                 )
+
+
+# selectors
+
+
+def select_by_annotation(annotation):
+    def selector(argument):
+        pleaves = abjad.Selection(argument).leaves(pitched=True)
+
+        out = []
+
+        for pleaf in pleaves:
+            if abjad.get.annotation(tuplet, annotation) is True:
+                out.append(pleaf)
+
+        return out
+
+    return selector
 
 
 # spelling tools
