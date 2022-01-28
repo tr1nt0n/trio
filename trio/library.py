@@ -624,10 +624,12 @@ def cello_gliss(
 
     handler(container[:])
 
-    for sel in selections:
-        abjad.annotate(sel, vib, True)
+    selections = trinton.append_rhythm_selections(
+        voice=voice, score=score, selections=container[:]
+    )
 
-    trinton.append_rhythm_selections(voice=voice, score=score, selections=container[:])
+    for sel in selections:
+        abjad.annotate(sel, trio.vib, True)
 
 
 # rhythm tools
@@ -691,7 +693,7 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, notation):
 
     _voice_to_stack = {
         "piano 1 voice": _stacks[notation],
-        "piano2 voice": _stacks[notation],
+        "piano 2 voice": _stacks[notation],
         "cello 1 voice": stack3,
         "cello 2 voice": _stacks[notation],
         "contrabass 1 voice": stack3,
@@ -1238,17 +1240,18 @@ def pitch_matter(
 # selectors
 
 
-def select_by_annotation(annotation):
+def select_tuplets_by_annotation(annotation):
     def selector(argument):
-        pleaves = abjad.Selection(argument).leaves(pitched=True)
+        tuplets = abjad.Selection(argument).tuplets()
 
         out = []
 
-        for pleaf in pleaves:
+        for tuplet in tuplets:
             if abjad.get.annotation(tuplet, annotation) is True:
-                out.append(pleaf)
+                print("True")
+                out.append(tuplet)
 
-        return out
+        return abjad.Selection(out[:]).leaves()
 
     return selector
 
