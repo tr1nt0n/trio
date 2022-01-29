@@ -14,6 +14,7 @@
             s1 * 2
             \time 3/2
             s1 * 3/2
+            \bar "||"
         }
         \tag #'group1
         {

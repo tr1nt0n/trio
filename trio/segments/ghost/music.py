@@ -163,14 +163,6 @@ trinton.handwrite(
 trinton.rewrite_meter(score)
 trinton.beam_score(score)
 # trinton.annotate_leaves(score)
-for voice in [
-    "contrabass 1 voice",
-    "contrabass 2 voice",
-    "piano 1 voice",
-    "piano 2 voice",
-    "cello 1 voice",
-]:
-    trinton.whiteout_empty_staves(score=score, voice=voice, cutaway=True)
 
 trio.write_marginmarkups(score=score)
 
@@ -186,6 +178,36 @@ for leaf, attachments in zip(
     trinton.attach_multiple(
         score=score, voice="Global Context", leaves=[leaf], attachments=attachments
     )
+
+for voice in [
+    "contrabass 1 voice",
+    "contrabass 2 voice",
+    "piano 1 voice",
+    "piano 2 voice",
+    "cello 1 voice",
+    "cello 2 voice",
+]:
+    trinton.whiteout_empty_staves(score=score, voice=voice, cutaway=True)
+
+for voice, leaves in zip(
+    [
+        "piano 1 voice",
+        "piano 2 voice",
+        "cello 1 voice",
+        "cello 2 voice",
+        "contrabass 1 voice",
+        "contrabass 2 voice",
+    ],
+    [
+        [1, -1],
+        [1, -1],
+        [1, -1],
+        [11, -1],
+        [1, -1],
+        [1, -1],
+    ],
+):
+    trinton.attach(voice=score[voice], leaves=leaves, attachment=abjad.BarLine("||"))
 
 # piano attachments
 

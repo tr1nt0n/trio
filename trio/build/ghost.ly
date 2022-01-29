@@ -30,6 +30,7 @@
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
+                                    \bar "||"
                                     \stopStaff \startStaff
                                     \times 2/3
                                     {
@@ -76,6 +77,7 @@
                                         \!
                                         \)
                                         ]
+                                        \bar "||"
                                         \ottava 0
                                     }
                                 }
@@ -92,6 +94,7 @@
                                     \clef "bass"
                                     r1 * 1/4
                                     R1 * 1/4
+                                    \bar "||"
                                     \stopStaff \startStaff
                                     \ottava -2
                                     <a,,, bf,,, b,,, c,, cs,,>2
@@ -101,6 +104,7 @@
                                     \pp
                                     - \tenuto
                                     \)
+                                    \bar "||"
                                     \ottava 0
                                 }
                             }
@@ -125,12 +129,14 @@
                                     \clef "percussion"
                                     r1 * 1/4
                                     R1 * 1/4
+                                    \bar "||"
                                     \stopStaff \startStaff
                                     - \baca-circle-fast-markup
                                     \tweak Accidental.transparent ##t
                                     d'2.
                                     :32
                                     \p
+                                    \bar "||"
                                     \boxed-markup "Crine" 1
                                 }
                             }
@@ -170,6 +176,7 @@
                                     f64
                                     ]
                                     r16
+                                    \bar "||"
                                     g4
                                     ~
                                     \(
@@ -181,6 +188,7 @@
                                     ]
                                     fs4
                                     \)
+                                    \bar "||"
                                 }
                             }
                         }
@@ -204,12 +212,14 @@
                                     \clef "percussion"
                                     r1 * 1/4
                                     R1 * 1/4
+                                    \bar "||"
                                     \stopStaff \startStaff
                                     - \baca-circle-fast-markup
                                     \tweak Accidental.transparent ##t
                                     f'2.
                                     :32
                                     \p
+                                    \bar "||"
                                 }
                             }
                         }
@@ -224,11 +234,13 @@
                                     \clef "bass"
                                     r1 * 1/4
                                     R1 * 1/4
+                                    \bar "||"
                                     \stopStaff \startStaff
                                     cs'2
                                     \(
                                     d'4
                                     \)
+                                    \bar "||"
                                 }
                             }
                         }

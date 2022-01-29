@@ -387,6 +387,10 @@ trinton.attach_multiple(
     attachments=[abjad.MetronomeMark((1, 2), 65), trio.rehearsal_mark6],
 )
 
+trinton.attach(
+    voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
+)
+
 # piano pitching/attachments
 
 trio.pitch_cello_gliss_piano_by_measure(
@@ -1089,16 +1093,17 @@ trinton.attach(
     leaves=[
         70,
     ],
-    attachment=abjad.StartHairpin("o<", direction=abjad.Up)
+    attachment=abjad.StartHairpin("o<", direction=abjad.Up),
 )
 
 trinton.attach_multiple(
     score=score,
     voice="cello 2 voice",
-    leaves=[
-        0
+    leaves=[0],
+    attachments=[
+        abjad.Dynamic("fp", direction=abjad.Up),
+        abjad.StartHairpin("<", direction=abjad.Up),
     ],
-    attachments=[abjad.Dynamic("fp", direction=abjad.Up), abjad.StartHairpin("<", direction=abjad.Up)]
 )
 
 trinton.attach_multiple(
@@ -1112,7 +1117,10 @@ trinton.attach_multiple(
         103,
         110,
     ],
-    attachments=[abjad.Dynamic("f", direction=abjad.Down), abjad.StartHairpin(">o", direction=abjad.Down)],
+    attachments=[
+        abjad.Dynamic("f", direction=abjad.Down),
+        abjad.StartHairpin(">o", direction=abjad.Down),
+    ],
 )
 
 trinton.attach_multiple(
@@ -1122,7 +1130,10 @@ trinton.attach_multiple(
         5,
         74,
     ],
-    attachments=[abjad.Dynamic("f", direction=abjad.Up), abjad.StartHairpin(">o", direction=abjad.Up)],
+    attachments=[
+        abjad.Dynamic("f", direction=abjad.Up),
+        abjad.StartHairpin(">o", direction=abjad.Up),
+    ],
 )
 
 trinton.attach(
@@ -1333,14 +1344,53 @@ trio.finger_pressure(
 
 trinton.write_slur(
     voice=score["contrabass 1 voice"],
-    start_slur=[1, 3, 5, 7, 12, 14, 16, 18, 22, 24, 26, 28,],
-    stop_slur=[2, 4, 6, 8, 13, 15, 17, 19, 23, 25, 27, 29,],
+    start_slur=[
+        1,
+        3,
+        5,
+        7,
+        12,
+        14,
+        16,
+        18,
+        22,
+        24,
+        26,
+        28,
+    ],
+    stop_slur=[
+        2,
+        4,
+        6,
+        8,
+        13,
+        15,
+        17,
+        19,
+        23,
+        25,
+        27,
+        29,
+    ],
 )
 
 trinton.attach(
     voice=score["contrabass 1 voice"],
-    leaves=[1, 3, 5, 7, 12, 14, 16, 18, 22, 24, 26, 28,],
-    attachment=abjad.Articulation(">")
+    leaves=[
+        1,
+        3,
+        5,
+        7,
+        12,
+        14,
+        16,
+        18,
+        22,
+        24,
+        26,
+        28,
+    ],
+    attachment=abjad.Articulation(">"),
 )
 
 trinton.write_text_span(
@@ -1418,8 +1468,13 @@ for tuplet in abjad.select(score["contrabass 2 voice"]).tuplets():
 
 trinton.attach(
     voice=score["contrabass 2 voice"],
-    leaves=[0, 56, 89, 120,],
-    attachment=abjad.Dynamic("f")
+    leaves=[
+        0,
+        56,
+        89,
+        120,
+    ],
+    attachment=abjad.Dynamic("f"),
 )
 
 trinton.attach(
@@ -1442,7 +1497,7 @@ trinton.attach(
         61,
         95,
     ],
-    attachment=abjad.StartHairpin("o<", direction=abjad.Up)
+    attachment=abjad.StartHairpin("o<", direction=abjad.Up),
 )
 
 trinton.attach_multiple(
@@ -1456,7 +1511,10 @@ trinton.attach_multiple(
         92,
         112,
     ],
-    attachments=[abjad.Dynamic("f", direction=abjad.Down), abjad.StartHairpin(">o", direction=abjad.Down)],
+    attachments=[
+        abjad.Dynamic("f", direction=abjad.Down),
+        abjad.StartHairpin(">o", direction=abjad.Down),
+    ],
 )
 
 trinton.attach_multiple(
@@ -1467,14 +1525,15 @@ trinton.attach_multiple(
         66,
         99,
     ],
-    attachments=[abjad.Dynamic("f", direction=abjad.Up), abjad.StartHairpin(">o", direction=abjad.Up)],
+    attachments=[
+        abjad.Dynamic("f", direction=abjad.Up),
+        abjad.StartHairpin(">o", direction=abjad.Up),
+    ],
 )
 
 trinton.attach(
     voice=score["contrabass 2 voice"],
-    leaves=[
-
-    ],
+    leaves=[],
     attachment=abjad.StopHairpin(),
 )
 
@@ -1503,11 +1562,7 @@ for voice_name in ["cello 1 voice", "contrabass 1 voice"]:
 
     abjad.tweak(transparent_fp).transparent = True
 
-    trinton.attach(
-        voice=score[voice_name],
-        leaves=[0],
-        attachment=transparent_fp
-    )
+    trinton.attach(voice=score[voice_name], leaves=[0], attachment=transparent_fp)
 
 for voice_name in ["cello 2 voice", "contrabass 2 voice"]:
     for tuplet in abjad.Selection(score[voice_name]).tuplets():
