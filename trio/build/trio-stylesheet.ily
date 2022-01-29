@@ -90,9 +90,9 @@
         \override Tie.height-limit = 6
         \override Tie.thickness = 1.5
 
-        \override BarLine.bar-extent = #'(-2 . 2)
+        % \override BarLine.bar-extent = #'(-2 . 2)
         \override BarLine.hair-thickness = 0.5
-        % \override BarLine.transparent = ##t
+        \override BarLine.transparent = ##t
         \override BarLine.X-extent = #'(0 . 0)
         \override BarLine.thick-thickness = #8
 
