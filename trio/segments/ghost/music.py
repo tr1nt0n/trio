@@ -237,6 +237,16 @@ for attachments, leaf in zip(
 
 # cello attachments
 
+for voice_name in ["cello 1 voice", "contrabass 1 voice"]:
+    trinton.attach(
+        voice=score[voice_name],
+        leaves=[0],
+        attachment=abjad.LilyPondLiteral(
+            r"\staff-line-count 4",
+            format_slot="absolute_before",
+        ),
+    )
+
 for leaf, dynamic in zip(
     [0, 3, 9], [abjad.Dynamic("f"), abjad.Dynamic("p"), abjad.Dynamic("mp")]
 ):

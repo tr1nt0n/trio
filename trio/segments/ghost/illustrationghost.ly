@@ -123,6 +123,7 @@
                             {
                                 \context Voice = "cello 1 voice"
                                 {
+                                    \staff-line-count 4
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { vc. }
                                     \once \override Rest.transparent = ##t
@@ -201,6 +202,7 @@
                             {
                                 \context Voice = "contrabass 1 voice"
                                 {
+                                    \staff-line-count 4
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { cb. }
                                     \once \override Rest.transparent = ##t
