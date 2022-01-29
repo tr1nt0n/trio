@@ -2294,6 +2294,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 1/1
                                     {
                                         \set suggestAccidentals = ##t
@@ -2365,6 +2366,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 15/18
                                     {
                                         \once \override Beam.transparent = ##t
@@ -2448,6 +2450,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 30/21
                                     {
                                         \once \override Beam.transparent = ##t
@@ -2544,6 +2547,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 15/18
                                     {
                                         \once \override Beam.transparent = ##t
@@ -3270,6 +3274,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 5/8
                                     {
                                         \once \override Beam.transparent = ##t
@@ -3340,6 +3345,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 5/7
                                     {
                                         \once \override Beam.transparent = ##t
@@ -3409,6 +3415,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 5/9
                                     {
                                         \once \override Beam.transparent = ##t
@@ -3480,6 +3487,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 1/1
                                     {
                                         \once \override Beam.transparent = ##t
@@ -4250,6 +4258,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 12/13
                                     {
                                         \set suggestAccidentals = ##t
@@ -4450,6 +4459,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 1/1
                                     {
                                         \once \override Beam.transparent = ##t
@@ -4542,6 +4552,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 6/7
                                     {
                                         \once \override Beam.transparent = ##t
@@ -4638,6 +4649,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 12/13
                                     {
                                         \once \override Beam.transparent = ##t
@@ -5062,6 +5074,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 6/5
                                     {
                                         \set suggestAccidentals = ##t
@@ -5132,6 +5145,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 1/1
                                     {
                                         \once \override Beam.transparent = ##t
@@ -5212,6 +5226,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 6/7
                                     {
                                         \once \override Beam.transparent = ##t
@@ -5308,6 +5323,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 1/1
                                     {
                                         \once \override Beam.transparent = ##t
@@ -5619,6 +5635,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 6/8
                                     {
                                         \set suggestAccidentals = ##t
@@ -5689,6 +5706,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 6/7
                                     {
                                         \once \override Beam.transparent = ##t
@@ -5758,6 +5776,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 2/2
                                     {
                                         \once \override Beam.transparent = ##t
@@ -5842,6 +5861,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 6/5
                                     {
                                         \once \override Beam.transparent = ##t

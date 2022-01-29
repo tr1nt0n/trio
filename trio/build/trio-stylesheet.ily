@@ -55,6 +55,7 @@
         autoBeaming = ##f
         \override Beam.breakable = ##t
         \override Beam.damping = 99
+        \override Beam.concaveness = #10000
 
         \override DynamicText.font-size = #-2
         \override DynamicLineSpanner.staff-padding = 4
@@ -95,6 +96,10 @@
         \override BarLine.transparent = ##t
         \override BarLine.X-extent = #'(0 . 0)
         \override BarLine.thick-thickness = #8
+        
+        % \override Staff.SystemStartBrace.transparent = ##f
+        % \override Staff.SystemStartBracket.transparent = ##f
+        % \override Staff.SystemStartBar.transparent = ##f
 
         \override Hairpin.to-barline = ##f
     }
