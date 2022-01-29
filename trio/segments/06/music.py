@@ -713,23 +713,23 @@ for tuplet in abjad.select(score["piano 2 voice"]).tuplets():
     if abjad.get.annotation(tuplet, trio.harmonic_gliss) is True:
         abjad.tweak(tuplet).direction = abjad.Down
 
-for leaf in abjad.select(score["piano 2 voice"]).leaves():
-    if isinstance(leaf, abjad.Skip):
-        abjad.attach(
-            abjad.LilyPondLiteral(
-                r"\staff-line-count 1",
-                format_slot="absolute_before",
-            ),
-            leaf,
-        )
-    else:
-        abjad.attach(
-            abjad.LilyPondLiteral(
-                r"\staff-line-count 5",
-                format_slot="absolute_before",
-            ),
-            leaf,
-        )
+# for leaf in abjad.select(score["piano 2 voice"]).leaves():
+#     if isinstance(leaf, abjad.Skip):
+#         abjad.attach(
+#             abjad.LilyPondLiteral(
+#                 r"\staff-line-count 1",
+#                 format_slot="absolute_before",
+#             ),
+#             leaf,
+#         )
+#     else:
+#         abjad.attach(
+#             abjad.LilyPondLiteral(
+#                 r"\staff-line-count 5",
+#                 format_slot="absolute_before",
+#             ),
+#             leaf,
+#         )
 
 # cello pitching/attachments
 
@@ -1540,23 +1540,23 @@ trinton.attach(
 for voice_name in ["cello 1 voice", "contrabass 1 voice"]:
     trinton.transparent_accidentals(score=score, voice=voice_name, leaves=all)
 
-    for leaf in abjad.Selection(score[voice_name]).leaves():
-        if isinstance(leaf, abjad.Rest):
-            abjad.attach(
-                abjad.LilyPondLiteral(
-                    r"\staff-line-count 1",
-                    format_slot="absolute_before",
-                ),
-                leaf,
-            )
-        else:
-            abjad.attach(
-                abjad.LilyPondLiteral(
-                    r"\staff-line-count 4",
-                    format_slot="absolute_before",
-                ),
-                leaf,
-            )
+    # for leaf in abjad.Selection(score[voice_name]).leaves():
+    #     if isinstance(leaf, abjad.Rest):
+    #         abjad.attach(
+    #             abjad.LilyPondLiteral(
+    #                 r"\staff-line-count 1",
+    #                 format_slot="absolute_before",
+    #             ),
+    #             leaf,
+    #         )
+    #     else:
+    #         abjad.attach(
+    #             abjad.LilyPondLiteral(
+    #                 r"\staff-line-count 4",
+    #                 format_slot="absolute_before",
+    #             ),
+    #             leaf,
+    #         )
 
     transparent_fp = abjad.Dynamic("fp")
 
@@ -1586,6 +1586,18 @@ for voice_name in [
 ]:
     for tuplet in abjad.Selection(score[voice_name]).tuplets():
         trio.noteheads_only(tuplet)
+
+# fill empty staves with skips
+
+for voice in [
+    score["piano 1 voice"],
+    score["piano 2 voice"],
+    score["cello 1 voice"],
+    score["cello 2 voice"],
+    score["contrabass 1 voice"],
+    score["contrabass 2 voice"],
+]:
+    trinton.fill_empty_staves_with_skips(voice=voice)
 
 # extract parts
 

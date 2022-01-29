@@ -1667,15 +1667,12 @@
                             {
                                 \context Voice = "piano 2 voice"
                                 {
-                                    \staff-line-count 1
                                     s1..
-                                    \staff-line-count 5
                                     \clef "bass"
                                     <b, af'>4
                                     :32
                                     \arpeggio
                                     ~
-                                    \staff-line-count 5
                                     <b, af'>1.
                                     :32
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -1717,7 +1714,6 @@
                                     \tweak direction #down
                                     \times 14/13
                                     {
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -1725,73 +1721,61 @@
                                         c,32
                                         [
                                         \(
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         g32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         g32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c,32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c,32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         g32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -1839,26 +1823,22 @@
                                     \tweak direction #down
                                     \times 7/6
                                     {
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c16
                                         [
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c16
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         g8.
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -1906,26 +1886,22 @@
                                     \tweak direction #down
                                     \times 1/1
                                     {
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c16
                                         [
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c8.
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c,16
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -1973,80 +1949,67 @@
                                     \tweak direction #down
                                     \times 14/13
                                     {
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c32
                                         [
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         g32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         g32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c,32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c,32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         g32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         g32
-                                        \staff-line-count 5
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -2056,11 +2019,8 @@
                                         ]
                                     }
                                     \revert TupletNumber.text
-                                    \staff-line-count 1
                                     s1..
-                                    \staff-line-count 1
                                     s1..
-                                    \staff-line-count 5
                                     <cs' d''>2.
                                     :32
                                     \arpeggio
@@ -2080,7 +2040,6 @@
                                 \context Voice = "cello 1 voice"
                                 {
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \set PianoStaff.shortInstrumentName =
                                         \markup { vc. }
                                         \tweak Accidental.transparent ##t
@@ -2089,164 +2048,128 @@
                                         \fp
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf32
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g128
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf128
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g32
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf32
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g128
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf128
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g32
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf32
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g128
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf128
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g32
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf32
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g128
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf128
                                         \)
                                     }
-                                    \staff-line-count 1
                                     r2.
-                                    \staff-line-count 1
-                                    r1
-                                    \staff-line-count 1
-                                    r1
-                                    \staff-line-count 1
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 2
                                     r1
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g32
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf32
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g128
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf128
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g32
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf32
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g128
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf128
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g32
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf32
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g128
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf128
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g32
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf32
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         g128
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         bf128
                                         \)
                                     }
-                                    \staff-line-count 1
                                     r1..
-                                    \staff-line-count 1
-                                    r1.
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/2
                                 }
                             }
                         }
@@ -3982,157 +3905,125 @@
                             {
                                 \context Voice = "contrabass 1 voice"
                                 {
-                                    \staff-line-count 1
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { cb. }
                                     r1.
                                     - \tweak transparent ##t
                                     \fp
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         f'64.
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         d'64.
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         f'64.
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         d'64.
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         f'64.
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         d'64.
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         f'64.
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         d'64.
                                         \)
                                     }
-                                    \staff-line-count 1
                                     r2.
-                                    \staff-line-count 1
                                     r1
-                                    \staff-line-count 1
                                     r2
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         f'64.
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         d'64.
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         f'64.
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         d'64.
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         f'64.
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         d'64.
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         f'64.
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         d'64.
                                         \)
                                     }
-                                    \staff-line-count 1
                                     r2.
-                                    \staff-line-count 1
                                     r1.
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         f'64.
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         d'64.
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         f'64.
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         d'64.
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         f'64.
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         d'64.
                                         \)
                                     }
                                     \repeat tremolo 4 {
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         f'64.
                                         - \accent
                                         \(
-                                        \staff-line-count 4
                                         \tweak Accidental.transparent ##t
                                         d'64.
                                         \)
                                     }
-                                    \staff-line-count 1
                                     r4
-                                    \staff-line-count 1
                                     r1
                                 }
                             }

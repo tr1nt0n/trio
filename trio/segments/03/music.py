@@ -702,10 +702,17 @@ trinton.populate_fermata_measures(
     fermata_measures=None,
 )
 
-# whiteout empty staves
+# fill empty staves with skips
 
-for voice in trio.all_voices:
-    trinton.whiteout_empty_staves(score=score, voice=voice, cutaway=True)
+for voice in [
+    score["piano 1 voice"],
+    score["piano 2 voice"],
+    score["cello 1 voice"],
+    score["cello 2 voice"],
+    score["contrabass 1 voice"],
+    score["contrabass 2 voice"],
+]:
+    trinton.fill_empty_staves_with_skips(voice=voice)
 
 # extract parts
 

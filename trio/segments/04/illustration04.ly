@@ -215,41 +215,23 @@
                                     }
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    r1 * 1/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 11/16
-                                    R1 * 11/16
-                                    \stopStaff \startStaff
+                                    r1 * 11/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/32
-                                    R1 * 3/32
-                                    \stopStaff \startStaff
+                                    r1 * 3/16
                                     r2.
                                     <ef'' bf'' b'' fs'''>4.
                                     :32
                                     \mp
                                     \arpeggio
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/2
-                                    R1 * 1/2
-                                    \stopStaff \startStaff
+                                    r1 * 1
                                     \change Staff = "piano 1 staff"
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
+                                    r1 * 3/8
                                     \override TupletNumber.text = \markup \italic 13:12
                                     \times 48/52
                                     {
@@ -781,10 +763,7 @@
                                     \revert TupletNumber.text
                                     \change Staff = "piano 1 staff"
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    r1 * 1/4
                                     \ottava 2
                                     c'''''16
                                     \ppp
@@ -839,39 +818,21 @@
                                     s1.
                                     \ottava 0
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    r1 * 1/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 11/16
-                                    R1 * 11/16
-                                    \stopStaff \startStaff
+                                    r1 * 11/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/32
-                                    R1 * 3/32
-                                    \stopStaff \startStaff
+                                    r1 * 3/16
                                     r2.
                                     <bf c''>4.
                                     :32
                                     \arpeggio
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/2
-                                    R1 * 1/2
-                                    \stopStaff \startStaff
+                                    r1 * 1
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
+                                    r1 * 3/8
                                     \clef "bass"
                                     s1 * 3/2
                                     \clef "treble"
@@ -883,10 +844,7 @@
                                     \clef "bass"
                                     s1 * 7/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    r1 * 1/4
                                     \ottava 2
                                     \clef "treble"
                                     s2.
@@ -909,75 +867,33 @@
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { vc. }
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/4
-                                    R1 * 3/4
-                                    \stopStaff \startStaff
+                                    r1 * 3/2
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    r1 * 1/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 11/16
-                                    R1 * 11/16
-                                    \stopStaff \startStaff
+                                    r1 * 11/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/32
-                                    R1 * 3/32
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/16
-                                    R1 * 9/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/2
-                                    R1 * 1/2
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/4
-                                    R1 * 3/4
-                                    \stopStaff \startStaff
+                                    r1 * 9/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 11/16
-                                    R1 * 11/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/16
-                                    R1 * 9/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/2
-                                    R1 * 1/2
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 7/16
-                                    R1 * 7/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/2
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 11/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 9/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 7/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/4
                                     r4
                                     \repeat tremolo 4 {
                                         \tweak Accidental.transparent ##t
@@ -1007,15 +923,9 @@
                                 \context Voice = "cello 2 voice"
                                 {
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/4
-                                    R1 * 3/4
-                                    \stopStaff \startStaff
+                                    r1 * 3/2
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    r1 * 1/4
                                     \override TupletNumber.text = \markup \italic 13:11
                                     \times 44/52
                                     {
@@ -1132,20 +1042,11 @@
                                     }
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/32
-                                    R1 * 3/32
-                                    \stopStaff \startStaff
+                                    r1 * 3/16
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/16
-                                    R1 * 9/16
-                                    \stopStaff \startStaff
+                                    r1 * 9/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     r2
                                     \set suggestAccidentals = ##t
                                     c''16
@@ -1219,10 +1120,7 @@
                                     }
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
+                                    r1 * 3/8
                                     \tweak style #'harmonic-mixed
                                     b'32
                                     - \tweak circled-tip ##t
@@ -1875,10 +1773,7 @@
                                     \)
                                     ]
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    r1 * 1/4
                                     r4
                                     \override TupletNumber.text = \markup \italic 3:2
                                     \times 2/3
@@ -1931,75 +1826,33 @@
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { cb. }
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/4
-                                    R1 * 3/4
-                                    \stopStaff \startStaff
+                                    r1 * 3/2
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    r1 * 1/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 11/16
-                                    R1 * 11/16
-                                    \stopStaff \startStaff
+                                    r1 * 11/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/32
-                                    R1 * 3/32
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/16
-                                    R1 * 9/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/2
-                                    R1 * 1/2
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/4
-                                    R1 * 3/4
-                                    \stopStaff \startStaff
+                                    r1 * 9/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 11/16
-                                    R1 * 11/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/16
-                                    R1 * 9/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/2
-                                    R1 * 1/2
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 7/16
-                                    R1 * 7/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/2
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 11/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 9/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 7/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/4
                                     r4
                                     \repeat tremolo 4 {
                                         \tweak Accidental.transparent ##t
@@ -2027,15 +1880,9 @@
                                 \context Voice = "contrabass 2 voice"
                                 {
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/4
-                                    R1 * 3/4
-                                    \stopStaff \startStaff
+                                    r1 * 3/2
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    r1 * 1/4
                                     \override TupletNumber.text = \markup \italic 13:11
                                     \times 44/52
                                     {
@@ -2153,10 +2000,7 @@
                                     }
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/32
-                                    R1 * 3/32
-                                    \stopStaff \startStaff
+                                    r1 * 3/16
                                     \override TupletNumber.text = \markup \italic 10:9
                                     \times 72/80
                                     {
@@ -2323,10 +2167,7 @@
                                     }
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \override TupletNumber.text = \markup \italic 5:4
                                     \times 16/20
                                     {
@@ -2387,30 +2228,15 @@
                                     }
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
+                                    r1 * 3/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/4
-                                    R1 * 3/4
-                                    \stopStaff \startStaff
+                                    r1 * 3/2
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 11/16
-                                    R1 * 11/16
-                                    \stopStaff \startStaff
+                                    r1 * 11/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/16
-                                    R1 * 9/16
-                                    \stopStaff \startStaff
+                                    r1 * 9/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/2
-                                    R1 * 1/2
-                                    \stopStaff \startStaff
+                                    r1 * 1
                                     \override TupletNumber.text = \markup \italic 6:7
                                     \times 7/6
                                     {
@@ -2442,10 +2268,7 @@
                                     }
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    r1 * 1/4
                                     r4
                                     \override TupletNumber.text = \markup \italic 7:4
                                     \times 4/7

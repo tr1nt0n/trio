@@ -108,10 +108,7 @@
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { pno. }
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/8
-                                    R1 * 9/8
-                                    \stopStaff \startStaff
+                                    r1 * 9/4
                                     \ottava -1
                                     \clef "bass"
                                     <g,, b,, ef,>4
@@ -197,52 +194,52 @@
                                     \times 8/9
                                     {
                                         \ottava 1
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         cs''''32
                                         \p
                                         \(
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         bf'''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         af''''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         e''''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         fs''''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         g''''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         b'''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         a'''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         c''''32
                                         \)
                                         \ottava 0
@@ -303,72 +300,72 @@
                                     \times 12/13
                                     {
                                         \ottava 1
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         ef'''32
                                         \f
                                         \(
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         e'''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         af'''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         d'''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         g'''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         cs'''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         c'''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         f'''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         fs'''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         b''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         fs'''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         f'''32
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         c'''32
                                         \)
                                         \ottava 0
@@ -397,10 +394,7 @@
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     \stopStaff \startStaff
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \ottava 1
                                     <a'' e''' fs''' a''' c''''>4.
                                     :32
@@ -413,10 +407,7 @@
                                     \)
                                     \ottava 0
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \ottava -1
                                     \clef "bass"
                                     <af,, bf,, cs,>2.
@@ -549,10 +540,7 @@
                                 \context Voice = "piano 2 voice"
                                 {
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/8
-                                    R1 * 9/8
-                                    \stopStaff \startStaff
+                                    r1 * 9/4
                                     \ottava -1
                                     \clef "bass"
                                     <a,,, f,,>4
@@ -643,10 +631,7 @@
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     \stopStaff \startStaff
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \clef "treble"
                                     <d' c''>4.
                                     :32
@@ -657,10 +642,7 @@
                                     \arpeggio
                                     \)
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \ottava -1
                                     \clef "bass"
                                     <c,, e,,>2.
@@ -752,75 +734,42 @@
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { vc. }
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/8
-                                    R1 * 9/8
+                                    r1 * 9/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/4
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
                                     \stopStaff \startStaff
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/8
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     \stopStaff \startStaff
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
+                                    r1 * 3/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 11/8
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     \stopStaff \startStaff
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
+                                    r1 * 3/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 11/16
-                                    R1 * 11/16
-                                    \stopStaff \startStaff
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
+                                    r1 * 11/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 11/16
-                                    R1 * 11/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/16
-                                    R1 * 9/16
-                                    \stopStaff \startStaff
+                                    r1 * 9/8
                                     r8
                                     \repeat tremolo 4 {
                                         \tweak Accidental.transparent ##t
@@ -844,20 +793,11 @@
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     \stopStaff \startStaff
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/16
-                                    R1 * 5/16
-                                    \stopStaff \startStaff
+                                    r1 * 5/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     r4
                                     \repeat tremolo 4 {
                                         \tweak Accidental.transparent ##t
@@ -870,50 +810,23 @@
                                     }
                                     r1 * 3/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/4
-                                    R1 * 3/4
-                                    \stopStaff \startStaff
+                                    r1 * 3/2
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 7/8
-                                    R1 * 7/8
-                                    \stopStaff \startStaff
+                                    r1 * 7/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/8
-                                    R1 * 9/8
-                                    \stopStaff \startStaff
+                                    r1 * 9/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/8
-                                    R1 * 9/8
-                                    \stopStaff \startStaff
+                                    r1 * 9/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 7/8
-                                    R1 * 7/8
-                                    \stopStaff \startStaff
+                                    r1 * 7/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/4
-                                    R1 * 3/4
-                                    \stopStaff \startStaff
+                                    r1 * 3/2
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/8
-                                    R1 * 5/8
-                                    \stopStaff \startStaff
+                                    r1 * 5/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/4
-                                    R1 * 1/4
-                                    \stopStaff \startStaff
+                                    r1 * 1/2
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/8
-                                    R1 * 5/8
-                                    \stopStaff \startStaff
+                                    r1 * 5/4
                                 }
                             }
                         }
@@ -1030,40 +943,25 @@
                                     }
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                    \once \override Rest.transparent = ##t
                                     r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/8
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     \stopStaff \startStaff
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
+                                    r1 * 3/8
                                     r4.
                                     r4
                                     r8
@@ -1107,11 +1005,11 @@
                                     {
                                         \set suggestAccidentals = ##t
                                         \ottava 1
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \clef "treble"
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
                                         a'''32
                                         - \accent
                                         - \tweak circled-tip ##t
@@ -1122,35 +1020,35 @@
                                         - \tweak bound-details.left.text \markup \concat { { I } \hspace #0.5 }
                                         - \tweak padding 12.5
                                         \startTextSpan
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         cs''''32
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         aqs'''32
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         b'''32
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         aqf'''32
                                         \)
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         dqf''''32
                                         - \accent
                                         \glissando
@@ -1195,37 +1093,37 @@
                                         }
                                     \times 4/5
                                     {
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         a'''32
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         cs''''32
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         aqs'''32
                                         \)
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         b'''32
                                         - \accent
                                         \glissando
                                         \(
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         aqf'''32
                                         \glissando
                                     }
@@ -1268,43 +1166,43 @@
                                         }
                                     \times 2/3
                                     {
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         dqf''''32
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         a'''32
                                         \)
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         cs''''32
                                         - \accent
                                         \glissando
                                         \(
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         aqs'''32
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         b'''32
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         aqf'''32
                                         \glissando
                                     }
@@ -1347,37 +1245,37 @@
                                         }
                                     \times 4/5
                                     {
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         dqf''''32
                                         \)
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         a'''32
                                         - \accent
                                         \glissando
                                         \(
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         cs''''32
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         aqs'''32
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         b'''32
                                         \glissando
                                     }
@@ -1420,43 +1318,43 @@
                                         }
                                     \times 2/3
                                     {
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         aqf'''32
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         dqf''''32
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         a'''32
                                         \)
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         cs''''32
                                         - \accent
                                         \glissando
                                         \(
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         aqs'''32
                                         \glissando
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         b'''32
                                         \p
                                         \)
@@ -1484,10 +1382,7 @@
                                     r4
                                     r1
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/16
-                                    R1 * 9/16
-                                    \stopStaff \startStaff
+                                    r1 * 9/8
                                     r8
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
@@ -1860,15 +1755,9 @@
                                     ^ \markup +26
                                     ^ \markup -6
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/16
-                                    R1 * 5/16
-                                    \stopStaff \startStaff
+                                    r1 * 5/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     r4
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
@@ -1978,10 +1867,7 @@
                                     \revert TupletNumber.text
                                     r2.
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/4
-                                    R1 * 3/4
-                                    \stopStaff \startStaff
+                                    r1 * 3/2
                                     r8
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
@@ -2298,150 +2184,75 @@
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { cb. }
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/8
-                                    R1 * 9/8
-                                    \stopStaff \startStaff
+                                    r1 * 9/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 11/16
-                                    R1 * 11/16
-                                    \stopStaff \startStaff
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 11/16
-                                    R1 * 11/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/16
-                                    R1 * 9/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 7/16
-                                    R1 * 7/16
-                                    \stopStaff \startStaff
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/16
-                                    R1 * 5/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/8
-                                    R1 * 5/8
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/4
-                                    R1 * 3/4
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 7/8
-                                    R1 * 7/8
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/8
-                                    R1 * 9/8
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 9/8
-                                    R1 * 9/8
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 7/8
-                                    R1 * 7/8
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/4
-                                    R1 * 3/4
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/8
-                                    R1 * 5/8
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
                                     \stopStaff \startStaff
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/8
-                                    R1 * 5/8
+                                    r1 * 1/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/8
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
                                     \stopStaff \startStaff
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 11/8
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 11/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 9/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 7/8
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 5/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 5/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/2
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 7/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 9/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 9/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 7/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/2
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 5/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/2
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 5/4
                                 }
                             }
                         }
@@ -2549,65 +2360,38 @@
                                     }
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                    \once \override Rest.transparent = ##t
                                     r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/8
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     \stopStaff \startStaff
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
+                                    r1 * 3/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 11/8
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     \stopStaff \startStaff
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
+                                    r1 * 3/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 11/16
-                                    R1 * 11/16
-                                    \stopStaff \startStaff
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/16
-                                    R1 * 3/16
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 11/16
-                                    R1 * 11/16
-                                    \stopStaff \startStaff
+                                    r1 * 11/8
                                     r8
                                     <b>4
                                     ^ \markup -2
@@ -2631,15 +2415,9 @@
                                     - \marcato
                                     ^ \markup -25
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/16
-                                    R1 * 5/16
-                                    \stopStaff \startStaff
+                                    r1 * 5/8
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     r2
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
@@ -2839,106 +2617,106 @@
                                         }
                                     \times 16/17
                                     {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \clef "bass"
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
                                         \tweak style #'harmonic-mixed
                                         bf64
                                         \f
                                         \(
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \tweak style #'harmonic-mixed
                                         e64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \tweak style #'harmonic-mixed
                                         bf64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \tweak style #'harmonic-mixed
                                         fs64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \tweak style #'harmonic-mixed
                                         c64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \tweak style #'harmonic-mixed
                                         af64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
                                         g64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
                                         b,64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
                                         g64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
                                         b,64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
                                         a64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
                                         b,64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
                                         a64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         bf,64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         a64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         bf,64
-                                        \tweak Beam.transparent ##t
-                                        \tweak Dots.transparent ##t
-                                        \tweak Flag.transparent ##t
-                                        \tweak Stem.transparent ##t
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
                                         a64
                                         \)
                                     }

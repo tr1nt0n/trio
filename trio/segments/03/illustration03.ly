@@ -280,20 +280,11 @@
                                     e'''8.
                                     ]
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/8
-                                    R1 * 3/8
-                                    \stopStaff \startStaff
+                                    r1 * 3/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/8
-                                    R1 * 3/8
-                                    \stopStaff \startStaff
+                                    r1 * 3/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4
@@ -320,20 +311,11 @@
                                     s1 * 1/2
                                     \ppp
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/8
-                                    R1 * 3/8
-                                    \stopStaff \startStaff
+                                    r1 * 3/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/8
-                                    R1 * 3/8
-                                    \stopStaff \startStaff
+                                    r1 * 3/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4
@@ -357,35 +339,17 @@
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { vc. }
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/8
-                                    R1 * 5/8
-                                    \stopStaff \startStaff
+                                    r1 * 5/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/8
-                                    R1 * 5/8
-                                    \stopStaff \startStaff
+                                    r1 * 5/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/8
-                                    R1 * 5/8
-                                    \stopStaff \startStaff
+                                    r1 * 5/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/8
-                                    R1 * 3/8
-                                    \stopStaff \startStaff
+                                    r1 * 3/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/8
-                                    R1 * 3/8
-                                    \stopStaff \startStaff
+                                    r1 * 3/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4
@@ -885,35 +849,17 @@
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { cb. }
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/8
-                                    R1 * 5/8
-                                    \stopStaff \startStaff
+                                    r1 * 5/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/8
-                                    R1 * 5/8
-                                    \stopStaff \startStaff
+                                    r1 * 5/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/8
-                                    R1 * 5/8
-                                    \stopStaff \startStaff
+                                    r1 * 5/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/8
-                                    R1 * 3/8
-                                    \stopStaff \startStaff
+                                    r1 * 3/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/8
-                                    R1 * 3/8
-                                    \stopStaff \startStaff
+                                    r1 * 3/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4
@@ -1129,25 +1075,13 @@
                                     r4
                                     \!
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 5/8
-                                    R1 * 5/8
-                                    \stopStaff \startStaff
+                                    r1 * 5/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/8
-                                    R1 * 3/8
-                                    \stopStaff \startStaff
+                                    r1 * 3/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 3/8
-                                    R1 * 3/8
-                                    \stopStaff \startStaff
+                                    r1 * 3/4
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/16
-                                    R1 * 1/16
-                                    \stopStaff \startStaff
+                                    r1 * 1/8
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     \once \override MultiMeasureRest.transparent = ##t
                                     R1 * 1/4

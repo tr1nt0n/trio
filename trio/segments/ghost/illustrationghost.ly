@@ -33,11 +33,8 @@
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { pno. }
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/4
-                                    R1 * 1/4
+                                    r1 * 1/2
                                     \bar "||"
-                                    \stopStaff \startStaff
                                     \times 2/3
                                     {
                                         \ottava 2
@@ -96,13 +93,10 @@
                                 \context Voice = "piano 2 voice"
                                 {
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    \clef "bass"
-                                    r1 * 1/4
-                                    R1 * 1/4
+                                    r1 * 1/2
                                     \bar "||"
-                                    \stopStaff \startStaff
                                     \ottava -2
+                                    \clef "bass"
                                     <a,,, bf,,, b,,, c,, cs,,>2
                                     \ppp
                                     \(
@@ -127,23 +121,19 @@
                             {
                                 \context Voice = "cello 1 voice"
                                 {
-                                    \staff-line-count 4
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { vc. }
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     \clef "percussion"
-                                    r1 * 1/4
-                                    R1 * 1/4
+                                    r1 * 1/2
                                     \bar "||"
-                                    \stopStaff \startStaff
-                                    - \baca-circle-fast-markup
                                     \tweak Accidental.transparent ##t
                                     d'2.
                                     :32
                                     \p
                                     \bar "||"
                                     \boxed-markup "Crine" 1
+                                    - \baca-circle-fast-markup
                                 }
                             }
                         }
@@ -210,22 +200,18 @@
                             {
                                 \context Voice = "contrabass 1 voice"
                                 {
-                                    \staff-line-count 4
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { cb. }
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     \clef "percussion"
-                                    r1 * 1/4
-                                    R1 * 1/4
+                                    r1 * 1/2
                                     \bar "||"
-                                    \stopStaff \startStaff
-                                    - \baca-circle-fast-markup
                                     \tweak Accidental.transparent ##t
                                     f'2.
                                     :32
                                     \p
                                     \bar "||"
+                                    - \baca-circle-fast-markup
                                 }
                             }
                         }
@@ -236,12 +222,9 @@
                                 \context Voice = "contrabass 2 voice"
                                 {
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     \clef "bass"
-                                    r1 * 1/4
-                                    R1 * 1/4
+                                    r1 * 1/2
                                     \bar "||"
-                                    \stopStaff \startStaff
                                     cs'2
                                     \(
                                     d'4

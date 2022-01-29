@@ -157,21 +157,12 @@
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { vc. }
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     \clef "percussion"
+                                    r1 * 1/2
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/3
+                                    \once \override Rest.transparent = ##t
                                     r1 * 1/4
-                                    R1 * 1/4
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/6
-                                    R1 * 1/6
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/8
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -294,11 +285,8 @@
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { cb. }
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     \clef "percussion"
-                                    r1 * 1/4
-                                    R1 * 1/4
-                                    \stopStaff \startStaff
+                                    r1 * 1/2
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 4/6
                                     {
@@ -322,11 +310,8 @@
                                         \>
                                     }
                                     \once \override Rest.transparent = ##t
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    r1 * 1/8
+                                    r1 * 1/4
                                     \!
-                                    R1 * 1/8
-                                    \stopStaff \startStaff
                                 }
                             }
                         }

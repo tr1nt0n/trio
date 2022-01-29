@@ -179,16 +179,6 @@ for leaf, attachments in zip(
         score=score, voice="Global Context", leaves=[leaf], attachments=attachments
     )
 
-for voice in [
-    "contrabass 1 voice",
-    "contrabass 2 voice",
-    "piano 1 voice",
-    "piano 2 voice",
-    "cello 1 voice",
-    "cello 2 voice",
-]:
-    trinton.whiteout_empty_staves(score=score, voice=voice, cutaway=True)
-
 for voice, leaves in zip(
     [
         "piano 1 voice",
@@ -199,26 +189,26 @@ for voice, leaves in zip(
         "contrabass 2 voice",
     ],
     [
-        [1, -1],
-        [1, -1],
-        [1, -1],
+        [0, -1],
+        [0, -1],
+        [0, -1],
         [11, -1],
-        [1, -1],
-        [1, -1],
+        [0, -1],
+        [0, -1],
     ],
 ):
     trinton.attach(voice=score[voice], leaves=leaves, attachment=abjad.BarLine("||"))
 
 # piano attachments
 
-trinton.attach(voice=score["piano 2 voice"], attachment=abjad.Clef("bass"), leaves=[0])
+trinton.attach(voice=score["piano 2 voice"], attachment=abjad.Clef("bass"), leaves=[1])
 
 trinton.ottava(
-    score=score, voice="piano 1 voice", start_ottava=[2], stop_ottava=[19], octave=2
+    score=score, voice="piano 1 voice", start_ottava=[1], stop_ottava=[18], octave=2
 )
 
 trinton.ottava(
-    score=score, voice="piano 2 voice", start_ottava=[2], stop_ottava=[3], octave=-2
+    score=score, voice="piano 2 voice", start_ottava=[1], stop_ottava=[2], octave=-2
 )
 
 for voice_name in [
@@ -237,7 +227,7 @@ for attachments, leaf in zip(
         [abjad.Dynamic("ppp"), abjad.StartHairpin("--")],
         [abjad.StopHairpin()],
     ],
-    [2, 19],
+    [1, 18],
 ):
     trinton.attach_multiple(
         score=score, voice="piano 1 voice", leaves=[leaf], attachments=attachments
@@ -249,8 +239,8 @@ for attachments, leaf in zip(
         [abjad.Dynamic("pp"), abjad.Articulation("tenuto")],
     ],
     [
+        1,
         2,
-        3,
     ],
 ):
     trinton.attach_multiple(
@@ -258,16 +248,6 @@ for attachments, leaf in zip(
     )
 
 # cello attachments
-
-for voice_name in ["cello 1 voice", "contrabass 1 voice"]:
-    trinton.attach(
-        voice=score[voice_name],
-        leaves=[0],
-        attachment=abjad.LilyPondLiteral(
-            r"\staff-line-count 4",
-            format_slot="absolute_before",
-        ),
-    )
 
 for leaf, dynamic in zip(
     [0, 3, 9], [abjad.Dynamic("f"), abjad.Dynamic("p"), abjad.Dynamic("mp")]
@@ -282,7 +262,7 @@ trinton.attach(
 
 trinton.attach(
     voice=score["cello 1 voice"],
-    leaves=[2],
+    leaves=[1],
     attachment=abjad.LilyPondLiteral(r'\boxed-markup "Crine" 1', format_slot="after"),
 )
 
@@ -297,13 +277,25 @@ for voice in ["cello 1 voice", "contrabass 1 voice"]:
         ),
     )
 
-    trinton.attach(voice=score[voice], leaves=[2], attachment=abjad.Dynamic("p"))
+    trinton.attach(voice=score[voice], leaves=[1], attachment=abjad.Dynamic("p"))
 
     trinton.transparent_accidentals(
         score=score,
         voice=voice,
         leaves=all,
     )
+
+# fill empty staves with skips
+
+for voice in [
+    score["piano 1 voice"],
+    score["piano 2 voice"],
+    score["cello 1 voice"],
+    score["cello 2 voice"],
+    score["contrabass 1 voice"],
+    score["contrabass 2 voice"],
+]:
+    trinton.fill_empty_staves_with_skips(voice=voice)
 
 # extract parts
 
