@@ -517,6 +517,10 @@ trinton.attach(
     attachment=abjad.Articulation(">"),
 )
 
+for tuplet in abjad.select(score["piano 2 voice"]).tuplets():
+    if abjad.get.annotation(tuplet, trio.harmonic_gliss) is True:
+        abjad.tweak(tuplet).direction = abjad.Down
+
 toccata_selector = trio.select_tuplets_by_annotation(trio.toccata)
 
 toccata_tuplets = toccata_selector(abjad.Selection(score["piano 1 voice"]).leaves())

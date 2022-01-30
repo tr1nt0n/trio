@@ -1144,6 +1144,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 6/5
                                     {
                                         \once \override Beam.transparent = ##t
@@ -1199,6 +1200,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 1/1
                                     {
                                         \once \override Beam.transparent = ##t
@@ -1256,6 +1258,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 6/7
                                     {
                                         \once \override Beam.transparent = ##t
@@ -1318,6 +1321,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 1/1
                                     {
                                         \once \override Beam.transparent = ##t
@@ -1382,6 +1386,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 12/13
                                     {
                                         \once \override Beam.transparent = ##t
@@ -1491,6 +1496,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 1/1
                                     {
                                         \once \override Beam.transparent = ##t
@@ -1616,6 +1622,7 @@
                                                 ragged-right = ##t
                                             }
                                         }
+                                    \tweak direction #down
                                     \times 12/13
                                     {
                                         \once \override Beam.transparent = ##t
