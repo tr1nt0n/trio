@@ -121,13 +121,13 @@
                                     \clef "percussion"
                                     r1 * 1/2
                                     \bar "||"
+                                    \boxed-markup "Crine" 1
+                                    - \baca-circle-fast-markup
                                     \tweak Accidental.transparent ##t
                                     d'2.
                                     :32
                                     \p
                                     \bar "||"
-                                    \boxed-markup "Crine" 1
-                                    - \baca-circle-fast-markup
                                 }
                             }
                         }
@@ -200,12 +200,12 @@
                                     \clef "percussion"
                                     r1 * 1/2
                                     \bar "||"
+                                    - \baca-circle-fast-markup
                                     \tweak Accidental.transparent ##t
                                     f'2.
                                     :32
                                     \p
                                     \bar "||"
-                                    - \baca-circle-fast-markup
                                 }
                             }
                         }

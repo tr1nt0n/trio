@@ -235,9 +235,11 @@ trinton.attach(
     voice=score["piano 2 voice"], leaves=[5], attachment=abjad.Dynamic("ppp")
 )
 
-trinton.attach(
-    voice=score["piano 1 voice"], leaves=[0], attachment=abjad.Dynamic("fff")
-)
+invisible_fff = abjad.Dynamic("fff")
+
+abjad.tweak(invisible_fff).transparent = True
+
+trinton.attach(voice=score["piano 1 voice"], leaves=[0], attachment=invisible_fff)
 
 
 for leaves, string in zip(

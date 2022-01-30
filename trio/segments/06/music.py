@@ -692,44 +692,17 @@ trinton.attach(
     attachment=abjad.Articulation(">"),
 )
 
-marcato = []
+toccata_selector = trio.select_tuplets_by_annotation(trio.toccata)
 
-for l in [
-    list(range(78, 81)),
-    list(range(83, 85)),
-    list(range(94, 97)),
-    list(range(102, 107)),
-]:
-    for n in l:
-        marcato.append(n)
+toccata_tuplets = toccata_selector(abjad.Selection(score["piano 1 voice"]).leaves())
 
-trinton.attach(
-    voice=score["piano 1 voice"],
-    leaves=marcato,
-    attachment=abjad.Articulation("marcato"),
-)
+for leaf in toccata_tuplets:
+    if leaf.written_pitch.number < 0:
+        abjad.attach(abjad.Articulation("marcato"), leaf)
 
 for tuplet in abjad.select(score["piano 2 voice"]).tuplets():
     if abjad.get.annotation(tuplet, trio.harmonic_gliss) is True:
         abjad.tweak(tuplet).direction = abjad.Down
-
-# for leaf in abjad.select(score["piano 2 voice"]).leaves():
-#     if isinstance(leaf, abjad.Skip):
-#         abjad.attach(
-#             abjad.LilyPondLiteral(
-#                 r"\staff-line-count 1",
-#                 format_slot="absolute_before",
-#             ),
-#             leaf,
-#         )
-#     else:
-#         abjad.attach(
-#             abjad.LilyPondLiteral(
-#                 r"\staff-line-count 5",
-#                 format_slot="absolute_before",
-#             ),
-#             leaf,
-#         )
 
 # cello pitching/attachments
 
@@ -1539,24 +1512,6 @@ trinton.attach(
 
 for voice_name in ["cello 1 voice", "contrabass 1 voice"]:
     trinton.transparent_accidentals(score=score, voice=voice_name, leaves=all)
-
-    # for leaf in abjad.Selection(score[voice_name]).leaves():
-    #     if isinstance(leaf, abjad.Rest):
-    #         abjad.attach(
-    #             abjad.LilyPondLiteral(
-    #                 r"\staff-line-count 1",
-    #                 format_slot="absolute_before",
-    #             ),
-    #             leaf,
-    #         )
-    #     else:
-    #         abjad.attach(
-    #             abjad.LilyPondLiteral(
-    #                 r"\staff-line-count 4",
-    #                 format_slot="absolute_before",
-    #             ),
-    #             leaf,
-    #         )
 
     transparent_fp = abjad.Dynamic("fp")
 

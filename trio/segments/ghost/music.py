@@ -263,7 +263,7 @@ trinton.attach(
 trinton.attach(
     voice=score["cello 1 voice"],
     leaves=[1],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Crine" 1', format_slot="after"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Crine" 1', format_slot="before"),
 )
 
 for voice in ["cello 1 voice", "contrabass 1 voice"]:
@@ -273,7 +273,7 @@ for voice in ["cello 1 voice", "contrabass 1 voice"]:
         voice=score[voice],
         leaves=[1],
         attachment=abjad.LilyPondLiteral(
-            r"- \baca-circle-fast-markup", format_slot="after"
+            r"- \baca-circle-fast-markup", format_slot="before"
         ),
     )
 

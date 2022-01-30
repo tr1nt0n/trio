@@ -41,6 +41,7 @@
                                     \clef "treble"
                                     \override Staff.Stem.stemlet-length = 0.75
                                     b'''32
+                                    - \tweak transparent ##t
                                     \fff
                                     - \accent
                                     [
