@@ -562,7 +562,7 @@ trio.pitch_toccata_by_measure(
 handler = evans.PitchHandler(
     pitch_list=[
         trio._open_strings_to_pitches["II"],
-        trio._open_strings_to_pitches["II"],
+        trio._open_strings_to_pitches["III"],
     ],
     forget=False,
 )

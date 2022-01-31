@@ -1726,7 +1726,7 @@
                                         - \accent
                                         \(
                                         \tweak Accidental.transparent ##t
-                                        d'32..
+                                        bf32..
                                         \)
                                     }
                                     \repeat tremolo 4 {
@@ -1735,7 +1735,7 @@
                                         - \accent
                                         \(
                                         \tweak Accidental.transparent ##t
-                                        d'32..
+                                        bf32..
                                         \)
                                     }
                                     \repeat tremolo 4 {
@@ -1744,7 +1744,7 @@
                                         - \accent
                                         \(
                                         \tweak Accidental.transparent ##t
-                                        d'32..
+                                        bf32..
                                         \)
                                     }
                                     \repeat tremolo 4 {
@@ -1753,7 +1753,7 @@
                                         - \accent
                                         \(
                                         \tweak Accidental.transparent ##t
-                                        d'32..
+                                        bf32..
                                         \)
                                     }
                                     r4
