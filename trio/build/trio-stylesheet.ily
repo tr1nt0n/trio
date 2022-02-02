@@ -1,7 +1,7 @@
 \version "2.20.0"
 \language english
-#(set-paper-size "arch a")
-#(set-global-staff-size 9)
+#(set-default-paper-size "11x17landscape")
+#(set-global-staff-size 9.5)
 
 \include "/Users/trintonprater/scores/trio/trio/library.ily"
 \include "/Users/trintonprater/evans/lilypond/evans-markups.ily"
@@ -35,7 +35,7 @@
 		\override BarNumber.font-name = "Bodoni72"
 		\override TimeSignature.X-extent = #'(0 . -25)
         \override TimeSignature.Y-extent = #'(25 . 0)
-        \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 12) (minimum-distance . 12) (padding . 6) (stretchability . 0))
+        \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 12) (minimum-distance . 12) (padding . 10) (stretchability . 0))
         \override TimeSignature.break-visibility = #end-of-line-invisible
         \override TimeSignature.font-size = 7
 		\override TimeSignature.font-name = "Bodoni72"
@@ -49,8 +49,8 @@
         \remove Bar_number_engraver
         \accepts TimeSignatureContext
         proportionalNotationDuration = #(ly:make-moment 1 30)
-        \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 15) (minimum-distance . 15) (padding . 5))
-        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 15) (minimum distance . 15) (padding . 5))
+        % \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 15) (minimum-distance . 15) (padding . 5))
+        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 15) (minimum distance . 15) (padding . 6))
 
         autoBeaming = ##f
         \override Beam.breakable = ##t
@@ -96,7 +96,7 @@
         \override BarLine.transparent = ##t
         \override BarLine.X-extent = #'(0 . 0)
         \override BarLine.thick-thickness = #8
-        
+
         % \override Staff.SystemStartBrace.transparent = ##f
         % \override Staff.SystemStartBracket.transparent = ##f
         % \override Staff.SystemStartBar.transparent = ##f

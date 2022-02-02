@@ -21,6 +21,7 @@
             s1 * 1/8
             \once \override Rest.transparent = ##t
             r1 * 1/8
+            \bar "||"
         }
         \tag #'group1
         {

@@ -207,10 +207,6 @@ trinton.attach(
     voice=score["Global Context"], leaves=[0], attachment=trio.rehearsal_mark3
 )
 
-trinton.attach(
-    voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
-)
-
 # piano pitching/attachments
 
 for voice in ["piano 1 voice", "piano 2 voice", "cello 2 voice"]:
@@ -702,6 +698,10 @@ trinton.populate_fermata_measures(
         ],
     ],
     fermata_measures=None,
+)
+
+trinton.attach(
+    voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
 )
 
 # fill empty staves with skips
