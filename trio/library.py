@@ -1588,9 +1588,8 @@ rehearsal_mark9 = abjad.LilyPondLiteral(
     r'\boxed-markup "Skyward, {diagonal moves} (iii)" 1.5', format_slot="after"
 )
 
-rehearsal_mark10 = abjad.LilyPondLiteral(
-    r'\boxed-markup ". . . thick-veined hand (ii)" 1.5',
-    format_slot="after",
+rehearsal_mark10 = abjad.Markup(
+    r"\markup \box \italic \fontsize #1.5 { \center-column { ... thick-veined hand (ii) } }",
 )
 
 rehearsal_mark11 = abjad.LilyPondLiteral(
