@@ -60,9 +60,9 @@
         \override DynamicText.font-size = #-2
         \override DynamicLineSpanner.staff-padding = 4
 
-        \override MetronomeMark.padding = 6
+        \override MetronomeMark.padding = 2.5
         \override MetronomeMark.font-size = 4
-        \override MetronomeMark.extra-offset = #'(1.5 . 0)
+        \override MetronomeMark.extra-offset = #'(4.5 . 0)
 
         \override Clef.whiteout-style = #'outline
         \override Clef.whiteout = 1

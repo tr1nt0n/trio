@@ -1152,8 +1152,6 @@
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         g,8
-                                        \mp
-                                        \<
                                         [
                                         \(
                                         \once \override Beam.transparent = ##t
@@ -1714,6 +1712,8 @@
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { vc. }
                                     r1
+                                    \mp
+                                    \<
                                     \repeat tremolo 4 {
                                         \tweak Accidental.transparent ##t
                                         d'32..
@@ -1808,8 +1808,6 @@
                                         \once \override Stem.transparent = ##t
                                         \clef "treble"
                                         d'''16
-                                        \mp
-                                        \<
                                         \glissando
                                         - \abjad-dashed-line-with-hook
                                         - \tweak bound-details.left.text \markup \concat { { II } \hspace #0.5 }
@@ -2665,6 +2663,8 @@
                                     \markup { cb. }
                                     \once \override Rest.transparent = ##t
                                     r1 * 3/2
+                                    \mp
+                                    \<
                                     r2
                                     \repeat tremolo 4 {
                                         \tweak Accidental.transparent ##t
@@ -2739,9 +2739,7 @@
                                 {
                                     \clef "treble"
                                     <d''>2.
-                                    \mp
                                     ^ \markup -5
-                                    \<
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
                                             \context Score = "Score"
