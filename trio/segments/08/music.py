@@ -88,7 +88,7 @@ for voice_name in trio.all_voices:
 
 trinton.beam_score(score)
 
-trinton.annotate_leaves(score)
+# trinton.annotate_leaves(score)
 
 # margin markups and standard cleffing
 
@@ -246,28 +246,69 @@ trinton.ottava(
 
 # cello pitching/attachments
 
+for voice_name in ["cello 1 voice", "contrabass 1 voice"]:
+    handler = evans.PitchHandler(
+        pitch_list=[
+            [
+                trio._open_strings_to_pitches["III"],
+                trio._open_strings_to_pitches["IV"],
+            ]
+        ],
+        forget=False,
+    )
+
+    handler(abjad.Selection(score[voice_name]).leaves())
+
+    abjad.attach(
+        abjad.LilyPondLiteral(r"\override Accidental.transparent = ##t"),
+        abjad.Selection(score[voice_name]).leaf(0)
+    )
+
+    abjad.attach(
+        abjad.LilyPondLiteral(
+            r'\boxed-markup "Arco" 1', format_slot="after"
+        ),
+        abjad.Selection(score[voice_name]).leaf(0)
+    )
+
+handler = evans.PitchHandler(
+    pitch_list=[-24],
+    forget=False,
+)
+
+handler(abjad.Selection(score["cello 2 voice"]).leaves())
+
+trinton.attach(
+    voice=score["cello 2 voice"],
+    leaves=[0],
+    attachment=abjad.Clef("bass")
+)
+
 for voice_name in ["cello 2 voice", "contrabass 2 voice"]:
+    abjad.attach(
+        abjad.LilyPondLiteral(
+            r'\boxed-markup "Pizz." 1', format_slot="after"
+        ),
+        abjad.Selection(score[voice_name]).leaf(0)
+    )
+
     for leaf in abjad.select(score[voice_name]).leaves():
         abjad.attach(abjad.Articulation("snappizzicato"), leaf)
 
 # contrabass pitching/attachments
 
+handler = evans.PitchHandler(
+    pitch_list=[-20],
+    forget=False,
+)
+
+handler(abjad.Selection(score["contrabass 2 voice"]).leaves())
 
 # fill empty staves with skips
 
-# for voice in [
-#     score["piano 1 voice"],
-#     score["piano 2 voice"],
-#     score["cello 1 voice"],
-#     score["cello 2 voice"],
-#     score["contrabass 1 voice"],
-#     score["contrabass 2 voice"],
-# ]:
-#     trinton.fill_empty_staves_with_skips(voice=voice)
-
 # extract parts
 
-# trinton.extract_parts(score=score)
+trinton.extract_parts(score=score)
 
 # render file
 
