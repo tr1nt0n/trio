@@ -17,6 +17,7 @@
             s1 * 1/4
             \time 11/8
             s1 * 11/8
+            \pageBreak
             \time 3/16
             s1 * 3/16
             \time 9/8
@@ -46,6 +47,7 @@
             \stopTextSpan
             \time 7/8
             s1 * 7/8
+            \pageBreak
             \time 2/8
             s1 * 1/4
             \tempo 4=130

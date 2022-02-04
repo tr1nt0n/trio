@@ -395,6 +395,12 @@ trinton.attach(
     ),
 )
 
+trinton.attach(
+    voice=score["Global Context"],
+    leaves=[2, 12],
+    attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after")
+)
+
 for voice in trio.all_voices:
     trinton.reduce_tuplets(score=score, voice=voice, tuplets="all")
 
