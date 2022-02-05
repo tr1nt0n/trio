@@ -530,9 +530,9 @@ for voice in ["cello 2 voice", "contrabass 2 voice"]:
 trinton.rewrite_meter_by_voice(
     score=score,
     voice_indeces=[
-        0,
         1,
         3,
+        4,
         5,
     ],
 )
@@ -573,6 +573,12 @@ trinton.attach(
 )
 
 trinton.reduce_tuplets(score=score, voice="piano 1 voice", tuplets=[2])
+
+trinton.attach(
+    voice=score["Global Context"],
+    leaves=[6],
+    attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after")
+)
 
 # piano pitching/attachments
 

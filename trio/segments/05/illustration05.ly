@@ -16,6 +16,7 @@
             s1 * 9/8
             \time 1/4
             s1 * 1/4
+            \pageBreak
             \time 6/4
             s1 * 3/2
             \time 11/8
@@ -39,68 +40,6 @@
                     \context PianoStaff = "sub group 1"
                     <<
                         \tag #'voice1
-                        {
-                            \context Staff = "piano 1 staff"
-                            {
-                                \context Voice = "piano 1 voice"
-                                {
-                                    \set PianoStaff.shortInstrumentName =
-                                    \markup { pno. }
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 5/4
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 9/8
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/4
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/2
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 11/8
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/2
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 7/8
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 13/8
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/8
-                                }
-                            }
-                        }
-                        \tag #'voice2
-                        {
-                            \context Staff = "piano 2 staff"
-                            {
-                                \context Voice = "piano 2 voice"
-                                {
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 5/4
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 9/8
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/4
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/2
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 11/8
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/2
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 7/8
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 13/8
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/8
-                                }
-                            }
-                        }
-                    >>
-                }
-                \tag #'group3
-                {
-                    \context PianoStaff = "sub group 2"
-                    <<
-                        \tag #'voice3
                         {
                             \context Staff = "cello 1 staff"
                             {
@@ -524,7 +463,7 @@
                                 }
                             }
                         }
-                        \tag #'voice4
+                        \tag #'voice2
                         {
                             \context Staff = "cello 2 staff"
                             {
@@ -1494,11 +1433,11 @@
                         }
                     >>
                 }
-                \tag #'group4
+                \tag #'group3
                 {
-                    \context PianoStaff = "sub group 3"
+                    \context PianoStaff = "sub group 2"
                     <<
-                        \tag #'voice5
+                        \tag #'voice3
                         {
                             \context Staff = "contrabass 1 staff"
                             {
@@ -1916,7 +1855,7 @@
                                 }
                             }
                         }
-                        \tag #'voice6
+                        \tag #'voice4
                         {
                             \context Staff = "contrabass 2 staff"
                             {
@@ -2973,6 +2912,68 @@
                                         ]
                                         \set suggestAccidentals = ##f
                                     }
+                                }
+                            }
+                        }
+                    >>
+                }
+                \tag #'group4
+                {
+                    \context PianoStaff = "sub group 3"
+                    <<
+                        \tag #'voice5
+                        {
+                            \context Staff = "piano 1 staff"
+                            {
+                                \context Voice = "piano 1 voice"
+                                {
+                                    \set PianoStaff.shortInstrumentName =
+                                    \markup { pno. }
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 5/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 9/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/2
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 11/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/2
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 7/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 13/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/8
+                                }
+                            }
+                        }
+                        \tag #'voice6
+                        {
+                            \context Staff = "piano 2 staff"
+                            {
+                                \context Voice = "piano 2 voice"
+                                {
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 5/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 9/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/2
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 11/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/2
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 7/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 13/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/8
                                 }
                             }
                         }

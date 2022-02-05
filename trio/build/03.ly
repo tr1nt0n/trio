@@ -9,6 +9,7 @@
             s1 * 5/4
             \time 5/4
             s1 * 5/4
+            \pageBreak
             \time 3/4
             s1 * 3/4
             \time 3/4
@@ -32,301 +33,6 @@
                     \context PianoStaff = "sub group 1"
                     <<
                         \tag #'voice1
-                        {
-                            \context Staff = "piano 1 staff"
-                            {
-                                \context Voice = "piano 1 voice"
-                                {
-                                    \set PianoStaff.shortInstrumentName =
-                                    \markup { pno. }
-                                    \clef "treble"
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    b'''32
-                                    - \tweak transparent ##t
-                                    \fff
-                                    - \accent
-                                    [
-                                    \change Staff = "piano 2 staff"
-                                    b'''32
-                                    \change Staff = "piano 1 staff"
-                                    b'''32
-                                    \change Staff = "piano 2 staff"
-                                    \revert Staff.Stem.stemlet-length
-                                    b'''32
-                                    - \accent
-                                    ]
-                                    \tweak direction #up
-                                    \times 4/5
-                                    {
-                                        \change Staff = "piano 1 staff"
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b'''32
-                                        [
-                                        \change Staff = "piano 2 staff"
-                                        b'''32
-                                        \change Staff = "piano 1 staff"
-                                        b'''32
-                                        \change Staff = "piano 2 staff"
-                                        b'''32
-                                        \change Staff = "piano 1 staff"
-                                        \revert Staff.Stem.stemlet-length
-                                        b'''32
-                                        - \accent
-                                        ]
-                                    }
-                                    \change Staff = "piano 2 staff"
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    b'''32
-                                    [
-                                    \change Staff = "piano 1 staff"
-                                    b'''32
-                                    \change Staff = "piano 2 staff"
-                                    b'''32
-                                    \change Staff = "piano 1 staff"
-                                    \revert Staff.Stem.stemlet-length
-                                    b'''32
-                                    ]
-                                    \times 4/5
-                                    {
-                                        \change Staff = "piano 2 staff"
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b'''32
-                                        [
-                                        \change Staff = "piano 1 staff"
-                                        b'''32
-                                        - \accent
-                                        \change Staff = "piano 2 staff"
-                                        b'''32
-                                        \change Staff = "piano 1 staff"
-                                        b'''32
-                                        \change Staff = "piano 2 staff"
-                                        \revert Staff.Stem.stemlet-length
-                                        b'''32
-                                        ]
-                                    }
-                                    \tweak direction #up
-                                    \times 2/3
-                                    {
-                                        \change Staff = "piano 1 staff"
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b'''16
-                                        - \accent
-                                        [
-                                        \change Staff = "piano 2 staff"
-                                        b'''16
-                                        \change Staff = "piano 1 staff"
-                                        b'''16
-                                        \change Staff = "piano 2 staff"
-                                        b'''16
-                                        \change Staff = "piano 1 staff"
-                                        b'''16
-                                        - \accent
-                                        \change Staff = "piano 2 staff"
-                                        \revert Staff.Stem.stemlet-length
-                                        b'''16
-                                        ]
-                                    }
-                                    \tweak direction #up
-                                    \times 4/5
-                                    {
-                                        \change Staff = "piano 1 staff"
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b'''32
-                                        [
-                                        \change Staff = "piano 2 staff"
-                                        b'''32
-                                        \change Staff = "piano 1 staff"
-                                        b'''32
-                                        \change Staff = "piano 2 staff"
-                                        b'''32
-                                        \change Staff = "piano 1 staff"
-                                        \revert Staff.Stem.stemlet-length
-                                        b'''32
-                                        ]
-                                    }
-                                    \change Staff = "piano 2 staff"
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    b'''16
-                                    [
-                                    \change Staff = "piano 1 staff"
-                                    \revert Staff.Stem.stemlet-length
-                                    b'''16
-                                    - \accent
-                                    ]
-                                    \change Staff = "piano 2 staff"
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    b'''16
-                                    [
-                                    \change Staff = "piano 2 staff"
-                                    \change Staff = "piano 1 staff"
-                                    b'''16
-                                    \change Staff = "piano 2 staff"
-                                    b'''16
-                                    \change Staff = "piano 1 staff"
-                                    \revert Staff.Stem.stemlet-length
-                                    b'''16
-                                    - \accent
-                                    ]
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 6/5
-                                    {
-                                        \change Staff = "piano 2 staff"
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b'''16
-                                        [
-                                        \change Staff = "piano 1 staff"
-                                        b'''16
-                                        \change Staff = "piano 2 staff"
-                                        b'''16
-                                        \change Staff = "piano 1 staff"
-                                        b'''16
-                                        - \accent
-                                        \change Staff = "piano 2 staff"
-                                        \revert Staff.Stem.stemlet-length
-                                        b'''16
-                                        ]
-                                    }
-                                    \change Staff = "piano 1 staff"
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    a''32
-                                    [
-                                    \change Staff = "piano 2 staff"
-                                    a''32
-                                    \change Staff = "piano 1 staff"
-                                    a''32
-                                    \change Staff = "piano 2 staff"
-                                    \revert Staff.Stem.stemlet-length
-                                    a''32
-                                    ]
-                                    \tweak direction #up
-                                    \times 2/3
-                                    {
-                                        \change Staff = "piano 1 staff"
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        a''8
-                                        [
-                                        \change Staff = "piano 2 staff"
-                                        a''8
-                                        - \accent
-                                        \change Staff = "piano 2 staff"
-                                        \change Staff = "piano 1 staff"
-                                        \revert Staff.Stem.stemlet-length
-                                        a''8
-                                        - \accent
-                                        ]
-                                    }
-                                    \change Staff = "piano 2 staff"
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    a''16
-                                    [
-                                    \change Staff = "piano 1 staff"
-                                    a''16
-                                    \change Staff = "piano 2 staff"
-                                    a''16
-                                    \change Staff = "piano 1 staff"
-                                    \revert Staff.Stem.stemlet-length
-                                    a''16
-                                    - \accent
-                                    ]
-                                    \times 2/3
-                                    {
-                                        \change Staff = "piano 2 staff"
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        a''8
-                                        [
-                                        \change Staff = "piano 1 staff"
-                                        a''8
-                                        \change Staff = "piano 2 staff"
-                                        \revert Staff.Stem.stemlet-length
-                                        a''8
-                                        - \accent
-                                        ]
-                                    }
-                                    \override TupletNumber.text = \markup \italic { 4:5 }
-                                    \times 15/12
-                                    {
-                                        \change Staff = "piano 1 staff"
-                                        a''4
-                                        a''4
-                                        - \accent
-                                    }
-                                    \revert TupletNumber.text
-                                    \tweak direction #up
-                                    \times 2/3
-                                    {
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        e'''8
-                                        [
-                                        \change Staff = "piano 2 staff"
-                                        e'''8
-                                        \change Staff = "piano 1 staff"
-                                        \revert Staff.Stem.stemlet-length
-                                        e'''8
-                                        ]
-                                    }
-                                    \change Staff = "piano 2 staff"
-                                    e'''8
-                                    - \accent
-                                    ~
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    e'''16
-                                    [
-                                    \change Staff = "piano 1 staff"
-                                    \revert Staff.Stem.stemlet-length
-                                    e'''8.
-                                    ]
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/4
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/4
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/8
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                }
-                            }
-                        }
-                        \tag #'voice2
-                        {
-                            \context Staff = "piano 2 staff"
-                            {
-                                \context Voice = "piano 2 voice"
-                                {
-                                    \clef "treble"
-                                    s1 * 3/4
-                                    \fff
-                                    - \tweak circled-tip ##t
-                                    \>
-                                    s1 * 1/2
-                                    s1 * 3/4
-                                    s1 * 1/2
-                                    s1 * 3/4
-                                    s1 * 1/2
-                                    \ppp
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/4
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/4
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/8
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                }
-                            }
-                        }
-                    >>
-                }
-                \tag #'group3
-                {
-                    \context PianoStaff = "sub group 2"
-                    <<
-                        \tag #'voice3
                         {
                             \context Staff = "cello 1 staff"
                             {
@@ -354,7 +60,7 @@
                                 }
                             }
                         }
-                        \tag #'voice4
+                        \tag #'voice2
                         {
                             \context Staff = "cello 2 staff"
                             {
@@ -832,11 +538,11 @@
                         }
                     >>
                 }
-                \tag #'group4
+                \tag #'group3
                 {
-                    \context PianoStaff = "sub group 3"
+                    \context PianoStaff = "sub group 2"
                     <<
-                        \tag #'voice5
+                        \tag #'voice3
                         {
                             \context Staff = "contrabass 1 staff"
                             {
@@ -864,7 +570,7 @@
                                 }
                             }
                         }
-                        \tag #'voice6
+                        \tag #'voice4
                         {
                             \context Staff = "contrabass 2 staff"
                             {
@@ -1072,6 +778,301 @@
                                     \!
                                     \once \override Rest.transparent = ##t
                                     r1 * 5/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/8
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                }
+                            }
+                        }
+                    >>
+                }
+                \tag #'group4
+                {
+                    \context PianoStaff = "sub group 3"
+                    <<
+                        \tag #'voice5
+                        {
+                            \context Staff = "piano 1 staff"
+                            {
+                                \context Voice = "piano 1 voice"
+                                {
+                                    \set PianoStaff.shortInstrumentName =
+                                    \markup { pno. }
+                                    \clef "treble"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    b'''32
+                                    - \tweak transparent ##t
+                                    \fff
+                                    - \accent
+                                    [
+                                    \change Staff = "piano 2 staff"
+                                    b'''32
+                                    \change Staff = "piano 1 staff"
+                                    b'''32
+                                    \change Staff = "piano 2 staff"
+                                    \revert Staff.Stem.stemlet-length
+                                    b'''32
+                                    - \accent
+                                    ]
+                                    \tweak direction #up
+                                    \times 4/5
+                                    {
+                                        \change Staff = "piano 1 staff"
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        b'''32
+                                        [
+                                        \change Staff = "piano 2 staff"
+                                        b'''32
+                                        \change Staff = "piano 1 staff"
+                                        b'''32
+                                        \change Staff = "piano 2 staff"
+                                        b'''32
+                                        \change Staff = "piano 1 staff"
+                                        \revert Staff.Stem.stemlet-length
+                                        b'''32
+                                        - \accent
+                                        ]
+                                    }
+                                    \change Staff = "piano 2 staff"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    b'''32
+                                    [
+                                    \change Staff = "piano 1 staff"
+                                    b'''32
+                                    \change Staff = "piano 2 staff"
+                                    b'''32
+                                    \change Staff = "piano 1 staff"
+                                    \revert Staff.Stem.stemlet-length
+                                    b'''32
+                                    ]
+                                    \times 4/5
+                                    {
+                                        \change Staff = "piano 2 staff"
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        b'''32
+                                        [
+                                        \change Staff = "piano 1 staff"
+                                        b'''32
+                                        - \accent
+                                        \change Staff = "piano 2 staff"
+                                        b'''32
+                                        \change Staff = "piano 1 staff"
+                                        b'''32
+                                        \change Staff = "piano 2 staff"
+                                        \revert Staff.Stem.stemlet-length
+                                        b'''32
+                                        ]
+                                    }
+                                    \tweak direction #up
+                                    \times 2/3
+                                    {
+                                        \change Staff = "piano 1 staff"
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        b'''16
+                                        - \accent
+                                        [
+                                        \change Staff = "piano 2 staff"
+                                        b'''16
+                                        \change Staff = "piano 1 staff"
+                                        b'''16
+                                        \change Staff = "piano 2 staff"
+                                        b'''16
+                                        \change Staff = "piano 1 staff"
+                                        b'''16
+                                        - \accent
+                                        \change Staff = "piano 2 staff"
+                                        \revert Staff.Stem.stemlet-length
+                                        b'''16
+                                        ]
+                                    }
+                                    \tweak direction #up
+                                    \times 4/5
+                                    {
+                                        \change Staff = "piano 1 staff"
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        b'''32
+                                        [
+                                        \change Staff = "piano 2 staff"
+                                        b'''32
+                                        \change Staff = "piano 1 staff"
+                                        b'''32
+                                        \change Staff = "piano 2 staff"
+                                        b'''32
+                                        \change Staff = "piano 1 staff"
+                                        \revert Staff.Stem.stemlet-length
+                                        b'''32
+                                        ]
+                                    }
+                                    \change Staff = "piano 2 staff"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    b'''16
+                                    [
+                                    \change Staff = "piano 1 staff"
+                                    \revert Staff.Stem.stemlet-length
+                                    b'''16
+                                    - \accent
+                                    ]
+                                    \change Staff = "piano 2 staff"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    b'''16
+                                    [
+                                    \change Staff = "piano 2 staff"
+                                    \change Staff = "piano 1 staff"
+                                    b'''16
+                                    \change Staff = "piano 2 staff"
+                                    b'''16
+                                    \change Staff = "piano 1 staff"
+                                    \revert Staff.Stem.stemlet-length
+                                    b'''16
+                                    - \accent
+                                    ]
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 6/5
+                                    {
+                                        \change Staff = "piano 2 staff"
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        b'''16
+                                        [
+                                        \change Staff = "piano 1 staff"
+                                        b'''16
+                                        \change Staff = "piano 2 staff"
+                                        b'''16
+                                        \change Staff = "piano 1 staff"
+                                        b'''16
+                                        - \accent
+                                        \change Staff = "piano 2 staff"
+                                        \revert Staff.Stem.stemlet-length
+                                        b'''16
+                                        ]
+                                    }
+                                    \change Staff = "piano 1 staff"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a''32
+                                    [
+                                    \change Staff = "piano 2 staff"
+                                    a''32
+                                    \change Staff = "piano 1 staff"
+                                    a''32
+                                    \change Staff = "piano 2 staff"
+                                    \revert Staff.Stem.stemlet-length
+                                    a''32
+                                    ]
+                                    \tweak direction #up
+                                    \times 2/3
+                                    {
+                                        \change Staff = "piano 1 staff"
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a''8
+                                        [
+                                        \change Staff = "piano 2 staff"
+                                        a''8
+                                        - \accent
+                                        \change Staff = "piano 2 staff"
+                                        \change Staff = "piano 1 staff"
+                                        \revert Staff.Stem.stemlet-length
+                                        a''8
+                                        - \accent
+                                        ]
+                                    }
+                                    \change Staff = "piano 2 staff"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a''16
+                                    [
+                                    \change Staff = "piano 1 staff"
+                                    a''16
+                                    \change Staff = "piano 2 staff"
+                                    a''16
+                                    \change Staff = "piano 1 staff"
+                                    \revert Staff.Stem.stemlet-length
+                                    a''16
+                                    - \accent
+                                    ]
+                                    \times 2/3
+                                    {
+                                        \change Staff = "piano 2 staff"
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a''8
+                                        [
+                                        \change Staff = "piano 1 staff"
+                                        a''8
+                                        \change Staff = "piano 2 staff"
+                                        \revert Staff.Stem.stemlet-length
+                                        a''8
+                                        - \accent
+                                        ]
+                                    }
+                                    \override TupletNumber.text = \markup \italic { 4:5 }
+                                    \times 15/12
+                                    {
+                                        \change Staff = "piano 1 staff"
+                                        a''4
+                                        a''4
+                                        - \accent
+                                    }
+                                    \revert TupletNumber.text
+                                    \tweak direction #up
+                                    \times 2/3
+                                    {
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        e'''8
+                                        [
+                                        \change Staff = "piano 2 staff"
+                                        e'''8
+                                        \change Staff = "piano 1 staff"
+                                        \revert Staff.Stem.stemlet-length
+                                        e'''8
+                                        ]
+                                    }
+                                    \change Staff = "piano 2 staff"
+                                    e'''8
+                                    - \accent
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    e'''16
+                                    [
+                                    \change Staff = "piano 1 staff"
+                                    \revert Staff.Stem.stemlet-length
+                                    e'''8.
+                                    ]
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/8
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                }
+                            }
+                        }
+                        \tag #'voice6
+                        {
+                            \context Staff = "piano 2 staff"
+                            {
+                                \context Voice = "piano 2 voice"
+                                {
+                                    \clef "treble"
+                                    s1 * 3/4
+                                    \fff
+                                    - \tweak circled-tip ##t
+                                    \>
+                                    s1 * 1/2
+                                    s1 * 3/4
+                                    s1 * 1/2
+                                    s1 * 3/4
+                                    s1 * 1/2
+                                    \ppp
                                     \once \override Rest.transparent = ##t
                                     r1 * 3/4
                                     \once \override Rest.transparent = ##t

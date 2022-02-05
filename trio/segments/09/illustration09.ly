@@ -87,6 +87,928 @@
         <<
             \context PianoStaff = "sub group 1"
             <<
+                \context Staff = "cello 1 staff"
+                {
+                    \context Voice = "cello 1 voice"
+                    {
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                \set PianoStaff.shortInstrumentName =
+                                \markup { vc. }
+                                c'8
+                                ^ \markup 0
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        s4.
+                        ^ \markup 1
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                c'4
+                                ^ \markup 2
+                                \<
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        c'4
+                        ^ \markup 3
+                        c'8
+                        ^ \markup 4
+                        c'4
+                        \ffff
+                        ^ \markup 5
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                c'8
+                                ^ \markup 6
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        s4.
+                        ^ \markup 7
+                        s1 * 1/6
+                        ^ \markup 8
+                        \<
+                        c'8
+                        ^ \markup 9
+                        c'4
+                        ^ \markup 10
+                        \repeat tremolo 4 {
+                            c'32
+                            \fffff
+                            ^ \markup 11
+                            c'32
+                            ^ \markup 12
+                        }
+                        \repeat tremolo 4 {
+                            c'32
+                            \fffff
+                            ^ \markup 13
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            c'32
+                            ^ \markup 14
+                        }
+                        \repeat tremolo 4 {
+                            c'32
+                            \fffff
+                            ^ \markup 15
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            c'32
+                            ^ \markup 16
+                        }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 4/6
+                        {
+                            \repeat tremolo 4 {
+                                c'32
+                                \fffff
+                                ^ \markup 17
+                                - \tweak circled-tip ##t
+                                - \tweak stencil #abjad-flared-hairpin
+                                \>
+                                c'32
+                                ^ \markup 18
+                            }
+                        }
+                        \repeat tremolo 4 {
+                            c'32
+                            \fffff
+                            ^ \markup 19
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            c'32
+                            ^ \markup 20
+                        }
+                        \repeat tremolo 4 {
+                            c'32
+                            \fffff
+                            ^ \markup 21
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            c'32
+                            ^ \markup 22
+                        }
+                        \repeat tremolo 4 {
+                            c'32
+                            \fffff
+                            ^ \markup 23
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            c'32
+                            ^ \markup 24
+                        }
+                        \repeat tremolo 4 {
+                            c'32
+                            \fffff
+                            ^ \markup 25
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            c'32
+                            ^ \markup 26
+                        }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 4/6
+                        {
+                            \repeat tremolo 4 {
+                                c'32
+                                \fffff
+                                ^ \markup 27
+                                - \tweak circled-tip ##t
+                                - \tweak stencil #abjad-flared-hairpin
+                                \>
+                                c'32
+                                ^ \markup 28
+                            }
+                        }
+                        \repeat tremolo 4 {
+                            c'32
+                            \fffff
+                            ^ \markup 29
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            c'32
+                            ^ \markup 30
+                        }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 4/6
+                        {
+                            \repeat tremolo 4 {
+                                c'32
+                                \fffff
+                                ^ \markup 31
+                                - \tweak circled-tip ##t
+                                - \tweak stencil #abjad-flared-hairpin
+                                \>
+                                c'32
+                                ^ \markup 32
+                            }
+                        }
+                        \repeat tremolo 4 {
+                            c'32
+                            \fffff
+                            ^ \markup 33
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            c'32
+                            ^ \markup 34
+                        }
+                        \repeat tremolo 4 {
+                            c'32
+                            \fffff
+                            ^ \markup 35
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            c'32
+                            ^ \markup 36
+                        }
+                        \repeat tremolo 4 {
+                            c'32
+                            \fffff
+                            ^ \markup 37
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            c'32
+                            ^ \markup 38
+                        }
+                        \repeat tremolo 4 {
+                            c'32
+                            \fffff
+                            ^ \markup 39
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            c'32
+                            ^ \markup 40
+                        }
+                        \repeat tremolo 4 {
+                            c'32
+                            \fffff
+                            ^ \markup 41
+                            c'32
+                            ^ \markup 42
+                        }
+                    }
+                }
+                \context Staff = "cello 2 staff"
+                {
+                    \context Voice = "cello 2 voice"
+                    {
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                c'8
+                                ^ \markup 0
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 6/7
+                        {
+                            c'16
+                            ^ \markup 1
+                            [
+                            c'16
+                            ^ \markup 2
+                            c'16
+                            ^ \markup 3
+                            c'16
+                            ^ \markup 4
+                            c'16
+                            ^ \markup 5
+                            c'16
+                            ^ \markup 6
+                            c'16
+                            ^ \markup 7
+                            ]
+                        }
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                c'4
+                                ^ \markup 8
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        c'4
+                        ^ \markup 9
+                        c'8
+                        ^ \markup 10
+                        c'4
+                        ^ \markup 11
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                c'8
+                                ^ \markup 12
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        r8
+                        ^ \markup 13
+                        \times 4/5
+                        {
+                            c'16
+                            ^ \markup 14
+                            [
+                            c'16
+                            ^ \markup 15
+                            c'16
+                            ^ \markup 16
+                            c'16
+                            ^ \markup 17
+                            c'16
+                            ^ \markup 18
+                            ]
+                        }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 8/9
+                        {
+                            c'32
+                            ^ \markup 19
+                            [
+                            c'32
+                            ^ \markup 20
+                            c'32
+                            ^ \markup 21
+                            c'32
+                            ^ \markup 22
+                            c'32
+                            ^ \markup 23
+                            c'32
+                            ^ \markup 24
+                            ]
+                        }
+                        c'8
+                        ^ \markup 25
+                        c'4
+                        ^ \markup 26
+                        \times 4/5
+                        {
+                            c'4
+                            ^ \markup 27
+                            c'16
+                            ^ \markup 28
+                        }
+                        \times 2/3
+                        {
+                            c'16
+                            ^ \markup 29
+                            [
+                            c'16
+                            ^ \markup 30
+                            ]
+                            c'4
+                            ^ \markup 31
+                        }
+                        \times 4/7
+                        {
+                            c'16
+                            ^ \markup 32
+                            [
+                            c'16
+                            ^ \markup 33
+                            c'16
+                            ^ \markup 34
+                            ]
+                            c'4
+                            ^ \markup 35
+                        }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 8/9
+                        {
+                            c'16
+                            ^ \markup 36
+                            [
+                            c'16
+                            ^ \markup 37
+                            c'16
+                            ^ \markup 38
+                            ]
+                        }
+                        \times 4/7
+                        {
+                            c'4.
+                            ^ \markup 39
+                            c'16
+                            ^ \markup 40
+                        }
+                        \times 4/5
+                        {
+                            c'4
+                            ^ \markup 41
+                            c'16
+                            ^ \markup 42
+                        }
+                        \times 2/3
+                        {
+                            c'16
+                            ^ \markup 43
+                            [
+                            c'16
+                            ^ \markup 44
+                            ]
+                            c'4
+                            ^ \markup 45
+                        }
+                        \times 4/7
+                        {
+                            c'16
+                            ^ \markup 46
+                            [
+                            c'16
+                            ^ \markup 47
+                            c'16
+                            ^ \markup 48
+                            ]
+                            c'4
+                            ^ \markup 49
+                        }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 8/9
+                        {
+                            c'16
+                            ^ \markup 50
+                            [
+                            c'16
+                            ^ \markup 51
+                            c'16
+                            ^ \markup 52
+                            ]
+                        }
+                        \times 4/7
+                        {
+                            c'4.
+                            ^ \markup 53
+                            c'16
+                            ^ \markup 54
+                        }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 8/15
+                        {
+                            c'4
+                            ^ \markup 55
+                            c'16
+                            ^ \markup 56
+                        }
+                        \times 2/3
+                        {
+                            c'16
+                            ^ \markup 57
+                            [
+                            c'16
+                            ^ \markup 58
+                            ]
+                            c'4
+                            ^ \markup 59
+                        }
+                        \times 4/7
+                        {
+                            c'16
+                            ^ \markup 60
+                            [
+                            c'16
+                            ^ \markup 61
+                            c'16
+                            ^ \markup 62
+                            ]
+                            c'4
+                            ^ \markup 63
+                        }
+                        \times 2/3
+                        {
+                            c'8
+                            ^ \markup 64
+                            [
+                            c'8
+                            ^ \markup 65
+                            c'8
+                            ^ \markup 66
+                            ]
+                        }
+                        \times 4/7
+                        {
+                            c'4.
+                            ^ \markup 67
+                            c'16
+                            ^ \markup 68
+                        }
+                        \times 4/5
+                        {
+                            c'4
+                            ^ \markup 69
+                            c'16
+                            ^ \markup 70
+                        }
+                    }
+                }
+            >>
+            \context PianoStaff = "sub group 2"
+            <<
+                \context Staff = "contrabass 1 staff"
+                {
+                    \context Voice = "contrabass 1 voice"
+                    {
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                \set PianoStaff.shortInstrumentName =
+                                \markup { cb. }
+                                c'8
+                                ^ \markup 0
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        c'8
+                        ^ \markup 1
+                        c'4
+                        ^ \markup 2
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                c'4
+                                ^ \markup 3
+                                \<
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        s4.
+                        ^ \markup 4
+                        s4
+                        \ffff
+                        ^ \markup 5
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                c'8
+                                ^ \markup 6
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        c'4
+                        ^ \markup 7
+                        c'8
+                        ^ \markup 8
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                c'4
+                                ^ \markup 9
+                                \<
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        s1 * 3/8
+                        ^ \markup 10
+                        s1 * 1/4
+                        \fffff
+                        ^ \markup 11
+                        s1 * 1/4
+                        ^ \markup 12
+                        s1 * 1/4
+                        ^ \markup 13
+                        s1 * 1/6
+                        ^ \markup 14
+                        s1 * 1/4
+                        ^ \markup 15
+                        s1 * 1/4
+                        ^ \markup 16
+                        s1 * 1/4
+                        ^ \markup 17
+                        s1 * 1/4
+                        ^ \markup 18
+                        s1 * 1/6
+                        ^ \markup 19
+                        s1 * 1/4
+                        ^ \markup 20
+                        s1 * 1/6
+                        ^ \markup 21
+                        s1 * 1/4
+                        ^ \markup 22
+                        s1 * 1/4
+                        ^ \markup 23
+                        s1 * 1/4
+                        ^ \markup 24
+                        s1 * 1/4
+                        ^ \markup 25
+                        s1 * 1/4
+                        ^ \markup 26
+                    }
+                }
+                \context Staff = "contrabass 2 staff"
+                {
+                    \context Voice = "contrabass 2 voice"
+                    {
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                c'8
+                                ^ \markup 0
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        c'8
+                        ^ \markup 1
+                        c'4
+                        ^ \markup 2
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                c'4
+                                ^ \markup 3
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \italic { 6:5 }
+                        \times 15/18
+                        {
+                            c''8
+                            ^ \markup 4
+                            [
+                            e''8
+                            ^ \markup 5
+                            cqs''8
+                            ^ \markup 6
+                            d''8
+                            ^ \markup 7
+                            bqs'8
+                            ^ \markup 8
+                            eqs''8
+                            ^ \markup 9
+                            ]
+                        }
+                        \revert TupletNumber.text
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                c'8
+                                ^ \markup 10
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        c'4
+                        ^ \markup 11
+                        c'8
+                        ^ \markup 12
+                        \override TupletNumber.text = \markup \italic { 3:2 }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override TupletNumber.text = \markup \italic { 3:2 }
+                            \tweak edge-height #'(0.7 . 0)
+                            \times 2/3
+                            {
+                                c'4
+                                ^ \markup 13
+                            }
+                            \revert TupletNumber.text
+                        }
+                        \revert TupletNumber.text
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 6/7
+                        {
+                            c''16
+                            ^ \markup 14
+                            [
+                            e''16
+                            ^ \markup 15
+                            cqs''16
+                            ^ \markup 16
+                            d''16
+                            ^ \markup 17
+                            bqs'16
+                            ^ \markup 18
+                            eqs''16
+                            ^ \markup 19
+                            c''16
+                            ^ \markup 20
+                            ]
+                        }
+                        \times 2/3
+                        {
+                            e''16
+                            ^ \markup 21
+                            [
+                            cqs''16
+                            ^ \markup 22
+                            d''16
+                            ^ \markup 23
+                            bqs'16
+                            ^ \markup 24
+                            eqs''16
+                            ^ \markup 25
+                            c''16
+                            ^ \markup 26
+                            ]
+                        }
+                        \times 4/7
+                        {
+                            e''16
+                            ^ \markup 27
+                            [
+                            cqs''16
+                            ^ \markup 28
+                            d''16
+                            ^ \markup 29
+                            bqs'16
+                            ^ \markup 30
+                            eqs''16
+                            ^ \markup 31
+                            c''16
+                            ^ \markup 32
+                            e''16
+                            ^ \markup 33
+                            ]
+                        }
+                        \times 2/3
+                        {
+                            cqs''16
+                            ^ \markup 34
+                            [
+                            d''16
+                            ^ \markup 35
+                            bqs'16
+                            ^ \markup 36
+                            eqs''16
+                            ^ \markup 37
+                            c''16
+                            ^ \markup 38
+                            e''16
+                            ^ \markup 39
+                            ]
+                        }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 8/15
+                        {
+                            cqs''16
+                            ^ \markup 40
+                            [
+                            d''16
+                            ^ \markup 41
+                            bqs'16
+                            ^ \markup 42
+                            eqs''16
+                            ^ \markup 43
+                            c''16
+                            ^ \markup 44
+                            ]
+                        }
+                        \times 2/3
+                        {
+                            e''16
+                            ^ \markup 45
+                            [
+                            cqs''16
+                            ^ \markup 46
+                            d''16
+                            ^ \markup 47
+                            bqs'16
+                            ^ \markup 48
+                            eqs''16
+                            ^ \markup 49
+                            c''16
+                            ^ \markup 50
+                            ]
+                        }
+                        \times 4/7
+                        {
+                            e''16
+                            ^ \markup 51
+                            [
+                            cqs''16
+                            ^ \markup 52
+                            d''16
+                            ^ \markup 53
+                            bqs'16
+                            ^ \markup 54
+                            eqs''16
+                            ^ \markup 55
+                            c''16
+                            ^ \markup 56
+                            e''16
+                            ^ \markup 57
+                            ]
+                        }
+                        \times 2/3
+                        {
+                            cqs''8
+                            ^ \markup 58
+                            [
+                            d''8
+                            ^ \markup 59
+                            bqs'8
+                            ^ \markup 60
+                            eqs''8
+                            ^ \markup 61
+                            c''8
+                            ^ \markup 62
+                            e''8
+                            ^ \markup 63
+                            ]
+                        }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 8/15
+                        {
+                            cqs''16
+                            ^ \markup 64
+                            [
+                            d''16
+                            ^ \markup 65
+                            bqs'16
+                            ^ \markup 66
+                            eqs''16
+                            ^ \markup 67
+                            c''16
+                            ^ \markup 68
+                            ]
+                        }
+                        \times 2/3
+                        {
+                            e''16
+                            ^ \markup 69
+                            [
+                            cqs''16
+                            ^ \markup 70
+                            d''16
+                            ^ \markup 71
+                            bqs'16
+                            ^ \markup 72
+                            eqs''16
+                            ^ \markup 73
+                            c''16
+                            ^ \markup 74
+                            ]
+                        }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 8/15
+                        {
+                            e''16
+                            ^ \markup 75
+                            [
+                            cqs''16
+                            ^ \markup 76
+                            d''16
+                            ^ \markup 77
+                            bqs'16
+                            ^ \markup 78
+                            eqs''16
+                            ^ \markup 79
+                            ]
+                        }
+                        \override TupletNumber.text = \markup \italic { 6:5 }
+                        \times 15/18
+                        {
+                            c''4
+                            ^ \markup 80
+                            e''4
+                            ^ \markup 81
+                            cqs''4
+                            ^ \markup 82
+                            d''4
+                            ^ \markup 83
+                            bqs'4
+                            ^ \markup 84
+                            eqs''4
+                            ^ \markup 85
+                        }
+                        \revert TupletNumber.text
+                    }
+                }
+            >>
+            \context PianoStaff = "sub group 3"
+            <<
                 \context Staff = "piano 1 staff"
                 {
                     \context Voice = "piano 1 voice"
@@ -826,928 +1748,6 @@
                             \)
                             ]
                         }
-                    }
-                }
-            >>
-            \context PianoStaff = "sub group 2"
-            <<
-                \context Staff = "cello 1 staff"
-                {
-                    \context Voice = "cello 1 voice"
-                    {
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                \set PianoStaff.shortInstrumentName =
-                                \markup { vc. }
-                                c'8
-                                ^ \markup 0
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        s4.
-                        ^ \markup 1
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                c'4
-                                ^ \markup 2
-                                \<
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        c'4
-                        ^ \markup 3
-                        c'8
-                        ^ \markup 4
-                        c'4
-                        \ffff
-                        ^ \markup 5
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                c'8
-                                ^ \markup 6
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        s4.
-                        ^ \markup 7
-                        s1 * 1/6
-                        ^ \markup 8
-                        \<
-                        c'8
-                        ^ \markup 9
-                        c'4
-                        ^ \markup 10
-                        \repeat tremolo 4 {
-                            c'32
-                            \fffff
-                            ^ \markup 11
-                            c'32
-                            ^ \markup 12
-                        }
-                        \repeat tremolo 4 {
-                            c'32
-                            \fffff
-                            ^ \markup 13
-                            - \tweak circled-tip ##t
-                            - \tweak stencil #abjad-flared-hairpin
-                            \>
-                            c'32
-                            ^ \markup 14
-                        }
-                        \repeat tremolo 4 {
-                            c'32
-                            \fffff
-                            ^ \markup 15
-                            - \tweak circled-tip ##t
-                            - \tweak stencil #abjad-flared-hairpin
-                            \>
-                            c'32
-                            ^ \markup 16
-                        }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 4/6
-                        {
-                            \repeat tremolo 4 {
-                                c'32
-                                \fffff
-                                ^ \markup 17
-                                - \tweak circled-tip ##t
-                                - \tweak stencil #abjad-flared-hairpin
-                                \>
-                                c'32
-                                ^ \markup 18
-                            }
-                        }
-                        \repeat tremolo 4 {
-                            c'32
-                            \fffff
-                            ^ \markup 19
-                            - \tweak circled-tip ##t
-                            - \tweak stencil #abjad-flared-hairpin
-                            \>
-                            c'32
-                            ^ \markup 20
-                        }
-                        \repeat tremolo 4 {
-                            c'32
-                            \fffff
-                            ^ \markup 21
-                            - \tweak circled-tip ##t
-                            - \tweak stencil #abjad-flared-hairpin
-                            \>
-                            c'32
-                            ^ \markup 22
-                        }
-                        \repeat tremolo 4 {
-                            c'32
-                            \fffff
-                            ^ \markup 23
-                            - \tweak circled-tip ##t
-                            - \tweak stencil #abjad-flared-hairpin
-                            \>
-                            c'32
-                            ^ \markup 24
-                        }
-                        \repeat tremolo 4 {
-                            c'32
-                            \fffff
-                            ^ \markup 25
-                            - \tweak circled-tip ##t
-                            - \tweak stencil #abjad-flared-hairpin
-                            \>
-                            c'32
-                            ^ \markup 26
-                        }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 4/6
-                        {
-                            \repeat tremolo 4 {
-                                c'32
-                                \fffff
-                                ^ \markup 27
-                                - \tweak circled-tip ##t
-                                - \tweak stencil #abjad-flared-hairpin
-                                \>
-                                c'32
-                                ^ \markup 28
-                            }
-                        }
-                        \repeat tremolo 4 {
-                            c'32
-                            \fffff
-                            ^ \markup 29
-                            - \tweak circled-tip ##t
-                            - \tweak stencil #abjad-flared-hairpin
-                            \>
-                            c'32
-                            ^ \markup 30
-                        }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 4/6
-                        {
-                            \repeat tremolo 4 {
-                                c'32
-                                \fffff
-                                ^ \markup 31
-                                - \tweak circled-tip ##t
-                                - \tweak stencil #abjad-flared-hairpin
-                                \>
-                                c'32
-                                ^ \markup 32
-                            }
-                        }
-                        \repeat tremolo 4 {
-                            c'32
-                            \fffff
-                            ^ \markup 33
-                            - \tweak circled-tip ##t
-                            - \tweak stencil #abjad-flared-hairpin
-                            \>
-                            c'32
-                            ^ \markup 34
-                        }
-                        \repeat tremolo 4 {
-                            c'32
-                            \fffff
-                            ^ \markup 35
-                            - \tweak circled-tip ##t
-                            - \tweak stencil #abjad-flared-hairpin
-                            \>
-                            c'32
-                            ^ \markup 36
-                        }
-                        \repeat tremolo 4 {
-                            c'32
-                            \fffff
-                            ^ \markup 37
-                            - \tweak circled-tip ##t
-                            - \tweak stencil #abjad-flared-hairpin
-                            \>
-                            c'32
-                            ^ \markup 38
-                        }
-                        \repeat tremolo 4 {
-                            c'32
-                            \fffff
-                            ^ \markup 39
-                            - \tweak circled-tip ##t
-                            - \tweak stencil #abjad-flared-hairpin
-                            \>
-                            c'32
-                            ^ \markup 40
-                        }
-                        \repeat tremolo 4 {
-                            c'32
-                            \fffff
-                            ^ \markup 41
-                            c'32
-                            ^ \markup 42
-                        }
-                    }
-                }
-                \context Staff = "cello 2 staff"
-                {
-                    \context Voice = "cello 2 voice"
-                    {
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                c'8
-                                ^ \markup 0
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        \tweak text #tuplet-number::calc-fraction-text
-                        \times 6/7
-                        {
-                            c'16
-                            ^ \markup 1
-                            [
-                            c'16
-                            ^ \markup 2
-                            c'16
-                            ^ \markup 3
-                            c'16
-                            ^ \markup 4
-                            c'16
-                            ^ \markup 5
-                            c'16
-                            ^ \markup 6
-                            c'16
-                            ^ \markup 7
-                            ]
-                        }
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                c'4
-                                ^ \markup 8
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        c'4
-                        ^ \markup 9
-                        c'8
-                        ^ \markup 10
-                        c'4
-                        ^ \markup 11
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                c'8
-                                ^ \markup 12
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        r8
-                        ^ \markup 13
-                        \times 4/5
-                        {
-                            c'16
-                            ^ \markup 14
-                            [
-                            c'16
-                            ^ \markup 15
-                            c'16
-                            ^ \markup 16
-                            c'16
-                            ^ \markup 17
-                            c'16
-                            ^ \markup 18
-                            ]
-                        }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 8/9
-                        {
-                            c'32
-                            ^ \markup 19
-                            [
-                            c'32
-                            ^ \markup 20
-                            c'32
-                            ^ \markup 21
-                            c'32
-                            ^ \markup 22
-                            c'32
-                            ^ \markup 23
-                            c'32
-                            ^ \markup 24
-                            ]
-                        }
-                        c'8
-                        ^ \markup 25
-                        c'4
-                        ^ \markup 26
-                        \times 4/5
-                        {
-                            c'4
-                            ^ \markup 27
-                            c'16
-                            ^ \markup 28
-                        }
-                        \times 2/3
-                        {
-                            c'16
-                            ^ \markup 29
-                            [
-                            c'16
-                            ^ \markup 30
-                            ]
-                            c'4
-                            ^ \markup 31
-                        }
-                        \times 4/7
-                        {
-                            c'16
-                            ^ \markup 32
-                            [
-                            c'16
-                            ^ \markup 33
-                            c'16
-                            ^ \markup 34
-                            ]
-                            c'4
-                            ^ \markup 35
-                        }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 8/9
-                        {
-                            c'16
-                            ^ \markup 36
-                            [
-                            c'16
-                            ^ \markup 37
-                            c'16
-                            ^ \markup 38
-                            ]
-                        }
-                        \times 4/7
-                        {
-                            c'4.
-                            ^ \markup 39
-                            c'16
-                            ^ \markup 40
-                        }
-                        \times 4/5
-                        {
-                            c'4
-                            ^ \markup 41
-                            c'16
-                            ^ \markup 42
-                        }
-                        \times 2/3
-                        {
-                            c'16
-                            ^ \markup 43
-                            [
-                            c'16
-                            ^ \markup 44
-                            ]
-                            c'4
-                            ^ \markup 45
-                        }
-                        \times 4/7
-                        {
-                            c'16
-                            ^ \markup 46
-                            [
-                            c'16
-                            ^ \markup 47
-                            c'16
-                            ^ \markup 48
-                            ]
-                            c'4
-                            ^ \markup 49
-                        }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 8/9
-                        {
-                            c'16
-                            ^ \markup 50
-                            [
-                            c'16
-                            ^ \markup 51
-                            c'16
-                            ^ \markup 52
-                            ]
-                        }
-                        \times 4/7
-                        {
-                            c'4.
-                            ^ \markup 53
-                            c'16
-                            ^ \markup 54
-                        }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 8/15
-                        {
-                            c'4
-                            ^ \markup 55
-                            c'16
-                            ^ \markup 56
-                        }
-                        \times 2/3
-                        {
-                            c'16
-                            ^ \markup 57
-                            [
-                            c'16
-                            ^ \markup 58
-                            ]
-                            c'4
-                            ^ \markup 59
-                        }
-                        \times 4/7
-                        {
-                            c'16
-                            ^ \markup 60
-                            [
-                            c'16
-                            ^ \markup 61
-                            c'16
-                            ^ \markup 62
-                            ]
-                            c'4
-                            ^ \markup 63
-                        }
-                        \times 2/3
-                        {
-                            c'8
-                            ^ \markup 64
-                            [
-                            c'8
-                            ^ \markup 65
-                            c'8
-                            ^ \markup 66
-                            ]
-                        }
-                        \times 4/7
-                        {
-                            c'4.
-                            ^ \markup 67
-                            c'16
-                            ^ \markup 68
-                        }
-                        \times 4/5
-                        {
-                            c'4
-                            ^ \markup 69
-                            c'16
-                            ^ \markup 70
-                        }
-                    }
-                }
-            >>
-            \context PianoStaff = "sub group 3"
-            <<
-                \context Staff = "contrabass 1 staff"
-                {
-                    \context Voice = "contrabass 1 voice"
-                    {
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                \set PianoStaff.shortInstrumentName =
-                                \markup { cb. }
-                                c'8
-                                ^ \markup 0
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        c'8
-                        ^ \markup 1
-                        c'4
-                        ^ \markup 2
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                c'4
-                                ^ \markup 3
-                                \<
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        s4.
-                        ^ \markup 4
-                        s4
-                        \ffff
-                        ^ \markup 5
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                c'8
-                                ^ \markup 6
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        c'4
-                        ^ \markup 7
-                        c'8
-                        ^ \markup 8
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                c'4
-                                ^ \markup 9
-                                \<
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        s1 * 3/8
-                        ^ \markup 10
-                        s1 * 1/4
-                        \fffff
-                        ^ \markup 11
-                        s1 * 1/4
-                        ^ \markup 12
-                        s1 * 1/4
-                        ^ \markup 13
-                        s1 * 1/6
-                        ^ \markup 14
-                        s1 * 1/4
-                        ^ \markup 15
-                        s1 * 1/4
-                        ^ \markup 16
-                        s1 * 1/4
-                        ^ \markup 17
-                        s1 * 1/4
-                        ^ \markup 18
-                        s1 * 1/6
-                        ^ \markup 19
-                        s1 * 1/4
-                        ^ \markup 20
-                        s1 * 1/6
-                        ^ \markup 21
-                        s1 * 1/4
-                        ^ \markup 22
-                        s1 * 1/4
-                        ^ \markup 23
-                        s1 * 1/4
-                        ^ \markup 24
-                        s1 * 1/4
-                        ^ \markup 25
-                        s1 * 1/4
-                        ^ \markup 26
-                    }
-                }
-                \context Staff = "contrabass 2 staff"
-                {
-                    \context Voice = "contrabass 2 voice"
-                    {
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                c'8
-                                ^ \markup 0
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        c'8
-                        ^ \markup 1
-                        c'4
-                        ^ \markup 2
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                c'4
-                                ^ \markup 3
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        \override TupletNumber.text = \markup \italic { 6:5 }
-                        \times 15/18
-                        {
-                            c''8
-                            ^ \markup 4
-                            [
-                            e''8
-                            ^ \markup 5
-                            cqs''8
-                            ^ \markup 6
-                            d''8
-                            ^ \markup 7
-                            bqs'8
-                            ^ \markup 8
-                            eqs''8
-                            ^ \markup 9
-                            ]
-                        }
-                        \revert TupletNumber.text
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                c'8
-                                ^ \markup 10
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        c'4
-                        ^ \markup 11
-                        c'8
-                        ^ \markup 12
-                        \override TupletNumber.text = \markup \italic { 3:2 }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 1/1
-                        {
-                            \override TupletNumber.text = \markup \italic { 3:2 }
-                            \tweak edge-height #'(0.7 . 0)
-                            \times 2/3
-                            {
-                                c'4
-                                ^ \markup 13
-                            }
-                            \revert TupletNumber.text
-                        }
-                        \revert TupletNumber.text
-                        \tweak text #tuplet-number::calc-fraction-text
-                        \times 6/7
-                        {
-                            c''16
-                            ^ \markup 14
-                            [
-                            e''16
-                            ^ \markup 15
-                            cqs''16
-                            ^ \markup 16
-                            d''16
-                            ^ \markup 17
-                            bqs'16
-                            ^ \markup 18
-                            eqs''16
-                            ^ \markup 19
-                            c''16
-                            ^ \markup 20
-                            ]
-                        }
-                        \times 2/3
-                        {
-                            e''16
-                            ^ \markup 21
-                            [
-                            cqs''16
-                            ^ \markup 22
-                            d''16
-                            ^ \markup 23
-                            bqs'16
-                            ^ \markup 24
-                            eqs''16
-                            ^ \markup 25
-                            c''16
-                            ^ \markup 26
-                            ]
-                        }
-                        \times 4/7
-                        {
-                            e''16
-                            ^ \markup 27
-                            [
-                            cqs''16
-                            ^ \markup 28
-                            d''16
-                            ^ \markup 29
-                            bqs'16
-                            ^ \markup 30
-                            eqs''16
-                            ^ \markup 31
-                            c''16
-                            ^ \markup 32
-                            e''16
-                            ^ \markup 33
-                            ]
-                        }
-                        \times 2/3
-                        {
-                            cqs''16
-                            ^ \markup 34
-                            [
-                            d''16
-                            ^ \markup 35
-                            bqs'16
-                            ^ \markup 36
-                            eqs''16
-                            ^ \markup 37
-                            c''16
-                            ^ \markup 38
-                            e''16
-                            ^ \markup 39
-                            ]
-                        }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 8/15
-                        {
-                            cqs''16
-                            ^ \markup 40
-                            [
-                            d''16
-                            ^ \markup 41
-                            bqs'16
-                            ^ \markup 42
-                            eqs''16
-                            ^ \markup 43
-                            c''16
-                            ^ \markup 44
-                            ]
-                        }
-                        \times 2/3
-                        {
-                            e''16
-                            ^ \markup 45
-                            [
-                            cqs''16
-                            ^ \markup 46
-                            d''16
-                            ^ \markup 47
-                            bqs'16
-                            ^ \markup 48
-                            eqs''16
-                            ^ \markup 49
-                            c''16
-                            ^ \markup 50
-                            ]
-                        }
-                        \times 4/7
-                        {
-                            e''16
-                            ^ \markup 51
-                            [
-                            cqs''16
-                            ^ \markup 52
-                            d''16
-                            ^ \markup 53
-                            bqs'16
-                            ^ \markup 54
-                            eqs''16
-                            ^ \markup 55
-                            c''16
-                            ^ \markup 56
-                            e''16
-                            ^ \markup 57
-                            ]
-                        }
-                        \times 2/3
-                        {
-                            cqs''8
-                            ^ \markup 58
-                            [
-                            d''8
-                            ^ \markup 59
-                            bqs'8
-                            ^ \markup 60
-                            eqs''8
-                            ^ \markup 61
-                            c''8
-                            ^ \markup 62
-                            e''8
-                            ^ \markup 63
-                            ]
-                        }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 8/15
-                        {
-                            cqs''16
-                            ^ \markup 64
-                            [
-                            d''16
-                            ^ \markup 65
-                            bqs'16
-                            ^ \markup 66
-                            eqs''16
-                            ^ \markup 67
-                            c''16
-                            ^ \markup 68
-                            ]
-                        }
-                        \times 2/3
-                        {
-                            e''16
-                            ^ \markup 69
-                            [
-                            cqs''16
-                            ^ \markup 70
-                            d''16
-                            ^ \markup 71
-                            bqs'16
-                            ^ \markup 72
-                            eqs''16
-                            ^ \markup 73
-                            c''16
-                            ^ \markup 74
-                            ]
-                        }
-                        \tweak edge-height #'(0.7 . 0)
-                        \times 8/15
-                        {
-                            e''16
-                            ^ \markup 75
-                            [
-                            cqs''16
-                            ^ \markup 76
-                            d''16
-                            ^ \markup 77
-                            bqs'16
-                            ^ \markup 78
-                            eqs''16
-                            ^ \markup 79
-                            ]
-                        }
-                        \override TupletNumber.text = \markup \italic { 6:5 }
-                        \times 15/18
-                        {
-                            c''4
-                            ^ \markup 80
-                            e''4
-                            ^ \markup 81
-                            cqs''4
-                            ^ \markup 82
-                            d''4
-                            ^ \markup 83
-                            bqs'4
-                            ^ \markup 84
-                            eqs''4
-                            ^ \markup 85
-                        }
-                        \revert TupletNumber.text
                     }
                 }
             >>

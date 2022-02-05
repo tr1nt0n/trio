@@ -207,6 +207,12 @@ trinton.attach(
     voice=score["Global Context"], leaves=[0], attachment=trio.rehearsal_mark3
 )
 
+trinton.attach(
+    voice=score["Global Context"],
+    leaves=[2],
+    attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after")
+)
+
 # piano pitching/attachments
 
 for voice in ["piano 1 voice", "piano 2 voice", "cello 2 voice"]:

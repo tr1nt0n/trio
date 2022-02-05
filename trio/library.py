@@ -20,12 +20,12 @@ vib = "vib"
 
 score = trinton.make_score_template(
     [
-        abjad.Piano(),
-        abjad.Piano(),
         abjad.Cello(),
         abjad.Cello(),
         abjad.Contrabass(),
         abjad.Contrabass(),
+        abjad.Piano(),
+        abjad.Piano(),
     ],
     [
         2,

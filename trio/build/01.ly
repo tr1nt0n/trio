@@ -23,124 +23,6 @@
                     <<
                         \tag #'voice1
                         {
-                            \context Staff = "piano 1 staff"
-                            {
-                                \context Voice = "piano 1 voice"
-                                {
-                                    \tweak direction #up
-                                    \times 4/5
-                                    {
-                                        \set PianoStaff.instrumentName =
-                                        \markup { Piano }
-                                        \set PianoStaff.shortInstrumentName =
-                                        \markup { pno. }
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        cs''16
-                                        \fp
-                                        - \marcato
-                                        [
-                                        \change Staff = "piano 2 staff"
-                                        cs''16
-                                        \change Staff = "piano 1 staff"
-                                        cs''16
-                                        \change Staff = "piano 2 staff"
-                                        cs''16
-                                        \change Staff = "piano 1 staff"
-                                        \revert Staff.Stem.stemlet-length
-                                        cs''16
-                                        ]
-                                    }
-                                    \change Staff = "piano 1 staff"
-                                    \ottava -1
-                                    \clef "bass"
-                                    <e, fs, a, b,>4
-                                    :32
-                                    \ffff
-                                    - \marcato
-                                    \arpeggio
-                                    - \tweak circled-tip ##t
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
-                                    \ottava 0
-                                    \tweak edge-height #'(0.7 . 0)
-                                    \tweak direction #up
-                                    \times 32/39
-                                    {
-                                        \ottava 2
-                                        \clef "treble"
-                                        f''''32
-                                        \ffff
-                                        - \marcato
-                                        [
-                                        \(
-                                        af''''32
-                                        ef''''32
-                                        \ff
-                                        cs''''32
-                                        b''''32
-                                        fs''''32
-                                        a''''32
-                                        \)
-                                        \ottava 0
-                                        \change Staff = "piano 2 staff"
-                                        e,32
-                                        \ffff
-                                        - \marcato
-                                        \(
-                                        c,32
-                                        g,,32
-                                        \ff
-                                        d,32
-                                        bf,,32
-                                        f,32
-                                        \)
-                                        ]
-                                    }
-                                    \change Staff = "piano 1 staff"
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    af''16
-                                    \fp
-                                    - \marcato
-                                    [
-                                    \change Staff = "piano 2 staff"
-                                    af''16
-                                    \change Staff = "piano 1 staff"
-                                    af''16
-                                    \change Staff = "piano 2 staff"
-                                    \revert Staff.Stem.stemlet-length
-                                    af''16
-                                    ]
-                                }
-                            }
-                        }
-                        \tag #'voice2
-                        {
-                            \context Staff = "piano 2 staff"
-                            {
-                                \context Voice = "piano 2 voice"
-                                {
-                                    s4
-                                    \ottava -1
-                                    \clef "bass"
-                                    <d,, g,, bf,, c,>4
-                                    :32
-                                    - \marcato
-                                    \arpeggio
-                                    \ottava 0
-                                    s1 * 1/3
-                                    \clef "treble"
-                                    s4
-                                }
-                            }
-                        }
-                    >>
-                }
-                \tag #'group3
-                {
-                    \context PianoStaff = "sub group 2"
-                    <<
-                        \tag #'voice3
-                        {
                             \context Staff = "cello 1 staff"
                             {
                                 \context Voice = "cello 1 voice"
@@ -160,7 +42,7 @@
                                 }
                             }
                         }
-                        \tag #'voice4
+                        \tag #'voice2
                         {
                             \context Staff = "cello 2 staff"
                             {
@@ -263,11 +145,11 @@
                         }
                     >>
                 }
-                \tag #'group4
+                \tag #'group3
                 {
-                    \context PianoStaff = "sub group 3"
+                    \context PianoStaff = "sub group 2"
                     <<
-                        \tag #'voice5
+                        \tag #'voice3
                         {
                             \context Staff = "contrabass 1 staff"
                             {
@@ -309,7 +191,7 @@
                                 }
                             }
                         }
-                        \tag #'voice6
+                        \tag #'voice4
                         {
                             \context Staff = "contrabass 2 staff"
                             {
@@ -407,6 +289,124 @@
                                         \)
                                         ]
                                     }
+                                }
+                            }
+                        }
+                    >>
+                }
+                \tag #'group4
+                {
+                    \context PianoStaff = "sub group 3"
+                    <<
+                        \tag #'voice5
+                        {
+                            \context Staff = "piano 1 staff"
+                            {
+                                \context Voice = "piano 1 voice"
+                                {
+                                    \tweak direction #up
+                                    \times 4/5
+                                    {
+                                        \set PianoStaff.instrumentName =
+                                        \markup { Piano }
+                                        \set PianoStaff.shortInstrumentName =
+                                        \markup { pno. }
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        cs''16
+                                        \fp
+                                        - \marcato
+                                        [
+                                        \change Staff = "piano 2 staff"
+                                        cs''16
+                                        \change Staff = "piano 1 staff"
+                                        cs''16
+                                        \change Staff = "piano 2 staff"
+                                        cs''16
+                                        \change Staff = "piano 1 staff"
+                                        \revert Staff.Stem.stemlet-length
+                                        cs''16
+                                        ]
+                                    }
+                                    \change Staff = "piano 1 staff"
+                                    \ottava -1
+                                    \clef "bass"
+                                    <e, fs, a, b,>4
+                                    :32
+                                    \ffff
+                                    - \marcato
+                                    \arpeggio
+                                    - \tweak circled-tip ##t
+                                    - \tweak stencil #abjad-flared-hairpin
+                                    \>
+                                    \ottava 0
+                                    \tweak edge-height #'(0.7 . 0)
+                                    \tweak direction #up
+                                    \times 32/39
+                                    {
+                                        \ottava 2
+                                        \clef "treble"
+                                        f''''32
+                                        \ffff
+                                        - \marcato
+                                        [
+                                        \(
+                                        af''''32
+                                        ef''''32
+                                        \ff
+                                        cs''''32
+                                        b''''32
+                                        fs''''32
+                                        a''''32
+                                        \)
+                                        \ottava 0
+                                        \change Staff = "piano 2 staff"
+                                        e,32
+                                        \ffff
+                                        - \marcato
+                                        \(
+                                        c,32
+                                        g,,32
+                                        \ff
+                                        d,32
+                                        bf,,32
+                                        f,32
+                                        \)
+                                        ]
+                                    }
+                                    \change Staff = "piano 1 staff"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    af''16
+                                    \fp
+                                    - \marcato
+                                    [
+                                    \change Staff = "piano 2 staff"
+                                    af''16
+                                    \change Staff = "piano 1 staff"
+                                    af''16
+                                    \change Staff = "piano 2 staff"
+                                    \revert Staff.Stem.stemlet-length
+                                    af''16
+                                    ]
+                                }
+                            }
+                        }
+                        \tag #'voice6
+                        {
+                            \context Staff = "piano 2 staff"
+                            {
+                                \context Voice = "piano 2 voice"
+                                {
+                                    s4
+                                    \ottava -1
+                                    \clef "bass"
+                                    <d,, g,, bf,, c,>4
+                                    :32
+                                    - \marcato
+                                    \arpeggio
+                                    \ottava 0
+                                    s1 * 1/3
+                                    \clef "treble"
+                                    s4
                                 }
                             }
                         }

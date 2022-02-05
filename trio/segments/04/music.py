@@ -310,8 +310,9 @@ for voices, tuplet in zip(
 trinton.rewrite_meter_by_voice(
     score=score,
     voice_indeces=[
-        0,
+        1,
         3,
+        4,
         5,
     ],
 )
@@ -393,12 +394,6 @@ trinton.attach(
     abjad.Markup(
         r"\markup \italic \abs-fontsize #8.5 { a tempo }",
     ),
-)
-
-trinton.attach(
-    voice=score["Global Context"],
-    leaves=[2, 12],
-    attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after"),
 )
 
 for voice in trio.all_voices:

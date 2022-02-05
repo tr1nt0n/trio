@@ -17,7 +17,6 @@
             s1 * 1/4
             \time 11/8
             s1 * 11/8
-            \pageBreak
             \time 3/16
             s1 * 3/16
             \time 9/8
@@ -47,7 +46,6 @@
             \stopTextSpan
             \time 7/8
             s1 * 7/8
-            \pageBreak
             \time 2/8
             s1 * 1/4
             \tempo 4=130
@@ -64,803 +62,6 @@
                     \context PianoStaff = "sub group 1"
                     <<
                         \tag #'voice1
-                        {
-                            \context Staff = "piano 1 staff"
-                            {
-                                \context Voice = "piano 1 voice"
-                                {
-                                    \override TupletNumber.text = \markup \italic 13:12
-                                    \times 48/52
-                                    {
-                                        \set PianoStaff.shortInstrumentName =
-                                        \markup { pno. }
-                                        \ottava 2
-                                        b''32
-                                        \mp
-                                        [
-                                        \(
-                                        ef'''32
-                                        cs'''32
-                                        e'''32
-                                        fs'''32
-                                        g'''32
-                                        af'''32
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        c'''32
-                                        \f
-                                        - \marcato
-                                        b''32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        g'''32
-                                        - \marcato
-                                        \change Staff = "piano 2 staff"
-                                        b''32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        g'''32
-                                        - \marcato
-                                        \change Staff = "piano 2 staff"
-                                        b''32
-                                        - \marcato
-                                        c'''32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        f''''32
-                                        \mp
-                                        \(
-                                        cs''''32
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        a''''32
-                                        \f
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        bf'''32
-                                        \mp
-                                        \(
-                                        g''''32
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        a''''32
-                                        \f
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        e''''32
-                                        \mp
-                                        \(
-                                        cs''''32
-                                        g''''32
-                                        f''''32
-                                        \)
-                                        ef''''32
-                                        \f
-                                        - \marcato
-                                        \change Staff = "piano 2 staff"
-                                        b'''32
-                                        \f
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        ef''''32
-                                        - \marcato
-                                        \change Staff = "piano 2 staff"
-                                        b'''32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        d''''32
-                                        - \marcato
-                                        \ottava 0
-                                        \change Staff = "piano 2 staff"
-                                        b'''32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        af'32
-                                        \mp
-                                        \(
-                                        fs'32
-                                        a'32
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        ef'''32
-                                        \f
-                                        - \marcato
-                                        \(
-                                        e'''32
-                                        af'''32
-                                        \)
-                                        \change Staff = "piano 1 staff"
-                                        \ottava 2
-                                        d'''32
-                                        \mp
-                                        \(
-                                        g'''32
-                                        cs'''32
-                                        c'''32
-                                        \)
-                                        f'''32
-                                        \f
-                                        - \marcato
-                                        fs'''32
-                                        - \marcato
-                                        \change Staff = "piano 2 staff"
-                                        b''32
-                                        \f
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        fs'''32
-                                        - \marcato
-                                        f'''32
-                                        - \marcato
-                                        \change Staff = "piano 2 staff"
-                                        c'''32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        fs'''32
-                                        - \marcato
-                                        f'''32
-                                        - \marcato
-                                        \change Staff = "piano 2 staff"
-                                        d'''32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        f'''32
-                                        - \marcato
-                                        \change Staff = "piano 2 staff"
-                                        d'''32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        f'''32
-                                        - \marcato
-                                        ]
-                                        \ottava 0
-                                    }
-                                    \revert TupletNumber.text
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/4
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 11/8
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/16
-                                    r2.
-                                    <ef'' bf'' b'' fs'''>4.
-                                    :32
-                                    \mp
-                                    \arpeggio
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/8
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1
-                                    \change Staff = "piano 1 staff"
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/8
-                                    \override TupletNumber.text = \markup \italic 13:12
-                                    \times 48/52
-                                    {
-                                        \ottava 2
-                                        ef''''32
-                                        \p
-                                        [
-                                        \(
-                                        b'''32
-                                        ef''''32
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        bf,,32
-                                        \mf
-                                        - \marcato
-                                        e,32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        b'''32
-                                        \p
-                                        \(
-                                        ef''''32
-                                        b'''32
-                                        d''''32
-                                        b'''32
-                                        d''''32
-                                        g''''32
-                                        e''''32
-                                        c''''32
-                                        a'''32
-                                        c''''32
-                                        a'''32
-                                        fs''''32
-                                        a'''32
-                                        c''''32
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        af,32
-                                        \mf
-                                        - \marcato
-                                        e,32
-                                        - \marcato
-                                        fs,32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        e''''32
-                                        \p
-                                        \(
-                                        c''''32
-                                        e''''32
-                                        c''''32
-                                        e''''32
-                                        c''''32
-                                        a'''32
-                                        fs''''32
-                                        a''''32
-                                        fs''''32
-                                        a''''32
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        cs,32
-                                        \mf
-                                        - \marcato
-                                        f,32
-                                        - \marcato
-                                        fs,32
-                                        - \marcato
-                                        g,32
-                                        - \marcato
-                                        af,32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        fs''''32
-                                        \p
-                                        \(
-                                        a'''32
-                                        fs''''32
-                                        a'''32
-                                        fs''''32
-                                        a''''32
-                                        bf'''32
-                                        a''''32
-                                        bf'''32
-                                        af''''32
-                                        bf'''32
-                                        af''''32
-                                        cs''''32
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \italic 13:11
-                                    \times 44/52
-                                    {
-                                        af''''32
-                                        [
-                                        bf'''32
-                                        af''''32
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        c'''32
-                                        \mf
-                                        - \marcato
-                                        b''32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        bf'''32
-                                        \p
-                                        \(
-                                        a''''32
-                                        fs''''32
-                                        a'''32
-                                        fs''''32
-                                        a'''32
-                                        fs''''32
-                                        a''''32
-                                        fs''''32
-                                        a''''32
-                                        bf'''32
-                                        af''''32
-                                        bf'''32
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        e''32
-                                        \mf
-                                        - \marcato
-                                        c''32
-                                        - \marcato
-                                        a''32
-                                        - \marcato
-                                        d''32
-                                        - \marcato
-                                        b'32
-                                        - \marcato
-                                        ef''32
-                                        - \marcato
-                                        af''32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        a''''32
-                                        \p
-                                        \(
-                                        fs''''32
-                                        ef''''32
-                                        b'''32
-                                        ef''''32
-                                        b'''32
-                                        ef''''32
-                                        b'''32
-                                        d''''32
-                                        b'''32
-                                        d''''32
-                                        g''''32
-                                        e''''32
-                                        c''''32
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        b32
-                                        \mf
-                                        - \marcato
-                                        af'32
-                                        - \marcato
-                                        d'32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        af''''32
-                                        \ppp
-                                        \(
-                                        a'''32
-                                        af''''32
-                                        ef''''32
-                                        af''''32
-                                        a'''32
-                                        af''''32
-                                        ef''''32
-                                        af''''32
-                                        ef''''32
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \italic 10:9
-                                    \times 36/40
-                                    {
-                                        af''''32
-                                        [
-                                        ef''''32
-                                        a''''32
-                                        c''''32
-                                        a''''32
-                                        ef''''32
-                                        a''''32
-                                        c''''32
-                                        b'''32
-                                        c''''32
-                                        a''''32
-                                        ef''''32
-                                        af''''32
-                                        a'''32
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        bf,32
-                                        \fff
-                                        - \marcato
-                                        cs32
-                                        - \marcato
-                                        bf32
-                                        - \marcato
-                                        fs32
-                                        - \marcato
-                                        c32
-                                        - \marcato
-                                        d32
-                                        - \marcato
-                                        a32
-                                        - \marcato
-                                        b,32
-                                        - \marcato
-                                        f32
-                                        - \marcato
-                                        af32
-                                        - \marcato
-                                        g32
-                                        - \marcato
-                                        ef32
-                                        - \marcato
-                                        e32
-                                        - \marcato
-                                        ef32
-                                        - \marcato
-                                        g32
-                                        - \marcato
-                                        af32
-                                        - \marcato
-                                        f32
-                                        - \marcato
-                                        b,32
-                                        - \marcato
-                                        a32
-                                        - \marcato
-                                        d32
-                                        - \marcato
-                                        c32
-                                        - \marcato
-                                        fs32
-                                        - \marcato
-                                        bf32
-                                        - \marcato
-                                        cs32
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        af''''32
-                                        \mp
-                                        \(
-                                        ef''''32
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \italic 5:4
-                                    \times 64/80
-                                    {
-                                        af''''64
-                                        [
-                                        ef''''64
-                                        af''''64
-                                        ef''''64
-                                        a''''64
-                                        ef''''64
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        a''64
-                                        \mf
-                                        - \marcato
-                                        cs''64
-                                        - \marcato
-                                        c''64
-                                        - \marcato
-                                        g''64
-                                        - \marcato
-                                        f''64
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        af''''64
-                                        \mp
-                                        \(
-                                        a'''64
-                                        af''''64
-                                        ef''''64
-                                        af''''64
-                                        a'''64
-                                        af''''64
-                                        ef''''64
-                                        a''''64
-                                        c''''64
-                                        a''''64
-                                        c''''64
-                                        a''''64
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        bf'64
-                                        \mf
-                                        - \marcato
-                                        e''64
-                                        - \marcato
-                                        f''64
-                                        - \marcato
-                                        c''64
-                                        - \marcato
-                                        bf''64
-                                        - \marcato
-                                        cs''64
-                                        - \marcato
-                                        af''64
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        cs''''64
-                                        \p
-                                        \(
-                                        d''''64
-                                        a''''64
-                                        d''''64
-                                        a''''64
-                                        b'''64
-                                        fs''''64
-                                        b'''64
-                                        a''''64
-                                        d''''64
-                                        a''''64
-                                        d''''64
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        e''64
-                                        \f
-                                        - \marcato
-                                        f''64
-                                        - \marcato
-                                        b'64
-                                        - \marcato
-                                        g''64
-                                        - \marcato
-                                        ef''64
-                                        - \marcato
-                                        c''64
-                                        - \marcato
-                                        bf''64
-                                        - \marcato
-                                        af''64
-                                        - \marcato
-                                        cs''64
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        a''''64
-                                        \p
-                                        \(
-                                        d''''64
-                                        a''''64
-                                        b'''64
-                                        a''''64
-                                        b'''64
-                                        a''''64
-                                        b'''64
-                                        fs''''64
-                                        b'''64
-                                        fs''''64
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        fs'64
-                                        \f
-                                        - \marcato
-                                        b64
-                                        - \marcato
-                                        c'64
-                                        - \marcato
-                                        a'64
-                                        - \marcato
-                                        e'64
-                                        - \marcato
-                                        cs'64
-                                        - \marcato
-                                        d'64
-                                        - \marcato
-                                        af'64
-                                        - \marcato
-                                        f'64
-                                        - \marcato
-                                        g'64
-                                        - \marcato
-                                        ef'64
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        a'''64
-                                        \pp
-                                        \(
-                                        af''''64
-                                        a'''64
-                                        af''''64
-                                        e''''64
-                                        f''''64
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \italic 8:7
-                                    \times 56/64
-                                    {
-                                        e''''64
-                                        [
-                                        af''''64
-                                        e''''64
-                                        af''''64
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        c'64
-                                        \ff
-                                        - \marcato
-                                        f'64
-                                        - \marcato
-                                        cs'64
-                                        - \marcato
-                                        e'64
-                                        - \marcato
-                                        ef'64
-                                        - \marcato
-                                        af'64
-                                        - \marcato
-                                        a'64
-                                        - \marcato
-                                        b64
-                                        - \marcato
-                                        g'64
-                                        - \marcato
-                                        d'64
-                                        - \marcato
-                                        fs'64
-                                        - \marcato
-                                        d'64
-                                        - \marcato
-                                        g'64
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        e''''64
-                                        \pp
-                                        \(
-                                        af''''64
-                                        e''''64
-                                        f''''64
-                                        bf'''64
-                                        f''''64
-                                        e''''64
-                                        af''''64
-                                        e''''64
-                                        \)
-                                        \change Staff = "piano 2 staff"
-                                        bf64
-                                        \ff
-                                        - \marcato
-                                        d64
-                                        - \marcato
-                                        ef64
-                                        - \marcato
-                                        cs64
-                                        - \marcato
-                                        f64
-                                        - \marcato
-                                        e64
-                                        - \marcato
-                                        af64
-                                        - \marcato
-                                        c64
-                                        - \marcato
-                                        g64
-                                        - \marcato
-                                        fs64
-                                        - \marcato
-                                        a64
-                                        - \marcato
-                                        bf,64
-                                        - \marcato
-                                        b,64
-                                        - \marcato
-                                        bf,64
-                                        - \marcato
-                                        a64
-                                        - \marcato
-                                        fs64
-                                        - \marcato
-                                        g64
-                                        - \marcato
-                                        \change Staff = "piano 1 staff"
-                                        af''''64
-                                        \ppp
-                                        \(
-                                        e''''64
-                                        af''''64
-                                        e''''64
-                                        f''''64
-                                        e''''64
-                                        f''''64
-                                        bf'''64
-                                        \)
-                                        \ottava 0
-                                        \change Staff = "piano 2 staff"
-                                        f,64
-                                        \fff
-                                        - \marcato
-                                        af,64
-                                        - \marcato
-                                        e,64
-                                        - \marcato
-                                        g,64
-                                        - \marcato
-                                        b,,64
-                                        - \marcato
-                                        c,64
-                                        - \marcato
-                                        a,64
-                                        - \marcato
-                                        fs,64
-                                        - \marcato
-                                        d,64
-                                        - \marcato
-                                        ef,64
-                                        - \marcato
-                                        cs,64
-                                        - \marcato
-                                        bf,,64
-                                        - \marcato
-                                        cs,64
-                                        - \marcato
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    \change Staff = "piano 1 staff"
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/4
-                                    \ottava 2
-                                    c'''''16
-                                    \ppp
-                                    [
-                                    \change Staff = "piano 2 staff"
-                                    bf''''16
-                                    \fff
-                                    - \marcato
-                                    \change Staff = "piano 1 staff"
-                                    b''''16
-                                    \ppp
-                                    \(
-                                    c'''''16
-                                    b''''16
-                                    \)
-                                    \change Staff = "piano 2 staff"
-                                    bf''''16
-                                    \fff
-                                    - \marcato
-                                    \change Staff = "piano 1 staff"
-                                    b''''16
-                                    \ppp
-                                    \change Staff = "piano 2 staff"
-                                    bf''''16
-                                    \fff
-                                    - \marcato
-                                    \change Staff = "piano 1 staff"
-                                    c'''''16
-                                    \ppp
-                                    \change Staff = "piano 2 staff"
-                                    bf''''16
-                                    \fff
-                                    - \marcato
-                                    \change Staff = "piano 1 staff"
-                                    c'''''16
-                                    \ppp
-                                    \(
-                                    b''''16
-                                    \)
-                                    ]
-                                    \ottava 0
-                                }
-                            }
-                        }
-                        \tag #'voice2
-                        {
-                            \context Staff = "piano 2 staff"
-                            {
-                                \context Voice = "piano 2 voice"
-                                {
-                                    \ottava 2
-                                    s1.
-                                    \ottava 0
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/4
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 11/8
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/16
-                                    r2.
-                                    <bf c''>4.
-                                    :32
-                                    \arpeggio
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/8
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/8
-                                    \clef "bass"
-                                    s1 * 3/2
-                                    \clef "treble"
-                                    s1 * 11/8
-                                    \clef "bass"
-                                    s1 * 9/8
-                                    \clef "treble"
-                                    s1 * 1
-                                    \clef "bass"
-                                    s1 * 7/8
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/4
-                                    \ottava 2
-                                    \clef "treble"
-                                    s2.
-                                    \ottava 0
-                                }
-                            }
-                        }
-                    >>
-                }
-                \tag #'group3
-                {
-                    \context PianoStaff = "sub group 2"
-                    <<
-                        \tag #'voice3
                         {
                             \context Staff = "cello 1 staff"
                             {
@@ -918,7 +119,7 @@
                                 }
                             }
                         }
-                        \tag #'voice4
+                        \tag #'voice2
                         {
                             \context Staff = "cello 2 staff"
                             {
@@ -1815,11 +1016,11 @@
                         }
                     >>
                 }
-                \tag #'group4
+                \tag #'group3
                 {
-                    \context PianoStaff = "sub group 3"
+                    \context PianoStaff = "sub group 2"
                     <<
-                        \tag #'voice5
+                        \tag #'voice3
                         {
                             \context Staff = "contrabass 1 staff"
                             {
@@ -1875,7 +1076,7 @@
                                 }
                             }
                         }
-                        \tag #'voice6
+                        \tag #'voice4
                         {
                             \context Staff = "contrabass 2 staff"
                             {
@@ -2314,6 +1515,806 @@
                                         \set suggestAccidentals = ##f
                                     }
                                     \revert TupletNumber.text
+                                }
+                            }
+                        }
+                    >>
+                }
+                \tag #'group4
+                {
+                    \context PianoStaff = "sub group 3"
+                    <<
+                        \tag #'voice5
+                        {
+                            \context Staff = "piano 1 staff"
+                            {
+                                \context Voice = "piano 1 voice"
+                                {
+                                    \override TupletNumber.text = \markup \italic 13:12
+                                    \times 48/52
+                                    {
+                                        \set PianoStaff.shortInstrumentName =
+                                        \markup { pno. }
+                                        \ottava 2
+                                        b''32
+                                        \mp
+                                        [
+                                        \(
+                                        ef'''32
+                                        cs'''32
+                                        e'''32
+                                        fs'''32
+                                        g'''32
+                                        af'''32
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        c'''32
+                                        \f
+                                        - \marcato
+                                        b''32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        g'''32
+                                        - \marcato
+                                        \change Staff = "piano 2 staff"
+                                        b''32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        g'''32
+                                        - \marcato
+                                        \change Staff = "piano 2 staff"
+                                        b''32
+                                        - \marcato
+                                        c'''32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        f''''32
+                                        \mp
+                                        \(
+                                        cs''''32
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        a''''32
+                                        \f
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        bf'''32
+                                        \mp
+                                        \(
+                                        g''''32
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        a''''32
+                                        \f
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        e''''32
+                                        \mp
+                                        \(
+                                        cs''''32
+                                        g''''32
+                                        f''''32
+                                        \)
+                                        ef''''32
+                                        \f
+                                        - \marcato
+                                        \change Staff = "piano 2 staff"
+                                        b'''32
+                                        \f
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        ef''''32
+                                        - \marcato
+                                        \change Staff = "piano 2 staff"
+                                        b'''32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        d''''32
+                                        - \marcato
+                                        \ottava 0
+                                        \change Staff = "piano 2 staff"
+                                        b'''32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        af'32
+                                        \mp
+                                        \(
+                                        fs'32
+                                        a'32
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        ef'''32
+                                        \f
+                                        - \marcato
+                                        \(
+                                        e'''32
+                                        af'''32
+                                        \)
+                                        \change Staff = "piano 1 staff"
+                                        \ottava 2
+                                        d'''32
+                                        \mp
+                                        \(
+                                        g'''32
+                                        cs'''32
+                                        c'''32
+                                        \)
+                                        f'''32
+                                        \f
+                                        - \marcato
+                                        fs'''32
+                                        - \marcato
+                                        \change Staff = "piano 2 staff"
+                                        b''32
+                                        \f
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        fs'''32
+                                        - \marcato
+                                        f'''32
+                                        - \marcato
+                                        \change Staff = "piano 2 staff"
+                                        c'''32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        fs'''32
+                                        - \marcato
+                                        f'''32
+                                        - \marcato
+                                        \change Staff = "piano 2 staff"
+                                        d'''32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        f'''32
+                                        - \marcato
+                                        \change Staff = "piano 2 staff"
+                                        d'''32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        f'''32
+                                        - \marcato
+                                        ]
+                                        \ottava 0
+                                    }
+                                    \revert TupletNumber.text
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 11/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/16
+                                    r2.
+                                    <ef'' bf'' b'' fs'''>4.
+                                    :32
+                                    \mp
+                                    \arpeggio
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1
+                                    \change Staff = "piano 1 staff"
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/8
+                                    \override TupletNumber.text = \markup \italic 13:12
+                                    \times 48/52
+                                    {
+                                        \ottava 2
+                                        ef''''32
+                                        \p
+                                        [
+                                        \(
+                                        b'''32
+                                        ef''''32
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        bf,,32
+                                        \mf
+                                        - \marcato
+                                        e,32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        b'''32
+                                        \p
+                                        \(
+                                        ef''''32
+                                        b'''32
+                                        d''''32
+                                        b'''32
+                                        d''''32
+                                        g''''32
+                                        e''''32
+                                        c''''32
+                                        a'''32
+                                        c''''32
+                                        a'''32
+                                        fs''''32
+                                        a'''32
+                                        c''''32
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        af,32
+                                        \mf
+                                        - \marcato
+                                        e,32
+                                        - \marcato
+                                        fs,32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        e''''32
+                                        \p
+                                        \(
+                                        c''''32
+                                        e''''32
+                                        c''''32
+                                        e''''32
+                                        c''''32
+                                        a'''32
+                                        fs''''32
+                                        a''''32
+                                        fs''''32
+                                        a''''32
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        cs,32
+                                        \mf
+                                        - \marcato
+                                        f,32
+                                        - \marcato
+                                        fs,32
+                                        - \marcato
+                                        g,32
+                                        - \marcato
+                                        af,32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        fs''''32
+                                        \p
+                                        \(
+                                        a'''32
+                                        fs''''32
+                                        a'''32
+                                        fs''''32
+                                        a''''32
+                                        bf'''32
+                                        a''''32
+                                        bf'''32
+                                        af''''32
+                                        bf'''32
+                                        af''''32
+                                        cs''''32
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \italic 13:11
+                                    \times 44/52
+                                    {
+                                        af''''32
+                                        [
+                                        bf'''32
+                                        af''''32
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        c'''32
+                                        \mf
+                                        - \marcato
+                                        b''32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        bf'''32
+                                        \p
+                                        \(
+                                        a''''32
+                                        fs''''32
+                                        a'''32
+                                        fs''''32
+                                        a'''32
+                                        fs''''32
+                                        a''''32
+                                        fs''''32
+                                        a''''32
+                                        bf'''32
+                                        af''''32
+                                        bf'''32
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        e''32
+                                        \mf
+                                        - \marcato
+                                        c''32
+                                        - \marcato
+                                        a''32
+                                        - \marcato
+                                        d''32
+                                        - \marcato
+                                        b'32
+                                        - \marcato
+                                        ef''32
+                                        - \marcato
+                                        af''32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        a''''32
+                                        \p
+                                        \(
+                                        fs''''32
+                                        ef''''32
+                                        b'''32
+                                        ef''''32
+                                        b'''32
+                                        ef''''32
+                                        b'''32
+                                        d''''32
+                                        b'''32
+                                        d''''32
+                                        g''''32
+                                        e''''32
+                                        c''''32
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        b32
+                                        \mf
+                                        - \marcato
+                                        af'32
+                                        - \marcato
+                                        d'32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        af''''32
+                                        \ppp
+                                        \(
+                                        a'''32
+                                        af''''32
+                                        ef''''32
+                                        af''''32
+                                        a'''32
+                                        af''''32
+                                        ef''''32
+                                        af''''32
+                                        ef''''32
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \italic 10:9
+                                    \times 36/40
+                                    {
+                                        af''''32
+                                        [
+                                        ef''''32
+                                        a''''32
+                                        c''''32
+                                        a''''32
+                                        ef''''32
+                                        a''''32
+                                        c''''32
+                                        b'''32
+                                        c''''32
+                                        a''''32
+                                        ef''''32
+                                        af''''32
+                                        a'''32
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        bf,32
+                                        \fff
+                                        - \marcato
+                                        cs32
+                                        - \marcato
+                                        bf32
+                                        - \marcato
+                                        fs32
+                                        - \marcato
+                                        c32
+                                        - \marcato
+                                        d32
+                                        - \marcato
+                                        a32
+                                        - \marcato
+                                        b,32
+                                        - \marcato
+                                        f32
+                                        - \marcato
+                                        af32
+                                        - \marcato
+                                        g32
+                                        - \marcato
+                                        ef32
+                                        - \marcato
+                                        e32
+                                        - \marcato
+                                        ef32
+                                        - \marcato
+                                        g32
+                                        - \marcato
+                                        af32
+                                        - \marcato
+                                        f32
+                                        - \marcato
+                                        b,32
+                                        - \marcato
+                                        a32
+                                        - \marcato
+                                        d32
+                                        - \marcato
+                                        c32
+                                        - \marcato
+                                        fs32
+                                        - \marcato
+                                        bf32
+                                        - \marcato
+                                        cs32
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        af''''32
+                                        \mp
+                                        \(
+                                        ef''''32
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \italic 5:4
+                                    \times 64/80
+                                    {
+                                        af''''64
+                                        [
+                                        ef''''64
+                                        af''''64
+                                        ef''''64
+                                        a''''64
+                                        ef''''64
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        a''64
+                                        \mf
+                                        - \marcato
+                                        cs''64
+                                        - \marcato
+                                        c''64
+                                        - \marcato
+                                        g''64
+                                        - \marcato
+                                        f''64
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        af''''64
+                                        \mp
+                                        \(
+                                        a'''64
+                                        af''''64
+                                        ef''''64
+                                        af''''64
+                                        a'''64
+                                        af''''64
+                                        ef''''64
+                                        a''''64
+                                        c''''64
+                                        a''''64
+                                        c''''64
+                                        a''''64
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        bf'64
+                                        \mf
+                                        - \marcato
+                                        e''64
+                                        - \marcato
+                                        f''64
+                                        - \marcato
+                                        c''64
+                                        - \marcato
+                                        bf''64
+                                        - \marcato
+                                        cs''64
+                                        - \marcato
+                                        af''64
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        cs''''64
+                                        \p
+                                        \(
+                                        d''''64
+                                        a''''64
+                                        d''''64
+                                        a''''64
+                                        b'''64
+                                        fs''''64
+                                        b'''64
+                                        a''''64
+                                        d''''64
+                                        a''''64
+                                        d''''64
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        e''64
+                                        \f
+                                        - \marcato
+                                        f''64
+                                        - \marcato
+                                        b'64
+                                        - \marcato
+                                        g''64
+                                        - \marcato
+                                        ef''64
+                                        - \marcato
+                                        c''64
+                                        - \marcato
+                                        bf''64
+                                        - \marcato
+                                        af''64
+                                        - \marcato
+                                        cs''64
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        a''''64
+                                        \p
+                                        \(
+                                        d''''64
+                                        a''''64
+                                        b'''64
+                                        a''''64
+                                        b'''64
+                                        a''''64
+                                        b'''64
+                                        fs''''64
+                                        b'''64
+                                        fs''''64
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        fs'64
+                                        \f
+                                        - \marcato
+                                        b64
+                                        - \marcato
+                                        c'64
+                                        - \marcato
+                                        a'64
+                                        - \marcato
+                                        e'64
+                                        - \marcato
+                                        cs'64
+                                        - \marcato
+                                        d'64
+                                        - \marcato
+                                        af'64
+                                        - \marcato
+                                        f'64
+                                        - \marcato
+                                        g'64
+                                        - \marcato
+                                        ef'64
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        a'''64
+                                        \pp
+                                        \(
+                                        af''''64
+                                        a'''64
+                                        af''''64
+                                        e''''64
+                                        f''''64
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \italic 8:7
+                                    \times 56/64
+                                    {
+                                        e''''64
+                                        [
+                                        af''''64
+                                        e''''64
+                                        af''''64
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        c'64
+                                        \ff
+                                        - \marcato
+                                        f'64
+                                        - \marcato
+                                        cs'64
+                                        - \marcato
+                                        e'64
+                                        - \marcato
+                                        ef'64
+                                        - \marcato
+                                        af'64
+                                        - \marcato
+                                        a'64
+                                        - \marcato
+                                        b64
+                                        - \marcato
+                                        g'64
+                                        - \marcato
+                                        d'64
+                                        - \marcato
+                                        fs'64
+                                        - \marcato
+                                        d'64
+                                        - \marcato
+                                        g'64
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        e''''64
+                                        \pp
+                                        \(
+                                        af''''64
+                                        e''''64
+                                        f''''64
+                                        bf'''64
+                                        f''''64
+                                        e''''64
+                                        af''''64
+                                        e''''64
+                                        \)
+                                        \change Staff = "piano 2 staff"
+                                        bf64
+                                        \ff
+                                        - \marcato
+                                        d64
+                                        - \marcato
+                                        ef64
+                                        - \marcato
+                                        cs64
+                                        - \marcato
+                                        f64
+                                        - \marcato
+                                        e64
+                                        - \marcato
+                                        af64
+                                        - \marcato
+                                        c64
+                                        - \marcato
+                                        g64
+                                        - \marcato
+                                        fs64
+                                        - \marcato
+                                        a64
+                                        - \marcato
+                                        bf,64
+                                        - \marcato
+                                        b,64
+                                        - \marcato
+                                        bf,64
+                                        - \marcato
+                                        a64
+                                        - \marcato
+                                        fs64
+                                        - \marcato
+                                        g64
+                                        - \marcato
+                                        \change Staff = "piano 1 staff"
+                                        af''''64
+                                        \ppp
+                                        \(
+                                        e''''64
+                                        af''''64
+                                        e''''64
+                                        f''''64
+                                        e''''64
+                                        f''''64
+                                        bf'''64
+                                        \)
+                                        \ottava 0
+                                        \change Staff = "piano 2 staff"
+                                        f,64
+                                        \fff
+                                        - \marcato
+                                        af,64
+                                        - \marcato
+                                        e,64
+                                        - \marcato
+                                        g,64
+                                        - \marcato
+                                        b,,64
+                                        - \marcato
+                                        c,64
+                                        - \marcato
+                                        a,64
+                                        - \marcato
+                                        fs,64
+                                        - \marcato
+                                        d,64
+                                        - \marcato
+                                        ef,64
+                                        - \marcato
+                                        cs,64
+                                        - \marcato
+                                        bf,,64
+                                        - \marcato
+                                        cs,64
+                                        - \marcato
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \change Staff = "piano 1 staff"
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/4
+                                    \ottava 2
+                                    c'''''16
+                                    \ppp
+                                    [
+                                    \change Staff = "piano 2 staff"
+                                    bf''''16
+                                    \fff
+                                    - \marcato
+                                    \change Staff = "piano 1 staff"
+                                    b''''16
+                                    \ppp
+                                    \(
+                                    c'''''16
+                                    b''''16
+                                    \)
+                                    \change Staff = "piano 2 staff"
+                                    bf''''16
+                                    \fff
+                                    - \marcato
+                                    \change Staff = "piano 1 staff"
+                                    b''''16
+                                    \ppp
+                                    \change Staff = "piano 2 staff"
+                                    bf''''16
+                                    \fff
+                                    - \marcato
+                                    \change Staff = "piano 1 staff"
+                                    c'''''16
+                                    \ppp
+                                    \change Staff = "piano 2 staff"
+                                    bf''''16
+                                    \fff
+                                    - \marcato
+                                    \change Staff = "piano 1 staff"
+                                    c'''''16
+                                    \ppp
+                                    \(
+                                    b''''16
+                                    \)
+                                    ]
+                                    \ottava 0
+                                }
+                            }
+                        }
+                        \tag #'voice6
+                        {
+                            \context Staff = "piano 2 staff"
+                            {
+                                \context Voice = "piano 2 voice"
+                                {
+                                    \ottava 2
+                                    s1.
+                                    \ottava 0
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/4
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 11/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/16
+                                    r2.
+                                    <bf c''>4.
+                                    :32
+                                    \arpeggio
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 3/8
+                                    \clef "bass"
+                                    s1 * 3/2
+                                    \clef "treble"
+                                    s1 * 7/8
+                                    \clef "bass"
+                                    s1 * 1/4
+                                    \clef "treble"
+                                    s1 * 1/4
+                                    \clef "bass"
+                                    s1 * 3/4
+                                    s1 * 3/8
+                                    \ottava 2
+                                    \clef "treble"
+                                    s1 * 1
+                                    \ottava 0
+                                    s1 * 7/8
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/4
+                                    s2.
                                 }
                             }
                         }

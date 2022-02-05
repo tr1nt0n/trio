@@ -27,6 +27,7 @@
             r1 * 1/8
             \time 1/8
             s1 * 1/8
+            \pageBreak
             \time 3/8
             s1 * 3/8
             \time 11/8
@@ -94,632 +95,6 @@
                     \context PianoStaff = "sub group 1"
                     <<
                         \tag #'voice1
-                        {
-                            \context Staff = "piano 1 staff"
-                            {
-                                \context Voice = "piano 1 voice"
-                                {
-                                    \set PianoStaff.shortInstrumentName =
-                                    \markup { pno. }
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 9/4
-                                    \ottava -1
-                                    \clef "bass"
-                                    <g,, b,, ef,>4
-                                    :32
-                                    \mp
-                                    \arpeggio
-                                    \ottava 0
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    <af, bf, cs>8
-                                    :64
-                                    \mp
-                                    \arpeggio
-                                    ~
-                                    <af, bf, cs>4.
-                                    :32
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    \ottava 1
-                                    \clef "treble"
-                                    <cs''' af''' bf''' cs''''>8
-                                    :64
-                                    \mp
-                                    \arpeggio
-                                    \>
-                                    \ottava 0
-                                    \ottava -1
-                                    <e fs a c'>4.
-                                    :32
-                                    \arpeggio
-                                    \ottava 0
-                                    <a' g'' af'' a''>2..
-                                    :32
-                                    \ppp
-                                    \arpeggio
-                                    - \tweak stencil #constante-hairpin
-                                    \<
-                                    ~
-                                    <a' g'' af'' a''>4
-                                    :32
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \times 8/9
-                                    {
-                                        \ottava 1
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        cs''''32
-                                        \p
-                                        \(
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        bf'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        af''''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        e''''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        fs''''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g''''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        a'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c''''32
-                                        \)
-                                        \ottava 0
-                                    }
-                                    \revert TupletNumber.text
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    \clef "bass"
-                                    <a, c>8
-                                    :64
-                                    \p
-                                    \arpeggio
-                                    - \tweak stencil #constante-hairpin
-                                    \<
-                                    \clef "treble"
-                                    <b'' fs'''>4.
-                                    :32
-                                    \arpeggio
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4.
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \times 12/13
-                                    {
-                                        \ottava 1
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        ef'''32
-                                        \f
-                                        \(
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        e'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        af'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        d'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        cs'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        f'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        fs'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        fs'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        f'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c'''32
-                                        \)
-                                        \ottava 0
-                                    }
-                                    \revert TupletNumber.text
-                                    r1
-                                    \ottava 1
-                                    <d''' e''' af''' c''''>2.
-                                    :32
-                                    \p
-                                    \arpeggio
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \<
-                                    ~
-                                    <d''' e''' af''' c''''>4.
-                                    :32
-                                    \f
-                                    \ottava 0
-                                    <af' fs'' g'' af''>2..
-                                    :32
-                                    \fp
-                                    \arpeggio
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/8
-                                    \ottava 1
-                                    <a'' e''' fs''' a''' c''''>4.
-                                    :32
-                                    \pp
-                                    \arpeggio
-                                    \(
-                                    <a'' g''' af''' a'''>4
-                                    :32
-                                    \arpeggio
-                                    \)
-                                    \ottava 0
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/8
-                                    \ottava -1
-                                    \clef "bass"
-                                    <af,, bf,, cs,>2.
-                                    :32
-                                    \fp
-                                    \arpeggio
-                                    \<
-                                    ~
-                                    <af,, bf,, cs,>2
-                                    :32
-                                    \ottava 0
-                                    \ottava 1
-                                    \clef "treble"
-                                    <a'' e''' fs''' a''' c''''>1.
-                                    :32
-                                    \arpeggio
-                                    ~
-                                    <a'' e''' fs''' a''' c''''>1..
-                                    :32
-                                    \ottava 0
-                                    \override TupletNumber.text = \markup \italic 10:9
-                                    \times 36/40
-                                    {
-                                        \ottava 1
-                                        ef'''16
-                                        [
-                                        \(
-                                        e'''16
-                                        af'''16
-                                        d'''16
-                                        g'''16
-                                        cs'''16
-                                        c'''16
-                                        f'''16
-                                        fs'''16
-                                        b''16
-                                        fs'''16
-                                        f'''16
-                                        c'''16
-                                        cs'''16
-                                        g'''16
-                                        d'''16
-                                        cs''''16
-                                        bf'''16
-                                        af''''16
-                                        e''''16
-                                        fs''''16
-                                        g''''16
-                                        b'''16
-                                        a'''16
-                                        c''''16
-                                        f''''16
-                                        d''''16
-                                        a''''16
-                                        af'''16
-                                        d'''16
-                                        g'''16
-                                        e'''16
-                                        cs'''16
-                                        f''16
-                                        c''16
-                                        e''16
-                                        bf''16
-                                        fs''16
-                                        cs''16
-                                        g''16
-                                        \)
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    <f'' a'' cs''' fs''' a'''>1.
-                                    :32
-                                    \fp
-                                    \arpeggio
-                                    \<
-                                    ~
-                                    <f'' a'' cs''' fs''' a'''>2.
-                                    :32
-                                    ~
-                                    <f'' a'' cs''' fs''' a'''>1..
-                                    :32
-                                    \ottava 0
-                                    \ottava -1
-                                    \clef "bass"
-                                    <b,, fs,>1.
-                                    :32
-                                    \arpeggio
-                                    \ottava 0
-                                    \ottava 1
-                                    \clef "treble"
-                                    <af''' bf''' cs''''>2.
-                                    :32
-                                    \arpeggio
-                                    ~
-                                    <af''' bf''' cs''''>2
-                                    :32
-                                    \ottava 0
-                                    \ottava -1
-                                    \clef "bass"
-                                    <af,, bf,, cs,>4
-                                    :32
-                                    \fff
-                                    \arpeggio
-                                    - \marcato
-                                    \ottava 0
-                                    \ottava 1
-                                    \clef "treble"
-                                    <af''' cs'''' e''''>4
-                                    :32
-                                    \arpeggio
-                                    - \marcato
-                                    \ottava 0
-                                    \clef "bass"
-                                    <bf,, f,>2.
-                                    :32
-                                    \p
-                                    \arpeggio
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \<
-                                    ~
-                                    <bf,, f,>2
-                                    :32
-                                }
-                            }
-                        }
-                        \tag #'voice2
-                        {
-                            \context Staff = "piano 2 staff"
-                            {
-                                \context Voice = "piano 2 voice"
-                                {
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 9/4
-                                    \ottava -1
-                                    \clef "bass"
-                                    <a,,, f,,>4
-                                    :32
-                                    \arpeggio
-                                    \ottava 0
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    <a,, cs,>8
-                                    :64
-                                    \arpeggio
-                                    ~
-                                    <a,, cs,>4.
-                                    :32
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    \clef "treble"
-                                    <cs' d'' a''>8
-                                    :64
-                                    \arpeggio
-                                    \ottava -1
-                                    \clef "bass"
-                                    <d,, c, a,>4.
-                                    :32
-                                    \arpeggio
-                                    \ottava 0
-                                    <d cs'>2..
-                                    :32
-                                    \ppp
-                                    \arpeggio
-                                    - \tweak stencil #constante-hairpin
-                                    \<
-                                    ~
-                                    <d cs'>4
-                                    :32
-                                    ~
-                                    <d cs'>4
-                                    :32
-                                    \!
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    <fs, af,>8
-                                    :64
-                                    \arpeggio
-                                    \clef "treble"
-                                    <bf'>4.
-                                    :32
-                                    \arpeggio
-                                    \ottava -1
-                                    \clef "bass"
-                                    <ef,, f,, af,,>2..
-                                    :32
-                                    \p
-                                    \arpeggio
-                                    - \tweak stencil #constante-hairpin
-                                    \<
-                                    ~
-                                    <ef,, f,, af,,>4
-                                    :32
-                                    ~
-                                    <ef,, f,, af,,>4
-                                    :32
-                                    \!
-                                    \ottava 0
-                                    \clef "treble"
-                                    <af' b''>2.
-                                    :32
-                                    \arpeggio
-                                    ~
-                                    <af' b''>4.
-                                    :32
-                                    \clef "bass"
-                                    <cs a>2..
-                                    :32
-                                    \arpeggio
-                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    \once \override MultiMeasureRest.transparent = ##t
-                                    R1 * 1/4
-                                    - \markup \huge { \musicglyph "scripts.ufermata" }
-                                    \stopStaff \startStaff
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/8
-                                    \clef "treble"
-                                    <d' c''>4.
-                                    :32
-                                    \arpeggio
-                                    \(
-                                    <d' cs''>4
-                                    :32
-                                    \arpeggio
-                                    \)
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 1/8
-                                    \ottava -1
-                                    \clef "bass"
-                                    <c,, e,,>2.
-                                    :32
-                                    \arpeggio
-                                    ~
-                                    <c,, e,,>2
-                                    :32
-                                    \ottava 0
-                                    \clef "treble"
-                                    <d' c''>1.
-                                    :32
-                                    \arpeggio
-                                    ~
-                                    <d' c''>1..
-                                    :32
-                                    \ottava -1
-                                    \clef "bass"
-                                    <b,,, cs,, f,, a,,>1.
-                                    :32
-                                    \arpeggio
-                                    ~
-                                    <b,,, cs,, f,, a,,>2.
-                                    :32
-                                    \ottava 0
-                                    \clef "treble"
-                                    <b b'>1.
-                                    :32
-                                    \arpeggio
-                                    ~
-                                    <b b'>2.
-                                    :32
-                                    ~
-                                    <b b'>1..
-                                    :32
-                                    \ottava -1
-                                    \clef "bass"
-                                    <ef,, bf,,>1.
-                                    :32
-                                    \arpeggio
-                                    \ottava 0
-                                    \ottava 1
-                                    \clef "treble"
-                                    <a'' cs'''>2.
-                                    :32
-                                    \arpeggio
-                                    ~
-                                    <a'' cs'''>2
-                                    :32
-                                    \ottava 0
-                                    \ottava -1
-                                    \clef "bass"
-                                    <a,,, cs,,>4
-                                    :32
-                                    \arpeggio
-                                    - \marcato
-                                    \ottava 0
-                                    \ottava 1
-                                    \clef "treble"
-                                    <g'' b''>4
-                                    :32
-                                    \arpeggio
-                                    - \marcato
-                                    \ottava 0
-                                    \ottava -1
-                                    \clef "bass"
-                                    <d,, a,,>2.
-                                    :32
-                                    \arpeggio
-                                    ~
-                                    <d,, a,,>2
-                                    :32
-                                    \ottava 0
-                                }
-                            }
-                        }
-                    >>
-                }
-                \tag #'group3
-                {
-                    \context PianoStaff = "sub group 2"
-                    <<
-                        \tag #'voice3
                         {
                             \context Staff = "cello 1 staff"
                             {
@@ -824,7 +199,7 @@
                                 }
                             }
                         }
-                        \tag #'voice4
+                        \tag #'voice2
                         {
                             \context Staff = "cello 2 staff"
                             {
@@ -2165,11 +1540,11 @@
                         }
                     >>
                 }
-                \tag #'group4
+                \tag #'group3
                 {
-                    \context PianoStaff = "sub group 3"
+                    \context PianoStaff = "sub group 2"
                     <<
-                        \tag #'voice5
+                        \tag #'voice3
                         {
                             \context Staff = "contrabass 1 staff"
                             {
@@ -2250,7 +1625,7 @@
                                 }
                             }
                         }
-                        \tag #'voice6
+                        \tag #'voice4
                         {
                             \context Staff = "contrabass 2 staff"
                             {
@@ -2966,6 +2341,632 @@
                                     ~
                                     <f, a,>2
                                     :32
+                                }
+                            }
+                        }
+                    >>
+                }
+                \tag #'group4
+                {
+                    \context PianoStaff = "sub group 3"
+                    <<
+                        \tag #'voice5
+                        {
+                            \context Staff = "piano 1 staff"
+                            {
+                                \context Voice = "piano 1 voice"
+                                {
+                                    \set PianoStaff.shortInstrumentName =
+                                    \markup { pno. }
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 9/4
+                                    \ottava -1
+                                    \clef "bass"
+                                    <g,, b,, ef,>4
+                                    :32
+                                    \mp
+                                    \arpeggio
+                                    \ottava 0
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                    <af, bf, cs>8
+                                    :64
+                                    \mp
+                                    \arpeggio
+                                    ~
+                                    <af, bf, cs>4.
+                                    :32
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                    \ottava 1
+                                    \clef "treble"
+                                    <cs''' af''' bf''' cs''''>8
+                                    :64
+                                    \mp
+                                    \arpeggio
+                                    \>
+                                    \ottava 0
+                                    \ottava -1
+                                    <e fs a c'>4.
+                                    :32
+                                    \arpeggio
+                                    \ottava 0
+                                    <a' g'' af'' a''>2..
+                                    :32
+                                    \ppp
+                                    \arpeggio
+                                    - \tweak stencil #constante-hairpin
+                                    \<
+                                    ~
+                                    <a' g'' af'' a''>4
+                                    :32
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \times 8/9
+                                    {
+                                        \ottava 1
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        cs''''32
+                                        \p
+                                        \(
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        bf'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        af''''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        e''''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        fs''''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g''''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        a'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c''''32
+                                        \)
+                                        \ottava 0
+                                    }
+                                    \revert TupletNumber.text
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                    \clef "bass"
+                                    <a, c>8
+                                    :64
+                                    \p
+                                    \arpeggio
+                                    - \tweak stencil #constante-hairpin
+                                    \<
+                                    \clef "treble"
+                                    <b'' fs'''>4.
+                                    :32
+                                    \arpeggio
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4.
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \times 12/13
+                                    {
+                                        \ottava 1
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        ef'''32
+                                        \f
+                                        \(
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        e'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        af'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        d'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        cs'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        f'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        fs'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        fs'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        f'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c'''32
+                                        \)
+                                        \ottava 0
+                                    }
+                                    \revert TupletNumber.text
+                                    r1
+                                    \ottava 1
+                                    <d''' e''' af''' c''''>2.
+                                    :32
+                                    \p
+                                    \arpeggio
+                                    - \tweak stencil #abjad-flared-hairpin
+                                    \<
+                                    ~
+                                    <d''' e''' af''' c''''>4.
+                                    :32
+                                    \f
+                                    \ottava 0
+                                    <af' fs'' g'' af''>2..
+                                    :32
+                                    \fp
+                                    \arpeggio
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/8
+                                    \ottava 1
+                                    <a'' e''' fs''' a''' c''''>4.
+                                    :32
+                                    \pp
+                                    \arpeggio
+                                    \(
+                                    <a'' g''' af''' a'''>4
+                                    :32
+                                    \arpeggio
+                                    \)
+                                    \ottava 0
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/8
+                                    \ottava -1
+                                    \clef "bass"
+                                    <af,, bf,, cs,>2.
+                                    :32
+                                    \fp
+                                    \arpeggio
+                                    \<
+                                    ~
+                                    <af,, bf,, cs,>2
+                                    :32
+                                    \ottava 0
+                                    \ottava 1
+                                    \clef "treble"
+                                    <a'' e''' fs''' a''' c''''>1.
+                                    :32
+                                    \arpeggio
+                                    ~
+                                    <a'' e''' fs''' a''' c''''>1..
+                                    :32
+                                    \ottava 0
+                                    \override TupletNumber.text = \markup \italic 10:9
+                                    \times 36/40
+                                    {
+                                        \ottava 1
+                                        ef'''16
+                                        [
+                                        \(
+                                        e'''16
+                                        af'''16
+                                        d'''16
+                                        g'''16
+                                        cs'''16
+                                        c'''16
+                                        f'''16
+                                        fs'''16
+                                        b''16
+                                        fs'''16
+                                        f'''16
+                                        c'''16
+                                        cs'''16
+                                        g'''16
+                                        d'''16
+                                        cs''''16
+                                        bf'''16
+                                        af''''16
+                                        e''''16
+                                        fs''''16
+                                        g''''16
+                                        b'''16
+                                        a'''16
+                                        c''''16
+                                        f''''16
+                                        d''''16
+                                        a''''16
+                                        af'''16
+                                        d'''16
+                                        g'''16
+                                        e'''16
+                                        cs'''16
+                                        f''16
+                                        c''16
+                                        e''16
+                                        bf''16
+                                        fs''16
+                                        cs''16
+                                        g''16
+                                        \)
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    <f'' a'' cs''' fs''' a'''>1.
+                                    :32
+                                    \fp
+                                    \arpeggio
+                                    \<
+                                    ~
+                                    <f'' a'' cs''' fs''' a'''>2.
+                                    :32
+                                    ~
+                                    <f'' a'' cs''' fs''' a'''>1..
+                                    :32
+                                    \ottava 0
+                                    \ottava -1
+                                    \clef "bass"
+                                    <b,, fs,>1.
+                                    :32
+                                    \arpeggio
+                                    \ottava 0
+                                    \ottava 1
+                                    \clef "treble"
+                                    <af''' bf''' cs''''>2.
+                                    :32
+                                    \arpeggio
+                                    ~
+                                    <af''' bf''' cs''''>2
+                                    :32
+                                    \ottava 0
+                                    \ottava -1
+                                    \clef "bass"
+                                    <af,, bf,, cs,>4
+                                    :32
+                                    \fff
+                                    \arpeggio
+                                    - \marcato
+                                    \ottava 0
+                                    \ottava 1
+                                    \clef "treble"
+                                    <af''' cs'''' e''''>4
+                                    :32
+                                    \arpeggio
+                                    - \marcato
+                                    \ottava 0
+                                    \clef "bass"
+                                    <bf,, f,>2.
+                                    :32
+                                    \p
+                                    \arpeggio
+                                    - \tweak stencil #abjad-flared-hairpin
+                                    \<
+                                    ~
+                                    <bf,, f,>2
+                                    :32
+                                }
+                            }
+                        }
+                        \tag #'voice6
+                        {
+                            \context Staff = "piano 2 staff"
+                            {
+                                \context Voice = "piano 2 voice"
+                                {
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 9/4
+                                    \ottava -1
+                                    \clef "bass"
+                                    <a,,, f,,>4
+                                    :32
+                                    \arpeggio
+                                    \ottava 0
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                    <a,, cs,>8
+                                    :64
+                                    \arpeggio
+                                    ~
+                                    <a,, cs,>4.
+                                    :32
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                    \clef "treble"
+                                    <cs' d'' a''>8
+                                    :64
+                                    \arpeggio
+                                    \ottava -1
+                                    \clef "bass"
+                                    <d,, c, a,>4.
+                                    :32
+                                    \arpeggio
+                                    \ottava 0
+                                    <d cs'>2..
+                                    :32
+                                    \ppp
+                                    \arpeggio
+                                    - \tweak stencil #constante-hairpin
+                                    \<
+                                    ~
+                                    <d cs'>4
+                                    :32
+                                    ~
+                                    <d cs'>4
+                                    :32
+                                    \!
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                    <fs, af,>8
+                                    :64
+                                    \arpeggio
+                                    \clef "treble"
+                                    <bf'>4.
+                                    :32
+                                    \arpeggio
+                                    \ottava -1
+                                    \clef "bass"
+                                    <ef,, f,, af,,>2..
+                                    :32
+                                    \p
+                                    \arpeggio
+                                    - \tweak stencil #constante-hairpin
+                                    \<
+                                    ~
+                                    <ef,, f,, af,,>4
+                                    :32
+                                    ~
+                                    <ef,, f,, af,,>4
+                                    :32
+                                    \!
+                                    \ottava 0
+                                    \clef "treble"
+                                    <af' b''>2.
+                                    :32
+                                    \arpeggio
+                                    ~
+                                    <af' b''>4.
+                                    :32
+                                    \clef "bass"
+                                    <cs a>2..
+                                    :32
+                                    \arpeggio
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                    R1 * 1/4
+                                    - \markup \huge { \musicglyph "scripts.ufermata" }
+                                    \stopStaff \startStaff
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/8
+                                    \clef "treble"
+                                    <d' c''>4.
+                                    :32
+                                    \arpeggio
+                                    \(
+                                    <d' cs''>4
+                                    :32
+                                    \arpeggio
+                                    \)
+                                    \once \override Rest.transparent = ##t
+                                    r1 * 1/8
+                                    \ottava -1
+                                    \clef "bass"
+                                    <c,, e,,>2.
+                                    :32
+                                    \arpeggio
+                                    ~
+                                    <c,, e,,>2
+                                    :32
+                                    \ottava 0
+                                    \clef "treble"
+                                    <d' c''>1.
+                                    :32
+                                    \arpeggio
+                                    ~
+                                    <d' c''>1..
+                                    :32
+                                    \ottava -1
+                                    \clef "bass"
+                                    <b,,, cs,, f,, a,,>1.
+                                    :32
+                                    \arpeggio
+                                    ~
+                                    <b,,, cs,, f,, a,,>2.
+                                    :32
+                                    \ottava 0
+                                    \clef "treble"
+                                    <b b'>1.
+                                    :32
+                                    \arpeggio
+                                    ~
+                                    <b b'>2.
+                                    :32
+                                    ~
+                                    <b b'>1..
+                                    :32
+                                    \ottava -1
+                                    \clef "bass"
+                                    <ef,, bf,,>1.
+                                    :32
+                                    \arpeggio
+                                    \ottava 0
+                                    \ottava 1
+                                    \clef "treble"
+                                    <a'' cs'''>2.
+                                    :32
+                                    \arpeggio
+                                    ~
+                                    <a'' cs'''>2
+                                    :32
+                                    \ottava 0
+                                    \ottava -1
+                                    \clef "bass"
+                                    <a,,, cs,,>4
+                                    :32
+                                    \arpeggio
+                                    - \marcato
+                                    \ottava 0
+                                    \ottava 1
+                                    \clef "treble"
+                                    <g'' b''>4
+                                    :32
+                                    \arpeggio
+                                    - \marcato
+                                    \ottava 0
+                                    \ottava -1
+                                    \clef "bass"
+                                    <d,, a,,>2.
+                                    :32
+                                    \arpeggio
+                                    ~
+                                    <d,, a,,>2
+                                    :32
+                                    \ottava 0
                                 }
                             }
                         }

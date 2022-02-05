@@ -61,253 +61,6 @@
                     <<
                         \tag #'voice1
                         {
-                            \context Staff = "piano 1 staff"
-                            {
-                                \context Voice = "piano 1 voice"
-                                {
-                                    \set PianoStaff.shortInstrumentName =
-                                    \markup { pno. }
-                                    <cs' d' ef' fs' af'>4
-                                    \f
-                                    - \marcato
-                                    - \staccato
-                                    \override TupletNumber.text = \markup \italic { 3:2 }
-                                    \tweak edge-height #'(0.7 . 0)
-                                    \times 1/1
-                                    {
-                                        \override TupletNumber.text = \markup \italic { 3:2 }
-                                        \tweak edge-height #'(0.7 . 0)
-                                        \times 2/3
-                                        {
-                                            <d'' ef'' f'' fs'' a''>8
-                                            - \marcato
-                                            - \staccato
-                                        }
-                                        \revert TupletNumber.text
-                                    }
-                                    \revert TupletNumber.text
-                                    \ottava -1
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    <cs d ef f bf>8
-                                    - \marcato
-                                    - \staccato
-                                    [
-                                    <c e af>8
-                                    - \marcato
-                                    - \staccato
-                                    \revert Staff.Stem.stemlet-length
-                                    <bf, b, fs g a>8
-                                    - \marcato
-                                    - \staccato
-                                    ]
-                                    \ottava 0
-                                    \override TupletNumber.text = \markup \italic { 3:2 }
-                                    \tweak edge-height #'(0.7 . 0)
-                                    \times 2/3
-                                    {
-                                        <cs''' d''' e''' g''' af'''>8
-                                        - \marcato
-                                        - \staccato
-                                        \<
-                                        [
-                                        <b'' c''' ef'''>8
-                                        - \marcato
-                                        - \staccato
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    <cs' d' ef' fs' af'>8
-                                    - \marcato
-                                    - \staccato
-                                    [
-                                    <c' e' f'>8
-                                    - \marcato
-                                    - \staccato
-                                    \revert Staff.Stem.stemlet-length
-                                    <b ef' g' af' a'>8
-                                    - \marcato
-                                    - \staccato
-                                    ]
-                                    \ottava -1
-                                    <cs d ef f bf>4
-                                    \ff
-                                    - \marcato
-                                    - \staccato
-                                    \ottava 0
-                                    \override TupletNumber.text = \markup \italic { 3:2 }
-                                    \tweak edge-height #'(0.7 . 0)
-                                    \times 1/1
-                                    {
-                                        \override TupletNumber.text = \markup \italic { 3:2 }
-                                        \tweak edge-height #'(0.7 . 0)
-                                        \times 2/3
-                                        {
-                                            <d'' ef'' f'' fs'' a''>8
-                                            - \marcato
-                                            - \staccato
-                                        }
-                                        \revert TupletNumber.text
-                                    }
-                                    \revert TupletNumber.text
-                                    <cs' d' ef' fs' af'>4
-                                    - \marcato
-                                    - \staccato
-                                    <c' e' f'>8
-                                    - \marcato
-                                    - \staccato
-                                    \override TupletNumber.text = \markup \italic { 3:2 }
-                                    \tweak edge-height #'(0.7 . 0)
-                                    \times 1/1
-                                    {
-                                        \override TupletNumber.text = \markup \italic { 3:2 }
-                                        \tweak edge-height #'(0.7 . 0)
-                                        \times 2/3
-                                        {
-                                            <cs''' d''' e''' g''' af'''>4
-                                            - \marcato
-                                            - \staccato
-                                        }
-                                        \revert TupletNumber.text
-                                    }
-                                    \revert TupletNumber.text
-                                    <cs' d' ef' fs' af'>8
-                                    - \marcato
-                                    - \staccato
-                                    \<
-                                    <c' e' f'>4
-                                    - \marcato
-                                    - \staccato
-                                    <d'' ef'' f'' fs'' a''>4
-                                    \fff
-                                    - \marcato
-                                    - \staccato
-                                }
-                            }
-                        }
-                        \tag #'voice2
-                        {
-                            \context Staff = "piano 2 staff"
-                            {
-                                \context Voice = "piano 2 voice"
-                                {
-                                    <bf,, c, f, fs, g,>4
-                                    - \marcato
-                                    - \staccato
-                                    \override TupletNumber.text = \markup \italic { 3:2 }
-                                    \tweak edge-height #'(0.7 . 0)
-                                    \times 1/1
-                                    {
-                                        \override TupletNumber.text = \markup \italic { 3:2 }
-                                        \tweak edge-height #'(0.7 . 0)
-                                        \times 2/3
-                                        {
-                                            <b,, e, a,>8
-                                            - \marcato
-                                            - \staccato
-                                        }
-                                        \revert TupletNumber.text
-                                    }
-                                    \revert TupletNumber.text
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    <cs, d, ef, fs, af,>8
-                                    - \marcato
-                                    - \staccato
-                                    [
-                                    <bf,, c, f, fs, g,>8
-                                    - \marcato
-                                    - \staccato
-                                    \revert Staff.Stem.stemlet-length
-                                    <b,, e, a,>8
-                                    - \marcato
-                                    - \staccato
-                                    ]
-                                    \override TupletNumber.text = \markup \italic { 3:2 }
-                                    \tweak edge-height #'(0.7 . 0)
-                                    \times 2/3
-                                    {
-                                        <cs, d, ef, fs, af,>8
-                                        - \marcato
-                                        - \staccato
-                                        [
-                                        <bf,, c, f, fs, g,>8
-                                        - \marcato
-                                        - \staccato
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    <b,, e, a,>8
-                                    - \marcato
-                                    - \staccato
-                                    [
-                                    <cs, d, ef, fs, af,>8
-                                    - \marcato
-                                    - \staccato
-                                    \revert Staff.Stem.stemlet-length
-                                    <bf,, c, f, fs, g,>8
-                                    - \marcato
-                                    - \staccato
-                                    ]
-                                    <b,, e, a,>4
-                                    - \marcato
-                                    - \staccato
-                                    \override TupletNumber.text = \markup \italic { 3:2 }
-                                    \tweak edge-height #'(0.7 . 0)
-                                    \times 1/1
-                                    {
-                                        \override TupletNumber.text = \markup \italic { 3:2 }
-                                        \tweak edge-height #'(0.7 . 0)
-                                        \times 2/3
-                                        {
-                                            <cs, d, ef, fs, af,>8
-                                            - \marcato
-                                            - \staccato
-                                        }
-                                        \revert TupletNumber.text
-                                    }
-                                    \revert TupletNumber.text
-                                    <bf,, c, f, fs, g,>4
-                                    - \marcato
-                                    - \staccato
-                                    <b,, e, a,>8
-                                    - \marcato
-                                    - \staccato
-                                    \override TupletNumber.text = \markup \italic { 3:2 }
-                                    \tweak edge-height #'(0.7 . 0)
-                                    \times 1/1
-                                    {
-                                        \override TupletNumber.text = \markup \italic { 3:2 }
-                                        \tweak edge-height #'(0.7 . 0)
-                                        \times 2/3
-                                        {
-                                            <cs, d, ef, fs, af,>4
-                                            - \marcato
-                                            - \staccato
-                                        }
-                                        \revert TupletNumber.text
-                                    }
-                                    \revert TupletNumber.text
-                                    <bf,, c, f, fs, g,>8
-                                    - \marcato
-                                    - \staccato
-                                    <b,, e, a,>4
-                                    - \marcato
-                                    - \staccato
-                                    <cs, d, ef, fs, af,>4
-                                    - \marcato
-                                    - \staccato
-                                }
-                            }
-                        }
-                    >>
-                }
-                \tag #'group3
-                {
-                    \context PianoStaff = "sub group 2"
-                    <<
-                        \tag #'voice3
-                        {
                             \context Staff = "cello 1 staff"
                             {
                                 \context Voice = "cello 1 voice"
@@ -430,7 +183,7 @@
                                 }
                             }
                         }
-                        \tag #'voice4
+                        \tag #'voice2
                         {
                             \context Staff = "cello 2 staff"
                             {
@@ -567,11 +320,11 @@
                         }
                     >>
                 }
-                \tag #'group4
+                \tag #'group3
                 {
-                    \context PianoStaff = "sub group 3"
+                    \context PianoStaff = "sub group 2"
                     <<
-                        \tag #'voice5
+                        \tag #'voice3
                         {
                             \context Staff = "contrabass 1 staff"
                             {
@@ -695,7 +448,7 @@
                                 }
                             }
                         }
-                        \tag #'voice6
+                        \tag #'voice4
                         {
                             \context Staff = "contrabass 2 staff"
                             {
@@ -826,6 +579,253 @@
                                     - \marcato
                                     - \staccato
                                     - \snappizzicato
+                                }
+                            }
+                        }
+                    >>
+                }
+                \tag #'group4
+                {
+                    \context PianoStaff = "sub group 3"
+                    <<
+                        \tag #'voice5
+                        {
+                            \context Staff = "piano 1 staff"
+                            {
+                                \context Voice = "piano 1 voice"
+                                {
+                                    \set PianoStaff.shortInstrumentName =
+                                    \markup { pno. }
+                                    <cs' d' ef' fs' af'>4
+                                    \f
+                                    - \marcato
+                                    - \staccato
+                                    \override TupletNumber.text = \markup \italic { 3:2 }
+                                    \tweak edge-height #'(0.7 . 0)
+                                    \times 1/1
+                                    {
+                                        \override TupletNumber.text = \markup \italic { 3:2 }
+                                        \tweak edge-height #'(0.7 . 0)
+                                        \times 2/3
+                                        {
+                                            <d'' ef'' f'' fs'' a''>8
+                                            - \marcato
+                                            - \staccato
+                                        }
+                                        \revert TupletNumber.text
+                                    }
+                                    \revert TupletNumber.text
+                                    \ottava -1
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <cs d ef f bf>8
+                                    - \marcato
+                                    - \staccato
+                                    [
+                                    <c e af>8
+                                    - \marcato
+                                    - \staccato
+                                    \revert Staff.Stem.stemlet-length
+                                    <bf, b, fs g a>8
+                                    - \marcato
+                                    - \staccato
+                                    ]
+                                    \ottava 0
+                                    \override TupletNumber.text = \markup \italic { 3:2 }
+                                    \tweak edge-height #'(0.7 . 0)
+                                    \times 2/3
+                                    {
+                                        <cs''' d''' e''' g''' af'''>8
+                                        - \marcato
+                                        - \staccato
+                                        \<
+                                        [
+                                        <b'' c''' ef'''>8
+                                        - \marcato
+                                        - \staccato
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <cs' d' ef' fs' af'>8
+                                    - \marcato
+                                    - \staccato
+                                    [
+                                    <c' e' f'>8
+                                    - \marcato
+                                    - \staccato
+                                    \revert Staff.Stem.stemlet-length
+                                    <b ef' g' af' a'>8
+                                    - \marcato
+                                    - \staccato
+                                    ]
+                                    \ottava -1
+                                    <cs d ef f bf>4
+                                    \ff
+                                    - \marcato
+                                    - \staccato
+                                    \ottava 0
+                                    \override TupletNumber.text = \markup \italic { 3:2 }
+                                    \tweak edge-height #'(0.7 . 0)
+                                    \times 1/1
+                                    {
+                                        \override TupletNumber.text = \markup \italic { 3:2 }
+                                        \tweak edge-height #'(0.7 . 0)
+                                        \times 2/3
+                                        {
+                                            <d'' ef'' f'' fs'' a''>8
+                                            - \marcato
+                                            - \staccato
+                                        }
+                                        \revert TupletNumber.text
+                                    }
+                                    \revert TupletNumber.text
+                                    <cs' d' ef' fs' af'>4
+                                    - \marcato
+                                    - \staccato
+                                    <c' e' f'>8
+                                    - \marcato
+                                    - \staccato
+                                    \override TupletNumber.text = \markup \italic { 3:2 }
+                                    \tweak edge-height #'(0.7 . 0)
+                                    \times 1/1
+                                    {
+                                        \override TupletNumber.text = \markup \italic { 3:2 }
+                                        \tweak edge-height #'(0.7 . 0)
+                                        \times 2/3
+                                        {
+                                            <cs''' d''' e''' g''' af'''>4
+                                            - \marcato
+                                            - \staccato
+                                        }
+                                        \revert TupletNumber.text
+                                    }
+                                    \revert TupletNumber.text
+                                    <cs' d' ef' fs' af'>8
+                                    - \marcato
+                                    - \staccato
+                                    \<
+                                    <c' e' f'>4
+                                    - \marcato
+                                    - \staccato
+                                    <d'' ef'' f'' fs'' a''>4
+                                    \fff
+                                    - \marcato
+                                    - \staccato
+                                }
+                            }
+                        }
+                        \tag #'voice6
+                        {
+                            \context Staff = "piano 2 staff"
+                            {
+                                \context Voice = "piano 2 voice"
+                                {
+                                    <bf,, c, f, fs, g,>4
+                                    - \marcato
+                                    - \staccato
+                                    \override TupletNumber.text = \markup \italic { 3:2 }
+                                    \tweak edge-height #'(0.7 . 0)
+                                    \times 1/1
+                                    {
+                                        \override TupletNumber.text = \markup \italic { 3:2 }
+                                        \tweak edge-height #'(0.7 . 0)
+                                        \times 2/3
+                                        {
+                                            <b,, e, a,>8
+                                            - \marcato
+                                            - \staccato
+                                        }
+                                        \revert TupletNumber.text
+                                    }
+                                    \revert TupletNumber.text
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <cs, d, ef, fs, af,>8
+                                    - \marcato
+                                    - \staccato
+                                    [
+                                    <bf,, c, f, fs, g,>8
+                                    - \marcato
+                                    - \staccato
+                                    \revert Staff.Stem.stemlet-length
+                                    <b,, e, a,>8
+                                    - \marcato
+                                    - \staccato
+                                    ]
+                                    \override TupletNumber.text = \markup \italic { 3:2 }
+                                    \tweak edge-height #'(0.7 . 0)
+                                    \times 2/3
+                                    {
+                                        <cs, d, ef, fs, af,>8
+                                        - \marcato
+                                        - \staccato
+                                        [
+                                        <bf,, c, f, fs, g,>8
+                                        - \marcato
+                                        - \staccato
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <b,, e, a,>8
+                                    - \marcato
+                                    - \staccato
+                                    [
+                                    <cs, d, ef, fs, af,>8
+                                    - \marcato
+                                    - \staccato
+                                    \revert Staff.Stem.stemlet-length
+                                    <bf,, c, f, fs, g,>8
+                                    - \marcato
+                                    - \staccato
+                                    ]
+                                    <b,, e, a,>4
+                                    - \marcato
+                                    - \staccato
+                                    \override TupletNumber.text = \markup \italic { 3:2 }
+                                    \tweak edge-height #'(0.7 . 0)
+                                    \times 1/1
+                                    {
+                                        \override TupletNumber.text = \markup \italic { 3:2 }
+                                        \tweak edge-height #'(0.7 . 0)
+                                        \times 2/3
+                                        {
+                                            <cs, d, ef, fs, af,>8
+                                            - \marcato
+                                            - \staccato
+                                        }
+                                        \revert TupletNumber.text
+                                    }
+                                    \revert TupletNumber.text
+                                    <bf,, c, f, fs, g,>4
+                                    - \marcato
+                                    - \staccato
+                                    <b,, e, a,>8
+                                    - \marcato
+                                    - \staccato
+                                    \override TupletNumber.text = \markup \italic { 3:2 }
+                                    \tweak edge-height #'(0.7 . 0)
+                                    \times 1/1
+                                    {
+                                        \override TupletNumber.text = \markup \italic { 3:2 }
+                                        \tweak edge-height #'(0.7 . 0)
+                                        \times 2/3
+                                        {
+                                            <cs, d, ef, fs, af,>4
+                                            - \marcato
+                                            - \staccato
+                                        }
+                                        \revert TupletNumber.text
+                                    }
+                                    \revert TupletNumber.text
+                                    <bf,, c, f, fs, g,>8
+                                    - \marcato
+                                    - \staccato
+                                    <b,, e, a,>4
+                                    - \marcato
+                                    - \staccato
+                                    <cs, d, ef, fs, af,>4
+                                    - \marcato
+                                    - \staccato
                                 }
                             }
                         }

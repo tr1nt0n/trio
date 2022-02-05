@@ -174,8 +174,8 @@ for tuplet, string in zip(
 trinton.rewrite_meter_by_voice(
     score=score,
     voice_indeces=[
+        1,
         3,
-        5,
     ],
 )
 
@@ -234,6 +234,12 @@ trinton.attach_multiple(
 
 trinton.attach(
     voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
+)
+
+trinton.attach(
+    voice=score["Global Context"],
+    leaves=[2,],
+    attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after"),
 )
 
 trio.write_marginmarkups(score)

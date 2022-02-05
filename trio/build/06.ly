@@ -26,2009 +26,6 @@
                     <<
                         \tag #'voice1
                         {
-                            \context Staff = "piano 1 staff"
-                            {
-                                \context Voice = "piano 1 voice"
-                                {
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 2/3
-                                    {
-                                        \set PianoStaff.shortInstrumentName =
-                                        \markup { pno. }
-                                        \ottava 1
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        - \tweak circled-tip ##t
-                                        \<
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 4/7
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 2/3
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 4/7
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 2/3
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \f
-                                        - \tweak circled-tip ##t
-                                        \>
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 4/5
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 1/1
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        \clef "treble"
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                    }
-                                    \revert TupletNumber.text
-                                    <b'' d''' e''' af''' c''''>4
-                                    :32
-                                    \arpeggio
-                                    - \tweak circled-tip ##t
-                                    \<
-                                    ~
-                                    <b'' d''' e''' af''' c''''>1.
-                                    :32
-                                    \f
-                                    - \tweak circled-tip ##t
-                                    \>
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4..
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \times 14/13
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        a'''32
-                                        - \tweak circled-tip ##t
-                                        \<
-                                        [
-                                        \(
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        af'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        f'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        e'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        f'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        fs'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        af'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        a'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        af'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        f'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        e'''32
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4..
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \times 7/6
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        af'''16
-                                        [
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        f'''8.
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        e'''16
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4..
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \times 1/1
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        f'''16
-                                        [
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        fs'''8.
-                                        \f
-                                        - \tweak circled-tip ##t
-                                        \>
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        af'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        a'''8
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4..
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \times 14/13
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        af'''32
-                                        [
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        f'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        e'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        f'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        fs'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        af'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        a'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        af'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        f'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        e'''32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        f'''32
-                                        \)
-                                        ]
-                                        \ottava 0
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'1..
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 28/32
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        bf''16
-                                        - \tweak circled-tip ##t
-                                        \<
-                                        \ottava -1
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        \clef "bass"
-                                        cs,,16
-                                        - \marcato
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        fs,,16
-                                        - \marcato
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        d,,16
-                                        - \marcato
-                                        \ottava 0
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        \clef "treble"
-                                        bf'16
-                                        \(
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'16
-                                        \)
-                                        \ottava -1
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        \clef "bass"
-                                        g,,16
-                                        - \marcato
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        af,,16
-                                        - \marcato
-                                        \ottava 0
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        \clef "treble"
-                                        a''16
-                                        \(
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        ef''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        f''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        e''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        f''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        ef''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        a''16
-                                        \)
-                                        \ottava -1
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        \clef "bass"
-                                        af,,16
-                                        - \marcato
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g,,16
-                                        - \marcato
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b,,,16
-                                        - \marcato
-                                        \ottava 0
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        \clef "treble"
-                                        bf'16
-                                        \f
-                                        - \tweak circled-tip ##t
-                                        \>
-                                        \(
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        d''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        fs''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        cs''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        bf''16
-                                        \)
-                                        \ottava -1
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        \clef "bass"
-                                        cs,,16
-                                        - \marcato
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        fs,,16
-                                        - \marcato
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        d,,16
-                                        - \marcato
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        bf,,,16
-                                        - \marcato
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b,,,16
-                                        - \marcato
-                                        \ottava 0
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        \clef "treble"
-                                        g''16
-                                        \(
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        af''16
-                                        \)
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 2/3
-                                    {
-                                        \ottava 1
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \tweak circled-tip ##t
-                                        \<
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 4/7
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 2/3
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 4/7
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \f
-                                        - \tweak circled-tip ##t
-                                        \>
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 2/3
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 4/5
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #up
-                                    \times 1/1
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        - \accent
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        b'''16
-                                        \!
-                                    }
-                                    \revert TupletNumber.text
-                                    <a'' cs''' af''' bf''' cs''''>2.
-                                    :32
-                                    \p
-                                    \arpeggio
-                                    \ottava 0
-                                }
-                            }
-                        }
-                        \tag #'voice2
-                        {
-                            \context Staff = "piano 2 staff"
-                            {
-                                \context Voice = "piano 2 voice"
-                                {
-                                    s1..
-                                    \clef "bass"
-                                    <b, af'>4
-                                    :32
-                                    \arpeggio
-                                    ~
-                                    <b, af'>1.
-                                    :32
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4..
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #down
-                                    \times 14/13
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c,32
-                                        [
-                                        \(
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c,32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c,32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g32
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4..
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #down
-                                    \times 7/6
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c16
-                                        [
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g8.
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g16
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4..
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #down
-                                    \times 1/1
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c16
-                                        [
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c8.
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c,16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c,8
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                                        {
-                                            \context Score = "Score"
-                                            \with
-                                            {
-                                                \override SpacingSpanner.spacing-increment = 0.5
-                                                proportionalNotationDuration = ##f
-                                            }
-                                            <<
-                                                \context RhythmicStaff = "Rhythmic_Staff"
-                                                \with
-                                                {
-                                                    \remove Time_signature_engraver
-                                                    \remove Staff_symbol_engraver
-                                                    \override Stem.direction = #up
-                                                    \override Stem.length = 5
-                                                    \override TupletBracket.bracket-visibility = ##t
-                                                    \override TupletBracket.direction = #up
-                                                    \override TupletBracket.minimum-length = 4
-                                                    \override TupletBracket.padding = 1.25
-                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                                    \override TupletNumber.font-size = 0
-                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                                    tupletFullLength = ##t
-                                                }
-                                                {
-                                                    c'4..
-                                                }
-                                            >>
-                                            \layout
-                                            {
-                                                indent = 0
-                                                ragged-right = ##t
-                                            }
-                                        }
-                                    \tweak direction #down
-                                    \times 14/13
-                                    {
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c32
-                                        [
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c,32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c,32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        g32
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c32
-                                        \)
-                                        ]
-                                    }
-                                    \revert TupletNumber.text
-                                    s1..
-                                    s1..
-                                    <cs' d''>2.
-                                    :32
-                                    \arpeggio
-                                }
-                            }
-                        }
-                    >>
-                }
-                \tag #'group3
-                {
-                    \context PianoStaff = "sub group 2"
-                    <<
-                        \tag #'voice3
-                        {
                             \context Staff = "cello 1 staff"
                             {
                                 \context Voice = "cello 1 voice"
@@ -2167,7 +164,7 @@
                                 }
                             }
                         }
-                        \tag #'voice4
+                        \tag #'voice2
                         {
                             \context Staff = "cello 2 staff"
                             {
@@ -3889,11 +1886,11 @@
                         }
                     >>
                 }
-                \tag #'group4
+                \tag #'group3
                 {
-                    \context PianoStaff = "sub group 3"
+                    \context PianoStaff = "sub group 2"
                     <<
-                        \tag #'voice5
+                        \tag #'voice3
                         {
                             \context Staff = "contrabass 1 staff"
                             {
@@ -4022,7 +2019,7 @@
                                 }
                             }
                         }
-                        \tag #'voice6
+                        \tag #'voice4
                         {
                             \context Staff = "contrabass 2 staff"
                             {
@@ -5935,6 +3932,2009 @@
                                     \f
                                     ^ \markup -5
                                     \boxed-markup "NB" 1
+                                }
+                            }
+                        }
+                    >>
+                }
+                \tag #'group4
+                {
+                    \context PianoStaff = "sub group 3"
+                    <<
+                        \tag #'voice5
+                        {
+                            \context Staff = "piano 1 staff"
+                            {
+                                \context Voice = "piano 1 voice"
+                                {
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 2/3
+                                    {
+                                        \set PianoStaff.shortInstrumentName =
+                                        \markup { pno. }
+                                        \ottava 1
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        - \tweak circled-tip ##t
+                                        \<
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 4/7
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 2/3
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 4/7
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 2/3
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \f
+                                        - \tweak circled-tip ##t
+                                        \>
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 4/5
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 1/1
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \clef "treble"
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                    }
+                                    \revert TupletNumber.text
+                                    <b'' d''' e''' af''' c''''>4
+                                    :32
+                                    \arpeggio
+                                    - \tweak circled-tip ##t
+                                    \<
+                                    ~
+                                    <b'' d''' e''' af''' c''''>1.
+                                    :32
+                                    \f
+                                    - \tweak circled-tip ##t
+                                    \>
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4..
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \times 14/13
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        a'''32
+                                        - \tweak circled-tip ##t
+                                        \<
+                                        [
+                                        \(
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        af'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        f'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        e'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        f'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        fs'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        af'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        a'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        af'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        f'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        e'''32
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4..
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \times 7/6
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        af'''16
+                                        [
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        f'''8.
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        e'''16
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4..
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \times 1/1
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        f'''16
+                                        [
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        fs'''8.
+                                        \f
+                                        - \tweak circled-tip ##t
+                                        \>
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        af'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        a'''8
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4..
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \times 14/13
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        af'''32
+                                        [
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        f'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        e'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        f'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        fs'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        af'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        a'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        af'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        f'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        e'''32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        f'''32
+                                        \)
+                                        ]
+                                        \ottava 0
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'1..
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 28/32
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        bf''16
+                                        - \tweak circled-tip ##t
+                                        \<
+                                        \ottava -1
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \clef "bass"
+                                        cs,,16
+                                        - \marcato
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        fs,,16
+                                        - \marcato
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        d,,16
+                                        - \marcato
+                                        \ottava 0
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \clef "treble"
+                                        bf'16
+                                        \(
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'16
+                                        \)
+                                        \ottava -1
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \clef "bass"
+                                        g,,16
+                                        - \marcato
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        af,,16
+                                        - \marcato
+                                        \ottava 0
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \clef "treble"
+                                        a''16
+                                        \(
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        ef''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        f''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        e''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        f''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        ef''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        a''16
+                                        \)
+                                        \ottava -1
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \clef "bass"
+                                        af,,16
+                                        - \marcato
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g,,16
+                                        - \marcato
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b,,,16
+                                        - \marcato
+                                        \ottava 0
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \clef "treble"
+                                        bf'16
+                                        \f
+                                        - \tweak circled-tip ##t
+                                        \>
+                                        \(
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        d''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        fs''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        cs''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        bf''16
+                                        \)
+                                        \ottava -1
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \clef "bass"
+                                        cs,,16
+                                        - \marcato
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        fs,,16
+                                        - \marcato
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        d,,16
+                                        - \marcato
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        bf,,,16
+                                        - \marcato
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b,,,16
+                                        - \marcato
+                                        \ottava 0
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \clef "treble"
+                                        g''16
+                                        \(
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        af''16
+                                        \)
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 2/3
+                                    {
+                                        \ottava 1
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \tweak circled-tip ##t
+                                        \<
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 4/7
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 2/3
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 4/7
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \f
+                                        - \tweak circled-tip ##t
+                                        \>
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 2/3
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 4/5
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #up
+                                    \times 1/1
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        - \accent
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        b'''16
+                                        \!
+                                    }
+                                    \revert TupletNumber.text
+                                    <a'' cs''' af''' bf''' cs''''>2.
+                                    :32
+                                    \p
+                                    \arpeggio
+                                    \ottava 0
+                                }
+                            }
+                        }
+                        \tag #'voice6
+                        {
+                            \context Staff = "piano 2 staff"
+                            {
+                                \context Voice = "piano 2 voice"
+                                {
+                                    s1..
+                                    \clef "bass"
+                                    <b, af'>4
+                                    :32
+                                    \arpeggio
+                                    ~
+                                    <b, af'>1.
+                                    :32
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4..
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #down
+                                    \times 14/13
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c,32
+                                        [
+                                        \(
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c,32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c,32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g32
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4..
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #down
+                                    \times 7/6
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c16
+                                        [
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g8.
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g16
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4..
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #down
+                                    \times 1/1
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c16
+                                        [
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c8.
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c,16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c,8
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                        {
+                                            \context Score = "Score"
+                                            \with
+                                            {
+                                                \override SpacingSpanner.spacing-increment = 0.5
+                                                proportionalNotationDuration = ##f
+                                            }
+                                            <<
+                                                \context RhythmicStaff = "Rhythmic_Staff"
+                                                \with
+                                                {
+                                                    \remove Time_signature_engraver
+                                                    \remove Staff_symbol_engraver
+                                                    \override Stem.direction = #up
+                                                    \override Stem.length = 5
+                                                    \override TupletBracket.bracket-visibility = ##t
+                                                    \override TupletBracket.direction = #up
+                                                    \override TupletBracket.minimum-length = 4
+                                                    \override TupletBracket.padding = 1.25
+                                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                    \override TupletNumber.font-size = 0
+                                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                    tupletFullLength = ##t
+                                                }
+                                                {
+                                                    c'4..
+                                                }
+                                            >>
+                                            \layout
+                                            {
+                                                indent = 0
+                                                ragged-right = ##t
+                                            }
+                                        }
+                                    \tweak direction #down
+                                    \times 14/13
+                                    {
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c32
+                                        [
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c,32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c,32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        g32
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        c32
+                                        \)
+                                        ]
+                                    }
+                                    \revert TupletNumber.text
+                                    s1..
+                                    s1..
+                                    <cs' d''>2.
+                                    :32
+                                    \arpeggio
                                 }
                             }
                         }

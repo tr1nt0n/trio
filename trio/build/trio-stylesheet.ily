@@ -9,8 +9,8 @@
 \include "/Users/trintonprater/baca/lilypond/baca-circle-bow-markups.ily"
 
 \header {
-    title = \markup \override #'(font-name . "Bodoni72") \fontsize #8 \center-column {"PIANO TRIO" \fontsize #0.5 \with-color #white "."}
-    subtitle = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"for Kate Ragan, Cori Trenczer, and Zoe Markle" \fontsize #3.4 \with-color #white "."}
+    title = \markup \override #'(font-name . "Bodoni72") \fontsize #12 \center-column {"PIANO TRIO" \fontsize #0.5 \with-color #white "."}
+    subtitle = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"for Cori Trenczer, Zoe Markle, and Kate Ragan" \fontsize #3.4 \with-color #white "."}
     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #3 {"Trinton (*2000)"}
 }
 
@@ -73,6 +73,15 @@
         \override TupletNumber.font-size = 1.5
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
+        \override TupletBracket #'stencil =
+            #(lambda (grob)
+               (let* ((pos (ly:grob-property grob 'positions))
+                      (dir (ly:grob-property grob 'direction))
+                      (new-pos (if (= dir 1)
+                                   (max (car pos)(cdr pos))
+                                   (min (car pos)(cdr pos)))))
+                 (ly:grob-set-property! grob 'positions (cons new-pos new-pos))
+                 (ly:tuplet-bracket::print grob)))
         % \override TupletBracket.direction = #up
 
         \override Stem.stemlet-length = 0.75
