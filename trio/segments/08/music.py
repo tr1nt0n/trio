@@ -261,14 +261,12 @@ for voice_name in ["cello 1 voice", "contrabass 1 voice"]:
 
     abjad.attach(
         abjad.LilyPondLiteral(r"\override Accidental.transparent = ##t"),
-        abjad.Selection(score[voice_name]).leaf(0)
+        abjad.Selection(score[voice_name]).leaf(0),
     )
 
     abjad.attach(
-        abjad.LilyPondLiteral(
-            r'\boxed-markup "Arco" 1', format_slot="after"
-        ),
-        abjad.Selection(score[voice_name]).leaf(0)
+        abjad.LilyPondLiteral(r'\boxed-markup "Arco" 1', format_slot="after"),
+        abjad.Selection(score[voice_name]).leaf(0),
     )
 
 handler = evans.PitchHandler(
@@ -278,18 +276,12 @@ handler = evans.PitchHandler(
 
 handler(abjad.Selection(score["cello 2 voice"]).leaves())
 
-trinton.attach(
-    voice=score["cello 2 voice"],
-    leaves=[0],
-    attachment=abjad.Clef("bass")
-)
+trinton.attach(voice=score["cello 2 voice"], leaves=[0], attachment=abjad.Clef("bass"))
 
 for voice_name in ["cello 2 voice", "contrabass 2 voice"]:
     abjad.attach(
-        abjad.LilyPondLiteral(
-            r'\boxed-markup "Pizz." 1', format_slot="after"
-        ),
-        abjad.Selection(score[voice_name]).leaf(0)
+        abjad.LilyPondLiteral(r'\boxed-markup "Pizz." 1', format_slot="after"),
+        abjad.Selection(score[voice_name]).leaf(0),
     )
 
     for leaf in abjad.select(score[voice_name]).leaves():
@@ -303,8 +295,6 @@ handler = evans.PitchHandler(
 )
 
 handler(abjad.Selection(score["contrabass 2 voice"]).leaves())
-
-# fill empty staves with skips
 
 # extract parts
 

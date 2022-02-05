@@ -969,7 +969,7 @@ for voice_name in [
 ]:
     for tuplet in abjad.Selection(score[voice_name]).tuplets():
         trio.noteheads_only(tuplet)
-        
+
 for voice_name in [
     "piano 1 voice",
     "cello 1 voice",

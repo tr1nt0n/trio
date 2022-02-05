@@ -1189,7 +1189,6 @@ def pitch_matter_with_selector(
     chord,
     partials,
     transpose,
-    markup=False,
 ):
     collection = trinton.transpose(l=_matter_harmonies[chord], m=transpose)
     collected_partials = []
