@@ -697,7 +697,7 @@ for tuplet in [abjad.Selection(score["contrabass 2 voice"]).tuplet(_) for _ in [
 
 # annotate leaves
 
-trinton.annotate_leaves(score)
+# trinton.annotate_leaves(score)
 
 # margin markups and standard cleffing
 
@@ -1178,13 +1178,274 @@ for voice_name in ["piano 1 voice", "cello 1 voice"]:
 
 # cello pitching/attachments
 
+cello_1_measures = abjad.Selection(score["cello 1 voice"]).leaves().group_by_measure()
 
-# contrabass pitchin/attachments
+double_stop_handler = evans.PitchHandler(
+    pitch_list=[
+        [
+            trio._open_strings_to_pitches["III"],
+            trio._open_strings_to_pitches["IV"],
+        ]
+    ]
+)
 
+I_II_handler = evans.PitchHandler(
+    pitch_list=[
+        trio._open_strings_to_pitches["I"],
+        trio._open_strings_to_pitches["II"],
+    ],
+    forget=False,
+)
+
+III_IV_handler = evans.PitchHandler(
+    pitch_list=[
+        trio._open_strings_to_pitches["III"],
+        trio._open_strings_to_pitches["IV"],
+    ],
+    forget=False,
+)
+
+for n in [0, 2, 3, 4, 5, 8,]:
+    double_stop_handler(cello_1_measures[n])
+
+for n in [9, 10, 11, 13, 14, 15, 16, 18, 20, 21, 22, 23, 24,]:
+    III_IV_handler(cello_1_measures[n])
+
+for n in [12, 17, 19,]:
+    I_II_handler(cello_1_measures[n])
+
+cello_2_measures = abjad.Selection(score["cello 2 voice"]).leaves().group_by_measure()
+
+IV_handler = evans.PitchHandler(
+    pitch_list=[-24],
+)
+
+for n in [0, 2, 3, 4, 5, 8,]:
+    IV_handler(cello_2_measures[n])
+
+trio.pitch_toccata_by_measure(
+    voice=score["cello 2 voice"],
+    measures=[2, 7, 8,],
+    selector=baca.selectors.pleaves(),
+    octave=4,
+    seed=18,
+    index=0,
+    random_walk=False,
+)
+
+trio.pitch_harmonic_glissandi_by_measure(
+    voice=score["cello 2 voice"],
+    measures=[10, 11, 12, 14, 15, 16, 17, 19, 21, 22, 23, 24, 25,],
+    selector=baca.selectors.pleaves(),
+    strings="III and IV",
+    index=0
+)
+
+trio.pitch_harmonic_glissandi_by_measure(
+    voice=score["cello 2 voice"],
+    measures=[13, 18, 20,],
+    selector=baca.selectors.pleaves(),
+    strings="I and II",
+    index=0
+)
+
+cello_1_measures = abjad.Selection(score["cello 1 voice"]).leaves().group_by_measure()
+
+for n in [0, 2, 3, 4, 5, 8,]:
+    for leaf in cello_1_measures[n].leaves():
+        abjad.attach(abjad.Articulation("marcato"), leaf)
+
+for n in [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]:
+    abjad.attach(abjad.Articulation("marcato"), cello_1_measures[n].leaf(0))
+    abjad.attach(abjad.StartPhrasingSlur(), cello_1_measures[n].leaf(0))
+    abjad.attach(abjad.StopPhrasingSlur(), cello_1_measures[n].leaf(-1))
+
+trinton.attach(
+    voice=score["cello 1 voice"],
+    leaves=[11,],
+    attachment=abjad.StartHairpin("|>o")
+)
+
+trinton.attach(
+    voice=score["cello 2 voice"],
+    leaves=[1, 14, 28, 30, 32, 35, 37, 42, 44, 46, 49, 52, 58, 60, 62, 65, 69,],
+    attachment=abjad.Clef("treble")
+)
+
+trinton.attach(
+    voice=score["cello 2 voice"],
+    leaves=[0, 8, 25, 29, 31, 33, 36, 38, 43, 45, 47, 53, 59, 61, 63, 66, 70,],
+    attachment=abjad.Clef("bass")
+)
+
+for leaf in abjad.Selection(score["cello 2 voice"]).leaves(pitched=True):
+    if isinstance(leaf, abjad.Chord):
+        pass
+    else:
+        if leaf.written_pitch.number == -24:
+            abjad.attach(abjad.Articulation("snappizzicato"), leaf)
+            abjad.attach(abjad.Articulation("marcato"), leaf)
+
+cello_2_measures = abjad.Selection(score["cello 2 voice"]).leaves(pitched=True).group_by_measure()
+
+for measure in cello_2_measures:
+    abjad.attach(abjad.Articulation("marcato"), abjad.Selection(measure).leaf(0))
+
+for tuplet in abjad.Selection(score["cello 2 voice"]).tuplets():
+    if abjad.get.annotation(tuplet, trio.harmonic_gliss) is True:
+        abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
+        abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
+        for leaf in abjad.Selection(tuplet).leaves().exclude([-1]):
+            abjad.attach(abjad.Glissando(), leaf)
+        for chord in tuplet:
+            for head in chord.note_heads:
+                abjad.tweak(head).style = r"#'harmonic-mixed"
+    elif abjad.get.annotation(tuplet, trio.toccata) is True:
+        for leaf in tuplet:
+            abjad.tweak(leaf.note_head).style = r"#'triangle"
+
+for leaf1, leaf2 in zip(
+    trinton.make_leaf_selection(
+        score=score,
+        voice="cello 2 voice",
+        leaves=[
+            1,
+            14,
+        ]
+    ),
+    trinton.make_leaf_selection(
+        score=score,
+        voice="cello 2 voice",
+        leaves=[
+            7,
+            24,
+        ]
+    )
+):
+    trinton.dashed_slur(start_selection=leaf1, stop_selection=leaf2)
+
+trinton.ficta(
+    score=score,
+    voice="cello 2 voice",
+    start_ficta=[27,],
+    stop_ficta=[-1,],
+)
+
+trinton.attach(
+    voice=score["cello 2 voice"],
+    leaves=[8, 25,],
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "NB., Pizz." 1', format_slot="after")
+)
+
+trinton.attach(
+    voice=score["cello 2 voice"],
+    leaves=[1, 14,],
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Arco, XSB" 1', format_slot="after")
+)
+
+trinton.attach(
+    voice=score["cello 2 voice"],
+    leaves=[27,],
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Arco" 1', format_slot="after")
+)
+
+# contrabass pitching/attachments
+
+contrabass_1_measures = abjad.Selection(score["contrabass 1 voice"]).leaves().group_by_measure()
+
+double_stop_handler = evans.PitchHandler(
+    pitch_list=[
+        [
+            trio._open_strings_to_pitches["III"],
+            trio._open_strings_to_pitches["IV"],
+        ]
+    ]
+)
+
+for n in [0, 1, 2, 5, 6, 7,]:
+    double_stop_handler(contrabass_1_measures[n])
+
+contrabass_2_measures = abjad.Selection(score["contrabass 2 voice"]).leaves().group_by_measure()
+
+IV_handler = evans.PitchHandler(
+    pitch_list=[-20],
+)
+
+for n in [0, 1, 2, 5, 6, 7,]:
+    IV_handler(contrabass_2_measures[n])
+
+trio.pitch_contrabass_glissandi_by_measure(
+    voice=score["contrabass 2 voice"],
+    measures=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,],
+    selector=trio.select_tuplets_by_annotation(trio.vib),
+    strings="III and IV"
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[0],
+    attachment=abjad.Clef("bass")
+)
+
+contrabass_1_measures = abjad.Selection(score["contrabass 1 voice"]).leaves().group_by_measure()
+
+for n in [0, 1, 2, 5, 6, 7,]:
+    for leaf in contrabass_1_measures[n].leaves():
+        abjad.attach(abjad.Articulation("marcato"), leaf)
+
+contrabass_2_measures = abjad.Selection(score["contrabass 2 voice"]).leaves().group_by_measure()
+
+for n in [0, 1, 2, 5, 6, 7,]:
+    for leaf in contrabass_2_measures[n].leaves():
+        abjad.attach(abjad.Articulation("marcato"), leaf)
+        abjad.attach(abjad.Articulation("snappizzicato"), leaf)
+
+for tuplet in abjad.Selection(score["contrabass 2 voice"]).tuplets():
+    if abjad.get.annotation(tuplet, trio.vib) is True:
+        abjad.attach(abjad.Articulation("marcato"), tuplet[0])
+        abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
+        abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
+        for leaf in abjad.Selection(tuplet).leaves().exclude([-1]):
+            abjad.attach(abjad.Glissando(), leaf)
+
+for tuplet in abjad.Selection(score["contrabass 2 voice"]).tuplets().exclude([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -1]):
+    abjad.attach(abjad.Dynamic("fffff"), tuplet[0]),
+    abjad.attach(abjad.StartHairpin("|>o"), tuplet[0])
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[80],
+    attachment=abjad.Dynamic("fffff")
+)
+
+trinton.ficta(
+    score=score,
+    voice="contrabass 2 voice",
+    start_ficta=[4, 14,],
+    stop_ficta=[9, 85,],
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[4, 14,],
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Arco" 1', format_slot="after")
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[10,],
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Pizz." 1', format_slot="after")
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[21,],
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "low string portamento" 1', format_slot="after")
+)
 
 # extract parts
 
-# trinton.extract_parts(score=score)
+trinton.extract_parts(score=score)
 
 # render file
 

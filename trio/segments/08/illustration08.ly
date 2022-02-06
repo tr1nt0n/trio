@@ -72,7 +72,7 @@
                                     \f
                                     - \marcato
                                     - \staccato
-                                    \boxed-markup "Arco" 1
+                                    \boxed-markup "Arco sempre" 1
                                     \override TupletNumber.text = \markup \italic { 3:2 }
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 1/1
@@ -337,7 +337,7 @@
                                     \f
                                     - \marcato
                                     - \staccato
-                                    \boxed-markup "Arco" 1
+                                    \boxed-markup "Arco sempre" 1
                                     \override TupletNumber.text = \markup \italic { 3:2 }
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 1/1

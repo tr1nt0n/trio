@@ -265,7 +265,7 @@ for voice_name in ["cello 1 voice", "contrabass 1 voice"]:
     )
 
     abjad.attach(
-        abjad.LilyPondLiteral(r'\boxed-markup "Arco" 1', format_slot="after"),
+        abjad.LilyPondLiteral(r'\boxed-markup "Arco sempre" 1', format_slot="after"),
         abjad.Selection(score[voice_name]).leaf(0),
     )
 
