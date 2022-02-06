@@ -570,17 +570,25 @@ trio.finger_pressure(
 trinton.ottava(
     score=score,
     voice="piano 1 voice",
-    start_ottava=[0,],
-    stop_ottava=[52,],
-    octave=1
+    start_ottava=[
+        0,
+    ],
+    stop_ottava=[
+        52,
+    ],
+    octave=1,
 )
 
 trinton.ottava(
     score=score,
     voice="piano 2 voice",
-    start_ottava=[0,],
-    stop_ottava=[3,],
-    octave=1
+    start_ottava=[
+        0,
+    ],
+    stop_ottava=[
+        3,
+    ],
+    octave=1,
 )
 
 

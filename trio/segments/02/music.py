@@ -576,8 +576,11 @@ trinton.reduce_tuplets(score=score, voice="piano 1 voice", tuplets=[2])
 
 trinton.attach(
     voice=score["Global Context"],
-    leaves=[6, 27,],
-    attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after")
+    leaves=[
+        6,
+        27,
+    ],
+    attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after"),
 )
 
 # piano pitching/attachments

@@ -238,7 +238,9 @@ trinton.attach(
 
 trinton.attach(
     voice=score["Global Context"],
-    leaves=[2,],
+    leaves=[
+        2,
+    ],
     attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after"),
 )
 
