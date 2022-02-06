@@ -766,6 +766,7 @@
                                         }
                                     \times 28/32
                                     {
+                                        \slurDashed
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -777,7 +778,7 @@
                                         - \tweak bound-details.right.text \markup \italic { XSB }
                                         - \tweak padding 9.5
                                         \startTextSpan
-                                        \(
+                                        (
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -964,7 +965,8 @@
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c'16
-                                        \)
+                                        )
+                                        \slurSolid
                                     }
                                     \revert TupletNumber.text
                                 }
@@ -1519,6 +1521,7 @@
                                         }
                                     \times 20/24
                                     {
+                                        \slurDashed
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -1530,7 +1533,7 @@
                                         - \tweak bound-details.right.text \markup \italic { XSB }
                                         - \tweak padding 7.5
                                         \startTextSpan
-                                        \(
+                                        (
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -1665,7 +1668,8 @@
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         e16
-                                        \)
+                                        )
+                                        \slurSolid
                                     }
                                     \revert TupletNumber.text
                                 }

@@ -66,11 +66,12 @@
                                     }
                                     \times 8/9
                                     {
+                                        \slurDashed
                                         a,32
                                         \fff
                                         - \marcato
                                         [
-                                        \(
+                                        (
                                         \boxed-markup "XFB" 1
                                         e32
                                         \tweak style #'triangle
@@ -89,8 +90,9 @@
                                         bf,32
                                         \tweak style #'harmonic-mixed
                                         af,32
-                                        \)
+                                        )
                                         ]
+                                        \slurSolid
                                     }
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 4/6
@@ -259,6 +261,7 @@
                                     }
                                     \times 8/10
                                     {
+                                        \slurDashed
                                         ef32
                                         \ffff
                                         - \marcato
@@ -266,7 +269,7 @@
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
                                         [
-                                        \(
+                                        (
                                         \boxed-markup "XSB" 1
                                         bf32
                                         fs32
@@ -286,8 +289,9 @@
                                         \tweak style #'harmonic-mixed
                                         f32
                                         \!
-                                        \)
+                                        )
                                         ]
+                                        \slurSolid
                                     }
                                 }
                             }

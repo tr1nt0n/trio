@@ -1530,8 +1530,7 @@ for voice_name in ["cello 2 voice", "contrabass 2 voice"]:
             abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
             abjad.tweak(tuplet).direction = abjad.Down
         if abjad.get.annotation(tuplet, trio.toccata) is True:
-            abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
-            abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
+            trinton.dashed_slur(start_selection=tuplet[0], stop_selection=tuplet[-1])
 
 for voice_name in [
     "piano 1 voice",

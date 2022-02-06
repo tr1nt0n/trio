@@ -76,9 +76,10 @@
                                     ]
                                     r16
                                     \bar "||"
+                                    \slurDashed
                                     g4
                                     ~
-                                    \(
+                                    (
                                     \override Staff.Stem.stemlet-length = 0.75
                                     g8.
                                     [
@@ -86,8 +87,9 @@
                                     a16
                                     ]
                                     fs4
-                                    \)
+                                    )
                                     \bar "||"
+                                    \slurSolid
                                 }
                             }
                         }
@@ -128,11 +130,13 @@
                                     \clef "bass"
                                     r1 * 1/2
                                     \bar "||"
+                                    \slurDashed
                                     cs'2
-                                    \(
+                                    (
                                     d'4
-                                    \)
+                                    )
                                     \bar "||"
+                                    \slurSolid
                                 }
                             }
                         }

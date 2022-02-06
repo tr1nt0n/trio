@@ -15,7 +15,6 @@
             s1 * 5/4
             \time 5/4
             s1 * 5/4
-            \pageBreak
             \time 3/4
             s1 * 3/4
             \time 3/4
@@ -812,6 +811,7 @@
                                 {
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { pno. }
+                                    \ottava 1
                                     \clef "treble"
                                     \override Staff.Stem.stemlet-length = 0.75
                                     b'''32
@@ -1009,6 +1009,7 @@
                                         [
                                         \change Staff = "piano 1 staff"
                                         a''8
+                                        \ottava 0
                                         \change Staff = "piano 2 staff"
                                         \revert Staff.Stem.stemlet-length
                                         a''8
@@ -1068,6 +1069,7 @@
                             {
                                 \context Voice = "piano 2 voice"
                                 {
+                                    \ottava 1
                                     \clef "treble"
                                     s1 * 3/4
                                     \fff
@@ -1076,6 +1078,7 @@
                                     s1 * 1/2
                                     s1 * 3/4
                                     s1 * 1/2
+                                    \ottava 0
                                     s1 * 3/4
                                     s1 * 1/2
                                     \ppp

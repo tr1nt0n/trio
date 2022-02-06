@@ -552,6 +552,7 @@
                                         }
                                     \times 20/24
                                     {
+                                        \slurDashed
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -564,7 +565,7 @@
                                         - \tweak bound-details.right.text \markup \italic { XSB }
                                         - \tweak padding 9.5
                                         \startTextSpan
-                                        \(
+                                        (
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -706,7 +707,8 @@
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'harmonic-mixed
                                         e16
-                                        \)
+                                        )
+                                        \slurSolid
                                     }
                                     \revert TupletNumber.text
                                     \clef "treble"
@@ -1479,6 +1481,7 @@
                                         }
                                     \times 20/24
                                     {
+                                        \slurDashed
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -1493,7 +1496,7 @@
                                         - \tweak bound-details.right.text \markup \italic { XSB }
                                         - \tweak padding 9.5
                                         \startTextSpan
-                                        \(
+                                        (
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -1633,7 +1636,8 @@
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
                                         a16
-                                        \)
+                                        )
+                                        \slurSolid
                                     }
                                     \revert TupletNumber.text
                                     \clef "treble"
@@ -2737,6 +2741,7 @@
                                         }
                                     \times 12/16
                                     {
+                                        \slurDashed
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -2751,7 +2756,7 @@
                                         - \tweak bound-details.right.text \markup \italic { XSB }
                                         - \tweak padding 7.5
                                         \startTextSpan
-                                        \(
+                                        (
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -2847,7 +2852,8 @@
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         c16
-                                        \)
+                                        )
+                                        \slurSolid
                                     }
                                     \revert TupletNumber.text
                                     \clef "treble"
@@ -3294,6 +3300,7 @@
                                         }
                                     \times 12/16
                                     {
+                                        \slurDashed
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -3306,7 +3313,7 @@
                                         - \tweak bound-details.right.text \markup \italic { XSB }
                                         - \tweak padding 7.5
                                         \startTextSpan
-                                        \(
+                                        (
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -3402,7 +3409,8 @@
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'harmonic-mixed
                                         g16
-                                        \)
+                                        )
+                                        \slurSolid
                                     }
                                     \revert TupletNumber.text
                                     \clef "treble"
@@ -3820,6 +3828,7 @@
                                         }
                                     \times 12/16
                                     {
+                                        \slurDashed
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -3834,7 +3843,7 @@
                                         - \tweak bound-details.right.text \markup \italic { XSB }
                                         - \tweak padding 7.5
                                         \startTextSpan
-                                        \(
+                                        (
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -3930,7 +3939,8 @@
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         g16
-                                        \)
+                                        )
+                                        \slurSolid
                                     }
                                     \revert TupletNumber.text
                                     \clef "treble"

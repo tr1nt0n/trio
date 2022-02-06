@@ -87,6 +87,7 @@
             s1 * 5/4
             \time 2/4
             s1 * 1/2
+            \pageBreak
             \tempo 4=60
             \time 5/4
             s1 * 5/4

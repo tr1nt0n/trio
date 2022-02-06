@@ -214,13 +214,19 @@ trinton.ottava(
 for voice_name in [
     "piano 1 voice",
     "piano 2 voice",
-    "cello 2 voice",
-    "contrabass 2 voice",
 ]:
     measures = abjad.Selection(score[voice_name]).leaves().group_by_measure()
     measure_2_leaves = measures[1].leaves()
     abjad.attach(abjad.StartPhrasingSlur(), measure_2_leaves[0])
     abjad.attach(abjad.StopPhrasingSlur(), measure_2_leaves[-1])
+
+for voice_name in [
+    "cello 2 voice",
+    "contrabass 2 voice"
+]:
+    measures = abjad.Selection(score[voice_name]).leaves().group_by_measure()
+    measure_2_leaves = measures[1].leaves()
+    trinton.dashed_slur(measure_2_leaves[0], measure_2_leaves[-1])
 
 for attachments, leaf in zip(
     [

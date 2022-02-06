@@ -11,6 +11,7 @@
             s1 * 1/4
             \time 11/8
             s1 * 11/8
+            \pageBreak
             \time 3/16
             s1 * 3/16
             \time 9/8
@@ -126,11 +127,12 @@
                                     \override TupletNumber.text = \markup \italic 13:11
                                     \times 44/52
                                     {
+                                        \slurDashed
                                         \tweak style #'harmonic-mixed
                                         cs''32
                                         \mp
                                         [
-                                        \(
+                                        (
                                         \boxed-markup "Ord., FB" 1
                                         \tweak style #'harmonic-mixed
                                         c''32
@@ -234,8 +236,9 @@
                                         b'32
                                         \tweak style #'harmonic-mixed
                                         f''32
-                                        \)
+                                        )
                                         ]
+                                        \slurSolid
                                     }
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
@@ -318,13 +321,14 @@
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
                                     r1 * 3/8
+                                    \slurDashed
                                     \tweak style #'harmonic-mixed
                                     b'32
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
                                     [
-                                    \(
+                                    (
                                     - \abjad-dashed-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XSB }
@@ -361,19 +365,21 @@
                                     f''32
                                     \tweak style #'harmonic-mixed
                                     fs''32
-                                    \)
+                                    )
                                     - \abjad-dashed-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \italic { XSB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XFB }
                                     - \tweak padding 9
                                     \startTextSpan
+                                    \slurSolid
+                                    \slurDashed
                                     \clef "tenor"
                                     \tweak style #'harmonic-mixed
                                     f'32
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \(
+                                    (
                                     \tweak style #'harmonic-mixed
                                     c'32
                                     \tweak style #'harmonic-mixed
@@ -394,7 +400,9 @@
                                     ef'32
                                     \tweak style #'harmonic-mixed
                                     af'32
-                                    \)
+                                    )
+                                    \slurSolid
+                                    \slurDashed
                                     \clef "treble"
                                     \tweak style #'triangle
                                     f''32
@@ -402,7 +410,7 @@
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
                                     \stopTextSpan
-                                    \(
+                                    (
                                     \tweak style #'triangle
                                     fs''32
                                     \tweak style #'triangle
@@ -444,14 +452,16 @@
                                     g''32
                                     \tweak style #'triangle
                                     b'32
-                                    \)
+                                    )
+                                    \slurSolid
+                                    \slurDashed
                                     \clef "tenor"
                                     \tweak style #'triangle
                                     ef'32
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \(
+                                    (
                                     \tweak style #'triangle
                                     fs'32
                                     \tweak style #'triangle
@@ -475,13 +485,15 @@
                                     fs'32
                                     cs'32
                                     d'32
-                                    \)
+                                    )
+                                    \slurSolid
+                                    \slurDashed
                                     \clef "bass"
                                     cs32
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \(
+                                    (
                                     bf32
                                     cs32
                                     bf32
@@ -506,14 +518,16 @@
                                     a32
                                     b,32
                                     f32
-                                    \)
+                                    )
+                                    \slurSolid
+                                    \slurDashed
                                     \clef "tenor"
                                     \tweak style #'triangle
                                     e'32
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \(
+                                    (
                                     \tweak style #'triangle
                                     d'32
                                     \tweak style #'triangle
@@ -543,19 +557,21 @@
                                     fs'32
                                     \tweak style #'triangle
                                     cs'32
-                                    \)
+                                    )
                                     - \abjad-dashed-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XSB }
                                     - \tweak padding 9
                                     \startTextSpan
+                                    \slurSolid
+                                    \slurDashed
                                     \clef "treble"
                                     \tweak style #'triangle
                                     c''32
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \(
+                                    (
                                     \tweak style #'triangle
                                     b'32
                                     \tweak style #'triangle
@@ -662,14 +678,16 @@
                                     fs''32
                                     \tweak style #'triangle
                                     f''32
-                                    \)
+                                    )
+                                    \slurSolid
+                                    \slurDashed
                                     \clef "tenor"
                                     \tweak style #'triangle
                                     ef'32
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \(
+                                    (
                                     af'64
                                     ef'64
                                     fs'64
@@ -684,13 +702,15 @@
                                     fs'64
                                     cs'64
                                     d'64
-                                    \)
+                                    )
+                                    \slurSolid
+                                    \slurDashed
                                     \clef "bass"
                                     a64
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \(
+                                    (
                                     - \abjad-dashed-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \italic { XSB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XFB }
@@ -722,13 +742,15 @@
                                     f64
                                     b,64
                                     f64
-                                    \)
+                                    )
+                                    \slurSolid
+                                    \slurDashed
                                     \clef "tenor"
                                     cs'64
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \(
+                                    (
                                     d'64
                                     cs'64
                                     fs'64
@@ -758,15 +780,17 @@
                                     e'64
                                     \tweak style #'triangle
                                     f'64
-                                    \)
+                                    )
                                     \stopTextSpan
+                                    \slurSolid
+                                    \slurDashed
                                     \clef "bass"
                                     \tweak style #'triangle
                                     c'64
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \(
+                                    (
                                     \tweak style #'triangle
                                     af64
                                     \tweak style #'triangle
@@ -810,14 +834,16 @@
                                     f64
                                     \tweak style #'triangle
                                     b,64
-                                    \)
+                                    )
+                                    \slurSolid
+                                    \slurDashed
                                     \clef "tenor"
                                     \tweak style #'triangle
                                     c'64
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \(
+                                    (
                                     \tweak style #'triangle
                                     fs'64
                                     \tweak style #'triangle
@@ -859,14 +885,16 @@
                                     fs'64
                                     \tweak style #'harmonic-mixed
                                     cs'64
-                                    \)
+                                    )
+                                    \slurSolid
+                                    \slurDashed
                                     \clef "bass"
                                     \tweak style #'harmonic-mixed
                                     af64
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \(
+                                    (
                                     \tweak style #'harmonic-mixed
                                     f64
                                     \tweak style #'harmonic-mixed
@@ -918,13 +946,15 @@
                                     b,64
                                     \tweak style #'triangle
                                     a64
-                                    \)
+                                    )
+                                    \slurSolid
+                                    \slurDashed
                                     \tweak style #'triangle
                                     b,64
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \(
+                                    (
                                     \tweak style #'triangle
                                     a,64
                                     \tweak style #'triangle
@@ -967,8 +997,9 @@
                                     \tweak style #'triangle
                                     b,64
                                     \!
-                                    \)
+                                    )
                                     ]
+                                    \slurSolid
                                     \once \override Rest.transparent = ##t
                                     r1 * 1/4
                                     r4
@@ -1083,12 +1114,13 @@
                                     \override TupletNumber.text = \markup \italic 13:11
                                     \times 44/52
                                     {
+                                        \slurDashed
                                         \clef "treble"
                                         \tweak style #'harmonic-mixed
                                         e'32
                                         \mp
                                         [
-                                        \(
+                                        (
                                         \boxed-markup "Ord., FB" 1
                                         \tweak style #'harmonic-mixed
                                         g'32
@@ -1192,8 +1224,9 @@
                                         e'32
                                         \tweak style #'harmonic-mixed
                                         f'32
-                                        \)
+                                        )
                                         ]
+                                        \slurSolid
                                     }
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
@@ -1201,13 +1234,14 @@
                                     \override TupletNumber.text = \markup \italic 10:9
                                     \times 72/80
                                     {
+                                        \slurDashed
                                         \clef "bass"
                                         \tweak style #'harmonic-mixed
                                         ef64
                                         - \tweak circled-tip ##t
                                         \<
                                         [
-                                        \(
+                                        (
                                         - \abjad-dashed-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \italic { XSB }
@@ -1358,9 +1392,10 @@
                                         ef64
                                         a64
                                         \!
-                                        \)
+                                        )
                                         \stopTextSpan
                                         ]
+                                        \slurSolid
                                     }
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
@@ -1368,12 +1403,13 @@
                                     \override TupletNumber.text = \markup \italic 5:4
                                     \times 16/20
                                     {
+                                        \slurDashed
                                         \clef "treble"
                                         af'16
                                         \fp
                                         \<
                                         [
-                                        \(
+                                        (
                                         - \abjad-dashed-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \italic { XSB }
@@ -1419,9 +1455,10 @@
                                         cs'16
                                         d'16
                                         \!
-                                        \)
+                                        )
                                         \stopTextSpan
                                         ]
+                                        \slurSolid
                                     }
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
@@ -1524,6 +1561,7 @@
                             {
                                 \context Voice = "piano 1 voice"
                                 {
+                                    \override TupletBracket.padding = 3
                                     \override TupletNumber.text = \markup \italic 13:12
                                     \times 48/52
                                     {
@@ -1670,6 +1708,7 @@
                                         ]
                                         \ottava 0
                                     }
+                                    \revert TupletBracket.padding
                                     \revert TupletNumber.text
                                     \once \override Rest.transparent = ##t
                                     r1 * 1/4
@@ -1689,6 +1728,7 @@
                                     \change Staff = "piano 1 staff"
                                     \once \override Rest.transparent = ##t
                                     r1 * 3/8
+                                    \override TupletBracket.padding = 3
                                     \override TupletNumber.text = \markup \italic 13:12
                                     \times 48/52
                                     {
@@ -1778,7 +1818,9 @@
                                         cs''''32
                                         ]
                                     }
+                                    \revert TupletBracket.padding
                                     \revert TupletNumber.text
+                                    \override TupletBracket.padding = 3
                                     \override TupletNumber.text = \markup \italic 13:11
                                     \times 44/52
                                     {
@@ -1867,7 +1909,9 @@
                                         ef''''32
                                         ]
                                     }
+                                    \revert TupletBracket.padding
                                     \revert TupletNumber.text
+                                    \override TupletBracket.padding = 3
                                     \override TupletNumber.text = \markup \italic 10:9
                                     \times 36/40
                                     {
@@ -1944,7 +1988,9 @@
                                         ef''''32
                                         ]
                                     }
+                                    \revert TupletBracket.padding
                                     \revert TupletNumber.text
+                                    \override TupletBracket.padding = 3
                                     \override TupletNumber.text = \markup \italic 5:4
                                     \times 64/80
                                     {
@@ -2087,7 +2133,9 @@
                                         f''''64
                                         ]
                                     }
+                                    \revert TupletBracket.padding
                                     \revert TupletNumber.text
+                                    \override TupletBracket.direction = #down
                                     \override TupletNumber.text = \markup \italic 8:7
                                     \times 56/64
                                     {
@@ -2217,6 +2265,7 @@
                                         - \marcato
                                         ]
                                     }
+                                    \revert TupletBracket.direction
                                     \revert TupletNumber.text
                                     \change Staff = "piano 1 staff"
                                     \once \override Rest.transparent = ##t
@@ -2301,14 +2350,16 @@
                                     \clef "bass"
                                     s1 * 3/4
                                     s1 * 3/8
-                                    \ottava 2
                                     \clef "treble"
                                     s1 * 1
-                                    \ottava 0
+                                    \ottava -1
                                     s1 * 7/8
+                                    \ottava 0
                                     \once \override Rest.transparent = ##t
                                     r1 * 1/4
+                                    \ottava 2
                                     s2.
+                                    \ottava 0
                                 }
                             }
                         }

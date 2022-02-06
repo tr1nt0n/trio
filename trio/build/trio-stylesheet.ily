@@ -9,8 +9,9 @@
 \include "/Users/trintonprater/baca/lilypond/baca-circle-bow-markups.ily"
 
 \header {
-    title = \markup \override #'(font-name . "Bodoni72") \fontsize #12 \center-column {"PIANO TRIO" \fontsize #0.5 \with-color #white "."}
-    subtitle = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"for Cori Trenczer, Zoe Markle, and Kate Ragan" \fontsize #3.4 \with-color #white "."}
+    dedication = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"to Natasia Reinhardt" \fontsize #0.25 \with-color #white "."}
+    title = \markup \override #'(font-name . "Bodoni72") \fontsize #12 \center-column {"PIANO TRIO" \fontsize #0.01 \with-color #white "."}
+    subtitle = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"for Cori Trenczer, Zoe Markle, and Kate Ragan" \fontsize #0.01 \with-color #white "."}
     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #3 {"Trinton (*2000)"}
 }
 
@@ -69,7 +70,7 @@
 
         tupletFullLength = ##t
         \override TupletBracket.full-length-to-extent = ##f
-        \override TupletBracket.padding = 3
+        % \override TupletBracket.padding = 3
         \override TupletNumber.font-size = 1.5
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
