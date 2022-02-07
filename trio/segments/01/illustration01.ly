@@ -1,7 +1,10 @@
 \version "2.20.0"
 \language "english"
-\include "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily"
-\include "/Users/trintonprater/abjad/docs/source/_stylesheets/abjad.ily"
+#(ly:set-option 'relative-includes #t)
+% \include "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily"
+% \include "/Users/trintonprater/abjad/docs/source/_stylesheets/abjad.ily"
+\include "../../build/trio-stylesheet.ily"
+\include "abjad.ily"
 \score
 {
     \context Score = "Score"

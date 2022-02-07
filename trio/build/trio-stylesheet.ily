@@ -2,11 +2,12 @@
 \language english
 #(set-default-paper-size "11x17landscape")
 #(set-global-staff-size 9.5)
+#(ly:set-option 'relative-includes #t)
 
-\include "/Users/trintonprater/scores/trio/trio/library.ily"
-\include "/Users/trintonprater/evans/lilypond/evans-markups.ily"
-\include "/Users/trintonprater/evans/lilypond/evans-spanners.ily"
-\include "/Users/trintonprater/baca/lilypond/baca-circle-bow-markups.ily"
+\include "../library.ily"
+\include "evans-markups.ily"
+\include "evans-spanners.ily"
+\include "baca-circle-bow-markups.ily"
 
 \header {
     dedication = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"to Natasia Reinhardt" \fontsize #0.25 \with-color #white "."}
@@ -53,20 +54,46 @@
         % \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 15) (minimum-distance . 15) (padding . 5))
         \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 15) (minimum distance . 15) (padding . 6))
 
+        \override AccidentalSuggestion.avoid-slur = #'ignore
+
+        % \override BarLine.bar-extent = #'(-2 . 2)
+        \override BarLine.hair-thickness = 0.5
+        \override BarLine.transparent = ##t
+        \override BarLine.X-extent = #'(0 . 0)
+        \override BarLine.thick-thickness = #8
+
         autoBeaming = ##f
         \override Beam.breakable = ##t
         \override Beam.damping = 99
         \override Beam.concaveness = #10000
 
+        \override Clef.whiteout-style = #'outline
+        \override Clef.whiteout = 1
+
         \override DynamicText.font-size = #-2
         \override DynamicLineSpanner.staff-padding = 4
+
+        \override Glissando.thickness = #2
+        \override Glissando.breakable = ##t
+
+        \override Hairpin.to-barline = ##f
 
         \override MetronomeMark.padding = 2.5
         \override MetronomeMark.font-size = 4
         \override MetronomeMark.extra-offset = #'(4.5 . 0)
 
-        \override Clef.whiteout-style = #'outline
-        \override Clef.whiteout = 1
+        \override Staff.thickness = #0.5
+
+        \override Stem.stemlet-length = 0.75
+
+        \override StemTremolo.beam-width = 1.5
+        \override StemTremolo.beam-width = 1.5
+        \override StemTremolo.flag-count = 4
+        \override StemTremolo.slope = 0.5
+
+        \override Tie.stencil = #flare-tie
+        \override Tie.height-limit = 6
+        \override Tie.thickness = 1.5
 
         tupletFullLength = ##t
         \override TupletBracket.full-length-to-extent = ##f
@@ -84,34 +111,6 @@
                  (ly:grob-set-property! grob 'positions (cons new-pos new-pos))
                  (ly:tuplet-bracket::print grob)))
         % \override TupletBracket.direction = #up
-
-        \override Stem.stemlet-length = 0.75
-
-        \override Staff.thickness = #0.5
-
-        \override Glissando.thickness = #2
-        \override Glissando.breakable = ##t
-
-        \override StemTremolo.beam-width = 1.5
-        \override StemTremolo.beam-width = 1.5
-        \override StemTremolo.flag-count = 4
-        \override StemTremolo.slope = 0.5
-
-        \override Tie.stencil = #flare-tie
-        \override Tie.height-limit = 6
-        \override Tie.thickness = 1.5
-
-        % \override BarLine.bar-extent = #'(-2 . 2)
-        \override BarLine.hair-thickness = 0.5
-        \override BarLine.transparent = ##t
-        \override BarLine.X-extent = #'(0 . 0)
-        \override BarLine.thick-thickness = #8
-
-        % \override Staff.SystemStartBrace.transparent = ##f
-        % \override Staff.SystemStartBracket.transparent = ##f
-        % \override Staff.SystemStartBar.transparent = ##f
-
-        \override Hairpin.to-barline = ##f
     }
 
     \context {

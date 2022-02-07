@@ -210,8 +210,6 @@
                                     <c' ef'>2.
                                     \fp
                                     - \upbow
-                                    ^ \markup -14
-                                    ^ \markup +0
                                     \<
                                     ~
                                     <c' ef'>4
@@ -262,8 +260,6 @@
                                         \ff
                                         - \staccato
                                         - \downbow
-                                        ^ \markup -14
-                                        ^ \markup +0
                                         - \tweak circled-tip ##t
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
@@ -271,41 +267,25 @@
                                         \(
                                         <c' ef'>32 * 25/16
                                         - \staccato
-                                        ^ \markup -14
-                                        ^ \markup +0
                                         r32 * 51/32
                                         <c' ef'>32 * 53/32
                                         - \staccato
-                                        ^ \markup -14
-                                        ^ \markup +0
                                         r32 * 55/32
                                         <c' ef'>32 * 59/32
                                         - \staccato
-                                        ^ \markup -14
-                                        ^ \markup +0
                                         <c' ef'>32 * 63/32
                                         - \staccato
-                                        ^ \markup -14
-                                        ^ \markup +0
                                         r32 * 69/32
                                         r32 * 19/8
                                         <c' ef'>32 * 83/32
                                         - \staccato
-                                        ^ \markup -14
-                                        ^ \markup +0
                                         <c' ef'>32 * 23/8
                                         - \staccato
-                                        ^ \markup -14
-                                        ^ \markup +0
                                         <c' ef'>32 * 101/32
                                         - \staccato
-                                        ^ \markup -14
-                                        ^ \markup +0
                                         r32 * 55/16
                                         <c' ef'>32 * 59/16
                                         - \staccato
-                                        ^ \markup -14
-                                        ^ \markup +0
                                         \)
                                         r32 * 123/32
                                         \!

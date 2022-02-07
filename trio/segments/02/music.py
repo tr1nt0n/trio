@@ -1,6 +1,7 @@
 import abjad
 import evans
 import trinton
+import baca
 import trio
 from abjadext import rmakers
 from abjadext import microtones
@@ -1583,31 +1584,44 @@ trinton.attach(
     attachment=abjad.Clef("bass"),
 )
 
-for leaf in [
-    0,
-    3,
-    4,
-    6,
-    8,
-    9,
-    12,
-    13,
-    14,
-    16,
-]:
+# for leaf in [
+#     0,
+#     3,
+#     4,
+#     6,
+#     8,
+#     9,
+#     12,
+#     13,
+#     14,
+#     16,
+# ]:
+#
+#     trio.pitch_matter(
+#         score=score,
+#         voice="cello 2 voice",
+#         leaves=[leaf],
+#         chord=1,
+#         partials=[
+#             2,
+#             3,
+#         ],
+#         transpose=-12,
+#         markup=True,
+#     )
 
-    trio.pitch_matter(
-        score=score,
-        voice="cello 2 voice",
-        leaves=[leaf],
-        chord=1,
-        partials=[
-            2,
-            3,
-        ],
-        transpose=-12,
-        markup=True,
-    )
+trio.pitch_matter_with_selector(
+    voice=score["cello 2 voice"],
+    measures=[1],
+    selector=baca.selectors.pleaves(),
+    chord=1,
+    partials=[
+        2,
+        3,
+    ],
+    transpose=-12,
+    markup=True
+)
 
 trio.pitch_matter(
     score=score,
@@ -1834,6 +1848,7 @@ for tuplet in abjad.select(score["cello 2 voice"]).tuplets():
             abjad.attach(abjad.Articulation("staccato"), pleaf)
     elif abjad.get.annotation(tuplet, trio.harmonic_gliss) is True:
         leaves = abjad.select(tuplet).leaves()
+        print(leaves)
         abjad.attach(abjad.StartPhrasingSlur(), leaves[0])
         abjad.attach(abjad.StopPhrasingSlur(), leaves[-1])
         for leaf in leaves:
