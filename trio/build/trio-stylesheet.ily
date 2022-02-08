@@ -5,9 +5,9 @@
 #(ly:set-option 'relative-includes #t)
 
 \include "../library.ily"
-\include "evans-markups.ily"
-\include "evans-spanners.ily"
-\include "baca-circle-bow-markups.ily"
+\include "/Users/trintonprater/evans/lilypond/evans-markups.ily"
+\include "/Users/trintonprater/evans/lilypond/evans-spanners.ily"
+\include "/Users/trintonprater/baca/lilypond/baca-circle-bow-markups.ily"
 
 \header {
     dedication = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"to Natasia Reinhardt" \fontsize #0.25 \with-color #white "."}

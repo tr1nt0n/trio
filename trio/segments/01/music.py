@@ -787,7 +787,7 @@ trinton.render_file(
     build_path="/Users/trintonprater/scores/trio/trio/build",
     segment_name="01",
     includes=[
-        "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/docs/source/_stylesheets/abjad.ily",
+        "../../build/trio-stylesheet.ily",
+        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
     ],
 )
