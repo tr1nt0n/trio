@@ -724,8 +724,8 @@ trinton.attach(
     voice=score["piano 2 voice"],
     leaves=[
         11,
-        13,
         15,
+        18,
     ],
     attachment=abjad.Clef("bass"),
 )
@@ -734,8 +734,8 @@ trinton.attach(
     voice=score["piano 2 voice"],
     leaves=[
         12,
-        14,
         17,
+        20,
     ],
     attachment=abjad.Clef("treble"),
 )
@@ -770,14 +770,6 @@ trinton.ottava(
         20,
     ],
     octave=2,
-)
-
-trinton.ottava(
-    score=score,
-    voice="piano 2 voice",
-    start_ottava=[18],
-    stop_ottava=[18],
-    octave=-1,
 )
 
 trinton.write_slur(

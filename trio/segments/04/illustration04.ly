@@ -1,7 +1,7 @@
 \version "2.20.0"
 \language "english"
 \include "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily"
-\include "/Users/trintonprater/abjad/docs/source/_stylesheets/abjad.ily"
+\include "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily"
 \score
 {
     \context Score = "Score"
@@ -2349,21 +2349,19 @@
                                     s1 * 3/2
                                     \clef "treble"
                                     s1 * 7/8
-                                    \clef "bass"
                                     s1 * 1/4
-                                    \clef "treble"
                                     s1 * 1/4
                                     \clef "bass"
                                     s1 * 3/4
                                     s1 * 3/8
                                     \clef "treble"
                                     s1 * 1
-                                    \ottava -1
+                                    \clef "bass"
                                     s1 * 7/8
-                                    \ottava 0
                                     \once \override Rest.transparent = ##t
                                     r1 * 1/4
                                     \ottava 2
+                                    \clef "treble"
                                     s2.
                                     \ottava 0
                                 }
