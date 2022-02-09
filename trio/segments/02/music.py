@@ -2009,31 +2009,41 @@ trinton.attach(
     attachment=abjad.Clef("bass"),
 )
 
-for leaf in [
-    0,
-    3,
-    4,
-    6,
-    8,
-    9,
-    12,
-    13,
-    14,
-    16,
-]:
-    trio.pitch_matter(
-        score=score,
-        voice="contrabass 2 voice",
-        leaves=[
-            leaf,
-        ],
-        chord=6,
-        partials=[
-            1,
-        ],
-        transpose=0,
-        markup=True,
-    )
+# for leaf in [
+#     0,
+#     3,
+#     4,
+#     6,
+#     8,
+#     9,
+#     12,
+#     13,
+#     14,
+#     16,
+# ]:
+#     trio.pitch_matter(
+#         score=score,
+#         voice="contrabass 2 voice",
+#         leaves=[
+#             leaf,
+#         ],
+#         chord=6,
+#         partials=[
+#             1,
+#         ],
+#         transpose=0,
+#         markup=True,
+#     )
+
+trio.pitch_matter_with_selector(
+    voice=score["contrabass 2 voice"],
+    measures=[1,],
+    selector=baca.selectors.pleaves(),
+    chord=6,
+    partials=[1,],
+    transpose=0,
+    markup=True
+)
 
 trio.pitch_matter(
     score=score,

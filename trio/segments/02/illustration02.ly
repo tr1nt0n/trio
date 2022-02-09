@@ -255,13 +255,9 @@
                                     ~
                                     <c' ef'>4
                                     ^ \markup 1
-                                    ^ \markup -14
-                                    ^ \markup +0
                                     ~
                                     <c' ef'>8
                                     ^ \markup 2
-                                    ^ \markup -14
-                                    ^ \markup +0
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
                                             \context Score = "Score"

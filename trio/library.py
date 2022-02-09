@@ -1220,12 +1220,16 @@ def pitch_matter_with_selector(
             if len(leaf.note_heads) == 2:
                 cent_markup_1 = abjad.Markup(string=rf"\markup {markup_collection[partials[0] - 1]}", direction=abjad.Up)
                 cent_markup_2 = abjad.Markup(string=rf"\markup {markup_collection[partials[1] - 1]}", direction=abjad.Up)
-                abjad.attach(cent_markup_1, leaf)
-                abjad.attach(cent_markup_2, leaf)
+                ties = abjad.Selection(leaf).logical_ties()
+                for tie in ties:
+                    abjad.attach(cent_markup_1, tie[0])
+                    abjad.attach(cent_markup_2, tie[0])
 
             else:
-                cent_markup = abjad.Markup(string=rf"\markup {markup_collection[partials[0]]}", direction=abjad.Up)
-                abjad.attach(cent_markup, leaf)
+                cent_markup = abjad.Markup(string=rf"\markup {markup_collection[partials[0] - 1]}", direction=abjad.Up)
+                ties = abjad.Selection(leaf).logical_ties()
+                for tie in ties:
+                    abjad.attach(cent_markup, leaf)
 
 
 def pitch_matter(
