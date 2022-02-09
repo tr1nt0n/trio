@@ -753,6 +753,6 @@ trinton.render_file(
     segment_name="03",
     includes=[
         "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/docs/source/_stylesheets/abjad.ily",
+        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
     ],
 )

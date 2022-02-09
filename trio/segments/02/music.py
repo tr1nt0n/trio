@@ -537,7 +537,7 @@ trinton.rewrite_meter_by_voice(
         5,
     ],
 )
-# trinton.annotate_leaves(score)
+trinton.annotate_leaves(score)
 
 # margin markups and standard cleffing
 
@@ -1584,32 +1584,6 @@ trinton.attach(
     attachment=abjad.Clef("bass"),
 )
 
-# for leaf in [
-#     0,
-#     3,
-#     4,
-#     6,
-#     8,
-#     9,
-#     12,
-#     13,
-#     14,
-#     16,
-# ]:
-#
-#     trio.pitch_matter(
-#         score=score,
-#         voice="cello 2 voice",
-#         leaves=[leaf],
-#         chord=1,
-#         partials=[
-#             2,
-#             3,
-#         ],
-#         transpose=-12,
-#         markup=True,
-#     )
-
 trio.pitch_matter_with_selector(
     voice=score["cello 2 voice"],
     measures=[1],
@@ -1848,7 +1822,6 @@ for tuplet in abjad.select(score["cello 2 voice"]).tuplets():
             abjad.attach(abjad.Articulation("staccato"), pleaf)
     elif abjad.get.annotation(tuplet, trio.harmonic_gliss) is True:
         leaves = abjad.select(tuplet).leaves()
-        print(leaves)
         abjad.attach(abjad.StartPhrasingSlur(), leaves[0])
         abjad.attach(abjad.StopPhrasingSlur(), leaves[-1])
         for leaf in leaves:
@@ -2582,6 +2555,6 @@ trinton.render_file(
     segment_name="02",
     includes=[
         "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/docs/source/_stylesheets/abjad.ily",
+        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
     ],
 )

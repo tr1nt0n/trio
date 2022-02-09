@@ -1206,51 +1206,26 @@ def pitch_matter_with_selector(
         current_measure = grouped_measures[measure - 1]
 
         selections = selector(current_measure)
-        # breakpoint()
 
         handler(selections)
 
-        leaves = abjad.Selection(selections).leaves(pitched=True)
-        print(leaves)
+    if markup is True:
+        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+        current_measure = grouped_measures[measure - 1]
+        leaves = selector(current_measure)
+        markup_collection = _matter_cent_markups[chord]
+        markup_collection = abjad.CyclicTuple(markup_collection)
 
-        if markup is True:
-            markup_collection = _matter_cent_markups[chord]
-            markup_collection = abjad.CyclicTuple(markup_collection)
+        for leaf in leaves:
+            if len(leaf.note_heads) == 2:
+                cent_markup_1 = abjad.Markup(string=rf"\markup {markup_collection[partials[0] - 1]}", direction=abjad.Up)
+                cent_markup_2 = abjad.Markup(string=rf"\markup {markup_collection[partials[1] - 1]}", direction=abjad.Up)
+                abjad.attach(cent_markup_1, leaf)
+                abjad.attach(cent_markup_2, leaf)
 
-            for i, leaf in enumerate(leaves):
-                print(leaf)
-                # if len(leaf.note_heads) == 2:
-                if isinstance(leaf, abjad.Chord) and len(leaf.note_heads) == 2:
-
-                    # cent_markups = abjad.CyclicTuple(
-                    #     [
-                    #         abjad.Markup(string=rf"\markup {markup_collection[partial-1]}", direction=abjad.Up),
-                    #         abjad.Markup(string=rf"\markup {markup_collection[partial]}", direction=abjad.Up),
-                    #     ]
-                    # )
-                    cent_markup_1 = markup_collection[i]
-                    cent_markup_2 = markup_collection[i+1]
-                    abjad.attach(cent_markup_1, leaf)
-                    abjad.attach(cent_markup_2, leaf)
-                    # trinton.attach_multiple(
-                    #     score=score,
-                    #     voice=voice,
-                    #     leaves=[leaf],
-                    #     attachments=[cent_markups[0], cent_markups[1]],
-                    # )
-
-                else:
-                    assert isinstance(leaf, abjad.Note)
-                    cent_markup = markup_collection[i]
-                    abjad.attach(cent_markup, leaf)
-                    # cent_markups = abjad.CyclicTuple(
-                    #     [
-                    #         abjad.Markup(string=rf"\markup {markup_collection[partial-1]}", direction=abjad.Up),
-                    #     ]
-                    # )
-                    # trinton.attach(
-                    #     voice=score[voice], leaves=[leaf], attachment=cent_markups[0]
-                    # )
+            else:
+                cent_markup = abjad.Markup(string=rf"\markup {markup_collection[partials[0]]}", direction=abjad.Up)
+                abjad.attach(cent_markup, leaf)
 
 
 def pitch_matter(
