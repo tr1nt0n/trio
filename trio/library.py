@@ -1183,13 +1183,7 @@ def pitch_contrabass_glissandi(score, voice, leaves, strings):
 
 
 def pitch_matter_with_selector(
-    voice,
-    measures,
-    selector,
-    chord,
-    partials,
-    transpose,
-    markup=False
+    voice, measures, selector, chord, partials, transpose, markup=False
 ):
     collection = trinton.transpose(l=_matter_harmonies[chord], m=transpose)
     collected_partials = []
@@ -1209,27 +1203,37 @@ def pitch_matter_with_selector(
 
         handler(selections)
 
-    if markup is True:
-        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
-        current_measure = grouped_measures[measure - 1]
-        leaves = selector(current_measure)
-        markup_collection = _matter_cent_markups[chord]
-        markup_collection = abjad.CyclicTuple(markup_collection)
+        if markup is True:
+            grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+            current_measure = grouped_measures[measure - 1]
+            selections = selector(current_measure)
+            leaves = abjad.Selection(selections).leaves(pitched=True)
+            markup_collection = _matter_cent_markups[chord]
+            markup_collection = abjad.CyclicTuple(markup_collection)
 
-        for leaf in leaves:
-            if len(leaf.note_heads) == 2:
-                cent_markup_1 = abjad.Markup(string=rf"\markup {markup_collection[partials[0] - 1]}", direction=abjad.Up)
-                cent_markup_2 = abjad.Markup(string=rf"\markup {markup_collection[partials[1] - 1]}", direction=abjad.Up)
-                ties = abjad.Selection(leaf).logical_ties()
-                for tie in ties:
-                    abjad.attach(cent_markup_1, tie[0])
-                    abjad.attach(cent_markup_2, tie[0])
+            for leaf in leaves:
+                if len(leaf.note_heads) == 2:
+                    cent_markup_1 = abjad.Markup(
+                        string=rf"\markup {markup_collection[partials[0] - 1]}",
+                        direction=abjad.Up,
+                    )
+                    cent_markup_2 = abjad.Markup(
+                        string=rf"\markup {markup_collection[partials[1] - 1]}",
+                        direction=abjad.Up,
+                    )
+                    ties = abjad.Selection(leaf).logical_ties()
+                    for tie in ties:
+                        abjad.attach(cent_markup_1, tie[0])
+                        abjad.attach(cent_markup_2, tie[0])
 
-            else:
-                cent_markup = abjad.Markup(string=rf"\markup {markup_collection[partials[0] - 1]}", direction=abjad.Up)
-                ties = abjad.Selection(leaf).logical_ties()
-                for tie in ties:
-                    abjad.attach(cent_markup, leaf)
+                else:
+                    cent_markup = abjad.Markup(
+                        string=rf"\markup {markup_collection[partials[0] - 1]}",
+                        direction=abjad.Up,
+                    )
+                    ties = abjad.Selection(leaf).logical_ties()
+                    for tie in ties:
+                        abjad.attach(cent_markup, leaf)
 
 
 def pitch_matter(

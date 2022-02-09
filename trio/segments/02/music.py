@@ -537,7 +537,7 @@ trinton.rewrite_meter_by_voice(
         5,
     ],
 )
-trinton.annotate_leaves(score)
+# trinton.annotate_leaves(score)
 
 # margin markups and standard cleffing
 
@@ -1596,7 +1596,7 @@ trio.pitch_matter_with_selector(
         3,
     ],
     transpose=-12,
-    markup=True
+    markup=True,
 )
 
 trio.pitch_matter(
@@ -1670,22 +1670,26 @@ trio.pitch_matter(
 
 trio.pitch_matter_with_selector(
     voice=score["cello 2 voice"],
-    measures=[22,],
+    measures=[
+        22,
+    ],
     selector=baca.selectors.pleaves(),
     chord=6,
     partials=[3, 4],
     transpose=-24,
-    markup=True
+    markup=True,
 )
 
 trio.pitch_matter_with_selector(
     voice=score["cello 2 voice"],
-    measures=[23,],
+    measures=[
+        23,
+    ],
     selector=baca.selectors.pleaves(),
     chord=6,
     partials=[6, 7],
     transpose=-48,
-    markup=True
+    markup=True,
 )
 
 trio.pitch_matter(
@@ -2009,40 +2013,18 @@ trinton.attach(
     attachment=abjad.Clef("bass"),
 )
 
-# for leaf in [
-#     0,
-#     3,
-#     4,
-#     6,
-#     8,
-#     9,
-#     12,
-#     13,
-#     14,
-#     16,
-# ]:
-#     trio.pitch_matter(
-#         score=score,
-#         voice="contrabass 2 voice",
-#         leaves=[
-#             leaf,
-#         ],
-#         chord=6,
-#         partials=[
-#             1,
-#         ],
-#         transpose=0,
-#         markup=True,
-#     )
-
 trio.pitch_matter_with_selector(
     voice=score["contrabass 2 voice"],
-    measures=[1,],
+    measures=[
+        1,
+    ],
     selector=baca.selectors.pleaves(),
     chord=6,
-    partials=[1,],
+    partials=[
+        1,
+    ],
     transpose=0,
-    markup=True
+    markup=True,
 )
 
 trio.pitch_matter(
@@ -2087,38 +2069,18 @@ trio.pitch_matter(
     markup=True,
 )
 
-for leaf in [
-    44,
-    45,
-    47,
-    49,
-    50,
-    51,
-    52,
-    53,
-    55,
-    57,
-    58,
-    59,
-    60,
-    61,
-    63,
-]:
-
-    trio.pitch_matter(
-        score=score,
-        voice="contrabass 2 voice",
-        leaves=[
-            leaf,
-        ],
-        chord=6,
-        partials=[
-            5,
-            6,
-        ],
-        transpose=-24,
-        markup=True,
-    )
+trio.pitch_matter_with_selector(
+    voice=score["contrabass 2 voice"],
+    measures=[
+        20,
+        21,
+    ],
+    selector=trio.select_tuplets_by_annotation(trio.accelerando),
+    chord=6,
+    partials=[5, 6],
+    transpose=-24,
+    markup=True,
+)
 
 trio.pitch_toccata(
     score=score,
@@ -2130,68 +2092,31 @@ trio.pitch_toccata(
     random_walk=True,
 )
 
-for leaf in [
-    82,
-    83,
-    85,
-    87,
-    88,
-    91,
-    92,
-    93,
-    95,
-    97,
-    98,
-]:
+trio.pitch_matter_with_selector(
+    voice=score["contrabass 2 voice"],
+    measures=[
+        22,
+    ],
+    selector=baca.selectors.pleaves(),
+    chord=1,
+    partials=[5, 6],
+    transpose=-24,
+    markup=True,
+)
 
-    trio.pitch_matter(
-        score=score,
-        voice="contrabass 2 voice",
-        leaves=[
-            leaf,
-        ],
-        chord=1,
-        partials=[
-            5,
-            6,
-        ],
-        transpose=-24,
-        markup=True,
-    )
-
-for leaf in [
-    100,
-    101,
-    103,
-    105,
-    106,
-    109,
-    110,
-    111,
-    113,
-    115,
-    116,
-    119,
-    120,
-    121,
-    123,
-    125,
-    126,
-]:
-
-    trio.pitch_matter(
-        score=score,
-        voice="contrabass 2 voice",
-        leaves=[
-            leaf,
-        ],
-        chord=6,
-        partials=[
-            4,
-        ],
-        transpose=-24,
-        markup=True,
-    )
+trio.pitch_matter_with_selector(
+    voice=score["contrabass 2 voice"],
+    measures=[
+        23,
+    ],
+    selector=baca.selectors.pleaves(),
+    chord=6,
+    partials=[
+        4,
+    ],
+    transpose=-24,
+    markup=True,
+)
 
 trio.pitch_matter(
     score=score,

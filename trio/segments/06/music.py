@@ -1566,6 +1566,6 @@ trinton.render_file(
     segment_name="06",
     includes=[
         "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily"
+        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
     ],
 )
