@@ -1394,9 +1394,11 @@ trinton.ottava(
 for voice in ["piano 1 voice", "piano 2 voice"]:
     chords = abjad.select(score[voice]).chords()
     trinton.unmeasured_stem_tremolo(chords)
-    chord_ties = chords.logical_ties()
-    for tie in chord_ties:
-        abjad.attach(abjad.Arpeggio(), tie[0])
+    for chord in chords:
+        if len(chord.note_heads) > 1:
+            chord_ties = abjad.Selection(chord).logical_ties()
+            for tie in chord_ties:
+                abjad.attach(abjad.Arpeggio(), tie[0])
 
 for number in [0, 1]:
     tuplet = abjad.select(score["piano 1 voice"]).tuplet(number)
@@ -1666,67 +1668,25 @@ trio.pitch_matter(
     markup=True,
 )
 
-for leaf in [
-    95,
-    96,
-    98,
-    100,
-    101,
-    102,
-    103,
-    104,
-    106,
-    108,
-    109,
-    110,
-    111,
-    112,
-    114,
-]:
+trio.pitch_matter_with_selector(
+    voice=score["cello 2 voice"],
+    measures=[22,],
+    selector=baca.selectors.pleaves(),
+    chord=6,
+    partials=[3, 4],
+    transpose=-24,
+    markup=True
+)
 
-    trio.pitch_matter(
-        score=score,
-        voice="cello 2 voice",
-        leaves=[leaf],
-        chord=6,
-        partials=[3, 4],
-        transpose=-24,
-        markup=True,
-    )
-
-for leaf in [
-    116,
-    117,
-    119,
-    121,
-    122,
-    123,
-    124,
-    125,
-    127,
-    129,
-    130,
-    131,
-    132,
-    133,
-    135,
-    137,
-    138,
-    139,
-    140,
-    141,
-    143,
-]:
-
-    trio.pitch_matter(
-        score=score,
-        voice="cello 2 voice",
-        leaves=[leaf],
-        chord=6,
-        partials=[6, 7],
-        transpose=-48,
-        markup=True,
-    )
+trio.pitch_matter_with_selector(
+    voice=score["cello 2 voice"],
+    measures=[23,],
+    selector=baca.selectors.pleaves(),
+    chord=6,
+    partials=[6, 7],
+    transpose=-48,
+    markup=True
+)
 
 trio.pitch_matter(
     score=score,

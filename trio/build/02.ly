@@ -3293,7 +3293,6 @@
                                     \clef "treble"
                                     <bf'>4.
                                     :32
-                                    \arpeggio
                                     ^ \markup 14
                                     \ottava -1
                                     \clef "bass"
