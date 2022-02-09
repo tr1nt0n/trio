@@ -11,7 +11,7 @@
 
 \header {
     dedication = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"to Natasia Reinhardt" \fontsize #0.25 \with-color #white "."}
-    title = \markup \override #'(font-name . "Bodoni72") \fontsize #12 \center-column {"PIANO TRIO" \fontsize #0.01 \with-color #white "."}
+    title = \markup \override #'(font-name . "Bodoni72") \fontsize #12 \center-column {"PIANO  TRIO" \fontsize #0.01 \with-color #white "."}
     subtitle = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"for Cori Trenczer, Zoe Markle, and Kate Ragan" \fontsize #0.01 \with-color #white "."}
     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #3 {"Trinton (*2000)"}
 }
@@ -26,15 +26,12 @@
         \numericTimeSignature
         \type Engraver_group
         \consists Axis_group_engraver
-		\consists Bar_number_engraver
         \consists Time_signature_engraver
 		\consists Mark_engraver
 		\consists Metronome_mark_engraver
 		\consists Text_engraver
 		\consists Text_spanner_engraver
-        \override BarNumber.font-size = 3
         \override MetronomeMark.stencil = ##f
-		\override BarNumber.font-name = "Bodoni72"
 		\override TimeSignature.X-extent = #'(0 . -25)
         \override TimeSignature.Y-extent = #'(25 . 0)
         \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 12) (minimum-distance . 12) (padding . 10) (stretchability . 0))
@@ -48,7 +45,6 @@
     \context {
         \Score
         \numericTimeSignature
-        \remove Bar_number_engraver
         \accepts TimeSignatureContext
         proportionalNotationDuration = #(ly:make-moment 1 30)
         % \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 15) (minimum-distance . 15) (padding . 5))
@@ -61,6 +57,14 @@
         \override BarLine.transparent = ##t
         \override BarLine.X-extent = #'(0 . 0)
         \override BarLine.thick-thickness = #8
+
+        \override BarNumber.stencil = #(make-stencil-circler 0.1 0.75 ly:text-interface::print)
+        \override BarNumber.Y-extent = ##f
+		\override BarNumber.Y-offset = 0
+		\override BarNumber.extra-offset = #'(-4 . -4)
+        \override BarNumber.font-size = 2
+        \override BarNumber.font-name = "Bodoni72"
+		\override BarNumber.padding = 1
 
         autoBeaming = ##f
         \override Beam.breakable = ##t
