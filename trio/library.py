@@ -1233,7 +1233,7 @@ def pitch_matter_with_selector(
                     )
                     ties = abjad.Selection(leaf).logical_ties()
                     for tie in ties:
-                        abjad.attach(cent_markup, leaf)
+                        abjad.attach(cent_markup, tie[0])
 
 
 def pitch_matter(
