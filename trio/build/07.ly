@@ -2,14 +2,20 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
-            \tempo 2=65
-            \time 3/2
-            s1 * 3/2
+            \tempo 4=130
+            \time 3/4
+            s1 * 3/4
             \boxed-markup "Skyward, {diagonal moves} (iii)" 1.5
-            \time 3/2
-            s1 * 3/2
-            \time 3/2
-            s1 * 3/2
+            \time 3/4
+            s1 * 3/4
+            \time 3/4
+            s1 * 3/4
+            \time 3/4
+            s1 * 3/4
+            \time 3/4
+            s1 * 3/4
+            \time 3/4
+            s1 * 3/4
             \bar "||"
         }
         \tag #'group1
@@ -28,7 +34,7 @@
                                 {
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { vc. }
-                                    r1
+                                    s1
                                     \mp
                                     \<
                                     \repeat tremolo 4 {
@@ -67,9 +73,8 @@
                                         bf32..
                                         \)
                                     }
-                                    r4
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/2
+                                    s4
+                                    s1.
                                 }
                             }
                         }
@@ -766,7 +771,7 @@
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        af'16
+                                        a'16
                                         - \abjad-dashed-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \italic { XSB }
@@ -778,31 +783,7 @@
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        fs'16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        \tweak style #'triangle
-                                        af'16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        \tweak style #'triangle
-                                        fs'16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        \tweak style #'triangle
-                                        af'16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        \tweak style #'triangle
-                                        fs'16
+                                        f'16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -825,57 +806,81 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'harmonic-mixed
-                                        f'16
+                                        \tweak style #'triangle
+                                        c'16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \tweak style #'triangle
+                                        d'16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \tweak style #'triangle
+                                        c'16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \tweak style #'triangle
+                                        d'16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'harmonic-mixed
-                                        a'16
+                                        c'16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \tweak style #'harmonic-mixed
+                                        d'16
                                         \stopTextSpan
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'harmonic-mixed
-                                        f'16
+                                        c'16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'harmonic-mixed
-                                        e'16
+                                        d'16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'harmonic-mixed
-                                        f'16
+                                        c'16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'harmonic-mixed
-                                        e'16
+                                        d'16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'harmonic-mixed
-                                        fs'16
+                                        c'16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        af'16
+                                        d'16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        fs'16
+                                        c'16
                                         - \abjad-dashed-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \italic { XSB } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \italic { XFB }
@@ -886,6 +891,30 @@
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
+                                        d'16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \tweak style #'triangle
+                                        c'16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \tweak style #'triangle
+                                        a'16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \tweak style #'triangle
+                                        f'16
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \tweak style #'triangle
                                         e'16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
@@ -903,62 +932,38 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'triangle
-                                        f'16
+                                        cs'16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'triangle
-                                        a'16
+                                        ef'16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'triangle
-                                        c'16
+                                        b16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'triangle
-                                        a'16
+                                        af'16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        c'16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        d'16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c'16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        a'16
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        c'16
+                                        fs'16
                                         \stopTextSpan
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        d'16
+                                        af'16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        c'16
+                                        fs'16
                                         )
                                         \slurSolid
                                     }
@@ -980,11 +985,10 @@
                                 {
                                     \set PianoStaff.shortInstrumentName =
                                     \markup { cb. }
-                                    \once \override Rest.transparent = ##t
-                                    r1 * 3/2
+                                    s1.
                                     \mp
                                     \<
-                                    r2
+                                    s2
                                     \repeat tremolo 4 {
                                         \tweak Accidental.transparent ##t
                                         g32
@@ -1045,8 +1049,8 @@
                                         bf128
                                         \)
                                     }
-                                    r4
-                                    r1
+                                    s4
+                                    s1
                                 }
                             }
                         }
@@ -1194,9 +1198,9 @@
                                         \once \override Stem.transparent = ##t
                                         <
                                             \tweak style #'harmonic-mixed
-                                            e
+                                            f,
                                             \tweak style #'harmonic-mixed
-                                            a
+                                            bf,
                                         >4
                                         - \accent
                                         \glissando
@@ -1205,12 +1209,11 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \clef "treble"
                                         <
                                             \tweak style #'harmonic-mixed
-                                            e''
+                                            a,
                                             \tweak style #'harmonic-mixed
-                                            a''
+                                            d
                                         >16
                                         \)
                                         \glissando
@@ -1261,12 +1264,12 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \clef "bass"
+                                        \clef "treble"
                                         <
                                             \tweak style #'harmonic-mixed
-                                            f,
+                                            e''
                                             \tweak style #'harmonic-mixed
-                                            bf,
+                                            a''
                                         >16
                                         - \accent
                                         [
@@ -1276,11 +1279,12 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
+                                        \clef "bass"
                                         <
                                             \tweak style #'harmonic-mixed
-                                            a,
+                                            f,
                                             \tweak style #'harmonic-mixed
-                                            d
+                                            bf,
                                         >16
                                         ]
                                         \glissando
@@ -1288,12 +1292,11 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \clef "treble"
                                         <
                                             \tweak style #'harmonic-mixed
-                                            e''
+                                            b,
                                             \tweak style #'harmonic-mixed
-                                            a''
+                                            e
                                         >4
                                         \)
                                         \glissando
@@ -1344,7 +1347,6 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \clef "bass"
                                         <
                                             \tweak style #'harmonic-mixed
                                             f,
@@ -1359,22 +1361,24 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
+                                        \clef "treble"
                                         <
                                             \tweak style #'harmonic-mixed
-                                            b,
+                                            e''
                                             \tweak style #'harmonic-mixed
-                                            e
+                                            a''
                                         >32
                                         \glissando
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
+                                        \clef "bass"
                                         <
                                             \tweak style #'harmonic-mixed
-                                            f,
+                                            af,
                                             \tweak style #'harmonic-mixed
-                                            bf,
+                                            cs
                                         >32
                                         \glissando
                                         \once \override Beam.transparent = ##t
@@ -1438,16 +1442,29 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
+                                        \clef "bass"
+                                        <
+                                            \tweak style #'harmonic-mixed
+                                            a,
+                                            \tweak style #'harmonic-mixed
+                                            d
+                                        >8
+                                        - \accent
+                                        [
+                                        \glissando
+                                        \(
+                                        \once \override Beam.transparent = ##t
+                                        \once \override Dots.transparent = ##t
+                                        \once \override Flag.transparent = ##t
+                                        \once \override Stem.transparent = ##t
+                                        \clef "treble"
                                         <
                                             \tweak style #'harmonic-mixed
                                             e''
                                             \tweak style #'harmonic-mixed
                                             a''
                                         >8
-                                        - \accent
-                                        [
                                         \glissando
-                                        \(
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -1458,17 +1475,6 @@
                                             f,
                                             \tweak style #'harmonic-mixed
                                             bf,
-                                        >8
-                                        \glissando
-                                        \once \override Beam.transparent = ##t
-                                        \once \override Dots.transparent = ##t
-                                        \once \override Flag.transparent = ##t
-                                        \once \override Stem.transparent = ##t
-                                        <
-                                            \tweak style #'harmonic-mixed
-                                            a,
-                                            \tweak style #'harmonic-mixed
-                                            d
                                         >8
                                         \)
                                         ]
@@ -1521,7 +1527,7 @@
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        af16
+                                        a16
                                         - \abjad-dashed-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \italic { XSB }
@@ -1533,25 +1539,25 @@
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        fs16
+                                        e16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        af16
+                                        a,16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        fs16
+                                        c16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        a16
+                                        a,16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
@@ -1563,59 +1569,59 @@
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        a16
+                                        a,16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        fs16
+                                        e16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        a16
+                                        a,16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        fs16
+                                        c16
                                         \stopTextSpan
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        a16
+                                        bf,16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        fs16
+                                        c16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
                                         \tweak style #'triangle
-                                        a16
+                                        bf,16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        e16
+                                        ef16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        a,16
+                                        cs16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        e16
+                                        d16
                                         - \abjad-dashed-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \italic { XSB } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \italic { XFB }
@@ -1625,43 +1631,43 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        a16
+                                        cs16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        fs16
+                                        d16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        a16
+                                        g16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        fs16
+                                        b,16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        a16
+                                        g16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        fs16
+                                        d16
                                         \stopTextSpan
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        a16
+                                        cs16
                                         \once \override Beam.transparent = ##t
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        e16
+                                        d16
                                         )
                                         \slurSolid
                                     }

@@ -14,11 +14,12 @@ score = trio.score
 
 trinton.write_time_signatures(
     [
-        (4, 2),
-        (4, 2),
-        (4, 2),
-        (4, 2),
-        (3, 2),
+        (7, 4),
+        (7, 4),
+        (7, 4),
+        (7, 4),
+        (7, 4),
+        (3, 4),
     ],
     score["Global Context"],
 )
@@ -48,7 +49,7 @@ trinton.append_rests(score=score, voice="piano 2 voice", rests=[abjad.Skip("r1..
 for voice_name in ["piano 1 voice", "piano 2 voice"]:
 
     trinton.handwrite(
-        score=score, voice=voice_name, durations=[(1, 4), (3, 2)], pitch_list=None
+        score=score, voice=voice_name, durations=[(3, 4), (1, 1)], pitch_list=None
     )
 
     trio.harmonic_glissandi_rhythms(
@@ -152,10 +153,10 @@ trinton.append_rests(
     score=score,
     voice="cello 1 voice",
     rests=[
-        abjad.Rest("r2."),
-        abjad.Rest("r1"),
-        abjad.Rest("r1"),
-        abjad.Rest("r1"),
+        abjad.Skip("r2."),
+        abjad.Skip("r1"),
+        abjad.Skip("r1"),
+        abjad.Skip("r1"),
     ],
 )
 
@@ -206,7 +207,7 @@ trio.cello_gliss(
 )
 
 trinton.append_rests(
-    score=score, voice="cello 1 voice", rests=[abjad.Rest("r1.."), abjad.Rest("r1.")]
+    score=score, voice="cello 1 voice", rests=[abjad.Skip("r1.."), abjad.Skip("r1.")]
 )
 
 trinton.attach(voice=score["cello 2 voice"], leaves=[102], attachment=abjad.Tie())
@@ -232,7 +233,7 @@ trio.cello_gliss(
     notation="duration_bracket",
 )
 
-trinton.append_rests(score=score, voice="contrabass 1 voice", rests=[abjad.Rest("r1.")])
+trinton.append_rests(score=score, voice="contrabass 1 voice", rests=[abjad.Skip("r1.")])
 
 trio.harmonic_glissandi_rhythms(
     score=score,
@@ -259,7 +260,10 @@ trio.toccata_rhythms(
 trinton.handwrite(
     score=score,
     voice="contrabass 2 voice",
-    durations=[(3, 4)],
+    durations=[
+        (1, 2),
+        (1, 4),
+    ],
     pitch_list=None,
 )
 
@@ -278,7 +282,7 @@ trio.cello_gliss(
 trinton.append_rests(
     score=score,
     voice="contrabass 1 voice",
-    rests=[abjad.Rest("r2."), abjad.Rest("r1"), abjad.Rest("r2")],
+    rests=[abjad.Skip("r2."), abjad.Skip("r2"), abjad.Skip("r1")],
 )
 
 trio.harmonic_glissandi_rhythms(
@@ -326,8 +330,8 @@ trinton.append_rests(
     score=score,
     voice="contrabass 1 voice",
     rests=[
-        abjad.Rest("r2."),
-        abjad.Rest("r1."),
+        abjad.Skip("r2."),
+        abjad.Skip("r1."),
     ],
 )
 
@@ -364,9 +368,17 @@ trinton.append_rests(
     score=score,
     voice="contrabass 1 voice",
     rests=[
-        abjad.Rest("r4"),
-        abjad.Rest("r1"),
+        abjad.Skip("r4"),
+        abjad.Skip("r1"),
     ],
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[
+        56,
+    ],
+    attachment=abjad.Tie(),
 )
 
 # annotate leaves
@@ -384,11 +396,19 @@ trinton.attach_multiple(
     score=score,
     voice="Global Context",
     leaves=[0],
-    attachments=[abjad.MetronomeMark((1, 2), 65), trio.rehearsal_mark6],
+    attachments=[abjad.MetronomeMark((1, 4), 130), trio.rehearsal_mark6],
 )
 
 trinton.attach(
     voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
+)
+
+trinton.attach(
+    voice=score["Global Context"],
+    leaves=[
+        0,
+    ],
+    attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after"),
 )
 
 # piano pitching/attachments
@@ -401,15 +421,16 @@ trio.pitch_cello_gliss_piano_by_measure(
         3,
         4,
         5,
+        6,
     ],
     selector=trio.select_tuplets_by_annotation(trio.vib),
     string="I",
 )
-
+#
 trio.pitch_toccata_by_measure(
     voice=score["piano 1 voice"],
     measures=[
-        3,
+        4,
     ],
     selector=trio.select_tuplets_by_annotation(trio.toccata),
     octave=4,
@@ -422,13 +443,12 @@ for voice_name in ["piano 1 voice", "piano 2 voice"]:
     trio.pitch_harmonic_gliss_piano(
         voice=score[voice_name],
         measures=[
-            2,
             3,
         ],
         selector=trio.select_tuplets_by_annotation(trio.harmonic_gliss),
         string="IV",
     )
-
+#
 for voice, leaf, chord, partials in zip(
     [
         "piano 1 voice",
@@ -724,6 +744,7 @@ trio.pitch_toccata_by_measure(
         1,
         2,
         4,
+        5,
     ],
     selector=trio.select_tuplets_by_annotation(trio.toccata),
     octave=2,
@@ -781,7 +802,6 @@ trinton.attach(
         36,
         72,
         75,
-        77,
         102,
     ],
     attachment=abjad.Clef("treble"),
@@ -797,7 +817,6 @@ trinton.attach(
         71,
         73,
         76,
-        78,
     ],
     attachment=abjad.Clef("bass"),
 )
@@ -1125,7 +1144,6 @@ trio.pitch_harmonic_glissandi_by_measure(
         1,
         2,
         3,
-        4,
         5,
     ],
     selector=trio.select_tuplets_by_annotation(trio.harmonic_gliss),
@@ -1146,11 +1164,10 @@ handler(abjad.select(score["contrabass 1 voice"]).leaves(pitched=True))
 trio.pitch_toccata_by_measure(
     voice=score["contrabass 2 voice"],
     measures=[
-        1,
         2,
-        3,
         4,
         5,
+        6,
     ],
     selector=trio.select_tuplets_by_annotation(trio.toccata),
     octave=1,
@@ -1167,6 +1184,7 @@ trio.pitch_contrabass_glissandi_by_measure(
         3,
         4,
         5,
+        6,
     ],
     selector=trio.select_tuplets_by_annotation(trio.vib),
     strings="III and IV",
@@ -1176,8 +1194,8 @@ for leaf, chord in zip(
     [
         0,
         56,
-        89,
-        120,
+        90,
+        121,
     ],
     [
         6,
@@ -1217,15 +1235,15 @@ trinton.attach(
         36,
         39,
         56,
-        64,
-        66,
-        68,
-        71,
-        89,
-        97,
-        99,
+        65,
+        67,
+        69,
+        72,
+        90,
+        98,
+        100,
         103,
-        120,
+        121,
     ],
     attachment=abjad.Clef("treble"),
 )
@@ -1246,14 +1264,14 @@ trinton.attach(
         35,
         37,
         40,
-        57,
-        65,
-        67,
-        69,
-        72,
-        90,
-        98,
-        100,
+        58,
+        66,
+        68,
+        70,
+        73,
+        91,
+        99,
+        101,
         104,
     ],
     attachment=abjad.Clef("bass"),
@@ -1264,13 +1282,13 @@ trinton.ficta(
     voice="contrabass 2 voice",
     start_ficta=[
         6,
-        61,
-        95,
+        62,
+        96,
     ],
     stop_ficta=[
         39,
-        72,
-        103,
+        73,
+        104,
     ],
 )
 
@@ -1283,18 +1301,18 @@ trio.finger_pressure(
         42,
         43,
         44,
-        79,
         80,
         81,
         82,
         83,
         84,
-        109,
+        85,
         110,
         111,
         112,
         113,
         114,
+        115,
     ],
     harm=[
         45,
@@ -1303,15 +1321,15 @@ trio.finger_pressure(
         48,
         49,
         50,
-        85,
         86,
         87,
         88,
-        104,
+        89,
         105,
         106,
         107,
         108,
+        109,
     ],
 )
 
@@ -1372,13 +1390,13 @@ trinton.write_text_span(
     end_text=r"\markup \italic { XSB }",
     start_leaf=[
         40,
-        73,
-        104,
+        74,
+        105,
     ],
     stop_leaf=[
         45,
-        78,
-        109,
+        79,
+        110,
     ],
     padding=7.5,
 )
@@ -1389,13 +1407,13 @@ trinton.write_text_span(
     end_text=r"\markup \italic { XFB }",
     start_leaf=[
         50,
-        83,
-        113,
+        84,
+        114,
     ],
     stop_leaf=[
         54,
-        86,
-        117,
+        87,
+        118,
     ],
     padding=7.5,
 )
@@ -1404,8 +1422,8 @@ trinton.attach(
     voice=score["contrabass 2 voice"],
     leaves=[
         56,
-        89,
-        120,
+        90,
+        121,
     ],
     attachment=abjad.LilyPondLiteral(r'\boxed-markup "NB" 1', format_slot="after"),
 )
@@ -1444,8 +1462,8 @@ trinton.attach(
     leaves=[
         0,
         56,
-        89,
-        120,
+        90,
+        121,
     ],
     attachment=abjad.Dynamic("f"),
 )
@@ -1455,10 +1473,10 @@ trinton.attach(
     leaves=[
         1,
         40,
-        57,
-        73,
-        90,
-        104,
+        58,
+        74,
+        91,
+        105,
     ],
     attachment=abjad.StartHairpin("o<", direction=abjad.Down),
 )
@@ -1467,8 +1485,8 @@ trinton.attach(
     voice=score["contrabass 2 voice"],
     leaves=[
         6,
-        61,
-        95,
+        62,
+        96,
     ],
     attachment=abjad.StartHairpin("o<", direction=abjad.Up),
 )
@@ -1479,10 +1497,10 @@ trinton.attach_multiple(
     leaves=[
         3,
         47,
-        59,
-        81,
-        92,
-        112,
+        60,
+        82,
+        93,
+        113,
     ],
     attachments=[
         abjad.Dynamic("f", direction=abjad.Down),
@@ -1495,19 +1513,13 @@ trinton.attach_multiple(
     voice="contrabass 2 voice",
     leaves=[
         23,
-        66,
-        99,
+        67,
+        100,
     ],
     attachments=[
         abjad.Dynamic("f", direction=abjad.Up),
         abjad.StartHairpin(">o", direction=abjad.Up),
     ],
-)
-
-trinton.attach(
-    voice=score["contrabass 2 voice"],
-    leaves=[],
-    attachment=abjad.StopHairpin(),
 )
 
 for voice_name in ["cello 1 voice", "contrabass 1 voice"]:
