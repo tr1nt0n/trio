@@ -16,12 +16,12 @@ trinton.write_time_signatures(
     [
         (1, 12),
         (3, 8),
-        (1, 6),
+        (2, 12),
         (3, 8),
         (1, 4),
         (1, 12),
         (3, 8),
-        (1, 6),
+        (2, 12),
         (3, 8),
         (1, 4),
         (1, 4),
@@ -1382,12 +1382,23 @@ for leaf in abjad.Selection(score["cello 2 voice"]).leaves(pitched=True):
         pass
     else:
         if leaf.written_pitch.number == -24:
-            abjad.attach(abjad.Articulation("snappizzicato"), leaf)
             abjad.attach(abjad.Articulation("marcato"), leaf)
 
 cello_2_measures = (
     abjad.Selection(score["cello 2 voice"]).leaves(pitched=True).group_by_measure()
 )
+
+leaves = []
+
+for number in [0, 2, 3, 4, 5, 8]:
+    for leaf in cello_2_measures[number]:
+        leaves.append(leaf)
+
+selection = trio.select_periodic_ties_2_4_7_8_of_10(leaves[:])
+for tie in selection:
+    for leaf in tie:
+        abjad.attach(abjad.Articulation("snappizzicato"), leaf)
+
 
 for measure in cello_2_measures:
     abjad.attach(abjad.Articulation("marcato"), abjad.Selection(measure).leaf(0))
@@ -1565,6 +1576,24 @@ contrabass_2_measures = (
     abjad.Selection(score["contrabass 2 voice"]).leaves().group_by_measure()
 )
 
+leaves = []
+
+for number in [
+    0,
+    1,
+    2,
+    5,
+    6,
+    7,
+]:
+    for leaf in contrabass_2_measures[number]:
+        leaves.append(leaf)
+
+selection = trio.select_periodic_ties_2_4_7_8_of_10(leaves[:])
+for tie in selection:
+    for leaf in tie:
+        abjad.attach(abjad.Articulation("snappizzicato"), leaf)
+
 for n in [
     0,
     1,
@@ -1575,7 +1604,6 @@ for n in [
 ]:
     for leaf in contrabass_2_measures[n].leaves():
         abjad.attach(abjad.Articulation("marcato"), leaf)
-        abjad.attach(abjad.Articulation("snappizzicato"), leaf)
 
 for tuplet in abjad.Selection(score["contrabass 2 voice"]).tuplets():
     if abjad.get.annotation(tuplet, trio.vib) is True:

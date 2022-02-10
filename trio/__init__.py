@@ -69,6 +69,8 @@ from .library import (
     select_tuplets_by_annotation,
     pitch_cello_gliss_piano_by_measure,
     pitch_harmonic_gliss_piano,
+    select_periodic_ties_2_4_7_8_of_10,
+    select_periodic_ties_2_4_of_8,
 )
 
 __all__ = [
@@ -142,4 +144,6 @@ __all__ = [
     "select_tuplets_by_annotation",
     "pitch_cello_gliss_piano_by_measure",
     "pitch_harmonic_gliss_piano",
+    "select_periodic_ties_2_4_7_8_of_10",
+    "select_periodic_ties_2_4_of_8",
 ]

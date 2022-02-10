@@ -1,7 +1,7 @@
 \version "2.20.0"
 \language "english"
 \include "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily"
-\include "/Users/trintonprater/abjad/docs/source/_stylesheets/abjad.ily"
+\include "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily"
 \score
 {
     \context Score = "Score"
@@ -14,7 +14,7 @@
             \time 3/8
             s1 * 3/8
             #(ly:expect-warning "strange time signature found")
-            \time 1/6
+            \time 2/12
             s1 * 1/6
             - \abjad-dashed-line-with-arrow
             - \tweak bound-details.left.text \markup \concat { \italic \halign #-1 \abs-fontsize #8.5 { Accel. } \hspace #0.5 }
@@ -33,7 +33,7 @@
             \time 3/8
             s1 * 3/8
             #(ly:expect-warning "strange time signature found")
-            \time 1/6
+            \time 2/12
             s1 * 1/6
             - \abjad-dashed-line-with-arrow
             - \tweak bound-details.left.text \markup \concat { \italic \halign #-1 \abs-fontsize #8.5 { Accel. } \hspace #0.5 }
@@ -361,7 +361,6 @@
                                         {
                                             \clef "bass"
                                             c,8
-                                            - \snappizzicato
                                             - \marcato
                                             - \marcato
                                         }
@@ -405,7 +404,6 @@
                                         {
                                             \clef "bass"
                                             c,4
-                                            - \snappizzicato
                                             - \marcato
                                             - \marcato
                                             \boxed-markup "NB., Pizz." 1
@@ -414,15 +412,14 @@
                                     }
                                     \revert TupletNumber.text
                                     c,4
-                                    - \snappizzicato
                                     - \marcato
+                                    - \snappizzicato
                                     - \marcato
                                     c,8
-                                    - \snappizzicato
                                     - \marcato
                                     c,4
-                                    - \snappizzicato
                                     - \marcato
+                                    - \snappizzicato
                                     - \marcato
                                     \override TupletNumber.text = \markup \italic { 3:2 }
                                     \tweak edge-height #'(0.7 . 0)
@@ -433,7 +430,6 @@
                                         \times 2/3
                                         {
                                             c,8
-                                            - \snappizzicato
                                             - \marcato
                                             - \marcato
                                         }
@@ -478,13 +474,12 @@
                                     }
                                     \clef "bass"
                                     c,8
-                                    - \snappizzicato
                                     - \marcato
                                     - \marcato
                                     \boxed-markup "NB., Pizz." 1
                                     c,4
-                                    - \snappizzicato
                                     - \marcato
+                                    - \snappizzicato
                                     \times 4/5
                                     {
                                         \set suggestAccidentals = ##t
@@ -1050,17 +1045,15 @@
                                             \clef "bass"
                                             e,8
                                             - \marcato
-                                            - \snappizzicato
                                         }
                                         \revert TupletNumber.text
                                     }
                                     \revert TupletNumber.text
                                     e,8
                                     - \marcato
-                                    - \snappizzicato
                                     e,4
-                                    - \marcato
                                     - \snappizzicato
+                                    - \marcato
                                     \override TupletNumber.text = \markup \italic { 3:2 }
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 1/1
@@ -1071,7 +1064,6 @@
                                         {
                                             e,4
                                             - \marcato
-                                            - \snappizzicato
                                         }
                                         \revert TupletNumber.text
                                     }
@@ -1109,8 +1101,8 @@
                                         \times 2/3
                                         {
                                             e,8
-                                            - \marcato
                                             - \snappizzicato
+                                            - \marcato
                                             \boxed-markup "Pizz." 1
                                         }
                                         \revert TupletNumber.text
@@ -1118,10 +1110,8 @@
                                     \revert TupletNumber.text
                                     e,4
                                     - \marcato
-                                    - \snappizzicato
                                     e,8
                                     - \marcato
-                                    - \snappizzicato
                                     \override TupletNumber.text = \markup \italic { 3:2 }
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 1/1
@@ -1131,8 +1121,8 @@
                                         \times 2/3
                                         {
                                             e,4
-                                            - \marcato
                                             - \snappizzicato
+                                            - \marcato
                                         }
                                         \revert TupletNumber.text
                                     }

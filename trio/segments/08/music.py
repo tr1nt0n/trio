@@ -22,16 +22,16 @@ trinton.write_time_signatures(
         (1, 4),
         (1, 12),
         (3, 8),
-        (1, 6),
+        (2, 12),
         (3, 8),
         (1, 4),
     ],
     score["Global Context"],
 )
 
-# rhythms
+# piano
 
-for voice_name in trio.all_voices:
+for voice_name in ["piano 1 voice", "piano 2 voice"]:
     trinton.make_and_append_rhythm_selections(
         score=score,
         voice_name=voice_name,
@@ -45,21 +45,6 @@ for voice_name in trio.all_voices:
                         1,
                         1,
                     ),
-                    (
-                        1,
-                        1,
-                    ),
-                    (
-                        1,
-                        1,
-                        1,
-                    ),
-                    (1,),
-                    (1,),
-                    (2, 1),
-                    (1,),
-                    (1, 2),
-                    (1,),
                 ],
             ),
             rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
@@ -73,16 +58,382 @@ for voice_name in trio.all_voices:
             (1, 4),
             (1, 12),
             (3, 8),
-            (2, 12),
+        ],
+    )
+
+    trinton.append_rests(
+        score=score,
+        voice=voice_name,
+        rests=[
+            abjad.Skip(
+                (1, 1),
+                multiplier=abjad.Multiplier(
+                    1,
+                    6,
+                ),
+            )
+        ],
+    )
+
+    trinton.make_and_append_rhythm_selections(
+        score=score,
+        voice_name=voice_name,
+        stack=rmakers.stack(
+            rmakers.tuplet(
+                [
+                    (
+                        1,
+                        -1,
+                        1,
+                    ),
+                    (1,),
+                    (1,),
+                    (2, -1),
+                ],
+            ),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_dots(),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        ),
+        durations=[
             (3, 8),
             (1, 4),
             (1, 12),
             (3, 8),
+        ],
+    )
+
+    trinton.make_and_append_rhythm_selections(
+        score=score,
+        voice_name=voice_name,
+        stack=rmakers.stack(
+            rmakers.tuplet(
+                [
+                    (1,),
+                    (-1, 2),
+                    (1,),
+                ],
+            ),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_dots(),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        ),
+        durations=[
             (1, 6),
             (3, 8),
             (1, 4),
         ],
     )
+
+# cello
+
+for voice_name in ["cello 1 voice", "cello 2 voice"]:
+    trinton.make_and_append_rhythm_selections(
+        score=score,
+        voice_name=voice_name,
+        stack=rmakers.stack(
+            rmakers.tuplet(
+                [
+                    (1,),
+                ],
+            ),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_dots(),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        ),
+        durations=[
+            (1, 4),
+        ],
+    )
+
+    trinton.append_rests(
+        score=score,
+        voice=voice_name,
+        rests=[
+            abjad.Skip(
+                (1, 1),
+                multiplier=abjad.Multiplier(
+                    1,
+                    12,
+                ),
+            )
+        ],
+    )
+
+    trinton.make_and_append_rhythm_selections(
+        score=score,
+        voice_name=voice_name,
+        stack=rmakers.stack(
+            rmakers.tuplet(
+                [
+                    (
+                        1,
+                        1,
+                        1,
+                    ),
+                    (
+                        1,
+                        1,
+                    ),
+                    (
+                        1,
+                        -2,
+                    ),
+                    (1,),
+                ],
+            ),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_dots(),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        ),
+        durations=[
+            (3, 8),
+            (2, 12),
+            (3, 8),
+            (1, 4),
+        ],
+    )
+
+    trinton.append_rests(
+        score=score,
+        voice=voice_name,
+        rests=[
+            abjad.Skip(
+                (1, 1),
+                multiplier=abjad.Multiplier(
+                    1,
+                    12,
+                ),
+            )
+        ],
+    )
+
+    trinton.make_and_append_rhythm_selections(
+        score=score,
+        voice_name=voice_name,
+        stack=rmakers.stack(
+            rmakers.tuplet(
+                [
+                    (2, 1),
+                ],
+            ),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_dots(),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        ),
+        durations=[
+            (3, 8),
+        ],
+    )
+
+    trinton.append_rests(
+        score=score,
+        voice=voice_name,
+        rests=[
+            abjad.Skip(
+                (1, 1),
+                multiplier=abjad.Multiplier(
+                    1,
+                    6,
+                ),
+            )
+        ],
+    )
+
+    trinton.make_and_append_rhythm_selections(
+        score=score,
+        voice_name=voice_name,
+        stack=rmakers.stack(
+            rmakers.tuplet(
+                [
+                    (
+                        1,
+                        2,
+                    ),
+                    (1,),
+                ],
+            ),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_dots(),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        ),
+        durations=[
+            (3, 8),
+            (1, 4),
+        ],
+    )
+
+# bass
+
+for voice_name in ["contrabass 1 voice", "contrabass 2 voice"]:
+    trinton.make_and_append_rhythm_selections(
+        score=score,
+        voice_name=voice_name,
+        stack=rmakers.stack(
+            rmakers.tuplet(
+                [
+                    (1,),
+                ],
+            ),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_dots(),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        ),
+        durations=[
+            (1, 4),
+        ],
+    )
+
+    trinton.append_rests(
+        score=score,
+        voice=voice_name,
+        rests=[
+            abjad.Skip(
+                (1, 1),
+                multiplier=abjad.Multiplier(
+                    1,
+                    12,
+                ),
+            )
+        ],
+    )
+
+    trinton.make_and_append_rhythm_selections(
+        score=score,
+        voice_name=voice_name,
+        stack=rmakers.stack(
+            rmakers.tuplet(
+                [
+                    (
+                        -1,
+                        1,
+                        1,
+                    ),
+                    (
+                        -1,
+                        1,
+                    ),
+                    (
+                        -1,
+                        1,
+                        1,
+                    ),
+                ],
+            ),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_dots(),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        ),
+        durations=[
+            (3, 8),
+            (1, 6),
+            (3, 8),
+        ],
+    )
+
+    trinton.append_rests(
+        score=score,
+        voice=voice_name,
+        rests=[
+            abjad.Skip("r4"),
+            abjad.Skip(
+                (1, 1),
+                multiplier=abjad.Multiplier(
+                    1,
+                    12,
+                ),
+            ),
+        ],
+    )
+
+    trinton.make_and_append_rhythm_selections(
+        score=score,
+        voice_name=voice_name,
+        stack=rmakers.stack(
+            rmakers.tuplet(
+                [
+                    (
+                        2,
+                        -1,
+                    ),
+                ],
+            ),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_dots(),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        ),
+        durations=[
+            (3, 8),
+        ],
+    )
+
+    trinton.append_rests(
+        score=score,
+        voice=voice_name,
+        rests=[
+            abjad.Skip(
+                (1, 1),
+                multiplier=abjad.Multiplier(
+                    1,
+                    6,
+                ),
+            )
+        ],
+    )
+
+    trinton.make_and_append_rhythm_selections(
+        score=score,
+        voice_name=voice_name,
+        stack=rmakers.stack(
+            rmakers.tuplet(
+                [
+                    (
+                        1,
+                        -2,
+                    ),
+                    (1,),
+                ],
+            ),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_dots(),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        ),
+        durations=[
+            (3, 8),
+            (1, 4),
+        ],
+    )
+
 
 # meter rewriting and beaming
 
@@ -141,10 +492,9 @@ for octave, measure in zip(
         3,
         4,
         2,
-        5,
         3,
         2,
-        4,
+        5,
         3,
         5,
         3,
@@ -154,7 +504,6 @@ for octave, measure in zip(
         1,
         2,
         3,
-        4,
         5,
         6,
         7,
@@ -180,7 +529,6 @@ trio.piano_climax_chords(
         1,
         2,
         3,
-        4,
         5,
         6,
         7,
@@ -200,51 +548,50 @@ for voice_name in trio.all_voices:
         abjad.override(tuplet).TupletNumber.text = abjad.Markup(
             r"\markup \italic { 3:2 }"
         )
-    for leaf in abjad.select(score[voice_name]).leaves():
+    for leaf in abjad.select(score[voice_name]).leaves(pitched=True):
         abjad.attach(abjad.Articulation("marcato"), leaf)
         abjad.attach(abjad.Articulation("staccato"), leaf)
 
 for voice_name in ["piano 1 voice", "cello 1 voice", "contrabass 1 voice"]:
-
     trinton.attach(voice=score[voice_name], leaves=[0], attachment=abjad.Dynamic("f"))
 
-    trinton.attach(
-        voice=score[voice_name],
-        leaves=[
-            5,
-            15,
-        ],
-        attachment=abjad.StartHairpin("<"),
-    )
+trinton.attach(
+    voice=score["piano 1 voice"],
+    leaves=[
+        6,
+        15,
+    ],
+    attachment=abjad.StartHairpin("<"),
+)
 
-    trinton.attach(
-        voice=score[voice_name],
-        leaves=[
-            10,
-        ],
-        attachment=abjad.Dynamic("ff"),
-    )
+trinton.attach(
+    voice=score["piano 1 voice"],
+    leaves=[
+        9,
+    ],
+    attachment=abjad.Dynamic("ff"),
+)
 
-    trinton.attach(
-        voice=score[voice_name],
-        leaves=[
-            17,
-        ],
-        attachment=abjad.Dynamic("fff"),
-    )
+trinton.attach(
+    voice=score["piano 1 voice"],
+    leaves=[
+        16,
+    ],
+    attachment=abjad.Dynamic("fff"),
+)
 
 trinton.ottava(
     score=score,
     voice="piano 1 voice",
     start_ottava=[
         2,
-        10,
+        9,
     ],
-    stop_ottava=[4, 10],
+    stop_ottava=[4, 9],
     octave=-1,
 )
 
-# cello pitching/attachments
+# # cello pitching/attachments
 
 for voice_name in ["cello 1 voice", "contrabass 1 voice"]:
     handler = evans.PitchHandler(
@@ -257,7 +604,7 @@ for voice_name in ["cello 1 voice", "contrabass 1 voice"]:
         forget=False,
     )
 
-    handler(abjad.Selection(score[voice_name]).leaves())
+    handler(abjad.Selection(score[voice_name]).leaves(pitched=True))
 
     abjad.attach(
         abjad.LilyPondLiteral(r"\override Accidental.transparent = ##t"),
@@ -274,7 +621,7 @@ handler = evans.PitchHandler(
     forget=False,
 )
 
-handler(abjad.Selection(score["cello 2 voice"]).leaves())
+handler(abjad.Selection(score["cello 2 voice"]).leaves(pitched=True))
 
 trinton.attach(voice=score["cello 2 voice"], leaves=[0], attachment=abjad.Clef("bass"))
 
@@ -284,8 +631,40 @@ for voice_name in ["cello 2 voice", "contrabass 2 voice"]:
         abjad.Selection(score[voice_name]).leaf(0),
     )
 
-    for leaf in abjad.select(score[voice_name]).leaves():
+    abjad.attach(
+        abjad.Articulation("snappizzicato"), abjad.Selection(score[voice_name]).leaf(0)
+    )
+
+selections = trio.select_periodic_ties_2_4_7_8_of_10(
+    abjad.Selection(score["cello 2 voice"]).leaves(pitched=True)
+)
+for tie in selections:
+    for leaf in tie:
         abjad.attach(abjad.Articulation("snappizzicato"), leaf)
+
+trinton.attach(
+    voice=score["cello 1 voice"],
+    leaves=[
+        14,
+    ],
+    attachment=abjad.StartHairpin("<"),
+)
+
+trinton.attach(
+    voice=score["cello 1 voice"],
+    leaves=[
+        9,
+    ],
+    attachment=abjad.Dynamic("ff"),
+)
+
+trinton.attach(
+    voice=score["cello 1 voice"],
+    leaves=[
+        16,
+    ],
+    attachment=abjad.Dynamic("fff"),
+)
 
 # contrabass pitching/attachments
 
@@ -295,6 +674,42 @@ handler = evans.PitchHandler(
 )
 
 handler(abjad.Selection(score["contrabass 2 voice"]).leaves())
+
+selections = trio.select_periodic_ties_2_4_7_8_of_10(
+    abjad.Selection(score["contrabass 2 voice"]).leaves(pitched=True)
+)
+for tie in selections:
+    for leaf in tie:
+        abjad.attach(abjad.Articulation("snappizzicato"), leaf)
+
+abjad.attach(
+    abjad.Articulation("snappizzicato"),
+    abjad.Selection(score["cello 2 voice"]).leaf(15),
+)
+
+trinton.attach(
+    voice=score["contrabass 1 voice"],
+    leaves=[
+        6,
+    ],
+    attachment=abjad.StartHairpin("<"),
+)
+
+trinton.attach(
+    voice=score["contrabass 1 voice"],
+    leaves=[
+        9,
+    ],
+    attachment=abjad.Dynamic("ff"),
+)
+
+trinton.attach(
+    voice=score["contrabass 1 voice"],
+    leaves=[
+        17,
+    ],
+    attachment=abjad.Dynamic("fff"),
+)
 
 # extract parts
 
