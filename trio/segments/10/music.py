@@ -324,6 +324,14 @@ trio.write_marginmarkups(score=score)
 
 trinton.attach(
     voice=score["Global Context"],
+    leaves=[
+        11,
+    ],
+    attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after"),
+)
+
+trinton.attach(
+    voice=score["Global Context"],
     leaves=[-2],
     attachment=abjad.MetronomeMark((1, 4), 47),
 )
