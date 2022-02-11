@@ -140,9 +140,22 @@ trio.matter_broken_rhythms(
     stack=1,
     durations=[
         (3, 8),
-        (3, 4),
+    ],
+)
+
+trinton.append_rests(score=score, voice="contrabass 1 voice", rests=[abjad.Rest("r2.")])
+
+trio.matter_broken_rhythms(
+    score=score,
+    voice="contrabass 1 voice",
+    stack=1,
+    durations=[
         (1, 2),
     ],
+)
+
+trinton.append_rests(
+    score=score, voice="contrabass 1 voice", rests=[abjad.Rest("r2"), abjad.Rest("r8")]
 )
 
 trio.matter_broken_rhythms(
@@ -151,7 +164,14 @@ trio.matter_broken_rhythms(
     stack=2,
     durations=[
         (5, 8),
-        (5, 8),
+    ],
+)
+
+trinton.append_rests(
+    score=score,
+    voice="contrabass 1 voice",
+    rests=[
+        abjad.Rest("r4"),
     ],
 )
 
@@ -159,7 +179,11 @@ trinton.make_and_append_rhythm_selections(
     score=score,
     voice_name="contrabass 1 voice",
     stack=rmakers.stack(
-        rmakers.tuplet(trio.collapsing_tuplets_2),
+        rmakers.tuplet(
+            trinton.rotated_sequence(
+                pitch_list=trio.collapsing_tuplets_2, start_index=1
+            )
+        ),
         rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
         rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
         rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
@@ -168,7 +192,6 @@ trinton.make_and_append_rhythm_selections(
         rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
     ),
     durations=[
-        (1, 4),
         (1, 4),
         (1, 4),
         (5, 8),
@@ -233,16 +256,66 @@ trinton.handwrite(
         (1, 16),
         (5, 16),
         (1, 16),
-        (11, 16),
-        (1, 16),
+    ],
+    pitch_list=None,
+)
+
+trio.contrabass_glissandi_rhythms(
+    score=score,
+    voice_name="contrabass 2 voice",
+    durations=[
+        (3, 4),
+    ],
+)
+
+trinton.handwrite(
+    score=score,
+    voice="contrabass 2 voice",
+    durations=[
         (7, 16),
         (1, 16),
+    ],
+    pitch_list=None,
+)
+
+trio.contrabass_glissandi_rhythms(
+    score=score,
+    voice_name="contrabass 2 voice",
+    durations=[
+        (5, 8),
+    ],
+)
+
+trinton.handwrite(
+    score=score,
+    voice="contrabass 2 voice",
+    durations=[
         (9, 16),
         (1, 16),
-        (9, 16),
-        (1, 16),
-        (3, 16),
-        (1, 16),
+        # (3, 16),
+        # (1, 16),
+        # (3, 16),
+        # (1, 16),
+        # (3, 16),
+        # (1, 16),
+        # (9, 16),
+        # (1, 16),
+    ],
+    pitch_list=None,
+)
+
+trio.contrabass_glissandi_rhythms(
+    score=score,
+    voice_name="contrabass 2 voice",
+    durations=[
+        (1, 4),
+    ],
+)
+
+trinton.handwrite(
+    score=score,
+    voice="contrabass 2 voice",
+    durations=[
         (3, 16),
         (1, 16),
         (3, 16),
@@ -253,25 +326,9 @@ trinton.handwrite(
     pitch_list=None,
 )
 
-trinton.make_and_append_rhythm_selections(
+trio.contrabass_glissandi_rhythms(
     score=score,
     voice_name="contrabass 2 voice",
-    stack=rmakers.stack(
-        rmakers.tuplet(
-            [
-                (
-                    1,
-                    1,
-                ),
-            ]
-        ),
-        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_dots(),
-        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
-    ),
     durations=[
         (5, 8),
         (3, 4),
@@ -282,10 +339,8 @@ trinton.make_and_append_rhythm_selections(
 
 trinton.append_rests(score=score, voice="contrabass 2 voice", rests=[abjad.Skip("r4")])
 
-for number in [0, 1]:
-    abjad.override(
-        abjad.Selection(score["contrabass 2 voice"]).tuplet(number)
-    ).TupletNumber.text = abjad.Markup(r"\markup \italic { 4:5 }")
+for tuplet in abjad.Selection(score["contrabass 2 voice"]).tuplets():
+    abjad.override(tuplet).TupletNumber.text = abjad.Markup(r"\markup \italic { 4:5 }")
 
 abjad.override(
     abjad.Selection(score["contrabass 1 voice"]).tuplet(-1)
@@ -404,23 +459,48 @@ pull_handler = evans.PitchHandler(
     forget=False,
 )
 
-pull_handler(
-    trinton.make_leaf_selection(
-        score=score,
-        voice="contrabass 2 voice",
-        leaves=list(
-            range(
-                8,
-                52,
-            )
-        ),
-    )
+contrabass_2_measures = (
+    abjad.Selection(score["contrabass 2 voice"]).leaves().group_by_measure()
+)
+
+for n in list(range(6, 17)):
+    selections = []
+
+    for leaf in abjad.Selection(contrabass_2_measures[n - 1]).leaves(pitched=True):
+        if abjad.get.annotation(leaf, trio.vib) is True:
+            pass
+        else:
+            selections.append(leaf)
+
+    pull_handler(selections[:])
+
+trio.pitch_contrabass_glissandi(
+    score=score,
+    voice="contrabass 2 voice",
+    leaves=[
+        30,
+        32,
+        37,
+        38,
+        43,
+        44,
+        54,
+        56,
+    ],
+    strings="II and III",
 )
 
 trio.pitch_contrabass_glissandi(
     score=score,
     voice="contrabass 2 voice",
-    leaves=list(range(52, 64)),
+    leaves=[
+        52,
+        53,
+        58,
+        59,
+        60,
+        62,
+    ],
     strings="I and II",
 )
 
@@ -449,17 +529,15 @@ trinton.glissando(
         24,
         27,
         30,
-        33,
-        36,
+        34,
+        37,
         39,
         43,
         45,
         47,
         49,
         52,
-        53,
         54,
-        56,
         58,
         59,
         60,
@@ -475,7 +553,7 @@ trinton.glissando(
         26,
         29,
         32,
-        35,
+        36,
         38,
         42,
         44,
@@ -483,22 +561,10 @@ trinton.glissando(
         48,
         51,
         53,
-        54,
         56,
-        58,
         59,
         60,
         62,
-    ],
-)
-
-trio.accelerando_beams(
-    score=score,
-    voice="contrabass 1 voice",
-    leaves=[
-        51,
-        90,
-        107,
     ],
 )
 
@@ -506,14 +572,39 @@ trio.ritardando_beams(
     score=score,
     voice="contrabass 1 voice",
     leaves=[
+        51,
         84,
+        91,
         100,
-        116,
     ],
 )
 
+trinton.write_slur(
+    voice=score["contrabass 2 voice"],
+    start_slur=[
+        30,
+        37,
+        43,
+        52,
+        54,
+    ],
+    stop_slur=[
+        33,
+        38,
+        44,
+        53,
+        57,
+    ],
+)
+
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[30, 37, 43, 52, 54, 58],
+    attachment=abjad.Articulation(">"),
+)
+
 trinton.dashed_slur(
-    start_selection=abjad.Selection(score["contrabass 2 voice"]).leaf(52),
+    start_selection=abjad.Selection(score["contrabass 2 voice"]).leaf(58),
     stop_selection=abjad.Selection(score["contrabass 2 voice"]).leaf(63),
 )
 
@@ -534,11 +625,8 @@ trinton.attach(
         21,
         24,
         27,
-        30,
-        33,
-        36,
+        34,
         39,
-        43,
         45,
         47,
         49,
@@ -549,6 +637,9 @@ trinton.attach(
 trinton.attach(
     voice=score["contrabass 2 voice"],
     leaves=[
+        30,
+        37,
+        43,
         52,
     ],
     attachment=abjad.LilyPondLiteral(r'\boxed-markup "Arco" 1', format_slot="after"),
@@ -595,7 +686,26 @@ trinton.attach(
     attachment=abjad.StopHairpin(),
 )
 
-# fermate
+
+trinton.write_hooked_spanner(
+    voice=score["contrabass 2 voice"],
+    string=r"\markup { III }",
+    start_leaf=[
+        8,
+        34,
+        39,
+        45,
+    ],
+    stop_leaf=[
+        29,
+        36,
+        42,
+        51,
+    ],
+    padding=12.5,
+)
+
+#  fermate
 
 trinton.populate_fermata_measures(
     score=score,
@@ -638,17 +748,9 @@ trinton.attach(
     voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
 )
 
-trinton.write_hooked_spanner(
-    voice=score["contrabass 2 voice"],
-    string=r"\markup { III }",
-    start_leaf=[8],
-    stop_leaf=[51],
-    padding=12.5,
-)
-
 # extract parts
 
-trinton.extract_parts(score=score)
+# trinton.extract_parts(score=score)
 
 # render file
 

@@ -45,7 +45,6 @@ from .library import (
     write_startmarkups,
     write_marginmarkups,
     ritardando_beams,
-    accelerando_beams,
     _piano_harmonic_glissandi_pitches_lh,
     _piano_harmonic_glissandi_pitches_rh,
     octave_up,
@@ -72,6 +71,8 @@ from .library import (
     pitch_harmonic_gliss_piano,
     select_periodic_ties_2_4_7_8_of_10,
     select_periodic_ties_2_4_of_8,
+    contrabass_glissandi_rhythms,
+    select_leaves_by_annotation,
 )
 
 __all__ = [
@@ -93,7 +94,6 @@ __all__ = [
     "stop_angle_spanner",
     "noteheads_only",
     "ritardando_beams",
-    "accelerando_beams",
     "pitch_harmonic_glissandi",
     "toccata_rhythms",
     "pitch_cello_gliss_piano",
@@ -149,4 +149,6 @@ __all__ = [
     "pitch_harmonic_gliss_piano",
     "select_periodic_ties_2_4_7_8_of_10",
     "select_periodic_ties_2_4_of_8",
+    "contrabass_glissandi_rhythms",
+    "select_leaves_by_annotation",
 ]

@@ -748,6 +748,42 @@ def matter_broken_rhythms(score, voice, stack, durations):
         abjad.annotate(tuplet, accelerando, True)
 
 
+def contrabass_glissandi_rhythms(score, voice_name, durations):
+    selections = trinton.make_rhythm_selections(
+        stack=rmakers.stack(
+            rmakers.tuplet(
+                [
+                    (
+                        1,
+                        1,
+                    ),
+                ]
+            ),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_dots(),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        ),
+        durations=durations,
+    )
+
+    tuplets = abjad.Selection(selections).tuplets()
+    for tuplet in tuplets:
+        abjad.annotate(tuplet, trio.vib, True)
+        for leaf in tuplets:
+            abjad.annotate(leaf, trio.vib, True)
+            for note in leaf:
+                abjad.annotate(note, trio.vib, True)
+    for sel in selections:
+        abjad.annotate(sel, trio.vib, True)
+
+    trinton.append_rhythm_selections(
+        voice=voice_name, score=score, selections=selections
+    )
+
+
 # pitch tools
 
 
@@ -1309,6 +1345,21 @@ def select_tuplets_by_annotation(annotation):
     return selector
 
 
+def select_leaves_by_annotation(annotation):
+    def selector(argument):
+        leaves = abjad.Selection(argument).leaves(pitched=True)
+
+        out = []
+
+        for leaf in leaves:
+            if abjad.get.annotation(leaf, annotation) is True:
+                out.append(leaf)
+
+        return abjad.Selection(out[:]).leaves()
+
+    return selector
+
+
 # spelling tools
 
 
@@ -1346,13 +1397,6 @@ def ritardando_beams(score, voice, leaves):
         abjad.override(
             abjad.select(score[voice]).leaf(leaf)
         ).Beam.grow_direction = abjad.Left
-
-
-def accelerando_beams(score, voice, leaves):
-    for leaf in leaves:
-        abjad.override(
-            abjad.select(score[voice]).leaf(leaf)
-        ).Beam.grow_direction = abjad.Right
 
 
 # transposition tools
