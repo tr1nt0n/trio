@@ -642,7 +642,7 @@ trinton.write_hooked_spanner(
     voice=score["contrabass 2 voice"],
     string=r"\markup { III }",
     start_leaf=[8],
-    stop_leaf=[48],
+    stop_leaf=[51],
     padding=12.5,
 )
 

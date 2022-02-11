@@ -982,7 +982,6 @@
                                     \tweak Accidental.text \one-eighth-sharp-markup
                                     c'16
                                     - \snappizzicato
-                                    \stopTextSpan
                                     ]
                                     c'2
                                     ~
@@ -1003,6 +1002,7 @@
                                     \undo \hide NoteHead
                                     cs'16
                                     - \snappizzicato
+                                    \stopTextSpan
                                     ]
                                     \override TupletNumber.text = \markup \italic { 4:5 }
                                     \times 15/12
