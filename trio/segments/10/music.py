@@ -517,11 +517,11 @@ trinton.dashed_slur(
     stop_selection=abjad.Selection(score["contrabass 2 voice"]).leaf(63),
 )
 
-for leaf in abjad.Selection(score["contrabass 2 voice"]).leaves(pitched=True):
-    if leaf.written_duration == abjad.Duration(1, 16):
-        abjad.attach(abjad.Articulation("snappizzicato"), leaf)
-    elif leaf.written_duration == abjad.Duration(1, 32):
-        abjad.attach(abjad.Articulation("snappizzicato"), leaf)
+for tie in abjad.Selection(score["contrabass 2 voice"]).logical_ties():
+    if tie.written_duration == abjad.Duration(1, 16):
+        abjad.attach(abjad.Articulation("snappizzicato"), tie[0])
+    elif tie.written_duration == abjad.Duration(1, 32):
+        abjad.attach(abjad.Articulation("snappizzicato"), tie[0])
 
 trinton.attach(
     voice=score["contrabass 2 voice"],

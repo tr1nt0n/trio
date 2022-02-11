@@ -814,7 +814,6 @@
                                     \override NoteColumn.glissando-skip = ##t
                                     \override NoteHead.no-ledgers = ##t
                                     c'16
-                                    - \snappizzicato
                                     [
                                     \revert Accidental.stencil
                                     \revert NoteColumn.glissando-skip
@@ -895,7 +894,6 @@
                                     \override NoteColumn.glissando-skip = ##t
                                     \override NoteHead.no-ledgers = ##t
                                     c'16
-                                    - \snappizzicato
                                     [
                                     \revert Accidental.stencil
                                     \revert NoteColumn.glissando-skip
@@ -993,7 +991,6 @@
                                     \override NoteColumn.glissando-skip = ##t
                                     \override NoteHead.no-ledgers = ##t
                                     c'16
-                                    - \snappizzicato
                                     [
                                     \revert Staff.Stem.stemlet-length
                                     \revert Accidental.stencil
