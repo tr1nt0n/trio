@@ -1348,6 +1348,13 @@ def ritardando_beams(score, voice, leaves):
         ).Beam.grow_direction = abjad.Left
 
 
+def accelerando_beams(score, voice, leaves):
+    for leaf in leaves:
+        abjad.override(
+            abjad.select(score[voice]).leaf(leaf)
+        ).Beam.grow_direction = abjad.Right
+
+
 # transposition tools
 
 
@@ -1620,7 +1627,8 @@ rehearsal_mark10 = abjad.Markup(
 )
 
 rehearsal_mark11 = abjad.LilyPondLiteral(
-    r'\boxed-markup "One of These Days {dry land}" 1.5', format_slot="after"
+    r'\tweak padding 5.5 \boxed-markup "One of These Days {dry land}" 1.5',
+    format_slot="after",
 )
 
 rehearsal_mark12 = abjad.LilyPondLiteral(
