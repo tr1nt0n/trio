@@ -579,7 +579,7 @@ for start_sel, stop_sel in zip(
 
 # extract parts
 
-# trinton.extract_parts(score=score)
+trinton.extract_parts(score=score)
 
 # render file
 
