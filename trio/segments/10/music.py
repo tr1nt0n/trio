@@ -750,7 +750,7 @@ trinton.attach(
 
 # extract parts
 
-# trinton.extract_parts(score=score)
+trinton.extract_parts(score=score)
 
 # render file
 

@@ -1,0 +1,86 @@
+\documentclass[11pt]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage[papersize={9in, 12in}]{geometry}
+\usepackage{tikz}
+\usepackage{xltxtra,fontspec,xunicode}
+\usetikzlibrary{calc}
+
+\defaultfontfeatures{Scale=MatchLowercase}
+\setromanfont[Numbers=Uppercase]{Bodoni 72 Book}
+\newlength{\drop}
+\parindent=0pt
+
+\begin{document}
+    \begin{titlepage}
+
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[line width = 1.6pt]
+                ($(current page.north west) + (1in,-1in)$)
+                rectangle
+                ($(current page.south east) + (-1in,1in)$);
+            \draw[line width = 0.4pt]
+                ($(current page.north west) + (1in,-1in) + (2.8pt,-2.8pt)$)
+                rectangle
+                ($(current page.south east) + (-1in,1in) + (-2.8pt,2.8pt)$);
+        \end{tikzpicture}
+
+        \drop=0.1\textheight
+        \centering
+
+        \vspace*{8\baselineskip}
+
+        \rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+        \rule{\textwidth}{0.4pt}\\[\baselineskip]
+        {
+            \fontsize{2cm}{1em}\selectfont
+            PIANO  TRIO
+        }
+        \rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+        \rule{\textwidth}{1.6pt}\\[\baselineskip]
+
+        \vspace*{3\baselineskip}
+
+        {
+            \itshape
+            for
+        }
+        {
+            \large
+            Violoncello, Contrabass,
+        }
+       {
+            \itshape
+            and
+        }
+        {
+            \large
+            Piano
+            \par
+        }
+        \vspace*{2\baselineskip}
+        
+        {
+            \Large
+            CONTRABASS
+            \par
+        }
+        \vspace*{14\baselineskip}
+        
+        {
+            \Large
+            T R I N T O N
+            \par
+        }
+
+        \vspace*{4\baselineskip}
+
+        {
+            \Large
+            2021-2022
+        }
+
+        \vfill
+
+    \end{titlepage}
+\end{document}
