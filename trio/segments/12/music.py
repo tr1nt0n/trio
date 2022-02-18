@@ -415,6 +415,15 @@ trinton.attach_multiple(
     attachments=[abjad.MetronomeMark((1, 4), 105), trio.rehearsal_mark13],
 )
 
+trinton.attach_multiple(
+    score=score,
+    voice="Global Context",
+    leaves=[
+        -1,
+    ],
+    attachments=[abjad.LilyPondLiteral(r"\override Score.BarLine.transparent = ##f", format_slot="after"),]
+)
+
 trinton.attach(
     voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("|.")
 )

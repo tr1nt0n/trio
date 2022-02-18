@@ -178,7 +178,7 @@ trinton.attach_multiple(
     score=score,
     voice="Global Context",
     leaves=[0],
-    attachments=[abjad.MetronomeMark((1, 4), 60), trio.rehearsal_mark1],
+    attachments=[abjad.MetronomeMark((1, 4), 60), trio.rehearsal_mark1,],
 )
 
 trinton.attach(

@@ -52,7 +52,6 @@
 
         \override AccidentalSuggestion.avoid-slur = #'ignore
 
-        % \override BarLine.bar-extent = #'(-2 . 2)
         \override BarLine.hair-thickness = 0.5
         \override BarLine.transparent = ##t
         \override BarLine.X-extent = #'(0 . 0)

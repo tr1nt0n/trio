@@ -38,6 +38,7 @@
             \time 3/8
             s1 * 3/8
             \bar "|."
+            \override Score.BarLine.transparent = ##f
         }
         \tag #'group1
         {

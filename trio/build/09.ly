@@ -37,10 +37,11 @@
             \time 3/8
             s1 * 3/8
             \bar ".|:"
+            \once \override Score.BarLine.transparent = ##f
             \tempo 4=130
             \time 1/4
             s1 * 1/4
-            - \markup \abs-fontsize #8.5 { X6 }
+            - \markup \abs-fontsize #15 { X6 }
             \stopTextSpan
             \time 1/4
             s1 * 1/4
@@ -76,6 +77,7 @@
             \time 1/4
             s1 * 1/4
             \bar ":|."
+            \once \override Score.BarLine.transparent = ##f
         }
         \tag #'group1
         {

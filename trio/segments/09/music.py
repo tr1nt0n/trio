@@ -752,12 +752,22 @@ for leaf, bar in zip(
         attachment=bar,
     )
 
+trinton.attach_multiple(
+    score=score,
+    voice="Global Context",
+    leaves=[
+        8,
+        -1
+    ],
+    attachments=[abjad.LilyPondLiteral(r"\once \override Score.BarLine.transparent = ##f", format_slot="after"),]
+)
+
 trinton.attach(
     voice=score["Global Context"],
     leaves=[
         9,
     ],
-    attachment=abjad.Markup(r"\markup \abs-fontsize #8.5 { X6 }"),
+    attachment=abjad.Markup(r"\markup \abs-fontsize #15 { X6 }"),
 )
 
 # piano pitching/attachments
