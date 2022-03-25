@@ -71,7 +71,7 @@ handler = evans.PitchHandler(
     forget=False,
 )
 
-handler(abjad.select(score["piano 1 voice"]).leaves(pitched=True))
+handler(abjad.select.leaves(score["piano 1 voice"], pitched=True))
 
 # cello
 
@@ -215,14 +215,14 @@ for voice_name in [
     "piano 1 voice",
     "piano 2 voice",
 ]:
-    measures = abjad.Selection(score[voice_name]).leaves().group_by_measure()
-    measure_2_leaves = measures[1].leaves()
+    measures = abjad.select.group_by_measure(abjad.select.leaves(score[voice_name]))
+    measure_2_leaves = abjad.select.leaves(measures[1])
     abjad.attach(abjad.StartPhrasingSlur(), measure_2_leaves[0])
     abjad.attach(abjad.StopPhrasingSlur(), measure_2_leaves[-1])
 
 for voice_name in ["cello 2 voice", "contrabass 2 voice"]:
-    measures = abjad.Selection(score[voice_name]).leaves().group_by_measure()
-    measure_2_leaves = measures[1].leaves()
+    measures = abjad.select.group_by_measure(abjad.select.leaves(score[voice_name]))
+    measure_2_leaves = abjad.select.leaves(measures[1])
     trinton.dashed_slur(measure_2_leaves[0], measure_2_leaves[-1])
 
 for attachments, leaf in zip(
@@ -260,23 +260,23 @@ for leaf, dynamic in zip(
 trinton.attach(
     voice=score["cello 2 voice"],
     leaves=[0],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "1/2 CLT" 1', format_slot="after"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "1/2 CLT" 1', "after"),
 )
 
 trinton.attach(
     voice=score["cello 1 voice"],
     leaves=[1],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Crine" 1', format_slot="before"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Crine" 1', "before"),
 )
 
 for voice in ["cello 1 voice", "contrabass 1 voice"]:
-    trinton.unmeasured_stem_tremolo(abjad.select(score[voice]).leaves(pitched=True))
+    trinton.unmeasured_stem_tremolo(abjad.select.leaves(score[voice], pitched=True))
 
     trinton.attach(
         voice=score[voice],
         leaves=[1],
         attachment=abjad.LilyPondLiteral(
-            r"- \baca-circle-fast-markup", format_slot="before"
+            r"- \baca-circle-fast-markup", "before"
         ),
     )
 
