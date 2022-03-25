@@ -1078,7 +1078,7 @@ trinton.attach(
         104,
     ],
     attachment=abjad.StartHairpin("o<"),
-    direction=abjad.DOWN
+    direction=abjad.DOWN,
 )
 
 trinton.attach(
@@ -1087,7 +1087,7 @@ trinton.attach(
         70,
     ],
     attachment=abjad.StartHairpin("o<"),
-    direction=abjad.UP
+    direction=abjad.UP,
 )
 
 trinton.attach_multiple(
@@ -1098,7 +1098,7 @@ trinton.attach_multiple(
         abjad.Dynamic("fp"),
         abjad.StartHairpin("<"),
     ],
-    direction=abjad.UP
+    direction=abjad.UP,
 )
 
 trinton.attach_multiple(
@@ -1116,7 +1116,7 @@ trinton.attach_multiple(
         abjad.Dynamic("f"),
         abjad.StartHairpin(">o"),
     ],
-    direction=abjad.DOWN
+    direction=abjad.DOWN,
 )
 
 trinton.attach_multiple(
@@ -1130,7 +1130,7 @@ trinton.attach_multiple(
         abjad.Dynamic("f"),
         abjad.StartHairpin(">o"),
     ],
-    direction=abjad.UP
+    direction=abjad.UP,
 )
 
 trinton.attach(
@@ -1484,7 +1484,7 @@ trinton.attach(
         105,
     ],
     attachment=abjad.StartHairpin("o<"),
-    direction=abjad.DOWN
+    direction=abjad.DOWN,
 )
 
 trinton.attach(
@@ -1513,7 +1513,7 @@ trinton.attach_multiple(
         abjad.Dynamic("f"),
         abjad.StartHairpin(">o"),
     ],
-    direction=abjad.DOWN
+    direction=abjad.DOWN,
 )
 
 trinton.attach_multiple(
@@ -1528,7 +1528,7 @@ trinton.attach_multiple(
         abjad.Dynamic("f"),
         abjad.StartHairpin(">o"),
     ],
-    direction=abjad.UP
+    direction=abjad.UP,
 )
 
 for voice_name in ["cello 1 voice", "contrabass 1 voice"]:

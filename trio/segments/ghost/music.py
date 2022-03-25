@@ -275,9 +275,7 @@ for voice in ["cello 1 voice", "contrabass 1 voice"]:
     trinton.attach(
         voice=score[voice],
         leaves=[1],
-        attachment=abjad.LilyPondLiteral(
-            r"- \baca-circle-fast-markup", "before"
-        ),
+        attachment=abjad.LilyPondLiteral(r"- \baca-circle-fast-markup", "before"),
     )
 
     trinton.attach(voice=score[voice], leaves=[1], attachment=abjad.Dynamic("p"))

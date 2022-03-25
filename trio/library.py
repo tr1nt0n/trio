@@ -704,9 +704,23 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, notation):
             abjad.annotate(sel, harmonic_gliss, True)
 
 
-select_periodic_ties_2_4_7_8_of_10 = trinton.patterned_tie_index_selector([2, 4, 7, 8,], 10)
+select_periodic_ties_2_4_7_8_of_10 = trinton.patterned_tie_index_selector(
+    [
+        2,
+        4,
+        7,
+        8,
+    ],
+    10,
+)
 
-select_periodic_ties_2_4_of_8 = trinton.patterned_tie_index_selector([2, 4,], 8)
+select_periodic_ties_2_4_of_8 = trinton.patterned_tie_index_selector(
+    [
+        2,
+        4,
+    ],
+    8,
+)
 
 
 _matter_stacks = {
@@ -1306,7 +1320,7 @@ def pitch_matter(
                     voice=voice,
                     leaves=[leaf],
                     attachments=[cent_markups[0], cent_markups[1]],
-                    direction=abjad.UP
+                    direction=abjad.UP,
                 )
 
             else:
@@ -1317,7 +1331,10 @@ def pitch_matter(
                     ]"""
                 )
                 trinton.attach(
-                    voice=score[voice], leaves=[leaf], attachment=cent_markups[0], direction=abjad.UP
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=cent_markups[0],
+                    direction=abjad.UP,
                 )
 
 
@@ -1674,6 +1691,4 @@ rehearsal_mark12 = abjad.LilyPondLiteral(
     r'\boxed-markup "She has something to tell you" 1.5', "after"
 )
 
-rehearsal_mark13 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Back." 0.5', "after"
-)
+rehearsal_mark13 = abjad.LilyPondLiteral(r'\boxed-markup "Back." 0.5', "after")

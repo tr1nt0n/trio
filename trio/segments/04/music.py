@@ -1314,9 +1314,7 @@ for voice in ["cello 2 voice", "contrabass 2 voice"]:
         leaves=[
             2,
         ],
-        attachment=abjad.LilyPondLiteral(
-            r'\boxed-markup "Ord., FB" 1', "after"
-        ),
+        attachment=abjad.LilyPondLiteral(r'\boxed-markup "Ord., FB" 1', "after"),
     )
 
 trinton.attach(
@@ -1845,7 +1843,12 @@ for leaf, dynamic in zip(
 ):
     trinton.attach(voice=score["contrabass 2 voice"], leaves=[leaf], attachment=dynamic)
 
-trinton.attach(voice=score["contrabass 2 voice"], leaves=[172], attachment=abjad.Dynamic("p"), direction=abjad.UP)
+trinton.attach(
+    voice=score["contrabass 2 voice"],
+    leaves=[172],
+    attachment=abjad.Dynamic("p"),
+    direction=abjad.UP,
+)
 
 trio.make_angle_spanner(
     score=score,

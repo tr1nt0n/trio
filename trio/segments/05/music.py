@@ -389,7 +389,9 @@ handler_III = evans.PitchHandler(
     forget=False,
 )
 
-cello_1_measures = abjad.select.group_by_measure(abjad.select.leaves(score["cello 1 voice"]))
+cello_1_measures = abjad.select.group_by_measure(
+    abjad.select.leaves(score["cello 1 voice"])
+)
 
 I_measures = [
     cello_1_measures[1],
@@ -415,7 +417,9 @@ handler_II(II_measures[:])
 
 handler_III(III_measures[:])
 
-cello_1_measures = abjad.select.group_by_measure(abjad.select.leaves(score["cello 1 voice"]))
+cello_1_measures = abjad.select.group_by_measure(
+    abjad.select.leaves(score["cello 1 voice"])
+)
 
 for measure, dynamic in zip(
     cello_1_measures[1:],
@@ -451,7 +455,9 @@ trinton.attach(
     attachment=abjad.Glissando(),
 )
 
-cello_2_measures = abjad.select.group_by_measure(abjad.select.leaves(score["cello 2 voice"]))
+cello_2_measures = abjad.select.group_by_measure(
+    abjad.select.leaves(score["cello 2 voice"])
+)
 
 for measure in [cello_2_measures[_] for _ in [0, 1, 2, 3, 7, 8]]:
     for leaf in abjad.select.exclude(abjad.select.leaves(measure), [-1]):
@@ -807,8 +813,8 @@ handler_III = evans.PitchHandler(
     forget=False,
 )
 
-contrabass_1_measures = (
-    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 1 voice"]))
+contrabass_1_measures = abjad.select.group_by_measure(
+    abjad.select.leaves(score["contrabass 1 voice"])
 )
 
 I_measures = [
@@ -835,8 +841,8 @@ handler_II(II_measures[:])
 
 handler_III(III_measures[:])
 
-contrabass_1_measures = (
-    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 1 voice"]))
+contrabass_1_measures = abjad.select.group_by_measure(
+    abjad.select.leaves(score["contrabass 1 voice"])
 )
 
 for measure, dynamic in zip(
@@ -854,8 +860,8 @@ for measure, dynamic in zip(
 
 abjad.attach(abjad.StartHairpin("<"), abjad.select.leaf(contrabass_1_measures[6], 0))
 
-contrabass_2_measures = (
-    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 2 voice"]))
+contrabass_2_measures = abjad.select.group_by_measure(
+    abjad.select.leaves(score["contrabass 2 voice"])
 )
 
 for measure in [contrabass_2_measures[_] for _ in [0, 2, 3, 4, 6, 7, 8]]:

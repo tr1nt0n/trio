@@ -421,7 +421,9 @@ trinton.attach_multiple(
     leaves=[
         -1,
     ],
-    attachments=[abjad.LilyPondLiteral(r"\override Score.BarLine.transparent = ##f", "after"),]
+    attachments=[
+        abjad.LilyPondLiteral(r"\override Score.BarLine.transparent = ##f", "after"),
+    ],
 )
 
 trinton.attach(
@@ -775,7 +777,7 @@ trinton.attach(
         6,
     ],
     attachment=abjad.StartHairpin(">o"),
-    direction=abjad.UP
+    direction=abjad.UP,
 )
 
 trinton.attach(
@@ -917,7 +919,9 @@ trinton.attach(
     attachment=abjad.Clef("bass"),
 )
 
-cello_2_measures = abjad.select.group_by_measure(abjad.select.leaves(score["cello 2 voice"]))
+cello_2_measures = abjad.select.group_by_measure(
+    abjad.select.leaves(score["cello 2 voice"])
+)
 
 for n in [
     7,
@@ -925,12 +929,14 @@ for n in [
     11,
     13,
 ]:
-    sel = abjad.select.leaves(cello_2_measures[n -1])
+    sel = abjad.select.leaves(cello_2_measures[n - 1])
     for leaf in sel:
         for head in leaf.note_heads:
             abjad.tweak(head).style = r"#'harmonic-mixed"
 
-cello_1_measures = abjad.select.group_by_measure(abjad.select.leaves(score["cello 1 voice"]))
+cello_1_measures = abjad.select.group_by_measure(
+    abjad.select.leaves(score["cello 1 voice"])
+)
 
 for n in [7, 9, 11, 13]:
     sel = abjad.select.leaves(cello_1_measures[n - 1])
@@ -1048,8 +1054,8 @@ trinton.attach(
     attachment=abjad.Clef("bass"),
 )
 
-contrabass_2_measures = (
-    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 2 voice"]))
+contrabass_2_measures = abjad.select.group_by_measure(
+    abjad.select.leaves(score["contrabass 2 voice"])
 )
 
 for n in [
@@ -1063,8 +1069,8 @@ for n in [
         for head in leaf.note_heads:
             abjad.tweak(head).style = r"#'harmonic-mixed"
 
-contrabass_1_measures = (
-    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 1 voice"]))
+contrabass_1_measures = abjad.select.group_by_measure(
+    abjad.select.leaves(score["contrabass 1 voice"])
 )
 
 for n in [
@@ -1105,7 +1111,7 @@ for voice in ["contrabass 2 voice", "cello 2 voice"]:
             12,
         ],
         attachment=abjad.StartHairpin(">o"),
-        direction=abjad.UP
+        direction=abjad.UP,
     )
 
     trinton.attach(voice=score[voice], leaves=[-1], attachment=abjad.StopHairpin())
@@ -1134,12 +1140,8 @@ for voice in ["contrabass 2 voice", "cello 2 voice"]:
         sel = abjad.select.exclude(abjad.select.leaves(measures[n - 1]), [-1])
         for leaf in sel:
             abjad.attach(abjad.Glissando(), leaf)
-        abjad.attach(
-            abjad.StartPhrasingSlur(), abjad.select.leaf(measures[n - 1], 0)
-        )
-        abjad.attach(
-            abjad.StopPhrasingSlur(), abjad.select.leaf(measures[n - 1], -1)
-        )
+        abjad.attach(abjad.StartPhrasingSlur(), abjad.select.leaf(measures[n - 1], 0))
+        abjad.attach(abjad.StopPhrasingSlur(), abjad.select.leaf(measures[n - 1], -1))
 
 # extract parts
 

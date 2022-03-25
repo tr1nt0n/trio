@@ -459,8 +459,8 @@ pull_handler = evans.PitchHandler(
     forget=False,
 )
 
-contrabass_2_measures = (
-    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 2 voice"]))
+contrabass_2_measures = abjad.select.group_by_measure(
+    abjad.select.leaves(score["contrabass 2 voice"])
 )
 
 for n in list(range(6, 17)):
@@ -650,9 +650,7 @@ trinton.attach_multiple(
     voice="contrabass 1 voice",
     leaves=[0],
     attachments=[
-        abjad.LilyPondLiteral(
-            r'\boxed-markup "Full bows as possible" 1', "after"
-        ),
+        abjad.LilyPondLiteral(r'\boxed-markup "Full bows as possible" 1', "after"),
     ],
 )
 
@@ -668,15 +666,13 @@ trinton.attach_multiple(
             r"\markup \bold \italic { as loud as possible }",
         ),
     ],
-    direction=abjad.DOWN
+    direction=abjad.DOWN,
 )
 
 trinton.attach(
     voice=score["contrabass 2 voice"],
     leaves=[0],
-    attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "Detune IV" 1', "after"
-    ),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Detune IV" 1', "after"),
 )
 
 trinton.attach(
@@ -685,7 +681,7 @@ trinton.attach(
         39,
     ],
     attachment=abjad.StartHairpin(">o"),
-    direction=abjad.UP
+    direction=abjad.UP,
 )
 
 trinton.attach(

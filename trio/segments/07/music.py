@@ -665,8 +665,9 @@ trio.finger_pressure(
 
 for annotation in [trio.harmonic_gliss, trio.vib]:
     annotation_selector = trio.select_tuplets_by_annotation(annotation)
-    annotation_leaves = (
-        abjad.select.exclude(annotation_selector(abjad.select.leaves(score["cello 2 voice"], pitched=True)), [-1])
+    annotation_leaves = abjad.select.exclude(
+        annotation_selector(abjad.select.leaves(score["cello 2 voice"], pitched=True)),
+        [-1],
     )
     for leaf in annotation_leaves:
         abjad.attach(abjad.Glissando(), leaf)
@@ -957,8 +958,11 @@ trinton.write_text_span(
 
 for annotation in [trio.harmonic_gliss, trio.vib]:
     annotation_selector = trio.select_tuplets_by_annotation(annotation)
-    annotation_leaves = (
-        abjad.select.exclude(annotation_selector(abjad.select.leaves(score["contrabass 2 voice"], pitched=True)), [-1])
+    annotation_leaves = abjad.select.exclude(
+        annotation_selector(
+            abjad.select.leaves(score["contrabass 2 voice"], pitched=True)
+        ),
+        [-1],
     )
     for leaf in annotation_leaves:
         abjad.attach(abjad.Glissando(), leaf)

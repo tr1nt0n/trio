@@ -178,7 +178,10 @@ trinton.attach_multiple(
     score=score,
     voice="Global Context",
     leaves=[0],
-    attachments=[abjad.MetronomeMark((1, 4), 60), trio.rehearsal_mark1,],
+    attachments=[
+        abjad.MetronomeMark((1, 4), 60),
+        trio.rehearsal_mark1,
+    ],
 )
 
 trinton.attach(
@@ -678,7 +681,9 @@ for voice, half, harm in zip(
         harm=harm,
     )
 
-for tuplet in abjad.select.exclude(abjad.select.tuplets(score["contrabass 2 voice"]), [-1]):
+for tuplet in abjad.select.exclude(
+    abjad.select.tuplets(score["contrabass 2 voice"]), [-1]
+):
     abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
     abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
 

@@ -295,10 +295,8 @@ for voice_name in ["piano 1 voice", "cello 2 voice", "contrabass 2 voice"]:
     trinton.attach(
         voice=score[voice_name],
         leaves=[0],
-        attachment=abjad.Markup(
-            r"\markup \italic { Dolcissimo }"
-        ),
-        direction=abjad.DOWN
+        attachment=abjad.Markup(r"\markup \italic { Dolcissimo }"),
+        direction=abjad.DOWN,
     )
 
 trinton.attach(

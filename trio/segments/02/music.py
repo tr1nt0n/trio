@@ -1925,14 +1925,14 @@ trinton.attach(
         81,
     ],
     attachment=abjad.Dynamic("f"),
-    direction=abjad.UP
+    direction=abjad.UP,
 )
 
 trinton.attach(
     voice=score["cello 2 voice"],
     leaves=[65],
     attachment=abjad.StartHairpin("o<"),
-    direction=abjad.UP
+    direction=abjad.UP,
 )
 
 trinton.attach(
