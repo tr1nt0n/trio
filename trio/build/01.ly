@@ -67,6 +67,7 @@
                                     \times 8/9
                                     {
                                         \slurDashed
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         a,32
                                         \fff
                                         - \marcato
@@ -88,6 +89,7 @@
                                         c32
                                         \tweak style #'harmonic-mixed
                                         bf,32
+                                        \revert Staff.Stem.stemlet-length
                                         \tweak style #'harmonic-mixed
                                         af,32
                                         )
@@ -246,11 +248,13 @@
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 8/15
                                     {
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         \tweak style #'harmonic-mixed
                                         f8
                                         [
                                         \(
                                         \glissando
+                                        \revert Staff.Stem.stemlet-length
                                         \tweak style #'harmonic-mixed
                                         c8
                                         ]
@@ -262,6 +266,7 @@
                                     \times 8/10
                                     {
                                         \slurDashed
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         ef32
                                         \ffff
                                         - \marcato
@@ -286,6 +291,7 @@
                                         g,32
                                         \tweak style #'harmonic-mixed
                                         d32
+                                        \revert Staff.Stem.stemlet-length
                                         \tweak style #'harmonic-mixed
                                         f32
                                         \!
@@ -349,6 +355,7 @@
                                     {
                                         \ottava 2
                                         \clef "treble"
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         f''''32
                                         \ffff
                                         - \marcato
@@ -373,6 +380,7 @@
                                         \ff
                                         d,32
                                         bf,,32
+                                        \revert Staff.Stem.stemlet-length
                                         f,32
                                         \)
                                         ]

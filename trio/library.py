@@ -494,12 +494,12 @@ def rhythm_canon(
 
     stack = rmakers.stack(
         rmakers.talea(rhythms, 16),
-        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+        rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
         rmakers.rewrite_dots(),
-        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.beam(lambda _: abjad.select.tuplets(_)),
     )
 
     sel = trinton.make_rhythm_selections(stack=stack, durations=durations)
@@ -507,7 +507,7 @@ def rhythm_canon(
     container = abjad.Container(sel)
 
     trinton.durational_pitch_association(
-        selection=abjad.select(container[:]).logical_ties(),
+        selection=abjad.select.logical_ties(container[:]),
         durations=[
             abjad.Duration(7, 16),
             abjad.Duration(5, 16),
@@ -591,12 +591,12 @@ def cello_gliss(
         ),
         "tuplet": rmakers.stack(
             rmakers.tuplet(rhythms),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
     }
 
@@ -635,17 +635,17 @@ def toccata_rhythms(score, voice, durations, division, extra_counts, notation):
         ),
         "tuplet": rmakers.stack(
             rmakers.even_division([division], extra_counts=extra_counts),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         "absolute_bracket": rmakers.stack(
             rmakers.even_division([division], extra_counts=extra_counts),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
     }
 
@@ -663,17 +663,17 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, notation):
         rmakers.tuplet(tuplets),
         rmakers.rewrite_dots(),
         rmakers.duration_bracket(),
-        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.beam(lambda _: abjad.select.tuplets(_)),
     )
 
     stack2 = rmakers.stack(
         rmakers.tuplet(tuplets),
-        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+        rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
         rmakers.rewrite_dots(),
-        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.beam(lambda _: abjad.select.tuplets(_)),
     )
 
     stack3 = rmakers.stack(
@@ -704,12 +704,9 @@ def harmonic_glissandi_rhythms(score, voices, durations, tuplets, notation):
             abjad.annotate(sel, harmonic_gliss, True)
 
 
-def select_periodic_ties_2_4_7_8_of_10(argument):
-    return abjad.Selection(argument).logical_ties().get([2, 4, 7, 8], 10)
+select_periodic_ties_2_4_7_8_of_10 = trinton.patterned_tie_index_selector([2, 4, 7, 8,], 10)
 
-
-def select_periodic_ties_2_4_of_8(argument):
-    return abjad.Selection(argument).logical_ties().get([2, 4], 8)
+select_periodic_ties_2_4_of_8 = trinton.patterned_tie_index_selector([2, 4,], 8)
 
 
 _matter_stacks = {
@@ -759,17 +756,17 @@ def contrabass_glissandi_rhythms(score, voice_name, durations):
                     ),
                 ]
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=durations,
     )
 
-    tuplets = abjad.Selection(selections).tuplets()
+    tuplets = abjad.select.tuplets(selection)
     for tuplet in tuplets:
         abjad.annotate(tuplet, trio.vib, True)
         for leaf in tuplets:
@@ -842,7 +839,7 @@ def pitch_toccata_by_measure(
 
         for measure in measures:
 
-            grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+            grouped_measures = abjad.select.group_by_measure(abjad.select.leaves(voice))
 
             current_measure = grouped_measures[measure - 1]
 
@@ -855,7 +852,7 @@ def pitch_toccata_by_measure(
 
         for measure in measures:
 
-            grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+            grouped_measures = abjad.select.group_by_measure(abjad.select.leaves(voice))
 
             current_measure = grouped_measures[measure - 1]
 
@@ -970,7 +967,7 @@ def piano_climax_chords(voice, measures, selector, octave, index, seed):
 
     for measure in measures:
 
-        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+        grouped_measures = abjad.select.group_by_measure(abjad.select.leaves(voice))
 
         current_measure = grouped_measures[measure - 1]
 
@@ -1005,7 +1002,7 @@ def pitch_harmonic_gliss_piano(voice, measures, selector, string):
 
     for measure in measures:
 
-        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+        grouped_measures = abjad.select.group_by_measure(abjad.select.leaves(voice))
 
         current_measure = grouped_measures[measure - 1]
 
@@ -1021,7 +1018,7 @@ def pitch_cello_gliss_piano_by_measure(voice, measures, selector, string):
 
     for measure in measures:
 
-        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+        grouped_measures = abjad.select.group_by_measure(abjad.select.leaves(voice))
 
         current_measure = grouped_measures[measure - 1]
 
@@ -1102,7 +1099,7 @@ def pitch_harmonic_glissandi_by_measure(voice, measures, selector, strings, inde
 
     for measure in measures:
 
-        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+        grouped_measures = abjad.select.group_by_measure(abjad.select.leaves(voice))
 
         current_measure = grouped_measures[measure - 1]
 
@@ -1197,7 +1194,7 @@ def pitch_contrabass_glissandi_by_measure(voice, measures, selector, strings):
 
     for measure in measures:
 
-        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+        grouped_measures = abjad.select.group_by_measure(abjad.select.leaves(voice))
 
         current_measure = grouped_measures[measure - 1]
 
@@ -1231,7 +1228,7 @@ def pitch_matter_with_selector(
 
     for measure in measures:
 
-        grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+        grouped_measures = abjad.select.group_by_measure(abjad.select.leaves(voice))
 
         current_measure = grouped_measures[measure - 1]
 
@@ -1240,10 +1237,10 @@ def pitch_matter_with_selector(
         handler(selections)
 
         if markup is True:
-            grouped_measures = abjad.Selection(voice).leaves().group_by_measure()
+            grouped_measures = abjad.select.group_by_measure(abjad.select.leaves(voice))
             current_measure = grouped_measures[measure - 1]
             selections = selector(current_measure)
-            leaves = abjad.Selection(selections).leaves(pitched=True)
+            leaves = abjad.select.leaves(selections, pitched=True)
             markup_collection = _matter_cent_markups[chord]
             markup_collection = abjad.CyclicTuple(markup_collection)
 
@@ -1251,25 +1248,22 @@ def pitch_matter_with_selector(
                 if len(leaf.note_heads) == 2:
                     cent_markup_1 = abjad.Markup(
                         string=rf"\markup {markup_collection[partials[0] - 1]}",
-                        direction=abjad.Up,
                     )
                     cent_markup_2 = abjad.Markup(
                         string=rf"\markup {markup_collection[partials[1] - 1]}",
-                        direction=abjad.Up,
                     )
-                    ties = abjad.Selection(leaf).logical_ties()
+                    ties = abjad.select.logical_ties(leaf)
                     for tie in ties:
-                        abjad.attach(cent_markup_1, tie[0])
-                        abjad.attach(cent_markup_2, tie[0])
+                        abjad.attach(cent_markup_1, tie[0], direction=abjad.UP)
+                        abjad.attach(cent_markup_2, tie[0], direction=abjad.UP)
 
                 else:
                     cent_markup = abjad.Markup(
                         string=rf"\markup {markup_collection[partials[0] - 1]}",
-                        direction=abjad.Up,
                     )
-                    ties = abjad.Selection(leaf).logical_ties()
+                    ties = abjad.select.logical_ties(leaf)
                     for tie in ties:
-                        abjad.attach(cent_markup, tie[0])
+                        abjad.attach(cent_markup, tie[0], direction=abjad.UP)
 
 
 def pitch_matter(
@@ -1290,7 +1284,7 @@ def pitch_matter(
     handler = evans.PitchHandler(pitch_list=[collected_partials], forget=False)
 
     for leaf in leaves:
-        handler(abjad.select(score[voice]).leaf(leaf))
+        handler(abjad.select.leaf(score[voice], leaf))
 
     if markup is True:
         markup_collection = _matter_cent_markups[chord]
@@ -1298,12 +1292,12 @@ def pitch_matter(
 
         for partial, leaf in zip(partials, leaves):
 
-            if len(abjad.select(score[voice]).leaf(leaf).note_heads) == 2:
+            if len(abjad.select.leaf(score[voice], leaf).note_heads) == 2:
 
                 cent_markups = eval(
                     """[
-                        abjad.Markup(string=rf"\markup {markup_collection[partial-1]}", direction=abjad.Up),
-                        abjad.Markup(string=rf"\markup {markup_collection[partial]}", direction=abjad.Up),
+                        abjad.Markup(string=rf"\markup {markup_collection[partial-1]}",),
+                        abjad.Markup(string=rf"\markup {markup_collection[partial]}",),
                     ]"""
                 )
 
@@ -1312,17 +1306,18 @@ def pitch_matter(
                     voice=voice,
                     leaves=[leaf],
                     attachments=[cent_markups[0], cent_markups[1]],
+                    direction=abjad.UP
                 )
 
             else:
 
                 cent_markups = eval(
                     """[
-                        abjad.Markup(string=rf"\markup {markup_collection[partial-1]}", direction=abjad.Up),
+                        abjad.Markup(string=rf"\markup {markup_collection[partial-1]}",),
                     ]"""
                 )
                 trinton.attach(
-                    voice=score[voice], leaves=[leaf], attachment=cent_markups[0]
+                    voice=score[voice], leaves=[leaf], attachment=cent_markups[0], direction=abjad.UP
                 )
 
 
@@ -1332,7 +1327,7 @@ def pitch_matter(
 def select_tuplets_by_annotation(annotation):
     def selector(argument):
         top_level_components = trinton.get_top_level_components_from_leaves(argument)
-        tuplets = abjad.Selection(top_level_components).tuplets()
+        tuplets = abjad.select.tuplets(top_level_components)
 
         out = []
 
@@ -1340,14 +1335,14 @@ def select_tuplets_by_annotation(annotation):
             if abjad.get.annotation(tuplet, annotation) is True:
                 out.append(tuplet)
 
-        return abjad.Selection(out[:]).leaves()
+        return abjad.select.leaves(out[:])
 
     return selector
 
 
 def select_leaves_by_annotation(annotation):
     def selector(argument):
-        leaves = abjad.Selection(argument).leaves(pitched=True)
+        leaves = abjad.select.leaves(argument, pitched=True)
 
         out = []
 
@@ -1355,7 +1350,7 @@ def select_leaves_by_annotation(annotation):
             if abjad.get.annotation(leaf, annotation) is True:
                 out.append(leaf)
 
-        return abjad.Selection(out[:]).leaves()
+        return abjad.select.leaves(out[:])
 
     return selector
 
@@ -1395,8 +1390,8 @@ def write_marginmarkups(score):
 def ritardando_beams(score, voice, leaves):
     for leaf in leaves:
         abjad.override(
-            abjad.select(score[voice]).leaf(leaf)
-        ).Beam.grow_direction = abjad.Left
+            abjad.select.leaf(score[voice], leaf)
+        ).Beam.grow_direction = abjad.LEFT
 
 
 # transposition tools
@@ -1430,7 +1425,7 @@ def change_staff(score, voice, lh, rh):
         voice=score[voice],
         leaves=lh,
         attachment=abjad.LilyPondLiteral(
-            r'\change Staff = "piano 2 staff"', format_slot="absolute_before"
+            r'\change Staff = "piano 2 staff"', "absolute_before"
         ),
     )
 
@@ -1438,7 +1433,7 @@ def change_staff(score, voice, lh, rh):
         voice=score[voice],
         leaves=rh,
         attachment=abjad.LilyPondLiteral(
-            r'\change Staff = "piano 1 staff"', format_slot="absolute_before"
+            r'\change Staff = "piano 1 staff"', "absolute_before"
         ),
     )
 
@@ -1448,7 +1443,7 @@ def small_knee(score, voice, start, stop):
         voice=score[voice],
         leaves=start,
         attachment=abjad.LilyPondLiteral(
-            r"\override Beam.auto-knee-gap = #0", format_slot="before"
+            r"\override Beam.auto-knee-gap = #0", "before"
         ),
     )
 
@@ -1456,7 +1451,7 @@ def small_knee(score, voice, start, stop):
         voice=score["piano 1 voice"],
         leaves=stop,
         attachment=abjad.LilyPondLiteral(
-            r"\override Beam.auto-knee-gap = #15", format_slot="before"
+            r"\override Beam.auto-knee-gap = #15", "before"
         ),
     )
 
@@ -1516,7 +1511,7 @@ def make_angle_spanner(score, voice, leaves, direction, left_text, position, pad
                 rf"- \tweak padding #{padding}",
                 r"\evansStartTextSpanBAD",
             ],
-            format_slot="absolute_after",
+            "absolute_after",
         ),
         "center": abjad.LilyPondLiteral(
             [
@@ -1527,7 +1522,7 @@ def make_angle_spanner(score, voice, leaves, direction, left_text, position, pad
                 rf"- \tweak padding #{padding}",
                 r"\evansStartTextSpanBAD",
             ],
-            format_slot="absolute_after",
+            "absolute_after",
         ),
         "termination": abjad.LilyPondLiteral(
             [
@@ -1539,7 +1534,7 @@ def make_angle_spanner(score, voice, leaves, direction, left_text, position, pad
                 rf"- \tweak staff-padding #{padding}",
                 r"\evansStartTextSpanBAD",
             ],
-            format_slot="absolute_after",
+            "absolute_after",
         ),
     }
 
@@ -1558,7 +1553,7 @@ def stop_angle_spanner(score, voice, leaves):
             [
                 r"\evansStopTextSpanBAD",
             ],
-            format_slot="absolute_after",
+            "absolute_after",
         ),
     )
 
@@ -1613,10 +1608,10 @@ all_marginmarkups = eval(
 )
 
 _string_to_markup = {
-    "I": abjad.LilyPondLiteral(r'\boxed-markup "I" 1', format_slot="after"),
-    "II": abjad.LilyPondLiteral(r'\boxed-markup "II" 1', format_slot="after"),
-    "III": abjad.LilyPondLiteral(r'\boxed-markup "III" 1', format_slot="after"),
-    "IV": abjad.LilyPondLiteral(r'\boxed-markup "IV" 1', format_slot="after"),
+    "I": abjad.LilyPondLiteral(r'\boxed-markup "I" 1', "after"),
+    "II": abjad.LilyPondLiteral(r'\boxed-markup "II" 1', "after"),
+    "III": abjad.LilyPondLiteral(r'\boxed-markup "III" 1', "after"),
+    "IV": abjad.LilyPondLiteral(r'\boxed-markup "IV" 1', "after"),
 }
 
 
@@ -1631,39 +1626,39 @@ def attach_string_markup(score, voice, leaves, string):
 
 rehearsal_mark1 = abjad.LilyPondLiteral(
     r'\boxed-markup ". . . thick-veined hand (i)" 1.5',
-    format_slot="after",
+    "after",
 )
 
 rehearsal_mark2 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Matter, to Self-Organize" 1.5', format_slot="after"
+    r'\boxed-markup "Matter, to Self-Organize" 1.5', "after"
 )
 
 rehearsal_mark3 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Skyward, {diagonal moves} (i)" 1.5', format_slot="after"
+    r'\boxed-markup "Skyward, {diagonal moves} (i)" 1.5', "after"
 )
 
 rehearsal_mark4 = abjad.LilyPondLiteral(
-    r'\left-aligned-boxed-markup "Toccata" 1.5', format_slot="after"
+    r'\left-aligned-boxed-markup "Toccata" 1.5', "after"
 )
 
 rehearsal_mark5 = abjad.LilyPondLiteral(
-    r'\boxed-markup "in th posession of nymphs and naiads" 1.5', format_slot="after"
+    r'\boxed-markup "in th posession of nymphs and naiads" 1.5', "after"
 )
 
 rehearsal_mark6 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Skyward, {diagonal moves} (ii)" 1.5', format_slot="after"
+    r'\boxed-markup "Skyward, {diagonal moves} (ii)" 1.5', "after"
 )
 
 rehearsal_mark7 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Are We Still Married? (ii)" 1.5', format_slot="after"
+    r'\boxed-markup "Are We Still Married? (ii)" 1.5', "after"
 )
 
 rehearsal_mark8 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Engraved in Water" 1.5', format_slot="after"
+    r'\boxed-markup "Engraved in Water" 1.5', "after"
 )
 
 rehearsal_mark9 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Skyward, {diagonal moves} (iii)" 1.5', format_slot="after"
+    r'\boxed-markup "Skyward, {diagonal moves} (iii)" 1.5', "after"
 )
 
 rehearsal_mark10 = abjad.Markup(
@@ -1672,13 +1667,13 @@ rehearsal_mark10 = abjad.Markup(
 
 rehearsal_mark11 = abjad.LilyPondLiteral(
     r'\tweak padding 5.5 \boxed-markup "One of These Days {dry land}" 1.5',
-    format_slot="after",
+    "after",
 )
 
 rehearsal_mark12 = abjad.LilyPondLiteral(
-    r'\boxed-markup "She has something to tell you" 1.5', format_slot="after"
+    r'\boxed-markup "She has something to tell you" 1.5', "after"
 )
 
 rehearsal_mark13 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Back." 0.5', format_slot="after"
+    r'\boxed-markup "Back." 0.5', "after"
 )

@@ -216,7 +216,7 @@ handler = evans.PitchHandler(
     forget=False,
 )
 
-handler(abjad.select(score["piano 1 voice"]).leaf(5))
+handler(abjad.select.leaf(score["piano 1 voice"], 5))
 
 handler = evans.PitchHandler(
     pitch_list=[
@@ -233,7 +233,7 @@ handler = evans.PitchHandler(
     forget=False,
 )
 
-handler(abjad.select(score["piano 2 voice"]).leaf(1))
+handler(abjad.select.leaf(score["piano 2 voice"], 1))
 
 handler = evans.PitchHandler(
     pitch_list=trinton.rotated_sequence(
@@ -396,8 +396,8 @@ for voice, leaf in zip(["piano 1 voice", "piano 2 voice"], [5, 1]):
 
 trinton.unmeasured_stem_tremolo(
     [
-        abjad.Selection(score["piano 1 voice"]).leaf(5),
-        abjad.Selection(score["piano 2 voice"]).leaf(1),
+        abjad.select.leaf(score["piano 1 voice"], 5),
+        abjad.select.leaf(score["piano 2 voice"], 1),
     ]
 )
 
@@ -417,8 +417,8 @@ trinton.write_slur(
     ],
 )
 
-for tuplet in abjad.select(score["piano 1 voice"]).tuplets():
-    abjad.tweak(tuplet).direction = abjad.Up
+for tuplet in abjad.select.tuplets(score["piano 1 voice"]):
+    abjad.tweak(tuplet).direction = abjad.UP
 
 # cello pitching/attachments
 
@@ -428,7 +428,7 @@ for voice in ["cello 1 voice", "contrabass 1 voice"]:
         leaves=[0],
         attachment=abjad.LilyPondLiteral(
             r"\staff-line-count 4",
-            format_slot="absolute_before",
+            "absolute_before",
         ),
     )
 
@@ -442,7 +442,7 @@ handler = evans.PitchHandler(
     )
 )
 
-handler(abjad.select(score["cello 2 voice"]).leaves(pitched=True))
+handler(abjad.select.leaves(score["cello 2 voice"], pitched=True))
 
 trio.octave_down(
     trinton.make_leaf_selection(
@@ -518,14 +518,14 @@ for voice, half, harm in zip(
         harm=harm,
     )
 
-for tuplet in abjad.select(score["cello 2 voice"]).tuplets():
+for tuplet in abjad.select.tuplets(score["cello 2 voice"]):
     abjad.attach(abjad.Articulation("marcato"), tuplet[0])
 
-for tuplet in [abjad.select(score["cello 2 voice"]).tuplet(_) for _ in [0, 4]]:
+for tuplet in [abjad.select.tuplet(score["cello 2 voice"], _) for _ in [0, 4]]:
     abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
     abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
 
-dashed_tuplet = abjad.Selection(score["cello 2 voice"]).tuplet(1)
+dashed_tuplet = abjad.select.tuplet(score["cello 2 voice"], 1)
 trinton.dashed_slur(start_selection=dashed_tuplet[0], stop_selection=dashed_tuplet[-1])
 
 trinton.attach(
@@ -545,7 +545,7 @@ trinton.attach(
     leaves=[
         2,
     ],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "XFB" 1', format_slot="after"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "XFB" 1', "after"),
 )
 
 trinton.attach(
@@ -553,7 +553,7 @@ trinton.attach(
     leaves=[
         6,
     ],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "XSB" 1', format_slot="after"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "XSB" 1', "after"),
 )
 
 trinton.attach(
@@ -561,7 +561,7 @@ trinton.attach(
     leaves=[
         11,
     ],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "NB" 1', format_slot="after"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "NB" 1', "after"),
 )
 
 trinton.attach_multiple(
@@ -606,7 +606,7 @@ handler = evans.PitchHandler(
     forget=False,
 )
 
-handler(abjad.select(score["contrabass 2 voice"]).leaves(pitched=True))
+handler(abjad.select.leaves(score["contrabass 2 voice"], pitched=True))
 
 trio.octave_up(
     trinton.make_leaf_selection(
@@ -678,11 +678,11 @@ for voice, half, harm in zip(
         harm=harm,
     )
 
-for tuplet in abjad.select(score["contrabass 2 voice"]).tuplets().exclude([-1]):
+for tuplet in abjad.select.exclude(abjad.select.tuplets(score["contrabass 2 voice"]), [-1]):
     abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
     abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
 
-dashed_tuplet = abjad.Selection(score["contrabass 2 voice"]).tuplet(-1)
+dashed_tuplet = abjad.select.tuplet(score["contrabass 2 voice"], -1)
 trinton.dashed_slur(start_selection=dashed_tuplet[0], stop_selection=dashed_tuplet[-1])
 
 trinton.attach(
@@ -714,8 +714,8 @@ trinton.ficta(
 for leaf, attachment in zip(
     [11, 16],
     [
-        abjad.LilyPondLiteral(r'\boxed-markup "XSB" 1', format_slot="after"),
-        abjad.LilyPondLiteral(r'\boxed-markup "XFB" 1', format_slot="after"),
+        abjad.LilyPondLiteral(r'\boxed-markup "XSB" 1', "after"),
+        abjad.LilyPondLiteral(r'\boxed-markup "XFB" 1', "after"),
     ],
 ):
     trinton.attach(

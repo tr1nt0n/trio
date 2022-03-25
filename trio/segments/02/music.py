@@ -581,7 +581,7 @@ trinton.attach(
         6,
         27,
     ],
-    attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after"),
+    attachment=abjad.LilyPondLiteral(r"\pageBreak", "absolute_after"),
 )
 
 # piano pitching/attachments
@@ -1392,16 +1392,16 @@ trinton.ottava(
 )
 
 for voice in ["piano 1 voice", "piano 2 voice"]:
-    chords = abjad.select(score[voice]).chords()
+    chords = abjad.select.chords(score[voice])
     trinton.unmeasured_stem_tremolo(chords)
     for chord in chords:
         if len(chord.note_heads) > 1:
-            chord_ties = abjad.Selection(chord).logical_ties()
+            chord_ties = abjad.select.logical_ties(chord)
             for tie in chord_ties:
                 abjad.attach(abjad.Arpeggio(), tie[0])
 
 for number in [0, 1]:
-    tuplet = abjad.select(score["piano 1 voice"]).tuplet(number)
+    tuplet = abjad.select.tuplet(score["piano 1 voice"], number)
     trio.noteheads_only(tuplet)
 
 trinton.write_slur(
@@ -1776,16 +1776,16 @@ trio.pitch_matter(
     markup=True,
 )
 
-for tuplet in abjad.select(score["cello 2 voice"]).tuplets():
+for tuplet in abjad.select.tuplets(score["cello 2 voice"]):
     if abjad.get.annotation(tuplet, trio.accelerando) is True:
-        pleaves = abjad.select(tuplet).leaves(pitched=True)
-        abjad.override(pleaves[0]).Beam.grow_direction = abjad.Left
+        pleaves = abjad.select.leaves(tuplet, pitched=True)
+        abjad.override(pleaves[0]).Beam.grow_direction = abjad.LEFT
         abjad.attach(abjad.StartPhrasingSlur(), pleaves[0])
         abjad.attach(abjad.StopPhrasingSlur(), pleaves[-1])
         for pleaf in pleaves:
             abjad.attach(abjad.Articulation("staccato"), pleaf)
     elif abjad.get.annotation(tuplet, trio.harmonic_gliss) is True:
-        leaves = abjad.select(tuplet).leaves()
+        leaves = abjad.select.leaves(tuplet)
         abjad.attach(abjad.StartPhrasingSlur(), leaves[0])
         abjad.attach(abjad.StopPhrasingSlur(), leaves[-1])
         for leaf in leaves:
@@ -1796,7 +1796,7 @@ for tuplet in abjad.select(score["cello 2 voice"]).tuplets():
                 abjad.tweak(head).Dots.transparent = True
                 abjad.tweak(head).style = r"#'harmonic-mixed"
     elif abjad.get.annotation(tuplet, trio.vib) is True:
-        leaves = abjad.select(tuplet).leaves()
+        leaves = abjad.select.leaves(tuplet)
         trio.noteheads_only(leaves)
 
 for l in [
@@ -1924,13 +1924,15 @@ trinton.attach(
     leaves=[
         81,
     ],
-    attachment=abjad.Dynamic("f", direction=abjad.Up),
+    attachment=abjad.Dynamic("f"),
+    direction=abjad.UP
 )
 
 trinton.attach(
     voice=score["cello 2 voice"],
     leaves=[65],
-    attachment=abjad.StartHairpin("o<", direction=abjad.Up),
+    attachment=abjad.StartHairpin("o<"),
+    direction=abjad.UP
 )
 
 trinton.attach(
@@ -2211,20 +2213,20 @@ trio.finger_pressure(
 )
 
 
-for tuplet in abjad.select(score["contrabass 2 voice"]).tuplets():
+for tuplet in abjad.select.tuplets(score["contrabass 2 voice"]):
     if abjad.get.annotation(tuplet, trio.accelerando) is True:
-        leaves = abjad.select(tuplet).leaves()
-        pleaves = abjad.select(tuplet).leaves(pitched=True)
-        abjad.override(leaves[0]).Beam.grow_direction = abjad.Left
+        leaves = abjad.select.leaves(tuplet)
+        pleaves = abjad.select.leaves(tuplet, pitched=True)
+        abjad.override(leaves[0]).Beam.grow_direction = abjad.LEFT
         for pleaf in pleaves:
             abjad.attach(abjad.Articulation("staccato"), pleaf)
     elif abjad.get.annotation(tuplet, trio.toccata) is True:
-        leaves = abjad.select(tuplet).leaves()
+        leaves = abjad.select.leaves(tuplet)
         trio.noteheads_only(leaves)
 
 
 for voice in ["cello 2 voice", "contrabass 2 voice"]:
-    leaves = abjad.select(score[voice]).leaves()
+    leaves = abjad.select.leaves(score[voice])
     trinton.unmeasured_stem_tremolo([leaves[-1]])
 
     trinton.attach_multiple(
@@ -2269,15 +2271,15 @@ for voice in ["cello 1 voice", "contrabass 1 voice"]:
     )
 
 for voice in ["contrabass 2 voice", "piano 1 voice"]:
-    for tuplet in abjad.select(score[voice]).tuplets():
-        pleaves = abjad.select(tuplet).leaves(pitched=True)
+    for tuplet in abjad.select.tuplets(score[voice]):
+        pleaves = abjad.select.leaves(tuplet, pitched=True)
         abjad.attach(abjad.StartPhrasingSlur(), pleaves[0])
         abjad.attach(abjad.StopPhrasingSlur(), pleaves[-1])
 
 trinton.attach(
     voice=score["contrabass 2 voice"],
     leaves=[0],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "NB" 1', format_slot="after"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "NB" 1', "after"),
 )
 
 trinton.attach(
