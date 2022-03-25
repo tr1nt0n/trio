@@ -2680,7 +2680,7 @@
                                     <a'' e''' fs''' a''' c''''>1..
                                     :32
                                     \ottava 0
-                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \override TupletNumber.text = \markup \italic 10:9
                                     \times 36/40
                                     {
                                         \ottava 1
@@ -2729,6 +2729,7 @@
                                         \)
                                         ]
                                     }
+                                    \revert TupletNumber.text
                                     <f'' a'' cs''' fs''' a'''>1.
                                     :32
                                     \fp

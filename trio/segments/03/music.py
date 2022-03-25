@@ -69,8 +69,8 @@ for voice in ["piano 1 voice", "piano 2 voice"]:
     )
 
 abjad.override(
-    abjad.Selection(score["piano 1 voice"]).tuplet(7)
-).TupletNumber.text = abjad.Markup(r"\markup \italic { 4:5 }")
+    abjad.select.tuplet(score["piano 1 voice"], 7)
+).TupletNumber.text = r"\markup \italic { 4:5 }"
 
 # cello
 
@@ -148,8 +148,8 @@ trio.cello_gliss(
 )
 
 abjad.override(
-    abjad.Selection(score["cello 2 voice"]).tuplet(7)
-).TupletNumber.text = abjad.Markup(r"\markup \italic { 6:5 }")
+    abjad.select.tuplet(score["cello 2 voice"], 7)
+).TupletNumber.text = r"\markup \italic { 6:5 }"
 
 # bass
 
@@ -337,8 +337,8 @@ trinton.attach(
     attachment=abjad.Articulation(">"),
 )
 
-for tuplet in [abjad.select(score["piano 1 voice"]).tuplet(_) for _ in [0, 2, 3, 5, 8]]:
-    abjad.tweak(tuplet).direction = abjad.Up
+for tuplet in [abjad.select.tuplet(score["piano 1 voice"], _) for _ in [0, 2, 3, 5, 8]]:
+    abjad.tweak(tuplet).direction = abjad.UP
 
 # cello attachments
 
@@ -676,7 +676,7 @@ trinton.attach(
     voice=score["contrabass 2 voice"],
     leaves=[0],
     attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "low string portamento" 1', format_slot="after"
+        r'\boxed-markup "low string portamento" 1', "after"
     ),
 )
 
