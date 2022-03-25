@@ -47,12 +47,12 @@ for voice_name in ["piano 1 voice", "piano 2 voice"]:
                     ),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (1, 4),
@@ -91,12 +91,12 @@ for voice_name in ["piano 1 voice", "piano 2 voice"]:
                     (2, -1),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (3, 8),
@@ -117,12 +117,12 @@ for voice_name in ["piano 1 voice", "piano 2 voice"]:
                     (1,),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (1, 6),
@@ -143,12 +143,12 @@ for voice_name in ["cello 1 voice", "cello 2 voice"]:
                     (1,),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (1, 4),
@@ -191,12 +191,12 @@ for voice_name in ["cello 1 voice", "cello 2 voice"]:
                     (1,),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (3, 8),
@@ -229,12 +229,12 @@ for voice_name in ["cello 1 voice", "cello 2 voice"]:
                     (2, 1),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (3, 8),
@@ -268,12 +268,12 @@ for voice_name in ["cello 1 voice", "cello 2 voice"]:
                     (1,),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (3, 8),
@@ -293,12 +293,12 @@ for voice_name in ["contrabass 1 voice", "contrabass 2 voice"]:
                     (1,),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (1, 4),
@@ -341,12 +341,12 @@ for voice_name in ["contrabass 1 voice", "contrabass 2 voice"]:
                     ),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (3, 8),
@@ -382,12 +382,12 @@ for voice_name in ["contrabass 1 voice", "contrabass 2 voice"]:
                     ),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (3, 8),
@@ -421,12 +421,12 @@ for voice_name in ["contrabass 1 voice", "contrabass 2 voice"]:
                     (1,),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (3, 8),
@@ -544,11 +544,9 @@ trio.piano_climax_chords(
 )
 
 for voice_name in trio.all_voices:
-    for tuplet in abjad.select(score[voice_name]).tuplets():
-        abjad.override(tuplet).TupletNumber.text = abjad.Markup(
-            r"\markup \italic { 3:2 }"
-        )
-    for leaf in abjad.select(score[voice_name]).leaves(pitched=True):
+    for tuplet in abjad.select.tuplets(score[voice_name]):
+        abjad.override(tuplet).TupletNumber.text = r"\markup \italic { 3:2 }"
+    for leaf in abjad.select.leaves(score[voice_name], pitched=True):
         abjad.attach(abjad.Articulation("marcato"), leaf)
         abjad.attach(abjad.Articulation("staccato"), leaf)
 
@@ -604,16 +602,16 @@ for voice_name in ["cello 1 voice", "contrabass 1 voice"]:
         forget=False,
     )
 
-    handler(abjad.Selection(score[voice_name]).leaves(pitched=True))
+    handler(abjad.select.leaves(score[voice_name], pitched=True))
 
     abjad.attach(
         abjad.LilyPondLiteral(r"\override Accidental.transparent = ##t"),
-        abjad.Selection(score[voice_name]).leaf(0),
+        abjad.select.leaf(score[voice_name], 0),
     )
 
     abjad.attach(
-        abjad.LilyPondLiteral(r'\boxed-markup "Arco sempre" 1', format_slot="after"),
-        abjad.Selection(score[voice_name]).leaf(0),
+        abjad.LilyPondLiteral(r'\boxed-markup "Arco sempre" 1', "after"),
+        abjad.select.leaf(score[voice_name], 0),
     )
 
 handler = evans.PitchHandler(
@@ -621,22 +619,22 @@ handler = evans.PitchHandler(
     forget=False,
 )
 
-handler(abjad.Selection(score["cello 2 voice"]).leaves(pitched=True))
+handler(abjad.select.leaves(score["cello 2 voice"], pitched=True))
 
 trinton.attach(voice=score["cello 2 voice"], leaves=[0], attachment=abjad.Clef("bass"))
 
 for voice_name in ["cello 2 voice", "contrabass 2 voice"]:
     abjad.attach(
-        abjad.LilyPondLiteral(r'\boxed-markup "Pizz." 1', format_slot="after"),
-        abjad.Selection(score[voice_name]).leaf(0),
+        abjad.LilyPondLiteral(r'\boxed-markup "Pizz." 1', "after"),
+        abjad.select.leaf(score[voice_name], 0),
     )
 
     abjad.attach(
-        abjad.Articulation("snappizzicato"), abjad.Selection(score[voice_name]).leaf(0)
+        abjad.Articulation("snappizzicato"), abjad.select.leaf(score[voice_name], 0)
     )
 
 selections = trio.select_periodic_ties_2_4_7_8_of_10(
-    abjad.Selection(score["cello 2 voice"]).leaves(pitched=True)
+    abjad.select.leaves(score["cello 2 voice"], pitched=True)
 )
 for tie in selections:
     for leaf in tie:
@@ -673,10 +671,10 @@ handler = evans.PitchHandler(
     forget=False,
 )
 
-handler(abjad.Selection(score["contrabass 2 voice"]).leaves())
+handler(abjad.select.leaves(score["contrabass 2 voice"]))
 
 selections = trio.select_periodic_ties_2_4_7_8_of_10(
-    abjad.Selection(score["contrabass 2 voice"]).leaves(pitched=True)
+    abjad.select.leaves(score["contrabass 2 voice"], pitched=True)
 )
 for tie in selections:
     for leaf in tie:
@@ -684,7 +682,7 @@ for tie in selections:
 
 abjad.attach(
     abjad.Articulation("snappizzicato"),
-    abjad.Selection(score["cello 2 voice"]).leaf(15),
+    abjad.select.leaf(score["cello 2 voice"], 15),
 )
 
 trinton.attach(

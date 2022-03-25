@@ -91,10 +91,12 @@
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 2/3
                                     {
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         <g bf>8
                                         - \marcato
                                         - \staccato
                                         [
+                                        \revert Staff.Stem.stemlet-length
                                         <g bf>8
                                         - \marcato
                                         - \staccato
@@ -162,11 +164,13 @@
                                     \tweak edge-height #'(0.7 . 0)
                                     \times 2/3
                                     {
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         c,8
                                         - \marcato
                                         - \staccato
                                         - \snappizzicato
                                         [
+                                        \revert Staff.Stem.stemlet-length
                                         c,8
                                         - \marcato
                                         - \staccato

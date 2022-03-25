@@ -101,8 +101,8 @@ trio.harmonic_glissandi_rhythms(
 )
 
 abjad.override(
-    abjad.select(score["cello 2 voice"]).tuplet(3)
-).TupletNumber.text = abjad.Markup(r"\markup \italic { 6:5 }")
+    abjad.select.tuplet(score["cello 2 voice"], 3)
+).TupletNumber.text = r"\markup \italic { 6:5 }"
 
 # contrbass
 
@@ -166,8 +166,8 @@ for tuplet, string in zip(
     [r"\markup \italic { 13:10 }", r"\markup \italic { 6:5 }"],
 ):
     abjad.override(
-        abjad.select(score["contrabass 2 voice"]).tuplet(tuplet)
-    ).TupletNumber.text = abjad.Markup(string)
+        abjad.select.tuplet(score["contrabass 2 voice"], tuplet)
+    ).TupletNumber.text = string
 
 # meter rewriting/beaming
 
@@ -241,13 +241,10 @@ trinton.attach(
     leaves=[
         2,
     ],
-    attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after"),
+    attachment=abjad.LilyPondLiteral(r"\pageBreak", "absolute_after"),
 )
 
 trio.write_marginmarkups(score)
-
-# piano pitching/attachments
-
 
 # cello pitching/attachments
 
@@ -392,7 +389,7 @@ handler_III = evans.PitchHandler(
     forget=False,
 )
 
-cello_1_measures = abjad.Selection(score["cello 1 voice"]).leaves().group_by_measure()
+cello_1_measures = abjad.select.group_by_measure(abjad.select.leaves(score["cello 1 voice"]))
 
 I_measures = [
     cello_1_measures[1],
@@ -418,7 +415,7 @@ handler_II(II_measures[:])
 
 handler_III(III_measures[:])
 
-cello_1_measures = abjad.Selection(score["cello 1 voice"]).leaves().group_by_measure()
+cello_1_measures = abjad.select.group_by_measure(abjad.select.leaves(score["cello 1 voice"]))
 
 for measure, dynamic in zip(
     cello_1_measures[1:],
@@ -431,9 +428,9 @@ for measure, dynamic in zip(
         abjad.Dynamic("mp"),
     ],
 ):
-    abjad.attach(dynamic, measure.leaf(0))
+    abjad.attach(dynamic, abjad.select.leaf(measure, 0))
 
-abjad.attach(abjad.StartHairpin("<"), cello_1_measures[6].leaf(0))
+abjad.attach(abjad.StartHairpin("<"), abjad.select.leaf(cello_1_measures[6], 0))
 
 glissandi = []
 
@@ -454,10 +451,10 @@ trinton.attach(
     attachment=abjad.Glissando(),
 )
 
-cello_2_measures = abjad.Selection(score["cello 2 voice"]).leaves().group_by_measure()
+cello_2_measures = abjad.select.group_by_measure(abjad.select.leaves(score["cello 2 voice"]))
 
 for measure in [cello_2_measures[_] for _ in [0, 1, 2, 3, 7, 8]]:
-    for leaf in abjad.select(measure).leaves().exclude([-1]):
+    for leaf in abjad.select.exclude(abjad.select.leaves(measure), [-1]):
         abjad.attach(abjad.Glissando(), leaf)
 
 trinton.glissando(
@@ -811,7 +808,7 @@ handler_III = evans.PitchHandler(
 )
 
 contrabass_1_measures = (
-    abjad.Selection(score["contrabass 1 voice"]).leaves().group_by_measure()
+    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 1 voice"]))
 )
 
 I_measures = [
@@ -839,7 +836,7 @@ handler_II(II_measures[:])
 handler_III(III_measures[:])
 
 contrabass_1_measures = (
-    abjad.Selection(score["contrabass 1 voice"]).leaves().group_by_measure()
+    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 1 voice"]))
 )
 
 for measure, dynamic in zip(
@@ -853,16 +850,16 @@ for measure, dynamic in zip(
         abjad.Dynamic("mp"),
     ],
 ):
-    abjad.attach(dynamic, measure.leaf(0))
+    abjad.attach(dynamic, abjad.select.leaf(measure, 0))
 
-abjad.attach(abjad.StartHairpin("<"), contrabass_1_measures[6].leaf(0))
+abjad.attach(abjad.StartHairpin("<"), abjad.select.leaf(contrabass_1_measures[6], 0))
 
 contrabass_2_measures = (
-    abjad.Selection(score["contrabass 2 voice"]).leaves().group_by_measure()
+    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 2 voice"]))
 )
 
 for measure in [contrabass_2_measures[_] for _ in [0, 2, 3, 4, 6, 7, 8]]:
-    for leaf in abjad.select(measure).leaves().exclude([-1]):
+    for leaf in abjad.select.exclude(abjad.select.leaves(measure), [-1]):
         abjad.attach(abjad.Glissando(), leaf)
 
 glissandi = []
@@ -1088,10 +1085,10 @@ trio.make_angle_spanner(
     padding=3.5,
 )
 
-abjad.tweak(abjad.select(score["contrabass 2 voice"]).tuplet(8)).direction = abjad.Up
+abjad.tweak(abjad.select.tuplet(score["contrabass 2 voice"], 8)).direction = abjad.UP
 abjad.override(
-    abjad.select(score["contrabass 2 voice"]).tuplet(8)
-).Beam.direction = abjad.Up
+    abjad.select.tuplet(score["contrabass 2 voice"], 8)
+).Beam.direction = abjad.UP
 
 for voice in ["cello 1 voice", "contrabass 1 voice"]:
     trinton.transparent_accidentals(
@@ -1101,11 +1098,11 @@ for voice in ["cello 1 voice", "contrabass 1 voice"]:
     )
 
 for voice in ["cello 2 voice", "contrabass 2 voice"]:
-    for tuplet in abjad.select(score[voice]).tuplets():
+    for tuplet in abjad.select.tuplets(score[voice]):
         abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
         abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
         abjad.attach(abjad.Articulation(">"), tuplet[0])
-    for leaf in abjad.select(score[voice]).leaves(pitched=True):
+    for leaf in abjad.select.leaves(score[voice], pitched=True):
         for head in leaf.note_heads:
             abjad.tweak(head).style = r"#'harmonic-mixed"
 

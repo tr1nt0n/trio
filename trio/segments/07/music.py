@@ -403,14 +403,14 @@ trio.octave_down(
 )
 
 for voice_name in ["piano 1 voice", "piano 2 voice"]:
-    for tuplet in abjad.select(score[voice_name]).tuplets():
+    for tuplet in abjad.select.tuplets(score[voice_name]):
         for annotation in [trio.toccata, trio.vib]:
             if abjad.get.annotation(tuplet, annotation) is True:
-                abjad.tweak(tuplet).direction = abjad.Up
+                abjad.tweak(tuplet).direction = abjad.UP
 
-    chords = abjad.select(score[voice_name]).chords()
+    chords = abjad.select.chords(score[voice_name])
     trinton.unmeasured_stem_tremolo(chords)
-    chord_ties = chords.logical_ties()
+    chord_ties = abjad.select.logical_ties(chords)
     for tie in chord_ties:
         abjad.attach(abjad.Arpeggio(), tie[0])
 
@@ -529,19 +529,19 @@ trinton.attach(
     attachment=abjad.Articulation(">"),
 )
 
-for tuplet in abjad.select(score["piano 2 voice"]).tuplets():
+for tuplet in abjad.select.tuplets(score["piano 2 voice"]):
     if abjad.get.annotation(tuplet, trio.harmonic_gliss) is True:
-        abjad.tweak(tuplet).direction = abjad.Down
+        abjad.tweak(tuplet).direction = abjad.DOWN
 
 toccata_selector = trio.select_tuplets_by_annotation(trio.toccata)
 
-toccata_tuplets = toccata_selector(abjad.Selection(score["piano 1 voice"]).leaves())
+toccata_tuplets = toccata_selector(abjad.select.leaves(score["piano 1 voice"]))
 
 for leaf in toccata_tuplets:
     if leaf.written_pitch.number < 0:
         abjad.attach(abjad.Articulation("marcato"), leaf)
 
-abjad.tweak(abjad.Selection(score["piano 2 voice"]).tuplet(6)).direction = abjad.Down
+abjad.tweak(abjad.select.tuplet(score["piano 2 voice"], 6)).direction = abjad.DOWN
 
 # cello pitching/attachments
 
@@ -585,7 +585,7 @@ handler = evans.PitchHandler(
     forget=False,
 )
 
-handler(abjad.select(score["cello 1 voice"]).leaves(pitched=True))
+handler(abjad.select.leaves(score["cello 1 voice"], pitched=True))
 
 trinton.attach(
     voice=score["cello 2 voice"],
@@ -666,9 +666,7 @@ trio.finger_pressure(
 for annotation in [trio.harmonic_gliss, trio.vib]:
     annotation_selector = trio.select_tuplets_by_annotation(annotation)
     annotation_leaves = (
-        annotation_selector(abjad.Selection(score["cello 2 voice"]))
-        .leaves(pitched=True)
-        .exclude([-1])
+        abjad.select.exclude(annotation_selector(abjad.select.leaves(score["cello 2 voice"], pitched=True)), [-1])
     )
     for leaf in annotation_leaves:
         abjad.attach(abjad.Glissando(), leaf)
@@ -799,7 +797,7 @@ handler = evans.PitchHandler(
     forget=False,
 )
 
-handler(abjad.select(score["contrabass 1 voice"]).leaves(pitched=True))
+handler(abjad.select.leaves(score["contrabass 1 voice"], pitched=True))
 
 trio.pitch_toccata_by_measure(
     voice=score["contrabass 2 voice"],
@@ -845,7 +843,7 @@ trio.pitch_matter(
 toccata_selector = trio.select_tuplets_by_annotation(trio.toccata)
 
 trio.double_octave_up(
-    toccata_selector(abjad.Selection(score["contrabass 2 voice"]).leaves())
+    toccata_selector(abjad.select.leaves(score["contrabass 2 voice"]))
 )
 
 trinton.attach(
@@ -960,9 +958,7 @@ trinton.write_text_span(
 for annotation in [trio.harmonic_gliss, trio.vib]:
     annotation_selector = trio.select_tuplets_by_annotation(annotation)
     annotation_leaves = (
-        annotation_selector(abjad.Selection(score["contrabass 2 voice"]))
-        .leaves(pitched=True)
-        .exclude([-1])
+        abjad.select.exclude(annotation_selector(abjad.select.leaves(score["contrabass 2 voice"], pitched=True)), [-1])
     )
     for leaf in annotation_leaves:
         abjad.attach(abjad.Glissando(), leaf)
@@ -971,7 +967,7 @@ for voice_name in ["cello 1 voice", "contrabass 1 voice"]:
     trinton.transparent_accidentals(score=score, voice=voice_name, leaves=all)
 
 for voice_name in ["cello 2 voice", "contrabass 2 voice"]:
-    for tuplet in abjad.Selection(score[voice_name]).tuplets():
+    for tuplet in abjad.select.tuplets(score[voice_name]):
         if abjad.get.annotation(tuplet, trio.harmonic_gliss) is True:
             for chord in tuplet:
                 for head in chord.note_heads:
@@ -979,11 +975,11 @@ for voice_name in ["cello 2 voice", "contrabass 2 voice"]:
             abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
             abjad.attach(abjad.Articulation(">"), tuplet[0])
             abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
-            abjad.tweak(tuplet).direction = abjad.Down
+            abjad.tweak(tuplet).direction = abjad.DOWN
         if abjad.get.annotation(tuplet, trio.toccata) is True:
             trinton.dashed_slur(start_selection=tuplet[0], stop_selection=tuplet[-1])
 
-for tuplet in abjad.Selection(score["contrabass 2 voice"]).tuplets():
+for tuplet in abjad.select.tuplets(score["contrabass 2 voice"]):
     if abjad.get.annotation(tuplet, trio.vib) is True:
         abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
         abjad.attach(abjad.Articulation(">"), tuplet[0])
@@ -995,7 +991,7 @@ for voice_name in [
     "cello 2 voice",
     "contrabass 2 voice",
 ]:
-    for tuplet in abjad.Selection(score[voice_name]).tuplets():
+    for tuplet in abjad.select.tuplets(score[voice_name]):
         trio.noteheads_only(tuplet)
 
 for voice_name in [
