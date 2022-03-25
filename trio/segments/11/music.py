@@ -281,7 +281,7 @@ for voice_name in [
     "cello 2 voice",
     "contrabass 2 voice",
 ]:
-    for tie in abjad.Selection(score[voice_name]).logical_ties():
+    for tie in abjad.select.logical_ties(score[voice_name]):
         if tie.written_duration == abjad.Duration(3, 16):
             abjad.attach(abjad.Articulation("tenuto"), tie[0])
         elif tie.written_duration == abjad.Duration(5, 16):
@@ -296,8 +296,9 @@ for voice_name in ["piano 1 voice", "cello 2 voice", "contrabass 2 voice"]:
         voice=score[voice_name],
         leaves=[0],
         attachment=abjad.Markup(
-            r"\markup \italic { Dolcissimo }", direction=abjad.Down
+            r"\markup \italic { Dolcissimo }"
         ),
+        direction=abjad.DOWN
     )
 
 trinton.attach(
@@ -379,7 +380,7 @@ trinton.attach_multiple(
     attachments=[
         abjad.Clef("treble"),
         abjad.Dynamic("ppp"),
-        abjad.LilyPondLiteral(r'\boxed-markup "FB, MST" 1', format_slot="after"),
+        abjad.LilyPondLiteral(r'\boxed-markup "FB, MST" 1', "after"),
     ],
 )
 
@@ -414,7 +415,7 @@ trinton.attach_multiple(
     attachments=[
         abjad.Clef("bass"),
         abjad.Dynamic("p"),
-        abjad.LilyPondLiteral(r'\boxed-markup "NB, Ord." 1', format_slot="after"),
+        abjad.LilyPondLiteral(r'\boxed-markup "NB, Ord." 1', "after"),
     ],
 )
 
@@ -511,7 +512,7 @@ trinton.attach_multiple(
     ],
     attachments=[
         abjad.Dynamic("ppp"),
-        abjad.LilyPondLiteral(r'\boxed-markup "FB, MST" 1', format_slot="after"),
+        abjad.LilyPondLiteral(r'\boxed-markup "FB, MST" 1', "after"),
     ],
 )
 
@@ -532,7 +533,7 @@ trinton.attach_multiple(
     ],
     attachments=[
         abjad.Dynamic("p"),
-        abjad.LilyPondLiteral(r'\boxed-markup "NB, Ord." 1', format_slot="after"),
+        abjad.LilyPondLiteral(r'\boxed-markup "NB, Ord." 1', "after"),
     ],
 )
 

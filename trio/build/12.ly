@@ -227,6 +227,7 @@
                                     \times 15/18
                                     {
                                         \clef "bass"
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         <
                                             \tweak style #'harmonic-mixed
                                             c
@@ -237,6 +238,7 @@
                                         \glissando
                                         \(
                                         \clef "treble"
+                                        \revert Staff.Stem.stemlet-length
                                         <
                                             \tweak style #'harmonic-mixed
                                             c''
@@ -282,6 +284,7 @@
                                     \times 30/21
                                     {
                                         \clef "bass"
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         <
                                             \tweak style #'harmonic-mixed
                                             f,
@@ -300,6 +303,7 @@
                                         >16
                                         \glissando
                                         \clef "bass"
+                                        \revert Staff.Stem.stemlet-length
                                         <
                                             \tweak style #'harmonic-mixed
                                             cs,
@@ -540,7 +544,7 @@
                                         >2.
                                         \)
                                     }
-                                    \override TupletNumber.text = \markup \italic { 7:10 }
+                                    \override TupletNumber.text = \markup \italic { 6:5 }
                                     \times 30/21
                                     {
                                         \clef "bass"
@@ -593,7 +597,7 @@
                                         g'''
                                     >4
                                     \)
-                                    \override TupletNumber.text = \markup \italic { 6:5 }
+                                    \tweak text #tuplet-number::calc-fraction-text
                                     \times 15/18
                                     {
                                         \clef "bass"
@@ -615,7 +619,6 @@
                                         \)
                                         ]
                                     }
-                                    \revert TupletNumber.text
                                     \times 4/5
                                     {
                                         <
@@ -702,6 +705,7 @@
                                     {
                                         \ottava -1
                                         \clef "bass"
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         e,,16
                                         - \tweak circled-tip ##t
                                         ^ \>
@@ -713,6 +717,7 @@
                                         af,,16
                                         \change Staff = "piano 2 staff"
                                         c,,16
+                                        \revert Staff.Stem.stemlet-length
                                         bf,,,16
                                         ]
                                     }
@@ -723,6 +728,7 @@
                                     \tweak direction #down
                                     \times 6/8
                                     {
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         fs,,16
                                         [
                                         bf,,16
@@ -734,6 +740,7 @@
                                         \ottava 0
                                         \change Staff = "piano 2 staff"
                                         b,,16
+                                        \revert Staff.Stem.stemlet-length
                                         e,16
                                         ]
                                     }
@@ -745,6 +752,7 @@
                                     \times 8/9
                                     {
                                         \change Staff = "piano 1 staff"
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         bf,16
                                         [
                                         d16
@@ -756,6 +764,7 @@
                                         \change Staff = "piano 1 staff"
                                         af16
                                         c16
+                                        \revert Staff.Stem.stemlet-length
                                         g16
                                         ]
                                     }
@@ -767,6 +776,7 @@
                                     \times 10/12
                                     {
                                         \clef "treble"
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         d'16
                                         [
                                         f'16
@@ -782,6 +792,7 @@
                                         a'16
                                         \change Staff = "piano 2 staff"
                                         c'16
+                                        \revert Staff.Stem.stemlet-length
                                         a'16
                                         ]
                                     }
@@ -793,6 +804,7 @@
                                     \times 6/7
                                     {
                                         \change Staff = "piano 1 staff"
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         fs''16
                                         [
                                         f''16
@@ -801,6 +813,7 @@
                                         \change Staff = "piano 2 staff"
                                         g''16
                                         e''16
+                                        \revert Staff.Stem.stemlet-length
                                         bf'16
                                         ]
                                     }
@@ -812,6 +825,7 @@
                                     \times 10/12
                                     {
                                         \change Staff = "piano 1 staff"
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         fs''16
                                         [
                                         c'''16
@@ -827,6 +841,7 @@
                                         e'''16
                                         g'''16
                                         e'''16
+                                        \revert Staff.Stem.stemlet-length
                                         cs'''16
                                         ]
                                         \ottava 0
@@ -838,6 +853,7 @@
                                     \times 8/9
                                     {
                                         \change Staff = "piano 2 staff"
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         g'''16
                                         [
                                         cs''''16
@@ -851,6 +867,7 @@
                                         a'''16
                                         \change Staff = "piano 1 staff"
                                         af''''16
+                                        \revert Staff.Stem.stemlet-length
                                         e''''16
                                         ]
                                     }
@@ -861,6 +878,7 @@
                                     \times 6/8
                                     {
                                         \change Staff = "piano 2 staff"
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         bf''''16
                                         [
                                         \change Staff = "piano 1 staff"
@@ -872,6 +890,7 @@
                                         \change Staff = "piano 1 staff"
                                         c'''''16
                                         b''''16
+                                        \revert Staff.Stem.stemlet-length
                                         c'''''16
                                         \!
                                         \)

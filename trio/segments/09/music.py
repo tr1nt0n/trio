@@ -64,12 +64,12 @@ for voice_name in ["piano 1 voice", "piano 2 voice"]:
                     ),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (1, 12),
@@ -121,12 +121,12 @@ trinton.make_and_append_rhythm_selections(
                 (1,),
             ],
         ),
-        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+        rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
         rmakers.rewrite_dots(),
-        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.beam(lambda _: abjad.select.tuplets(_)),
     ),
     durations=[
         (1, 12),
@@ -287,12 +287,12 @@ trinton.make_and_append_rhythm_selections(
                 ),
             ],
         ),
-        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+        rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
         rmakers.rewrite_dots(),
-        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.beam(lambda _: abjad.select.tuplets(_)),
     ),
     durations=[
         (1, 12),
@@ -319,7 +319,7 @@ trinton.make_and_append_rhythm_selections(
 )
 
 for tuplet in [
-    abjad.select(score["piano 1 voice"]).tuplet(_)
+    abjad.select.tuplet(score["piano 1 voice"], _)
     for _ in [
         0,
         1,
@@ -337,10 +337,10 @@ for tuplet in [
         14,
     ]
 ]:
-    abjad.override(tuplet).TupletNumber.text = abjad.Markup(r"\markup \italic { 3:2 }")
+    abjad.override(tuplet).TupletNumber.text = r"\markup \italic { 3:2 }"
 
 for tuplet in [
-    abjad.Selection(score["piano 2 voice"]).tuplet(_)
+    abjad.select.tuplet(score["piano 2 voice"], _)
     for _ in [
         0,
         1,
@@ -352,7 +352,7 @@ for tuplet in [
         7,
     ]
 ]:
-    abjad.override(tuplet).TupletNumber.text = abjad.Markup(r"\markup \italic { 3:2 }")
+    abjad.override(tuplet).TupletNumber.text = r"\markup \italic { 3:2 }"
 
 # cello
 
@@ -369,12 +369,12 @@ for voice_name in [
                     (1,),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (1, 12),
@@ -411,12 +411,12 @@ for voice_name in [
                     (1,),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (1, 6),
@@ -455,12 +455,12 @@ trinton.make_and_append_rhythm_selections(
                 )
             ],
         ),
-        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+        rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
         rmakers.rewrite_dots(),
-        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.beam(lambda _: abjad.select.tuplets(_)),
     ),
     durations=[
         (1, 6),
@@ -483,12 +483,12 @@ for voice_name in ["cello 1 voice", "cello 2 voice"]:
                     ),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (3, 8),
@@ -521,7 +521,7 @@ trio.harmonic_glissandi_rhythms(
 )
 
 for tuplet in [
-    abjad.select(score["cello 1 voice"]).tuplet(_)
+    abjad.select.tuplet(score["cello 1 voice"], _)
     for _ in [
         0,
         1,
@@ -531,10 +531,10 @@ for tuplet in [
         5,
     ]
 ]:
-    abjad.override(tuplet).TupletNumber.text = abjad.Markup(r"\markup \italic { 3:2 }")
+    abjad.override(tuplet).TupletNumber.text = r"\markup \italic { 3:2 }"
 
 for tuplet in [
-    abjad.Selection(score["cello 2 voice"]).tuplet(_)
+    abjad.select.tuplet(score["cello 2 voice"], _)
     for _ in [
         0,
         1,
@@ -544,7 +544,7 @@ for tuplet in [
         6,
     ]
 ]:
-    abjad.override(tuplet).TupletNumber.text = abjad.Markup(r"\markup \italic { 3:2 }")
+    abjad.override(tuplet).TupletNumber.text = r"\markup \italic { 3:2 }"
 
 # contrabass
 
@@ -566,12 +566,12 @@ for voice_name in [
                     (1,),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (1, 12),
@@ -614,12 +614,12 @@ for voice_name in [
                     (1,),
                 ],
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (1, 12),
@@ -674,11 +674,11 @@ trio.cello_gliss(
 )
 
 
-for tuplet in abjad.select(score["contrabass 1 voice"]).tuplets():
-    abjad.override(tuplet).TupletNumber.text = abjad.Markup(r"\markup \italic { 3:2 }")
+for tuplet in abjad.select.tuplets(score["contrabass 1 voice"]):
+    abjad.override(tuplet).TupletNumber.text = r"\markup \italic { 3:2 }"
 
 for tuplet in [
-    abjad.Selection(score["contrabass 2 voice"]).tuplet(_)
+    abjad.select.tuplet(score["contrabass 2 voice"], _)
     for _ in [
         0,
         1,
@@ -690,10 +690,10 @@ for tuplet in [
         8,
     ]
 ]:
-    abjad.override(tuplet).TupletNumber.text = abjad.Markup(r"\markup \italic { 3:2 }")
+    abjad.override(tuplet).TupletNumber.text = r"\markup \italic { 3:2 }"
 
-for tuplet in [abjad.Selection(score["contrabass 2 voice"]).tuplet(_) for _ in [4, -1]]:
-    abjad.override(tuplet).TupletNumber.text = abjad.Markup(r"\markup \italic { 6:5 }")
+for tuplet in [abjad.select.tuplet(score["contrabass 2 voice"], _) for _ in [4, -1]]:
+    abjad.override(tuplet).TupletNumber.text = r"\markup \italic { 6:5 }"
 
 # annotate leaves
 
@@ -759,7 +759,7 @@ trinton.attach_multiple(
         8,
         -1
     ],
-    attachments=[abjad.LilyPondLiteral(r"\once \override Score.BarLine.transparent = ##f", format_slot="after"),]
+    attachments=[abjad.LilyPondLiteral(r"\once \override Score.BarLine.transparent = ##f", "after"),]
 )
 
 trinton.attach(
@@ -937,7 +937,7 @@ for leaf, chord, in zip(
     )
 
 for voice_name in ["piano 1 voice", "piano 2 voice"]:
-    measures = abjad.Selection(score[voice_name]).leaves().group_by_measure()
+    measures = abjad.select.group_by_measure(abjad.select.leaves(score[voice_name]))
     for n in [
         0,
         1,
@@ -948,7 +948,7 @@ for voice_name in ["piano 1 voice", "piano 2 voice"]:
         7,
         8,
     ]:
-        for leaf in abjad.Selection(measures[n]).leaves():
+        for leaf in abjad.select.leaves(measures[n]):
             abjad.attach(abjad.Articulation("marcato"), leaf)
 
     for n in [
@@ -970,17 +970,17 @@ for voice_name in ["piano 1 voice", "piano 2 voice"]:
         24,
     ]:
         abjad.attach(
-            abjad.Articulation("marcato"), abjad.Selection(measures[n]).leaf(0)
+            abjad.Articulation("marcato"), abjad.select.leaf(measures[n], 0)
         )
 
     for n in [
         6,
     ]:
-        for leaf in abjad.Selection(measures[n]).leaves():
+        for leaf in abjad.select.leaves(measures[n]):
             abjad.attach(abjad.Arpeggio(), leaf)
             trinton.unmeasured_stem_tremolo([leaf])
 
-piano_1_measures = abjad.Selection(score["piano 1 voice"]).leaves().group_by_measure()
+piano_1_measures = abjad.select.group_by_measure(abjad.select.leaves(score["piano 1 voice"]))
 
 for n in [
     9,
@@ -1000,11 +1000,11 @@ for n in [
     23,
     24,
 ]:
-    for leaf in abjad.Selection(piano_1_measures[n]).leaves():
+    for leaf in abjad.select.leaves(piano_1_measures[n]):
         abjad.attach(abjad.Arpeggio(), leaf)
         trinton.unmeasured_stem_tremolo([leaf])
 
-piano_2_measures = abjad.Selection(score["piano 2 voice"]).leaves().group_by_measure()
+piano_2_measures = abjad.select.group_by_measure(abjad.select.leaves(score["piano 2 voice"]))
 
 for n in [
     9,
@@ -1025,14 +1025,14 @@ for n in [
     24,
 ]:
     abjad.attach(
-        abjad.StartPhrasingSlur(), abjad.Selection(piano_2_measures[n]).leaf(0)
+        abjad.StartPhrasingSlur(), abjad.select.leaf(piano_2_measures[n], 0)
     )
     abjad.attach(
-        abjad.StopPhrasingSlur(), abjad.Selection(piano_2_measures[n]).leaf(-1)
+        abjad.StopPhrasingSlur(), abjad.select.leaf(piano_2_measures[n], -1)
     )
 
 abjad.attach(
-    abjad.Articulation("marcato"), abjad.Selection(score["piano 1 voice"]).leaf(6)
+    abjad.Articulation("marcato"), abjad.select.leaf(score["piano 1 voice"], 6)
 )
 
 trinton.attach(
@@ -1131,8 +1131,8 @@ trio.change_staff(
     ],
 )
 
-for tuplet in abjad.Selection(score["piano 1 voice"]).tuplets():
-    abjad.tweak(tuplet).direction = abjad.Up
+for tuplet in abjad.select.tuplets(score["piano 1 voice"]):
+    abjad.tweak(tuplet).direction = abjad.UP
 
 trinton.attach(
     voice=score["piano 1 voice"],
@@ -1144,16 +1144,16 @@ trinton.attach(
 )
 
 for voice_name in ["piano 1 voice", "cello 1 voice", "contrabass 1 voice"]:
-    measures = abjad.Selection(score[voice_name]).leaves().group_by_measure()
+    measures = abjad.select.group_by_measure(abjad.select.leaves(score[voice_name]))
     for n in [
         2,
         7,
     ]:
-        abjad.attach(abjad.StartHairpin("<"), abjad.Selection(measures[n]).leaf(0))
+        abjad.attach(abjad.StartHairpin("<"), abjad.select.leaf(measures[n], 0))
 
-    abjad.attach(abjad.Dynamic("ffff"), abjad.Selection(measures[4]).leaf(0))
+    abjad.attach(abjad.Dynamic("ffff"), abjad.select.leaf(measures[4], 0))
 
-    abjad.attach(abjad.Dynamic("fffff"), abjad.Selection(measures[9]).leaf(0))
+    abjad.attach(abjad.Dynamic("fffff"), abjad.select.leaf(measures[9], 0))
 
 trinton.attach(
     voice=score["piano 1 voice"],
@@ -1164,7 +1164,7 @@ trinton.attach(
 )
 
 for voice_name in ["piano 1 voice", "cello 1 voice"]:
-    measures = abjad.Selection(score[voice_name]).leaves().group_by_measure()
+    measures = abjad.select.group_by_measure(abjad.select.leaves(score[voice_name]))
     for n in [
         10,
         11,
@@ -1181,14 +1181,14 @@ for voice_name in ["piano 1 voice", "cello 1 voice"]:
         22,
         23,
     ]:
-        abjad.attach(abjad.Dynamic("fffff"), abjad.Selection(measures[n]).leaf(0))
-        abjad.attach(abjad.StartHairpin("|>o"), abjad.Selection(measures[n]).leaf(0))
+        abjad.attach(abjad.Dynamic("fffff"), abjad.select.leaf(measures[n], 0))
+        abjad.attach(abjad.StartHairpin("|>o"), abjad.select.leaf(measures[n], 0))
 
-    abjad.attach(abjad.Dynamic("fffff"), abjad.Selection(measures[-1]).leaf(0))
+    abjad.attach(abjad.Dynamic("fffff"), abjad.select.leaf(measures[-1], 0))
 
 # cello pitching/attachments
 
-cello_1_measures = abjad.Selection(score["cello 1 voice"]).leaves().group_by_measure()
+cello_1_measures = abjad.select.group_by_measure(abjad.select.leaves(score["cello 1 voice"]))
 
 double_stop_handler = evans.PitchHandler(
     pitch_list=[
@@ -1249,7 +1249,7 @@ for n in [
 ]:
     I_II_handler(cello_1_measures[n])
 
-cello_2_measures = abjad.Selection(score["cello 2 voice"]).leaves().group_by_measure()
+cello_2_measures = abjad.select.group_by_measure(abjad.select.leaves(score["cello 2 voice"]))
 
 IV_handler = evans.PitchHandler(
     pitch_list=[-24],
@@ -1313,7 +1313,7 @@ trio.pitch_harmonic_glissandi_by_measure(
     index=0,
 )
 
-cello_1_measures = abjad.Selection(score["cello 1 voice"]).leaves().group_by_measure()
+cello_1_measures = abjad.select.group_by_measure(abjad.select.leaves(score["cello 1 voice"]))
 
 for n in [
     0,
@@ -1323,13 +1323,13 @@ for n in [
     5,
     8,
 ]:
-    for leaf in cello_1_measures[n].leaves():
+    for leaf in abjad.select.leaves(cello_1_measures[n], pitched=True):
         abjad.attach(abjad.Articulation("marcato"), leaf)
 
 for n in [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]:
-    abjad.attach(abjad.Articulation("marcato"), cello_1_measures[n].leaf(0))
-    abjad.attach(abjad.StartPhrasingSlur(), cello_1_measures[n].leaf(0))
-    abjad.attach(abjad.StopPhrasingSlur(), cello_1_measures[n].leaf(-1))
+    abjad.attach(abjad.Articulation("marcato"), abjad.select.leaf(cello_1_measures[n], 0))
+    abjad.attach(abjad.StartPhrasingSlur(), abjad.select.leaf(cello_1_measures[n], 0))
+    abjad.attach(abjad.StopPhrasingSlur(), abjad.select.leaf(cello_1_measures[n], -1))
 
 trinton.attach(
     voice=score["cello 1 voice"],
@@ -1387,7 +1387,7 @@ trinton.attach(
     attachment=abjad.Clef("bass"),
 )
 
-for leaf in abjad.Selection(score["cello 2 voice"]).leaves(pitched=True):
+for leaf in abjad.select.leaves(score["cello 2 voice"], pitched=True):
     if isinstance(leaf, abjad.Chord):
         pass
     else:
@@ -1395,7 +1395,7 @@ for leaf in abjad.Selection(score["cello 2 voice"]).leaves(pitched=True):
             abjad.attach(abjad.Articulation("marcato"), leaf)
 
 cello_2_measures = (
-    abjad.Selection(score["cello 2 voice"]).leaves(pitched=True).group_by_measure()
+    abjad.select.group_by_measure(abjad.select.leaves(score["cello 2 voice"]))
 )
 
 leaves = []
@@ -1411,13 +1411,14 @@ for tie in selection:
 
 
 for measure in cello_2_measures:
-    abjad.attach(abjad.Articulation("marcato"), abjad.Selection(measure).leaf(0))
+    pleaves = abjad.select.leaves(measure, pitched=True)
+    abjad.attach(abjad.Articulation("marcato"), pleaves[0])
 
-for tuplet in abjad.Selection(score["cello 2 voice"]).tuplets():
+for tuplet in abjad.select.tuplets(score["cello 2 voice"]):
     if abjad.get.annotation(tuplet, trio.harmonic_gliss) is True:
         abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
         abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
-        for leaf in abjad.Selection(tuplet).leaves().exclude([-1]):
+        for leaf in abjad.select.exclude(abjad.select.leaves(tuplet), [-1]):
             abjad.attach(abjad.Glissando(), leaf)
         for chord in tuplet:
             for head in chord.note_heads:
@@ -1464,7 +1465,7 @@ trinton.attach(
         25,
     ],
     attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "NB., Pizz." 1', format_slot="after"
+        r'\boxed-markup "NB., Pizz." 1', "after"
     ),
 )
 
@@ -1475,7 +1476,7 @@ trinton.attach(
         14,
     ],
     attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "Arco, XSB" 1', format_slot="after"
+        r'\boxed-markup "Arco, XSB" 1', "after"
     ),
 )
 
@@ -1484,13 +1485,13 @@ trinton.attach(
     leaves=[
         27,
     ],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Arco" 1', format_slot="after"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Arco" 1', "after"),
 )
 
 # contrabass pitching/attachments
 
 contrabass_1_measures = (
-    abjad.Selection(score["contrabass 1 voice"]).leaves().group_by_measure()
+    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 1 voice"]))
 )
 
 double_stop_handler = evans.PitchHandler(
@@ -1513,7 +1514,7 @@ for n in [
     double_stop_handler(contrabass_1_measures[n])
 
 contrabass_2_measures = (
-    abjad.Selection(score["contrabass 2 voice"]).leaves().group_by_measure()
+    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 2 voice"]))
 )
 
 IV_handler = evans.PitchHandler(
@@ -1568,7 +1569,7 @@ trinton.attach(
 )
 
 contrabass_1_measures = (
-    abjad.Selection(score["contrabass 1 voice"]).leaves().group_by_measure()
+    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 1 voice"]))
 )
 
 for n in [
@@ -1579,11 +1580,11 @@ for n in [
     6,
     7,
 ]:
-    for leaf in contrabass_1_measures[n].leaves():
+    for leaf in abjad.select.leaves(contrabass_1_measures[n]):
         abjad.attach(abjad.Articulation("marcato"), leaf)
 
 contrabass_2_measures = (
-    abjad.Selection(score["contrabass 2 voice"]).leaves().group_by_measure()
+    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 2 voice"]))
 )
 
 leaves = []
@@ -1612,21 +1613,19 @@ for n in [
     6,
     7,
 ]:
-    for leaf in contrabass_2_measures[n].leaves():
+    for leaf in abjad.select.leaves(contrabass_2_measures[n]):
         abjad.attach(abjad.Articulation("marcato"), leaf)
 
-for tuplet in abjad.Selection(score["contrabass 2 voice"]).tuplets():
+for tuplet in abjad.select.tuplets(score["contrabass 2 voice"]):
     if abjad.get.annotation(tuplet, trio.vib) is True:
         abjad.attach(abjad.Articulation("marcato"), tuplet[0])
         abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
         abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
-        for leaf in abjad.Selection(tuplet).leaves().exclude([-1]):
+        for leaf in abjad.select.exclude(abjad.select.leaves(tuplet), [-1]):
             abjad.attach(abjad.Glissando(), leaf)
 
 for tuplet in (
-    abjad.Selection(score["contrabass 2 voice"])
-    .tuplets()
-    .exclude([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -1])
+    abjad.select.exclude(abjad.select.tuplets(score["contrabass 2 voice"]), [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -1,])
 ):
     abjad.attach(abjad.Dynamic("fffff"), tuplet[0]),
     abjad.attach(abjad.StartHairpin("|>o"), tuplet[0])
@@ -1654,7 +1653,7 @@ trinton.attach(
         4,
         14,
     ],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Arco" 1', format_slot="after"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Arco" 1', "after"),
 )
 
 trinton.attach(
@@ -1662,7 +1661,7 @@ trinton.attach(
     leaves=[
         10,
     ],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Pizz." 1', format_slot="after"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Pizz." 1', "after"),
 )
 
 trinton.attach(
@@ -1671,7 +1670,7 @@ trinton.attach(
         21,
     ],
     attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "low string portamento" 1', format_slot="after"
+        r'\boxed-markup "low string portamento" 1', "after"
     ),
 )
 

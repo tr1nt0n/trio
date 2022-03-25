@@ -116,12 +116,12 @@ trinton.make_and_append_rhythm_selections(
     voice_name="contrabass 1 voice",
     stack=rmakers.stack(
         rmakers.tuplet(trio.collapsing_tuplets_3),
-        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+        rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
         rmakers.rewrite_dots(),
-        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.beam(lambda _: abjad.select.tuplets(_)),
     ),
     durations=[
         (1, 2),
@@ -184,12 +184,12 @@ trinton.make_and_append_rhythm_selections(
                 pitch_list=trio.collapsing_tuplets_2, start_index=1
             )
         ),
-        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+        rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+        rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
         rmakers.rewrite_dots(),
-        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.beam(lambda _: abjad.select.tuplets(_)),
     ),
     durations=[
         (1, 4),
@@ -339,12 +339,12 @@ trio.contrabass_glissandi_rhythms(
 
 trinton.append_rests(score=score, voice="contrabass 2 voice", rests=[abjad.Skip("r4")])
 
-for tuplet in abjad.Selection(score["contrabass 2 voice"]).tuplets():
-    abjad.override(tuplet).TupletNumber.text = abjad.Markup(r"\markup \italic { 4:5 }")
+for tuplet in abjad.select.tuplets(score["contrabass 2 voice"]):
+    abjad.override(tuplet).TupletNumber.text = r"\markup \italic { 4:5 }"
 
 abjad.override(
-    abjad.Selection(score["contrabass 1 voice"]).tuplet(-1)
-).TupletNumber.text = abjad.Markup(r"\markup \italic { 13:10 }")
+    abjad.select.tuplet(score["contrabass 1 voice"], -1)
+).TupletNumber.text = r"\markup \italic { 13:10 }"
 
 trinton.reduce_tuplets(
     score=score,
@@ -382,7 +382,7 @@ trinton.attach(
     leaves=[
         11,
     ],
-    attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after"),
+    attachment=abjad.LilyPondLiteral(r"\pageBreak", "absolute_after"),
 )
 
 trinton.attach(
@@ -422,7 +422,7 @@ III_IV_handler = evans.PitchHandler(
     forget=False,
 )
 
-III_IV_handler(abjad.Selection(score["contrabass 1 voice"]).leaves(pitched=True))
+III_IV_handler(abjad.select.leaves(score["contrabass 1 voice"], pitched=True))
 
 detune_handler = evans.PitchHandler(
     pitch_list=[
@@ -460,13 +460,13 @@ pull_handler = evans.PitchHandler(
 )
 
 contrabass_2_measures = (
-    abjad.Selection(score["contrabass 2 voice"]).leaves().group_by_measure()
+    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 2 voice"]))
 )
 
 for n in list(range(6, 17)):
     selections = []
 
-    for leaf in abjad.Selection(contrabass_2_measures[n - 1]).leaves(pitched=True):
+    for leaf in abjad.select.leaves(contrabass_2_measures[n - 1], pitched=True):
         if abjad.get.annotation(leaf, trio.vib) is True:
             pass
         else:
@@ -604,11 +604,11 @@ trinton.attach(
 )
 
 trinton.dashed_slur(
-    start_selection=abjad.Selection(score["contrabass 2 voice"]).leaf(58),
-    stop_selection=abjad.Selection(score["contrabass 2 voice"]).leaf(63),
+    start_selection=abjad.select.leaf(score["contrabass 2 voice"], 58),
+    stop_selection=abjad.select.leaf(score["contrabass 2 voice"], 63),
 )
 
-for tie in abjad.Selection(score["contrabass 2 voice"]).logical_ties():
+for tie in abjad.select.logical_ties(score["contrabass 2 voice"]):
     if tie.written_duration == abjad.Duration(1, 16):
         abjad.attach(abjad.Articulation("snappizzicato"), tie[0])
     elif tie.written_duration == abjad.Duration(1, 32):
@@ -631,7 +631,7 @@ trinton.attach(
         47,
         49,
     ],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Pull" 1', format_slot="after"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Pull" 1', "after"),
 )
 
 trinton.attach(
@@ -642,7 +642,7 @@ trinton.attach(
         43,
         52,
     ],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Arco" 1', format_slot="after"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Arco" 1', "after"),
 )
 
 trinton.attach_multiple(
@@ -651,22 +651,31 @@ trinton.attach_multiple(
     leaves=[0],
     attachments=[
         abjad.LilyPondLiteral(
-            r'\boxed-markup "Full bows as possible" 1', format_slot="after"
-        ),
-        abjad.Markup(
-            r"\markup \italic { Con Fuoco, Con Licenza }", direction=abjad.Down
-        ),
-        abjad.Markup(
-            r"\markup \bold \italic { as loud as possible }", direction=abjad.Down
+            r'\boxed-markup "Full bows as possible" 1', "after"
         ),
     ],
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="contrabass 1 voice",
+    leaves=[0],
+    attachments=[
+        abjad.Markup(
+            r"\markup \italic { Con Fuoco, Con Licenza }",
+        ),
+        abjad.Markup(
+            r"\markup \bold \italic { as loud as possible }",
+        ),
+    ],
+    direction=abjad.DOWN
 )
 
 trinton.attach(
     voice=score["contrabass 2 voice"],
     leaves=[0],
     attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "Detune IV" 1', format_slot="after"
+        r'\boxed-markup "Detune IV" 1', "after"
     ),
 )
 
@@ -675,7 +684,8 @@ trinton.attach(
     leaves=[
         39,
     ],
-    attachment=abjad.StartHairpin(">o", direction=abjad.Up),
+    attachment=abjad.StartHairpin(">o"),
+    direction=abjad.UP
 )
 
 trinton.attach(

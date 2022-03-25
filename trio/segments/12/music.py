@@ -104,12 +104,12 @@ for voice_name in ["cello 2 voice", "contrabass 2 voice"]:
                     ),
                 ]
             ),
-            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
-            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
+            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
+            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
             rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.select.tuplets(_)),
         ),
         durations=[
             (4, 4),
@@ -243,12 +243,12 @@ trio.harmonic_glissandi_rhythms(
 )
 
 abjad.override(
-    abjad.Selection(score["cello 2 voice"]).tuplet(2)
-).TupletNumber.text = abjad.Markup(r"\markup \italic { 6:5 }")
+    abjad.select.tuplet(score["cello 2 voice"], 2)
+).TupletNumber.text = r"\markup \italic { 6:5 }"
 
 abjad.override(
-    abjad.Selection(score["cello 2 voice"]).tuplet(3)
-).TupletNumber.text = abjad.Markup(r"\markup \italic { 7:10 }")
+    abjad.select.tuplet(score["cello 2 voice"], 3)
+).TupletNumber.text = r"\markup \italic { 7:10 }"
 
 # bass
 
@@ -381,12 +381,12 @@ trinton.append_rests(
 )
 
 abjad.override(
-    abjad.Selection(score["contrabass 2 voice"]).tuplet(2)
-).TupletNumber.text = abjad.Markup(r"\markup \italic { 7:10 }")
+    abjad.select.tuplet(score["contrabass 2 voice"], 2)
+).TupletNumber.text = r"\markup \italic { 7:10 }"
 
 abjad.override(
-    abjad.Selection(score["contrabass 2 voice"]).tuplet(3)
-).TupletNumber.text = abjad.Markup(r"\markup \italic { 6:5 }")
+    abjad.select.tuplet(score["contrabass 2 voice"], 2)
+).TupletNumber.text = r"\markup \italic { 6:5 }"
 
 # beaming
 
@@ -421,7 +421,7 @@ trinton.attach_multiple(
     leaves=[
         -1,
     ],
-    attachments=[abjad.LilyPondLiteral(r"\override Score.BarLine.transparent = ##f", format_slot="after"),]
+    attachments=[abjad.LilyPondLiteral(r"\override Score.BarLine.transparent = ##f", "after"),]
 )
 
 trinton.attach(
@@ -433,7 +433,7 @@ trinton.attach(
     leaves=[
         7,
     ],
-    attachment=abjad.LilyPondLiteral(r"\pageBreak", format_slot="absolute_after"),
+    attachment=abjad.LilyPondLiteral(r"\pageBreak", "absolute_after"),
 )
 
 # piano pitching/attachments
@@ -742,15 +742,15 @@ trinton.write_slur(
 )
 
 for voice_name in ["piano 1 voice", "piano 2 voice"]:
-    for chord in abjad.Selection(score[voice_name]).chords():
+    for chord in abjad.select.chords(score[voice_name]):
         trinton.unmeasured_stem_tremolo([chord])
-        chord_ties = abjad.Selection(chord).logical_ties()
+        chord_ties = abjad.select.logical_ties(chord)
         for tie in chord_ties:
             abjad.attach(abjad.Arpeggio(), tie[0])
-    for tuplet in abjad.Selection(score[voice_name]).tuplets().exclude([-2]):
+    for tuplet in abjad.select.exclude(abjad.select.tuplets(score[voice_name]), [-2]):
         abjad.override(tuplet).TupletBracket.padding = 3
-    for tuplet in abjad.Selection(score[voice_name]).tuplets():
-        abjad.tweak(tuplet).direction = abjad.Down
+    for tuplet in abjad.select.tuplets(score[voice_name]):
+        abjad.tweak(tuplet).direction = abjad.DOWN
 
 trinton.attach_multiple(
     score=score,
@@ -774,7 +774,8 @@ trinton.attach(
     leaves=[
         6,
     ],
-    attachment=abjad.StartHairpin(">o", direction=abjad.Up),
+    attachment=abjad.StartHairpin(">o"),
+    direction=abjad.UP
 )
 
 trinton.attach(
@@ -887,7 +888,7 @@ III_IV_handler = evans.PitchHandler(
     forget=False,
 )
 
-III_IV_handler(abjad.Selection(score["cello 1 voice"]).leaves(pitched=True))
+III_IV_handler(abjad.select.leaves(score["cello 1 voice"], pitched=True))
 
 trinton.attach(
     voice=score["cello 2 voice"],
@@ -916,7 +917,7 @@ trinton.attach(
     attachment=abjad.Clef("bass"),
 )
 
-cello_2_measures = abjad.Selection(score["cello 2 voice"]).leaves().group_by_measure()
+cello_2_measures = abjad.select.group_by_measure(abjad.select.leaves(score["cello 2 voice"]))
 
 for n in [
     7,
@@ -924,15 +925,15 @@ for n in [
     11,
     13,
 ]:
-    sel = abjad.Selection(cello_2_measures[n - 1]).leaves()
+    sel = abjad.select.leaves(cello_2_measures[n -1])
     for leaf in sel:
         for head in leaf.note_heads:
             abjad.tweak(head).style = r"#'harmonic-mixed"
 
-cello_1_measures = abjad.Selection(score["cello 1 voice"]).leaves().group_by_measure()
+cello_1_measures = abjad.select.group_by_measure(abjad.select.leaves(score["cello 1 voice"]))
 
 for n in [7, 9, 11, 13]:
-    sel = abjad.Selection(cello_1_measures[n - 1]).leaves()
+    sel = abjad.select.leaves(cello_1_measures[n - 1])
     abjad.attach(abjad.StartPhrasingSlur(), sel[0])
     abjad.attach(abjad.StopPhrasingSlur(), sel[-1])
 
@@ -1022,7 +1023,7 @@ I_II_handler = evans.PitchHandler(
     forget=False,
 )
 
-I_II_handler(abjad.Selection(score["contrabass 1 voice"]).leaves(pitched=True))
+I_II_handler(abjad.select.leaves(score["contrabass 1 voice"], pitched=True))
 
 trinton.attach(
     voice=score["contrabass 2 voice"],
@@ -1048,7 +1049,7 @@ trinton.attach(
 )
 
 contrabass_2_measures = (
-    abjad.Selection(score["contrabass 2 voice"]).leaves().group_by_measure()
+    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 2 voice"]))
 )
 
 for n in [
@@ -1057,13 +1058,13 @@ for n in [
     10,
     12,
 ]:
-    sel = abjad.Selection(contrabass_2_measures[n - 1]).leaves()
+    sel = abjad.select.leaves(contrabass_2_measures[n - 1])
     for leaf in sel:
         for head in leaf.note_heads:
             abjad.tweak(head).style = r"#'harmonic-mixed"
 
 contrabass_1_measures = (
-    abjad.Selection(score["contrabass 1 voice"]).leaves().group_by_measure()
+    abjad.select.group_by_measure(abjad.select.leaves(score["contrabass 1 voice"]))
 )
 
 for n in [
@@ -1072,12 +1073,12 @@ for n in [
     10,
     12,
 ]:
-    sel = abjad.Selection(contrabass_1_measures[n - 1]).leaves()
+    sel = abjad.select.leaves(contrabass_1_measures[n - 1])
     abjad.attach(abjad.StartPhrasingSlur(), sel[0])
     abjad.attach(abjad.StopPhrasingSlur(), sel[-1])
 
 for voice in ["contrabass 2 voice", "cello 2 voice"]:
-    measures = abjad.Selection(score[voice]).leaves().group_by_measure()
+    measures = abjad.select.group_by_measure(abjad.select.leaves(score[voice]))
     trinton.attach_multiple(
         score=score,
         voice=voice,
@@ -1085,7 +1086,7 @@ for voice in ["contrabass 2 voice", "cello 2 voice"]:
             2,
         ],
         attachments=[
-            abjad.LilyPondLiteral(r'\boxed-markup "NB, Ord." 1', format_slot="after"),
+            abjad.LilyPondLiteral(r'\boxed-markup "NB, Ord." 1', "after"),
             abjad.StartHairpin("o<"),
         ],
     )
@@ -1103,7 +1104,8 @@ for voice in ["contrabass 2 voice", "cello 2 voice"]:
         leaves=[
             12,
         ],
-        attachment=abjad.StartHairpin(">o", direction=abjad.Up),
+        attachment=abjad.StartHairpin(">o"),
+        direction=abjad.UP
     )
 
     trinton.attach(voice=score[voice], leaves=[-1], attachment=abjad.StopHairpin())
@@ -1129,14 +1131,14 @@ for voice in ["contrabass 2 voice", "cello 2 voice"]:
         12,
         13,
     ]:
-        sel = abjad.Selection(measures[n - 1]).leaves().exclude([-1])
+        sel = abjad.select.exclude(abjad.select.leaves(measures[n - 1]), [-1])
         for leaf in sel:
             abjad.attach(abjad.Glissando(), leaf)
         abjad.attach(
-            abjad.StartPhrasingSlur(), abjad.Selection(measures[n - 1]).leaf(0)
+            abjad.StartPhrasingSlur(), abjad.select.leaf(measures[n - 1], 0)
         )
         abjad.attach(
-            abjad.StopPhrasingSlur(), abjad.Selection(measures[n - 1]).leaf(-1)
+            abjad.StopPhrasingSlur(), abjad.select.leaf(measures[n - 1], -1)
         )
 
 # extract parts

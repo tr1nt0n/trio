@@ -766,7 +766,7 @@ def contrabass_glissandi_rhythms(score, voice_name, durations):
         durations=durations,
     )
 
-    tuplets = abjad.select.tuplets(selection)
+    tuplets = abjad.select.tuplets(selections)
     for tuplet in tuplets:
         abjad.annotate(tuplet, trio.vib, True)
         for leaf in tuplets:
