@@ -12,7 +12,7 @@
 \header {
     dedication = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"to Natasia Reinhardt" \fontsize #0.25 \with-color #white "."}
     title = \markup \override #'(font-name . "Bodoni72") \fontsize #10 \center-column {"PIANO  TRIO" \fontsize #0.01 \with-color #white "."}
-    subtitle = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"for Cori Trenczer, Zoe Markle, and Kate Ragan" \fontsize #0.01 \with-color #white "."}
+    subtitle = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"for Violoncello, Contrabass, and Piano" \fontsize #0.01 \with-color #white "."}
     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #3 {"Trinton (*2000)"}
 }
 
@@ -48,7 +48,7 @@
 
         \override BarLine.hair-thickness = 0.5
         \override BarLine.transparent = ##t
-        \override BarLine.X-extent = #'(0 . 0)
+        % \override BarLine.X-extent = #'(0 . 0)
         \override BarLine.thick-thickness = #8
 
         \override BarNumber.stencil = #(make-stencil-circler 0.1 0.75 ly:text-interface::print)
