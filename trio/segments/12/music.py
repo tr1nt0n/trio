@@ -385,7 +385,7 @@ abjad.override(
 ).TupletNumber.text = r"\markup \italic { 7:10 }"
 
 abjad.override(
-    abjad.select.tuplet(score["contrabass 2 voice"], 2)
+    abjad.select.tuplet(score["contrabass 2 voice"], 3)
 ).TupletNumber.text = r"\markup \italic { 6:5 }"
 
 # beaming
@@ -400,6 +400,7 @@ trinton.rewrite_meter_by_voice(
     ],
 )
 trinton.beam_score(score)
+
 # trinton.annotate_leaves(score)
 
 # margin markups

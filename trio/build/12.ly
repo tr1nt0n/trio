@@ -544,7 +544,7 @@
                                         >2.
                                         \)
                                     }
-                                    \override TupletNumber.text = \markup \italic { 6:5 }
+                                    \override TupletNumber.text = \markup \italic { 7:10 }
                                     \times 30/21
                                     {
                                         \clef "bass"
@@ -597,7 +597,7 @@
                                         g'''
                                     >4
                                     \)
-                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \override TupletNumber.text = \markup \italic { 6:5 }
                                     \times 15/18
                                     {
                                         \clef "bass"
@@ -619,6 +619,7 @@
                                         \)
                                         ]
                                     }
+                                    \revert TupletNumber.text
                                     \times 4/5
                                     {
                                         <
