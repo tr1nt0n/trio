@@ -1,6 +1,6 @@
 \version "2.20.0"
 \language english
-#(set-default-paper-size "b4")
+#(set-default-paper-size "b4 landscape")
 #(set-global-staff-size 12)
 #(ly:set-option 'relative-includes #t)
 
@@ -32,16 +32,19 @@
 		\consists Text_engraver
 		\consists Text_spanner_engraver
         \override MetronomeMark.stencil = ##f
-        \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 2) (minimum-distance . 2) (padding . 2) (stretchability . 0))
+        % \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 2) (minimum-distance . 2) (padding . 2) (stretchability . 0))
         \override TimeSignature.break-visibility = #end-of-line-invisible
-        \override TimeSignature.transparent = ##t
+        \override TimeSignature.font-size = 7
+        \override TimeSignature.font-name = "Bodoni72"
+        \override TimeSignature.X-offset = -1.5
+        \override TimeSignature.Y-offset = 3
     }
 
     \context {
         \Score
         \numericTimeSignature
         \accepts TimeSignatureContext
-        % proportionalNotationDuration = #(ly:make-moment 1 20)
+        proportionalNotationDuration = #(ly:make-moment 1 20)
         \override SpacingSpanner.uniform-stretching = ##t
         \override Score.SpacingSpanner.strict-note-spacing = ##t
         \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 8) (minimum distance . 8) (padding . 6))
@@ -114,12 +117,9 @@
     \context {
         \Staff
         fontSize = 1
+        \remove Time_signature_engraver
         \override InstrumentName.self-alignment-X = #CENTER
-        \override TimeSignature.break-visibility = #end-of-line-invisible
-        \override TimeSignature.font-size = 7
-		\override TimeSignature.font-name = "Bodoni72"
-        \override TimeSignature.whiteout-style = #'outline
-        \override TimeSignature.whiteout = 1
+        \RemoveEmptyStaves
     }
 
     \context {
@@ -130,6 +130,7 @@
 }
 %
 \paper {
+    system-separator-markup = \markup { \slashSeparator }
     system-system-spacing = #'((basic-distance . 12) (minimum-distance . 12) (padding . 12))
     indent = 20\mm
     short-indent = 15\mm
