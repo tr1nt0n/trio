@@ -2,7 +2,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.pdf
+*.midi
+*.wav
+*.mp3
+*.logicx
+*.aif
+*.aiff
 # C extensions
 *.so
 .DS_Store
@@ -15,7 +20,6 @@ eggs/
 .eggs/
 lib/
 lib64/
-parts/
 sdist/
 var/
 wheels/
