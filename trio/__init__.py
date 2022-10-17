@@ -12,7 +12,6 @@ from .library import (
     collapsing_tuplets_1,
     collapsing_tuplets_2,
     collapsing_tuplets_3,
-    write_bow_contact_points,
     make_angle_spanner,
     stop_angle_spanner,
     noteheads_only,
@@ -73,6 +72,7 @@ from .library import (
     select_periodic_ties_2_4_of_8,
     contrabass_glissandi_rhythms,
     select_leaves_by_annotation,
+    beam,
 )
 
 __all__ = [

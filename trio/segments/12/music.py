@@ -95,29 +95,26 @@ for voice_name in ["cello 2 voice", "contrabass 2 voice"]:
     trinton.make_and_append_rhythm_selections(
         score=score,
         voice_name=voice_name,
-        stack=rmakers.stack(
-            rmakers.tuplet(
-                [
-                    (
-                        1,
-                        1,
-                    ),
-                ]
-            ),
-            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
-            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
-            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
-            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
-            rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.select.tuplets(_)),
+        rmaker=rmakers.tuplet(
+            [
+                (4, 4),
+                (3, 8),
+                (3, 4),
+                (6, 4),
+            ],
+            [
+                (
+                    1,
+                    1,
+                ),
+            ],
         ),
-        durations=[
-            (4, 4),
-            (3, 8),
-            (3, 4),
-            (6, 4),
+        rmaker_commands=[
+            trinton.treat_tuplets(),
+            rmakers.beam,
         ],
     )
+
 
 trio.cello_gliss(
     score=score,
@@ -580,7 +577,7 @@ for measure, octave, seed in zip(
     trio.pitch_toccata_by_measure(
         voice=score["piano 1 voice"],
         measures=[measure],
-        selector=baca.selectors.pleaves(),
+        selector=trinton.pleaves(),
         octave=octave,
         seed=seed,
         index=0,
@@ -752,8 +749,8 @@ for voice_name in ["piano 1 voice", "piano 2 voice"]:
             abjad.attach(abjad.Arpeggio(), tie[0])
     for tuplet in abjad.select.exclude(abjad.select.tuplets(score[voice_name]), [-2]):
         abjad.override(tuplet).TupletBracket.padding = 3
-    for tuplet in abjad.select.tuplets(score[voice_name]):
-        abjad.tweak(tuplet).direction = abjad.DOWN
+    # for tuplet in abjad.select.tuplets(score[voice_name]):
+    #     abjad.tweak(tuplet).direction = abjad.DOWN
 
 trinton.attach_multiple(
     score=score,
@@ -878,7 +875,7 @@ trio.pitch_harmonic_glissandi_by_measure(
     measures=[
         13,
     ],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     strings="III and IV",
     index=2,
 )
@@ -933,7 +930,7 @@ for n in [
     sel = abjad.select.leaves(cello_2_measures[n - 1])
     for leaf in sel:
         for head in leaf.note_heads:
-            abjad.tweak(head).style = r"#'harmonic-mixed"
+            abjad.tweak(head, r"\tweak style #'harmonic-mixed")
 
 cello_1_measures = abjad.select.group_by_measure(
     abjad.select.leaves(score["cello 1 voice"])
@@ -1005,7 +1002,7 @@ trio.pitch_contrabass_glissandi_by_measure(
         11,
         13,
     ],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     strings="II and III",
 )
 
@@ -1017,7 +1014,7 @@ trio.pitch_harmonic_glissandi_by_measure(
         10,
         12,
     ],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     strings="I and II",
     index=0,
 )
@@ -1068,7 +1065,7 @@ for n in [
     sel = abjad.select.leaves(contrabass_2_measures[n - 1])
     for leaf in sel:
         for head in leaf.note_heads:
-            abjad.tweak(head).style = r"#'harmonic-mixed"
+            abjad.tweak(head, rf"\tweak style #'harmonic-mixed")
 
 contrabass_1_measures = abjad.select.group_by_measure(
     abjad.select.leaves(score["contrabass 1 voice"])
@@ -1157,6 +1154,6 @@ trinton.render_file(
     segment_name="12",
     includes=[
         "../../build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
+        "/Users/trintonprater/abjad/abjad/scm/abjad.ily",
     ],
 )

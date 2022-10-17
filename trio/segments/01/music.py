@@ -420,9 +420,6 @@ trinton.write_slur(
     ],
 )
 
-for tuplet in abjad.select.tuplets(score["piano 1 voice"]):
-    abjad.tweak(tuplet).direction = abjad.UP
-
 # cello pitching/attachments
 
 for voice in ["cello 1 voice", "contrabass 1 voice"]:
@@ -793,6 +790,6 @@ trinton.render_file(
     segment_name="01",
     includes=[
         "../../build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
+        "/Users/trintonprater/abjad/abjad/scm/abjad.ily",
     ],
 )

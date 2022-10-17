@@ -589,6 +589,6 @@ trinton.render_file(
     segment_name="11",
     includes=[
         "../../build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
+        "/Users/trintonprater/abjad/abjad/scm/abjad.ily",
     ],
 )

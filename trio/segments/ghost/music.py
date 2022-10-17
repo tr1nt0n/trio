@@ -30,11 +30,18 @@ for voice in [
 ]:
     trinton.append_rests(score=score, voice=voice, rests=[abjad.Rest("r2")])
 
+# trinton.make_and_append_rhythm_selections(
+#     score=score,
+#     voice_name="piano 1 voice",
+#     stack=rmakers.stack(rmakers.tuplet([(1, 1, 1, 1, 1, 1)]), rmakers.beam()),
+#     durations=[(1, 4), (1, 4), (1, 4)],
+# )
+
 trinton.make_and_append_rhythm_selections(
     score=score,
     voice_name="piano 1 voice",
-    stack=rmakers.stack(rmakers.tuplet([(1, 1, 1, 1, 1, 1)]), rmakers.beam()),
-    durations=[(1, 4), (1, 4), (1, 4)],
+    rmaker=rmakers.tuplet([(1, 4), (1, 4), (1, 4)], [(1, 1, 1, 1, 1, 1)]),
+    rmaker_commands=[trinton.treat_tuplets(), rmakers.beam],
 )
 
 trinton.handwrite(
@@ -311,6 +318,6 @@ trinton.render_file(
     segment_name="ghost",
     includes=[
         "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
+        "/Users/trintonprater/abjad/abjad/scm/abjad.ily",
     ],
 )

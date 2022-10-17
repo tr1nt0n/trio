@@ -1589,7 +1589,7 @@ trinton.attach(
 trio.pitch_matter_with_selector(
     voice=score["cello 2 voice"],
     measures=[1],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     chord=1,
     partials=[
         2,
@@ -1673,7 +1673,7 @@ trio.pitch_matter_with_selector(
     measures=[
         22,
     ],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     chord=6,
     partials=[3, 4],
     transpose=-24,
@@ -1685,7 +1685,7 @@ trio.pitch_matter_with_selector(
     measures=[
         23,
     ],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     chord=6,
     partials=[6, 7],
     transpose=-48,
@@ -1790,11 +1790,11 @@ for tuplet in abjad.select.tuplets(score["cello 2 voice"]):
         abjad.attach(abjad.StopPhrasingSlur(), leaves[-1])
         for leaf in leaves:
             for head in leaf.note_heads:
-                abjad.tweak(head).Stem.transparent = True
-                abjad.tweak(head).Beam.transparent = True
-                abjad.tweak(head).Flag.transparent = True
-                abjad.tweak(head).Dots.transparent = True
-                abjad.tweak(head).style = r"#'harmonic-mixed"
+                abjad.tweak(head, r"\tweak Stem.transparent ##t")
+                abjad.tweak(head, r"\tweak Beam.transparent ##t")
+                abjad.tweak(head, r"\tweak Flag.transparent ##t")
+                abjad.tweak(head, r"\tweak Dots.transparent ##t")
+                abjad.tweak(head, rf"\tweak style #'harmonic-mixed")
     elif abjad.get.annotation(tuplet, trio.vib) is True:
         leaves = abjad.select.leaves(tuplet)
         trio.noteheads_only(leaves)
@@ -2020,7 +2020,7 @@ trio.pitch_matter_with_selector(
     measures=[
         1,
     ],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     chord=6,
     partials=[
         1,
@@ -2099,7 +2099,7 @@ trio.pitch_matter_with_selector(
     measures=[
         22,
     ],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     chord=1,
     partials=[5, 6],
     transpose=-24,
@@ -2111,7 +2111,7 @@ trio.pitch_matter_with_selector(
     measures=[
         23,
     ],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     chord=6,
     partials=[
         4,
@@ -2452,6 +2452,6 @@ trinton.render_file(
     segment_name="02",
     includes=[
         "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
+        "/Users/trintonprater/abjad/abjad/scm/abjad.ily",
     ],
 )

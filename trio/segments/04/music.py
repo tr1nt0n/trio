@@ -1269,7 +1269,7 @@ for leaf in trinton.make_leaf_selection(
     ],
 ):
     for head in leaf.note_heads:
-        abjad.tweak(head).style = r"#'harmonic-mixed"
+        abjad.tweak(head, rf"\tweak style #'harmonic-mixed")
 
 trinton.attach(
     voice=score["cello 2 voice"],
@@ -1749,7 +1749,7 @@ for leaf in trinton.make_leaf_selection(
     ],
 ):
     for head in leaf.note_heads:
-        abjad.tweak(head).style = r"#'harmonic-mixed"
+        abjad.tweak(head, rf"\tweak style #'harmonic-mixed")
 
 trinton.write_text_span(
     voice=score["contrabass 2 voice"],
@@ -1896,6 +1896,6 @@ trinton.render_file(
     segment_name="04",
     includes=[
         "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
+        "/Users/trintonprater/abjad/abjad/scm/abjad.ily",
     ],
 )

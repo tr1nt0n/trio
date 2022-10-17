@@ -213,7 +213,6 @@ for voice in ["piano 1 voice", "piano 2 voice", "cello 2 voice"]:
     trinton.attach(voice=score[voice], leaves=[0], attachment=abjad.Clef("treble"))
 
 for voice in [
-    "piano 2 voice",
     "cello 2 voice",
     "contrabass 2 voice",
 ]:
@@ -228,14 +227,18 @@ for voice in [
     )
 
 trinton.attach(
+    voice=score["piano 2 voice"], leaves=[0], attachment=abjad.StartHairpin(">")
+)
+
+trinton.attach(
     voice=score["piano 2 voice"], leaves=[5], attachment=abjad.Dynamic("ppp")
 )
 
 invisible_fff = abjad.Dynamic("fff")
 
-abjad.tweak(invisible_fff).transparent = True
+bundle = abjad.bundle(invisible_fff, r"- \tweak transparent ##t")
 
-trinton.attach(voice=score["piano 1 voice"], leaves=[0], attachment=invisible_fff)
+trinton.attach(voice=score["piano 1 voice"], leaves=[0], attachment=bundle)
 
 
 for leaves, string in zip(
@@ -336,9 +339,6 @@ trinton.attach(
     ],
     attachment=abjad.Articulation(">"),
 )
-
-for tuplet in [abjad.select.tuplet(score["piano 1 voice"], _) for _ in [0, 2, 3, 5, 8]]:
-    abjad.tweak(tuplet).direction = abjad.UP
 
 # cello attachments
 
@@ -753,6 +753,6 @@ trinton.render_file(
     segment_name="03",
     includes=[
         "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
+        "/Users/trintonprater/abjad/abjad/scm/abjad.ily",
     ],
 )

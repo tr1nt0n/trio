@@ -340,7 +340,7 @@ trio.pitch_harmonic_glissandi_by_measure(
         4,
         7,
     ],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     strings="I and II",
     index=0,
 )
@@ -348,7 +348,7 @@ trio.pitch_harmonic_glissandi_by_measure(
 trio.pitch_harmonic_glissandi_by_measure(
     voice=score["cello 2 voice"],
     measures=[1, 6, 9],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     strings="II and III",
     index=0,
 )
@@ -360,7 +360,7 @@ trio.pitch_harmonic_glissandi_by_measure(
         5,
         8,
     ],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     strings="III and IV",
     index=0,
 )
@@ -760,7 +760,7 @@ trio.pitch_harmonic_glissandi_by_measure(
         4,
         7,
     ],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     strings="I and II",
     index=0,
 )
@@ -772,7 +772,7 @@ trio.pitch_harmonic_glissandi_by_measure(
         6,
         9,
     ],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     strings="II and III",
     index=0,
 )
@@ -784,7 +784,7 @@ trio.pitch_harmonic_glissandi_by_measure(
         5,
         8,
     ],
-    selector=baca.selectors.pleaves(),
+    selector=trinton.pleaves(),
     strings="III and IV",
     index=0,
 )
@@ -1091,11 +1091,6 @@ trio.make_angle_spanner(
     padding=3.5,
 )
 
-abjad.tweak(abjad.select.tuplet(score["contrabass 2 voice"], 8)).direction = abjad.UP
-abjad.override(
-    abjad.select.tuplet(score["contrabass 2 voice"], 8)
-).Beam.direction = abjad.UP
-
 for voice in ["cello 1 voice", "contrabass 1 voice"]:
     trinton.transparent_accidentals(
         score=score,
@@ -1110,7 +1105,7 @@ for voice in ["cello 2 voice", "contrabass 2 voice"]:
         abjad.attach(abjad.Articulation(">"), tuplet[0])
     for leaf in abjad.select.leaves(score[voice], pitched=True):
         for head in leaf.note_heads:
-            abjad.tweak(head).style = r"#'harmonic-mixed"
+            abjad.tweak(head, r"\tweak style #'harmonic-mixed")
 
 # fill empty staves with skips
 
@@ -1137,6 +1132,6 @@ trinton.render_file(
     segment_name="05",
     includes=[
         "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
+        "/Users/trintonprater/abjad/abjad/scm/abjad.ily",
     ],
 )

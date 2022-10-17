@@ -403,10 +403,10 @@ trio.octave_down(
 )
 
 for voice_name in ["piano 1 voice", "piano 2 voice"]:
-    for tuplet in abjad.select.tuplets(score[voice_name]):
-        for annotation in [trio.toccata, trio.vib]:
-            if abjad.get.annotation(tuplet, annotation) is True:
-                abjad.tweak(tuplet).direction = abjad.UP
+    # for tuplet in abjad.select.tuplets(score[voice_name]):
+    #     for annotation in [trio.toccata, trio.vib]:
+    #         if abjad.get.annotation(tuplet, annotation) is True:
+    #             abjad.tweak(tuplet).direction = abjad.UP
 
     chords = abjad.select.chords(score[voice_name])
     trinton.unmeasured_stem_tremolo(chords)
@@ -529,9 +529,9 @@ trinton.attach(
     attachment=abjad.Articulation(">"),
 )
 
-for tuplet in abjad.select.tuplets(score["piano 2 voice"]):
-    if abjad.get.annotation(tuplet, trio.harmonic_gliss) is True:
-        abjad.tweak(tuplet).direction = abjad.DOWN
+# for tuplet in abjad.select.tuplets(score["piano 2 voice"]):
+#     if abjad.get.annotation(tuplet, trio.harmonic_gliss) is True:
+#         abjad.tweak(tuplet).direction = abjad.DOWN
 
 toccata_selector = trio.select_tuplets_by_annotation(trio.toccata)
 
@@ -540,8 +540,8 @@ toccata_tuplets = toccata_selector(abjad.select.leaves(score["piano 1 voice"]))
 for leaf in toccata_tuplets:
     if leaf.written_pitch.number < 0:
         abjad.attach(abjad.Articulation("marcato"), leaf)
-
-abjad.tweak(abjad.select.tuplet(score["piano 2 voice"], 6)).direction = abjad.DOWN
+#
+# abjad.tweak(abjad.select.tuplet(score["piano 2 voice"], 6)).direction = abjad.DOWN
 
 # cello pitching/attachments
 
@@ -975,11 +975,11 @@ for voice_name in ["cello 2 voice", "contrabass 2 voice"]:
         if abjad.get.annotation(tuplet, trio.harmonic_gliss) is True:
             for chord in tuplet:
                 for head in chord.note_heads:
-                    abjad.tweak(head).style = r"#'harmonic-mixed"
+                    abjad.tweak(head, r"\tweak style #'harmonic-mixed")
             abjad.attach(abjad.StartPhrasingSlur(), tuplet[0])
             abjad.attach(abjad.Articulation(">"), tuplet[0])
             abjad.attach(abjad.StopPhrasingSlur(), tuplet[-1])
-            abjad.tweak(tuplet).direction = abjad.DOWN
+            # abjad.tweak(tuplet).direction = abjad.DOWN
         if abjad.get.annotation(tuplet, trio.toccata) is True:
             trinton.dashed_slur(start_selection=tuplet[0], stop_selection=tuplet[-1])
 
@@ -1035,6 +1035,6 @@ trinton.render_file(
     segment_name="07",
     includes=[
         "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
+        "/Users/trintonprater/abjad/abjad/scm/abjad.ily",
     ],
 )

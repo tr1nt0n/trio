@@ -101,37 +101,31 @@ trio.toccata_rhythms(
 trinton.make_and_append_rhythm_selections(
     score=score,
     voice_name="contrabass 1 voice",
-    stack=rmakers.stack(
-        rmakers.accelerando(
-            [(1, 20), (1, 8), (1, 32)],
-        ),
-        rmakers.beam(),
-        rmakers.duration_bracket(),
+    rmaker=rmakers.accelerando(
+        [
+            (3, 4),
+        ],
+        [(1, 20), (1, 8), (1, 32)],
     ),
-    durations=[(3, 4)],
+    rmaker_commands=[rmakers.beam, rmakers.duration_bracket],
 )
 
 trinton.make_and_append_rhythm_selections(
     score=score,
     voice_name="contrabass 1 voice",
-    stack=rmakers.stack(
-        rmakers.tuplet(trio.collapsing_tuplets_3),
-        rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
-        rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
-        rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
-        rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
-        rmakers.rewrite_dots(),
-        rmakers.beam(lambda _: abjad.select.tuplets(_)),
+    rmaker=rmakers.tuplet(
+        [
+            (1, 2),
+            (1, 4),
+            (1, 8),
+            (3, 8),
+            (1, 4),
+            (1, 2),
+            (3, 8),
+        ],
+        trio.collapsing_tuplets_3,
     ),
-    durations=[
-        (1, 2),
-        (1, 4),
-        (1, 8),
-        (3, 8),
-        (1, 4),
-        (1, 2),
-        (3, 8),
-    ],
+    rmaker_commands=[trinton.treat_tuplets(), rmakers.beam],
 )
 
 trio.matter_broken_rhythms(
@@ -178,24 +172,15 @@ trinton.append_rests(
 trinton.make_and_append_rhythm_selections(
     score=score,
     voice_name="contrabass 1 voice",
-    stack=rmakers.stack(
-        rmakers.tuplet(
-            trinton.rotated_sequence(
-                pitch_list=trio.collapsing_tuplets_2, start_index=1
-            )
-        ),
-        rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
-        rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
-        rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
-        rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
-        rmakers.rewrite_dots(),
-        rmakers.beam(lambda _: abjad.select.tuplets(_)),
+    rmaker=rmakers.tuplet(
+        [
+            (1, 4),
+            (1, 4),
+            (5, 8),
+        ],
+        trinton.rotated_sequence(pitch_list=trio.collapsing_tuplets_2, start_index=1),
     ),
-    durations=[
-        (1, 4),
-        (1, 4),
-        (5, 8),
-    ],
+    rmaker_commands=[trinton.treat_tuplets(), rmakers.beam],
 )
 
 for pair in [
@@ -365,7 +350,9 @@ trinton.rewrite_meter_by_voice(
     ],
 )
 
-trinton.beam_score(score)
+# trinton.beam_score(score)
+
+trinton.beam_score_by_voice(score=score, voices=[score["contrabass 2 voice"]])
 
 # margin markups
 
@@ -746,7 +733,7 @@ trinton.attach(
     voice=score["Global Context"],
     leaves=[-1],
     attachment=abjad.Markup(
-        r"\markup \halign #0.5 \fontsize #6.5 { 37 s. }",
+        r'\markup \halign #-0.1 \fontsize #6.5 { "37\"" }',
     ),
 )
 
@@ -767,6 +754,6 @@ trinton.render_file(
     segment_name="10",
     includes=[
         "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily",
-        "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily",
+        "/Users/trintonprater/abjad/abjad/scm/abjad.ily",
     ],
 )

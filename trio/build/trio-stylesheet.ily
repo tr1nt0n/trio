@@ -5,9 +5,10 @@
 #(ly:set-option 'relative-includes #t)
 
 \include "../library.ily"
+\include "/Users/trintonprater/abjad-ext-microtones/abjadext/microtones/lilypond/ekmelos-ji-accidental-markups.ily"
 \include "/Users/trintonprater/evans/lilypond/evans-markups.ily"
 \include "/Users/trintonprater/evans/lilypond/evans-spanners.ily"
-\include "/Users/trintonprater/baca/lilypond/baca-circle-bow-markups.ily"
+\include "/Users/trintonprater/baca/baca/scm/baca-circle-bow-markups.ily"
 
 \header {
     dedication = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"to Natasia Reinhardt" \fontsize #0.25 \with-color #white "."}
@@ -70,11 +71,15 @@
         \override Beam.damping = 99
         \override Beam.concaveness = #10000
 
+        \override Clef.layer = 2
         \override Clef.whiteout-style = #'outline
         \override Clef.whiteout = 1
 
         \override DynamicText.font-size = #-2
         \override DynamicLineSpanner.staff-padding = 4
+        \override DynamicText.layer = 2
+        \override DynamicText.whiteout-style = #'outline
+        \override DynamicText.whiteout = 1
 
         \override Glissando.thickness = #2
         \override Glissando.breakable = ##t
@@ -94,6 +99,8 @@
         \override StemTremolo.flag-count = 4
         \override StemTremolo.slope = 0.5
 
+        \override TextScript.font-name = "Bodoni72 Book"
+
         \override Tie.stencil = #flare-tie
         \override Tie.height-limit = 6
         \override Tie.thickness = 1.5
@@ -101,7 +108,13 @@
         tupletFullLength = ##t
         \override TupletBracket.full-length-to-extent = ##f
         % \override TupletBracket.padding = 3
+        \override TupletBracket.layer = 2
+        \override TupletBracket.whiteout-style = #'outline
+        \override TupletBracket.whiteout = 1
         \override TupletNumber.font-size = 1.5
+        \override TupletNumber.layer = 2
+        \override TupletNumber.whiteout-style = #'outline
+        \override TupletNumber.whiteout = 1
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
         \override TupletBracket #'stencil =

@@ -492,17 +492,10 @@ def rhythm_canon(
         ],
     }
 
-    stack = rmakers.stack(
-        rmakers.talea(rhythms, 16),
-        rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
-        rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
-        rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
-        rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
-        rmakers.rewrite_dots(),
-        rmakers.beam(lambda _: abjad.select.tuplets(_)),
+    sel = trinton.make_rhythm_selections(
+        rmaker=rmakers.talea(durations, rhythms, 16),
+        rmaker_commands=[trinton.treat_tuplets(), rmakers.beam],
     )
-
-    sel = trinton.make_rhythm_selections(stack=stack, durations=durations)
 
     container = abjad.Container(sel)
 
@@ -583,28 +576,22 @@ def cello_gliss(
         index,
     )
 
-    _cello_gliss_stacks = {
-        "duration_bracket": rmakers.stack(
-            rmakers.tuplet(rhythms),
-            rmakers.rewrite_dots(),
-            rmakers.duration_bracket(),
-        ),
-        "tuplet": rmakers.stack(
-            rmakers.tuplet(rhythms),
-            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
-            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
-            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
-            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
-            rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.select.tuplets(_)),
-        ),
+    _cello_gliss_commands = {
+        "duration_bracket": [
+            rmakers.rewrite_dots,
+            rmakers.duration_bracket,
+        ],
+        "tuplet": [
+            trinton.treat_tuplets(),
+            rmakers.beam,
+        ],
     }
 
-    stack = _cello_gliss_stacks[notation]
+    commands = _cello_gliss_commands[notation]
 
     selections = trinton.make_rhythm_selections(
-        stack=stack,
-        durations=durations,
+        rmaker=rmakers.tuplet(durations, rhythms),
+        rmaker_commands=commands,
     )
 
     container = abjad.Container(selections)
@@ -628,76 +615,81 @@ def cello_gliss(
 
 
 def toccata_rhythms(score, voice, durations, division, extra_counts, notation):
-    _stacks = {
-        "duration_bracket": rmakers.stack(
-            rmakers.even_division([division], extra_counts=extra_counts),
-            rmakers.duration_bracket(),
-        ),
-        "tuplet": rmakers.stack(
-            rmakers.even_division([division], extra_counts=extra_counts),
-            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
-            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
-            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
-            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
-            rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.select.tuplets(_)),
-        ),
-        "absolute_bracket": rmakers.stack(
-            rmakers.even_division([division], extra_counts=extra_counts),
-            rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.select.tuplets(_)),
-        ),
+    _commands = {
+        "duration_bracket": [
+            rmakers.duration_bracket,
+        ],
+        "tuplet": [
+            trinton.treat_tuplets(),
+            rmakers.beam,
+        ],
+        "absolute_bracket": [
+            rmakers.rewrite_dots,
+            rmakers.beam,
+        ],
     }
 
     selections = trinton.make_and_append_rhythm_selections(
-        score=score, voice_name=voice, stack=_stacks[notation], durations=durations
+        score=score,
+        voice_name=voice,
+        rmaker=rmakers.even_division(durations, [division], extra_counts=extra_counts),
+        rmaker_commands=_commands[notation],
     )
 
     for sel in selections:
         abjad.annotate(sel, toccata, True)
 
 
+def tremolo_container():
+    def tremolo(selections):
+        rmakers.tremolo_container(selections, 4),
+
+    return tremolo
+
+
 def harmonic_glissandi_rhythms(score, voices, durations, tuplets, notation):
 
-    stack1 = rmakers.stack(
-        rmakers.tuplet(tuplets),
-        rmakers.rewrite_dots(),
-        rmakers.duration_bracket(),
-        rmakers.beam(lambda _: abjad.select.tuplets(_)),
-    )
+    commands1 = [
+        rmakers.rewrite_dots,
+        rmakers.duration_bracket,
+        rmakers.beam,
+    ]
 
-    stack2 = rmakers.stack(
-        rmakers.tuplet(tuplets),
-        rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
-        rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
-        rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
-        rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
-        rmakers.rewrite_dots(),
-        rmakers.beam(lambda _: abjad.select.tuplets(_)),
-    )
+    commands2 = [
+        trinton.treat_tuplets(),
+        rmakers.beam,
+    ]
 
-    stack3 = rmakers.stack(
-        rmakers.NoteRhythmMaker(),
-        rmakers.tremolo_container(4),
-    )
+    commands3 = [
+        tremolo_container(),
+    ]
 
-    _stacks = {"duration_bracket": stack1, "tuplet": stack2}
+    _commands = {"duration_bracket": commands1, "tuplet": commands2}
 
-    _voice_to_stack = {
-        "piano 1 voice": _stacks[notation],
-        "piano 2 voice": _stacks[notation],
-        "cello 1 voice": stack3,
-        "cello 2 voice": _stacks[notation],
-        "contrabass 1 voice": stack3,
-        "contrabass 2 voice": _stacks[notation],
+    _voice_to_commands = {
+        "piano 1 voice": _commands[notation],
+        "piano 2 voice": _commands[notation],
+        "cello 1 voice": commands3,
+        "cello 2 voice": _commands[notation],
+        "contrabass 1 voice": commands3,
+        "contrabass 2 voice": _commands[notation],
+    }
+
+    _voice_to_rmaker = {
+        "piano 1 voice": rmakers.tuplet(durations, tuplets),
+        "piano 2 voice": rmakers.tuplet(durations, tuplets),
+        "cello 1 voice": rmakers.note(durations),
+        "cello 2 voice": rmakers.tuplet(durations, tuplets),
+        "contrabass 1 voice": rmakers.note(durations),
+        "contrabass 2 voice": rmakers.tuplet(durations, tuplets),
     }
 
     for voice in voices:
         selections = trinton.make_and_append_rhythm_selections(
             score=score,
             voice_name=voice,
-            stack=_voice_to_stack[voice],
-            durations=durations,
+            rmaker=_voice_to_rmaker[voice],
+            rmaker_commands=_voice_to_commands[voice],
         )
 
         for sel in selections:
@@ -723,27 +715,24 @@ select_periodic_ties_2_4_of_8 = trinton.patterned_tie_index_selector(
 )
 
 
-_matter_stacks = {
-    1: rmakers.stack(
-        rmakers.accelerando(
-            [(1, 20), (1, 8), (1, 32)],
-        ),
-        rmakers.force_rest(select_periodic_ties_2_4_7_8_of_10),
-        rmakers.beam(
-            beam_rests=True,
-        ),
-        rmakers.duration_bracket(),
-    ),
-    2: rmakers.stack(
-        rmakers.accelerando(
-            [(1, 20), (1, 8), (1, 32)],
-        ),
-        rmakers.force_rest(select_periodic_ties_2_4_of_8),
-        rmakers.beam(
-            beam_rests=True,
-        ),
-        rmakers.duration_bracket(),
-    ),
+def beam():
+    def beam_rests(selections):
+        rmakers.beam(selections, beam_rests=True)
+
+    return beam_rests
+
+
+_matter_commands = {
+    1: [
+        trinton.force_rest(select_periodic_ties_2_4_7_8_of_10),
+        beam(),
+        rmakers.duration_bracket,
+    ],
+    2: [
+        trinton.force_rest(select_periodic_ties_2_4_of_8),
+        beam(),
+        rmakers.duration_bracket,
+    ],
 }
 
 
@@ -751,8 +740,11 @@ def matter_broken_rhythms(score, voice, stack, durations):
     tuplets = trinton.make_and_append_rhythm_selections(
         score=score,
         voice_name=voice,
-        stack=_matter_stacks[stack],
-        durations=durations,
+        rmaker=rmakers.accelerando(
+            durations,
+            [(1, 20), (1, 8), (1, 32)],
+        ),
+        rmaker_commands=_matter_commands[stack],
     )
 
     for tuplet in tuplets:
@@ -761,23 +753,16 @@ def matter_broken_rhythms(score, voice, stack, durations):
 
 def contrabass_glissandi_rhythms(score, voice_name, durations):
     selections = trinton.make_rhythm_selections(
-        stack=rmakers.stack(
-            rmakers.tuplet(
-                [
-                    (
-                        1,
-                        1,
-                    ),
-                ]
-            ),
-            rmakers.trivialize(lambda _: abjad.select.tuplets(_)),
-            rmakers.extract_trivial(lambda _: abjad.select.tuplets(_)),
-            rmakers.rewrite_rest_filled(lambda _: abjad.select.tuplets(_)),
-            rmakers.rewrite_sustained(lambda _: abjad.select.tuplets(_)),
-            rmakers.rewrite_dots(),
-            rmakers.beam(lambda _: abjad.select.tuplets(_)),
+        rmaker=rmakers.tuplet(
+            durations,
+            [
+                (
+                    1,
+                    1,
+                ),
+            ],
         ),
-        durations=durations,
+        rmaker_commands=[trinton.treat_tuplets(), rmakers.beam],
     )
 
     tuplets = abjad.select.tuplets(selections)
@@ -1488,36 +1473,6 @@ def finger_pressure(score, voice, half, harm):
         )
 
 
-def write_bow_contact_points(
-    score, voice, contact_points_1, contact_points_2, start_leaves, stop_leaves, padding
-):
-    for (
-        one,
-        two,
-        start_leaf,
-        stop_leaf,
-    ) in zip(contact_points_1, contact_points_2, start_leaves, stop_leaves):
-        indicator1 = abjad.BowContactPoint(one)
-
-        indicator2 = abjad.BowContactPoint(two)
-
-        start_text_span = abjad.StartTextSpan(
-            left_text=indicator1.markup,
-            right_text=indicator2.markup,
-            style="dashed-line-with-arrow",
-        )
-
-        abjad.tweak(start_text_span).padding = padding
-
-        trinton.attach(
-            voice=score[voice], leaves=[start_leaf], attachment=start_text_span
-        )
-
-        trinton.attach(
-            voice=score[voice], leaves=[stop_leaf], attachment=abjad.StopTextSpan()
-        )
-
-
 def make_angle_spanner(score, voice, leaves, direction, left_text, position, padding):
     _positions_to_literals = {
         "start": abjad.LilyPondLiteral(
@@ -1610,17 +1565,17 @@ all_staves = eval(
 
 all_startmarkups = eval(
     """[
-    abjad.StartMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { Piano }")),
-    abjad.StartMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { Violoncello }")),
-    abjad.StartMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { Contrabass }")),
+    abjad.InstrumentName(context="PianoStaff", markup=abjad.Markup(r"\markup { Piano }")),
+    abjad.InstrumentName(context="PianoStaff", markup=abjad.Markup(r"\markup { Violoncello }")),
+    abjad.InstrumentName(context="PianoStaff", markup=abjad.Markup(r"\markup { Contrabass }")),
 ]"""
 )
 
 all_marginmarkups = eval(
     """[
-    abjad.MarginMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { pno. }")),
-    abjad.MarginMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { vc. }")),
-    abjad.MarginMarkup(context="PianoStaff", markup=abjad.Markup(r"\markup { cb. }")),
+    abjad.ShortInstrumentName(context="PianoStaff", markup=abjad.Markup(r"\markup { pno. }")),
+    abjad.ShortInstrumentName(context="PianoStaff", markup=abjad.Markup(r"\markup { vc. }")),
+    abjad.ShortInstrumentName(context="PianoStaff", markup=abjad.Markup(r"\markup { cb. }")),
 ]"""
 )
 
