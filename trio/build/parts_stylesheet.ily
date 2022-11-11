@@ -1,4 +1,4 @@
-\version "2.20.0"
+\version "2.23.14"
 \language english
 #(set-default-paper-size "b4")
 #(set-global-staff-size 12)
@@ -7,7 +7,7 @@
 \include "../library.ily"
 \include "/Users/trintonprater/evans/lilypond/evans-markups.ily"
 \include "/Users/trintonprater/evans/lilypond/evans-spanners.ily"
-\include "/Users/trintonprater/baca/lilypond/baca-circle-bow-markups.ily"
+\include "/Users/trintonprater/baca/baca/scm/baca-circle-bow-markups.ily"
 
 \header {
     dedication = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"to Natasia Reinhardt" \fontsize #0.25 \with-color #white "."}
@@ -17,10 +17,10 @@
 }
 
 \layout {
-    \accidentalStyle forget
+    \accidentalStyle neo-modern
     ragged-bottom = ##t
     ragged-last = ##t
-    % ragged-right = ##t
+    ragged-right = ##t
     \context {
         \name TimeSignatureContext
         \numericTimeSignature
@@ -41,7 +41,7 @@
         \Score
         \numericTimeSignature
         \accepts TimeSignatureContext
-        % proportionalNotationDuration = #(ly:make-moment 1 20)
+        proportionalNotationDuration = #(ly:make-moment 1 20)
         \override SpacingSpanner.uniform-stretching = ##t
         \override Score.SpacingSpanner.strict-note-spacing = ##t
         \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 8) (minimum distance . 8) (padding . 6))
@@ -66,11 +66,15 @@
         \override Beam.damping = 99
         \override Beam.concaveness = #10000
 
+        \override Clef.layer = 2
         \override Clef.whiteout-style = #'outline
         \override Clef.whiteout = 1
 
         \override DynamicText.font-size = #-2
         \override DynamicLineSpanner.staff-padding = 4
+        \override DynamicText.layer = 2
+        \override DynamicText.whiteout-style = #'outline
+        \override DynamicText.whiteout = 1
 
         \override Glissando.thickness = #2
         \override Glissando.breakable = ##t
@@ -96,6 +100,9 @@
 
         tupletFullLength = ##t
         \override TupletBracket.full-length-to-extent = ##f
+        \override TupletBracket.layer = 2
+        \override TupletBracket.whiteout-style = #'outline
+        \override TupletBracket.whiteout = 1
         \override TupletBracket.padding = 2
         \override TupletNumber.font-size = 1
         \override TupletBracket.bracket-visibility = ##t
@@ -118,6 +125,7 @@
         \override TimeSignature.break-visibility = #end-of-line-invisible
         \override TimeSignature.font-size = 7
 		\override TimeSignature.font-name = "Bodoni72"
+        \override TimeSignature.layer = 4
         \override TimeSignature.whiteout-style = #'outline
         \override TimeSignature.whiteout = 1
     }

@@ -2,7 +2,7 @@
 \language "english"
 
 \include "parts_stylesheet.ily"
-\include "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily"
+\include "/Users/trintonprater/abjad/abjad/scm/abjad.ily"
 
 \score {
     \removeWithTag #'voice3
