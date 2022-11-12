@@ -459,7 +459,26 @@ for n in list(range(6, 17)):
         else:
             selections.append(leaf)
 
-    pull_handler(selections[:])
+    pull_handler(selections)
+
+contrabass_2_measures = abjad.select.group_by_measure(
+    abjad.select.leaves(score["contrabass 2 voice"])
+)
+
+for n in list(range(6, 17)):
+
+    selections = []
+
+    for leaf in abjad.select.leaves(contrabass_2_measures[n - 1], pitched=True):
+        if abjad.get.annotation(leaf, trio.vib) is True:
+            pass
+        else:
+            selections.append(leaf)
+
+    for leaf in selections:
+        leaf.note_head.is_forced = True
+
+
 
 trio.pitch_contrabass_glissandi(
     score=score,

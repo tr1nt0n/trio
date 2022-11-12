@@ -1464,12 +1464,12 @@ def small_knee(score, voice, start, stop):
 def finger_pressure(score, voice, half, harm):
     for leaf in half:
         trinton.change_notehead(
-            voice=score[voice], leaves=[leaf], notehead=r"#'triangle"
+            voice=score[voice], leaves=[leaf], notehead=r"triangle"
         )
 
     for leaf in harm:
         trinton.change_notehead(
-            voice=score[voice], leaves=[leaf], notehead=r"#'harmonic-mixed"
+            voice=score[voice], leaves=[leaf], notehead=r"harmonic-mixed"
         )
 
 

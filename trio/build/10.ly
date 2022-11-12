@@ -815,7 +815,7 @@
                                     b,,4
                                     s1
                                     s2.
-                                    c'2.
+                                    c'!2.
                                     % AFTER:
                                     % SPANNER_STARTS:
                                     - \tweak padding #12.5
@@ -832,14 +832,14 @@
                                     \override Accidental.stencil = ##f
                                     \override NoteColumn.glissando-skip = ##t
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    c'!4
                                     % AFTER:
                                     % SPANNER_STARTS:
                                     ~
                                     % OPENING:
                                     % COMMANDS:
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    c'!8.
                                     % AFTER:
                                     % START_BEAM:
                                     [
@@ -850,7 +850,7 @@
                                     \revert NoteHead.no-ledgers
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    cs'16
+                                    cs'!16
                                     % AFTER:
                                     % ARTICULATIONS:
                                     - \snappizzicato
@@ -859,7 +859,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    c'!8.
                                     % AFTER:
                                     % START_BEAM:
                                     [
@@ -878,7 +878,7 @@
                                     \revert NoteHead.no-ledgers
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    cqs'16
+                                    cqs'!16
                                     % AFTER:
                                     % ARTICULATIONS:
                                     - \snappizzicato
@@ -887,7 +887,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16.
+                                    c'!16.
                                     % AFTER:
                                     % START_BEAM:
                                     [
@@ -907,14 +907,14 @@
                                     \undo \hide NoteHead
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \one-eighth-sharp-markup
-                                    c'32
+                                    c'!32
                                     % AFTER:
                                     % ARTICULATIONS:
                                     - \snappizzicato
                                     % OPENING:
                                     % COMMANDS:
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    c'!8
                                     % AFTER:
                                     % STOP_BEAM:
                                     ]
@@ -930,7 +930,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    c'!8.
                                     % AFTER:
                                     % START_BEAM:
                                     [
@@ -941,7 +941,7 @@
                                     \revert NoteHead.no-ledgers
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    cqs'16
+                                    cqs'!16
                                     % AFTER:
                                     % ARTICULATIONS:
                                     - \snappizzicato
@@ -950,7 +950,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    c'!8.
                                     % AFTER:
                                     % START_BEAM:
                                     [
@@ -971,13 +971,13 @@
                                     \revert Staff.Stem.stemlet-length
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \one-eighth-sharp-markup
-                                    c'16
+                                    c'!16
                                     % AFTER:
                                     % ARTICULATIONS:
                                     - \snappizzicato
                                     % STOP_BEAM:
                                     ]
-                                    c'4
+                                    c'!4
                                     % AFTER:
                                     % SPANNER_STARTS:
                                     \glissando
@@ -991,7 +991,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    c'!8.
                                     % AFTER:
                                     % START_BEAM:
                                     [
@@ -1002,13 +1002,13 @@
                                     \revert NoteHead.no-ledgers
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    cs'16
+                                    cs'!16
                                     % AFTER:
                                     % ARTICULATIONS:
                                     - \snappizzicato
                                     % STOP_BEAM:
                                     ]
-                                    c'4
+                                    c'!4
                                     % AFTER:
                                     % SPANNER_STARTS:
                                     \glissando
@@ -1022,7 +1022,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
+                                    c'!16
                                     % AFTER:
                                     % START_BEAM:
                                     [
@@ -1032,14 +1032,14 @@
                                     \revert NoteColumn.glissando-skip
                                     \revert NoteHead.no-ledgers
                                     \undo \hide NoteHead
-                                    cqs'16
+                                    cqs'!16
                                     % AFTER:
                                     % ARTICULATIONS:
                                     - \snappizzicato
                                     % OPENING:
                                     % COMMANDS:
                                     \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    c'!8
                                     % AFTER:
                                     % STOP_BEAM:
                                     ]
@@ -1055,7 +1055,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    c'!8.
                                     % AFTER:
                                     % START_BEAM:
                                     [
@@ -1068,7 +1068,7 @@
                                     \revert Staff.Stem.stemlet-length
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \one-eighth-sharp-markup
-                                    c'16
+                                    c'!16
                                     % AFTER:
                                     % ARTICULATIONS:
                                     - \snappizzicato
@@ -1114,7 +1114,7 @@
                                     % AFTER:
                                     % SPANNER_STOPS:
                                     \)
-                                    c'4
+                                    c'!4
                                     % AFTER:
                                     % SPANNER_STARTS:
                                     - \tweak padding #12.5
@@ -1132,7 +1132,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    c'!8.
                                     % AFTER:
                                     % START_BEAM:
                                     [
@@ -1145,7 +1145,7 @@
                                     \revert Staff.Stem.stemlet-length
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \one-eighth-sharp-markup
-                                    c'16
+                                    c'!16
                                     % AFTER:
                                     % ARTICULATIONS:
                                     - \snappizzicato
@@ -1187,7 +1187,7 @@
                                     % AFTER:
                                     % GROB_REVERTS:
                                     \revert TupletNumber.text
-                                    c'8
+                                    c'!8
                                     % AFTER:
                                     % SPANNER_STARTS:
                                     - \tweak circled-tip ##t
@@ -1206,14 +1206,14 @@
                                     \override Accidental.stencil = ##f
                                     \override NoteColumn.glissando-skip = ##t
                                     \override NoteHead.no-ledgers = ##t
-                                    c'4
+                                    c'!4
                                     % AFTER:
                                     % SPANNER_STARTS:
                                     ~
                                     % OPENING:
                                     % COMMANDS:
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    c'!8.
                                     % AFTER:
                                     % START_BEAM:
                                     [
@@ -1224,7 +1224,7 @@
                                     \revert NoteHead.no-ledgers
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    cs'16
+                                    cs'!16
                                     % AFTER:
                                     % ARTICULATIONS:
                                     - \snappizzicato
@@ -1266,7 +1266,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    c'!8.
                                     % AFTER:
                                     % START_BEAM:
                                     [
@@ -1289,7 +1289,7 @@
                                     \revert NoteHead.no-ledgers
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    cqs'16
+                                    cqs'!16
                                     % AFTER:
                                     % ARTICULATIONS:
                                     - \snappizzicato
@@ -1298,7 +1298,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
+                                    c'!8.
                                     % AFTER:
                                     % START_BEAM:
                                     [
@@ -1319,13 +1319,13 @@
                                     \revert Staff.Stem.stemlet-length
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \one-eighth-sharp-markup
-                                    c'16
+                                    c'!16
                                     % AFTER:
                                     % ARTICULATIONS:
                                     - \snappizzicato
                                     % STOP_BEAM:
                                     ]
-                                    c'2
+                                    c'!2
                                     % AFTER:
                                     % SPANNER_STARTS:
                                     \glissando
@@ -1339,7 +1339,7 @@
                                     \override NoteColumn.glissando-skip = ##t
                                     \override NoteHead.no-ledgers = ##t
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'16
+                                    c'!16
                                     % AFTER:
                                     % START_BEAM:
                                     [
@@ -1350,7 +1350,7 @@
                                     \revert NoteHead.no-ledgers
                                     \undo \hide NoteHead
                                     \revert Staff.Stem.stemlet-length
-                                    cqs'16
+                                    cqs'!16
                                     % AFTER:
                                     % ARTICULATIONS:
                                     - \snappizzicato

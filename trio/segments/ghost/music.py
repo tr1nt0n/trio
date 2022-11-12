@@ -30,12 +30,6 @@ for voice in [
 ]:
     trinton.append_rests(score=score, voice=voice, rests=[abjad.Rest("r2")])
 
-# trinton.make_and_append_rhythm_selections(
-#     score=score,
-#     voice_name="piano 1 voice",
-#     stack=rmakers.stack(rmakers.tuplet([(1, 1, 1, 1, 1, 1)]), rmakers.beam()),
-#     durations=[(1, 4), (1, 4), (1, 4)],
-# )
 
 trinton.make_and_append_rhythm_selections(
     score=score,
@@ -59,13 +53,13 @@ handler = evans.PitchHandler(
             16,
             21,
             16,
-            12,
+            13,
             7,
             13,
             16,
             19,
             16,
-            12,
+            13,
             6,
             9,
             14,

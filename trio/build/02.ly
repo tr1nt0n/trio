@@ -3008,7 +3008,7 @@
                                         % OPENING:
                                         % COMMANDS:
                                         \clef "bass"
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         bf64
                                         % AFTER:
                                         % ARTICULATIONS:
@@ -3021,7 +3021,7 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e64
                                         % BEFORE:
                                         % GROB_OVERRIDES:
@@ -3029,7 +3029,7 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         bf64
                                         % BEFORE:
                                         % GROB_OVERRIDES:
@@ -3037,7 +3037,7 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         fs64
                                         % BEFORE:
                                         % GROB_OVERRIDES:
@@ -3045,7 +3045,7 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c64
                                         % BEFORE:
                                         % GROB_OVERRIDES:
@@ -3053,7 +3053,7 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         af64
                                         % BEFORE:
                                         % GROB_OVERRIDES:
@@ -3061,7 +3061,7 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         g64
                                         % BEFORE:
                                         % GROB_OVERRIDES:
@@ -3069,7 +3069,7 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         b,64
                                         % BEFORE:
                                         % GROB_OVERRIDES:
@@ -3077,7 +3077,7 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         g64
                                         % BEFORE:
                                         % GROB_OVERRIDES:
@@ -3085,7 +3085,7 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         b,64
                                         % BEFORE:
                                         % GROB_OVERRIDES:
@@ -3093,7 +3093,7 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         a64
                                         % BEFORE:
                                         % GROB_OVERRIDES:
@@ -3101,7 +3101,7 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         b,64
                                         % BEFORE:
                                         % GROB_OVERRIDES:
@@ -3109,7 +3109,7 @@
                                         \once \override Dots.transparent = ##t
                                         \once \override Flag.transparent = ##t
                                         \once \override Stem.transparent = ##t
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         a64
                                         % BEFORE:
                                         % GROB_OVERRIDES:

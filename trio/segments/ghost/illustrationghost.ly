@@ -1,4 +1,4 @@
-\version "2.20.0"
+\version "2.23.14"
 \language "english"
 \include "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily"
 \include "/Users/trintonprater/abjad/abjad/scm/abjad.ily"
@@ -347,7 +347,7 @@
                                         % OPENING:
                                         % COMMANDS:
                                         \revert Staff.Stem.stemlet-length
-                                        c''''16
+                                        cs''''16
                                         % AFTER:
                                         % STOP_BEAM:
                                         ]
@@ -370,7 +370,7 @@
                                         % OPENING:
                                         % COMMANDS:
                                         \revert Staff.Stem.stemlet-length
-                                        c''''16
+                                        cs''''16
                                         % AFTER:
                                         % STOP_BEAM:
                                         ]

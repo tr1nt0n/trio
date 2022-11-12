@@ -1,4 +1,4 @@
-\version "2.20.0"
+\version "2.23.14"
 \language "english"
 \include "/Users/trintonprater/scores/trio/trio/build/trio-stylesheet.ily"
 \include "/Users/trintonprater/abjad/abjad/scm/abjad.ily"
@@ -259,7 +259,7 @@
                                         % ABSOLUTE_BEFORE:
                                         % COMMANDS:
                                         \slurDashed
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         cs''32
                                         % AFTER:
                                         % ARTICULATIONS:
@@ -270,107 +270,107 @@
                                         (
                                         % COMMANDS:
                                         \boxed-markup "Ord., FB" 1
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         af''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         af''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         af''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         cs''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         cs''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         af''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         ef''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         ef''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         ef''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         af''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         af''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         cs''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         cs''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         cs''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         cs''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         af''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d''32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f''32
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -460,7 +460,7 @@
                                         \)
                                         % SPANNER_STARTS:
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         cqs''16
                                         % AFTER:
                                         % ARTICULATIONS:
@@ -481,34 +481,34 @@
                                     % OPEN_BRACKETS:
                                     \times 2/3
                                     {
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         d''32
                                         % AFTER:
                                         % START_BEAM:
                                         [
                                         % SPANNER_STARTS:
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         bqs'32
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         eqs''32
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         c''32
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         e''32
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         cqs''32
                                         % AFTER:
                                         % ARTICULATIONS:
@@ -533,7 +533,7 @@
                                     % ABSOLUTE_BEFORE:
                                     % COMMANDS:
                                     \slurDashed
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     b'32
                                     % AFTER:
                                     % START_BEAM:
@@ -548,17 +548,17 @@
                                     - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XSB }
                                     \startTextSpan
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     c''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     fs''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     c''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     b'32
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -567,22 +567,22 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \>
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     c''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     b'32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     g''32
                                     % AFTER:
                                     % SPANNER_STOPS:
                                     \stopTextSpan
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     b'32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     c''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     fs''32
                                     % AFTER:
                                     % SPANNER_STOPS:
@@ -602,7 +602,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "tenor"
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f'32
                                     % AFTER:
                                     % SPANNER_STARTS:
@@ -610,13 +610,13 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     c'32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f'32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     ef'32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     af'32
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -625,13 +625,13 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \>
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     ef'32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     fs'32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     ef'32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     af'32
                                     % AFTER:
                                     % SPANNER_STOPS:
@@ -645,7 +645,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "treble"
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f''32
                                     % AFTER:
                                     % SPANNER_STOPS:
@@ -655,23 +655,23 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     g''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     g''32
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -685,19 +685,19 @@
                                     - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XSB }
                                     \startTextSpan
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     g''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b'32
                                     % AFTER:
                                     % SPANNER_STOPS:
@@ -711,7 +711,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "tenor"
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef'32
                                     % AFTER:
                                     % SPANNER_STARTS:
@@ -719,15 +719,15 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs'32
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -736,12 +736,12 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \>
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     cs'32
                                     % AFTER:
                                     % SPANNER_STOPS:
                                     \stopTextSpan
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     d'32
                                     cs'32
                                     fs'32
@@ -807,7 +807,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "tenor"
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     e'32
                                     % AFTER:
                                     % SPANNER_STARTS:
@@ -815,20 +815,20 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     d'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     cs'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     af'32
                                     % AFTER:
                                     % SPANNER_STOPS:
                                     \stopTextSpan
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef'32
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -837,17 +837,17 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \>
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     cs'32
                                     % AFTER:
                                     % SPANNER_STOPS:
@@ -867,7 +867,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "treble"
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c''32
                                     % AFTER:
                                     % SPANNER_STARTS:
@@ -875,50 +875,50 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     fs''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     c''32
                                     % AFTER:
                                     % SPANNER_STOPS:
                                     \stopTextSpan
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     c''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     fs''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     fs''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f''32
                                     % AFTER:
                                     % SPANNER_STARTS:
@@ -927,30 +927,30 @@
                                     - \tweak bound-details.left.text \markup \concat { \italic { XSB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XFB }
                                     \startTextSpan
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     fs''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     c''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     b'32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     g''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     b'32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     c''32
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     b'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c''32
                                     % AFTER:
                                     % SPANNER_STOPS:
                                     \stopTextSpan
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs''32
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -959,15 +959,15 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \>
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b'32
                                     % AFTER:
                                     % SPANNER_STARTS:
@@ -976,21 +976,21 @@
                                     - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XSB }
                                     \startTextSpan
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     g''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b'32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs''32
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f''32
                                     % AFTER:
                                     % SPANNER_STOPS:
@@ -1004,7 +1004,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "tenor"
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef'32
                                     % AFTER:
                                     % SPANNER_STARTS:
@@ -1110,13 +1110,13 @@
                                     fs'64
                                     ef'64
                                     fs'64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef'64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     af'64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef'64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     af'64
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -1125,17 +1125,17 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \>
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef'64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs'64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     cs'64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     d'64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     e'64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f'64
                                     % AFTER:
                                     % SPANNER_STOPS:
@@ -1150,7 +1150,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "bass"
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c'64
                                     % AFTER:
                                     % SPANNER_STARTS:
@@ -1158,27 +1158,27 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     af64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     g64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     af64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     g64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     g64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     e64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     g64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef64
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -1192,17 +1192,17 @@
                                     - \tweak bound-details.left.text \markup \concat { \italic { XSB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XFB }
                                     \startTextSpan
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     g64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     af64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b,64
                                     % AFTER:
                                     % SPANNER_STOPS:
@@ -1216,7 +1216,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "tenor"
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c'64
                                     % AFTER:
                                     % SPANNER_STARTS:
@@ -1224,28 +1224,28 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs'64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     cs'64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs'64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     cs'64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     fs'64
                                     % AFTER:
                                     % SPANNER_STOPS:
                                     \stopTextSpan
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     cs'64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     fs'64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     c'64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     af'64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     c'64
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -1254,21 +1254,21 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \>
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     fs'64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     cs'64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     e'64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     cs'64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     e'64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     cs'64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     fs'64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     cs'64
                                     % AFTER:
                                     % SPANNER_STOPS:
@@ -1282,7 +1282,7 @@
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "bass"
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     af64
                                     % AFTER:
                                     % SPANNER_STARTS:
@@ -1290,27 +1290,27 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     af64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     g64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     ef64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     g64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     af64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     f64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     cs64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     bf64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     cs64
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     bf64
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -1324,25 +1324,25 @@
                                     - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XSB }
                                     \startTextSpan
-                                    \tweak style #'#'harmonic-mixed
+                                    \tweak style #'harmonic-mixed
                                     cs64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     bf64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     bf64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     d64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     a64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     a64
                                     % AFTER:
                                     % SPANNER_STOPS:
@@ -1353,7 +1353,7 @@
                                     % ABSOLUTE_BEFORE:
                                     % COMMANDS:
                                     \slurDashed
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b,64
                                     % AFTER:
                                     % SPANNER_STARTS:
@@ -1361,15 +1361,15 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     a,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     ef,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     c,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     af,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     bf,64
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -1378,34 +1378,34 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \>
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     af,64
                                     % AFTER:
                                     % SPANNER_STOPS:
                                     \stopTextSpan
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     bf,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     af,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     bf,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     fs,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     f,64
-                                    \tweak style #'#'triangle
+                                    \tweak style #'triangle
                                     b,64
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -1627,7 +1627,7 @@
                                         % OPENING:
                                         % COMMANDS:
                                         \clef "treble"
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
                                         % AFTER:
                                         % ARTICULATIONS:
@@ -1638,107 +1638,107 @@
                                         (
                                         % COMMANDS:
                                         \boxed-markup "Ord., FB" 1
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         g'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         g'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         g'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         fs'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         g'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         g'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         g'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         g'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         g'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         fs'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         fs'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         fs'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         fs'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         a'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         a'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         a'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         a'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         fs'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         g'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         e'32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f'32
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -1769,7 +1769,7 @@
                                         % OPENING:
                                         % COMMANDS:
                                         \clef "bass"
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         ef64
                                         % AFTER:
                                         % START_BEAM:
@@ -1783,88 +1783,88 @@
                                         - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \italic { XSB }
                                         \startTextSpan
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         ef64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         ef64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         ef64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         ef64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         fs64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         fs64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         a64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         cs64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b,64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         cs64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         a64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         a64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         a64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         cs64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         b,64
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         ef64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         f64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         bf,64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         bf64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         bf,64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         c64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         bf,64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         bf64
                                         % AFTER:
                                         % SPANNER_STOPS:
                                         \stopTextSpan
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         bf,64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         bf64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         bf,64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         c64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         e64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         c64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         e64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         f64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         fs64
                                         % AFTER:
                                         % ARTICULATIONS:
@@ -1872,25 +1872,25 @@
                                         % SPANNER_STARTS:
                                         - \tweak circled-tip ##t
                                         \>
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         f64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         c64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         f64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         fs64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         f64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         c64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         e64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         bf64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         d64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         bf64
                                         % AFTER:
                                         % SPANNER_STARTS:
@@ -1899,17 +1899,17 @@
                                         - \tweak bound-details.left.text \markup \concat { \italic { XSB } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \italic { XFB }
                                         \startTextSpan
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         e64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         c64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         g64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         c64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         g64
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         c64
                                         b,64
                                         fs64
@@ -1987,14 +1987,14 @@
                                         e'16
                                         a'16
                                         ef'16
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         a'16
                                         % AFTER:
                                         % SPANNER_STOPS:
                                         \stopTextSpan
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         e'16
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         af'16
                                         % AFTER:
                                         % ARTICULATIONS:
@@ -2002,11 +2002,11 @@
                                         % SPANNER_STARTS:
                                         - \tweak circled-tip ##t
                                         \>
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         e'16
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         a'16
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         e'16
                                         % AFTER:
                                         % SPANNER_STARTS:
@@ -2015,15 +2015,15 @@
                                         - \tweak bound-details.left.text \markup \concat { \italic { XSB } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \italic { XFB }
                                         \startTextSpan
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         a'16
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         ef'16
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         cs'16
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d'16
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         cs'16
                                         d'16
                                         % AFTER:

@@ -1,4 +1,4 @@
-\version "2.20.0"
+\version "2.23.14"
 \language "english"
 \include "../../build/trio-stylesheet.ily"
 \include "/Users/trintonprater/abjad/abjad/scm/abjad.ily"
@@ -104,7 +104,7 @@
                                         % OPENING:
                                         % COMMANDS:
                                         \clef "bass"
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         fs4
                                         % AFTER:
                                         % ARTICULATIONS:
@@ -116,7 +116,7 @@
                                         \>
                                         \(
                                         \glissando
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         cs,16
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -144,28 +144,28 @@
                                         % COMMANDS:
                                         \boxed-markup "XFB" 1
                                         e32
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         b32
                                         % AFTER:
                                         % ARTICULATIONS:
                                         \ff
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         g32
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         d32
                                         % AFTER:
                                         % COMMANDS:
                                         \boxed-markup "XSB" 1
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         f,32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         bf,32
                                         % OPENING:
                                         % COMMANDS:
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         af,32
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -216,7 +216,7 @@
                                         % COMMANDS:
                                         \clef "treble"
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         cs''16
                                         % AFTER:
                                         % ARTICULATIONS:
@@ -227,19 +227,19 @@
                                         % SPANNER_STARTS:
                                         \(
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         a''16
                                         % AFTER:
                                         % ARTICULATIONS:
                                         \ff
                                         % SPANNER_STARTS:
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         e''16
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         b''16
                                         % AFTER:
                                         % SPANNER_STARTS:
@@ -247,7 +247,7 @@
                                         % OPENING:
                                         % COMMANDS:
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         g''16
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -374,7 +374,7 @@
                                         % OPENING:
                                         % COMMANDS:
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         fs16
                                         % AFTER:
                                         % ARTICULATIONS:
@@ -388,27 +388,27 @@
                                         \>
                                         \(
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         cs16
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         e16
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         b,16
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         a16
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \glissando
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         g16
                                         % AFTER:
                                         % SPANNER_STARTS:
@@ -416,7 +416,7 @@
                                         % OPENING:
                                         % COMMANDS:
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         d'16
                                         % AFTER:
                                         % ARTICULATIONS:
@@ -437,7 +437,7 @@
                                         % OPENING:
                                         % COMMANDS:
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f8
                                         % AFTER:
                                         % START_BEAM:
@@ -448,14 +448,14 @@
                                         % OPENING:
                                         % COMMANDS:
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         c8
                                         % AFTER:
                                         % STOP_BEAM:
                                         ]
                                         % SPANNER_STARTS:
                                         \glissando
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         af4.
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -487,25 +487,25 @@
                                         \boxed-markup "XSB" 1
                                         bf32
                                         fs32
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         cs32
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         e32
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         b,32
                                         % AFTER:
                                         % COMMANDS:
                                         \boxed-markup "XFB" 1
-                                        \tweak style #'#'triangle
+                                        \tweak style #'triangle
                                         a,32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         g,32
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         d32
                                         % OPENING:
                                         % COMMANDS:
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak style #'#'harmonic-mixed
+                                        \tweak style #'harmonic-mixed
                                         f32
                                         % AFTER:
                                         % ARTICULATIONS:

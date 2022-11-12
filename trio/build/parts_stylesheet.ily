@@ -105,6 +105,9 @@
         \override TupletBracket.whiteout = 1
         \override TupletBracket.padding = 2
         \override TupletNumber.font-size = 1
+        \override TupletNumber.layer = 2
+        \override TupletNumber.whiteout-style = #'outline
+        \override TupletNumber.whiteout = 1
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
         \override TupletBracket #'stencil =

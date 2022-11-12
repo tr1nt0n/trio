@@ -341,7 +341,7 @@
                                         % OPENING:
                                         % COMMANDS:
                                         \revert Staff.Stem.stemlet-length
-                                        c''''16
+                                        cs''''16
                                         % AFTER:
                                         % STOP_BEAM:
                                         ]
@@ -364,7 +364,7 @@
                                         % OPENING:
                                         % COMMANDS:
                                         \revert Staff.Stem.stemlet-length
-                                        c''''16
+                                        cs''''16
                                         % AFTER:
                                         % STOP_BEAM:
                                         ]

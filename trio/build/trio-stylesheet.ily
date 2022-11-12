@@ -1,4 +1,4 @@
-\version "2.20.0"
+\version "2.23.14"
 \language english
 #(set-default-paper-size "11x17landscape")
 #(set-global-staff-size 9.5)
@@ -18,7 +18,7 @@
 }
 
 \layout {
-    \accidentalStyle dodecaphonic
+    \accidentalStyle neo-modern
     ragged-bottom = ##t
     ragged-last = ##t
     ragged-right = ##t
