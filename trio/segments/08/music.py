@@ -392,7 +392,7 @@ trinton.write_text_span(
         5,
         10,
     ],
-    padding=3,
+    padding=10.5,
 )
 
 for leaf, met in zip(

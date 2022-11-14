@@ -169,6 +169,18 @@ trio.write_marginmarkups(score=score)
 
 # global attachments
 
+trinton.attach_multiple(
+    score=score,
+    voice="Global Context",
+    leaves=[0, -1],
+    attachments=[
+        abjad.LilyPondLiteral(
+            r"\once \override Score.BarLine.transparent = ##f", "absolute_after"
+        ),
+        abjad.BarLine("||"),
+    ],
+)
+
 for leaf, attachments in zip(
     [
         0,
@@ -179,26 +191,6 @@ for leaf, attachments in zip(
     trinton.attach_multiple(
         score=score, voice="Global Context", leaves=[leaf], attachments=attachments
     )
-
-for voice, leaves in zip(
-    [
-        "piano 1 voice",
-        "piano 2 voice",
-        "cello 1 voice",
-        "cello 2 voice",
-        "contrabass 1 voice",
-        "contrabass 2 voice",
-    ],
-    [
-        [0, -1],
-        [0, -1],
-        [0, -1],
-        [11, -1],
-        [0, -1],
-        [0, -1],
-    ],
-):
-    trinton.attach(voice=score[voice], leaves=leaves, attachment=abjad.BarLine("||"))
 
 # piano attachments
 
@@ -267,7 +259,7 @@ trinton.attach(
 trinton.attach(
     voice=score["cello 1 voice"],
     leaves=[1],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Crine" 1', "before"),
+    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Crine" 1', "after"),
 )
 
 for voice in ["cello 1 voice", "contrabass 1 voice"]:
@@ -276,7 +268,7 @@ for voice in ["cello 1 voice", "contrabass 1 voice"]:
     trinton.attach(
         voice=score[voice],
         leaves=[1],
-        attachment=abjad.LilyPondLiteral(r"- \baca-circle-fast-markup", "before"),
+        attachment=abjad.LilyPondLiteral(r"- \baca-circle-fast-markup", "after"),
     )
 
     trinton.attach(voice=score[voice], leaves=[1], attachment=abjad.Dynamic("p"))

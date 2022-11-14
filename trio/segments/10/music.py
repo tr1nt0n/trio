@@ -364,13 +364,13 @@ trio.write_marginmarkups(score=score)
 
 # global attachments
 
-trinton.attach(
-    voice=score["Global Context"],
-    leaves=[
-        11,
-    ],
-    attachment=abjad.LilyPondLiteral(r"\pageBreak", "absolute_after"),
-)
+# trinton.attach(
+#     voice=score["Global Context"],
+#     leaves=[
+#         11,
+#     ],
+#     attachment=abjad.LilyPondLiteral(r"\pageBreak", "absolute_after"),
+# )
 
 trinton.attach(
     voice=score["Global Context"],
@@ -384,7 +384,7 @@ trinton.write_text_span(
     end_text=r"\markup { . }",
     start_leaf=[0],
     stop_leaf=[-2],
-    padding=3,
+    padding=10.5,
 )
 
 trinton.attach_multiple(
@@ -477,7 +477,6 @@ for n in list(range(6, 17)):
 
     for leaf in selections:
         leaf.note_head.is_forced = True
-
 
 
 trio.pitch_contrabass_glissandi(
@@ -678,7 +677,10 @@ trinton.attach_multiple(
 trinton.attach(
     voice=score["contrabass 2 voice"],
     leaves=[0],
-    attachment=abjad.LilyPondLiteral(r'\boxed-markup "Detune IV" 1', "after"),
+    attachment=abjad.LilyPondLiteral(
+        r'\boxed-markup "Detune IV ( until string rattles against the fingerboard )" 1',
+        "after",
+    ),
 )
 
 trinton.attach(
@@ -756,8 +758,16 @@ trinton.attach(
     ),
 )
 
-trinton.attach(
-    voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
+trinton.attach_multiple(
+    score=score,
+    voice="Global Context",
+    leaves=[-1],
+    attachments=[
+        abjad.LilyPondLiteral(
+            r"\once \override Score.BarLine.transparent = ##f", "absolute_after"
+        ),
+        abjad.BarLine("||"),
+    ],
 )
 
 # extract parts

@@ -46,6 +46,7 @@
             % AFTER:
             % COMMANDS:
             \bar "||"
+            \once \override Score.BarLine.transparent = ##f
         % CLOSE_BRACKETS:
         }
         % BEFORE:
@@ -54,7 +55,7 @@
         % OPEN_BRACKETS:
         {
             % OPEN_BRACKETS:
-            \context ChoirStaff = "Staff Group"
+            \context StaffGroup = "Staff Group"
             <<
                 % BEFORE:
                 % COMMANDS:
@@ -62,7 +63,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 1"
+                    \context GrandStaff = "sub group 1"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -70,7 +71,7 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "cello 1 staff"
+                            \context BowStaff = "cello 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "cello 1 voice"
@@ -78,7 +79,7 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override Rest.transparent = ##t
-                                    \set PianoStaff.shortInstrumentName = \markup { vc. }
+                                    \set GrandStaff.shortInstrumentName = \markup { vc. }
                                     r1 * 5/4
                                     % BEFORE:
                                     % COMMANDS:
@@ -103,12 +104,14 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override MultiMeasureRest.transparent = ##t
+                                    \once \override Score.BarLine.transparent = ##f
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     R1 * 1/4
                                     % AFTER:
                                     % MARKUP:
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     % COMMANDS:
+                                    \once \override Score.BarLine.transparent = ##f
                                     \stopStaff \startStaff
                                 % CLOSE_BRACKETS:
                                 }
@@ -147,7 +150,7 @@
                                     % SPANNER_STARTS:
                                     - \tweak circled-tip ##t
                                     \>
-                                    - \tweak padding #15.5
+                                    - \tweak padding #14.5
                                     - \abjad-dashed-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \italic { MSP } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { ST }
@@ -992,12 +995,14 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override MultiMeasureRest.transparent = ##t
+                                    \once \override Score.BarLine.transparent = ##f
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     R1 * 1/4
                                     % AFTER:
                                     % MARKUP:
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     % COMMANDS:
+                                    \once \override Score.BarLine.transparent = ##f
                                     \stopStaff \startStaff
                                 % CLOSE_BRACKETS:
                                 }
@@ -1015,7 +1020,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 2"
+                    \context GrandStaff = "sub group 2"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -1023,7 +1028,7 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "contrabass 1 staff"
+                            \context BowStaff = "contrabass 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "contrabass 1 voice"
@@ -1031,7 +1036,7 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override Rest.transparent = ##t
-                                    \set PianoStaff.shortInstrumentName = \markup { cb. }
+                                    \set GrandStaff.shortInstrumentName = \markup { cb. }
                                     r1 * 5/4
                                     % BEFORE:
                                     % COMMANDS:
@@ -1056,12 +1061,14 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override MultiMeasureRest.transparent = ##t
+                                    \once \override Score.BarLine.transparent = ##f
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     R1 * 1/4
                                     % AFTER:
                                     % MARKUP:
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     % COMMANDS:
+                                    \once \override Score.BarLine.transparent = ##f
                                     \stopStaff \startStaff
                                 % CLOSE_BRACKETS:
                                 }
@@ -1470,12 +1477,14 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override MultiMeasureRest.transparent = ##t
+                                    \once \override Score.BarLine.transparent = ##f
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     R1 * 1/4
                                     % AFTER:
                                     % MARKUP:
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     % COMMANDS:
+                                    \once \override Score.BarLine.transparent = ##f
                                     \stopStaff \startStaff
                                 % CLOSE_BRACKETS:
                                 }
@@ -1493,7 +1502,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 3"
+                    \context GrandStaff = "sub group 3"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -1509,7 +1518,7 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \ottava 1
-                                    \set PianoStaff.shortInstrumentName = \markup { pno. }
+                                    \set GrandStaff.shortInstrumentName = \markup { pno. }
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "treble"
@@ -2038,12 +2047,14 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override MultiMeasureRest.transparent = ##t
+                                    \once \override Score.BarLine.transparent = ##f
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     R1 * 1/4
                                     % AFTER:
                                     % MARKUP:
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     % COMMANDS:
+                                    \once \override Score.BarLine.transparent = ##f
                                     \stopStaff \startStaff
                                 % CLOSE_BRACKETS:
                                 }
@@ -2098,12 +2109,14 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override MultiMeasureRest.transparent = ##t
+                                    \once \override Score.BarLine.transparent = ##f
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     R1 * 1/4
                                     % AFTER:
                                     % MARKUP:
                                     - \markup \huge { \musicglyph "scripts.ufermata" }
                                     % COMMANDS:
+                                    \once \override Score.BarLine.transparent = ##f
                                     \stopStaff \startStaff
                                 % CLOSE_BRACKETS:
                                 }

@@ -657,7 +657,7 @@ trinton.write_text_span(
         4,
         9,
     ],
-    padding=3,
+    padding=10.5,
 )
 
 for leaf, met in zip(
@@ -708,7 +708,8 @@ trinton.attach(
     leaves=[
         9,
     ],
-    attachment=abjad.Markup(r"\markup \abs-fontsize #15 { ×6 }"),
+    attachment=abjad.Markup(r"\markup \abs-fontsize #22 { ×6 }"),
+    direction=abjad.UP,
 )
 
 # piano pitching/attachments

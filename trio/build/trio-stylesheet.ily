@@ -1,7 +1,7 @@
 \version "2.23.14"
 \language english
 #(set-default-paper-size "11x17landscape")
-#(set-global-staff-size 9.5)
+#(set-global-staff-size 12)
 #(ly:set-option 'relative-includes #t)
 
 \include "../library.ily"
@@ -35,12 +35,15 @@
         \override MetronomeMark.stencil = ##f
 		\override TimeSignature.X-extent = #'(0 . -25)
         \override TimeSignature.Y-extent = #'(25 . 0)
-        \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 12) (minimum-distance . 12) (padding . 10) (stretchability . 0))
+        \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 0) (minimum-distance . 7) (padding . 2) (stretchability . 0))
         \override TimeSignature.break-visibility = #end-of-line-invisible
         \override TimeSignature.font-size = 7
 		\override TimeSignature.font-name = "Bodoni72"
         \override TimeSignature.X-offset = -1.5
         \override TimeSignature.Y-offset = 3
+        \override TimeSignature.whiteout-style = #'outline
+        \override TimeSignature.whiteout = 1
+        \override TimeSignature.layer = 4
     }
 
     \context {
@@ -49,7 +52,8 @@
         \accepts TimeSignatureContext
         proportionalNotationDuration = #(ly:make-moment 1 30)
         % \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 15) (minimum-distance . 15) (padding . 5))
-        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 15) (minimum distance . 15) (padding . 6))
+        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 0) (minimum distance . 7) (padding . 7) (stretchability . 28))
+        \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 0) (minimum distance . 7) (padding . 7) (stretchability . 28))
 
         \override AccidentalSuggestion.avoid-slur = #'ignore
 
@@ -57,11 +61,12 @@
         \override BarLine.transparent = ##t
         % \override BarLine.X-extent = #'(0 . 0)
         \override BarLine.thick-thickness = #8
+        \override BarLine.bar-extent = #'(-2 . 2)
 
         \override BarNumber.stencil = #(make-stencil-circler 0.1 0.75 ly:text-interface::print)
         \override BarNumber.Y-extent = ##f
 		\override BarNumber.Y-offset = 0
-		\override BarNumber.extra-offset = #'(-4 . -4)
+		\override BarNumber.extra-offset = #'(-2 . 4)
         \override BarNumber.font-size = 2
         \override BarNumber.font-name = "Bodoni72"
 		\override BarNumber.padding = 1
@@ -86,7 +91,7 @@
 
         \override Hairpin.to-barline = ##f
 
-        \override MetronomeMark.padding = 2.5
+        \override MetronomeMark.padding = 10
         \override MetronomeMark.font-size = 4
         \override MetronomeMark.extra-offset = #'(4.5 . 0)
 
@@ -134,7 +139,13 @@
         fontSize = #-1
         \remove Time_signature_engraver
         \override InstrumentName.self-alignment-X = #CENTER
-        \RemoveEmptyStaves
+        \RemoveAllEmptyStaves
+    }
+
+    \context {
+        \name BowStaff
+        \type Engraver_group
+        \alias Staff
     }
 
     \context {
@@ -142,8 +153,13 @@
         \remove Forbid_line_break_engraver
         \override Accidental.font-size = 1
     }
+
+    \context {
+        \StaffGroup
+        \accepts BowStaff
+    }
 }
-%
+
 \paper {
     system-separator-markup = \markup { \slashSeparator }
     system-system-spacing = #'((basic-distance . 16) (minimum-distance . 16) (padding . 2))

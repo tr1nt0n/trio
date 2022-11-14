@@ -34,7 +34,7 @@
             s1 * 3/8
             % AFTER:
             % SPANNER_STARTS:
-            - \tweak padding #3
+            - \tweak padding #10.5
             - \abjad-dashed-line-with-arrow
             - \tweak bound-details.left.text \markup \concat { \italic \halign #-1 \abs-fontsize #8.5 { Accel. } \hspace #0.5 }
             - \tweak bound-details.right.text \markup { . }
@@ -69,7 +69,7 @@
             s1 * 3/8
             % AFTER:
             % SPANNER_STARTS:
-            - \tweak padding #3
+            - \tweak padding #10.5
             - \abjad-dashed-line-with-arrow
             - \tweak bound-details.left.text \markup \concat { \italic \halign #-1 \abs-fontsize #8.5 { Accel. } \hspace #0.5 }
             - \tweak bound-details.right.text \markup { . }
@@ -92,7 +92,7 @@
         % OPEN_BRACKETS:
         {
             % OPEN_BRACKETS:
-            \context ChoirStaff = "Staff Group"
+            \context StaffGroup = "Staff Group"
             <<
                 % BEFORE:
                 % COMMANDS:
@@ -100,7 +100,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 1"
+                    \context GrandStaff = "sub group 1"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -108,14 +108,14 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "cello 1 staff"
+                            \context BowStaff = "cello 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "cello 1 voice"
                                 {
                                     % BEFORE:
                                     % COMMANDS:
-                                    \set PianoStaff.shortInstrumentName = \markup { vc. }
+                                    \set GrandStaff.shortInstrumentName = \markup { vc. }
                                     % OPENING:
                                     % COMMANDS:
                                     \override Accidental.transparent = ##t
@@ -130,7 +130,7 @@
                                     s1 * 1/12
                                     % OPENING:
                                     % COMMANDS:
-                                    \override Staff.Stem.stemlet-length = 0.75
+                                    \override BowStaff.Stem.stemlet-length = 0.75
                                     <g bf>8
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -145,7 +145,7 @@
                                     - \staccato
                                     % OPENING:
                                     % COMMANDS:
-                                    \revert Staff.Stem.stemlet-length
+                                    \revert BowStaff.Stem.stemlet-length
                                     <g bf>8
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -162,7 +162,7 @@
                                     {
                                         % OPENING:
                                         % COMMANDS:
-                                        \override Staff.Stem.stemlet-length = 0.75
+                                        \override BowStaff.Stem.stemlet-length = 0.75
                                         <g bf>8
                                         % AFTER:
                                         % ARTICULATIONS:
@@ -172,7 +172,7 @@
                                         [
                                         % OPENING:
                                         % COMMANDS:
-                                        \revert Staff.Stem.stemlet-length
+                                        \revert BowStaff.Stem.stemlet-length
                                         <g bf>8
                                         % AFTER:
                                         % ARTICULATIONS:
@@ -373,7 +373,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 2"
+                    \context GrandStaff = "sub group 2"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -381,14 +381,14 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "contrabass 1 staff"
+                            \context BowStaff = "contrabass 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "contrabass 1 voice"
                                 {
                                     % BEFORE:
                                     % COMMANDS:
-                                    \set PianoStaff.shortInstrumentName = \markup { cb. }
+                                    \set GrandStaff.shortInstrumentName = \markup { cb. }
                                     % OPENING:
                                     % COMMANDS:
                                     \override Accidental.transparent = ##t
@@ -404,7 +404,7 @@
                                     r8
                                     % OPENING:
                                     % COMMANDS:
-                                    \override Staff.Stem.stemlet-length = 0.75
+                                    \override BowStaff.Stem.stemlet-length = 0.75
                                     <g bf>8
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -414,7 +414,7 @@
                                     [
                                     % OPENING:
                                     % COMMANDS:
-                                    \revert Staff.Stem.stemlet-length
+                                    \revert BowStaff.Stem.stemlet-length
                                     <g bf>8
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -445,7 +445,7 @@
                                     r8
                                     % OPENING:
                                     % COMMANDS:
-                                    \override Staff.Stem.stemlet-length = 0.75
+                                    \override BowStaff.Stem.stemlet-length = 0.75
                                     <g bf>8
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -455,7 +455,7 @@
                                     [
                                     % OPENING:
                                     % COMMANDS:
-                                    \revert Staff.Stem.stemlet-length
+                                    \revert BowStaff.Stem.stemlet-length
                                     <g bf>8
                                     % AFTER:
                                     % ARTICULATIONS:
@@ -611,7 +611,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 3"
+                    \context GrandStaff = "sub group 3"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -626,7 +626,7 @@
                                 {
                                     % BEFORE:
                                     % COMMANDS:
-                                    \set PianoStaff.shortInstrumentName = \markup { pno. }
+                                    \set GrandStaff.shortInstrumentName = \markup { pno. }
                                     <cs' d' ef' fs' af'>4
                                     % AFTER:
                                     % ARTICULATIONS:

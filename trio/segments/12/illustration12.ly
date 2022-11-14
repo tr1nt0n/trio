@@ -48,9 +48,6 @@
             % COMMANDS:
             \time 4/8
             s1 * 1/2
-            % ABSOLUTE_AFTER:
-            % COMMANDS:
-            \pageBreak
             % OPENING:
             % COMMANDS:
             \time 5/8
@@ -83,7 +80,7 @@
         % OPEN_BRACKETS:
         {
             % OPEN_BRACKETS:
-            \context ChoirStaff = "Staff Group"
+            \context StaffGroup = "Staff Group"
             <<
                 % BEFORE:
                 % COMMANDS:
@@ -91,7 +88,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 1"
+                    \context GrandStaff = "sub group 1"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -99,14 +96,14 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "cello 1 staff"
+                            \context BowStaff = "cello 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "cello 1 voice"
                                 {
                                     % BEFORE:
                                     % COMMANDS:
-                                    \set PianoStaff.shortInstrumentName = \markup { vc. }
+                                    \set GrandStaff.shortInstrumentName = \markup { vc. }
                                     s1 * 5/4
                                     s1 * 1
                                     s1 * 3/8
@@ -117,14 +114,14 @@
                                     \repeat tremolo 4 {
                                         % OPENING:
                                         % COMMANDS:
-                                        \override Staff.Stem.stemlet-length = 0.75
+                                        \override BowStaff.Stem.stemlet-length = 0.75
                                         g32.
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \(
                                         % OPENING:
                                         % COMMANDS:
-                                        \revert Staff.Stem.stemlet-length
+                                        \revert BowStaff.Stem.stemlet-length
                                         bf32.
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -145,11 +142,11 @@
                                     \repeat tremolo 4 {
                                         % OPENING:
                                         % COMMANDS:
-                                        \override Staff.Stem.stemlet-length = 0.75
+                                        \override BowStaff.Stem.stemlet-length = 0.75
                                         g64
                                         % OPENING:
                                         % COMMANDS:
-                                        \revert Staff.Stem.stemlet-length
+                                        \revert BowStaff.Stem.stemlet-length
                                         bf64
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -170,11 +167,11 @@
                                     \repeat tremolo 4 {
                                         % OPENING:
                                         % COMMANDS:
-                                        \override Staff.Stem.stemlet-length = 0.75
+                                        \override BowStaff.Stem.stemlet-length = 0.75
                                         g64
                                         % OPENING:
                                         % COMMANDS:
-                                        \revert Staff.Stem.stemlet-length
+                                        \revert BowStaff.Stem.stemlet-length
                                         bf64
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -186,14 +183,14 @@
                                     \repeat tremolo 4 {
                                         % OPENING:
                                         % COMMANDS:
-                                        \override Staff.Stem.stemlet-length = 0.75
+                                        \override BowStaff.Stem.stemlet-length = 0.75
                                         g32.
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \(
                                         % OPENING:
                                         % COMMANDS:
-                                        \revert Staff.Stem.stemlet-length
+                                        \revert BowStaff.Stem.stemlet-length
                                         bf32.
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -690,7 +687,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 2"
+                    \context GrandStaff = "sub group 2"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -698,14 +695,14 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "contrabass 1 staff"
+                            \context BowStaff = "contrabass 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "contrabass 1 voice"
                                 {
                                     % BEFORE:
                                     % COMMANDS:
-                                    \set PianoStaff.shortInstrumentName = \markup { cb. }
+                                    \set GrandStaff.shortInstrumentName = \markup { cb. }
                                     s1 * 5/4
                                     s1 * 1
                                     s1 * 3/8
@@ -715,14 +712,14 @@
                                     \repeat tremolo 4 {
                                         % OPENING:
                                         % COMMANDS:
-                                        \override Staff.Stem.stemlet-length = 0.75
+                                        \override BowStaff.Stem.stemlet-length = 0.75
                                         f'32.
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \(
                                         % OPENING:
                                         % COMMANDS:
-                                        \revert Staff.Stem.stemlet-length
+                                        \revert BowStaff.Stem.stemlet-length
                                         d'32.
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -734,14 +731,14 @@
                                     \repeat tremolo 4 {
                                         % OPENING:
                                         % COMMANDS:
-                                        \override Staff.Stem.stemlet-length = 0.75
+                                        \override BowStaff.Stem.stemlet-length = 0.75
                                         f'16
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \(
                                         % OPENING:
                                         % COMMANDS:
-                                        \revert Staff.Stem.stemlet-length
+                                        \revert BowStaff.Stem.stemlet-length
                                         d'16
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -753,14 +750,14 @@
                                     \repeat tremolo 4 {
                                         % OPENING:
                                         % COMMANDS:
-                                        \override Staff.Stem.stemlet-length = 0.75
+                                        \override BowStaff.Stem.stemlet-length = 0.75
                                         f'32.
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \(
                                         % OPENING:
                                         % COMMANDS:
-                                        \revert Staff.Stem.stemlet-length
+                                        \revert BowStaff.Stem.stemlet-length
                                         d'32.
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -772,14 +769,14 @@
                                     \repeat tremolo 4 {
                                         % OPENING:
                                         % COMMANDS:
-                                        \override Staff.Stem.stemlet-length = 0.75
+                                        \override BowStaff.Stem.stemlet-length = 0.75
                                         f'16
                                         % AFTER:
                                         % SPANNER_STARTS:
                                         \(
                                         % OPENING:
                                         % COMMANDS:
-                                        \revert Staff.Stem.stemlet-length
+                                        \revert BowStaff.Stem.stemlet-length
                                         d'16
                                         % AFTER:
                                         % SPANNER_STOPS:
@@ -805,6 +802,9 @@
                                 \context Voice = "contrabass 2 voice"
                                 {
                                     s1 * 3/4
+                                    % OPENING:
+                                    % COMMANDS:
+                                    \clef "bass"
                                     s1 * 1/2
                                     <d'>2
                                     % AFTER:
@@ -837,9 +837,6 @@
                                     ^ \markup +3
                                     % STOP_BEAM:
                                     ]
-                                    % OPENING:
-                                    % COMMANDS:
-                                    \clef "bass"
                                     <b,>4
                                     % AFTER:
                                     % MARKUP:
@@ -855,7 +852,6 @@
                                     [
                                     % OPENING:
                                     % COMMANDS:
-                                    \clef "treble"
                                     \revert Staff.Stem.stemlet-length
                                     <bf>8
                                     % AFTER:
@@ -1193,7 +1189,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 3"
+                    \context GrandStaff = "sub group 3"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -1208,7 +1204,7 @@
                                 {
                                     % BEFORE:
                                     % COMMANDS:
-                                    \set PianoStaff.shortInstrumentName = \markup { pno. }
+                                    \set GrandStaff.shortInstrumentName = \markup { pno. }
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "bass"
@@ -1220,7 +1216,6 @@
                                     \arpeggio
                                     \fp
                                     % SPANNER_STARTS:
-                                    \(
                                     \<
                                     ~
                                     <fs,, g,, d,>2
@@ -1255,8 +1250,6 @@
                                     % ARTICULATIONS:
                                     \arpeggio
                                     \fff
-                                    % SPANNER_STOPS:
-                                    \)
                                     % BEFORE:
                                     % GROB_OVERRIDES:
                                     \override TupletBracket.padding = 3
@@ -1277,8 +1270,7 @@
                                         [
                                         % SPANNER_STARTS:
                                         - \tweak circled-tip ##t
-                                        ^ \>
-                                        \(
+                                        \>
                                         f,,16
                                         a,,16
                                         g,,16
@@ -1491,9 +1483,6 @@
                                         % ABSOLUTE_BEFORE:
                                         % COMMANDS:
                                         \change Staff = "piano 2 staff"
-                                        % BEFORE:
-                                        % COMMANDS:
-                                        \ottava 1
                                         af'''16
                                         f'''16
                                         ef'''16
@@ -1513,8 +1502,6 @@
                                         % AFTER:
                                         % STOP_BEAM:
                                         ]
-                                        % COMMANDS:
-                                        \ottava 0
                                     % CLOSE_BRACKETS:
                                     }
                                     % AFTER:
@@ -1607,8 +1594,6 @@
                                         % AFTER:
                                         % ARTICULATIONS:
                                         \!
-                                        % SPANNER_STOPS:
-                                        \)
                                         % STOP_BEAM:
                                         ]
                                         % COMMANDS:

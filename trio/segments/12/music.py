@@ -428,13 +428,13 @@ trinton.attach(
     voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("|.")
 )
 
-trinton.attach(
-    voice=score["Global Context"],
-    leaves=[
-        7,
-    ],
-    attachment=abjad.LilyPondLiteral(r"\pageBreak", "absolute_after"),
-)
+# trinton.attach(
+#     voice=score["Global Context"],
+#     leaves=[
+#         5,
+#     ],
+#     attachment=abjad.LilyPondLiteral(r"\break", "absolute_after"),
+# )
 
 # piano pitching/attachments
 
@@ -647,17 +647,6 @@ trio.change_staff(
     ],
 )
 
-trinton.ottava(
-    score=score,
-    voice="piano 1 voice",
-    start_ottava=[
-        51,
-    ],
-    stop_ottava=[
-        60,
-    ],
-    octave=1,
-)
 
 trinton.ottava(
     score=score,
@@ -719,17 +708,18 @@ trinton.ottava(
     octave=-1,
 )
 
-trinton.write_slur(
-    voice=score["piano 1 voice"],
-    start_slur=[
-        0,
-        6,
-    ],
-    stop_slur=[
-        5,
-        -1,
-    ],
-)
+# trinton.write_slur(
+#     voice=score["piano 1 voice"],
+#     start_slur=[
+#         0,
+#         6,
+#     ],
+#     stop_slur=[
+#         5,
+#         -1,
+#     ],
+#     direction=abjad.DOWN
+# )
 
 trinton.write_slur(
     voice=score["piano 2 voice"],
@@ -775,7 +765,6 @@ trinton.attach(
         6,
     ],
     attachment=abjad.StartHairpin(">o"),
-    direction=abjad.UP,
 )
 
 trinton.attach(
@@ -1032,7 +1021,6 @@ I_II_handler(abjad.select.leaves(score["contrabass 1 voice"], pitched=True))
 trinton.attach(
     voice=score["contrabass 2 voice"],
     leaves=[
-        8,
         13,
         21,
         29,
@@ -1043,7 +1031,7 @@ trinton.attach(
 trinton.attach(
     voice=score["contrabass 2 voice"],
     leaves=[
-        6,
+        1,
         12,
         14,
         22,

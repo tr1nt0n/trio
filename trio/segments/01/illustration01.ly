@@ -32,6 +32,7 @@
             % AFTER:
             % COMMANDS:
             \bar "||"
+            \once \override Score.BarLine.transparent = ##f
         % CLOSE_BRACKETS:
         }
         % BEFORE:
@@ -40,7 +41,7 @@
         % OPEN_BRACKETS:
         {
             % OPEN_BRACKETS:
-            \context ChoirStaff = "Staff Group"
+            \context StaffGroup = "Staff Group"
             <<
                 % BEFORE:
                 % COMMANDS:
@@ -48,7 +49,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 1"
+                    \context GrandStaff = "sub group 1"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -56,7 +57,7 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "cello 1 staff"
+                            \context BowStaff = "cello 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "cello 1 voice"
@@ -67,8 +68,8 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override Rest.transparent = ##t
-                                    \set PianoStaff.instrumentName = \markup { Violoncello }
-                                    \set PianoStaff.shortInstrumentName = \markup { vc. }
+                                    \set GrandStaff.instrumentName = \markup { Violoncello }
+                                    \set GrandStaff.shortInstrumentName = \markup { vc. }
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "percussion"
@@ -272,7 +273,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 2"
+                    \context GrandStaff = "sub group 2"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -280,7 +281,7 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "contrabass 1 staff"
+                            \context BowStaff = "contrabass 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "contrabass 1 voice"
@@ -291,8 +292,8 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override Rest.transparent = ##t
-                                    \set PianoStaff.instrumentName = \markup { Contrabass }
-                                    \set PianoStaff.shortInstrumentName = \markup { cb. }
+                                    \set GrandStaff.instrumentName = \markup { Contrabass }
+                                    \set GrandStaff.shortInstrumentName = \markup { cb. }
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "percussion"
@@ -535,7 +536,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 3"
+                    \context GrandStaff = "sub group 3"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -553,8 +554,8 @@
                                     {
                                         % BEFORE:
                                         % COMMANDS:
-                                        \set PianoStaff.instrumentName = \markup { Piano }
-                                        \set PianoStaff.shortInstrumentName = \markup { pno. }
+                                        \set GrandStaff.instrumentName = \markup { Piano }
+                                        \set GrandStaff.shortInstrumentName = \markup { pno. }
                                         % OPENING:
                                         % COMMANDS:
                                         \override Staff.Stem.stemlet-length = 0.75

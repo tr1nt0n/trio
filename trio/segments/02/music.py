@@ -554,9 +554,10 @@ trinton.attach_multiple(
 )
 
 for leaf, attachment in zip(
-    [3, 19, 22, 23, 28],
+    [19, 22, 23, 28],
     [
-        abjad.MetronomeMark((1, 8), 138),
+        # abjad.MetronomeMark((1, 8), 138),
+        # abjad.LilyPondLiteral(r"\once \override MetronomeMark.padding = 3", "before"),
         abjad.MetronomeMark((1, 4), 47),
         abjad.MetronomeMark((1, 4), 105),
         abjad.MetronomeMark((1, 4), 130),
@@ -569,20 +570,43 @@ for leaf, attachment in zip(
         attachment=attachment,
     )
 
-trinton.attach(
-    voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
+trinton.attach_multiple(
+    score=score,
+    voice="Global Context",
+    leaves=[
+        3,
+    ],
+    attachments=[
+        abjad.MetronomeMark((1, 8), 138),
+        abjad.LilyPondLiteral(
+            r"\once \override Score.MetronomeMark.padding = 18", "absolute_before"
+        ),
+    ],
+    direction=abjad.UP,
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="Global Context",
+    leaves=[-1],
+    attachments=[
+        abjad.LilyPondLiteral(
+            r"\once \override Score.BarLine.transparent = ##f", "after"
+        ),
+        abjad.BarLine("||"),
+    ],
 )
 
 trinton.reduce_tuplets(score=score, voice="piano 1 voice", tuplets=[2])
 
-trinton.attach(
-    voice=score["Global Context"],
-    leaves=[
-        6,
-        27,
-    ],
-    attachment=abjad.LilyPondLiteral(r"\pageBreak", "absolute_after"),
-)
+# trinton.attach(
+#     voice=score["Global Context"],
+#     leaves=[
+#         6,
+#         27,
+#     ],
+#     attachment=abjad.LilyPondLiteral(r"\pageBreak", "absolute_after"),
+# )
 
 # piano pitching/attachments
 

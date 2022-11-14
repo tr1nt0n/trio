@@ -18,9 +18,9 @@
 
 \layout {
     \accidentalStyle neo-modern
-    ragged-bottom = ##t
+    % ragged-bottom = ##t
     ragged-last = ##t
-    ragged-right = ##t
+    % ragged-right = ##t
     \context {
         \name TimeSignatureContext
         \numericTimeSignature
@@ -41,10 +41,11 @@
         \Score
         \numericTimeSignature
         \accepts TimeSignatureContext
-        proportionalNotationDuration = #(ly:make-moment 1 20)
-        \override SpacingSpanner.uniform-stretching = ##t
-        \override Score.SpacingSpanner.strict-note-spacing = ##t
-        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 8) (minimum distance . 8) (padding . 6))
+        % proportionalNotationDuration = #(ly:make-moment 1 20)
+        % \override SpacingSpanner.uniform-stretching = ##t
+        % \override Score.SpacingSpanner.strict-note-spacing = ##t
+        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 0) (minimum distance . 6) (padding . 6))
+        \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 0) (minimum distance . 6) (padding . 6))
 
         \override AccidentalSuggestion.avoid-slur = #'ignore
 
@@ -52,11 +53,12 @@
         \override BarLine.transparent = ##t
         % \override BarLine.X-extent = #'(0 . 0)
         \override BarLine.thick-thickness = #8
+        \override BarLine.bar-extent = #'(-2 . 2)
 
         \override BarNumber.stencil = #(make-stencil-circler 0.1 0.75 ly:text-interface::print)
         \override BarNumber.Y-extent = ##f
 		\override BarNumber.Y-offset = 0
-		\override BarNumber.extra-offset = #'(-4 . -4)
+		\override BarNumber.extra-offset = #'(-2 . 4)
         \override BarNumber.font-size = 2
         \override BarNumber.font-name = "Bodoni72"
 		\override BarNumber.padding = 1
@@ -81,9 +83,8 @@
 
         \override Hairpin.to-barline = ##f
 
-        \override MetronomeMark.padding = 2.5
+        \override MetronomeMark.padding = 7
         \override MetronomeMark.font-size = 4
-        \override MetronomeMark.extra-offset = #'(4.5 . 0)
 
         \override Staff.thickness = #0.5
 
@@ -93,10 +94,13 @@
         \override StemTremolo.beam-width = 1.5
         \override StemTremolo.flag-count = 4
         \override StemTremolo.slope = 0.5
+        \override Stem.thickness = #0.5
 
         \override Tie.stencil = #flare-tie
         \override Tie.height-limit = 6
         \override Tie.thickness = 1.5
+
+        \override TextScript.font-name = "Bodoni72 Book"
 
         tupletFullLength = ##t
         \override TupletBracket.full-length-to-extent = ##f
@@ -128,15 +132,28 @@
         \override TimeSignature.break-visibility = #end-of-line-invisible
         \override TimeSignature.font-size = 7
 		\override TimeSignature.font-name = "Bodoni72"
-        \override TimeSignature.layer = 4
         \override TimeSignature.whiteout-style = #'outline
         \override TimeSignature.whiteout = 1
+        \override TimeSignature.layer = 4
+    }
+
+    \context {
+        \Staff
+        \name BowStaff
+        \type Engraver_group
+        \alias Staff
+        \RemoveAllEmptyStaves
     }
 
     \context {
         \Voice
         \remove Forbid_line_break_engraver
         \override Accidental.font-size = 1
+    }
+
+    \context {
+        \StaffGroup
+        \accepts BowStaff
     }
 }
 %

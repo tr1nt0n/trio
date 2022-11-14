@@ -232,17 +232,18 @@ trinton.attach_multiple(
     attachments=[abjad.MetronomeMark((1, 4), 69), trio.rehearsal_mark5],
 )
 
-trinton.attach(
-    voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
+trinton.attach_multiple(
+    score=score,
+    voice="Global Context",
+    leaves=[-1],
+    attachments=[
+        abjad.LilyPondLiteral(
+            r"\once \override Score.BarLine.transparent = ##f", "after"
+        ),
+        abjad.BarLine("||"),
+    ],
 )
 
-trinton.attach(
-    voice=score["Global Context"],
-    leaves=[
-        2,
-    ],
-    attachment=abjad.LilyPondLiteral(r"\pageBreak", "absolute_after"),
-)
 
 trio.write_marginmarkups(score)
 

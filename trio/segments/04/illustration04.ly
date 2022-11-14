@@ -31,9 +31,6 @@
             % COMMANDS:
             \time 11/8
             s1 * 11/8
-            % ABSOLUTE_AFTER:
-            % COMMANDS:
-            \pageBreak
             % OPENING:
             % COMMANDS:
             \time 3/16
@@ -73,9 +70,9 @@
             s1 * 11/8
             % AFTER:
             % SPANNER_STARTS:
-            - \tweak padding #3
+            - \tweak padding #6
             - \abjad-dashed-line-with-hook
-            - \tweak bound-details.left.text \markup \concat { \italic \halign #-1.5 \abs-fontsize #8.5 { Accel. poco a poco (to approx. 135 BPM) } \hspace #0.5 }
+            - \tweak bound-details.left.text \markup \concat { \italic \halign #-1.5 \abs-fontsize #8.5 { Accel. poco a poco ( to approx. 135 BPM ) } \hspace #0.5 }
             \startTextSpan
             % OPENING:
             % COMMANDS:
@@ -108,6 +105,7 @@
             % AFTER:
             % COMMANDS:
             \bar "||"
+            \once \override Score.BarLine.transparent = ##f
         % CLOSE_BRACKETS:
         }
         % BEFORE:
@@ -116,7 +114,7 @@
         % OPEN_BRACKETS:
         {
             % OPEN_BRACKETS:
-            \context ChoirStaff = "Staff Group"
+            \context StaffGroup = "Staff Group"
             <<
                 % BEFORE:
                 % COMMANDS:
@@ -124,7 +122,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 1"
+                    \context GrandStaff = "sub group 1"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -132,7 +130,7 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "cello 1 staff"
+                            \context BowStaff = "cello 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "cello 1 voice"
@@ -140,7 +138,7 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override Rest.transparent = ##t
-                                    \set PianoStaff.shortInstrumentName = \markup { vc. }
+                                    \set GrandStaff.shortInstrumentName = \markup { vc. }
                                     r1 * 3/2
                                     % BEFORE:
                                     % COMMANDS:
@@ -543,7 +541,7 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \<
-                                    - \tweak padding #9
+                                    - \tweak padding #10.5
                                     - \abjad-dashed-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XSB }
@@ -588,7 +586,7 @@
                                     % SPANNER_STOPS:
                                     )
                                     % SPANNER_STARTS:
-                                    - \tweak padding #9
+                                    - \tweak padding #10.5
                                     - \abjad-dashed-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \italic { XSB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XFB }
@@ -680,7 +678,7 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \>
-                                    - \tweak padding #9
+                                    - \tweak padding #10.5
                                     - \abjad-dashed-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XSB }
@@ -773,7 +771,7 @@
                                     bf32
                                     % AFTER:
                                     % SPANNER_STARTS:
-                                    - \tweak padding #9
+                                    - \tweak padding #10.5
                                     - \abjad-dashed-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \italic { XSB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XFB }
@@ -853,7 +851,7 @@
                                     % SPANNER_STOPS:
                                     )
                                     % SPANNER_STARTS:
-                                    - \tweak padding #9
+                                    - \tweak padding #10.5
                                     - \abjad-dashed-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \italic { XFB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XSB }
@@ -922,7 +920,7 @@
                                     f''32
                                     % AFTER:
                                     % SPANNER_STARTS:
-                                    - \tweak padding #9
+                                    - \tweak padding #10.5
                                     - \abjad-dashed-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \italic { XSB } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \italic { XFB }
@@ -1493,7 +1491,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 2"
+                    \context GrandStaff = "sub group 2"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -1501,7 +1499,7 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "contrabass 1 staff"
+                            \context BowStaff = "contrabass 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "contrabass 1 voice"
@@ -1509,7 +1507,7 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override Rest.transparent = ##t
-                                    \set PianoStaff.shortInstrumentName = \markup { cb. }
+                                    \set GrandStaff.shortInstrumentName = \markup { cb. }
                                     r1 * 3/2
                                     % BEFORE:
                                     % COMMANDS:
@@ -1765,6 +1763,7 @@
                                     {
                                         % ABSOLUTE_BEFORE:
                                         % COMMANDS:
+                                        \set suggestAccidentals = ##t
                                         \slurDashed
                                         % OPENING:
                                         % COMMANDS:
@@ -1944,6 +1943,7 @@
                                         ]
                                         % ABSOLUTE_AFTER:
                                         % COMMANDS:
+                                        \set suggestAccidentals = ##f
                                         \slurSolid
                                     % CLOSE_BRACKETS:
                                     }
@@ -2209,7 +2209,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 3"
+                    \context GrandStaff = "sub group 3"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -2232,7 +2232,7 @@
                                         % BEFORE:
                                         % COMMANDS:
                                         \ottava 2
-                                        \set PianoStaff.shortInstrumentName = \markup { pno. }
+                                        \set GrandStaff.shortInstrumentName = \markup { pno. }
                                         b''32
                                         % AFTER:
                                         % ARTICULATIONS:

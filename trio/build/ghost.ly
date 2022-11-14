@@ -9,18 +9,26 @@
             \tempo 4=35
             % OPENING:
             % COMMANDS:
+            \boxed-markup "Are We Still Married? (ii)" 1.5
             \time 2/4
             s1 * 1/2
             % AFTER:
             % COMMANDS:
-            \boxed-markup "Are We Still Married? (ii)" 1.5
+            \bar "||"
+            % ABSOLUTE_AFTER:
+            % COMMANDS:
+            \once \override Score.BarLine.transparent = ##f
             % OPENING:
             % COMMANDS:
+            \boxed-markup "Engraved in Water" 1.5
             \time 3/4
             s1 * 3/4
             % AFTER:
             % COMMANDS:
-            \boxed-markup "Engraved in Water" 1.5
+            \bar "||"
+            % ABSOLUTE_AFTER:
+            % COMMANDS:
+            \once \override Score.BarLine.transparent = ##f
         % CLOSE_BRACKETS:
         }
         % BEFORE:
@@ -29,7 +37,7 @@
         % OPEN_BRACKETS:
         {
             % OPEN_BRACKETS:
-            \context ChoirStaff = "Staff Group"
+            \context StaffGroup = "Staff Group"
             <<
                 % BEFORE:
                 % COMMANDS:
@@ -37,7 +45,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 1"
+                    \context GrandStaff = "sub group 1"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -45,7 +53,7 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "cello 1 staff"
+                            \context BowStaff = "cello 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "cello 1 voice"
@@ -53,18 +61,11 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override Rest.transparent = ##t
-                                    \set PianoStaff.shortInstrumentName = \markup { vc. }
+                                    \set GrandStaff.shortInstrumentName = \markup { vc. }
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "percussion"
                                     r1 * 1/2
-                                    % AFTER:
-                                    % COMMANDS:
-                                    \bar "||"
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    - \baca-circle-fast-markup
-                                    \boxed-markup "Crine" 1
                                     \tweak Accidental.transparent ##t
                                     d'2.
                                     % AFTER:
@@ -73,7 +74,8 @@
                                     % ARTICULATIONS:
                                     \p
                                     % COMMANDS:
-                                    \bar "||"
+                                    - \baca-circle-fast-markup
+                                    \boxed-markup "Crine" 1
                                 % CLOSE_BRACKETS:
                                 }
                             % CLOSE_BRACKETS:
@@ -149,9 +151,6 @@
                                     % STOP_BEAM:
                                     ]
                                     r16
-                                    % AFTER:
-                                    % COMMANDS:
-                                    \bar "||"
                                     % ABSOLUTE_BEFORE:
                                     % COMMANDS:
                                     \slurDashed
@@ -178,8 +177,6 @@
                                     % AFTER:
                                     % SPANNER_STOPS:
                                     )
-                                    % COMMANDS:
-                                    \bar "||"
                                     % ABSOLUTE_AFTER:
                                     % COMMANDS:
                                     \slurSolid
@@ -199,7 +196,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 2"
+                    \context GrandStaff = "sub group 2"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -207,7 +204,7 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "contrabass 1 staff"
+                            \context BowStaff = "contrabass 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "contrabass 1 voice"
@@ -215,17 +212,11 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override Rest.transparent = ##t
-                                    \set PianoStaff.shortInstrumentName = \markup { cb. }
+                                    \set GrandStaff.shortInstrumentName = \markup { cb. }
                                     % OPENING:
                                     % COMMANDS:
                                     \clef "percussion"
                                     r1 * 1/2
-                                    % AFTER:
-                                    % COMMANDS:
-                                    \bar "||"
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    - \baca-circle-fast-markup
                                     \tweak Accidental.transparent ##t
                                     f'2.
                                     % AFTER:
@@ -234,7 +225,7 @@
                                     % ARTICULATIONS:
                                     \p
                                     % COMMANDS:
-                                    \bar "||"
+                                    - \baca-circle-fast-markup
                                 % CLOSE_BRACKETS:
                                 }
                             % CLOSE_BRACKETS:
@@ -259,9 +250,6 @@
                                     % COMMANDS:
                                     \clef "bass"
                                     r1 * 1/2
-                                    % AFTER:
-                                    % COMMANDS:
-                                    \bar "||"
                                     % ABSOLUTE_BEFORE:
                                     % COMMANDS:
                                     \slurDashed
@@ -273,8 +261,6 @@
                                     % AFTER:
                                     % SPANNER_STOPS:
                                     )
-                                    % COMMANDS:
-                                    \bar "||"
                                     % ABSOLUTE_AFTER:
                                     % COMMANDS:
                                     \slurSolid
@@ -294,7 +280,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 3"
+                    \context GrandStaff = "sub group 3"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -310,11 +296,8 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override Rest.transparent = ##t
-                                    \set PianoStaff.shortInstrumentName = \markup { pno. }
+                                    \set GrandStaff.shortInstrumentName = \markup { pno. }
                                     r1 * 1/2
-                                    % AFTER:
-                                    % COMMANDS:
-                                    \bar "||"
                                     % OPEN_BRACKETS:
                                     \times 2/3
                                     {
@@ -396,7 +379,6 @@
                                         % STOP_BEAM:
                                         ]
                                         % COMMANDS:
-                                        \bar "||"
                                         \ottava 0
                                     % CLOSE_BRACKETS:
                                     }
@@ -421,9 +403,6 @@
                                     % COMMANDS:
                                     \once \override Rest.transparent = ##t
                                     r1 * 1/2
-                                    % AFTER:
-                                    % COMMANDS:
-                                    \bar "||"
                                     % BEFORE:
                                     % COMMANDS:
                                     \ottava -2
@@ -444,7 +423,6 @@
                                     % SPANNER_STOPS:
                                     \)
                                     % COMMANDS:
-                                    \bar "||"
                                     \ottava 0
                                 % CLOSE_BRACKETS:
                                 }

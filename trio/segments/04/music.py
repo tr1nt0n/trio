@@ -374,16 +374,24 @@ trinton.attach(
     voice=score["Global Context"], leaves=[0], attachment=trio.rehearsal_mark4
 )
 
-trinton.attach(
-    voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
+trinton.attach_multiple(
+    score=score,
+    voice="Global Context",
+    leaves=[-1],
+    attachments=[
+        abjad.LilyPondLiteral(
+            r"\once \override Score.BarLine.transparent = ##f", "after"
+        ),
+        abjad.BarLine("||"),
+    ],
 )
 
 trinton.write_hooked_spanner(
     voice=score["Global Context"],
-    string=r"\markup \italic \halign #-1.5 \abs-fontsize #8.5 { Accel. poco a poco (to approx. 135 BPM) }",
+    string=r"\markup \italic \halign #-1.5 \abs-fontsize #8.5 { Accel. poco a poco ( to approx. 135 BPM ) }",
     start_leaf=[9],
     stop_leaf=[11],
-    padding=3,
+    padding=6,
 )
 
 trinton.attach(
@@ -396,13 +404,13 @@ trinton.attach(
     ),
 )
 
-trinton.attach(
-    voice=score["Global Context"],
-    leaves=[
-        2,
-    ],
-    attachment=abjad.LilyPondLiteral(r"\pageBreak", "absolute_after"),
-)
+# trinton.attach(
+#     voice=score["Global Context"],
+#     leaves=[
+#         2,
+#     ],
+#     attachment=abjad.LilyPondLiteral(r"\pageBreak", "absolute_after"),
+# )
 
 for voice in trio.all_voices:
     trinton.reduce_tuplets(score=score, voice=voice, tuplets="all")
@@ -1359,7 +1367,7 @@ trinton.write_text_span(
         121,
         170,
     ],
-    padding=9,
+    padding=10.5,
 )
 
 trinton.write_text_span(
@@ -1376,7 +1384,7 @@ trinton.write_text_span(
         148,
         186,
     ],
-    padding=9,
+    padding=10.5,
 )
 
 trinton.write_text_span(
@@ -1547,6 +1555,17 @@ trio.stop_angle_spanner(
 )
 
 # contrabass pitching/attachments
+
+trinton.ficta(
+    score=score,
+    voice="contrabass 2 voice",
+    start_ficta=[
+        55,
+    ],
+    stop_ficta=[
+        134,
+    ],
+)
 
 trinton.attach(
     voice=score["contrabass 2 voice"],

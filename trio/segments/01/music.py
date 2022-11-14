@@ -184,8 +184,16 @@ trinton.attach_multiple(
     ],
 )
 
-trinton.attach(
-    voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
+trinton.attach_multiple(
+    score=score,
+    voice="Global Context",
+    leaves=[-1],
+    attachments=[
+        abjad.LilyPondLiteral(
+            r"\once \override Score.BarLine.transparent = ##f", "after"
+        ),
+        abjad.BarLine("||"),
+    ],
 )
 
 # piano pitching/attachments

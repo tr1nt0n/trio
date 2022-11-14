@@ -499,7 +499,7 @@ trinton.write_text_span(
     stop_leaf=[
         58,
     ],
-    padding=15.5,
+    padding=14.5,
 )
 
 trinton.write_text_span(
@@ -724,8 +724,16 @@ trinton.populate_fermata_measures(
     fermata_measures=None,
 )
 
-trinton.attach(
-    voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
+trinton.attach_multiple(
+    score=score,
+    voice="Global Context",
+    leaves=[-1],
+    attachments=[
+        abjad.LilyPondLiteral(
+            r"\once \override Score.BarLine.transparent = ##f", "after"
+        ),
+        abjad.BarLine("||"),
+    ],
 )
 
 # fill empty staves with skips

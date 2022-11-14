@@ -32,6 +32,20 @@ score = trinton.make_score_template(
         2,
         2,
     ],
+    staff_types=[
+        [
+            "BowStaff",
+            "Staff",
+        ],
+        [
+            "BowStaff",
+            "Staff",
+        ],
+        [
+            "Staff",
+            "Staff",
+        ],
+    ],
 )
 
 piano_1_voice = score["piano 1 voice"]
@@ -1463,9 +1477,7 @@ def small_knee(score, voice, start, stop):
 
 def finger_pressure(score, voice, half, harm):
     for leaf in half:
-        trinton.change_notehead(
-            voice=score[voice], leaves=[leaf], notehead=r"triangle"
-        )
+        trinton.change_notehead(voice=score[voice], leaves=[leaf], notehead=r"triangle")
 
     for leaf in harm:
         trinton.change_notehead(
@@ -1565,17 +1577,17 @@ all_staves = eval(
 
 all_startmarkups = eval(
     """[
-    abjad.InstrumentName(context="PianoStaff", markup=abjad.Markup(r"\markup { Piano }")),
-    abjad.InstrumentName(context="PianoStaff", markup=abjad.Markup(r"\markup { Violoncello }")),
-    abjad.InstrumentName(context="PianoStaff", markup=abjad.Markup(r"\markup { Contrabass }")),
+    abjad.InstrumentName(context="GrandStaff", markup=abjad.Markup(r"\markup { Piano }")),
+    abjad.InstrumentName(context="GrandStaff", markup=abjad.Markup(r"\markup { Violoncello }")),
+    abjad.InstrumentName(context="GrandStaff", markup=abjad.Markup(r"\markup { Contrabass }")),
 ]"""
 )
 
 all_marginmarkups = eval(
     """[
-    abjad.ShortInstrumentName(context="PianoStaff", markup=abjad.Markup(r"\markup { pno. }")),
-    abjad.ShortInstrumentName(context="PianoStaff", markup=abjad.Markup(r"\markup { vc. }")),
-    abjad.ShortInstrumentName(context="PianoStaff", markup=abjad.Markup(r"\markup { cb. }")),
+    abjad.ShortInstrumentName(context="GrandStaff", markup=abjad.Markup(r"\markup { pno. }")),
+    abjad.ShortInstrumentName(context="GrandStaff", markup=abjad.Markup(r"\markup { vc. }")),
+    abjad.ShortInstrumentName(context="GrandStaff", markup=abjad.Markup(r"\markup { cb. }")),
 ]"""
 )
 
@@ -1622,11 +1634,11 @@ rehearsal_mark6 = abjad.LilyPondLiteral(
 )
 
 rehearsal_mark7 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Are We Still Married? (ii)" 1.5', "after"
+    r'\boxed-markup "Are We Still Married? (ii)" 1.5',
 )
 
 rehearsal_mark8 = abjad.LilyPondLiteral(
-    r'\boxed-markup "Engraved in Water" 1.5', "after"
+    r'\boxed-markup "Engraved in Water" 1.5',
 )
 
 rehearsal_mark9 = abjad.LilyPondLiteral(
@@ -1638,7 +1650,7 @@ rehearsal_mark10 = abjad.Markup(
 )
 
 rehearsal_mark11 = abjad.LilyPondLiteral(
-    r'\tweak padding 5.5 \boxed-markup "One of These Days {dry land}" 1.5',
+    r'\boxed-markup "One of These Days {dry land}" 1.5',
     "after",
 )
 

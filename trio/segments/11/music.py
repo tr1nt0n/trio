@@ -90,8 +90,16 @@ trinton.attach_multiple(
     attachments=[abjad.MetronomeMark((1, 4), 60), trio.rehearsal_mark12],
 )
 
-trinton.attach(
-    voice=score["Global Context"], leaves=[-1], attachment=abjad.BarLine("||")
+trinton.attach_multiple(
+    score=score,
+    voice="Global Context",
+    leaves=[-1],
+    attachments=[
+        abjad.LilyPondLiteral(
+            r"\once \override Score.BarLine.transparent = ##f", "absolute_after"
+        ),
+        abjad.BarLine("||"),
+    ],
 )
 
 # piano pitching/attachments

@@ -22,9 +22,6 @@
             % COMMANDS:
             \time 1/4
             s1 * 1/4
-            % ABSOLUTE_AFTER:
-            % COMMANDS:
-            \pageBreak
             % OPENING:
             % COMMANDS:
             \time 6/4
@@ -52,6 +49,7 @@
             % AFTER:
             % COMMANDS:
             \bar "||"
+            \once \override Score.BarLine.transparent = ##f
         % CLOSE_BRACKETS:
         }
         % BEFORE:
@@ -60,7 +58,7 @@
         % OPEN_BRACKETS:
         {
             % OPEN_BRACKETS:
-            \context ChoirStaff = "Staff Group"
+            \context StaffGroup = "Staff Group"
             <<
                 % BEFORE:
                 % COMMANDS:
@@ -68,7 +66,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 1"
+                    \context GrandStaff = "sub group 1"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -76,7 +74,7 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "cello 1 staff"
+                            \context BowStaff = "cello 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "cello 1 voice"
@@ -85,7 +83,7 @@
                                     \repeat tremolo 4 {
                                         % BEFORE:
                                         % COMMANDS:
-                                        \set PianoStaff.shortInstrumentName = \markup { vc. }
+                                        \set GrandStaff.shortInstrumentName = \markup { vc. }
                                         \tweak Accidental.transparent ##t
                                         d'16
                                         % AFTER:
@@ -2194,7 +2192,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 2"
+                    \context GrandStaff = "sub group 2"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -2202,7 +2200,7 @@
                         % OPEN_BRACKETS:
                         {
                             % OPEN_BRACKETS:
-                            \context Staff = "contrabass 1 staff"
+                            \context BowStaff = "contrabass 1 staff"
                             {
                                 % OPEN_BRACKETS:
                                 \context Voice = "contrabass 1 voice"
@@ -2211,7 +2209,7 @@
                                     \repeat tremolo 4 {
                                         % BEFORE:
                                         % COMMANDS:
-                                        \set PianoStaff.shortInstrumentName = \markup { cb. }
+                                        \set GrandStaff.shortInstrumentName = \markup { cb. }
                                         \tweak Accidental.transparent ##t
                                         d'32
                                         % AFTER:
@@ -4431,7 +4429,7 @@
                 % OPEN_BRACKETS:
                 {
                     % OPEN_BRACKETS:
-                    \context PianoStaff = "sub group 3"
+                    \context GrandStaff = "sub group 3"
                     <<
                         % BEFORE:
                         % COMMANDS:
@@ -4447,7 +4445,7 @@
                                     % BEFORE:
                                     % COMMANDS:
                                     \once \override Rest.transparent = ##t
-                                    \set PianoStaff.shortInstrumentName = \markup { pno. }
+                                    \set GrandStaff.shortInstrumentName = \markup { pno. }
                                     r1 * 5/4
                                     % BEFORE:
                                     % COMMANDS:
