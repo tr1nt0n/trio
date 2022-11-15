@@ -74,7 +74,8 @@
 
         \override DynamicText.font-size = #-2
         \override DynamicLineSpanner.staff-padding = 4
-        \override DynamicText.layer = 2
+        % \override DynamicLineSpanner.padding = 2.5
+        \override DynamicText.layer = 3
         \override DynamicText.whiteout-style = #'outline
         \override DynamicText.whiteout = 1
 
