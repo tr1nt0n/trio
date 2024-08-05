@@ -13,7 +13,7 @@
     dedication = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"to Natasia Reinhardt" \fontsize #0.25 \with-color #white "."}
     title = \markup \override #'(font-name . "Bodoni72") \fontsize #10 \center-column {"PIANO  TRIO" \fontsize #0.01 \with-color #white "."}
     subtitle = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"for Violoncello, Contrabass, and Piano" \fontsize #0.01 \with-color #white "."}
-    composer = \markup \override #'(font-name . "Bodoni72") \fontsize #3 {"Trinton (*2000)"}
+    composer = \markup \override #'(font-name . "Bodoni72") \fontsize #3 {"Trinity Hlynn Prater (*2000)"}
 }
 
 \layout {
@@ -171,7 +171,7 @@
     evenHeaderMarkup = \markup ""
     oddFooterMarkup = \markup
         \fill-line {
-            "Piano Trio - Trinton"
+            "Piano Trio - Trinity Hlynn Prater"
         \concat {
             \fontsize #3
                 \fromproperty #'page:page-number-string
@@ -184,6 +184,6 @@
                     \fontsize #3
                         \fromproperty #'page:page-number-string
                 }
-                "Piano Trio - Trinton"
+                "Piano Trio - Trinity Hlynn Prater"
             }
 }
